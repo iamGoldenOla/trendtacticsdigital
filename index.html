@@ -612,11 +612,29 @@
             // Recenter on resize
             window.addEventListener('resize', () => showSlide(currentSlide, true));
 
-            // Auto-play with 7 second delay
-            const autoplay = setInterval(nextSlide, 7000);
+            // Auto-play with 7 second delay (pause/resume on hover)
+            let autoplay = setInterval(nextSlide, 7000);
 
-            // Pause autoplay on hover
-            container.addEventListener('mouseenter', () => clearInterval(autoplay));
+            function pauseAutoplay() {
+                if (autoplay) {
+                    clearInterval(autoplay);
+                    autoplay = null;
+                }
+            }
+
+            function resumeAutoplay() {
+                if (!autoplay) autoplay = setInterval(nextSlide, 7000);
+            }
+
+            // Pause autoplay on hover, resume on leave
+            container.addEventListener('mouseenter', pauseAutoplay);
+            container.addEventListener('mouseleave', resumeAutoplay);
+
+            // Also pause while user interacts with controls
+            prevBtn.addEventListener('mouseenter', pauseAutoplay);
+            nextBtn.addEventListener('mouseenter', pauseAutoplay);
+            prevBtn.addEventListener('mouseleave', resumeAutoplay);
+            nextBtn.addEventListener('mouseleave', resumeAutoplay);
 
             // Initialize position
             showSlide(0, true);

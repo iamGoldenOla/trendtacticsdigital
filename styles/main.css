@@ -1024,7 +1024,8 @@ a:hover {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow-x: auto; /* allow horizontal programmatic scrolling */
+    overflow-y: hidden;
     scroll-behavior: smooth; /* enable smooth scrolling for JS scrollTo */
     -webkit-overflow-scrolling: touch;
 }
@@ -1178,7 +1179,6 @@ a:hover {
     display: flex;
     justify-content: center;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-2xl);
 }
 
 .testimonial-dot {
@@ -1203,11 +1203,47 @@ a:hover {
 }
 
 .testimonials-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    pointer-events: none; /* allow dots/buttons to be individually clickable */
+    z-index: 5;
+}
+
+/* Prev/Next buttons overlayed to the sides */
+.testimonials-controls .testimonial-btn {
+    pointer-events: auto;
+    position: relative;
+    background: rgba(0,0,0,0.35);
+}
+
+.testimonials-controls .testimonial-btn.prev {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.testimonials-controls .testimonial-btn.next {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Center the dots a bit lower so they don't overlap card content */
+.testimonials-nav {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    z-index: 6;
 }
 
 .testimonial-btn {
