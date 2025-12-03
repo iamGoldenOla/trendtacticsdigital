@@ -12,6 +12,199 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/about.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
+            padding: 140px 0 100px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .service-hero h1 {
+            color: #ffffff !important;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        .service-hero-icon {
+            font-size: 4rem;
+            color: #00FFFF;
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .services-3d-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .service-3d-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.1),
+                0 8px 24px rgba(0, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .service-3d-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00FFFF, #0A1E3F);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .service-3d-card:hover {
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.15),
+                0 15px 40px rgba(0, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+        }
+        .service-3d-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-3d-card-icon {
+            font-size: 3rem;
+            color: #00FFFF;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+        .service-3d-card:hover .service-3d-card-icon {
+            transform: scale(1.1) rotateY(15deg);
+        }
+        .service-3d-card h3 {
+            color: #0A1E3F;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .service-3d-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        .quote-cta {
+            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .quote-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        .quote-cta h3 {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .quote-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .faq-section {
+            background: #f9f9f9;
+            padding: 80px 0;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        .faq-question {
+            background: #ffffff;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        .faq-question h3 {
+            color: #0A1E3F;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .faq-question i {
+            color: #00FFFF;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            color: #4a5568;
+            line-height: 1.8;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        .faq-answer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <nav id="navigation" class="navbar">
@@ -44,14 +237,14 @@
 
     <main>
         <!-- Service Hero Section -->
-        <section class="page-hero" style="background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); padding: 120px 0 80px; color: white;">
+        <section class="service-hero">
             <div class="container">
-                <div class="hero-content" style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">
-                        <i class="fas fa-desktop" style="color: #00FFFF;"></i>
+                <div class="hero-content" style="text-align: center; position: relative; z-index: 2;">
+                    <div class="service-hero-icon">
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Web Development Services</h1>
-                    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9;">
+                    <h1>Web Development Services</h1>
+                    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
                         Custom, responsive websites built for performance, accessibility, and conversion. We build fast, reliable websites that engage users and drive growth.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -62,55 +255,83 @@
             </div>
         </section>
 
-        <!-- Service Details -->
-        <section class="services-detail" style="padding: 80px 0; background: white;">
+        <!-- Service Details with 3D Cards -->
+        <section class="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
             <div class="container">
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: #0A1E3F;">What We Offer</h2>
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 4rem;">
+                        <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
+                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive web development solutions tailored to your business needs</p>
+                    </div>
                     
-                    <div style="display: grid; gap: 2rem; margin-bottom: 3rem;">
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>Responsive Web Design</h3>
-                            <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops.</p>
+                    <div class="services-3d-grid">
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Responsive Web Design</h3>
+                            <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops. We ensure your website looks stunning and functions flawlessly across every screen size.</p>
                         </div>
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>SEO Optimization</h3>
-                            <p>Built-in SEO best practices to help your website rank higher in search engines.</p>
+                        
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>SEO Optimization</h3>
+                            <p>Built-in SEO best practices to help your website rank higher in search engines. We optimize every aspect from meta tags to site structure for maximum visibility.</p>
                         </div>
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>Fast Loading Times</h3>
-                            <p>Optimized for speed with fast loading times that improve user experience and SEO rankings.</p>
+                        
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Fast Loading Times</h3>
+                            <p>Optimized for speed with fast loading times that improve user experience and SEO rankings. We use cutting-edge optimization techniques to ensure lightning-fast performance.</p>
                         </div>
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>Custom CMS</h3>
-                            <p>Easy-to-use content management systems that let you update your website without technical knowledge.</p>
+                        
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3>Custom CMS</h3>
+                            <p>Easy-to-use content management systems that let you update your website without technical knowledge. We provide training and ongoing support to ensure you're comfortable managing your site.</p>
                         </div>
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>E-commerce Integration</h3>
-                            <p>Full e-commerce solutions with secure payment processing and inventory management.</p>
+                        
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>E-commerce Integration</h3>
+                            <p>Full e-commerce solutions with secure payment processing and inventory management. We build online stores that convert visitors into customers and drive sales.</p>
                         </div>
-                        <div>
-                            <h3 style="color: #0A1E3F; margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: #00FFFF; margin-right: 0.5rem;"></i>Ongoing Support</h3>
-                            <p>Continuous maintenance, updates, and support to keep your website running smoothly.</p>
+                        
+                        <div class="service-3d-card">
+                            <div class="service-3d-card-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Ongoing Support</h3>
+                            <p>Continuous maintenance, updates, and support to keep your website running smoothly. We're here for you long after launch to ensure your site stays current and secure.</p>
                         </div>
                     </div>
 
-                    <div style="background: #f5f5f5; padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
-                        <h3 style="color: #0A1E3F; margin-bottom: 1rem;">Pricing</h3>
-                        <p style="font-size: 1.5rem; font-weight: 700; color: #00FFFF;">From $2,500 per project</p>
-                        <p style="margin-top: 0.5rem; opacity: 0.8;">Pricing varies based on project scope and requirements. Contact us for a custom quote.</p>
+                    <div class="quote-cta">
+                        <div class="quote-cta-content">
+                            <h3>Ready to Get Started?</h3>
+                            <p>Get a custom quote tailored to your project requirements. Our team will work with you to create the perfect solution for your business.</p>
+                            <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Request a Free Quote</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section" style="padding: 80px 0; background: #f9f9f9;">
+        <section class="faq-section">
             <div class="container">
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 3rem;">
-                        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #0A1E3F;">Frequently Asked Questions</h2>
-                        <p style="font-size: 1.1rem; opacity: 0.8;">Common questions about our web development services</p>
+                        <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
+                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our web development services</p>
                     </div>
                     
                     <div class="faq-grid" id="faq-grid">
@@ -199,13 +420,13 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta" style="padding: 80px 0;">
+        <section class="cta" style="padding: 100px 0; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);">
             <div class="container">
-                <h2 class="cta-title">Ready to Build Your Website?</h2>
-                <p class="cta-subtitle">Let's discuss your project and create a website that drives results for your business.</p>
+                <h2 class="cta-title" style="color: #ffffff;">Ready to Build Your Website?</h2>
+                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's discuss your project and create a website that drives results for your business.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary btn-large">Get Free Consultation</a>
-                    <a href="portfolio.html" class="btn btn-outline btn-large">View Portfolio</a>
+                    <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
+                    <a href="portfolio.html" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
                 </div>
             </div>
         </section>
@@ -299,23 +520,16 @@
     <script>
     function toggleFAQ(element) {
         const faqItem = element.closest('.faq-item');
-        const answer = faqItem.querySelector('.faq-answer');
-        const icon = element.querySelector('i');
-        
-        const isOpen = answer.style.display === 'block';
+        const isActive = faqItem.classList.contains('active');
         
         // Close all FAQs
-        document.querySelectorAll('.faq-answer').forEach(ans => {
-            ans.style.display = 'none';
-        });
-        document.querySelectorAll('.faq-question i').forEach(ic => {
-            ic.style.transform = 'rotate(0deg)';
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
         });
         
-        // Open clicked FAQ if it wasn't open
-        if (!isOpen) {
-            answer.style.display = 'block';
-            icon.style.transform = 'rotate(180deg)';
+        // Open clicked FAQ if it wasn't active
+        if (!isActive) {
+            faqItem.classList.add('active');
         }
     }
     
@@ -326,4 +540,3 @@
     <script src="./js/main.js"></script>
 </body>
 </html>
-
