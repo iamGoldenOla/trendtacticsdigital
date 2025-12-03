@@ -295,9 +295,6 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">What Our Clients Say</h2>
-                    <p class="section-subtitle">
-                        Don't just take our word for it. Here's what our clients have to say about their experience with Trendtactics Digital.
-                    </p>
                 </div>
                 
                 <div class="testimonials-container" role="region" aria-label="Client testimonials" tabindex="0">
@@ -631,13 +628,32 @@
                 currentSlide = index;
             }
 
+            function getCenteredIndex() {
+                const containerRect = container.getBoundingClientRect();
+                const containerCenter = containerRect.left + containerRect.width / 2;
+                let closest = 0;
+                let closestDist = Infinity;
+                testimonials.forEach((card, i) => {
+                    const r = card.getBoundingClientRect();
+                    const cardCenter = r.left + r.width / 2;
+                    const dist = Math.abs(cardCenter - containerCenter);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closest = i;
+                    }
+                });
+                return closest;
+            }
+
             function nextSlide() {
-                const next = (currentSlide + 1) % totalSlides;
+                const current = getCenteredIndex();
+                const next = (current + 1) % totalSlides;
                 showSlide(next);
             }
 
             function prevSlide() {
-                const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                const current = getCenteredIndex();
+                const prev = (current - 1 + totalSlides) % totalSlides;
                 showSlide(prev);
             }
 

@@ -1035,6 +1035,15 @@ a:hover {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Hide horizontal scrollbar but keep scrolling functional */
+.testimonials-container::-webkit-scrollbar {
+    height: 0;
+}
+.testimonials-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 .testimonials-grid {
     display: flex;
     gap: 20px; /* tighter spacing for compact cards */
@@ -1201,47 +1210,30 @@ a:hover {
 }
 
 .testimonials-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
+    position: static;
     width: 100%;
-    transform: translateY(-50%);
     display: flex;
+    gap: var(--spacing-md);
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-xl);
-    pointer-events: none; /* allow dots/buttons to be individually clickable */
-    z-index: 5;
+    margin-top: var(--spacing-lg);
+    z-index: 6;
 }
 
-/* Prev/Next buttons overlayed to the sides */
+/* Prev/Next buttons positioned inline and centered below the carousel */
 .testimonials-controls .testimonial-btn {
     pointer-events: auto;
     position: relative;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.12);
 }
 
-.testimonials-controls .testimonial-btn.prev {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.testimonials-controls .testimonial-btn.next {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Center the dots a bit lower so they don't overlap card content */
+/* Dots centered inline */
 .testimonials-nav {
-    position: absolute;
-    left: 50%;
-    bottom: 14px;
-    transform: translateX(-50%);
-    z-index: 6;
+    position: relative;
+    left: 0;
+    transform: none;
+    display: flex;
+    gap: var(--spacing-sm);
 }
 
 .testimonial-btn {
