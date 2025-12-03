@@ -47,7 +47,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
     console.log(`🚀 Static file server running on port ${PORT}`);
@@ -63,4 +63,4 @@ app.listen(PORT, () => {
     console.log(`   - Portfolio: http://localhost:${PORT}/portfolio`);
     console.log(`   - Pricing: http://localhost:${PORT}/pricing`);
     console.log(`   - Tools: http://localhost:${PORT}/tools`);
-}); 
+});
