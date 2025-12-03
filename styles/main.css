@@ -783,7 +783,7 @@ a:hover {
 .service-card:nth-child(n) {
     grid-column: auto;
     grid-row: auto;
-    min-height: 100%;
+    min-height: 0;
 }
 
 .service-icon {
