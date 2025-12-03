@@ -794,70 +794,83 @@ a:hover {
 .about-card.card-1 {
     top: 0;
     left: 0;
-    animation: card-flip-1 9s ease-in-out infinite, card-breathe 3s ease-in-out infinite;
+    animation: card-flip-1 9s ease-in-out infinite, float-card-1 6s ease-in-out infinite;
 }
 
 .about-card.card-2 {
-    top: 0;
-    left: 0;
-    animation: card-flip-2 9s ease-in-out infinite, card-breathe 3s ease-in-out infinite 1s;
+    top: 80px;
+    left: 40px;
+    animation: card-flip-2 9s ease-in-out infinite, float-card-2 6s ease-in-out infinite;
+    animation-delay: 0s, -2s;
 }
 
 .about-card.card-3 {
-    top: 0;
-    left: 0;
-    animation: card-flip-3 9s ease-in-out infinite, card-breathe 3s ease-in-out infinite 2s;
+    top: 160px;
+    left: 80px;
+    animation: card-flip-3 9s ease-in-out infinite, float-card-3 6s ease-in-out infinite;
+    animation-delay: 0s, -4s;
 }
 
-@keyframes card-breathe {
+@keyframes float-card-1 {
     0%, 100% { 
-        transform: translateY(0px);
+        transform: translateY(0px) rotate(0deg);
     }
     50% { 
-        transform: translateY(-15px);
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes float-card-2 {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% { 
+        transform: translateY(-20px) rotate(-2deg);
+    }
+}
+
+@keyframes float-card-3 {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% { 
+        transform: translateY(-10px) rotate(1deg);
     }
 }
 
 @keyframes card-flip-1 {
     0% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     30% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     33% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     63% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     66% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     96% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     100% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
@@ -866,43 +879,36 @@ a:hover {
 @keyframes card-flip-2 {
     0% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     30% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     33% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     63% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     66% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     96% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     100% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
@@ -911,43 +917,36 @@ a:hover {
 @keyframes card-flip-3 {
     0% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     30% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     33% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     63% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(-90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
     66% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     96% { 
         opacity: 1;
-        transform: translateY(0px) rotateY(0deg) scale(1);
         z-index: 3;
         pointer-events: auto;
     }
     100% { 
         opacity: 0;
-        transform: translateY(30px) rotateY(90deg) scale(0.85);
         z-index: 1;
         pointer-events: none;
     }
