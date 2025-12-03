@@ -1029,10 +1029,23 @@ a:hover {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden; /* hide outer scrollbar */
+}
+
+.testimonials-scroll {
     overflow-x: auto; /* allow horizontal programmatic scrolling */
     overflow-y: hidden;
     scroll-behavior: smooth; /* enable smooth scrolling for JS scrollTo */
     -webkit-overflow-scrolling: touch;
+}
+
+/* Hide horizontal scrollbar but keep scrolling functional (scroll wrapper) */
+.testimonials-scroll::-webkit-scrollbar {
+    height: 0;
+}
+.testimonials-scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional */

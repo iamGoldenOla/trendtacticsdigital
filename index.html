@@ -298,7 +298,8 @@
                 </div>
                 
                 <div class="testimonials-container" role="region" aria-label="Client testimonials" tabindex="0">
-                    <div class="testimonials-grid" id="testimonials-grid" role="list">
+                    <div class="testimonials-scroll">
+                        <div class="testimonials-grid" id="testimonials-grid" role="list">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 <p>"Trendtactics Digital transformed our online presence completely. Our website traffic increased by 300% and our conversion rate doubled within just 3 months. Their strategic approach and attention to detail is unmatched!"</p>
@@ -417,6 +418,7 @@
                                     <p>Creative Director, DesignHub</p>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -611,6 +613,13 @@
                 const maxScroll = container.scrollWidth - container.clientWidth;
                 if (target < 0) target = 0;
                 if (target > maxScroll) target = maxScroll;
+
+                // If computed target is effectively the same as current scroll, nudge it slightly
+                const delta = target - container.scrollLeft;
+                if (!instant && Math.abs(delta) < 2) {
+                    // nudge in direction of desired movement to force scroll
+                    target = Math.max(0, Math.min(maxScroll, container.scrollLeft + (delta >= 0 ? 8 : -8)));
+                }
 
                 // Use smooth scroll on the container for a professional effect
                 container.scrollTo({ left: target, behavior: instant ? 'auto' : 'smooth' });
