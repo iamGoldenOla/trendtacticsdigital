@@ -1040,6 +1040,7 @@ a:hover {
     /* CSS scroll snap for deterministic carousel behavior */
     scroll-snap-type: x mandatory;
     scroll-padding: calc(50vw - 150px); /* center alignment padding */
+    position: relative; /* needed for scrollbar-cover pseudo element */
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional (scroll wrapper) */
@@ -1049,6 +1050,19 @@ a:hover {
 .testimonials-scroll {
     -ms-overflow-style: none !important; /* IE and Edge */
     scrollbar-width: none !important; /* Firefox */
+}
+
+/* Overlay to visually hide stubborn scrollbars on some Windows/Chromium setups */
+.testimonials-scroll::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px; /* covers the scrollbar track area */
+    background: var(--base-dark); /* match testimonials background */
+    pointer-events: none;
+    z-index: 4;
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional */
