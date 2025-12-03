@@ -1473,22 +1473,38 @@ a:hover {
 }
 
 .read-more-home {
-    color: var(--primary);
+    color: #0A1E3F;
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: gap 0.3s ease;
+    transition: gap 0.3s ease, color 0.3s ease;
 }
 
 .read-more-home:hover {
     gap: 12px;
+    color: #1a3a6b;
 }
 
 .blog-cta-home {
     text-align: center;
     margin-top: var(--spacing-2xl);
+}
+
+.blog-cta-home .btn-outline {
+    background: transparent;
+    color: #0A1E3F;
+    border-color: #0A1E3F;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.blog-cta-home .btn-outline:hover {
+    background: #0A1E3F;
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(10, 30, 63, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -1653,11 +1669,13 @@ a:hover {
 
 .footer-newsletter-inline .newsletter-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
+    align-items: stretch;
 }
 
 .footer-newsletter-inline .newsletter-form input {
+    flex: 1;
     padding: 0.6rem 0.8rem;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 6px;
@@ -1671,7 +1689,7 @@ a:hover {
 }
 
 .footer-newsletter-inline .newsletter-form button {
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1.2rem;
     background: var(--primary);
     color: var(--base-dark);
     border: none;
@@ -1680,11 +1698,19 @@ a:hover {
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .footer-newsletter-inline .newsletter-form button:hover {
     background: var(--accent);
     transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .footer-newsletter-inline .newsletter-form {
+        flex-direction: column;
+    }
 }
 
 .newsletter-form {
