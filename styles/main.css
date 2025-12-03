@@ -1041,6 +1041,8 @@ a:hover {
     scroll-snap-type: x mandatory;
     scroll-padding: calc(50vw - 150px); /* center alignment padding */
     position: relative; /* needed for scrollbar-cover pseudo element */
+    padding-bottom: 26px; /* create space so overlay can cover scrollbar without clipping content */
+    margin-bottom: -26px; /* pull up the extra space so layout doesn't shift */
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional (scroll wrapper) */
@@ -1059,10 +1061,16 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 18px; /* covers the scrollbar track area */
-    background: var(--base-dark); /* match testimonials background */
+    height: 26px; /* covers the scrollbar track area */
+    background: var(--site-bg, var(--base-dark, #ffffff)); /* match testimonials background or fallback */
     pointer-events: none;
     z-index: 4;
+}
+
+/* Clip any scrollbar by making the container hide overflow while inner keeps scrolling */
+.testimonials-container {
+    position: relative;
+    overflow: hidden; /* ensure scrollbars are not visible outside the container */
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional */
