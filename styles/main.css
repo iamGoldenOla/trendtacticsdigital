@@ -1048,7 +1048,7 @@ a:hover {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: visible; /* allow cards to be visible */
+    overflow: hidden; /* hide overflow to prevent scrollbar */
 }
 
 .testimonials-scroll {
@@ -1063,6 +1063,7 @@ a:hover {
     padding-bottom: 26px; /* create space so overlay can cover scrollbar without clipping content */
     margin-bottom: -26px; /* pull up the extra space so layout doesn't shift */
     width: 100%;
+    display: block;
 }
 
 /* Hide horizontal scrollbar but keep scrolling functional (scroll wrapper) */
@@ -1087,11 +1088,7 @@ a:hover {
     z-index: 4;
 }
 
-/* Clip any scrollbar by making the container hide overflow while inner keeps scrolling */
-.testimonials-container {
-    position: relative;
-    overflow: hidden; /* ensure scrollbars are not visible outside the container */
-}
+/* Ensure container properly hides scrollbars */
 
 /* Hide horizontal scrollbar but keep scrolling functional */
 .testimonials-container::-webkit-scrollbar {
