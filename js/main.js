@@ -69,16 +69,24 @@ function initializeSmoothScrolling() {
 // ===== CONTENT LOADING =====
 async function loadContent() {
     try {
+        console.log('Attempting to load content from ./data/content.json');
         const response = await fetch('./data/content.json');
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        console.log('Loaded data:', data);
         
         loadBrands(data.brands);
         loadServices(data.services);
         loadTestimonials(data.testimonials);
         loadFooterLinks(data.footer);
         loadSocialLinks(data.social);
+        loadLatestBlogPosts();
         
     } catch (error) {
+        console.error('Error loading content:', error);
         console.log('Using fallback content data');
         loadFallbackContent();
     }
@@ -524,5 +532,55 @@ function updateTestimonials() {
             card.style.transform = 'scale(0.95)';
             card.style.zIndex = '1';
         }
+    });
+}
+
+// ===== LATEST BLOG POSTS SECTION =====
+async function loadLatestBlogPosts() {
+    const blogGrid = document.getElementById('blog-grid-home');
+    if (!blogGrid) return;
+    
+    try {
+        const response = await fetch('./data/blog-posts.json');
+        if (!response.ok) throw new Error('Failed to load blog posts');
+        const data = await response.json();
+        
+        // Get latest 3 posts (excluding featured)
+        const latestPosts = data.posts
+            .filter(post => !post.featured)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3);
+        
+        blogGrid.innerHTML = latestPosts.map(post => `
+            <article class="blog-card-home">
+                <div class="blog-card-image-home">
+                    <img src="${post.image}" alt="${post.title}" loading="lazy">
+                    <div class="category-badge-home">${post.category}</div>
+                </div>
+                <div class="blog-card-content-home">
+                    <div class="post-meta-home">
+                        <span class="date-home">${formatBlogDate(post.date)}</span>
+                        <span class="read-time-home">${post.readTime || '5 min read'}</span>
+                    </div>
+                    <h3><a href="blog-post.html?id=${post.id}">${post.title}</a></h3>
+                    <p>${post.excerpt}</p>
+                    <div class="blog-card-footer-home">
+                        <a href="blog-post.html?id=${post.id}" class="read-more-home">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+        blogGrid.innerHTML = '<p>Unable to load blog posts at this time.</p>';
+    }
+}
+
+function formatBlogDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
     });
 } 

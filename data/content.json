@@ -1,0 +1,147 @@
+{
+  "brands": [
+    {
+      "name": "Gabson",
+      "logo": "./images/Gabson -PICP.jpg"
+    },
+    {
+      "name": "GREENTICK",
+      "logo": "./images/GREENTICK - My Presi.jpg"
+    },
+    {
+      "name": "KEVTOS CATERING",
+      "logo": "./images/KEVTOS CATERING.jpg"
+    },
+    {
+      "name": "Realtreasure",
+      "logo": "./images/Realtreasure.jpg"
+    }
+  ],
+  "services": [
+    {
+      "id": "web-design",
+      "title": "Web Design & Development",
+      "description": "Custom websites that convert visitors into customers.",
+      "icon": "fas fa-code",
+      "features": [
+        "Responsive Design",
+        "SEO Optimization",
+        "Fast Loading",
+        "Custom CMS",
+        "E-commerce Integration",
+        "Performance Analytics",
+        "Accessibility Compliance",
+        "Ongoing Support"
+      ],
+      "price": "From $2,500"
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "description": "Strategic marketing campaigns that drive real results.",
+      "icon": "fas fa-chart-line",
+      "features": [
+        "SEO & PPC",
+        "Social Media",
+        "Content Marketing",
+        "Analytics",
+        "Email Campaigns",
+        "Conversion Optimization",
+        "Brand Awareness",
+        "Influencer Partnerships"
+      ],
+      "price": "From $1,500"
+    },
+    {
+      "id": "ai-solutions",
+      "title": "AI Solutions",
+      "description": "Cutting-edge AI tools to automate and optimize your business.",
+      "icon": "fas fa-robot",
+      "features": [
+        "Chatbots",
+        "Data Analysis",
+        "Process Automation",
+        "Predictive Analytics",
+        "Natural Language Processing",
+        "Customer Segmentation",
+        "Workflow Automation",
+        "24/7 Support Bots"
+      ],
+      "price": "From $3,000"
+    },
+    {
+      "id": "brand-strategy",
+      "title": "Brand Strategy",
+      "description": "Comprehensive branding that builds connections and drives loyalty.",
+      "icon": "fas fa-palette",
+      "features": [
+        "Brand Identity Design",
+        "Market Positioning",
+        "Visual Guidelines",
+        "Messaging Framework",
+        "Rebranding"
+      ],
+      "price": "From $2,000"
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce Solutions",
+      "description": "Complete e-commerce platforms that drive sales and provide exceptional user experience.",
+      "icon": "fas fa-shopping-cart",
+      "features": [
+        "Custom Store Design",
+        "Payment Integration",
+        "Product Management",
+        "Analytics & Reporting",
+        "Mobile Optimization"
+      ],
+      "price": "From $5,000"
+    },
+    {
+      "id": "consulting",
+      "title": "Consulting & Strategy",
+      "description": "Expert guidance for informed decisions and digital transformation.",
+      "icon": "fas fa-lightbulb",
+      "features": [
+        "Digital Audits",
+        "Growth Strategy",
+        "Team Training",
+        "Performance Reviews",
+        "Ongoing Support"
+      ],
+      "price": "From $500/hour"
+    }
+  ],
+  "testimonials": [
+    {
+      "content": "Trendtactics transformed our online presence completely. Our website now converts 3x better and our digital marketing campaigns are delivering incredible ROI. The team is professional, creative, and truly understands our business needs.",
+      "author": {
+        "name": "Sarah Johnson",
+        "position": "CEO",
+        "company": "TechStart Inc.",
+        "avatar": "./images/testimonials/sarah.jpg"
+      },
+      "rating": 5
+    },
+    {
+      "content": "The AI solutions they implemented saved us 40 hours per week and improved our customer satisfaction by 60%. The chatbot they built handles 80% of our customer inquiries automatically. Incredible ROI!",
+      "author": {
+        "name": "Michael Chen",
+        "position": "Operations Director",
+        "company": "Global Solutions",
+        "avatar": "./images/testimonials/michael.jpg"
+      },
+      "rating": 5
+    },
+    {
+      "content": "Professional, creative, and results-driven. Exactly what we needed for our growth phase. Their strategic approach to digital marketing helped us scale from startup to market leader in just 18 months.",
+      "author": {
+        "name": "Emily Rodriguez",
+        "position": "Marketing Manager",
+        "company": "Innovate Labs",
+        "avatar": "./images/testimonials/emily.jpg"
+      },
+      "rating": 5
+    }
+  ]
+}
