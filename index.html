@@ -173,7 +173,7 @@
                         </p>
                         <div class="about-stats">
                             <div class="stat-item">
-                                <div class="stat-number" data-target="500">0</div>
+                                <div class="stat-number" data-target="50">0</div>
                                 <div class="stat-label">Projects Delivered</div>
                             </div>
                             <div class="stat-item">
@@ -181,11 +181,11 @@
                                 <div class="stat-label">Client Satisfaction %</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number" data-target="10">0</div>
+                                <div class="stat-number" data-target="3">0</div>
                                 <div class="stat-label">Years Experience</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number" data-target="300">0</div>
+                                <div class="stat-number" data-target="200">0</div>
                                 <div class="stat-label">Average ROI Increase %</div>
                             </div>
                         </div>
@@ -837,10 +837,10 @@
         const timer = setInterval(() => {
             start += increment;
             if (start >= target) {
-                element.textContent = target + (target === 98 ? '%' : target === 300 ? '%' : '+');
+                element.textContent = target + (target === 98 ? '%' : target === 200 ? '%' : '+');
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(start) + (target === 98 ? '%' : target === 300 ? '%' : '+');
+                element.textContent = Math.floor(start) + (target === 98 ? '%' : target === 200 ? '%' : '+');
             }
         }, 16);
     }
