@@ -455,7 +455,7 @@
 
 /* Services Overview Section */
 .services-overview {
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-2xl) 0;
     background: var(--base-dark);
     color: var(--white);
 }
