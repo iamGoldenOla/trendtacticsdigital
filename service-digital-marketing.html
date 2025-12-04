@@ -257,7 +257,7 @@
         </section>
 
         <!-- Service Details with 3D Cards -->
-        <section class="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
+        <section class="services-detail" id="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
             <div class="container">
                 <div style="max-width: 1200px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 4rem;">
@@ -537,6 +537,47 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    
+    // Handle anchor links with offset for fixed navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle anchor links on page load
+        if (window.location.hash) {
+            setTimeout(function() {
+                const hash = window.location.hash.substring(1);
+                const element = document.getElementById(hash);
+                if (element) {
+                    const offset = 100; // Account for fixed navbar
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+        
+        // Handle anchor link clicks
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const offset = 100; // Account for fixed navbar
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
     </script>
     <script src="./js/main.js"></script>
 </body>
