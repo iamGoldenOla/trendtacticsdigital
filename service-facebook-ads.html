@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Services - Trendtactics Digital</title>
-    <meta name="description" content="Professional web development services. Custom, responsive websites built for performance, accessibility, and conversion. Get your quote today.">
+    <title>Facebook Ads Services - Trendtactics Digital</title>
+    <meta name="description" content="Professional Facebook and Instagram advertising services. Targeted ad campaigns that reach your ideal customers and drive conversions.">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,105 +48,43 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
         }
-        .services-3d-grid {
+        .service-content-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        .service-content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .service-3d-card {
+        .service-feature-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.1),
-                0 8px 24px rgba(0, 255, 255, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
         }
-        .service-3d-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #00FFFF, #0A1E3F);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+        .service-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15), 0 15px 40px rgba(0, 255, 255, 0.2);
         }
-        .service-3d-card:hover {
-            transform: translateY(-12px) rotateX(5deg);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.15),
-                0 15px 40px rgba(0, 255, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 1);
-        }
-        .service-3d-card:hover::before {
-            transform: scaleX(1);
-        }
-        .service-3d-card-icon {
+        .service-feature-icon {
             font-size: 3rem;
             color: #00FFFF;
             margin-bottom: 1.5rem;
-            display: inline-block;
-            transition: transform 0.4s ease;
         }
-        .service-3d-card:hover .service-3d-card-icon {
-            transform: scale(1.1) rotateY(15deg);
-        }
-        .service-3d-card h3 {
+        .service-feature-card h3 {
             color: #0A1E3F;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-        .service-3d-card p {
+        .service-feature-card p {
             color: #4a5568;
             line-height: 1.7;
             font-size: 1rem;
-        }
-        .quote-cta {
-            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
-            padding: 4rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .quote-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .quote-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        .quote-cta h3 {
-            color: #ffffff;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .quote-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
         }
         .faq-section {
             background: #f9f9f9;
@@ -250,11 +188,11 @@
             <div class="container">
                 <div class="hero-content" style="text-align: center; position: relative; z-index: 2;">
                     <div class="service-hero-icon">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fab fa-facebook"></i>
                     </div>
-                    <h1>Web Development Services</h1>
+                    <h1>Facebook Ads Services</h1>
                     <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
-                        Custom, responsive websites built for performance, accessibility, and conversion. We build fast, reliable websites that engage users and drive growth.
+                        Targeted Facebook and Instagram ad campaigns that reach your ideal customers and drive conversions. We optimize for maximum ROI and engagement.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="contact.html" class="btn btn-primary btn-large">Get Free Quote</a>
@@ -264,70 +202,62 @@
             </div>
         </section>
 
-        <!-- Service Details with 3D Cards -->
-        <section class="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
+        <!-- Service Content Section -->
+        <section class="service-content-section">
             <div class="container">
                 <div style="max-width: 1200px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 4rem;">
                         <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
-                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive web development solutions tailored to your business needs</p>
+                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive Facebook and Instagram advertising solutions tailored to your business needs</p>
                     </div>
                     
-                    <div class="services-3d-grid">
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
+                    <div class="service-content-grid">
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Audience Targeting</h3>
+                            <p>Precise audience targeting using Facebook's advanced targeting options. We create custom audiences, lookalike audiences, and retargeting campaigns to reach your ideal customers.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-ad"></i>
+                            </div>
+                            <h3>Ad Creative Design</h3>
+                            <p>Compelling ad creatives including images, videos, and carousel ads that capture attention and drive clicks. We design ads that align with your brand and resonate with your target audience.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Campaign Optimization</h3>
+                            <p>Continuous campaign optimization to improve performance and ROI. We monitor campaigns daily, test different ad variations, and adjust targeting and budgets for maximum results.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3>Responsive Web Design</h3>
-                            <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops. We ensure your website looks stunning and functions flawlessly across every screen size.</p>
+                            <h3>Instagram Ads</h3>
+                            <p>Leverage Instagram's visual platform with Stories ads, Feed ads, and Reels ads. We create Instagram campaigns that drive engagement and conversions on this highly visual platform.</p>
                         </div>
                         
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3>SEO Optimization</h3>
-                            <p>Built-in SEO best practices to help your website rank higher in search engines. We optimize every aspect from meta tags to site structure for maximum visibility.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h3>Fast Loading Times</h3>
-                            <p>Optimized for speed with fast loading times that improve user experience and SEO rankings. We use cutting-edge optimization techniques to ensure lightning-fast performance.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-cog"></i>
-                            </div>
-                            <h3>Custom CMS</h3>
-                            <p>Easy-to-use content management systems that let you update your website without technical knowledge. We provide training and ongoing support to ensure you're comfortable managing your site.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
                                 <i class="fas fa-shopping-cart"></i>
                             </div>
-                            <h3>E-commerce Integration</h3>
-                            <p>Full e-commerce solutions with secure payment processing and inventory management. We build online stores that convert visitors into customers and drive sales.</p>
+                            <h3>Conversion Tracking</h3>
+                            <p>Set up and monitor conversion tracking to measure the true ROI of your campaigns. We track website visits, form submissions, purchases, and other key actions to optimize for conversions.</p>
                         </div>
                         
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-headset"></i>
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-file-alt"></i>
                             </div>
-                            <h3>Ongoing Support</h3>
-                            <p>Continuous maintenance, updates, and support to keep your website running smoothly. We're here for you long after launch to ensure your site stays current and secure.</p>
-                        </div>
-                    </div>
-
-                    <div class="quote-cta">
-                        <div class="quote-cta-content">
-                            <h3>Ready to Get Started?</h3>
-                            <p>Get a custom quote tailored to your project requirements. Our team will work with you to create the perfect solution for your business.</p>
-                            <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Request a Free Quote</a>
+                            <h3>Performance Reporting</h3>
+                            <p>Detailed monthly reports with campaign performance metrics, insights, and recommendations. You'll always know how your campaigns are performing and what we're doing to improve them.</p>
                         </div>
                     </div>
                 </div>
@@ -340,87 +270,67 @@
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 3rem;">
                         <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
-                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our web development services</p>
+                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our Facebook Ads services</p>
                     </div>
                     
                     <div class="faq-grid" id="faq-grid">
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>How long does it take to build a website?</h3>
+                                <h3>How much should I budget for Facebook Ads?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Typically, a standard website takes 2-4 weeks, while more complex projects with e-commerce or custom features may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific requirements.</p>
+                                <p>Facebook ad budgets vary based on your goals and industry. We typically recommend starting with a minimum of $500-1000 per month for testing and optimization. Larger budgets allow for better scaling and results. We'll help you determine the right budget based on your objectives.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you provide hosting and domain services?</h3>
+                                <h3>How long does it take to see results from Facebook Ads?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! We can help you set up hosting and register your domain name. We work with reliable hosting providers and can manage everything for you, or guide you through the process if you prefer to manage it yourself.</p>
+                                <p>You can start seeing results within days of launching campaigns. However, it typically takes 1-2 weeks for Facebook's algorithm to optimize and find your best-performing audiences. We continuously optimize campaigns to improve performance over time.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Will my website be mobile-friendly?</h3>
+                                <h3>What types of Facebook Ads do you create?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Absolutely! All our websites are built with a mobile-first approach and are fully responsive. Your website will look and function perfectly on smartphones, tablets, and desktops.</p>
+                                <p>We create all types of Facebook and Instagram ads including image ads, video ads, carousel ads, collection ads, Stories ads, and Reels ads. We choose the best ad format based on your goals and what resonates with your target audience.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Can I update the website content myself?</h3>
+                                <h3>Do you manage Instagram Ads as well?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! We build websites with user-friendly content management systems (CMS) that allow you to easily update text, images, and content without any technical knowledge. We also provide training on how to use the CMS.</p>
+                                <p>Yes! Since Facebook and Instagram are part of the same advertising platform, we manage ads on both platforms. We can run campaigns on Facebook, Instagram, or both, depending on where your target audience is most active.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you provide ongoing maintenance?</h3>
+                                <h3>How do you target the right audience?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes, we offer ongoing maintenance packages that include security updates, backups, performance monitoring, and technical support. This ensures your website stays secure and up-to-date.</p>
+                                <p>We use Facebook's advanced targeting options including demographics, interests, behaviors, and custom audiences. We also create lookalike audiences based on your existing customers and use retargeting to reach people who have visited your website or engaged with your brand.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>What technologies do you use?</h3>
+                                <h3>What kind of ROI can I expect from Facebook Ads?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>We use modern web technologies including HTML5, CSS3, JavaScript, React, and various CMS platforms like WordPress, custom PHP, and Node.js. We choose the best technology stack based on your project requirements.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Will my website be SEO optimized?</h3>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes! SEO optimization is built into every website we create. This includes proper meta tags, structured data, fast loading times, mobile optimization, and clean code structure - all essential for good search engine rankings.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you redesign existing websites?</h3>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Absolutely! We can redesign your existing website to give it a modern look, improve functionality, and enhance user experience. We can work with your current content or help create new content.</p>
+                                <p>ROI varies by industry and campaign goals. On average, our clients see 3-5x ROAS (Return on Ad Spend) for e-commerce campaigns and strong lead generation results for B2B campaigns. We'll set realistic expectations based on your specific business and goals.</p>
                             </div>
                         </div>
                     </div>
@@ -431,8 +341,8 @@
         <!-- CTA Section -->
         <section class="cta" style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
             <div class="container">
-                <h2 class="cta-title" style="color: #ffffff;">Ready to Build Your Website?</h2>
-                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's discuss your project and create a website that drives results for your business.</p>
+                <h2 class="cta-title" style="color: #ffffff;">Ready to Drive Results with Facebook Ads?</h2>
+                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's create Facebook and Instagram ad campaigns that reach your ideal customers and drive conversions for your business.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
                     <a href="portfolio.html" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
@@ -476,9 +386,9 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="service-web-development.html">Web Development</a></li>
-                        <li><a href="service-app-development.html">App Development</a></li>
-                        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="services.html#web-design">Web Development</a></li>
+                        <li><a href="services.html">App Development</a></li>
+                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
                     </ul>
                 </div>
                 
@@ -504,6 +414,7 @@
                         <li><a href="academy.html">Online Courses</a></li>
                         <li><a href="contact.html">Free Consultation</a></li>
                     </ul>
+                    <!-- Newsletter Subscribe Below Resources -->
                     <div class="footer-newsletter-inline">
                         <h4>Stay Updated</h4>
                         <p>Get insights delivered to your inbox.</p>
@@ -549,3 +460,4 @@
     <script src="./js/main.js"></script>
 </body>
 </html>
+

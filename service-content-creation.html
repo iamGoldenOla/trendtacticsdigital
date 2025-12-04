@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Services - Trendtactics Digital</title>
-    <meta name="description" content="Professional web development services. Custom, responsive websites built for performance, accessibility, and conversion. Get your quote today.">
+    <title>Content Creation Services - Trendtactics Digital</title>
+    <meta name="description" content="Professional content creation services. High-quality content including blog posts, articles, videos, and social media content that engages your audience.">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,105 +48,43 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
         }
-        .services-3d-grid {
+        .service-content-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        .service-content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .service-3d-card {
+        .service-feature-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.1),
-                0 8px 24px rgba(0, 255, 255, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
         }
-        .service-3d-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #00FFFF, #0A1E3F);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+        .service-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15), 0 15px 40px rgba(0, 255, 255, 0.2);
         }
-        .service-3d-card:hover {
-            transform: translateY(-12px) rotateX(5deg);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.15),
-                0 15px 40px rgba(0, 255, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 1);
-        }
-        .service-3d-card:hover::before {
-            transform: scaleX(1);
-        }
-        .service-3d-card-icon {
+        .service-feature-icon {
             font-size: 3rem;
             color: #00FFFF;
             margin-bottom: 1.5rem;
-            display: inline-block;
-            transition: transform 0.4s ease;
         }
-        .service-3d-card:hover .service-3d-card-icon {
-            transform: scale(1.1) rotateY(15deg);
-        }
-        .service-3d-card h3 {
+        .service-feature-card h3 {
             color: #0A1E3F;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-        .service-3d-card p {
+        .service-feature-card p {
             color: #4a5568;
             line-height: 1.7;
             font-size: 1rem;
-        }
-        .quote-cta {
-            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
-            padding: 4rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .quote-cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .quote-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        .quote-cta h3 {
-            color: #ffffff;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .quote-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
         }
         .faq-section {
             background: #f9f9f9;
@@ -250,11 +188,11 @@
             <div class="container">
                 <div class="hero-content" style="text-align: center; position: relative; z-index: 2;">
                     <div class="service-hero-icon">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-pen-nib"></i>
                     </div>
-                    <h1>Web Development Services</h1>
+                    <h1>Content Creation Services</h1>
                     <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
-                        Custom, responsive websites built for performance, accessibility, and conversion. We build fast, reliable websites that engage users and drive growth.
+                        High-quality content that engages your audience and drives conversions. We create blog posts, articles, videos, and social media content that resonates with your target audience.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="contact.html" class="btn btn-primary btn-large">Get Free Quote</a>
@@ -264,70 +202,62 @@
             </div>
         </section>
 
-        <!-- Service Details with 3D Cards -->
-        <section class="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
+        <!-- Service Content Section -->
+        <section class="service-content-section">
             <div class="container">
                 <div style="max-width: 1200px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 4rem;">
                         <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
-                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive web development solutions tailored to your business needs</p>
+                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive content creation solutions tailored to your business needs</p>
                     </div>
                     
-                    <div class="services-3d-grid">
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-mobile-alt"></i>
+                    <div class="service-content-grid">
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-blog"></i>
                             </div>
-                            <h3>Responsive Web Design</h3>
-                            <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops. We ensure your website looks stunning and functions flawlessly across every screen size.</p>
+                            <h3>Blog Posts & Articles</h3>
+                            <p>Engaging, SEO-optimized blog posts and articles that establish your authority and drive organic traffic. We research topics, write compelling content, and optimize for search engines.</p>
                         </div>
                         
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>Video Content</h3>
+                            <p>Professional video content including explainer videos, product demos, testimonials, and social media videos. We create videos that tell your story and engage your audience.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <h3>Social Media Content</h3>
+                            <p>Eye-catching social media posts, graphics, and captions that drive engagement. We create content calendars and design visuals that align with your brand and resonate with your audience.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Email Content</h3>
+                            <p>Compelling email content that drives opens, clicks, and conversions. We write subject lines, body copy, and CTAs that motivate your subscribers to take action.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Infographics & Visuals</h3>
+                            <p>Data-driven infographics and visual content that make complex information easy to understand. We design visuals that are shareable and memorable.</p>
+                        </div>
+                        
+                        <div class="service-feature-card">
+                            <div class="service-feature-icon">
                                 <i class="fas fa-search"></i>
                             </div>
-                            <h3>SEO Optimization</h3>
-                            <p>Built-in SEO best practices to help your website rank higher in search engines. We optimize every aspect from meta tags to site structure for maximum visibility.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h3>Fast Loading Times</h3>
-                            <p>Optimized for speed with fast loading times that improve user experience and SEO rankings. We use cutting-edge optimization techniques to ensure lightning-fast performance.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-cog"></i>
-                            </div>
-                            <h3>Custom CMS</h3>
-                            <p>Easy-to-use content management systems that let you update your website without technical knowledge. We provide training and ongoing support to ensure you're comfortable managing your site.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <h3>E-commerce Integration</h3>
-                            <p>Full e-commerce solutions with secure payment processing and inventory management. We build online stores that convert visitors into customers and drive sales.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <h3>Ongoing Support</h3>
-                            <p>Continuous maintenance, updates, and support to keep your website running smoothly. We're here for you long after launch to ensure your site stays current and secure.</p>
-                        </div>
-                    </div>
-
-                    <div class="quote-cta">
-                        <div class="quote-cta-content">
-                            <h3>Ready to Get Started?</h3>
-                            <p>Get a custom quote tailored to your project requirements. Our team will work with you to create the perfect solution for your business.</p>
-                            <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Request a Free Quote</a>
+                            <h3>SEO-Optimized Content</h3>
+                            <p>All content is optimized for search engines to improve your visibility and rankings. We conduct keyword research and create content that ranks while providing value to readers.</p>
                         </div>
                     </div>
                 </div>
@@ -340,87 +270,67 @@
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 3rem;">
                         <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
-                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our web development services</p>
+                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our content creation services</p>
                     </div>
                     
                     <div class="faq-grid" id="faq-grid">
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>How long does it take to build a website?</h3>
+                                <h3>What types of content do you create?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Typically, a standard website takes 2-4 weeks, while more complex projects with e-commerce or custom features may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific requirements.</p>
+                                <p>We create a wide variety of content including blog posts, articles, social media posts, email content, video scripts, infographics, case studies, whitepapers, and more. All content is tailored to your brand voice and optimized for your target audience.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you provide hosting and domain services?</h3>
+                                <h3>Do you provide content for all industries?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! We can help you set up hosting and register your domain name. We work with reliable hosting providers and can manage everything for you, or guide you through the process if you prefer to manage it yourself.</p>
+                                <p>Yes! We create content for businesses across all industries. Our team includes writers with expertise in various sectors, and we conduct thorough research to ensure accurate, industry-specific content that resonates with your audience.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Will my website be mobile-friendly?</h3>
+                                <h3>How do you ensure content quality?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Absolutely! All our websites are built with a mobile-first approach and are fully responsive. Your website will look and function perfectly on smartphones, tablets, and desktops.</p>
+                                <p>We have a rigorous quality control process that includes research, writing, editing, proofreading, and SEO optimization. All content goes through multiple review stages to ensure accuracy, clarity, and alignment with your brand voice.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Can I update the website content myself?</h3>
+                                <h3>Can you create video content?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! We build websites with user-friendly content management systems (CMS) that allow you to easily update text, images, and content without any technical knowledge. We also provide training on how to use the CMS.</p>
+                                <p>Yes! We create video content including explainer videos, product demos, testimonials, social media videos, and more. We handle scriptwriting, production planning, and can coordinate with videographers for full production.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you provide ongoing maintenance?</h3>
+                                <h3>How long does it take to create content?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes, we offer ongoing maintenance packages that include security updates, backups, performance monitoring, and technical support. This ensures your website stays secure and up-to-date.</p>
+                                <p>Content creation timelines vary by type and complexity. Blog posts typically take 3-5 business days, while video content may take 1-2 weeks. We'll provide specific timelines based on your project requirements and can accommodate rush orders when needed.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>What technologies do you use?</h3>
+                                <h3>Do you optimize content for SEO?</h3>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p>We use modern web technologies including HTML5, CSS3, JavaScript, React, and various CMS platforms like WordPress, custom PHP, and Node.js. We choose the best technology stack based on your project requirements.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Will my website be SEO optimized?</h3>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes! SEO optimization is built into every website we create. This includes proper meta tags, structured data, fast loading times, mobile optimization, and clean code structure - all essential for good search engine rankings.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>Do you redesign existing websites?</h3>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Absolutely! We can redesign your existing website to give it a modern look, improve functionality, and enhance user experience. We can work with your current content or help create new content.</p>
+                                <p>Absolutely! All our content is SEO-optimized. We conduct keyword research, optimize headlines and meta descriptions, use proper heading structures, and create content that both ranks well in search engines and provides value to readers.</p>
                             </div>
                         </div>
                     </div>
@@ -431,8 +341,8 @@
         <!-- CTA Section -->
         <section class="cta" style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
             <div class="container">
-                <h2 class="cta-title" style="color: #ffffff;">Ready to Build Your Website?</h2>
-                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's discuss your project and create a website that drives results for your business.</p>
+                <h2 class="cta-title" style="color: #ffffff;">Ready to Create Compelling Content?</h2>
+                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's create content that engages your audience, builds your brand, and drives conversions for your business.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
                     <a href="portfolio.html" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
@@ -476,9 +386,9 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="service-web-development.html">Web Development</a></li>
-                        <li><a href="service-app-development.html">App Development</a></li>
-                        <li><a href="service-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="services.html#web-design">Web Development</a></li>
+                        <li><a href="services.html">App Development</a></li>
+                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
                     </ul>
                 </div>
                 
@@ -504,6 +414,7 @@
                         <li><a href="academy.html">Online Courses</a></li>
                         <li><a href="contact.html">Free Consultation</a></li>
                     </ul>
+                    <!-- Newsletter Subscribe Below Resources -->
                     <div class="footer-newsletter-inline">
                         <h4>Stay Updated</h4>
                         <p>Get insights delivered to your inbox.</p>
@@ -549,3 +460,4 @@
     <script src="./js/main.js"></script>
 </body>
 </html>
+
