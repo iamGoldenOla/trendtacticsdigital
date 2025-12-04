@@ -658,4 +658,80 @@ function initServiceCardAnimations() {
 // Initialize service card animations when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initServiceCardAnimations();
-}); 
+    initServicesTestimonialsSlider();
+});
+
+// Services Testimonials Slider
+function initServicesTestimonialsSlider() {
+    const slider = document.getElementById('services-testimonials-slider');
+    const prevBtn = document.getElementById('services-testimonial-prev');
+    const nextBtn = document.getElementById('services-testimonial-next');
+    const dotsContainer = document.getElementById('services-testimonial-dots');
+    
+    if (!slider || !prevBtn || !nextBtn || !dotsContainer) return;
+    
+    const slides = slider.querySelectorAll('.testimonial-slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('testimonial-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update dots
+        dotsContainer.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Auto-play
+    let autoplayInterval = setInterval(nextSlide, 5000);
+    
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    slider.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    });
+}
+
+// FAQ Toggle Function
+function toggleServicesFAQ(element) {
+    const faqItem = element.closest('.faq-item');
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+} 
