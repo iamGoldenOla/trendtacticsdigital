@@ -494,66 +494,6 @@ function initServiceShowcase() {
     
     const digitalMarketingSubs = document.getElementById('digital-marketing-subs');
     
-    serviceItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const serviceType = this.getAttribute('data-service');
-            
-            // Pause auto-scroll when user clicks
-            if (autoScrollInterval) {
-                clearInterval(autoScrollInterval);
-            }
-            
-            // Remove active class from all items
-            serviceItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-            
-            // Scroll to center the clicked item
-            if (serviceIconsContainer) {
-                const cardWidth = this.offsetWidth + 24;
-                const containerWidth = serviceIconsContainer.clientWidth;
-                const index = Array.from(serviceItems).indexOf(this);
-                const scrollPosition = (index * cardWidth) - (containerWidth / 2) + (cardWidth / 2);
-                
-                serviceIconsContainer.scrollTo({
-                    left: Math.max(0, scrollPosition),
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Show/hide Digital Marketing sub-services
-            if (digitalMarketingSubs) {
-                if (serviceType === 'digital-marketing') {
-                    digitalMarketingSubs.classList.add('active');
-                } else {
-                    digitalMarketingSubs.classList.remove('active');
-                }
-            }
-            
-            // Update description
-            if (serviceDescriptions[serviceType]) {
-                serviceDesc.style.opacity = '0';
-                setTimeout(() => {
-                    serviceDesc.textContent = serviceDescriptions[serviceType];
-                    serviceDesc.style.opacity = '1';
-                }, 200);
-            }
-            
-            // Resume auto-scroll after 5 seconds
-            setTimeout(() => {
-                if (serviceIconsContainer && !autoScrollInterval) {
-                    autoScrollInterval = setInterval(autoScrollServices, 3000);
-                }
-            }, 5000);
-        });
-    });
-    
-    // Auto-scroll service icons every 3 seconds
-    let currentScrollIndex = 0;
-    const serviceIconsContainer = document.querySelector('.service-icons');
-    let autoScrollInterval = null;
-    
     function autoScrollServices() {
         if (serviceIconsContainer && serviceItems.length > 0) {
             // Move to next service
