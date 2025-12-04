@@ -59,6 +59,32 @@ function initializeNavigation() {
             navbar.classList.remove('scrolled');
         }
     });
+
+    // Dropdown menu functionality
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+    dropdownItems.forEach(item => {
+        const dropdownLink = item.querySelector('.nav-link');
+        const dropdownMenu = item.querySelector('.dropdown-menu');
+        
+        if (dropdownLink && dropdownMenu) {
+            // Toggle dropdown on click (for mobile)
+            dropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!item.contains(e.target) && window.innerWidth <= 768) {
+                    item.classList.remove('active');
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        }
+    });
 }
 
 // ===== SMOOTH SCROLLING =====
