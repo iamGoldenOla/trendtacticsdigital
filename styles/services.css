@@ -147,12 +147,16 @@
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
+.service-icons-wrapper {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+}
+
 .service-icons {
     display: flex;
     justify-content: flex-start;
     flex-wrap: nowrap;
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: var(--spacing-lg) var(--spacing-md);
@@ -222,26 +226,172 @@
     text-align: center;
 }
 
-.service-sub-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: var(--spacing-sm);
-    justify-content: center;
+/* Expandable Digital Marketing Card */
+.service-icon-item-expandable {
+    position: relative;
 }
 
-.service-sub-items .sub-item {
+.expand-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    border-radius: var(--radius-sm);
     color: var(--primary);
-    font-weight: 500;
-}
     transition: all var(--transition-normal);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+}
+
+.service-icon-item-expandable.active .expand-indicator {
+    background: var(--primary);
+    color: var(--base-dark);
+    transform: rotate(180deg);
+}
+
+.service-icon-item-expandable.active .expand-indicator i {
+    transform: rotate(180deg);
+}
+
+/* Digital Marketing Sub-Services */
+.digital-marketing-subs {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, margin 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+    position: relative;
+}
+
+.digital-marketing-subs.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: var(--spacing-2xl);
+}
+
+.sub-service-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.connector-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--primary) 0%, transparent 100%);
+    margin-bottom: var(--spacing-sm);
+}
+
+.connector-arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1rem;
+    animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.sub-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.sub-service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: linear-gradient(145deg, rgba(10, 30, 63, 0.9) 0%, rgba(22, 36, 71, 0.9) 100%);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.sub-service-card:hover::before {
+    left: 100%;
+}
+
+.sub-service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(0, 255, 255, 0.1) 0%, rgba(22, 36, 71, 0.9) 100%);
+}
+
+.sub-service-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    transition: all var(--transition-normal);
+}
+
+.sub-service-card:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--white);
+}
+
+.sub-service-card span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+}
+
+/* Connection line from main card to sub-services */
+.service-icon-item-expandable.active::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--primary);
+    opacity: 0;
+    animation: draw-line 0.5s ease forwards 0.3s;
+}
+
+@keyframes draw-line {
+    to {
+        opacity: 1;
+        height: 20px;
+    }
 }
 
 .service-icon-item:hover span,

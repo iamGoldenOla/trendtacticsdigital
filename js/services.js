@@ -475,7 +475,8 @@ function animateNumber(element, target) {
             current = target;
             clearInterval(timer);
         }
-        element.textContent = Math.floor(current);
+        const suffix = element.getAttribute('data-suffix') || '';
+        element.textContent = Math.floor(current) + suffix;
     }, 20);
 }
 
@@ -483,6 +484,7 @@ function animateNumber(element, target) {
 function initServiceShowcase() {
     const serviceItems = document.querySelectorAll('.service-icon-item');
     const serviceDesc = document.getElementById('service-desc');
+    const digitalMarketingSubs = document.getElementById('digital-marketing-subs');
     
     const serviceDescriptions = {
         'web-development': 'Custom, responsive websites that convert visitors into customers with modern design and seamless user experience. We build fast, reliable websites that engage users and drive growth.',
@@ -490,16 +492,34 @@ function initServiceShowcase() {
         'digital-marketing': 'Comprehensive digital marketing solutions including Email Marketing, Content Creation, Social Media Marketing, and Facebook Ads. Data-driven marketing that moves the needle — from awareness to conversion.'
     };
     
+    const digitalMarketingSubs = document.getElementById('digital-marketing-subs');
+    
     serviceItems.forEach(item => {
         item.addEventListener('click', function() {
+            const serviceType = this.getAttribute('data-service');
+            const isDigitalMarketing = serviceType === 'digital-marketing';
+            const wasActive = this.classList.contains('active');
+            
             // Remove active class from all items
             serviceItems.forEach(i => i.classList.remove('active'));
             
-            // Add active class to clicked item
-            this.classList.add('active');
+            // Toggle active class for clicked item (or add if not Digital Marketing)
+            if (isDigitalMarketing) {
+                this.classList.toggle('active', !wasActive);
+            } else {
+                this.classList.add('active');
+            }
+            
+            // Show/hide Digital Marketing sub-services
+            if (digitalMarketingSubs) {
+                if (isDigitalMarketing && !wasActive) {
+                    digitalMarketingSubs.classList.add('active');
+                } else {
+                    digitalMarketingSubs.classList.remove('active');
+                }
+            }
             
             // Update description
-            const serviceType = this.getAttribute('data-service');
             if (serviceDescriptions[serviceType]) {
                 serviceDesc.textContent = serviceDescriptions[serviceType];
                 
@@ -536,11 +556,20 @@ function initServiceShowcase() {
                     item.classList.toggle('active', index === currentScrollIndex);
                 });
                 
-                // Update description
+                // Update description and sub-services visibility
                 const activeItem = serviceItems[currentScrollIndex];
                 const serviceType = activeItem.getAttribute('data-service');
                 if (serviceDescriptions[serviceType]) {
                     serviceDesc.textContent = serviceDescriptions[serviceType];
+                }
+                
+                // Show/hide Digital Marketing sub-services
+                if (digitalMarketingSubs) {
+                    if (serviceType === 'digital-marketing') {
+                        digitalMarketingSubs.classList.add('active');
+                    } else {
+                        digitalMarketingSubs.classList.remove('active');
+                    }
                 }
             }
         }

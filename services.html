@@ -203,23 +203,49 @@
                 <!-- Service Showcase -->
                 <div class="service-showcase">
                     <div class="showcase-title">Our Core Services</div>
-                    <div class="service-icons">
-                        <div class="service-icon-item active" data-service="web-development">
-                            <i class="fas fa-code"></i>
-                            <span>Web Development</span>
+                    <div class="service-icons-wrapper">
+                        <div class="service-icons">
+                            <div class="service-icon-item active" data-service="web-development">
+                                <i class="fas fa-code"></i>
+                                <span>Web Development</span>
+                            </div>
+                            <div class="service-icon-item" data-service="app-development">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>App Development</span>
+                            </div>
+                            <div class="service-icon-item service-icon-item-expandable" data-service="digital-marketing">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Digital Marketing</span>
+                                <div class="expand-indicator">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="service-icon-item" data-service="app-development">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>App Development</span>
-                        </div>
-                        <div class="service-icon-item" data-service="digital-marketing">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Digital Marketing</span>
-                            <div class="service-sub-items">
-                                <span class="sub-item">Email Marketing</span>
-                                <span class="sub-item">Content Creation</span>
-                                <span class="sub-item">Social Media Marketing</span>
-                                <span class="sub-item">Facebook Ads</span>
+                        <!-- Digital Marketing Sub-Services (appears when Digital Marketing is active) -->
+                        <div class="digital-marketing-subs" id="digital-marketing-subs">
+                            <div class="sub-service-connector">
+                                <div class="connector-line"></div>
+                                <div class="connector-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                            </div>
+                            <div class="sub-services-grid">
+                                <div class="sub-service-card" data-sub="email-marketing">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email Marketing</span>
+                                </div>
+                                <div class="sub-service-card" data-sub="content-creation">
+                                    <i class="fas fa-pen-nib"></i>
+                                    <span>Content Creation</span>
+                                </div>
+                                <div class="sub-service-card" data-sub="social-media">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span>Social Media Marketing</span>
+                                </div>
+                                <div class="sub-service-card" data-sub="facebook-ads">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook Ads</span>
+                                </div>
                             </div>
                         </div>
                     </div>
