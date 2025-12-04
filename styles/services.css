@@ -250,7 +250,6 @@
 .service-icon-item-expandable.active .expand-indicator {
     background: var(--primary);
     color: var(--base-dark);
-    transform: rotate(180deg);
 }
 
 .service-icon-item-expandable.active .expand-indicator i {
