@@ -674,16 +674,6 @@ function initServicesTestimonialsSlider() {
     let currentSlide = 0;
     const totalSlides = slides.length;
     
-    // Set slider width based on number of slides
-    const sliderWrapper = slider.closest('.testimonials-slider-wrapper');
-    if (sliderWrapper) {
-        const wrapperWidth = sliderWrapper.offsetWidth;
-        slider.style.width = `${totalSlides * 100}%`;
-        slides.forEach(slide => {
-            slide.style.width = `${wrapperWidth}px`;
-        });
-    }
-    
     // Create dots
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
@@ -694,22 +684,12 @@ function initServicesTestimonialsSlider() {
     });
     
     function updateSlider() {
-        const sliderWrapper = slider.closest('.testimonials-slider-wrapper');
-        if (sliderWrapper) {
-            const wrapperWidth = sliderWrapper.offsetWidth;
-            const translateX = currentSlide * wrapperWidth;
-            slider.style.transform = `translateX(-${translateX}px)`;
-        }
+        const translateX = currentSlide * 100;
+        slider.style.transform = `translateX(-${translateX}%)`;
         
         // Update dots
         dotsContainer.querySelectorAll('.testimonial-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
-        });
-        
-        // Ensure current slide is visible
-        slides.forEach((slide, index) => {
-            slide.style.opacity = index === currentSlide ? '1' : '0';
-            slide.style.position = index === currentSlide ? 'relative' : 'absolute';
         });
     }
     
@@ -745,19 +725,6 @@ function initServicesTestimonialsSlider() {
             autoplayInterval = setInterval(nextSlide, 5000);
         });
     }
-    
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        const sliderWrapper = slider.closest('.testimonials-slider-wrapper');
-        if (sliderWrapper) {
-            const wrapperWidth = sliderWrapper.offsetWidth;
-            slider.style.width = `${totalSlides * 100}%`;
-            slides.forEach(slide => {
-                slide.style.width = `${wrapperWidth}px`;
-            });
-            updateSlider();
-        }
-    });
 }
 
 // FAQ Toggle Function (global for onclick)

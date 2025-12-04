@@ -1187,8 +1187,6 @@ html {
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
     box-sizing: border-box;
-    opacity: 1;
-    transition: opacity 0.3s ease;
 }
 
 .testimonial-quote-icon {
