@@ -605,7 +605,7 @@ function initServiceShowcase() {
     });
     
     // Start auto-scrolling every 3 seconds
-    if (serviceIconsContainer && serviceItems.length > 0) {
+        if (serviceIconsContainer && serviceItems.length > 0) {
         // Initialize with first card
         serviceItems[0].classList.add('active');
         if (serviceDescriptions['web-development']) {
@@ -623,8 +623,8 @@ function initServiceShowcase() {
                 clearInterval(autoScrollInterval);
                 autoScrollInterval = null;
             }
-        });
-        
+                });
+                
         // Resume auto-scroll on mouse leave
         serviceIconsContainer.addEventListener('mouseleave', () => {
             if (!autoScrollInterval) {

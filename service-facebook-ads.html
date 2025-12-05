@@ -143,6 +143,249 @@
             margin: 0;
             color: #0A1E3F;
         }
+        .pricing-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .pricing-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #0A1E3F;
+            font-weight: 800;
+        }
+        .pricing-header p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: #00FFFF;
+        }
+        .pricing-card.featured {
+            border-color: #00FFFF;
+            transform: scale(1.05);
+        }
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00FFFF;
+            color: #0A1E3F;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .pricing-card-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .pricing-card-header h3 {
+            font-size: 1.8rem;
+            color: #0A1E3F;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card-header .target-user {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .pricing-deliverables {
+            margin-top: 2rem;
+        }
+        .pricing-deliverables h4 {
+            font-size: 1.1rem;
+            color: #0A1E3F;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .pricing-deliverables ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pricing-deliverables li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .pricing-deliverables li:last-child {
+            border-bottom: none;
+        }
+        .pricing-deliverables li::before {
+            content: '✓';
+            color: #00FFFF;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .compare-packages {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin: 4rem 0;
+            overflow-x: auto;
+        }
+        .compare-packages h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #0A1E3F;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        .compare-table th {
+            background: #0A1E3F;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .compare-table th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+        .compare-table th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+        .compare-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+        .compare-table .feature-name {
+            font-weight: 600;
+            color: #0A1E3F;
+        }
+        .compare-table .check {
+            color: #00FFFF;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .quote-form-section {
+            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
+            padding: 80px 0;
+            border-radius: 24px;
+            margin: 4rem 0;
+        }
+        .quote-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        .quote-form-container h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #0A1E3F;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .quote-form-container p {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+        .quote-form-group {
+            margin-bottom: 1.5rem;
+        }
+        .quote-form-group label {
+            display: block;
+            color: #0A1E3F;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .quote-form-group input,
+        .quote-form-group select,
+        .quote-form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .quote-form-group input:focus,
+        .quote-form-group select:focus,
+        .quote-form-group textarea:focus {
+            outline: none;
+            border-color: #00FFFF;
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+        .quote-form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .quote-form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: #00FFFF;
+            color: #0A1E3F;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .quote-form-submit:hover {
+            background: #0A1E3F;
+            color: #00FFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            .quote-form-container {
+                padding: 2rem 1.5rem;
+            }
+            .compare-packages {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -258,6 +501,202 @@
                             </div>
                             <h3>Performance Reporting</h3>
                             <p>Detailed monthly reports with campaign performance metrics, insights, and recommendations. You'll always know how your campaigns are performing and what we're doing to improve them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / Packages Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <div class="pricing-header">
+                        <h2>📢 Facebook/IG Ads Packages</h2>
+                        <p>Choose the perfect package for your Facebook and Instagram advertising needs. All packages include professional campaign management and optimization.</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Starter Package -->
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Starter</h3>
+                                <p class="target-user">Individuals, new businesses</p>
+                            </div>
+                            <div class="pricing-deliverables">
+                                <h4>Deliverables:</h4>
+                                <ul>
+                                    <li>1 campaign</li>
+                                    <li>Basic targeting</li>
+                                    <li>Monthly optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Growth Package -->
+                        <div class="pricing-card featured">
+                            <div class="pricing-card-header">
+                                <h3>Growth</h3>
+                                <p class="target-user">SMEs that need consistency and results</p>
+                            </div>
+                            <div class="pricing-deliverables">
+                                <h4>Deliverables:</h4>
+                                <ul>
+                                    <li>3 campaigns</li>
+                                    <li>Retargeting</li>
+                                    <li>Creative testing</li>
+                                    <li>Bi-weekly optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Pro Package -->
+                        <div class="pricing-card">
+                            <div class="pricing-card-header">
+                                <h3>Pro</h3>
+                                <p class="target-user">Established brands seeking full-scale execution</p>
+                            </div>
+                            <div class="pricing-deliverables">
+                                <h4>Deliverables:</h4>
+                                <ul>
+                                    <li>Unlimited campaigns</li>
+                                    <li>Funnel setup</li>
+                                    <li>Advanced pixel events</li>
+                                    <li>Weekly optimization and reporting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compare Packages Table -->
+                    <div class="compare-packages">
+                        <h3>Compare Packages</h3>
+                        <table class="compare-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Starter</th>
+                                    <th>Growth</th>
+                                    <th>Pro</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="feature-name">Campaigns</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Targeting</td>
+                                    <td>Basic</td>
+                                    <td>Advanced</td>
+                                    <td>Advanced + Retargeting</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Retargeting</td>
+                                    <td>-</td>
+                                    <td class="check">✓</td>
+                                    <td class="check">✓</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Creative Testing</td>
+                                    <td>-</td>
+                                    <td class="check">✓</td>
+                                    <td class="check">✓</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Funnel Setup</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td class="check">✓</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Advanced Pixel Events</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td class="check">✓</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Optimization</td>
+                                    <td>Monthly</td>
+                                    <td>Bi-weekly</td>
+                                    <td>Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="feature-name">Reporting</td>
+                                    <td>Monthly</td>
+                                    <td>Bi-weekly</td>
+                                    <td>Weekly</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Get a Quote Form -->
+                    <div class="quote-form-section">
+                        <div class="quote-form-container">
+                            <h3>Get a Custom Quote</h3>
+                            <p>Fill out the form below and we'll provide a tailored quote for your Facebook Ads project.</p>
+                            <form id="quoteForm" onsubmit="handleQuoteSubmit(event, 'Facebook Ads')">
+                                <div class="quote-form-group">
+                                    <label for="quoteName">Name *</label>
+                                    <input type="text" id="quoteName" name="name" required>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteEmail">Email *</label>
+                                    <input type="email" id="quoteEmail" name="email" required>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quotePhone">Phone *</label>
+                                    <input type="tel" id="quotePhone" name="phone" required>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteBusiness">Business Name</label>
+                                    <input type="text" id="quoteBusiness" name="business">
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteService">Type of Service *</label>
+                                    <select id="quoteService" name="service" required>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="App Development">App Development</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Email Marketing">Email Marketing</option>
+                                        <option value="Content Creation">Content Creation</option>
+                                        <option value="Social Media Marketing">Social Media Marketing</option>
+                                        <option value="Facebook Ads" selected>Facebook Ads</option>
+                                    </select>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteBudget">Budget Range *</label>
+                                    <select id="quoteBudget" name="budget" required>
+                                        <option value="">Select budget range</option>
+                                        <option value="Under $1,000">Under $1,000</option>
+                                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                                        <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                                        <option value="Above $25,000">Above $25,000</option>
+                                    </select>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteTimeline">Project Timeline *</label>
+                                    <select id="quoteTimeline" name="timeline" required>
+                                        <option value="">Select timeline</option>
+                                        <option value="ASAP / Urgent">ASAP / Urgent</option>
+                                        <option value="1-2 weeks">1-2 weeks</option>
+                                        <option value="2-4 weeks">2-4 weeks</option>
+                                        <option value="1-2 months">1-2 months</option>
+                                        <option value="2-3 months">2-3 months</option>
+                                        <option value="3+ months">3+ months</option>
+                                    </select>
+                                </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteDescription">Project Description *</label>
+                                    <textarea id="quoteDescription" name="description" required placeholder="Tell us about your Facebook Ads requirements..."></textarea>
+                                </div>
+                                <button type="submit" class="quote-form-submit">Request a Custom Quote</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -455,6 +894,20 @@
     
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function handleQuoteSubmit(event, serviceType) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        data.serviceType = serviceType;
+        
+        // Store in localStorage for contact page
+        localStorage.setItem('quoteRequest', JSON.stringify(data));
+        
+        // Redirect to contact page
+        window.location.href = 'contact.html?quote=submitted';
     }
     </script>
     <script src="./js/main.js"></script>
