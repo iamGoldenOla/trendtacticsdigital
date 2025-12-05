@@ -134,20 +134,24 @@
         .pricing-cta {
             display: flex !important;
             flex-direction: row !important;
-            gap: 0.75rem;
-            justify-content: center;
+            gap: 0.75rem !important;
+            justify-content: center !important;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: center !important;
+            margin-top: auto !important;
         }
         
         .pricing-cta .btn {
             padding: 0.6rem 1.2rem !important;
             font-size: 0.9rem !important;
-            font-weight: 600;
-            flex: 1;
-            min-width: 120px;
-            max-width: 200px;
-            text-align: center;
+            font-weight: 600 !important;
+            width: auto !important;
+            min-width: 120px !important;
+            max-width: 200px !important;
+            flex: 1 1 auto !important;
+            text-align: center !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
         }
         
         @media (max-width: 480px) {
@@ -155,8 +159,8 @@
                 flex-direction: column !important;
             }
             .pricing-cta .btn {
-                width: 100%;
-                max-width: 100%;
+                width: 100% !important;
+                max-width: 100% !important;
             }
         }
         /* Service Icon Styling */
