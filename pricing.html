@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Trendtactics Digital</title>
-    <meta name="description" content="Transparent pricing for our digital marketing services. Choose the perfect plan for your business needs and budget.">
-    <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
+    <title>Our Services - Trendtactics Digital</title>
+    <meta name="description" content="Comprehensive digital solutions: Web Development, App Development, and Digital Marketing services. Get a custom quote tailored to your business needs.">
+    <meta name="keywords" content="web development, app development, digital marketing, email marketing, content creation, social media marketing, facebook ads, custom quote">
     <meta name="author" content="Akinola Olujobi">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Pricing - Trendtactics Digital">
-    <meta property="og:description" content="Transparent pricing for our digital marketing services. Choose the perfect plan for your business needs and budget.">
+    <meta property="og:title" content="Our Services - Trendtactics Digital">
+    <meta property="og:description" content="Comprehensive digital solutions: Web Development, App Development, and Digital Marketing services. Get a custom quote tailored to your business needs.">
     <meta property="og:url" content="https://trendtacticsdigital.com/pricing">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./images/og-image.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pricing - Trendtactics Digital">
-    <meta name="twitter:description" content="Transparent pricing for our digital marketing services. Choose the perfect plan for your business needs and budget.">
+    <meta name="twitter:title" content="Our Services - Trendtactics Digital">
+    <meta name="twitter:description" content="Comprehensive digital solutions: Web Development, App Development, and Digital Marketing services. Get a custom quote tailored to your business needs.">
     <meta name="twitter:image" content="./images/og-image.jpg">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -33,7 +33,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/compact-header.css">
-    <link rel="stylesheet" href="./styles/pricing.css">
     <link rel="stylesheet" href="./styles/about.css">
     <script src="https://js.puter.com/v2/"></script>
     <!-- Google Analytics -->
@@ -73,11 +72,84 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "url": "https://trendtacticsdigital.com/pricing.html",
-      "name": "Pricing - Trendtactics Digital",
-      "description": "Transparent pricing for our digital marketing services. Choose the perfect plan for your business needs and budget."
+      "name": "Our Services - Trendtactics Digital",
+      "description": "Comprehensive digital solutions: Web Development, App Development, and Digital Marketing services. Get a custom quote tailored to your business needs."
     }
     </script>
     <!-- Add dark mode toggle button to nav -->
+    <style>
+        /* FAQ Toggle Styles */
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #00FFFF;
+            box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+        }
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #0A1E3F;
+            font-weight: 600;
+        }
+        .faq-question i {
+            color: #00FFFF;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.25rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.25rem 1.25rem 1.25rem;
+        }
+        .faq-answer p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+        /* Pricing Card CTA Button Spacing */
+        .pricing-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        /* Service Icon Styling */
+        .service-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Remove price styling if any remains */
+        .plan-price {
+            display: none;
+        }
+        .addon-price {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <nav id="navigation" class="navbar">
@@ -122,22 +194,8 @@
         <section class="page-hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title text-center">Transparent Pricing</h1>
-                    <p class="hero-subtitle text-center">Choose the perfect plan for your business. All plans include our proven strategies and expert support.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Toggle -->
-        <section class="pricing-toggle">
-            <div class="container">
-                <div class="toggle-content">
-                    <span>Monthly</span>
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="billing-toggle">
-                        <span class="toggle-slider"></span>
-                    </label>
-                    <span>Annual <span class="discount">Save 20%</span></span>
+                    <h1 class="hero-title text-center">Our Services</h1>
+                    <p class="hero-subtitle text-center">Comprehensive digital solutions tailored to your business needs. Get a custom quote for any service.</p>
                 </div>
             </div>
         </section>
@@ -146,172 +204,198 @@
         <section class="service-pricing">
             <div class="container">
                 <div class="section-header">
-                    <h2>Service Packages</h2>
-                    <p>Comprehensive packages designed to meet your specific needs and budget.</p>
+                    <h2>Our Core Services</h2>
+                    <p>Choose from our specialized services or get a custom package tailored to your needs.</p>
                 </div>
                 <div class="pricing-grid">
-                    <!-- Starter Plan -->
+                    <!-- Web Development -->
                     <div class="pricing-card">
                         <div class="pricing-header">
-                            <h3 class="plan-name">Starter</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">$1,500</span>
-                                <span class="price-period">/month</span>
+                            <div class="service-icon" style="font-size: 3rem; color: #00FFFF; margin-bottom: 1rem;">
+                                <i class="fas fa-desktop"></i>
                             </div>
-                            <p class="plan-description">Perfect for small businesses starting their digital journey</p>
+                            <h3 class="plan-name">Web Development</h3>
+                            <p class="plan-description">Custom, responsive websites built for performance, accessibility, and conversion</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
-                                <li><i class="fas fa-check"></i> Custom Website Design</li>
-                                <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
-                                <li><i class="fas fa-check"></i> Social Media Management (3 platforms)</li>
-                                <li><i class="fas fa-check"></i> Monthly Performance Report</li>
-                                <li><i class="fas fa-check"></i> Email Support</li>
-                                <li><i class="fas fa-check"></i> Google Analytics Setup</li>
-                                <li><i class="fas fa-check"></i> Basic Content Creation</li>
+                                <li><i class="fas fa-check"></i> Responsive Web Design</li>
+                                <li><i class="fas fa-check"></i> Custom Website Development</li>
+                                <li><i class="fas fa-check"></i> Landing Page Design</li>
+                                <li><i class="fas fa-check"></i> Portfolio Websites</li>
+                                <li><i class="fas fa-check"></i> Business Websites</li>
+                                <li><i class="fas fa-check"></i> E-commerce Integration</li>
+                                <li><i class="fas fa-check"></i> SEO Optimization</li>
+                                <li><i class="fas fa-check"></i> Fast Loading Times</li>
+                                <li><i class="fas fa-check"></i> Custom CMS</li>
                                 <li><i class="fas fa-check"></i> Mobile Optimization</li>
                             </ul>
                         </div>
                         <div class="pricing-cta">
-                            <a href="contact.html" class="btn btn-outline btn-large">Get Started</a>
+                            <a href="service-web-development.html" class="btn btn-outline btn-large">Learn More</a>
+                            <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 0.5rem;">Get Quote</a>
                         </div>
                     </div>
 
-                    <!-- Growth Plan -->
+                    <!-- App Development -->
                     <div class="pricing-card featured">
-                        <div class="popular-badge">Most Popular</div>
+                        <div class="popular-badge">Popular</div>
                         <div class="pricing-header">
-                            <h3 class="plan-name">Growth</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">$3,500</span>
-                                <span class="price-period">/month</span>
+                            <div class="service-icon" style="font-size: 3rem; color: #00FFFF; margin-bottom: 1rem;">
+                                <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <p class="plan-description">Ideal for growing businesses ready to scale</p>
+                            <h3 class="plan-name">App Development</h3>
+                            <p class="plan-description">Native and cross-platform mobile applications that deliver exceptional user experiences</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Starter</li>
-                                <li><i class="fas fa-check"></i> Advanced SEO Strategy</li>
-                                <li><i class="fas fa-check"></i> Content Marketing (8 articles/month)</li>
-                                <li><i class="fas fa-check"></i> Social Media Management (5 platforms)</li>
-                                <li><i class="fas fa-check"></i> Weekly Performance Calls</li>
-                                <li><i class="fas fa-check"></i> PPC Campaign Management</li>
-                                <li><i class="fas fa-check"></i> Email Marketing Setup</li>
-                                <li><i class="fas fa-check"></i> Conversion Rate Optimization</li>
-                                <li><i class="fas fa-check"></i> Priority Support</li>
+                                <li><i class="fas fa-check"></i> iOS App Development</li>
+                                <li><i class="fas fa-check"></i> Android App Development</li>
+                                <li><i class="fas fa-check"></i> Cross-Platform Apps</li>
+                                <li><i class="fas fa-check"></i> UI/UX Design</li>
+                                <li><i class="fas fa-check"></i> App Store Optimization</li>
+                                <li><i class="fas fa-check"></i> API Integration</li>
+                                <li><i class="fas fa-check"></i> Backend Development</li>
+                                <li><i class="fas fa-check"></i> App Maintenance & Support</li>
+                                <li><i class="fas fa-check"></i> Performance Optimization</li>
                             </ul>
                         </div>
                         <div class="pricing-cta">
-                            <a href="contact.html" class="btn btn-outline btn-large">Choose Growth</a>
+                            <a href="service-app-development.html" class="btn btn-outline btn-large">Learn More</a>
+                            <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 0.5rem;">Get Quote</a>
                         </div>
                     </div>
 
-                    <!-- Scale Plan -->
+                    <!-- Digital Marketing -->
                     <div class="pricing-card">
                         <div class="pricing-header">
-                            <h3 class="plan-name">Scale</h3>
-                            <div class="plan-price">
-                                <span class="price-amount">$7,500</span>
-                                <span class="price-period">/month</span>
+                            <div class="service-icon" style="font-size: 3rem; color: #00FFFF; margin-bottom: 1rem;">
+                                <i class="fas fa-bullhorn"></i>
                             </div>
-                            <p class="plan-description">Complete digital transformation for established businesses</p>
+                            <h3 class="plan-name">Digital Marketing</h3>
+                            <p class="plan-description">Integrated campaigns across paid, owned, and earned channels to grow revenue</p>
                         </div>
                         <div class="pricing-features">
                             <ul>
-                                <li><i class="fas fa-check"></i> Everything in Growth</li>
-                                <li><i class="fas fa-check"></i> AI-Powered Marketing Automation</li>
-                                <li><i class="fas fa-check"></i> Custom Marketing Tools</li>
-                                <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
-                                <li><i class="fas fa-check"></i> Advanced Analytics & Reporting</li>
-                                <li><i class="fas fa-check"></i> Multi-Channel Campaign Strategy</li>
-                                <li><i class="fas fa-check"></i> Brand Strategy & Positioning</li>
-                                <li><i class="fas fa-check"></i> Competitor Analysis</li>
-                                <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
-                                <li><i class="fas fa-check"></i> Custom Integrations</li>
+                                <li><i class="fas fa-check"></i> <strong>Email Marketing</strong></li>
+                                <li style="padding-left: 2rem; font-size: 0.9em; opacity: 0.9;">Strategic email campaigns & automation</li>
+                                <li><i class="fas fa-check"></i> <strong>Content Creation</strong></li>
+                                <li style="padding-left: 2rem; font-size: 0.9em; opacity: 0.9;">Blog posts, articles, videos & social content</li>
+                                <li><i class="fas fa-check"></i> <strong>Social Media Marketing</strong></li>
+                                <li style="padding-left: 2rem; font-size: 0.9em; opacity: 0.9;">Multi-platform social media management</li>
+                                <li><i class="fas fa-check"></i> <strong>Facebook Ads</strong></li>
+                                <li style="padding-left: 2rem; font-size: 0.9em; opacity: 0.9;">Targeted Facebook & Instagram ad campaigns</li>
+                                <li><i class="fas fa-check"></i> SEO & Content Strategy</li>
+                                <li><i class="fas fa-check"></i> Analytics & Reporting</li>
                             </ul>
                         </div>
                         <div class="pricing-cta">
-                            <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+                            <a href="service-digital-marketing.html" class="btn btn-outline btn-large">Learn More</a>
+                            <a href="contact.html" class="btn btn-primary btn-large" style="margin-top: 0.5rem;">Get Quote</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Feature Comparison -->
+        <!-- Service Comparison -->
         <section class="feature-comparison">
             <div class="container">
                 <div class="section-header">
-                    <h2>Compare Features</h2>
-                    <p>See what's included in each package to make the best choice for your business.</p>
+                    <h2>Service Comparison</h2>
+                    <p>Compare our core services to find the right solution for your business needs.</p>
                 </div>
                 <div class="comparison-table">
                     <div class="comparison-header">
                         <div class="feature-column">Features</div>
-                        <div class="plan-column">Starter</div>
-                        <div class="plan-column featured">Growth</div>
-                        <div class="plan-column">Scale</div>
+                        <div class="plan-column">Web Development</div>
+                        <div class="plan-column featured">App Development</div>
+                        <div class="plan-column">Digital Marketing</div>
                     </div>
                     <div class="comparison-rows">
                         <div class="comparison-row">
-                            <div class="feature-name">Website Design</div>
+                            <div class="feature-name">Custom Design</div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Responsive/Mobile-First</div>
                             <div class="feature-value"><i class="fas fa-check"></i></div>
                             <div class="feature-value featured"><i class="fas fa-check"></i></div>
                             <div class="feature-value"><i class="fas fa-check"></i></div>
                         </div>
                         <div class="comparison-row">
                             <div class="feature-name">SEO Optimization</div>
-                            <div class="feature-value">Basic</div>
-                            <div class="feature-value featured">Advanced</div>
-                            <div class="feature-value">Premium</div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="feature-name">Social Media Management</div>
-                            <div class="feature-value">3 Platforms</div>
-                            <div class="feature-value featured">5 Platforms</div>
-                            <div class="feature-value">All Platforms</div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="feature-name">Content Marketing</div>
-                            <div class="feature-value"><i class="fas fa-times"></i></div>
-                            <div class="feature-value featured">8 Articles/Month</div>
-                            <div class="feature-value">Unlimited</div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="feature-name">PPC Management</div>
-                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
                             <div class="feature-value featured"><i class="fas fa-check"></i></div>
                             <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Performance Optimization</div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">E-commerce Integration</div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-times"></i></div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">App Store Optimization</div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
                         </div>
                         <div class="comparison-row">
                             <div class="feature-name">Email Marketing</div>
-                            <div class="feature-value"><i class="fas fa-times"></i></div>
-                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
-                            <div class="feature-value"><i class="fas fa-check"></i></div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="feature-name">Dedicated Manager</div>
                             <div class="feature-value"><i class="fas fa-times"></i></div>
                             <div class="feature-value featured"><i class="fas fa-times"></i></div>
                             <div class="feature-value"><i class="fas fa-check"></i></div>
                         </div>
                         <div class="comparison-row">
-                            <div class="feature-name">Support</div>
-                            <div class="feature-value">Email</div>
-                            <div class="feature-value featured">Priority</div>
-                            <div class="feature-value">24/7 Priority</div>
+                            <div class="feature-name">Content Creation</div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-times"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Social Media Marketing</div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-times"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Facebook Ads</div>
+                            <div class="feature-value"><i class="fas fa-times"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-times"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Analytics & Reporting</div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Ongoing Support</div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
+                            <div class="feature-value featured"><i class="fas fa-check"></i></div>
+                            <div class="feature-value"><i class="fas fa-check"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Add-ons -->
+        <!-- Additional Services -->
         <section class="add-ons">
             <div class="container">
                 <div class="section-header">
                     <h2>Additional Services</h2>
-                    <p>Enhance your package with these powerful add-ons.</p>
+                    <p>Enhance your project with these powerful add-on services.</p>
                 </div>
                 <div class="addons-grid">
                     <div class="addon-card">
@@ -319,9 +403,8 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Advanced Analytics</h3>
-                        <p>Comprehensive reporting and data insights to track your growth.</p>
-                        <div class="addon-price">$500/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
+                        <p>Comprehensive reporting and data insights to track your growth and performance.</p>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
                     </div>
                     
                     <div class="addon-card">
@@ -329,19 +412,8 @@
                             <i class="fas fa-video"></i>
                         </div>
                         <h3>Video Production</h3>
-                        <p>Professional video content for your marketing campaigns.</p>
-                        <div class="addon-price">$1,200/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
-                    </div>
-                    
-                    <div class="addon-card">
-                        <div class="addon-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>PR & Outreach</h3>
-                        <p>Media outreach and public relations to boost your brand.</p>
-                        <div class="addon-price">$800/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
+                        <p>Professional video content for your marketing campaigns and social media.</p>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
                     </div>
                     
                     <div class="addon-card">
@@ -349,31 +421,35 @@
                             <i class="fas fa-cogs"></i>
                         </div>
                         <h3>Custom Integrations</h3>
-                        <p>Seamless integration with your existing tools and platforms.</p>
-                        <div class="addon-price">$1,500/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
+                        <p>Seamless integration with your existing tools, platforms, and third-party services.</p>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
                     </div>
 
-                    <!-- Strategy and Growth Card -->
                     <div class="addon-card">
                         <div class="addon-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h3>Strategy and Growth</h3>
+                        <h3>Strategy & Growth Consulting</h3>
                         <p>Expert business strategy sessions and growth planning tailored to your goals.</p>
-                        <div class="addon-price">$1,000/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
                     </div>
 
-                    <!-- Image Generation Card -->
                     <div class="addon-card">
                         <div class="addon-icon">
                             <i class="fas fa-image"></i>
                         </div>
                         <h3>Image Generation</h3>
                         <p>AI-powered image creation for ads, social media, and content marketing.</p>
-                        <div class="addon-price">$600/month</div>
-                        <a href="contact.html" class="btn btn-outline">Add Service</a>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
+                    </div>
+
+                    <div class="addon-card">
+                        <div class="addon-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Maintenance & Support</h3>
+                        <p>Ongoing maintenance, updates, and technical support for your digital assets.</p>
+                        <a href="contact.html" class="btn btn-outline">Get Quote</a>
                     </div>
                 </div>
             </div>
@@ -389,41 +465,41 @@
                 <div class="faq-grid">
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>Can I switch between plans?</h3>
+                            <h3>How do I get a quote for your services?</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
+                            <p>Simply fill out our contact form or request a custom quote form on this page. We'll review your requirements and provide a detailed quote within 24-48 hours.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>Do you offer annual discounts?</h3>
+                            <h3>Can I combine multiple services?</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Absolutely! We offer a 20% discount when you choose annual billing. This applies to all our plans and add-ons.</p>
+                            <p>Absolutely! We offer custom packages that combine multiple services. For example, you can get web development with digital marketing services for a comprehensive solution.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>What's included in the setup?</h3>
+                            <h3>What's included in the project setup?</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Setup includes initial consultation, strategy development, account setup, and onboarding. We handle everything to get you started.</p>
+                            <p>Setup includes initial consultation, strategy development, project planning, and onboarding. We handle everything to get your project started smoothly.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>Can I cancel anytime?</h3>
+                            <h3>Do you provide ongoing support?</h3>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees.</p>
+                            <p>Yes! We offer ongoing maintenance and support packages for all our services. This includes updates, monitoring, and technical support.</p>
                         </div>
                     </div>
                     
@@ -433,7 +509,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! We work with clients worldwide. Our team operates across multiple time zones to provide global support.</p>
+                            <p>Yes! We work with clients worldwide. Our team operates across multiple time zones to provide global support and seamless communication.</p>
                         </div>
                     </div>
                     
@@ -443,7 +519,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Our clients typically see 200-300% increase in traffic and 150-250% improvement in conversions within 6 months.</p>
+                            <p>Our clients typically see significant improvements: 200-300% increase in traffic, 150-250% improvement in conversions, and faster load times. Results vary by service and project scope.</p>
                         </div>
                     </div>
                 </div>
@@ -464,7 +540,7 @@
             <div class="container">
                 <h2 class="cta-title">Ready to Get Started?</h2>
                 <p class="cta-subtitle">
-                    Choose your plan and start transforming your digital presence today.
+                    Get a custom quote for any service and start transforming your digital presence today.
                 </p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary btn-large">Get Free Consultation</a>
@@ -479,19 +555,23 @@
                 <h2 style="text-align:center;color:#0A1E3F;margin-bottom:1em;">Request a Custom Quote</h2>
                 <form id="pricingInquiryForm" style="max-width:500px;margin:2em auto 0 auto;">
                     <label for="pricingName">Name</label>
-                    <input type="text" id="pricingName" name="name" required placeholder="Your Name" aria-label="Name" style="width:100%;margin-bottom:1em;padding:0.7em;">
+                    <input type="text" id="pricingName" name="name" required placeholder="Your Name" aria-label="Name" style="width:100%;margin-bottom:1em;padding:0.7em;border:2px solid #e2e8f0;border-radius:8px;">
                     <label for="pricingEmail">Email</label>
-                    <input type="email" id="pricingEmail" name="email" required placeholder="Your Email" aria-label="Email" style="width:100%;margin-bottom:1em;padding:0.7em;">
-                    <label for="pricingPlan">Plan of Interest</label>
-                    <select id="pricingPlan" name="plan" required aria-label="Plan" style="width:100%;margin-bottom:1em;padding:0.7em;">
-                        <option value="">Select a Plan</option>
-                        <option value="Starter">Starter</option>
-                        <option value="Growth">Growth</option>
-                        <option value="Scale">Scale</option>
-                        <option value="Custom">Custom</option>
+                    <input type="email" id="pricingEmail" name="email" required placeholder="Your Email" aria-label="Email" style="width:100%;margin-bottom:1em;padding:0.7em;border:2px solid #e2e8f0;border-radius:8px;">
+                    <label for="pricingService">Service of Interest</label>
+                    <select id="pricingService" name="service" required aria-label="Service" style="width:100%;margin-bottom:1em;padding:0.7em;border:2px solid #e2e8f0;border-radius:8px;">
+                        <option value="">Select a Service</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="App Development">App Development</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Email Marketing">Email Marketing</option>
+                        <option value="Content Creation">Content Creation</option>
+                        <option value="Social Media Marketing">Social Media Marketing</option>
+                        <option value="Facebook Ads">Facebook Ads</option>
+                        <option value="Multiple Services">Multiple Services / Custom Package</option>
                     </select>
-                    <label for="pricingMessage">Message</label>
-                    <textarea id="pricingMessage" name="message" required rows="4" placeholder="Tell us about your needs..." aria-label="Message" style="width:100%;margin-bottom:1em;padding:0.7em;"></textarea>
+                    <label for="pricingMessage">Project Details</label>
+                    <textarea id="pricingMessage" name="message" required rows="4" placeholder="Tell us about your project needs, timeline, and any specific requirements..." aria-label="Message" style="width:100%;margin-bottom:1em;padding:0.7em;border:2px solid #e2e8f0;border-radius:8px;"></textarea>
                     <input type="text" name="website" id="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <button type="submit" class="btn btn-primary" style="width:100%;">Request Quote</button>
                     <div id="pricingThankYou" style="margin-top:1.5em;font-size:1.1em;color:#0A1E3F;"></div>
@@ -572,10 +652,10 @@
                     <div class="footer-newsletter-inline">
                         <h4>Stay Updated</h4>
                         <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -590,9 +670,49 @@
             </div>
         </div>
     </footer>
-    <!-- Only keep necessary scripts here -->
-    <script src="./js/pricing.js"></script>
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
     <script>
+    // FAQ Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                // Close all FAQ items
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Pricing Inquiry Form Handler
+        const pricingForm = document.getElementById('pricingInquiryForm');
+        if (pricingForm) {
+            pricingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(pricingForm);
+                const data = Object.fromEntries(formData);
+                
+                // Store form data in sessionStorage to pass to contact page
+                sessionStorage.setItem('pricingInquiry', JSON.stringify(data));
+                
+                // Redirect to contact page
+                window.location.href = 'contact.html?source=pricing';
+                
+                // Show thank you message (though redirect happens)
+                const thankYouDiv = document.getElementById('pricingThankYou');
+                if (thankYouDiv) {
+                    thankYouDiv.textContent = 'Thank you! Redirecting to contact page...';
+                    thankYouDiv.style.color = '#00FFFF';
+                }
+            });
+        }
+    });
+
     function scrollToTop() {
         window.scrollTo({
             top: 0,
