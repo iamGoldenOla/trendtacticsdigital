@@ -84,6 +84,141 @@
       "description": "Comprehensive digital marketing services including web design, SEO, social media, AI solutions, and more. Transform your business with our expert strategies."
     }
     </script>
+    <style>
+        /* ===== 3D HERO EFFECTS FOR SERVICES PAGE ===== */
+        .services-hero {
+            position: relative;
+            overflow: hidden;
+            perspective: 1200px;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(64, 224, 208, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(10, 30, 63, 0.4) 0%, transparent 70%),
+                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
+            animation: servicesRotate 25s linear infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="services-3d" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2.5" fill="%2300FFFF" opacity="0.12"/><circle cx="10" cy="10" r="1.5" fill="%2340E0D0" opacity="0.1"/><circle cx="40" cy="40" r="2" fill="%2300FFFF" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23services-3d)"/></svg>');
+            opacity: 0.5;
+            animation: servicesFloat 18s ease-in-out infinite;
+        }
+        
+        .services-hero-3d-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .services-shape-3d {
+            position: absolute;
+            opacity: 0.35;
+            animation: servicesFloat3D 22s ease-in-out infinite;
+        }
+        
+        .services-shape-3d.shape-1 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.35), rgba(64, 224, 208, 0.25));
+            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+            top: 15%;
+            left: 8%;
+            transform: rotateZ(45deg);
+            animation-delay: 0s;
+        }
+        
+        .services-shape-3d.shape-2 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.35), rgba(0, 255, 255, 0.25));
+            border-radius: 50%;
+            top: 55%;
+            right: 12%;
+            animation-delay: 3s;
+        }
+        
+        .services-shape-3d.shape-3 {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(10, 30, 63, 0.35));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 6s;
+        }
+        
+        .services-shape-3d.shape-4 {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.35), rgba(0, 255, 255, 0.25));
+            border-radius: 25px;
+            top: 25%;
+            right: 25%;
+            transform: rotateZ(45deg);
+            animation-delay: 9s;
+        }
+        
+        @keyframes servicesRotate {
+            0% { transform: rotate(0deg) translateZ(0); }
+            100% { transform: rotate(360deg) translateZ(0); }
+        }
+        
+        @keyframes servicesFloat {
+            0%, 100% { transform: translateY(0) translateZ(0); }
+            50% { transform: translateY(-25px) translateZ(15px); }
+        }
+        
+        @keyframes servicesFloat3D {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
+            }
+            25% {
+                transform: translateY(-35px) translateX(25px) rotateZ(90deg) translateZ(25px);
+            }
+            50% {
+                transform: translateY(-70px) translateX(-25px) rotateZ(180deg) translateZ(50px);
+            }
+            75% {
+                transform: translateY(-35px) translateX(15px) rotateZ(270deg) translateZ(25px);
+            }
+        }
+        
+        .services-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            transform-style: preserve-3d;
+        }
+        
+        .services-hero .hero-title {
+            transform: translateZ(60px);
+            text-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+        }
+        
+        .services-hero .hero-subtitle {
+            transform: translateZ(35px);
+        }
+    </style>
 </head>
 <body>
     <!-- Floating Language Selector -->
@@ -159,6 +294,12 @@
     <main>
         <!-- Hero Section -->
         <section class="page-hero services-hero">
+            <div class="services-hero-3d-shapes">
+                <div class="services-shape-3d shape-1"></div>
+                <div class="services-shape-3d shape-2"></div>
+                <div class="services-shape-3d shape-3"></div>
+                <div class="services-shape-3d shape-4"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">

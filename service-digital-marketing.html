@@ -19,16 +19,110 @@
             color: white;
             position: relative;
             overflow: hidden;
+            perspective: 1200px;
         }
         .service-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.26) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(64, 224, 208, 0.21) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(10, 30, 63, 0.4) 0%, transparent 70%),
+                linear-gradient(135deg, #0A1E3F 0%, #162447 50%, #0A1E3F 100%);
+            animation: serviceRotate 26s linear infinite;
+            transform-style: preserve-3d;
+            pointer-events: none;
+        }
+        .service-hero::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="service-3d" width="52" height="52" patternUnits="userSpaceOnUse"><circle cx="26" cy="26" r="2.6" fill="%2300FFFF" opacity="0.13"/><circle cx="11" cy="11" r="1.6" fill="%2340E0D0" opacity="0.11"/><circle cx="41" cy="41" r="2.1" fill="%2300FFFF" opacity="0.11"/></pattern></defs><rect width="100" height="100" fill="url(%23service-3d)"/></svg>');
+            opacity: 0.48;
+            animation: serviceFloat 19s ease-in-out infinite;
             pointer-events: none;
+        }
+        .service-hero-3d-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .service-shape-3d {
+            position: absolute;
+            opacity: 0.36;
+            animation: serviceFloat3D 24s ease-in-out infinite;
+        }
+        .service-shape-3d.shape-1 {
+            width: 190px;
+            height: 190px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.36), rgba(64, 224, 208, 0.26));
+            border-radius: 42% 58% 58% 42% / 42% 42% 58% 58%;
+            top: 16%;
+            left: 7%;
+            transform: rotateZ(45deg);
+            animation-delay: 0s;
+        }
+        .service-shape-3d.shape-2 {
+            width: 125px;
+            height: 125px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.36), rgba(0, 255, 255, 0.26));
+            border-radius: 50%;
+            top: 54%;
+            right: 11%;
+            animation-delay: 3.5s;
+        }
+        .service-shape-3d.shape-3 {
+            width: 145px;
+            height: 145px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.31), rgba(10, 30, 63, 0.36));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 14%;
+            left: 14%;
+            animation-delay: 7s;
+        }
+        .service-shape-3d.shape-4 {
+            width: 105px;
+            height: 105px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.36), rgba(0, 255, 255, 0.26));
+            border-radius: 26px;
+            top: 24%;
+            right: 24%;
+            transform: rotateZ(45deg);
+            animation-delay: 10.5s;
+        }
+        @keyframes serviceRotate {
+            0% { transform: rotate(0deg) translateZ(0); }
+            100% { transform: rotate(360deg) translateZ(0); }
+        }
+        @keyframes serviceFloat {
+            0%, 100% { transform: translateY(0) translateZ(0); }
+            50% { transform: translateY(-26px) translateZ(16px); }
+        }
+        @keyframes serviceFloat3D {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
+            }
+            25% {
+                transform: translateY(-36px) translateX(26px) rotateZ(90deg) translateZ(26px);
+            }
+            50% {
+                transform: translateY(-72px) translateX(-26px) rotateZ(180deg) translateZ(52px);
+            }
+            75% {
+                transform: translateY(-36px) translateX(16px) rotateZ(270deg) translateZ(26px);
+            }
         }
         .service-hero h1 {
             color: #ffffff !important;
@@ -491,12 +585,18 @@
     <main>
         <!-- Service Hero Section -->
         <section class="service-hero">
+            <div class="service-hero-3d-shapes">
+                <div class="service-shape-3d shape-1"></div>
+                <div class="service-shape-3d shape-2"></div>
+                <div class="service-shape-3d shape-3"></div>
+                <div class="service-shape-3d shape-4"></div>
+            </div>
             <div class="container">
-                <div class="hero-content" style="text-align: center; position: relative; z-index: 2;">
-                    <div class="service-hero-icon">
+                <div class="hero-content" style="text-align: center; position: relative; z-index: 2; transform-style: preserve-3d;">
+                    <div class="service-hero-icon" style="transform: translateZ(40px);">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h1>Digital Marketing Services</h1>
+                    <h1 style="transform: translateZ(60px); text-shadow: 0 16px 42px rgba(0, 255, 255, 0.4);">Digital Marketing Services</h1>
                     <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
                         Integrated campaigns across paid, owned, and earned channels to grow revenue. Data-driven marketing that moves the needle — from awareness to conversion.
                     </p>

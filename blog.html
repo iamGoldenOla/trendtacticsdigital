@@ -77,6 +77,140 @@
     }
     </script>
     <!-- Add dark mode toggle button to nav -->
+    <style>
+        /* ===== 3D HERO EFFECTS FOR BLOG PAGE ===== */
+        .blog-hero {
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 35% 35%, rgba(0, 255, 255, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 65% 65%, rgba(64, 224, 208, 0.18) 0%, transparent 50%),
+                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
+            animation: blogRotate 22s linear infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="blog-3d" width="45" height="45" patternUnits="userSpaceOnUse"><circle cx="22" cy="22" r="2" fill="%2300FFFF" opacity="0.11"/><circle cx="8" cy="8" r="1.2" fill="%2340E0D0" opacity="0.09"/><circle cx="37" cy="37" r="1.8" fill="%2300FFFF" opacity="0.09"/></pattern></defs><rect width="100" height="100" fill="url(%23blog-3d)"/></svg>');
+            opacity: 0.45;
+            animation: blogFloat 16s ease-in-out infinite;
+        }
+        
+        .blog-hero-3d-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .blog-shape-3d {
+            position: absolute;
+            opacity: 0.32;
+            animation: blogFloat3D 21s ease-in-out infinite;
+        }
+        
+        .blog-shape-3d.shape-1 {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.32), rgba(64, 224, 208, 0.22));
+            border-radius: 35% 65% 65% 35% / 35% 35% 65% 65%;
+            top: 12%;
+            left: 9%;
+            transform: rotateZ(45deg);
+            animation-delay: 0s;
+        }
+        
+        .blog-shape-3d.shape-2 {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.32), rgba(0, 255, 255, 0.22));
+            border-radius: 50%;
+            top: 58%;
+            right: 13%;
+            animation-delay: 2.5s;
+        }
+        
+        .blog-shape-3d.shape-3 {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.28), rgba(10, 30, 63, 0.32));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 18%;
+            left: 17%;
+            animation-delay: 5s;
+        }
+        
+        .blog-shape-3d.shape-4 {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.32), rgba(0, 255, 255, 0.22));
+            border-radius: 22px;
+            top: 28%;
+            right: 28%;
+            transform: rotateZ(45deg);
+            animation-delay: 7.5s;
+        }
+        
+        @keyframes blogRotate {
+            0% { transform: rotate(0deg) translateZ(0); }
+            100% { transform: rotate(360deg) translateZ(0); }
+        }
+        
+        @keyframes blogFloat {
+            0%, 100% { transform: translateY(0) translateZ(0); }
+            50% { transform: translateY(-22px) translateZ(12px); }
+        }
+        
+        @keyframes blogFloat3D {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
+            }
+            25% {
+                transform: translateY(-32px) translateX(22px) rotateZ(90deg) translateZ(22px);
+            }
+            50% {
+                transform: translateY(-65px) translateX(-22px) rotateZ(180deg) translateZ(45px);
+            }
+            75% {
+                transform: translateY(-32px) translateX(12px) rotateZ(270deg) translateZ(22px);
+            }
+        }
+        
+        .blog-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            transform-style: preserve-3d;
+        }
+        
+        .blog-hero .hero-title {
+            transform: translateZ(55px);
+            text-shadow: 0 12px 35px rgba(0, 255, 255, 0.35);
+        }
+        
+        .blog-hero .hero-subtitle {
+            transform: translateZ(32px);
+        }
+    </style>
 </head>
 <body>
     <nav id="navigation" class="navbar">
@@ -117,6 +251,12 @@
 
     <!-- Blog Hero Section -->
     <section class="page-hero blog-hero">
+        <div class="blog-hero-3d-shapes">
+            <div class="blog-shape-3d shape-1"></div>
+            <div class="blog-shape-3d shape-2"></div>
+            <div class="blog-shape-3d shape-3"></div>
+            <div class="blog-shape-3d shape-4"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Blog</h1>
