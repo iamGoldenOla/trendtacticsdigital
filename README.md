@@ -64,21 +64,6 @@ Quick Start
 4. Add your images to the `images/` folder
 5. Deploy to your hosting platform
 
-Content Management
-
-All content is managed through the `data/content.json` file:
-
-Services
-```json
-{
-  title: "Web Design & Development",
-  description: "Custom websites that convert visitors into customers.",
-  icon: "fas fa-code",
-  features: ["Responsive Design", "SEO Optimization"],
-  price: "$20"
-}
-```
-
 Testimonials
 ```json
 {
