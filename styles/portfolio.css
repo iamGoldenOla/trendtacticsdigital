@@ -234,16 +234,19 @@
   object-position: top center;
 }
 
-/* Reduce video frame sizes for AI Music and Spoken Word sections - match Advert section style */
-.portfolio-card[data-category="music-generation"] .portfolio-media,
-.portfolio-card[data-category="spoken-word"] .portfolio-media {
+/* Reduce video frame sizes for AI Music section - match Advert section style */
+.portfolio-card[data-category="music-generation"] .portfolio-media {
   aspect-ratio: 16/9;
   max-height: 280px;
 }
 
 .portfolio-card[data-category="music-generation"] .portfolio-media video,
-.portfolio-card[data-category="music-generation"] .portfolio-media iframe,
-.portfolio-card[data-category="spoken-word"] .portfolio-media video {
+.portfolio-card[data-category="music-generation"] .portfolio-media iframe {
   object-fit: contain;
   background: #000;
+}
+
+/* Spoken Word videos use same style as Advert section (default 16/9 aspect ratio) */
+.portfolio-card[data-category="spoken-word"] .portfolio-media {
+  aspect-ratio: 16/9;
 } 
