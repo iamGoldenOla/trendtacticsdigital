@@ -272,12 +272,12 @@ function loadSocialLinks(social) {
 function loadFallbackContent() {
     // Fallback brands
     const fallbackBrands = [
-        { name: 'Brand 1', logo: './images/brand1.png' },
-        { name: 'Brand 2', logo: './images/brand2.png' },
-        { name: 'Brand 3', logo: './images/brand3.png' },
-        { name: 'Brand 4', logo: './images/brand4.png' },
-        { name: 'Brand 5', logo: './images/brand5.png' },
-        { name: 'Brand 6', logo: './images/brand6.png' }
+        { name: 'Brand 1', logo: '/images/brand1.png' },
+        { name: 'Brand 2', logo: '/images/brand2.png' },
+        { name: 'Brand 3', logo: '/images/brand3.png' },
+        { name: 'Brand 4', logo: '/images/brand4.png' },
+        { name: 'Brand 5', logo: '/images/brand5.png' },
+        { name: 'Brand 6', logo: '/images/brand6.png' }
     ];
     loadBrands(fallbackBrands);
 

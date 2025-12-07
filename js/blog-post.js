@@ -69,7 +69,7 @@ const blogData = {
             funnel_stage: 'BOFU',
             author: 'Akinola Olujobi',
             date: '2025-06-15',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             tags: ['AI', 'SEO', 'E-commerce', 'Traffic', 'Case Study', 'ROI'],
             readTime: '8 min read',
             views: 1247,
@@ -100,7 +100,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Sarah Johnson',
             date: '2025-05-20',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             tags: ['Social Media', 'Engagement', 'Strategy', '2025', 'Content'],
             readTime: '6 min read',
             views: 892,
@@ -136,7 +136,7 @@ const blogData = {
             funnel_stage: 'TOFU',
             author: 'Michael Chen',
             date: '2025-04-10',
-            image: 'images/blog2.jpg',
+            image: '/images/blog2.jpg',
             tags: ['Google', 'Algorithm', 'SEO', 'Update', 'Technical SEO'],
             readTime: '7 min read',
             views: 1567,
@@ -171,7 +171,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Emily Rodriguez',
             date: '2025-03-15',
-            image: 'images/blog3.jpg',
+            image: '/images/blog3.jpg',
             tags: ['Content Marketing', 'Strategy', 'Beginner', '2025', 'Guide'],
             readTime: '10 min read',
             views: 743,
@@ -206,7 +206,7 @@ const blogData = {
             funnel_stage: 'TOFU',
             author: 'David Kim',
             date: '2025-02-28',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             tags: ['AI', 'Automation', 'Future', 'Digital Marketing', 'Technology'],
             readTime: '9 min read',
             views: 1123,
@@ -241,7 +241,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Lisa Wang',
             date: '2025-01-20',
-            image: 'images/blog2.jpg',
+            image: '/images/blog2.jpg',
             tags: ['Branding', 'Identity', 'Digital', 'Strategy', 'Design'],
             readTime: '7 min read',
             views: 678,
@@ -306,8 +306,14 @@ function displayBlogPost(post) {
     
     const imageElement = document.getElementById('post-image');
     if (imageElement) {
-        imageElement.src = post.image;
+        // Ensure absolute path for images
+        const imagePath = post.image.startsWith('/') ? post.image : '/' + post.image;
+        imageElement.src = imagePath;
         imageElement.alt = post.title;
+        // Add error handling for broken images
+        imageElement.onerror = function() {
+            this.src = '/images/blog1.jpg'; // Fallback image
+        };
     }
     
     const bodyElement = document.getElementById('post-body');

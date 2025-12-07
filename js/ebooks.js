@@ -6,7 +6,7 @@ let filteredEbooks = [];
 
 async function loadEbooks() {
     try {
-        const response = await fetch('./data/content.json');
+        const response = await fetch('/data/content.json');
         const data = await response.json();
         allEbooks = data.ebooks || [];
         filteredEbooks = allEbooks;

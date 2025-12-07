@@ -1,0 +1,56 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  deploy:
+    name: Deploy Static Website
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: List files to be deployed
+        run: |
+          echo "📦 Files ready for deployment:"
+          find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' | head -20
+      
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.env*
+            **/*.log
+            **/.DS_Store
+            **/Thumbs.db
+            **/.vscode/**
+            **/backend/**
+            **/frontend/node_modules/**
+            **/trendtactics-digital/**
+            **/.next/**
+            **/dist/**
+            **/build/**
+            **/package-lock.json
+            **/package.json
+            **/*.md
+            !**/README.md
+      
+      - name: Deployment Summary
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "🚀 Website deployed to production"
+          echo "📅 Deployed at: $(date)"
+

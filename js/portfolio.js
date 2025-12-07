@@ -1,41 +1,41 @@
 // Portfolio asset definitions (replace/add as needed)
 const portfolioAssets = [
   // Adverts (videos/images)
-  { type: 'video', src: './videos/MINISTER-HOPE-JOSIAH-advert.mp4', title: 'Minister Hope Josiah Advert', category: 'advert', description: '' },
-  { type: 'video', src: './videos/DSA-SECOND-VIDEO-advert.mp4', title: 'DSA Second Video Advert', category: 'advert', description: '' },
-  { type: 'video', src: './videos/DSA-VIDEO-advert.mp4', title: 'DSA Video Advert', category: 'advert', description: '' },
-  { type: 'video', src: './videos/Trendtactics-Digital-Ads.mp4', title: 'Trendtactics Digital Ads', category: 'advert', description: '' },
-  { type: 'video', src: './videos/Pepsi-Lemon-Advert.mp4', title: 'Pepsi Lemon Advert', category: 'advert', description: '' },
-  { type: 'video', src: './videos/T\'s-Kitchen-Ad.mp4', title: "T's Kitchen Ad", category: 'advert', description: '' },
-  { type: 'video', src: './videos/TRENDY\'S-INTRO-advert.mp4', title: "Trendy's Intro Advert", category: 'advert', description: '' },
+  { type: 'video', src: '/videos/MINISTER-HOPE-JOSIAH-advert.mp4', title: 'Minister Hope Josiah Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/DSA-SECOND-VIDEO-advert.mp4', title: 'DSA Second Video Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/DSA-VIDEO-advert.mp4', title: 'DSA Video Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/Trendtactics-Digital-Ads.mp4', title: 'Trendtactics Digital Ads', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/Pepsi-Lemon-Advert.mp4', title: 'Pepsi Lemon Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/T\'s-Kitchen-Ad.mp4', title: "T's Kitchen Ad", category: 'advert', description: '' },
+  { type: 'video', src: '/videos/TRENDY\'S-INTRO-advert.mp4', title: "Trendy's Intro Advert", category: 'advert', description: '' },
   // Spoken Word
-  { type: 'video', src: './videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
+  { type: 'video', src: '/videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
   // Music Generation
-  { type: 'video', src: './videos/COLD-COLDER-COLDEST-THIS-IS-WINTER-music.mp4', title: 'Cold Colder Coldest (Music)', category: 'music-generation', description: '' },
+  { type: 'video', src: '/videos/COLD-COLDER-COLDEST-THIS-IS-WINTER-music.mp4', title: 'Cold Colder Coldest (Music)', category: 'music-generation', description: '' },
   { type: 'youtube', src: 'https://youtu.be/31j1QwMls4w?list=PLdDzLt-LMUzePM2grAn9UCoswdH5pssap', title: 'AI Music Video 1', category: 'music-generation', description: '' },
   { type: 'youtube', src: 'https://www.youtube.com/watch?v=bWDo1vN5aJQ&list=PLdDzLt-LMUzcCDdaMpdk9RPfozUE1KeAL', title: 'AI Music Video 2', category: 'music-generation', description: '' },
   // Movie/Script
-  { type: 'video', src: './videos/WHEN-THE-LIGHT-GO-BLACK-movie-script.mp4', title: 'When The Light Go Black (Movie Script)', category: 'advert', description: '' },
+  { type: 'video', src: '/videos/WHEN-THE-LIGHT-GO-BLACK-movie-script.mp4', title: 'When The Light Go Black (Movie Script)', category: 'advert', description: '' },
   // Image Generation
-  { type: 'image', src: './images/image-generation-4.jpg', title: 'Image Generation 4', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/image generation-3.jpg', title: 'Image Generation 3', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/image-generation-5.png', title: 'Image Generation 5', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/advert-image-generation.jpg', title: 'Advert Image Generation', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/zambian man -Grok.jpg', title: 'Zambian Man (Grok)', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/kano-lady-whisk.jpg', title: 'Kano Lady Whisk', category: 'image-generation', description: '' },
-  { type: 'image', src: './images/kano-lady-grok 2.jpg', title: 'Kano Lady Grok 2', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/image-generation-4.jpg', title: 'Image Generation 4', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/image generation-3.jpg', title: 'Image Generation 3', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/image-generation-5.png', title: 'Image Generation 5', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/advert-image-generation.jpg', title: 'Advert Image Generation', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/zambian man -Grok.jpg', title: 'Zambian Man (Grok)', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/kano-lady-whisk.jpg', title: 'Kano Lady Whisk', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/kano-lady-grok 2.jpg', title: 'Kano Lady Grok 2', category: 'image-generation', description: '' },
   // Website Design
-  { type: 'image', src: './images/dsa-parental-website.png', title: 'DSA Parental Website', category: 'website-design', description: '' },
-  { type: 'image', src: './images/Screenshot (14).png', title: 'Screenshot 14', category: 'website-design', description: '' },
-  { type: 'image', src: './images/maingrace247-website.png', title: 'Maingrace247 Website', category: 'website-design', description: '' },
-  { type: 'image', src: './images/akinola-olujobi-website.png', title: 'Akinola Olujobi Website', category: 'website-design', description: '' },
-  { type: 'image', src: './images/blog1.jpg', title: 'Blog 1', category: 'website-design', description: '' },
-  { type: 'image', src: './images/blog2.jpg', title: 'Blog 2', category: 'website-design', description: '' },
-  { type: 'image', src: './images/blog3.jpg', title: 'Blog 3', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/dsa-parental-website.png', title: 'DSA Parental Website', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/Screenshot (14).png', title: 'Screenshot 14', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/maingrace247-website.png', title: 'Maingrace247 Website', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/akinola-olujobi-website.png', title: 'Akinola Olujobi Website', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/blog1.jpg', title: 'Blog 1', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/blog2.jpg', title: 'Blog 2', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/blog3.jpg', title: 'Blog 3', category: 'website-design', description: '' },
   // Promo Video
-  { type: 'video', src: './images/Trendtactics-digital-promo.mp4', title: 'Trendtactics Digital Promo', category: 'advert', description: '' },
+  { type: 'video', src: '/images/Trendtactics-digital-promo.mp4', title: 'Trendtactics Digital Promo', category: 'advert', description: '' },
   // Logo
-  { type: 'image', src: './images/Trendtactics-logo.jpg', title: 'Trendtactics Logo', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/Trendtactics-logo.jpg', title: 'Trendtactics Logo', category: 'website-design', description: '' },
 ];
 
 const categoryLabels = {
@@ -106,7 +106,7 @@ function renderCard(asset) {
     return `
       <div class="portfolio-card" data-category="${asset.category}">
         <div class="portfolio-media">
-          <video src="${asset.src}" controls preload="none" poster="./images/Trendtactics-logo.jpg"></video>
+          <video src="${asset.src}" controls preload="none" poster="/images/Trendtactics-logo.jpg"></video>
         </div>
         <div class="portfolio-card-body">
           <h3>${asset.title}</h3>
