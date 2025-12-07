@@ -1,4 +1,4 @@
-name: Deploy to cPanel
+name: 🚀 Deploy to cPanel via FTP
 
 on:
   push:
@@ -8,29 +8,26 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to cPanel
+    name: Deploy Static Website to cPanel
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
     steps:
-      - name: Checkout code
+      - name: ⬇ Checkout code
         uses: actions/checkout@v4
       
-      - name: Validate FTP Secrets
+      - name: ✅ Validate FTP Secrets
         run: |
           if [ -z "${{ secrets.FTP_SERVER }}" ]; then
             echo "❌ ERROR: FTP_SERVER secret is not set!"
-            echo "Please set it in: Settings → Secrets → Actions"
             exit 1
           fi
           if [ -z "${{ secrets.FTP_USERNAME }}" ]; then
             echo "❌ ERROR: FTP_USERNAME secret is not set!"
-            echo "Please set it in: Settings → Secrets → Actions"
             exit 1
           fi
           if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then
             echo "❌ ERROR: FTP_PASSWORD secret is not set!"
-            echo "Please set it in: Settings → Secrets → Actions"
             exit 1
           fi
           echo "✅ All FTP secrets are configured"
@@ -38,16 +35,12 @@ jobs:
           echo "👤 Username: ${{ secrets.FTP_USERNAME }}"
           echo "📂 Directory: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}"
       
-      - name: List files to deploy
+      - name: 📦 List files to deploy
         run: |
           echo "📦 Files ready for deployment:"
           find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/.github/*' | head -30
-          echo ""
-          echo "📊 Total files to deploy:"
-          find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/.github/*' | wc -l
       
-      - name: Deploy to cPanel via FTP
-        id: deploy
+      - name: 🚀 Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -56,7 +49,6 @@ jobs:
           local-dir: ./
           server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
           dangerous-clean-slate: false
-          dry-run: false
           exclude: |
             **/.git*
             **/.git*/**
@@ -78,21 +70,10 @@ jobs:
             !**/README.md
             **/.github/**
       
-      - name: Deployment Summary
+      - name: ✅ Deployment Summary
         if: success()
         run: |
           echo "✅ Deployment completed successfully!"
           echo "🚀 Website deployed to: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}"
           echo "📅 Deployed at: $(date)"
           echo "🔄 Commit: ${{ github.event.head_commit.message }}"
-          echo "👤 Deployed by: ${{ github.actor }}"
-      
-      - name: Deployment Failed
-        if: failure()
-        run: |
-          echo "❌ Deployment failed!"
-          echo "Please check:"
-          echo "1. FTP credentials are correct in GitHub Secrets"
-          echo "2. FTP server is accessible"
-          echo "3. Directory path is correct: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}"
-          echo "4. Check workflow logs for detailed error messages"
