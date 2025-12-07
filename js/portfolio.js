@@ -106,7 +106,10 @@ function renderCard(asset) {
     return `
       <div class="portfolio-card" data-category="${asset.category}">
         <div class="portfolio-media">
-          <video src="${asset.src}" controls preload="none" poster="/images/Trendtactics-logo.jpg"></video>
+          <video controls preload="none" poster="/images/Trendtactics-logo.jpg">
+            <source src="${asset.src}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div class="portfolio-card-body">
           <h3>${asset.title}</h3>

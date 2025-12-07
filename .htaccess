@@ -118,3 +118,12 @@ Options -Indexes
         Allow from all
     </IfModule>
 </FilesMatch>
+
+# Set correct MIME types for video files
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType video/ogg .ogv
+    AddType audio/mpeg .mp3
+    AddType audio/ogg .ogg
+</IfModule>

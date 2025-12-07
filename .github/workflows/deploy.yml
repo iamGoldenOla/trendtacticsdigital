@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy to cPanel
 
 on:
   push:
@@ -8,17 +8,19 @@ on:
 
 jobs:
   deploy:
-    name: Deploy Static Website
+    name: Deploy to cPanel
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for proper merge
       
-      - name: List files to be deployed
+      - name: Setup deployment
         run: |
-          echo "📦 Files ready for deployment:"
-          find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*' | head -20
+          echo "🚀 Starting deployment to cPanel"
+          echo "📁 Server directory: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}"
       
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -28,6 +30,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
@@ -47,10 +50,11 @@ jobs:
             **/package.json
             **/*.md
             !**/README.md
+            **/.github/**
       
       - name: Deployment Summary
         run: |
           echo "✅ Deployment completed successfully!"
-          echo "🚀 Website deployed to production"
+          echo "🚀 Website deployed to: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}"
           echo "📅 Deployed at: $(date)"
-
+          echo "🔄 Triggered by: ${{ github.event.head_commit.message }}"
