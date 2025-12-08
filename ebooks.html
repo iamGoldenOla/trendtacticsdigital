@@ -139,10 +139,7 @@
             transform-style: preserve-3d;
         }
         
-        .ebooks-hero .hero-title {
-            transform: translateZ(52px);
-            text-shadow: 0 11px 33px rgba(0, 255, 255, 0.34);
-        }
+        /* Removed duplicate transform - using the enhanced version below */
         
         .ebooks-hero .hero-subtitle {
             transform: translateZ(31px);
@@ -166,11 +163,11 @@
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
             margin-bottom: var(--spacing-xl);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #0066FF !important; /* Changed from gradient to solid blue for better visibility */
+            text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
             line-height: 1.2;
+            position: relative;
+            z-index: 10;
         }
         
         .ebooks-hero .hero-subtitle {
@@ -652,7 +649,7 @@
                         </ul>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ebooks.html">Free Books</a></li>
                             <li><a href="tools.html">Marketing Tools</a></li>
