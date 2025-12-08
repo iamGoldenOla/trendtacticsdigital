@@ -41,13 +41,22 @@ function initializeNavigation() {
             });
         });
         
-        // Close menu when clicking outside
+        // Close menu when clicking outside (but not on dropdown items)
         document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
+            // Don't close if clicking inside menu or toggle button
+            if (navMenu.contains(e.target) || navToggle.contains(e.target)) {
+                return;
             }
+            
+            // Don't close if clicking on a dropdown item
+            if (e.target.closest('.nav-item.dropdown')) {
+                return;
+            }
+            
+            // Close the menu
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
         });
     }
 
@@ -82,8 +91,18 @@ function initializeNavigation() {
             dropdownLink.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close other dropdowns first
+                    dropdownItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
                     item.classList.toggle('active');
-                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
                 }
             });
             

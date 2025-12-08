@@ -486,6 +486,24 @@
     opacity: 0.92;
 }
 
+/* Mobile: Spread out text in Our Story section */
+@media (max-width: 768px) {
+    .story-content p {
+        line-height: 1.8 !important; /* Increased line height for better spacing */
+        margin-bottom: 1.5rem !important; /* More space between paragraphs */
+        letter-spacing: 0.3px; /* Slight letter spacing for readability */
+    }
+    
+    .story-intro {
+        line-height: 1.8 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .story-content {
+        padding: var(--spacing-2xl) !important; /* More padding on mobile */
+    }
+}
+
 .story-intro {
     font-size: 1.25rem;
     font-weight: 600;

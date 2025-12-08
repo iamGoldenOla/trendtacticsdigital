@@ -295,23 +295,23 @@ function loadFallbackAboutContent() {
     const fallbackBrands = [
         {
             name: "KEVTOS CATERING",
-            logo: "./images/KEVTOS CATERING.jpg"
+            logo: "/images/KEVTOS CATERING.jpg"
         },
         {
             name: "Realtreasure",
-            logo: "./images/Realtreasure.jpg"
+            logo: "/images/Realtreasure.jpg"
         },
         {
             name: "HustleNChill",
-            logo: "./images/HustleNChill - My Presi 2.jpg"
+            logo: "/images/HustleNChill - My Presi 2.jpg"
         },
         {
             name: "GREENTICK",
-            logo: "./images/GREENTICK - My Presi.jpg"
+            logo: "/images/GREENTICK - My Presi.jpg"
         },
         {
             name: "Gabson",
-            logo: "./images/Gabson -PICP.jpg"
+            logo: "/images/Gabson -PICP.jpg"
         }
     ];
     loadBrandsAbout(fallbackBrands);

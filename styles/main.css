@@ -467,7 +467,7 @@ a:hover {
 }
 
 .nav-toggle.active span {
-    background: var(--primary);
+    background: #0066FF; /* Changed to blue for better visibility */
 }
 
 /* ===== HERO SECTION ===== */
@@ -1493,6 +1493,13 @@ a:hover {
     color: var(--white);
     position: relative;
     overflow: hidden;
+}
+
+/* Add extra top padding for testimonials on mobile */
+@media (max-width: 768px) {
+    .testimonials {
+        padding-top: calc(var(--spacing-5xl) + 3rem);
+    }
 }
 
 .testimonials-background-pattern {
@@ -2545,7 +2552,7 @@ a:hover {
         z-index: 999;
         max-height: calc(100vh - 70px);
         overflow-y: auto;
-        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 102, 255, 0.2);
     }
     .nav-menu.active {
         transform: translateX(0);
@@ -2553,27 +2560,27 @@ a:hover {
         visibility: visible;
     }
     .nav-menu .nav-link {
-        color: var(--primary) !important;
+        color: #0066FF !important; /* Changed from cyan to blue for better visibility */
         font-size: 1.1rem;
         font-weight: 600;
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--radius-lg);
         width: 100%;
         text-align: left;
-        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 102, 255, 0.2);
         transition: all 0.3s ease;
-        text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        text-shadow: none; /* Removed cyan text shadow for better readability */
     }
     .nav-menu .nav-link:hover,
     .nav-menu .nav-link.active {
-        background: rgba(0, 255, 255, 0.15);
+        background: rgba(0, 102, 255, 0.15);
         color: var(--white) !important;
         transform: translateX(5px);
-        border-left: 3px solid var(--primary);
-        text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        border-left: 3px solid #0066FF;
+        text-shadow: none;
     }
     .nav-menu .nav-link i {
-        color: var(--primary);
+        color: #0066FF; /* Changed from cyan to blue */
         margin-right: 0.5rem;
     }
     .nav-menu .nav-link:hover i,
@@ -2585,7 +2592,7 @@ a:hover {
     }
     .nav-menu .dropdown-menu {
         position: static;
-        background: rgba(0, 255, 255, 0.08);
+        background: rgba(0, 102, 255, 0.08);
         border: none;
         box-shadow: none;
         padding: var(--spacing-sm) 0;
@@ -2598,7 +2605,7 @@ a:hover {
         display: block;
     }
     .nav-menu .dropdown-menu a {
-        color: rgba(0, 255, 255, 0.9) !important;
+        color: #0066FF !important; /* Changed from cyan to blue for better visibility */
         padding: var(--spacing-sm) var(--spacing-lg);
         display: block;
         font-weight: 500;
@@ -2606,7 +2613,7 @@ a:hover {
     }
     .nav-menu .dropdown-menu a:hover {
         color: var(--white) !important;
-        background: rgba(0, 255, 255, 0.15);
+        background: rgba(0, 102, 255, 0.15);
         padding-left: var(--spacing-xl);
     }
     .nav-cta {
@@ -2617,6 +2624,7 @@ a:hover {
     }
     .nav-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
+        background: #0066FF !important; /* Blue when active */
     }
     .nav-toggle.active span:nth-child(2) {
         opacity: 0;
@@ -2624,6 +2632,14 @@ a:hover {
     }
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
+        background: #0066FF !important; /* Blue when active */
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
     .hero-content-centered {
         padding-left: var(--spacing-md);
@@ -3911,7 +3927,7 @@ blockquote.service-quote {
     .comparison-header .feature-column {
         text-align: center;
         background: rgba(0, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 102, 255, 0.2);
     }
     
     .comparison-row .feature-name {

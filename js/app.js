@@ -380,9 +380,9 @@ const StatsCounter = ({ stat }) => {
 // Fallback data function
 const getFallbackData = () => ({
     brands: [
-        { name: 'Brand 1', logo: './images/brand1.png' },
-        { name: 'Brand 2', logo: './images/brand2.png' },
-        { name: 'Brand 3', logo: './images/brand3.png' }
+        { name: 'Brand 1', logo: '/images/brand1.png' },
+        { name: 'Brand 2', logo: '/images/brand2.png' },
+        { name: 'Brand 3', logo: '/images/brand3.png' }
     ],
     services: [
         {
