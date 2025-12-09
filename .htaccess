@@ -34,9 +34,12 @@ RewriteRule ^ - [L]
 # 3. REACT SPA FALLBACK
 #    If no static file or page exists → load index.html
 #    (Prevents 404 on refresh for React sections)
+#    BUT: Exclude known HTML pages to prevent redirects
 # ----------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)\.html?$ [NC]
+RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
 RewriteRule ^.*$ /index.html [L]
 
 # ----------------------------------------------------------

@@ -1,21 +1,21 @@
 // Portfolio asset definitions (replace/add as needed)
 const portfolioAssets = [
   // Adverts (videos/images)
-  { type: 'video', src: '/videos/MINISTER-HOPE-JOSIAH-advert.mp4', title: 'Minister Hope Josiah Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/videos/DSA-SECOND-VIDEO-advert.mp4', title: 'DSA Second Video Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/videos/DSA-VIDEO-advert.mp4', title: 'DSA Video Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/videos/Trendtactics-Digital-Ads.mp4', title: 'Trendtactics Digital Ads', category: 'advert', description: '' },
-  { type: 'video', src: '/videos/Pepsi-Lemon-Advert.mp4', title: 'Pepsi Lemon Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/videos/T\'s-Kitchen-Ad.mp4', title: "T's Kitchen Ad", category: 'advert', description: '' },
-  { type: 'video', src: '/videos/TRENDY\'S-INTRO-advert.mp4', title: "Trendy's Intro Advert", category: 'advert', description: '' },
-  // Spoken Word
-  { type: 'video', src: '/videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
-  // Music Generation
-  { type: 'video', src: '/videos/COLD-COLDER-COLDEST-THIS-IS-WINTER-music.mp4', title: 'Cold Colder Coldest (Music)', category: 'music-generation', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/ADVERT FOR OUR SPONSORS.mp4', title: 'Advert For Our Sponsors', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/BF FARMS ADVERT.mp4', title: 'BF Farms Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/Edvoura_advert2.mp4', title: 'Edvoura Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GABSON ENGINEERING ADVERT.mp4', title: 'Gabson Engineering Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GCS EDUCATION ADVERT.mp4', title: 'GCS Education Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GREENTICK AD2.mp4', title: 'Greentick Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS FOR ADVERT/OSUPA INTEGRATED SERVICES ADVERT.mp4', title: 'Osupa Integrated Services Advert', category: 'advert', description: '' },
+  // Spoken Word (if exists)
+  // { type: 'video', src: '/videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
+  // Music Generation (if exists)
+  // { type: 'video', src: '/videos/COLD-COLDER-COLDEST-THIS-IS-WINTER-music.mp4', title: 'Cold Colder Coldest (Music)', category: 'music-generation', description: '' },
   { type: 'youtube', src: 'https://youtu.be/31j1QwMls4w?list=PLdDzLt-LMUzePM2grAn9UCoswdH5pssap', title: 'AI Music Video 1', category: 'music-generation', description: '' },
   { type: 'youtube', src: 'https://www.youtube.com/watch?v=bWDo1vN5aJQ&list=PLdDzLt-LMUzcCDdaMpdk9RPfozUE1KeAL', title: 'AI Music Video 2', category: 'music-generation', description: '' },
-  // Movie/Script
-  { type: 'video', src: '/videos/WHEN-THE-LIGHT-GO-BLACK-movie-script.mp4', title: 'When The Light Go Black (Movie Script)', category: 'advert', description: '' },
+  // Movie/Script (if exists)
+  // { type: 'video', src: '/videos/WHEN-THE-LIGHT-GO-BLACK-movie-script.mp4', title: 'When The Light Go Black (Movie Script)', category: 'advert', description: '' },
   // Image Generation
   { type: 'image', src: '/images/image-generation-4.jpg', title: 'Image Generation 4', category: 'image-generation', description: '' },
   { type: 'image', src: '/images/image generation-3.jpg', title: 'Image Generation 3', category: 'image-generation', description: '' },
@@ -106,7 +106,7 @@ function renderCard(asset) {
     return `
       <div class="portfolio-card" data-category="${asset.category}">
         <div class="portfolio-media">
-          <video controls preload="none" poster="/images/Trendtactics-logo.jpg">
+          <video controls preload="none" poster="/images/Trendtactics_logo.jpg">
             <source src="${asset.src}" type="video/mp4">
             Your browser does not support the video tag.
           </video>

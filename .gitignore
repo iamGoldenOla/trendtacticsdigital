@@ -38,7 +38,15 @@ Thumbs.db
 *.mov
 *.zip
 
-# Allow images in images/ folder (needed for website)
+# Ignore images elsewhere first
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Allow images in images/ folder (needed for website) - must come after ignore rules
+!images/
 !images/**/*.png
 !images/**/*.jpg
 !images/**/*.jpeg
@@ -46,10 +54,3 @@ Thumbs.db
 !images/**/*.webp
 !images/**/*.svg
 !images/**/*.ico
-
-# Ignore images elsewhere
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.webp
