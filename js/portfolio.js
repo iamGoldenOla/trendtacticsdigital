@@ -1,13 +1,13 @@
 // Portfolio asset definitions (replace/add as needed)
 const portfolioAssets = [
   // Adverts (videos/images)
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/ADVERT FOR OUR SPONSORS.mp4', title: 'Advert For Our Sponsors', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/BF FARMS ADVERT.mp4', title: 'BF Farms Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/Edvoura_advert2.mp4', title: 'Edvoura Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GABSON ENGINEERING ADVERT.mp4', title: 'Gabson Engineering Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GCS EDUCATION ADVERT.mp4', title: 'GCS Education Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/GREENTICK AD2.mp4', title: 'Greentick Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS FOR ADVERT/OSUPA INTEGRATED SERVICES ADVERT.mp4', title: 'Osupa Integrated Services Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/ADVERT%20FOR%20OUR%20SPONSORS.mp4', title: 'Advert For Our Sponsors', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/BF%20FARMS%20ADVERT.mp4', title: 'BF Farms Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/Edvoura_advert2.mp4', title: 'Edvoura Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GABSON%20ENGINEERING%20ADVERT.mp4', title: 'Gabson Engineering Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GCS%20EDUCATION%20ADVERT.mp4', title: 'GCS Education Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GREENTICK%20AD2.mp4', title: 'Greentick Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/OSUPA%20INTEGRATED%20SERVICES%20ADVERT.mp4', title: 'Osupa Integrated Services Advert', category: 'advert', description: '' },
   // Spoken Word (if exists)
   // { type: 'video', src: '/videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
   // Music Generation (if exists)

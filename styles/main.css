@@ -304,6 +304,7 @@ a:hover {
 }
 
 .nav-logo {
+    background: transparent !important;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -353,8 +354,11 @@ a:hover {
 .logo-img {
     height: 50px;
     width: auto;
+    max-width: 200px;
     object-fit: contain;
     transition: all var(--transition-normal);
+    display: block;
+    background: transparent;
 }
 
 .nav-logo:hover .logo-img {

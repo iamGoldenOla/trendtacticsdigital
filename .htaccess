@@ -17,7 +17,14 @@ RewriteRule ^ /%1? [NC,L,R=301]
 # ----------------------------------------------------------
 # 2. CLEAN URLs (remove .html from static pages)
 #    Example: /services  → loads services.html
+#    Handle /ebooks/ with trailing slash
 # ----------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule ^(.*)/?$ $1.html [L]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+)$ $1.html [L]
@@ -38,8 +45,7 @@ RewriteRule ^ - [L]
 # ----------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)\.html?$ [NC]
-RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
+RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
 RewriteRule ^.*$ /index.html [L]
 
 # ----------------------------------------------------------

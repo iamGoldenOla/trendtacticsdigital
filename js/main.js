@@ -4,10 +4,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeSmoothScrolling();
-    loadContent();
+    // Only load content on homepage (index.html)
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/index') {
+        loadContent();
+        initializeVideoPlayer();
+        initTestimonialsCarousel(); // Initialize testimonials carousel for static HTML
+    }
     initializeAnimations();
-    initializeVideoPlayer();
-    initTestimonialsCarousel(); // Initialize testimonials carousel for static HTML
 });
 
 // ===== NAVIGATION FUNCTIONALITY =====
