@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load all about page content
 async function loadAboutContent() {
     try {
-        const response = await fetch('./data/content.json');
+        const response = await fetch('/data/content.json');
         const data = await response.json();
         
         loadValues(data.values);
@@ -295,23 +295,23 @@ function loadFallbackAboutContent() {
     const fallbackBrands = [
         {
             name: "KEVTOS CATERING",
-            logo: "/images/KEVTOS CATERING.jpg"
+            logo: "/images/brands/kevtos-catering.png"
         },
         {
             name: "Realtreasure",
-            logo: "/images/Realtreasure.jpg"
+            logo: "/images/brands/realtreasure.png"
         },
         {
             name: "HustleNChill",
-            logo: "/images/HustleNChill - My Presi 2.jpg"
+            logo: "/images/brands/hustlenchill.png"
         },
         {
             name: "GREENTICK",
-            logo: "/images/GREENTICK - My Presi.jpg"
+            logo: "/images/brands/greentick.png"
         },
         {
             name: "Gabson",
-            logo: "/images/Gabson -PICP.jpg"
+            logo: "/images/brands/gabson.png"
         }
     ];
     loadBrandsAbout(fallbackBrands);

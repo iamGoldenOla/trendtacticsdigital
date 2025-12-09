@@ -163,7 +163,7 @@ function initializeSmoothScrolling() {
 async function loadContent() {
     try {
         console.log('Attempting to load content from ./data/content.json');
-        const response = await fetch('./data/content.json');
+        const response = await fetch('/data/content.json');
         console.log('Response status:', response.status);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -634,7 +634,7 @@ async function loadLatestBlogPosts() {
     if (!blogGrid) return;
     
     try {
-        const response = await fetch('./data/blog-posts.json');
+        const response = await fetch('/data/blog-posts.json');
         if (!response.ok) throw new Error('Failed to load blog posts');
         const data = await response.json();
         

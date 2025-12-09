@@ -37,7 +37,19 @@ Thumbs.db
 *.mp4
 *.mov
 *.zip
+
+# Allow images in images/ folder (needed for website)
+!images/**/*.png
+!images/**/*.jpg
+!images/**/*.jpeg
+!images/**/*.gif
+!images/**/*.webp
+!images/**/*.svg
+!images/**/*.ico
+
+# Ignore images elsewhere
 *.png
 *.jpg
 *.jpeg
 *.gif
+*.webp

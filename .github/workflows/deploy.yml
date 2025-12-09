@@ -17,17 +17,24 @@ jobs:
         run: |
           if [ -z "${{ secrets.FTP_SERVER }}" ]; then
             echo "❌ FTP_SERVER secret is not set"
+            echo "📝 Please set FTP_SERVER in: Repository → Settings → Secrets and variables → Actions"
+            echo "📖 See GITHUB_SECRETS_SETUP.md for instructions"
             exit 1
           fi
           if [ -z "${{ secrets.FTP_USERNAME }}" ]; then
             echo "❌ FTP_USERNAME secret is not set"
+            echo "📝 Please set FTP_USERNAME in: Repository → Settings → Secrets and variables → Actions"
             exit 1
           fi
           if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then
             echo "❌ FTP_PASSWORD secret is not set"
+            echo "📝 Please set FTP_PASSWORD in: Repository → Settings → Secrets and variables → Actions"
             exit 1
           fi
           echo "✅ All FTP secrets are configured"
+          echo "🔍 FTP_SERVER: ${{ secrets.FTP_SERVER }}"
+          echo "👤 FTP_USERNAME: ${{ secrets.FTP_USERNAME }}"
+          echo "🔒 FTP_PASSWORD: [HIDDEN]"
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -35,9 +42,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
           server-dir: /public_html/
           local-dir: ./
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**

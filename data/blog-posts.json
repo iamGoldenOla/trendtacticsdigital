@@ -11,7 +11,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2025-06-15",
-      "image": "images/blog-featured.jpg",
+      "image": "/images/blog1.jpg",
       "featured": true,
       "tags": ["AI", "SEO", "E-commerce", "Traffic", "Case Study", "ROI"],
       "readTime": "8 min read",
@@ -30,7 +30,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2025-05-20",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["Social Media", "Engagement", "Strategy", "2025", "Content"],
       "readTime": "6 min read",
@@ -49,7 +49,7 @@
       "author": "Michael Chen",
       "authorBio": "SEO Specialist with expertise in technical SEO and algorithm analysis.",
       "date": "2025-04-10",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": ["Google", "Algorithm", "SEO", "Update", "Technical SEO"],
       "readTime": "7 min read",
@@ -68,7 +68,7 @@
       "author": "Emily Rodriguez",
       "authorBio": "Content Marketing Manager with expertise in content strategy and audience development.",
       "date": "2025-03-15",
-      "image": "images/blog3.jpg",
+      "image": "/images/blog3.jpg",
       "featured": false,
       "tags": ["Content Marketing", "Beginner", "Strategy", "2025", "Guide"],
       "readTime": "10 min read",
@@ -87,7 +87,7 @@
       "author": "David Kim",
       "authorBio": "Digital Marketing Analyst specializing in emerging technologies and market trends.",
       "date": "2025-02-28",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["AI", "Automation", "Future", "Trends", "Technology"],
       "readTime": "9 min read",
@@ -106,7 +106,7 @@
       "author": "Lisa Wang",
       "authorBio": "Brand Strategist with expertise in digital brand development and identity design.",
       "date": "2025-01-20",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": ["Branding", "Identity", "Digital", "Strategy", "Design"],
       "readTime": "8 min read",
@@ -125,7 +125,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2025-01-15",
-      "image": "images/blog-featured.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["E-commerce", "SEO", "Sales", "Conversion", "Strategy"],
       "readTime": "12 min read",
@@ -144,7 +144,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2025-01-10",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["Digital Marketing", "Mistakes", "ROI", "Strategy", "Tips"],
       "readTime": "8 min read",
@@ -163,7 +163,7 @@
       "author": "Emily Rodriguez",
       "authorBio": "Content Marketing Manager with expertise in content strategy and audience development.",
       "date": "2025-01-05",
-      "image": "images/blog3.jpg",
+      "image": "/images/blog3.jpg",
       "featured": false,
       "tags": ["Landing Page", "Conversion", "Design", "CRO", "Strategy"],
       "readTime": "9 min read",
@@ -182,7 +182,7 @@
       "author": "David Kim",
       "authorBio": "Digital Marketing Analyst specializing in emerging technologies and market trends.",
       "date": "2024-12-28",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": ["Marketing Automation", "Lead Nurturing", "Efficiency", "ROI", "Strategy"],
       "readTime": "11 min read",
@@ -201,7 +201,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2024-12-20",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["Social Media", "Trends", "2025", "AI", "Video"],
       "readTime": "7 min read",
@@ -220,7 +220,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2024-12-15",
-      "image": "images/blog-featured.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": ["ROI", "Digital Marketing", "Strategy", "Analytics", "Growth"],
       "readTime": "10 min read",
@@ -296,37 +296,37 @@
       "name": "Akinola Olujobi",
       "title": "Founder & CEO",
       "bio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
-      "avatar": "images/team-akinola.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     },
     {
       "name": "Sarah Johnson",
       "title": "Social Media Strategist",
       "bio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
-      "avatar": "images/team-sarah.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     },
     {
       "name": "Michael Chen",
       "title": "SEO Specialist",
       "bio": "SEO Specialist with expertise in technical SEO and algorithm analysis.",
-      "avatar": "images/team-michael.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     },
     {
       "name": "Emily Rodriguez",
       "title": "Content Marketing Manager",
       "bio": "Content Marketing Manager with expertise in content strategy and audience development.",
-      "avatar": "images/team-emily.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     },
     {
       "name": "David Kim",
       "title": "Digital Marketing Analyst",
       "bio": "Digital Marketing Analyst specializing in emerging technologies and market trends.",
-      "avatar": "images/team-david.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     },
     {
       "name": "Lisa Wang",
       "title": "Brand Strategist",
       "bio": "Brand Strategist with expertise in digital brand development and identity design.",
-      "avatar": "images/team-lisa.jpg"
+      "avatar": "/images/akinola.jpg.jpg"
     }
   ]
 } 

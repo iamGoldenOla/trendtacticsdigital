@@ -71,7 +71,7 @@ async function loadServicesData() {
         // Try alternative path
         try {
             console.log('Trying alternative path...');
-            const response = await fetch('./data/content.json');
+            const response = await fetch('/data/content.json');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

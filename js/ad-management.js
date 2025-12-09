@@ -154,21 +154,21 @@ class AdManager {
                 description: 'Learn advanced strategies from industry experts',
                 cta: 'Enroll Now',
                 link: '#',
-                image: 'images/custom-ad-1.jpg'
+                image: '/images/blog1.jpg'
             },
             {
                 title: 'Free SEO Audit',
                 description: 'Get a comprehensive analysis of your website',
                 cta: 'Get Free Audit',
                 link: '#',
-                image: 'images/custom-ad-2.jpg'
+                image: '/images/blog2.jpg'
             },
             {
                 title: 'AI Marketing Tools',
                 description: 'Automate your marketing with AI',
                 cta: 'Learn More',
                 link: '#',
-                image: 'images/custom-ad-3.jpg'
+                image: '/images/blog3.jpg'
             }
         ];
 

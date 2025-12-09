@@ -13,7 +13,7 @@ const blogData = {
             excerpt: 'Discover how Trendtactics Digital used AI-powered strategies to triple organic traffic for a leading e-commerce brand in just 6 months.',
             category: 'Case Study',
             date: '2025-06-15',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             featured: true,
             views: 1247,
             comments: 23
@@ -24,7 +24,7 @@ const blogData = {
             excerpt: 'Learn actionable strategies to increase your brand engagement and reach on social platforms in 2025.',
             category: 'Tips',
             date: '2025-05-20',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             featured: false,
             views: 892,
             comments: 15
@@ -35,7 +35,7 @@ const blogData = {
             excerpt: 'Stay ahead of the curve with our breakdown of the latest Google update and how it impacts your SEO strategy.',
             category: 'News',
             date: '2025-04-10',
-            image: 'images/blog2.jpg',
+            image: '/images/blog2.jpg',
             featured: false,
             views: 1567,
             comments: 31
@@ -46,7 +46,7 @@ const blogData = {
             excerpt: 'Everything you need to know to launch a successful content marketing campaign this year.',
             category: 'How-To',
             date: '2025-03-15',
-            image: 'images/blog3.jpg',
+            image: '/images/blog3.jpg',
             featured: false,
             views: 743,
             comments: 12
@@ -57,7 +57,7 @@ const blogData = {
             excerpt: 'Explore how artificial intelligence and automation are reshaping the digital marketing landscape.',
             category: 'Trends',
             date: '2025-02-28',
-            image: 'images/blog1.jpg',
+            image: '/images/blog1.jpg',
             featured: false,
             views: 1123,
             comments: 18
@@ -68,7 +68,7 @@ const blogData = {
             excerpt: 'Learn the essential elements of creating a memorable and effective brand identity online.',
             category: 'Branding',
             date: '2025-01-20',
-            image: 'images/blog2.jpg',
+            image: '/images/blog2.jpg',
             featured: false,
             views: 678,
             comments: 9

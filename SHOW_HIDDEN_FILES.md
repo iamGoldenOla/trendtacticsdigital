@@ -48,3 +48,4 @@ Get-ChildItem -Force -Hidden
 - `.env` - Environment variables (sensitive, don't commit)
 - `.gitignore` - Files Git should ignore
 
+
