@@ -132,49 +132,46 @@
             }
         }
         
-        .ebooks-hero .hero-content {
+        .tools-hero .hero-content {
             position: relative;
             z-index: 2;
             transform-style: preserve-3d;
-        }
-        
-        /* Removed duplicate transform - using the enhanced version below */
-        
-        .ebooks-hero .hero-subtitle {
-            transform: translateZ(31px);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         /* Enhanced Hero Section Design */
-        .ebooks-hero {
+        .tools-hero {
             padding: 8rem 0 6rem;
             min-height: 60vh;
             display: flex;
             align-items: center;
         }
         
-        .ebooks-hero .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .ebooks-hero .hero-title {
+        .tools-hero .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
             margin-bottom: var(--spacing-xl);
-            color: #0066FF !important; /* Changed from gradient to solid blue for better visibility */
-            text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1.2;
+            transform: translateZ(55px);
+            text-shadow: 0 12px 35px rgba(0, 255, 255, 0.35);
             position: relative;
             z-index: 10;
         }
         
-        .ebooks-hero .hero-subtitle {
+        .tools-hero .hero-subtitle {
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.8;
             opacity: 0.95;
             max-width: 700px;
             margin: 0 auto;
+            transform: translateZ(32px);
+            color: var(--white);
         }
         
         /* Ebooks Main Content */
@@ -702,10 +699,88 @@
                 </p>
             </div>
             <div class="tools-grid" id="tools-grid">
-                <!-- Tools will be loaded here by JavaScript -->
-                <div style="text-align: center; padding: 3rem; color: var(--white);">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <p>Loading marketing tools...</p>
+                <!-- Hashtag Generator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-hashtag"></i>
+                    </div>
+                    <div class="tool-title">Hashtag Generator</div>
+                    <div class="tool-desc">Get trending hashtags for your campaign or post to maximize reach and engagement.</div>
+                    <form class="tool-form" id="hashtagForm">
+                        <input type="text" id="hashtagInput" placeholder="Describe your post or topic..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Generate Hashtags</button>
+                    </form>
+                    <div class="tool-result" id="hashtagResult"></div>
+                </div>
+                
+                <!-- Headline Generator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-heading"></i>
+                    </div>
+                    <div class="tool-title">Headline Generator</div>
+                    <div class="tool-desc">Create catchy, conversion-focused headlines for your blog posts, ads, or emails.</div>
+                    <form class="tool-form" id="headlineForm">
+                        <input type="text" id="headlineInput" placeholder="Describe your content..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Generate Headlines</button>
+                    </form>
+                    <div class="tool-result" id="headlineResult"></div>
+                </div>
+                
+                <!-- Content Idea Generator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-lightbulb"></i>
+                    </div>
+                    <div class="tool-title">Content Idea Generator</div>
+                    <div class="tool-desc">Get fresh, creative content ideas for your blog, social media, or marketing campaigns.</div>
+                    <form class="tool-form" id="contentIdeaForm">
+                        <input type="text" id="contentIdeaInput" placeholder="Your niche or topic..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Get Ideas</button>
+                    </form>
+                    <div class="tool-result" id="contentIdeaResult"></div>
+                </div>
+                
+                <!-- Business Strategy Analyzer -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-chart-line"></i>
+                    </div>
+                    <div class="tool-title">Business Strategy Analyzer</div>
+                    <div class="tool-desc">Get a comprehensive SWOT analysis and strategic recommendations for your business.</div>
+                    <form class="tool-form" id="strategyForm">
+                        <input type="text" id="strategyInput" placeholder="Describe your business or challenge..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Analyze</button>
+                    </form>
+                    <div class="tool-result" id="strategyResult"></div>
+                </div>
+                
+                <!-- Customer Persona Generator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="tool-title">Customer Persona Generator</div>
+                    <div class="tool-desc">Generate detailed customer personas to better understand and target your audience.</div>
+                    <form class="tool-form" id="personaForm">
+                        <input type="text" id="personaInput" placeholder="Describe your target audience..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Generate Personas</button>
+                    </form>
+                    <div class="tool-result" id="personaResult"></div>
+                </div>
+                
+                <!-- SEO Content Strategy -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="tool-title">SEO Content Strategy</div>
+                    <div class="tool-desc">Get a comprehensive content plan to boost your search rankings and organic traffic.</div>
+                    <form class="tool-form" id="seoContentForm">
+                        <input type="text" id="seoContentInput" placeholder="Your website or topic..." required>
+                        <button type="submit"><i class="fas fa-magic"></i> Generate Strategy</button>
+                    </form>
+                    <div class="tool-result" id="seoContentResult"></div>
                 </div>
             </div>
         </div>
