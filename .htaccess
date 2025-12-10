@@ -17,14 +17,13 @@ RewriteRule ^ /%1? [NC,L,R=301]
 # ----------------------------------------------------------
 # 2. CLEAN URLs (remove .html from static pages)
 #    Example: /services  → loads services.html
-#    Handle /ebooks/ with trailing slash
+#    Handle /ebooks/ with trailing slash - MUST BE FIRST
 # ----------------------------------------------------------
-# First, handle /ebooks/ specifically (with or without trailing slash)
+# CRITICAL: Handle /ebooks/ FIRST before any other rules
+RewriteCond %{REQUEST_URI} ^/ebooks/?$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} ^/ebooks/?$ [NC]
-RewriteCond %{DOCUMENT_ROOT}/ebooks.html -f
-RewriteRule ^ebooks/?$ /ebooks.html [L]
+RewriteRule ^ebooks/?$ /ebooks.html [L,QSA]
 
 # Then handle other specific routes with explicit file checks - MUST come before SPA fallback
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -56,10 +55,10 @@ RewriteRule ^ - [L]
 # ----------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-# Exclude all known static HTML pages from SPA fallback
-RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
-# Also exclude /ebooks/ specifically (with trailing slash)
+# CRITICAL: Exclude /ebooks/ from SPA fallback (must match exactly)
 RewriteCond %{REQUEST_URI} !^/ebooks/?$ [NC]
+# Exclude all other known static HTML pages from SPA fallback
+RewriteCond %{REQUEST_URI} !^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
 RewriteRule ^.*$ /index.html [L]
 
 # ----------------------------------------------------------
