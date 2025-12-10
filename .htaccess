@@ -19,12 +19,19 @@ RewriteRule ^ /%1? [NC,L,R=301]
 #    Example: /services  → loads services.html
 #    Handle /ebooks/ with trailing slash
 # ----------------------------------------------------------
-# First, handle specific routes with explicit file checks - MUST come before SPA fallback
+# First, handle /ebooks/ specifically (with or without trailing slash)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/ebooks/?$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/ebooks.html -f
+RewriteRule ^ebooks/?$ /ebooks.html [L]
+
+# Then handle other specific routes with explicit file checks - MUST come before SPA fallback
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} ^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
+RewriteCond %{REQUEST_URI} ^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/%1.html -f
-RewriteRule ^(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ /%1.html [L]
+RewriteRule ^(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ /%1.html [L]
 
 # Then handle other single-word routes
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -49,7 +56,9 @@ RewriteRule ^ - [L]
 # ----------------------------------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+# Exclude all known static HTML pages from SPA fallback
 RewriteCond %{REQUEST_URI} !^/(ebooks|tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
+# Also exclude /ebooks/ specifically (with trailing slash)
 RewriteCond %{REQUEST_URI} !^/ebooks/?$ [NC]
 RewriteRule ^.*$ /index.html [L]
 
