@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Ebooks - Trendtactics Digital</title>
-    <meta name="description" content="Download free ebooks on digital marketing, business growth, and entrepreneurship. Valuable resources to help you grow your business.">
-    <meta name="keywords" content="free ebooks, digital marketing books, business books, free resources, downloadable books">
+    <meta name="description" content="Download free ebooks on digital marketing, business growth, sales, and entrepreneurship. Expert insights to grow your business.">
+    <meta name="keywords" content="free ebooks, digital marketing books, business books, entrepreneurship, sales books">
     <meta name="author" content="Akinola Olujobi">
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Free Ebooks - Trendtactics Digital">
     <meta property="og:description" content="Download free ebooks on digital marketing, business growth, and entrepreneurship.">
     <meta property="og:url" content="https://trendtacticsdigital.com/ebooks">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:image" content="/images/og-image.jpg">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/compact-header.css">
-    <link rel="stylesheet" href="/styles/about.css">
+    
     <style>
-        /* ===== 3D HERO EFFECTS FOR EBOOKS PAGE ===== */
+        /* ===== EBOOKS PAGE STYLES ===== */
         .ebooks-hero {
             position: relative;
             overflow: hidden;
-            perspective: 1000px;
+            padding: 8rem 0 6rem;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
         }
         
         .ebooks-hero::before {
@@ -40,149 +48,55 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: 
-                radial-gradient(circle at 28% 28%, rgba(0, 255, 255, 0.22) 0%, transparent 50%),
-                radial-gradient(circle at 72% 72%, rgba(64, 224, 208, 0.18) 0%, transparent 50%),
-                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
-            animation: ebooksRotate 21s linear infinite;
-            transform-style: preserve-3d;
+            background: radial-gradient(circle at 28% 28%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
+                        radial-gradient(circle at 72% 72%, rgba(64, 224, 208, 0.2) 0%, transparent 50%);
+            animation: rotate 22s linear infinite;
         }
         
-        .ebooks-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ebooks-3d" width="47" height="47" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.1" fill="%2300FFFF" opacity="0.11"/><circle cx="8.5" cy="8.5" r="1.25" fill="%2340E0D0" opacity="0.09"/><circle cx="37.5" cy="37.5" r="1.85" fill="%2300FFFF" opacity="0.09"/></pattern></defs><rect width="100" height="100" fill="url(%23ebooks-3d)"/></svg>');
-            opacity: 0.44;
-            animation: ebooksFloat 16s ease-in-out infinite;
-        }
-        
-        .ebooks-hero-3d-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .ebooks-shape-3d {
-            position: absolute;
-            opacity: 0.31;
-            animation: ebooksFloat3D 21.5s ease-in-out infinite;
-        }
-        
-        .ebooks-shape-3d.shape-1 {
-            width: 160px;
-            height: 160px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.31), rgba(64, 224, 208, 0.21));
-            border-radius: 34% 66% 66% 34% / 34% 34% 66% 66%;
-            top: 12%;
-            left: 9.5%;
-            transform: rotateZ(45deg);
-            animation-delay: 0s;
-        }
-        
-        .ebooks-shape-3d.shape-2 {
-            width: 108px;
-            height: 108px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.31), rgba(0, 255, 255, 0.21));
-            border-radius: 50%;
-            top: 58%;
-            right: 14%;
-            animation-delay: 3.5s;
-        }
-        
-        .ebooks-shape-3d.shape-3 {
-            width: 128px;
-            height: 128px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.27), rgba(10, 30, 63, 0.31));
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            bottom: 19%;
-            left: 17%;
-            animation-delay: 7s;
-        }
-        
-        @keyframes ebooksRotate {
-            0% { transform: rotate(0deg) translateZ(0); }
-            100% { transform: rotate(360deg) translateZ(0); }
-        }
-        
-        @keyframes ebooksFloat {
-            0%, 100% { transform: translateY(0) translateZ(0); }
-            50% { transform: translateY(-21px) translateZ(11px); }
-        }
-        
-        @keyframes ebooksFloat3D {
-            0%, 100% {
-                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
-            }
-            25% {
-                transform: translateY(-31px) translateX(21px) rotateZ(90deg) translateZ(21px);
-            }
-            50% {
-                transform: translateY(-63px) translateX(-21px) rotateZ(180deg) translateZ(43px);
-            }
-            75% {
-                transform: translateY(-31px) translateX(11px) rotateZ(270deg) translateZ(21px);
-            }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .ebooks-hero .hero-content {
             position: relative;
             z-index: 2;
-            transform-style: preserve-3d;
-        }
-        
-        /* Removed duplicate transform - using the enhanced version below */
-        
-        .ebooks-hero .hero-subtitle {
-            transform: translateZ(31px);
-        }
-        
-        /* Enhanced Hero Section Design */
-        .ebooks-hero {
-            padding: 8rem 0 6rem;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .ebooks-hero .hero-content {
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
         }
         
         .ebooks-hero .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 900;
             margin-bottom: var(--spacing-xl);
-            color: #0066FF !important; /* Changed from gradient to solid blue for better visibility */
-            text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
-            line-height: 1.2;
-            position: relative;
-            z-index: 10;
+            color: #00FFFF;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.4);
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 50%, #00FFFF 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
         }
         
         .ebooks-hero .hero-subtitle {
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             line-height: 1.8;
+            color: var(--white);
             opacity: 0.95;
             max-width: 700px;
             margin: 0 auto;
         }
         
-        /* Ebooks Main Content */
-        .ebooks-main {
+        .ebooks-main-section {
             padding: var(--spacing-5xl) 0;
             background: var(--base-dark);
-            margin-top: 4rem;
         }
         
         .ebooks-intro {
@@ -194,7 +108,10 @@
         .ebooks-intro h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--primary);
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: var(--spacing-lg);
         }
         
@@ -205,7 +122,6 @@
             line-height: 1.7;
         }
         
-        /* Category Filters */
         .ebooks-filters {
             display: flex;
             justify-content: center;
@@ -216,8 +132,8 @@
         
         .ebook-filter-btn {
             padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 255, 255, 0.2);
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
             border-radius: var(--radius-lg);
             color: var(--white);
             font-weight: 600;
@@ -227,49 +143,72 @@
         
         .ebook-filter-btn:hover,
         .ebook-filter-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
+            background: linear-gradient(135deg, #00FFFF, #40E0D0);
+            border-color: #00FFFF;
             color: var(--base-dark);
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
         }
         
-        /* Ebooks Grid - Compact Design */
         .ebooks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: var(--spacing-xl);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-2xl);
         }
         
         .ebook-card {
-            background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
-            border-radius: var(--radius-xl);
+            background: linear-gradient(145deg, rgba(10, 30, 63, 0.95) 0%, rgba(26, 46, 79, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 2px solid rgba(0, 255, 255, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.1);
             overflow: hidden;
-            border: 1.5px solid rgba(0, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.06);
+            position: relative;
             display: flex;
             flex-direction: column;
         }
         
+        .ebook-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00FFFF, #40E0D0, #00FFFF);
+            background-size: 200% auto;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
         .ebook-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary);
-            box-shadow: 0 12px 36px rgba(0, 255, 255, 0.15);
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.25), 0 0 40px rgba(64, 224, 208, 0.15);
+        }
+        
+        .ebook-card:hover::before {
+            transform: scaleX(1);
         }
         
         .ebook-cover {
             width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            height: 200px;
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 1.5rem;
             position: relative;
             overflow: hidden;
         }
         
         .ebook-cover i {
-            font-size: 3rem;
+            font-size: 4rem;
             color: var(--base-dark);
             z-index: 2;
         }
@@ -281,17 +220,16 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-            animation: ebookShine 4s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 4s ease-in-out infinite;
         }
         
-        @keyframes ebookShine {
+        @keyframes shine {
             0%, 100% { transform: rotate(0deg); }
             50% { transform: rotate(180deg); }
         }
         
         .ebook-content {
-            padding: var(--spacing-lg);
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -299,7 +237,7 @@
         
         .ebook-category {
             display: inline-block;
-            background: var(--primary);
+            background: linear-gradient(135deg, #00FFFF, #40E0D0);
             color: var(--base-dark);
             padding: 0.3rem 0.75rem;
             border-radius: var(--radius-sm);
@@ -312,69 +250,36 @@
         }
         
         .ebook-content h3 {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: var(--spacing-xs);
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-sm);
             line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
         
         .ebook-content p {
-            color: var(--white);
-            opacity: 0.85;
-            line-height: 1.5;
-            margin-bottom: var(--spacing-md);
-            font-size: 0.9rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+            font-size: 0.95rem;
             flex: 1;
-        }
-        
-        .ebook-meta {
-            display: flex;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-            flex-wrap: wrap;
-            font-size: 0.8rem;
-            color: var(--white);
-            opacity: 0.7;
-        }
-        
-        .ebook-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        
-        .ebook-meta i {
-            color: var(--primary);
-            font-size: 0.75rem;
-        }
-        
-        .ebook-price {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: var(--spacing-md);
         }
         
         .ebook-actions {
             display: flex;
             gap: var(--spacing-sm);
-            flex-direction: column;
+            margin-top: auto;
         }
         
         .ebook-actions .btn {
-            padding: 0.7rem 1rem;
-            font-size: 0.9rem;
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            border-radius: var(--radius-md);
+            border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
@@ -384,238 +289,26 @@
         }
         
         .ebook-actions .btn-read {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #00FFFF, #40E0D0);
             color: var(--base-dark);
             border: none;
         }
         
         .ebook-actions .btn-read:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 255, 255, 0.4);
         }
         
         .ebook-actions .btn-download {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: #00FFFF;
+            border: 2px solid #00FFFF;
         }
         
         .ebook-actions .btn-download:hover {
-            background: var(--primary);
+            background: #00FFFF;
             color: var(--base-dark);
             transform: translateY(-2px);
-        }
-        
-        /* Lead Capture Modal */
-        .lead-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 30, 63, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            padding: var(--spacing-lg);
-        }
-        
-        .lead-modal.active {
-            display: flex;
-        }
-        
-        .lead-modal-content {
-            background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
-            border-radius: var(--radius-2xl);
-            padding: var(--spacing-4xl);
-            max-width: 500px;
-            width: 100%;
-            border: 2px solid var(--primary);
-            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.3);
-            position: relative;
-        }
-        
-        /* PDF Viewer Modal */
-        .pdf-viewer-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 30, 63, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 10001;
-            padding: var(--spacing-lg);
-        }
-        
-        .pdf-viewer-modal.active {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .pdf-viewer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-lg);
-            background: rgba(0, 255, 255, 0.1);
-            border-bottom: 2px solid var(--primary);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .pdf-viewer-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 0;
-        }
-        
-        .pdf-viewer-actions {
-            display: flex;
-            gap: var(--spacing-md);
-        }
-        
-        .pdf-viewer-actions .btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-            border-radius: var(--radius-md);
-        }
-        
-        .pdf-viewer-close {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .pdf-viewer-close:hover {
-            background: var(--primary);
-            color: var(--base-dark);
-        }
-        
-        .pdf-viewer-container {
-            flex: 1;
-            overflow: auto;
-            background: #fff;
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--primary);
-        }
-        
-        .pdf-viewer-container iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 600px;
-            border: none;
-            border-radius: var(--radius-lg);
-        }
-        
-        /* CTA Section Spacing */
-        .ebooks-main + .cta {
-            margin-top: 4rem;
-            padding-top: var(--spacing-4xl);
-        }
-        
-        .ebooks-main .ebooks-grid {
-            margin-bottom: 4rem;
-        }
-        
-        .lead-modal-close {
-            position: absolute;
-            top: var(--spacing-lg);
-            right: var(--spacing-lg);
-            background: transparent;
-            border: none;
-            color: var(--primary);
-            font-size: 2rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .lead-modal-close:hover {
-            background: rgba(0, 255, 255, 0.1);
-            transform: rotate(90deg);
-        }
-        
-        .lead-modal-content h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .lead-modal-content p {
-            color: var(--white);
-            opacity: 0.9;
-            margin-bottom: var(--spacing-2xl);
-            line-height: 1.7;
-        }
-        
-        .lead-form {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-        }
-        
-        .lead-form label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--spacing-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .lead-form input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 255, 255, 0.2);
-            border-radius: var(--radius-lg);
-            color: var(--white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .lead-form input:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1);
-        }
-        
-        .lead-form input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .lead-form button {
-            width: 100%;
-            padding: 1.1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--base-dark);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .lead-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
         }
         
         @media (max-width: 768px) {
@@ -623,8 +316,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .lead-modal-content {
-                padding: var(--spacing-2xl);
+            .ebooks-hero {
+                padding: 6rem 0 4rem;
             }
         }
     </style>
@@ -649,7 +342,7 @@
                         </ul>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/resources" class="nav-link active">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/ebooks">Free Books</a></li>
                             <li><a href="/tools">Marketing Tools</a></li>
@@ -678,97 +371,43 @@
 
     <!-- Hero Section -->
     <section class="page-hero ebooks-hero">
-        <div class="ebooks-hero-3d-shapes">
-            <div class="ebooks-shape-3d shape-1"></div>
-            <div class="ebooks-shape-3d shape-2"></div>
-            <div class="ebooks-shape-3d shape-3"></div>
-        </div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Free Ebooks Library</h1>
                 <p class="hero-subtitle">
-                    Access our curated collection of free ebooks on digital marketing, business growth, entrepreneurship, and personal development. Download instantly, no credit card required.
+                    Access our collection of free ebooks on digital marketing, business growth, sales, and entrepreneurship. Download instantly and start learning today.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Ebooks Main Content -->
-    <section class="ebooks-main">
+    <!-- Ebooks Main Section -->
+    <section class="ebooks-main-section">
         <div class="container">
             <div class="ebooks-intro">
-                <h2>Valuable Resources for Your Growth</h2>
+                <h2>Knowledge is Power</h2>
                 <p>
-                    We've compiled a library of free ebooks covering essential topics in digital marketing, business strategy, and personal development. These resources are designed to help you grow your business and achieve your goals.
+                    Explore our curated collection of free ebooks designed to help you grow your business, improve your marketing skills, and achieve success.
                 </p>
             </div>
             
-            <!-- Category Filters -->
             <div class="ebooks-filters">
-                <button class="ebook-filter-btn active" data-filter="all">All Ebooks</button>
-                <button class="ebook-filter-btn" data-filter="digital-marketing">Digital Marketing</button>
-                <button class="ebook-filter-btn" data-filter="business">Business</button>
-                <button class="ebook-filter-btn" data-filter="motivational">Motivational</button>
-                <button class="ebook-filter-btn" data-filter="self-help">Self-Help</button>
-                <button class="ebook-filter-btn" data-filter="inspirational">Inspirational</button>
+                <button class="ebook-filter-btn active" data-category="all">All Books</button>
+                <button class="ebook-filter-btn" data-category="marketing">Marketing</button>
+                <button class="ebook-filter-btn" data-category="business">Business</button>
+                <button class="ebook-filter-btn" data-category="sales">Sales</button>
+                <button class="ebook-filter-btn" data-category="entrepreneurship">Entrepreneurship</button>
             </div>
             
-            <!-- Ebooks Grid -->
             <div class="ebooks-grid" id="ebooks-grid">
-                <!-- Ebooks will be loaded here by JavaScript -->
-                <div class="ebooks-loading" style="text-align: center; padding: 3rem; color: var(--white);">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <p>Loading free ebooks...</p>
+                <!-- Ebooks will be loaded dynamically by JavaScript -->
+                <div style="text-align: center; color: var(--white); padding: 3rem;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <p>Loading ebooks...</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Lead Capture Modal -->
-    <div class="lead-modal" id="leadModal">
-        <div class="lead-modal-content">
-            <button class="lead-modal-close" onclick="closeLeadModal()">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3>Get Your Free Ebook</h3>
-            <p>Enter your details below to download this ebook instantly. We'll also send you valuable tips and resources to help grow your business.</p>
-            <form class="lead-form" id="leadForm">
-                <div>
-                    <label for="leadName">Full Name</label>
-                    <input type="text" id="leadName" name="name" placeholder="Your full name" required>
-                </div>
-                <div>
-                    <label for="leadEmail">Email Address</label>
-                    <input type="email" id="leadEmail" name="email" placeholder="your@email.com" required>
-                </div>
-                <div>
-                    <label for="leadBusiness">Business Name (Optional)</label>
-                    <input type="text" id="leadBusiness" name="business" placeholder="Your business name">
-                </div>
-                <input type="hidden" id="selectedEbook" name="ebook">
-                <input type="hidden" id="selectedEbookFile" name="ebookFile">
-                <button type="submit" class="btn btn-primary">Download Free Ebook</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- PDF Viewer Modal -->
-    <div class="pdf-viewer-modal" id="pdfViewerModal">
-        <div class="pdf-viewer-header">
-            <h3 id="pdfViewerTitle">Reading Ebook</h3>
-            <div class="pdf-viewer-actions">
-                <button class="btn pdf-viewer-close" onclick="closePdfViewer()">
-                    <i class="fas fa-times"></i> Close
-                </button>
-                <button class="btn btn-primary" id="downloadFromViewer" onclick="downloadEbookFromViewer()">
-                    <i class="fas fa-download"></i> Download
-                </button>
-            </div>
-        </div>
-        <div class="pdf-viewer-container">
-            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
-        </div>
-    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
@@ -790,253 +429,11 @@
             <div class="testimonials-container" role="region" aria-label="Client testimonials" tabindex="0">
                 <div class="testimonials-scroll">
                     <div class="testimonials-grid" id="testimonials-grid" role="list">
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"Trendtactics Digital transformed our online presence completely. Our website traffic increased by 300% and our conversion rate doubled within just 3 months. Their strategic approach and attention to detail is unmatched!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="John Smith">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>John Smith</h4>
-                                    <p>CEO, TechStart Solutions</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"Working with Trendtactics has been a game-changer for our business. Their SEO strategies helped us rank #1 for our main keywords, and the ROI has been incredible. Highly recommend their services!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face" alt="Sarah Johnson">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Sarah Johnson</h4>
-                                    <p>Marketing Director, GrowthCo</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"The team at Trendtactics Digital is exceptional. They delivered our e-commerce platform on time and exceeded our expectations. Our online sales have increased by 400% since launch!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Michael Chen">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Michael Chen</h4>
-                                    <p>Founder, EcoStore</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"I was skeptical about digital marketing until I worked with Trendtactics. They proved me wrong with incredible results. Our lead generation increased by 250% and the quality of leads is outstanding!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Emily Rodriguez">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Emily Rodriguez</h4>
-                                    <p>Sales Manager, InnovateCorp</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"The brand strategy work Trendtactics did for us was phenomenal. They helped us reposition our company and the results speak for themselves - 150% increase in brand recognition!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt="David Thompson">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>David Thompson</h4>
-                                    <p>Founder, BrandVision</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"Content marketing was never our strong suit, but Trendtactics made it work wonders for us. Our blog traffic increased by 500% and we're now seen as industry thought leaders!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&fit=crop&crop=face" alt="Lisa Wang">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Lisa Wang</h4>
-                                    <p>Content Director, DataFlow</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"What impressed me most about Trendtactics is their data-driven approach. Every decision is backed by analytics, and they constantly optimize for better results. Our ROI is through the roof!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face" alt="Robert Kim">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Robert Kim</h4>
-                                    <p>VP Marketing, AnalyticsPro</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"The web design team at Trendtactics created a stunning website that perfectly captures our brand essence. The user experience is flawless and our bounce rate dropped by 60%!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="Jennifer Adams">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>Jennifer Adams</h4>
-                                    <p>Creative Director, DesignHub</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>"Trendtactics helped us launch our mobile app and the results exceeded all expectations. User engagement is up 200% and we've seen a significant increase in customer retention. Outstanding work!"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt="James Wilson">
-                                    <div class="avatar-ring"></div>
-                                </div>
-                                <div class="author-info">
-                                    <h4>James Wilson</h4>
-                                    <p>Product Manager, TechFlow</p>
-                                </div>
-                            </div>
-                            <div class="testimonial-accent"></div>
-                        </div>
+                        <!-- Testimonials will be loaded from main.js -->
                     </div>
                 </div>
             </div>
             
-            <!-- Controls moved outside the scrollable container so they don't scroll with cards -->
             <div class="testimonials-controls" aria-hidden="false">
                 <button class="testimonial-btn prev" id="prev-testimonial" aria-label="Previous testimonial" aria-controls="testimonials-grid">
                     <i class="fas fa-chevron-left" aria-hidden="true"></i>
@@ -1051,20 +448,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta-title">Looking for Premium Ebooks?</h2>
-            <p class="cta-subtitle">
-                Check out our Author Shop for premium ebooks written by our founder, packed with advanced strategies and insights.
-            </p>
-            <div class="cta-buttons">
-                <a href="/shop" class="btn btn-primary btn-large">Visit Author Shop</a>
-                <a href="/contact" class="btn btn-outline btn-large">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1074,8 +457,7 @@
                         <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
                     </div>
                     <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
-                        Unlock strategy, creativity, and AI power — all in one studio.
+                        We don't just market brands — we engineer digital growth. Unlock strategy, creativity, and AI power — all in one studio.
                     </p>
                     <div class="social-links">
                         <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
@@ -1097,158 +479,71 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+                        <li><a href="/service-web-development">Web Development</a></li>
+                        <li><a href="/service-app-development">App Development</a></li>
+                        <li><a href="/service-digital-marketing">Digital Marketing</a></li>
+                        <li><a href="/service-email-marketing">Email Marketing</a></li>
+                        <li><a href="/service-content-creation">Content Creation</a></li>
+                        <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
+                        <li><a href="/service-facebook-ads">Facebook Ads</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Company</h3>
+                    <h4>Resources</h4>
                     <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/ebooks">Free Books</a></li>
+                        <li><a href="/tools">Marketing Tools</a></li>
+                        <li><a href="/quiz">Growth Quiz</a></li>
                         <li><a href="/academy">Academy</a></li>
+                        <li><a href="/contact">Free Consultation</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
+                <div class="footer-column">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Get the latest marketing insights and tips delivered to your inbox.</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+                <p>&copy; 2024 Trendtactics Digital. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="./js/browser-compat.js"></script>
+    <!-- PDF Viewer Modal -->
+    <div class="pdf-viewer-modal" id="pdf-viewer-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 30, 63, 0.98); backdrop-filter: blur(10px); z-index: 10000; flex-direction: column; padding: 1rem;">
+        <div class="pdf-viewer-header" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: rgba(0, 255, 255, 0.1); border-bottom: 2px solid #00FFFF; margin-bottom: 1rem;">
+            <h3 id="pdf-viewer-title" style="font-size: 1.5rem; font-weight: 700; color: #00FFFF; margin: 0;">Ebook Viewer</h3>
+            <button class="pdf-viewer-close" id="pdf-viewer-close" style="background: transparent; border: 2px solid #00FFFF; color: #00FFFF; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="pdf-viewer-container" style="flex: 1; overflow: auto; background: #fff; border-radius: 12px; border: 2px solid #00FFFF;">
+            <iframe id="pdf-viewer" src="" frameborder="0" style="width: 100%; height: 100%; min-height: 600px; border: none; border-radius: 12px;"></iframe>
+        </div>
+    </div>
+
     <script src="/js/main.js"></script>
     <script src="/js/ebooks.js"></script>
-    <script>
-        // Lead capture form submission
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = {
-                name: document.getElementById('leadName').value,
-                email: document.getElementById('leadEmail').value,
-                business: document.getElementById('leadBusiness').value,
-                ebook: document.getElementById('selectedEbook').value,
-                ebookFile: document.getElementById('selectedEbookFile').value,
-                source: 'ebook_download'
-            };
-            
-            // TODO: Integrate with Trendy AI (ClientFlow) API
-            // POST to https://trendyai.com/api/agents/clientFlow
-            // Also send email notification
-            
-            // Trigger download
-            const filePath = formData.ebookFile;
-            if (filePath) {
-                const link = document.createElement('a');
-                link.href = filePath;
-                link.download = filePath.split('/').pop();
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-            
-            alert('Thank you! Your ebook download has started. We\'ll also send you valuable resources via email.');
-            closeLeadModal();
-        });
-        
-        function closeLeadModal() {
-            document.getElementById('leadModal').classList.remove('active');
-            document.getElementById('leadForm').reset();
-        }
-        
-        // Open modal when ebook download is clicked
-        function openLeadModal(ebookId, ebookTitle, ebookFile) {
-            document.getElementById('selectedEbook').value = ebookId;
-            document.getElementById('selectedEbookFile').value = ebookFile;
-            document.querySelector('.lead-modal-content h3').textContent = `Get "${ebookTitle}"`;
-            document.getElementById('leadModal').classList.add('active');
-            document.getElementById('leadName').focus();
-        }
-        
-        // Open PDF viewer
-        function openPdfViewer(ebookId, ebookTitle, ebookFile) {
-            document.getElementById('pdfViewerTitle').textContent = ebookTitle;
-            document.getElementById('pdfViewer').src = ebookFile + '#toolbar=1&navpanes=1&scrollbar=1';
-            document.getElementById('pdfViewerModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            
-            // Store for download
-            document.getElementById('pdfViewerModal').dataset.ebookFile = ebookFile;
-            document.getElementById('pdfViewerModal').dataset.ebookId = ebookId;
-        }
-        
-        function closePdfViewer() {
-            document.getElementById('pdfViewerModal').classList.remove('active');
-            document.getElementById('pdfViewer').src = '';
-            document.body.style.overflow = '';
-        }
-        
-        function downloadEbookFromViewer() {
-            const filePath = document.getElementById('pdfViewerModal').dataset.ebookFile;
-            const ebookId = document.getElementById('pdfViewerModal').dataset.ebookId;
-            
-            if (filePath) {
-                // Open lead capture modal for download tracking
-                const ebookTitle = document.getElementById('pdfViewerTitle').textContent;
-                closePdfViewer();
-                openLeadModal(ebookId, ebookTitle, filePath);
-            }
-        }
-        
-        // Close modals on outside click
-        document.getElementById('leadModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLeadModal();
-            }
-        });
-        
-        document.getElementById('pdfViewerModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePdfViewer();
-            }
-        });
-        
-        // Close PDF viewer on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePdfViewer();
-                closeLeadModal();
-            }
-        });
-    </script>
 </body>
 </html>
 
