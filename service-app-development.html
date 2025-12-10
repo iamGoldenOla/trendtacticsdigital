@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Development Services - Trendtactics Digital</title>
     <meta name="description" content="Professional mobile app development services. Cross-platform and native apps designed for user retention and scalability. Get your quote today.">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/images.css">
     <style>
         .service-hero {
             background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
@@ -619,8 +620,15 @@
         </section>
 
         <!-- Service Details with 3D Cards -->
-        <section class="services-detail" style="padding: 100px 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
-            <div class="container">
+        <section class="services-detail content-block-bg" style="padding: 100px 0;">
+            <div class="content-block-bg-image">
+                <picture>
+                    <source srcset="/images/app-development=parallex.jpg" type="image/jpeg">
+                    <img src="/images/app-development=parallex.jpg" alt="App Development Services" loading="lazy" decoding="async" class="image-filter-darken">
+                </picture>
+            </div>
+            <div class="bg-overlay-light"></div>
+            <div class="container content-block-bg-content">
                 <div style="max-width: 1200px; margin: 0 auto;">
                     <div style="text-align: center; margin-bottom: 4rem;">
                         <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
@@ -1111,6 +1119,7 @@
     }
     </script>
     <script src="/js/main.js"></script>
+    <script src="/js/parallax.js"></script>
 </body>
 </html>
 

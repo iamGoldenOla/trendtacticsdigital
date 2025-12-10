@@ -12,14 +12,14 @@
     <meta property="og:description" content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
     <meta property="og:url" content="https://trendtacticsdigital.com/portfolio">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio - Trendtactics Digital">
     <meta name="twitter:description" content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
-    <meta name="twitter:image" content="./images/og-image.jpg">
+    <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/compact-header.css">
     <link rel="stylesheet" href="/styles/portfolio.css">
+    <link rel="stylesheet" href="/styles/images.css">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -49,7 +50,7 @@
       "@type": "Organization",
       "name": "Trendtactics Digital",
       "url": "https://trendtacticsdigital.com/",
-      "logo": "https://trendtacticsdigital.com/images/og-image.jpg",
+      "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
       "sameAs": [
         "https://linkedin.com/company/trendtactics-digital",
         "https://twitter.com/trendtactics",
@@ -310,6 +311,15 @@
 
     <!-- Portfolio Projects -->
     <main class="portfolio-main">
+        <div class="parallax-strip" data-speed="0.25" style="margin-bottom: 3rem;">
+            <div class="parallax-inner">
+                <picture>
+                    <source srcset="/images/portfolio_parallele.jpg" type="image/jpeg">
+                    <img src="/images/portfolio_parallele.jpg" alt="Portfolio Showcase" loading="lazy" decoding="async">
+                </picture>
+            </div>
+            <div class="bg-overlay-dark"></div>
+        </div>
         <div class="container">
             <div id="portfolio-groups">
                 <!-- Project groups and cards will be loaded here by JS -->
@@ -406,10 +416,11 @@
         </div>
     </footer>
 
-    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="/styles/about.css">
 
-    <script src="./js/browser-compat.js"></script>
+    <script src="/js/browser-compat.js"></script>
     <script src="/js/portfolio.js"></script>
+    <script src="/js/parallax.js"></script>
     <script>
     // Show modal after 7 seconds (once per session)
     if (!sessionStorage.getItem('ebookPromoModalPortfolioShown')) {

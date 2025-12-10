@@ -7,6 +7,11 @@ Options -MultiViews +FollowSymLinks -Indexes
 RewriteEngine On
 RewriteBase /
 
+# Hard-stop for static assets by directory (prevents rewrites on files)
+RewriteCond %{REQUEST_URI} ^/(images|videos|styles|js)/ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
 # ----------------------------------------------------------
 # 0. STATIC FILE HANDLING - MUST BE FIRST!
 #    Allow images, videos, CSS, JS to load normally

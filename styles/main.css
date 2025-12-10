@@ -4244,3 +4244,20 @@ footer.footer > .container {
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 16px 40px rgba(0,255,255,0.18), 0 8px 32px rgba(10,30,63,0.18);
 }
+
+/* Logo contrast helper */
+.navbar .logo-img {
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+}
+
+.footer .footer-logo-img {
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+}

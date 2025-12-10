@@ -1,0 +1,340 @@
+/* ===== IMAGE STYLES & PARALLAX EFFECTS ===== */
+
+/* Parallax Container */
+.parallax {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.parallax-inner picture,
+.parallax-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Background Overlays */
+.bg-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 30, 63, 0.85) 0%,
+        rgba(10, 30, 63, 0.75) 50%,
+        rgba(10, 30, 63, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+.bg-overlay-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    z-index: 1;
+}
+
+.bg-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 255, 255, 0.15) 0%,
+        rgba(64, 224, 208, 0.1) 50%,
+        rgba(10, 30, 63, 0.8) 100%
+    );
+    z-index: 1;
+}
+
+/* Section Background */
+.section-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.section-bg-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0;
+}
+
+/* Image Accent */
+.image-accent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    z-index: 0;
+}
+
+.image-accent-top {
+    top: 0;
+    left: 0;
+}
+
+.image-accent-bottom {
+    bottom: 0;
+    left: 0;
+}
+
+/* Portfolio Thumbnail */
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    background: var(--base-dark-light);
+}
+
+.portfolio-thumb picture,
+.portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-thumb:hover picture,
+.portfolio-thumb:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-thumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(10, 30, 63, 0.7) 100%
+    );
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-thumb:hover .portfolio-thumb-overlay {
+    opacity: 0.8;
+}
+
+/* Parallax Strip */
+.parallax-strip {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-strip-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 3rem 1.5rem;
+}
+
+/* Content Block with Background */
+.content-block-bg {
+    position: relative;
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.content-block-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.content-block-bg-image picture,
+.content-block-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-block-bg-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* CTA Background */
+.cta-bg {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.cta-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cta-bg-image picture,
+.cta-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-bg-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+/* Responsive Image Container */
+.responsive-image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.responsive-image-container picture,
+.responsive-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Image Filter Effects */
+.image-filter-darken {
+    filter: brightness(0.7) contrast(1.1);
+}
+
+.image-filter-lighten {
+    filter: brightness(1.2) contrast(0.9);
+}
+
+.image-filter-saturate {
+    filter: saturate(1.3) contrast(1.1);
+}
+
+.image-filter-desaturate {
+    filter: saturate(0.5) contrast(1.1);
+}
+
+/* Blend Modes */
+.blend-overlay {
+    mix-blend-mode: overlay;
+}
+
+.blend-multiply {
+    mix-blend-mode: multiply;
+}
+
+.blend-screen {
+    mix-blend-mode: screen;
+}
+
+.blend-soft-light {
+    mix-blend-mode: soft-light;
+}
+
+/* Mobile: Disable Parallax */
+@media (max-width: 768px) {
+    .parallax,
+    .parallax-strip,
+    .section-bg {
+        background-attachment: scroll !important;
+    }
+    
+    .parallax-inner {
+        transform: none !important;
+        height: 100%;
+    }
+    
+    .section-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .parallax {
+        min-height: 350px;
+    }
+    
+    .parallax-strip {
+        min-height: 250px;
+    }
+}
+
+/* Accessibility */
+.parallax picture img,
+.section-bg picture img,
+.content-block-bg-image picture img {
+    loading: lazy;
+    decoding: async;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .parallax-inner {
+        transform: none !important;
+    }
+    
+    .parallax,
+    .parallax-strip,
+    .section-bg {
+        background-attachment: scroll !important;
+    }
+    
+    .portfolio-thumb picture,
+    .portfolio-thumb img {
+        transition: none;
+    }
+}
+
+
+

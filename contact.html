@@ -12,14 +12,14 @@
     <meta property="og:description" content="Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations.">
     <meta property="og:url" content="https://trendtacticsdigital.com/contact">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact Us - Trendtactics Digital">
     <meta name="twitter:description" content="Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations.">
-    <meta name="twitter:image" content="./images/og-image.jpg">
+    <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/styles/compact-header.css">
     <link rel="stylesheet" href="/styles/about.css">
     <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="stylesheet" href="/styles/images.css">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -50,7 +51,7 @@
       "@type": "Organization",
       "name": "Trendtactics Digital",
       "url": "https://trendtacticsdigital.com/",
-      "logo": "https://trendtacticsdigital.com/images/og-image.jpg",
+      "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
       "sameAs": [
         "https://linkedin.com/company/trendtactics-digital",
         "https://twitter.com/trendtactics",
@@ -315,6 +316,15 @@
 
         <!-- Contact Form and Map -->
         <section class="contact-main">
+            <div class="parallax-strip" data-speed="0.3" style="margin-bottom: 3rem;">
+                <div class="parallax-inner">
+                    <picture>
+                        <source srcset="/images/contact-us-parallex.jpg" type="image/jpeg">
+                        <img src="/images/contact-us-parallex.jpg" alt="Contact Us" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="bg-overlay-dark"></div>
+            </div>
             <div class="container">
                 <div class="contact-content">
                     <div class="contact-form-section">
@@ -611,11 +621,12 @@
             </div>
         </div>
     </footer>
-    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="/styles/about.css">
 
     <!-- Only keep necessary scripts here, remove <div id="react-app"></div> and floating translate button/widget from after the footer -->
-    <script src="./js/browser-compat.js"></script>
+    <script src="/js/browser-compat.js"></script>
     <script src="/js/email-service.js"></script>
+    <script src="/js/parallax.js"></script>
     <script>
     function scrollToTop() {
         window.scrollTo({

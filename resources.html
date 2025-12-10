@@ -13,10 +13,10 @@
     <meta property="og:description" content="Free resources to help grow your business.">
     <meta property="og:url" content="https://trendtacticsdigital.com/resources">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +27,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/images.css">
     
     <style>
         .resources-hero {
@@ -212,8 +213,15 @@
     </section>
 
     <!-- Resources Grid -->
-    <section class="resources-main" style="background: var(--base-dark); padding: var(--spacing-5xl) 0;">
-        <div class="container">
+    <section class="resources-main content-block-bg" style="padding: var(--spacing-5xl) 0;">
+        <div class="content-block-bg-image">
+            <picture>
+                <source srcset="/images/resources-parallelx.jpg" type="image/jpeg">
+                <img src="/images/resources-parallelx.jpg" alt="Resources" loading="lazy" decoding="async" class="image-filter-darken">
+            </picture>
+        </div>
+        <div class="bg-overlay-dark"></div>
+        <div class="container content-block-bg-content">
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">
@@ -309,7 +317,8 @@
         </div>
     </footer>
 
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/parallax.js"></script>
 </body>
 </html>
 

@@ -13,16 +13,16 @@
     <meta property="og:description" content="Unlock strategy, creativity, and AI power — all in one studio.">
     <meta property="og:url" content="https://trendtacticsdigital.com">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Trendtactics Digital - We Engineer Digital Growth">
     <meta name="twitter:description" content="Unlock strategy, creativity, and AI power — all in one studio.">
-    <meta name="twitter:image" content="/images/og-image.jpg">
+    <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/shared-effects.css">
     <link rel="stylesheet" href="/styles/about.css">
+    <link rel="stylesheet" href="/styles/images.css">
     
     <!-- Browser Compatibility -->
     <script src="/js/browser-compat.js"></script>
@@ -62,7 +63,7 @@
       "@type": "Organization",
       "name": "Trendtactics Digital",
       "url": "https://trendtacticsdigital.com/",
-      "logo": "https://trendtacticsdigital.com/images/og-image.jpg",
+      "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
       "sameAs": [
         "https://linkedin.com/company/trendtactics-digital",
         "https://twitter.com/trendtactics",
@@ -314,6 +315,15 @@
 
         <!-- Services Section -->
         <section class="services">
+            <div class="parallax-strip" data-speed="0.3">
+                <div class="parallax-inner">
+                    <picture>
+                        <source srcset="/images/service-parallex.jpg" type="image/jpeg">
+                        <img src="/images/service-parallex.jpg" alt="Digital Marketing Services" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="bg-overlay-dark"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Our Services</h2>
@@ -681,8 +691,15 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta">
-            <div class="container">
+        <section class="cta cta-bg">
+            <div class="cta-bg-image">
+                <picture>
+                    <source srcset="/images/digital-marketing-parallex.jpg" type="image/jpeg">
+                    <img src="/images/digital-marketing-parallex.jpg" alt="Digital Growth" loading="lazy" decoding="async">
+                </picture>
+            </div>
+            <div class="bg-overlay-gradient"></div>
+            <div class="container cta-bg-content">
                 <h2 class="cta-title">Ready to Accelerate Your Growth?</h2>
                 <p class="cta-subtitle">
                     Let's discuss how we can help you achieve your digital marketing goals and drive real business results.
@@ -1006,5 +1023,6 @@
     });
     </script>
     <script src="/js/main.js"></script>
+    <script src="/js/parallax.js"></script>
 </body>
 </html> 

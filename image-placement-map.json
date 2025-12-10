@@ -1,0 +1,213 @@
+{
+  "imagePlacements": [
+    {
+      "imagePath": "/images/website-development-parallex.jpg",
+      "page": "service-web-development.html",
+      "section": "services-detail",
+      "placement": "content-block-bg",
+      "alt": "Web Development Services",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "light",
+      "reason": "Background for web development services section - showcases technical expertise and modern web design"
+    },
+    {
+      "imagePath": "/images/web-deve-parallex.jpg",
+      "page": "services.html",
+      "section": "services-overview",
+      "placement": "parallax-strip",
+      "alt": "Web Development",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "dark",
+      "reason": "Parallax background strip for services overview section - emphasizes web development capabilities"
+    },
+    {
+      "imagePath": "/images/still-life-book-hero-section.webp",
+      "page": "about.html",
+      "section": "company-story",
+      "placement": "parallax-strip",
+      "alt": "Company Story Background",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "dark",
+      "reason": "Background for company story section - represents knowledge, learning, and expertise"
+    },
+    {
+      "imagePath": "/images/still-life-book-hero-section.webp",
+      "page": "ebooks.html",
+      "section": "ebooks-main-section",
+      "placement": "section-background",
+      "alt": "Ebooks Section Background",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "none",
+      "reason": "Subtle background for ebooks main section - reinforces the book/learning theme"
+    },
+    {
+      "imagePath": "/images/social-media-parallelx.jpg",
+      "page": "service-social-media-marketing.html",
+      "section": "service-detail",
+      "placement": "content-block-bg",
+      "alt": "Social Media Marketing",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "light",
+      "reason": "Background for social media marketing service page - visually represents social engagement"
+    },
+    {
+      "imagePath": "/images/service-parallex.jpg",
+      "page": "index.html",
+      "section": "services",
+      "placement": "parallax-strip",
+      "alt": "Digital Marketing Services",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "dark",
+      "reason": "Parallax strip before services section on homepage - creates visual separation and interest"
+    },
+    {
+      "imagePath": "/images/service-parallex.jpg",
+      "page": "services.html",
+      "section": "services-overview",
+      "placement": "parallax-strip",
+      "alt": "Service Categories",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "dark",
+      "reason": "Background for services overview section - general service imagery for visual appeal"
+    },
+    {
+      "imagePath": "/images/resources-parallelx.jpg",
+      "page": "resources.html",
+      "section": "resources-main",
+      "placement": "content-block-bg",
+      "alt": "Resources",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "dark",
+      "reason": "Background for resources main section - creates depth and visual interest for resource cards"
+    },
+    {
+      "imagePath": "/images/quiz-parallelx.jpg",
+      "page": "quiz.html",
+      "section": "quiz-wrapper",
+      "placement": "parallax-strip",
+      "alt": "Growth Quiz Background",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "dark",
+      "reason": "Full background for quiz page - creates engaging atmosphere for interactive quiz experience"
+    },
+    {
+      "imagePath": "/images/portfolio_parallele.jpg",
+      "page": "portfolio.html",
+      "section": "portfolio-main",
+      "placement": "parallax-strip",
+      "alt": "Portfolio Showcase",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "dark",
+      "reason": "Parallax strip before portfolio projects - sets the stage for showcasing work"
+    },
+    {
+      "imagePath": "/images/email-marketing-parallele.jpg",
+      "page": "service-email-marketing.html",
+      "section": "service-detail",
+      "placement": "content-block-bg",
+      "alt": "Email Marketing Services",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "light",
+      "reason": "Background for email marketing service page - represents communication and email campaigns"
+    },
+    {
+      "imagePath": "/images/digital-marketing-parallex.jpg",
+      "page": "index.html",
+      "section": "cta",
+      "placement": "cta-bg",
+      "alt": "Digital Growth",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "gradient",
+      "reason": "CTA section background on homepage - creates compelling call-to-action visual"
+    },
+    {
+      "imagePath": "/images/digital-marketing-parallex.jpg",
+      "page": "services.html",
+      "section": "cta",
+      "placement": "cta-bg",
+      "alt": "Transform Your Business",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "gradient",
+      "reason": "CTA section background on services page - reinforces digital marketing theme"
+    },
+    {
+      "imagePath": "/images/content-creation-parallex.jpg",
+      "page": "service-content-creation.html",
+      "section": "service-detail",
+      "placement": "content-block-bg",
+      "alt": "Content Creation Services",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "light",
+      "reason": "Background for content creation service page - represents creativity and content production"
+    },
+    {
+      "imagePath": "/images/contact-us-parallex.jpg",
+      "page": "contact.html",
+      "section": "contact-main",
+      "placement": "parallax-strip",
+      "alt": "Contact Us",
+      "crop": "cover",
+      "filter": "none",
+      "overlay": "dark",
+      "reason": "Parallax strip before contact form - creates welcoming visual for contact section"
+    },
+    {
+      "imagePath": "/images/app-development=parallex.jpg",
+      "page": "service-app-development.html",
+      "section": "service-detail",
+      "placement": "content-block-bg",
+      "alt": "App Development Services",
+      "crop": "cover",
+      "filter": "darken",
+      "overlay": "light",
+      "reason": "Background for app development service page - represents mobile and app development"
+    }
+  ],
+  "implementationNotes": {
+    "imageOptimization": "All images use <picture> elements with WebP fallback and srcset for responsive loading",
+    "loadingStrategy": "lazy loading enabled for all images, async decoding for performance",
+    "parallaxBehavior": "Parallax effects disabled on mobile devices (≤768px) and for users with reduced motion preference",
+    "overlayTypes": {
+      "dark": "rgba(10, 30, 63, 0.75-0.85) gradient overlay for text readability",
+      "light": "rgba(255, 255, 255, 0.05-0.15) overlay for subtle lightening",
+      "gradient": "Cyan to dark gradient overlay for CTA sections"
+    },
+    "filterEffects": {
+      "darken": "brightness(0.7) contrast(1.1) - darkens image for better text contrast",
+      "none": "No filter applied - image used as-is"
+    },
+    "cropStrategy": "All images use object-fit: cover with object-position: center for consistent display"
+  },
+  "pageSummary": {
+    "index.html": ["service-parallex.jpg (parallax-strip)", "digital-marketing-parallex.jpg (cta-bg)"],
+    "about.html": ["still-life-book-hero-section.webp (parallax-strip)"],
+    "services.html": ["service-parallex.jpg (parallax-strip)", "digital-marketing-parallex.jpg (cta-bg)"],
+    "portfolio.html": ["portfolio_parallele.jpg (parallax-strip)"],
+    "contact.html": ["contact-us-parallex.jpg (parallax-strip)"],
+    "service-web-development.html": ["website-development-parallex.jpg (content-block-bg)"],
+    "service-app-development.html": ["app-development=parallex.jpg (content-block-bg)"],
+    "service-email-marketing.html": ["email-marketing-parallele.jpg (content-block-bg)"],
+    "service-content-creation.html": ["content-creation-parallex.jpg (content-block-bg)"],
+    "service-social-media-marketing.html": ["social-media-parallelx.jpg (content-block-bg)"],
+    "resources.html": ["resources-parallelx.jpg (content-block-bg)"],
+    "ebooks.html": ["still-life-book-hero-section.webp (section-background)"],
+    "quiz.html": ["quiz-parallelx.jpg (parallax-strip)"]
+  }
+}
+
+
+

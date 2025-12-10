@@ -7,6 +7,7 @@
   <meta name="description" content="Growth Quiz — Trendtactics">
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/quiz.css">
+  <link rel="stylesheet" href="/styles/images.css">
 </head>
 <body>
   <header class="navbar" style="position:fixed;top:0;left:0;right:0;">
@@ -20,7 +21,16 @@
   </header>
 
   <main class="quiz-wrapper">
-    <div class="quiz-card">
+    <div class="parallax-strip" data-speed="0.25" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+      <div class="parallax-inner">
+        <picture>
+          <source srcset="/images/quiz-parallelx.jpg" type="image/jpeg">
+          <img src="/images/quiz-parallelx.jpg" alt="Growth Quiz Background" loading="lazy" decoding="async" class="image-filter-darken">
+        </picture>
+      </div>
+      <div class="bg-overlay-dark"></div>
+    </div>
+    <div class="quiz-card" style="position: relative; z-index: 2;">
       <div id="start-screen">
         <h1 class="text-center" style="color:var(--primary);">Growth Quiz</h1>
         <p class="text-center small-muted">Select the services you'd like assessed — pick one or several.</p>
@@ -112,5 +122,6 @@
   </footer>
 
   <script src="/js/quiz.js" defer></script>
+  <script src="/js/parallax.js"></script>
 </body>
 </html>
