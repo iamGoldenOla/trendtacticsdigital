@@ -8,6 +8,21 @@ RewriteEngine On
 RewriteBase /
 
 # ----------------------------------------------------------
+# 0. STATIC FILE HANDLING - MUST BE FIRST!
+#    Allow images, videos, CSS, JS to load normally
+#    CRITICAL: This must come BEFORE any rewrite rules
+# ----------------------------------------------------------
+# Explicitly allow /images/ directory FIRST
+RewriteCond %{REQUEST_URI} ^/images/ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Allow all static file types
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp|mp4|webm|ogg|css|js|ico|woff|woff2|ttf|eot|pdf)$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# ----------------------------------------------------------
 # 1. REDIRECT .html URLs to clean URLs (301 Permanent Redirect)
 #    Example: /services.html → /services
 # ----------------------------------------------------------
@@ -15,12 +30,17 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1? [NC,L,R=301]
 
 # ----------------------------------------------------------
-# 2. CLEAN URLs (remove .html from static pages)
+# 2. REDIRECT /index to root (prevent /index URL)
+# ----------------------------------------------------------
+RewriteCond %{THE_REQUEST} /index/?[\s?] [NC]
+RewriteRule ^index/?$ / [NC,L,R=301]
+
+# ----------------------------------------------------------
+# 3. CLEAN URLs (remove .html from static pages)
 #    Example: /services  → loads services.html
 #    Handle /ebooks/ with trailing slash - MUST BE FIRST
 # ----------------------------------------------------------
 # CRITICAL: Handle /ebooks/ FIRST before any other rules
-# This rule MUST execute before SPA fallback to prevent index.html from loading
 RewriteCond %{REQUEST_URI} ^/ebooks/?$ [NC]
 RewriteRule ^ebooks/?$ /ebooks.html [L,QSA]
 
@@ -38,21 +58,7 @@ RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_URI}.html -f
 RewriteRule ^([^/]+)/?$ /$1.html [L]
 
 # ----------------------------------------------------------
-# 2. STATIC FILE HANDLING
-#    Allow images, videos, CSS, JS to load normally
-#    CRITICAL: This must come BEFORE any rewrite rules to ensure static files load
-# ----------------------------------------------------------
-RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp|mp4|webm|ogg|css|js|ico|woff|woff2|ttf|eot)$ [NC]
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
-
-# Explicitly allow /images/ directory
-RewriteCond %{REQUEST_URI} ^/images/ [NC]
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
-
-# ----------------------------------------------------------
-# 3. REACT SPA FALLBACK
+# 4. REACT SPA FALLBACK
 #    If no static file or page exists → load index.html
 #    (Prevents 404 on refresh for React sections)
 #    BUT: Exclude known HTML pages to prevent redirects
@@ -64,10 +70,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/ebooks/?$ [NC]
 # Exclude all other known static HTML pages from SPA fallback
 RewriteCond %{REQUEST_URI} !^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
+# Exclude root and index
+RewriteCond %{REQUEST_URI} !^/?$ [NC]
+RewriteCond %{REQUEST_URI} !^/index/?$ [NC]
 RewriteRule ^.*$ /index.html [L]
 
 # ----------------------------------------------------------
-# 4. SECURITY HEADERS (Block Puter.js)
+# 5. SECURITY HEADERS (Block Puter.js)
 # ----------------------------------------------------------
 <IfModule mod_headers.c>
     Header set X-Frame-Options "SAMEORIGIN"
@@ -85,8 +94,11 @@ RewriteRule ^.*$ /index.html [L]
 </IfModule>
 
 # ----------------------------------------------------------
-# 5. MIME TYPES (Fix images not loading)
+# 6. MIME TYPES (Fix images not loading)
 # ----------------------------------------------------------
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
 AddType image/webp .webp
 AddType image/svg+xml .svg
 AddType video/mp4 .mp4
@@ -94,9 +106,10 @@ AddType video/webm .webm
 AddType video/ogg .ogv
 AddType audio/mpeg .mp3
 AddType audio/ogg .ogg
+AddType application/pdf .pdf
 
 # ----------------------------------------------------------
-# 6. Cache Assets
+# 7. Cache Assets
 # ----------------------------------------------------------
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -105,6 +118,8 @@ AddType audio/ogg .ogg
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
 </IfModule>

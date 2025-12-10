@@ -357,8 +357,10 @@ a:hover {
     max-width: 200px;
     object-fit: contain;
     transition: all var(--transition-normal);
-    display: block;
+    display: block !important;
     background: transparent;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .nav-logo:hover .logo-img {
