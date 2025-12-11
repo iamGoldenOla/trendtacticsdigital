@@ -318,6 +318,89 @@
     decoding: async;
 }
 
+/* Responsive Picture Element with srcset */
+.responsive-parallax-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.responsive-parallax-image picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.responsive-parallax-image source,
+.responsive-parallax-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Side Accent Images */
+.side-accent-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.side-accent-image.left {
+    left: 0;
+}
+
+.side-accent-image.right {
+    right: 0;
+}
+
+.side-accent-image picture,
+.side-accent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+}
+
+/* Full Page Background Section */
+.full-page-bg {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.full-page-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.full-page-bg-image picture,
+.full-page-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.full-page-bg-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     .parallax-inner {
