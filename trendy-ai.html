@@ -32,6 +32,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
@@ -315,22 +319,46 @@
                 </div>
                 <div class="nav-cta">
                     <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA with dropdown for multiple options -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="btn btn-primary">Get Started <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="/client-dashboard">Client Dashboard</a></li>
-                            <li><a href="/academy-enroll">Academy Access</a></li>
-                            <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="/login">Sign In</a></li>
-                            <li><a href="/register">Sign Up</a></li>
-                        </ul>
-                    </div>
+                    <!-- Updated CTA to open hub page -->
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
     </nav>
+    
+    <!-- Authentication Check -->
+    <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        // Check if user is authenticated on page load
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Check if user is logged in
+                const { data: { session } } = await supabase.auth.getSession();
+                
+                if (!session) {
+                    // Check localStorage fallback for demo mode
+                    const localStorageLoggedIn = localStorage.getItem('userId');
+                    if (!localStorageLoggedIn) {
+                        // Redirect to login page
+                        window.location.href = '/login';
+                        return;
+                    }
+                }
+                
+                // User is authenticated, continue loading page
+                console.log('User is authenticated');
+                
+            } catch (error) {
+                console.error('Error checking authentication:', error);
+                // Redirect to login page on error
+                window.location.href = '/login';
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="ai-hero">

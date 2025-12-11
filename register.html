@@ -32,6 +32,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
@@ -267,18 +271,8 @@
                 </div>
                 <div class="nav-cta">
                     <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA with dropdown for multiple options -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="btn btn-primary">Get Started <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="/client-dashboard">Client Dashboard</a></li>
-                            <li><a href="/academy-enroll">Academy Access</a></li>
-                            <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="/login">Sign In</a></li>
-                            <li><a href="/register">Sign Up</a></li>
-                        </ul>
-                    </div>
+                    <!-- Updated CTA to open hub page -->
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -435,8 +429,13 @@
 
     <script src="/js/main.js"></script>
     <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
         // Register form handler
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Hide any previous messages
@@ -470,45 +469,48 @@
                 return;
             }
             
-            // In a real implementation, you would send this to your backend
-            console.log('Registration attempt with:', { firstName, lastName, email, password });
-            
-            // Simulate API call
-            setTimeout(() => {
-                // For demo purposes, we'll assume registration is successful
+            try {
+                // Show loading state
+                const registerButton = document.querySelector('.register-button');
+                const originalButtonText = registerButton.textContent;
+                registerButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+                registerButton.disabled = true;
+                
+                // Attempt to register with Supabase
+                const { data, error } = await supabase.auth.signUp({
+                    email: email,
+                    password: password,
+                    options: {
+                        data: {
+                            first_name: firstName,
+                            last_name: lastName
+                        }
+                    }
+                });
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                
+                // Registration successful
                 document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('successMessage').textContent = 'Account created successfully! Please check your email for verification.';
+                
                 // Redirect to login after a short delay
                 setTimeout(() => {
                     window.location.href = '/login';
-                }, 2000);
-            }, 1000);
-            
-            // In a real implementation, you might do something like:
-            /*
-            fetch('/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ firstName, lastName, email, password })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('successMessage').style.display = 'block';
-                    setTimeout(() => {
-                        window.location.href = '/login';
-                    }, 2000);
-                } else {
-                    document.getElementById('errorMessage').style.display = 'block';
-                    document.getElementById('errorMessage').textContent = data.message || 'Registration failed';
-                }
-            })
-            .catch(error => {
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Registration error:', error);
                 document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
-            });
-            */
+                document.getElementById('errorMessage').textContent = error.message || 'An error occurred during registration. Please try again.';
+            } finally {
+                // Reset button state
+                const registerButton = document.querySelector('.register-button');
+                registerButton.textContent = 'Create Account';
+                registerButton.disabled = false;
+            }
         });
     </script>
 </body>

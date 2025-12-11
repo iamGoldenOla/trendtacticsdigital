@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TrendTactics | Choose Your Path</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+        :root {
+            --primary: #00FFFF;
+            --primary-dark: #00CED1;
+            --secondary: #64F5D3;
+            --accent: #FF00FF;
+            --base-dark: #0A1E3F;
+            --base-dark-light: #162447;
+            --base-dark-lighter: #1F4068;
+            --white: #FFFFFF;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 2.5rem;
+            --spacing-3xl: 3rem;
+            --spacing-4xl: 4rem;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-primary: 0 0 20px rgba(0, 255, 255, 0.3);
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --gradient-primary: linear-gradient(90deg, #00FFFF, #0A1E3F);
+            --gradient-secondary: linear-gradient(90deg, #64F5D3, #00FFFF);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--base-dark) 0%, #000 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        .hub-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-4xl) var(--spacing-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+            max-width: 800px;
+        }
+
+        .hub-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hub-header p {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-3xl);
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .hub-card {
+            background: linear-gradient(135deg, var(--base-dark-light) 0%, var(--base-dark-lighter) 100%);
+            border-radius: var(--radius-2xl);
+            padding: var(--spacing-3xl);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 4px 16px rgba(0, 255, 255, 0.1),
+                0 0 0 1px rgba(0, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .hub-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 10px 20px rgba(0, 255, 255, 0.2),
+                0 0 0 1px rgba(0, 255, 255, 0.3);
+        }
+
+        .card-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-xl);
+            font-size: 3rem;
+            color: var(--base-dark);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hub-card:hover .card-icon {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0, 255, 255, 0.4);
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .card-description {
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-2xl);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--base-dark);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .hub-footer {
+            margin-top: var(--spacing-4xl);
+            text-align: center;
+            color: var(--gray-300);
+            font-size: 0.9rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background: transparent;
+            border: none;
+            color: var(--gray-300);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hub-container {
+                padding: var(--spacing-2xl) var(--spacing-sm);
+            }
+            
+            .hub-header h1 {
+                font-size: 2rem;
+            }
+            
+            .hub-header p {
+                font-size: 1.1rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-2xl);
+            }
+            
+            .hub-card {
+                padding: var(--spacing-2xl);
+            }
+            
+            .card-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hub-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hub-header p {
+                font-size: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1.5rem;
+            }
+            
+            .card-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hub-container">
+        <div class="hub-header">
+            <h1>Welcome to TrendTactics</h1>
+            <p>Choose your path to digital success</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="hub-card" id="client-dashboard-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="card-title">Client Dashboard</h2>
+                <p class="card-description">Manage your campaigns and services</p>
+                <button class="btn btn-primary">Access Dashboard</button>
+            </div>
+            
+            <div class="hub-card" id="academy-card">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="card-title">Academy</h2>
+                <p class="card-description">Learn digital marketing and grow your skills</p>
+                <button class="btn btn-primary">Access Academy</button>
+            </div>
+        </div>
+        
+        <div class="hub-footer">
+            <p>Unified authentication system - one login works for both dashboard and academy</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        // Check authentication status
+        async function checkAuthStatus() {
+            try {
+                const { data: { session } } = await supabase.auth.getSession();
+                return session;
+            } catch (error) {
+                console.error('Auth check error:', error);
+                return null;
+            }
+        }
+        
+        // Handle card clicks
+        document.getElementById('client-dashboard-card').addEventListener('click', async function() {
+            const session = await checkAuthStatus();
+            
+            if (session) {
+                // User is authenticated, redirect to client dashboard
+                window.location.href = '/client-dashboard';
+            } else {
+                // User is not authenticated, redirect to login with return URL
+                localStorage.setItem('redirectAfterLogin', '/client-dashboard');
+                window.location.href = '/login';
+            }
+        });
+        
+        document.getElementById('academy-card').addEventListener('click', async function() {
+            const session = await checkAuthStatus();
+            
+            if (session) {
+                // User is authenticated, redirect to academy
+                window.location.href = '/academy-enroll';
+            } else {
+                // User is not authenticated, redirect to login with return URL
+                localStorage.setItem('redirectAfterLogin', '/academy-enroll');
+                window.location.href = '/login';
+            }
+        });
+        
+        // Check for redirect after login
+        document.addEventListener('DOMContentLoaded', async function() {
+            const redirectUrl = localStorage.getItem('redirectAfterLogin');
+            if (redirectUrl) {
+                localStorage.removeItem('redirectAfterLogin');
+                const session = await checkAuthStatus();
+                if (session) {
+                    window.location.href = redirectUrl;
+                }
+            }
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

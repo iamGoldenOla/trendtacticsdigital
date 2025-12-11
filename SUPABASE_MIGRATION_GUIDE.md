@@ -17,7 +17,7 @@ Complete step-by-step guide to migrate your backend from file storage to Supabas
 1. Go to [https://app.supabase.com](https://app.supabase.com)
 2. Click **"New Project"**
 3. Fill in:
-   - **Name:** `trendtactics-digital` (or your preferred name)
+   - **Name:** `trendtacticsdigital` (or your preferred name)
    - **Database Password:** Create a strong password (save it!)
    - **Region:** Choose closest to your users
    - **Pricing Plan:** Free tier is fine to start

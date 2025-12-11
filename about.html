@@ -30,6 +30,11 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
@@ -252,7 +257,8 @@
                 </div>
                 <div class="nav-cta">
                     <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <a href="/contact" class="btn btn-primary">Get Started</a>
+                    <!-- Updated CTA to open hub page -->
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>

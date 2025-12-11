@@ -32,8 +32,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    
+    <!-- Custom CSS -->    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
     <link rel="stylesheet" href="/styles/images.css">
     
@@ -326,18 +329,8 @@
                 </div>
                 <div class="nav-cta">
                     <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA with dropdown for multiple options -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="btn btn-primary">Get Started <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="/client-dashboard">Client Dashboard</a></li>
-                            <li><a href="/academy-enroll">Academy Access</a></li>
-                            <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="/login">Sign In</a></li>
-                            <li><a href="/register">Sign Up</a></li>
-                        </ul>
-                    </div>
+                    <!-- Updated CTA to open hub page -->
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -496,8 +489,13 @@
 
     <script src="/js/main.js"></script>
     <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
         // Login form handler
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Hide any previous messages
@@ -508,52 +506,53 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // In a real implementation, you would validate and send this to your backend
-            // For demonstration, we'll simulate a successful login
-            console.log('Login attempt with:', { email, password });
-            
-            // Simulate API call
-            setTimeout(() => {
-                // For demo purposes, we'll assume login is successful
-                // In a real app, you would check the response from your backend
-                if (email && password) {
-                    document.getElementById('successMessage').style.display = 'block';
-                    // Redirect after a short delay
-                    setTimeout(() => {
-                        window.location.href = '/client-dashboard';
-                    }, 1500);
-                } else {
-                    document.getElementById('errorMessage').style.display = 'block';
-                }
-            }, 1000);
-            
-            // In a real implementation, you might do something like:
-            /*
-            fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('successMessage').style.display = 'block';
-                    setTimeout(() => {
-                        window.location.href = data.redirect || '/client-dashboard';
-                    }, 1500);
-                } else {
-                    document.getElementById('errorMessage').style.display = 'block';
-                    document.getElementById('errorMessage').textContent = data.message || 'Invalid credentials';
-                }
-            })
-            .catch(error => {
+            // Validate inputs
+            if (!email || !password) {
                 document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
-            });
-            */
+                document.getElementById('errorMessage').textContent = 'Please enter both email and password.';
+                return;
+            }
+            
+            try {
+                // Show loading state
+                const loginButton = document.querySelector('.login-button');
+                const originalButtonText = loginButton.textContent;
+                loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+                loginButton.disabled = true;
+                
+                // Attempt to log in with Supabase
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                
+                // Login successful
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('successMessage').textContent = 'Login successful! Redirecting...';
+                
+                // Store user data in localStorage for dashboard access
+                localStorage.setItem('userId', data.user.id);
+                localStorage.setItem('userEmail', data.user.email);
+                
+                // Redirect to client dashboard after a short delay
+                setTimeout(() => {
+                    window.location.href = '/client-dashboard';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('errorMessage').textContent = error.message || 'An error occurred during login. Please try again.';
+            } finally {
+                // Reset button state
+                const loginButton = document.querySelector('.login-button');
+                loginButton.textContent = 'Sign In';
+                loginButton.disabled = false;
+            }
         });
-    </script>
-</body>
+    </script></body>
 </html>

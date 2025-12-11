@@ -1,0 +1,40 @@
+# Supabase Edge Functions Deployment Instructions
+
+## Prerequisites
+1. Ensure all environment variables are set in your Supabase Dashboard
+2. Ensure your Supabase database schema is deployed
+
+## Deployment Order
+Deploy functions in this order:
+1. System functions (health check)
+2. Authentication functions
+3. AI functions
+4. Course functions
+5. User functions
+
+## Deployment Steps
+1. Go to your Supabase Dashboard
+2. Navigate to Functions
+3. Click "Create Function"
+4. Enter function details:
+   - Name: Use the filename without extension
+   - Slug: Same as name
+   - File: Select the .ts file from the appropriate folder in this package
+5. Click "Create Function"
+6. Repeat for all functions
+
+## Environment Variables Required
+- SUPABASE_URL
+- SUPABASE_SERVICE_ROLE_KEY
+- SUPABASE_ANON_KEY
+- CLIENT_URL
+- OPENROUTER_KEY_1 through OPENROUTER_KEY_21
+- OPENAI_API_KEY (optional)
+- GOOGLE_AI_API_KEY (optional)
+
+## Testing
+After deployment, test functions using:
+curl https://YOUR_PROJECT_ID.supabase.co/functions/v1/FUNCTION_NAME
+
+For functions requiring authentication, include:
+-H "Authorization: Bearer YOUR_JWT_TOKEN"

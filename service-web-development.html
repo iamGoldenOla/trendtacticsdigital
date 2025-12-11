@@ -573,338 +573,376 @@
                 </div>
                 <div class="nav-cta">
                     <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <a href="/contact" class="btn btn-primary">Get Started</a>
+                    <!-- Updated CTA to open hub page -->
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- Service Hero Section -->
-        <section class="service-hero">
-            <div class="service-hero-3d-shapes">
-                <div class="service-shape-3d shape-1"></div>
-                <div class="service-shape-3d shape-2"></div>
-                <div class="service-shape-3d shape-3"></div>
-                <div class="service-shape-3d shape-4"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content" style="text-align: center; position: relative; z-index: 2; transform-style: preserve-3d;">
-                    <div class="service-hero-icon" style="transform: translateZ(40px);">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h1 style="transform: translateZ(60px); text-shadow: 0 16px 42px rgba(0, 255, 255, 0.4);">Web Development Services</h1>
-                    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
-                        Custom, responsive websites built for performance, accessibility, and conversion. We build fast, reliable websites that engage users and drive growth.
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="/contact" class="btn btn-primary btn-large">Get Free Quote</a>
-                        <a href="/portfolio" class="btn btn-outline btn-large">View Our Work</a>
-                    </div>
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    
+    <!-- Authentication Check -->
+    <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        // Check if user is authenticated on page load
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Check if user is logged in
+                const { data: { session } } = await supabase.auth.getSession();
+                
+                if (!session) {
+                    // Check localStorage fallback for demo mode
+                    const localStorageLoggedIn = localStorage.getItem('userId');
+                    if (!localStorageLoggedIn) {
+                        // Redirect to login page
+                        // window.location.href = '/login';
+                        console.log('User not authenticated - in demo mode');
+                    }
+                }
+                
+                // User is authenticated, continue loading page
+                console.log('User is authenticated');
+                
+            } catch (error) {
+                console.error('Error checking authentication:', error);
+                // Redirect to login page on error
+                // window.location.href = '/login';
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="service-hero-3d-shapes">
+            <div class="service-shape-3d shape-1"></div>
+            <div class="service-shape-3d shape-2"></div>
+            <div class="service-shape-3d shape-3"></div>
+            <div class="service-shape-3d shape-4"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content" style="text-align: center; position: relative; z-index: 2; transform-style: preserve-3d;">
+                <div class="service-hero-icon" style="transform: translateZ(40px);">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h1 style="transform: translateZ(60px); text-shadow: 0 16px 42px rgba(0, 255, 255, 0.4);">Web Development Services</h1>
+                <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
+                    Custom, responsive websites built for performance, accessibility, and conversion. We build fast, reliable websites that engage users and drive growth.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contact" class="btn btn-primary btn-large">Get Free Quote</a>
+                    <a href="/portfolio" class="btn btn-outline btn-large">View Our Work</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Service Details with 3D Cards -->
-        <section class="services-detail content-block-bg" style="padding: 100px 0;">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/website-development-parallex.jpg" type="image/jpeg">
-                    <img src="/images/website-development-parallex.jpg" alt="Web Development Services" loading="lazy" decoding="async" class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-light"></div>
-            <div class="container content-block-bg-content">
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <div style="text-align: center; margin-bottom: 4rem;">
-                        <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
-                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive web development solutions tailored to your business needs</p>
+    <!-- Service Details with 3D Cards -->
+    <section class="services-detail content-block-bg" style="padding: 100px 0;">
+        <div class="content-block-bg-image">
+            <picture>
+                <source srcset="/images/website-development-parallex.jpg" type="image/jpeg">
+                <img src="/images/website-development-parallex.jpg" alt="Web Development Services" loading="lazy" decoding="async" class="image-filter-darken">
+            </picture>
+        </div>
+        <div class="bg-overlay-light"></div>
+        <div class="container content-block-bg-content">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
+                    <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive web development solutions tailored to your business needs</p>
+                </div>
+                
+                <div class="services-3d-grid">
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive Web Design</h3>
+                        <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops. We ensure your website looks stunning and functions flawlessly across every screen size.</p>
                     </div>
                     
-                    <div class="services-3d-grid">
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Responsive Web Design</h3>
-                            <p>Mobile-first designs that work perfectly on all devices - from smartphones to desktops. We ensure your website looks stunning and functions flawlessly across every screen size.</p>
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-search"></i>
                         </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3>SEO Optimization</h3>
-                            <p>Built-in SEO best practices to help your website rank higher in search engines. We optimize every aspect from meta tags to site structure for maximum visibility.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h3>Fast Loading Times</h3>
-                            <p>Optimized for speed with fast loading times that improve user experience and SEO rankings. We use cutting-edge optimization techniques to ensure lightning-fast performance.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-cog"></i>
-                            </div>
-                            <h3>Custom CMS</h3>
-                            <p>Easy-to-use content management systems that let you update your website without technical knowledge. We provide training and ongoing support to ensure you're comfortable managing your site.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <h3>E-commerce Integration</h3>
-                            <p>Full e-commerce solutions with secure payment processing and inventory management. We build online stores that convert visitors into customers and drive sales.</p>
-                        </div>
-                        
-                        <div class="service-3d-card">
-                            <div class="service-3d-card-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <h3>Ongoing Support</h3>
-                            <p>Continuous maintenance, updates, and support to keep your website running smoothly. We're here for you long after launch to ensure your site stays current and secure.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing / Packages Section -->
-        <section class="pricing-section">
-            <div class="container">
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <div class="pricing-header">
-                        <h2>Pricing & Packages</h2>
-                        <p>Choose the perfect package for your business needs. All packages include professional development and ongoing support.</p>
-                    </div>
-
-                    <div class="pricing-grid">
-                        <!-- Starter Package -->
-                        <div class="pricing-card">
-                            <div class="pricing-card-header">
-                                <h3>Starter</h3>
-                                <p class="target-user">Individuals, new businesses</p>
-                            </div>
-                            <div class="pricing-deliverables">
-                                <h4>Deliverables:</h4>
-                                <ul>
-                                    <li>3-page website</li>
-                                    <li>Mobile responsive design</li>
-                                    <li>Basic SEO setup</li>
-                                    <li>Contact form</li>
-                                    <li>Social media integration</li>
-                                    <li>1 month support</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Growth Package -->
-                        <div class="pricing-card featured">
-                            <div class="pricing-card-header">
-                                <h3>Growth</h3>
-                                <p class="target-user">SMEs that need consistency and results</p>
-                            </div>
-                            <div class="pricing-deliverables">
-                                <h4>Deliverables:</h4>
-                                <ul>
-                                    <li>6–8 pages</li>
-                                    <li>UI/UX design</li>
-                                    <li>Animations & interactions</li>
-                                    <li>Blog functionality</li>
-                                    <li>SEO setup & optimization</li>
-                                    <li>Analytics integration</li>
-                                    <li>3 months support</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Pro Package -->
-                        <div class="pricing-card">
-                            <div class="pricing-card-header">
-                                <h3>Pro</h3>
-                                <p class="target-user">Established brands seeking full-scale execution</p>
-                            </div>
-                            <div class="pricing-deliverables">
-                                <h4>Deliverables:</h4>
-                                <ul>
-                                    <li>10+ pages</li>
-                                    <li>Custom dashboard</li>
-                                    <li>Third-party integrations</li>
-                                    <li>Advanced SEO & performance</li>
-                                    <li>E-commerce functionality</li>
-                                    <li>Content management system</li>
-                                    <li>6 months support & maintenance</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Compare Packages Table -->
-                    <div class="compare-packages">
-                        <h3>Compare Packages</h3>
-                        <table class="compare-table">
-                            <thead>
-                                <tr>
-                                    <th>Feature</th>
-                                    <th>Starter</th>
-                                    <th>Growth</th>
-                                    <th>Pro</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="feature-name">Number of Pages</td>
-                                    <td>3 pages</td>
-                                    <td>6-8 pages</td>
-                                    <td>10+ pages</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">Mobile Responsive</td>
-                                    <td class="check">✓</td>
-                                    <td class="check">✓</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">UI/UX Design</td>
-                                    <td>Basic</td>
-                                    <td class="check">✓</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">Animations</td>
-                                    <td>-</td>
-                                    <td class="check">✓</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">Blog Functionality</td>
-                                    <td>-</td>
-                                    <td class="check">✓</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">SEO Setup</td>
-                                    <td>Basic</td>
-                                    <td class="check">✓</td>
-                                    <td>Advanced</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">Custom Dashboard</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">E-commerce</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td class="check">✓</td>
-                                </tr>
-                                <tr>
-                                    <td class="feature-name">Support Period</td>
-                                    <td>1 month</td>
-                                    <td>3 months</td>
-                                    <td>6 months</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Get a Quote Form -->
-                    <div class="quote-form-section">
-                        <div class="quote-form-container">
-                            <h3>Get a Custom Quote</h3>
-                            <p>Fill out the form below and we'll provide a tailored quote for your project.</p>
-                            <form id="quoteForm" onsubmit="handleQuoteSubmit(event, 'Web Development')">
-                                <div class="quote-form-group">
-                                    <label for="quoteName">Name *</label>
-                                    <input type="text" id="quoteName" name="name" required>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteEmail">Email *</label>
-                                    <input type="email" id="quoteEmail" name="email" required>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quotePhone">Phone *</label>
-                                    <input type="tel" id="quotePhone" name="phone" required>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteBusiness">Business Name</label>
-                                    <input type="text" id="quoteBusiness" name="business">
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteService">Type of Service *</label>
-                                    <select id="quoteService" name="service" required>
-                                        <option value="Web Development">Web Development</option>
-                                        <option value="App Development">App Development</option>
-                                        <option value="Digital Marketing">Digital Marketing</option>
-                                        <option value="Email Marketing">Email Marketing</option>
-                                        <option value="Content Creation">Content Creation</option>
-                                        <option value="Social Media Marketing">Social Media Marketing</option>
-                                        <option value="Facebook Ads">Facebook Ads</option>
-                                    </select>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteBudget">Budget Range *</label>
-                                    <select id="quoteBudget" name="budget" required>
-                                        <option value="">Select budget range</option>
-                                        <option value="Under $1,000">Under $1,000</option>
-                                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
-                                        <option value="$2,500 - $5,000">$2,500 - $5,000</option>
-                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                                        <option value="Above $25,000">Above $25,000</option>
-                                    </select>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteTimeline">Project Timeline *</label>
-                                    <select id="quoteTimeline" name="timeline" required>
-                                        <option value="">Select timeline</option>
-                                        <option value="ASAP / Urgent">ASAP / Urgent</option>
-                                        <option value="1-2 weeks">1-2 weeks</option>
-                                        <option value="2-4 weeks">2-4 weeks</option>
-                                        <option value="1-2 months">1-2 months</option>
-                                        <option value="2-3 months">2-3 months</option>
-                                        <option value="3+ months">3+ months</option>
-                                    </select>
-                                </div>
-                                <div class="quote-form-group">
-                                    <label for="quoteDescription">Project Description *</label>
-                                    <textarea id="quoteDescription" name="description" required placeholder="Tell us about your project requirements..."></textarea>
-                                </div>
-                                <button type="submit" class="quote-form-submit">Request a Custom Quote</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <div style="text-align: center; margin-bottom: 3rem;">
-                        <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
-                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our web development services</p>
+                        <h3>SEO Optimization</h3>
+                        <p>Built-in SEO best practices to help your website rank higher in search engines. We optimize every aspect from meta tags to site structure for maximum visibility.</p>
                     </div>
                     
-                    <div class="faq-grid" id="faq-grid">
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <h3>How long does it take to build a website?</h3>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Typically, a standard website takes 2-4 weeks, while more complex projects with e-commerce or custom features may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific requirements.</p>
-                            </div>
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-tachometer-alt"></i>
                         </div>
+                        <h3>Fast Loading Times</h3>
+                        <p>Optimized for speed with fast loading times that improve user experience and SEO rankings. We use cutting-edge optimization techniques to ensure lightning-fast performance.</p>
+                    </div>
+                    
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Custom CMS</h3>
+                        <p>Easy-to-use content management systems that let you update your website without technical knowledge. We provide training and ongoing support to ensure you're comfortable managing your site.</p>
+                    </div>
+                    
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Integration</h3>
+                        <p>Full e-commerce solutions with secure payment processing and inventory management. We build online stores that convert visitors into customers and drive sales.</p>
+                    </div>
+                    
+                    <div class="service-3d-card">
+                        <div class="service-3d-card-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Ongoing Support</h3>
+                        <p>Continuous maintenance, updates, and support to keep your website running smoothly. We're here for you long after launch to ensure your site stays current and secure.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Packages Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div class="pricing-header">
+                    <h2>Pricing & Packages</h2>
+                    <p>Choose the perfect package for your business needs. All packages include professional development and ongoing support.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3>Starter</h3>
+                            <p class="target-user">Individuals, new businesses</p>
+                        </div>
+                        <div class="pricing-deliverables">
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>3-page website</li>
+                                <li>Mobile responsive design</li>
+                                <li>Basic SEO setup</li>
+                                <li>Contact form</li>
+                                <li>Social media integration</li>
+                                <li>1 month support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Growth Package -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-card-header">
+                            <h3>Growth</h3>
+                            <p class="target-user">SMEs that need consistency and results</p>
+                        </div>
+                        <div class="pricing-deliverables">
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>6–8 pages</li>
+                                <li>UI/UX design</li>
+                                <li>Animations & interactions</li>
+                                <li>Blog functionality</li>
+                                <li>SEO setup & optimization</li>
+                                <li>Analytics integration</li>
+                                <li>3 months support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Pro Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3>Pro</h3>
+                            <p class="target-user">Established brands seeking full-scale execution</p>
+                        </div>
+                        <div class="pricing-deliverables">
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>10+ pages</li>
+                                <li>Custom dashboard</li>
+                                <li>Third-party integrations</li>
+                                <li>Advanced SEO & performance</li>
+                                <li>E-commerce functionality</li>
+                                <li>Content management system</li>
+                                <li>6 months support & maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compare Packages Table -->
+                <div class="compare-packages">
+                    <h3>Compare Packages</h3>
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th>Growth</th>
+                                <th>Pro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-name">Number of Pages</td>
+                                <td>3 pages</td>
+                                <td>6-8 pages</td>
+                                <td>10+ pages</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Mobile Responsive</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">UI/UX Design</td>
+                                <td>Basic</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Animations</td>
+                                <td>-</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Blog Functionality</td>
+                                <td>-</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">SEO Setup</td>
+                                <td>Basic</td>
+                                <td class="check">✓</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Custom Dashboard</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">E-commerce</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Support Period</td>
+                                <td>1 month</td>
+                                <td>3 months</td>
+                                <td>6 months</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Get a Quote Form -->
+                <div class="quote-form-section">
+                    <div class="quote-form-container">
+                        <h3>Get a Custom Quote</h3>
+                        <p>Fill out the form below and we'll provide a tailored quote for your project.</p>
+                        <form id="quoteForm" onsubmit="handleQuoteSubmit(event, 'Web Development')">
+                            <div class="quote-form-group">
+                                <label for="quoteName">Name *</label>
+                                <input type="text" id="quoteName" name="name" required>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteEmail">Email *</label>
+                                <input type="email" id="quoteEmail" name="email" required>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quotePhone">Phone *</label>
+                                <input type="tel" id="quotePhone" name="phone" required>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteBusiness">Business Name</label>
+                                <input type="text" id="quoteBusiness" name="business">
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteService">Type of Service *</label>
+                                <select id="quoteService" name="service" required>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Email Marketing">Email Marketing</option>
+                                    <option value="Content Creation">Content Creation</option>
+                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                    <option value="Facebook Ads">Facebook Ads</option>
+                                </select>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteBudget">Budget Range *</label>
+                                <select id="quoteBudget" name="budget" required>
+                                    <option value="">Select budget range</option>
+                                    <option value="Under $1,000">Under $1,000</option>
+                                    <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                                    <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                                    <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                                    <option value="Above $25,000">Above $25,000</option>
+                                </select>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteTimeline">Project Timeline *</label>
+                                <select id="quoteTimeline" name="timeline" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="ASAP / Urgent">ASAP / Urgent</option>
+                                    <option value="1-2 weeks">1-2 weeks</option>
+                                    <option value="2-4 weeks">2-4 weeks</option>
+                                    <option value="1-2 months">1-2 months</option>
+                                    <option value="2-3 months">2-3 months</option>
+                                    <option value="3+ months">3+ months</option>
+                                </select>
+                            </div>
+                            <div class="quote-form-group">
+                                <label for="quoteDescription">Project Description *</label>
+                                <textarea id="quoteDescription" name="description" required placeholder="Tell us about your project requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="quote-form-submit">Request a Custom Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
+                    <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our web development services</p>
+                </div>
+                
+                <div class="faq-grid" id="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How long does it take to build a website?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Typically, a standard website takes 2-4 weeks, while more complex projects with e-commerce or custom features may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation based on your specific requirements.</p>
+                        </div>
+                    </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFAQ(this)">
@@ -978,21 +1016,20 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta" style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
-            <div class="container">
-                <h2 class="cta-title" style="color: #ffffff;">Ready to Build Your Website?</h2>
-                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's discuss your project and create a website that drives results for your business.</p>
-                <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
-                    <a href="/portfolio" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta" style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
+        <div class="container">
+            <h2 class="cta-title" style="color: #ffffff;">Ready to Build Your Website?</h2>
+            <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's discuss your project and create a website that drives results for your business.</p>
+            <div class="cta-buttons">
+                <a href="/contact" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
+                <a href="/portfolio" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
             </div>
-        </section>
-    </main>
-
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

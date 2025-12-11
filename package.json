@@ -1,67 +1,18 @@
 {
-  "name": "trendtactics-digital-lms",
+  "name": "trendtactics-supabase-tests",
   "version": "1.0.0",
-  "description": "Advanced Learning Management System for Digital Marketing",
-  "main": "backend/server.js",
+  "description": "Test scripts for Supabase Edge Functions",
+  "main": "supabase-auth-test.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
-    "backend": "node backend/server.js",
-    "backend:dev": "nodemon backend/server.js",
-    "test:backend": "node backend/test-server.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "test": "node supabase-auth-test.js",
+    "test-simple": "node simple-connectivity-test.js",
+    "test-robust": "node robust-test-functions.js",
+    "confirm-email": "node handle-email-confirmation.js"
   },
-  "keywords": [
-    "LMS",
-    "education",
-    "digital-marketing",
-    "online-courses"
-  ],
-  "author": "Akinola Olujobi",
-  "license": "MIT",
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "bcryptjs": "^2.4.3",
-    "cloudinary": "^1.40.0",
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "cron": "^2.4.4",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^6.10.0",
-    "express-validator": "^7.0.1",
-    "framer-motion": "^12.23.0",
-    "helmet": "^7.0.0",
-    "hpp": "^0.2.3",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.0",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.4",
-    "socket.io": "^4.7.2",
-    "stripe": "^13.5.0",
-    "xss-clean": "^0.1.4"
+    "@supabase/supabase-js": "^2.38.0",
+    "dotenv": "^16.3.1"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "nodemon": "^3.0.1",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iamGoldenOla/trendtactics-digital.git"
-  },
-  "bugs": {
-    "url": "https://github.com/iamGoldenOla/trendtactics-digital/issues"
-  },
-  "homepage": "https://github.com/iamGoldenOla/trendtactics-digital#readme"
+  "author": "Trendtactics Digital",
+  "license": "MIT"
 }
