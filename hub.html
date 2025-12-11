@@ -210,27 +210,18 @@
             font-size: 0.9rem;
         }
 
-        .close-btn {
-            position: absolute;
-            top: var(--spacing-lg);
-            right: var(--spacing-lg);
-            background: transparent;
-            border: none;
-            color: var(--gray-300);
-            font-size: 1.5rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
+        .back-to-home {
+            display: inline-block;
+            margin-top: var(--spacing-xl);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
 
-        .close-btn:hover {
-            background: rgba(0, 255, 255, 0.1);
-            color: var(--primary);
+        .back-to-home:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
         /* Responsive Design */
@@ -283,6 +274,55 @@
     </style>
 </head>
 <body>
+    <!-- Header Navigation -->
+    <nav id="navigation" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="logo-img" onerror="this.src='/images/Trendtactics_logo.jpg'; this.onerror=null;">
+                </a>
+            </div>
+            <div class="nav-actions">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/service-email-marketing">Email Marketing</a></li>
+                            <li><a href="/service-content-creation">Content Creation</a></li>
+                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
+                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ebooks">Free Books</a></li>
+                            <li><a href="/tools">Marketing Tools</a></li>
+                            <li><a href="/quiz">Growth Quiz</a></li>
+                            <li><a href="/academy">Academy</a></li>
+                            <li><a href="/contact">Free Consultation</a></li>
+                        </ul>
+                    </div>
+                    <a href="/pricing" class="nav-link">Pricing</a>
+                    <a href="/blog" class="nav-link">Blog</a>
+                    <a href="/portfolio" class="nav-link">Portfolio</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-cta">
+                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
     <div class="hub-container">
         <div class="hub-header">
             <h1>Welcome to TrendTactics</h1>
@@ -311,8 +351,95 @@
         
         <div class="hub-footer">
             <p>Unified authentication system - one login works for both dashboard and academy</p>
+            <a href="/" class="back-to-home">← Back to Homepage</a>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        We don't just market brands — we engineer digital growth. 
+                        Unlock strategy, creativity, and AI power — all in one studio.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div id="google_translate_element"></div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/services#web-design">Web Development</a></li>
+                        <li><a href="/services">App Development</a></li>
+                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/portfolio">Our Work</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/academy">Academy</a></li>
+                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-resources">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/ebooks">Free Ebooks</a></li>
+                        <li><a href="/tools">Marketing Tools</a></li>
+                        <li><a href="/quiz">Growth Quiz</a></li>
+                        <li><a href="/blog">Latest Articles</a></li>
+                        <li><a href="/contact">Free Consultation</a></li>
+                    </ul>
+                    <!-- Newsletter Subscribe Below Resources -->
+                    <div class="footer-newsletter-inline">
+                        <h4>Stay Updated</h4>
+                        <p>Get insights delivered to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Initialize Supabase client
