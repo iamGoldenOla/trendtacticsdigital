@@ -75,11 +75,13 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
-        /* Space between hero and cards section */
+        /* Reduced space between hero and cards section */
         .resources-main {
-            padding: var(--spacing-5xl) 0;
+            padding: var(--spacing-xl) 0; /* Reduced padding for closer positioning */
             position: relative;
             overflow: hidden;
+            margin-top: -50px; /* Pull cards up closer to hero section */
+            z-index: 10; /* Ensure cards are above parallax */
         }
         
         /* Parallax strip for the beautiful background */
@@ -144,6 +146,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .resource-card::before {
@@ -211,6 +214,16 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3); /* Cyan shadow */
         }
+        
+        /* Container with negative margin to pull content up */
+        .resources-content-container {
+            background: transparent;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: -80px; /* Pull content up onto parallax */
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -270,9 +283,9 @@
         </div>
     </section>
 
-    <!-- Resources Grid with spacing and beautiful parallax background -->
+    <!-- Resources Grid with minimal spacing and beautiful parallax background -->
     <section class="resources-main">
-        <div class="resources-parallax" data-speed="0.5">
+        <div class="resources-parallax" data-speed="0.3"> <!-- Reduced parallax speed for subtler effect -->
             <div class="resources-parallax-inner">
                 <picture>
                     <source srcset="/images/resources-parallelx.jpg" type="image/jpeg">
@@ -281,7 +294,7 @@
             </div>
             <div class="resources-overlay-dark"></div>
         </div>
-        <div class="container">
+        <div class="container resources-content-container">
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">
