@@ -32,8 +32,9 @@
     <link rel="stylesheet" href="/styles/images.css">
     
     <style>
+        /* Updated hero section with 3D effect like other pages */
         .resources-hero {
-            padding: 8rem 0 6rem;
+            padding: 120px 0 80px;
             background: linear-gradient(135deg, var(--base-dark) 0%, #1a365d 50%, var(--base-dark) 100%);
             text-align: center;
             position: relative;
@@ -60,6 +61,7 @@
             color: #0066FF;
             position: relative;
             z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .resources-hero p {
@@ -67,16 +69,23 @@
             color: var(--white);
             opacity: 0.9;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto var(--spacing-2xl);
             position: relative;
             z-index: 2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Space between hero and cards section */
+        .resources-main {
+            padding: var(--spacing-5xl) 0;
+            background: #0a1833 !important; /* Match body background */
         }
         
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-3xl);
-            padding: var(--spacing-5xl) 0;
+            padding: var(--spacing-3xl) 0;
         }
         
         .resource-card {
@@ -204,24 +213,19 @@
         </div>
     </nav>
 
-    <!-- Resources Hero Section -->
+    <!-- Resources Hero Section with 3D effect -->
     <section class="resources-hero">
         <div class="container">
-            <h1>Resources</h1>
+            <h1 class="hero-title">
+                <span class="text-gradient">Resources</span>
+            </h1>
             <p>Everything you need to grow your business - free ebooks, marketing tools, growth assessments, online courses, and expert consultations.</p>
         </div>
     </section>
 
-    <!-- Resources Grid -->
-    <section class="resources-main content-block-bg" style="padding: var(--spacing-5xl) 0;">
-        <div class="content-block-bg-image">
-            <picture>
-                <source srcset="/images/resources-parallelx.jpg" type="image/jpeg">
-                <img src="/images/resources-parallelx.jpg" alt="Resources" loading="lazy" decoding="async" class="image-filter-darken">
-            </picture>
-        </div>
-        <div class="bg-overlay-dark"></div>
-        <div class="container content-block-bg-content">
+    <!-- Resources Grid with spacing -->
+    <section class="resources-main">
+        <div class="container">
             <div class="resources-grid">
                 <div class="resource-card">
                     <div class="resource-icon">
@@ -271,48 +275,87 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Updated Footer to match homepage -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
+                <div class="footer-brand">
                     <div class="footer-logo">
                         <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
                     </div>
-                    <p>We engineer digital growth through strategy, creativity, and AI-powered solutions.</p>
+                    <p class="footer-description">
+                        We don't just market brands — we engineer digital growth. 
+                        Unlock strategy, creativity, and AI power — all in one studio.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div id="google_translate_element"></div>
                 </div>
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="/ebooks">Free Books</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/services#web-design">Web Development</a></li>
+                        <li><a href="/services">App Development</a></li>
+                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Company</h3>
-                    <ul class="footer-links">
+                    <ul>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/portfolio">Our Work</a></li>
                         <li><a href="/blog">Blog</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/academy">Academy</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                
+                <div class="footer-column footer-resources">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/ebooks">Free Ebooks</a></li>
+                        <li><a href="/tools">Marketing Tools</a></li>
+                        <li><a href="/quiz">Growth Quiz</a></li>
+                        <li><a href="/blog">Latest Articles</a></li>
+                        <li><a href="/contact">Free Consultation</a></li>
+                    </ul>
+                    <!-- Newsletter Subscribe Below Resources -->
+                    <div class="footer-newsletter-inline">
+                        <h4>Stay Updated</h4>
+                        <p>Get insights delivered to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 Trendtactics Digital. All rights reserved.</p>
+                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -321,6 +364,3 @@
     <script src="/js/parallax.js"></script>
 </body>
 </html>
-
-
-
