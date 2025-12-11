@@ -365,13 +365,13 @@ a:hover {
     visibility: visible !important;
     opacity: 1 !important;
     /* Add a subtle outline to make logo pop on dark background */
-    outline: 0.5px solid rgba(0, 255, 255, 0.15);
-    outline-offset: 1px;
+    outline: 0.25px solid rgba(0, 255, 255, 0.15);
+    outline-offset: 0.5px;
 }
 
 .nav-logo:hover .logo-img {
     transform: scale(1.05);
-    outline: 0.5px solid rgba(0, 255, 255, 0.4); /* Enhanced outline on hover */
+    outline: 0.25px solid rgba(0, 255, 255, 0.4); /* Enhanced outline on hover */
 }
 
 .footer-logo-img {
@@ -381,15 +381,15 @@ a:hover {
     transition: all var(--transition-normal);
     /* Add a subtle background and border to make logo pop on dark footer */
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    padding: 4px;
-    border: 0.5px solid rgba(0, 255, 255, 0.3);
+    border-radius: 2px;
+    padding: 2px;
+    border: 0.25px solid rgba(0, 255, 255, 0.3);
 }
 
 .footer-logo:hover .footer-logo-img {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.15); /* Enhanced background on hover */
-    border: 0.5px solid rgba(0, 255, 255, 0.5); /* Enhanced border on hover */
+    border: 0.25px solid rgba(0, 255, 255, 0.5); /* Enhanced border on hover */
 }
 
 .nav-menu {

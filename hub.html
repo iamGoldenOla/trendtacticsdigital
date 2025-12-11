@@ -458,7 +458,36 @@
             }
         }
         
-        // Handle card clicks
+        // Handle button clicks
+        document.querySelector('#client-dashboard-card .btn').addEventListener('click', async function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            const session = await checkAuthStatus();
+            
+            if (session) {
+                // User is authenticated, redirect to client dashboard
+                window.location.href = '/client-dashboard';
+            } else {
+                // User is not authenticated, redirect to login with return URL
+                localStorage.setItem('redirectAfterLogin', '/client-dashboard');
+                window.location.href = '/login';
+            }
+        });
+        
+        document.querySelector('#academy-card .btn').addEventListener('click', async function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            const session = await checkAuthStatus();
+            
+            if (session) {
+                // User is authenticated, redirect to academy
+                window.location.href = '/academy-enroll';
+            } else {
+                // User is not authenticated, redirect to login with return URL
+                localStorage.setItem('redirectAfterLogin', '/academy-enroll');
+                window.location.href = '/login';
+            }
+        });
+        
+        // Also make cards clickable for better UX
         document.getElementById('client-dashboard-card').addEventListener('click', async function() {
             const session = await checkAuthStatus();
             
