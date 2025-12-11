@@ -198,11 +198,12 @@ img:hover {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-/* Responsive Design */
+/* Responsive Design - Enable 3D animations on mobile with optimizations */
 @media (max-width: 768px) {
     .section-divider {
         height: 3px;
         margin: 0 auto var(--spacing-xl) auto;
+        transform: perspective(800px) rotateX(3deg); /* Reduced perspective for mobile */
     }
     
     .section-title::after {
@@ -210,6 +211,7 @@ img:hover {
         height: 2px;
     }
     
+    /* Enable 3D hover effects on mobile with reduced intensity */
     .reason-card:hover,
     .service-card:hover,
     .testimonial-card:hover,
@@ -218,6 +220,28 @@ img:hover {
     .timeline-content:hover,
     .mv-card:hover,
     .story-content:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.01); /* Reduced transform for mobile */
+    }
+    
+    /* Optimize 3D transforms for mobile performance */
+    .reason-card,
+    .service-card,
+    .testimonial-card,
+    .value-card,
+    .team-member {
+        will-change: transform;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+    }
+    
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        .reason-card:hover,
+        .service-card:hover,
+        .testimonial-card:hover,
+        .value-card:hover,
+        .team-member:hover {
+            transform: none;
+        }
     }
 } 
