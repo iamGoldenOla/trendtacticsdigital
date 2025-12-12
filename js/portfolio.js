@@ -1,13 +1,13 @@
 // Portfolio asset definitions (replace/add as needed)
 const portfolioAssets = [
   // Adverts (videos/images)
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/ADVERT%20FOR%20OUR%20SPONSORS.mp4', title: 'Advert For Our Sponsors', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/BF%20FARMS%20ADVERT.mp4', title: 'BF Farms Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/Edvoura_advert2.mp4', title: 'Edvoura Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GABSON%20ENGINEERING%20ADVERT.mp4', title: 'Gabson Engineering Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GCS%20EDUCATION%20ADVERT.mp4', title: 'GCS Education Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/GREENTICK%20AD2.mp4', title: 'Greentick Advert', category: 'advert', description: '' },
-  { type: 'video', src: '/images/VIDEOS%20FOR%20ADVERT/OSUPA%20INTEGRATED%20SERVICES%20ADVERT.mp4', title: 'Osupa Integrated Services Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/advert-for-our-sponsors.mp4', title: 'Advert For Our Sponsors', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/BF-FARMS-ADVERT.mp4', title: 'BF Farms Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/Edvoura_advert2.mp4', title: 'Edvoura Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/GABSON-ENGINEERING-ADVERT.mp4', title: 'Gabson Engineering Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/GCS-EDUCATION-ADVERT.mp4', title: 'GCS Education Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/GREENTICK-AD2.mp4', title: 'Greentick Advert', category: 'advert', description: '' },
+  { type: 'video', src: '/images/videos-for-advert/OSUPA-INTEGRATED-SERVICES-ADVERT.mp4', title: 'Osupa Integrated Services Advert', category: 'advert', description: '' },
   // Spoken Word (if exists)
   // { type: 'video', src: '/videos/GOD-HEARD-YOU-NOW-WALK-IN-PEACE-spoken-word.mp4', title: 'God Heard You Now Walk In Peace', category: 'spoken-word', description: '' },
   // Music Generation (if exists)
@@ -18,15 +18,15 @@ const portfolioAssets = [
   // { type: 'video', src: '/videos/WHEN-THE-LIGHT-GO-BLACK-movie-script.mp4', title: 'When The Light Go Black (Movie Script)', category: 'advert', description: '' },
   // Image Generation
   { type: 'image', src: '/images/image-generation-4.jpg', title: 'Image Generation 4', category: 'image-generation', description: '' },
-  { type: 'image', src: '/images/image generation-3.jpg', title: 'Image Generation 3', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/image-generation-3.jpg', title: 'Image Generation 3', category: 'image-generation', description: '' },
   { type: 'image', src: '/images/image-generation-5.png', title: 'Image Generation 5', category: 'image-generation', description: '' },
   { type: 'image', src: '/images/advert-image-generation.jpg', title: 'Advert Image Generation', category: 'image-generation', description: '' },
-  { type: 'image', src: '/images/zambian man -Grok.jpg', title: 'Zambian Man (Grok)', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/zambian-man--Grok.jpg', title: 'Zambian Man (Grok)', category: 'image-generation', description: '' },
   { type: 'image', src: '/images/kano-lady-whisk.jpg', title: 'Kano Lady Whisk', category: 'image-generation', description: '' },
-  { type: 'image', src: '/images/kano-lady-grok 2.jpg', title: 'Kano Lady Grok 2', category: 'image-generation', description: '' },
+  { type: 'image', src: '/images/kano-lady-grok-2.jpg', title: 'Kano Lady Grok 2', category: 'image-generation', description: '' },
   // Website Design
   { type: 'image', src: '/images/dsa-parental-website.png', title: 'DSA Parental Website', category: 'website-design', description: '' },
-  { type: 'image', src: '/images/Screenshot (14).png', title: 'Screenshot 14', category: 'website-design', description: '' },
+  { type: 'image', src: '/images/Screenshot-(14).png', title: 'Screenshot 14', category: 'website-design', description: '' },
   { type: 'image', src: '/images/maingrace247-website.png', title: 'Maingrace247 Website', category: 'website-design', description: '' },
   { type: 'image', src: '/images/akinola-olujobi-website.png', title: 'Akinola Olujobi Website', category: 'website-design', description: '' },
   { type: 'image', src: '/images/blog1.jpg', title: 'Blog 1', category: 'website-design', description: '' },
@@ -106,7 +106,7 @@ function renderCard(asset) {
     // Generate optimized video sources with multiple resolutions
     const videoBasePath = asset.src.replace('.mp4', '');
     const posterPath = '/images/Trendtactics_logo.jpg';
-    
+
     return `
       <div class="portfolio-card" data-category="${asset.category}">
         <div class="portfolio-media">
