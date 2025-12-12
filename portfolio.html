@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Trendtactics Digital</title>
-    <meta name="description" content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
+    <meta name="description"
+        content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
     <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
     <meta name="author" content="Akinola Olujobi">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Portfolio - Trendtactics Digital">
-    <meta property="og:description" content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
+    <meta property="og:description"
+        content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
     <meta property="og:url" content="https://trendtacticsdigital.com/portfolio">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio - Trendtactics Digital">
-    <meta name="twitter:description" content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
+    <meta name="twitter:description"
+        content="Showcase of digital marketing, web design, creative media, and ad campaigns by Trendtactics Digital.">
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- React CDN -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+
     <!-- Supabase CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/supabase-utils.js"></script>
-    
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css?v=3">
     <link rel="stylesheet" href="/styles/compact-header.css">
     <link rel="stylesheet" href="/styles/portfolio.css">
     <link rel="stylesheet" href="/styles/images.css">
@@ -45,7 +51,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
@@ -90,7 +96,7 @@
             overflow: hidden;
             perspective: 1100px;
         }
-        
+
         .portfolio-hero::before {
             content: '';
             position: absolute;
@@ -98,14 +104,14 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: 
+            background:
                 radial-gradient(circle at 28% 28%, rgba(0, 255, 255, 0.24) 0%, transparent 50%),
                 radial-gradient(circle at 72% 72%, rgba(64, 224, 208, 0.19) 0%, transparent 50%),
                 linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
             animation: portfolioRotate 23s linear infinite;
             transform-style: preserve-3d;
         }
-        
+
         .portfolio-hero::after {
             content: '';
             position: absolute;
@@ -113,12 +119,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="portfolio-3d" width="48" height="48" patternUnits="userSpaceOnUse"><circle cx="24" cy="24" r="2.2" fill="%2300FFFF" opacity="0.12"/><circle cx="9" cy="9" r="1.3" fill="%2340E0D0" opacity="0.1"/><circle cx="39" cy="39" r="1.9" fill="%2300FFFF" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23portfolio-3d)"/></svg>');
             opacity: 0.47;
             animation: portfolioFloat 17s ease-in-out infinite;
         }
-        
+
         .portfolio-hero-3d-shapes {
             position: absolute;
             width: 100%;
@@ -128,13 +134,13 @@
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .portfolio-shape-3d {
             position: absolute;
             opacity: 0.33;
             animation: portfolioFloat3D 23s ease-in-out infinite;
         }
-        
+
         .portfolio-shape-3d.shape-1 {
             width: 170px;
             height: 170px;
@@ -145,7 +151,7 @@
             transform: rotateZ(45deg);
             animation-delay: 0s;
         }
-        
+
         .portfolio-shape-3d.shape-2 {
             width: 115px;
             height: 115px;
@@ -155,7 +161,7 @@
             right: 12.5%;
             animation-delay: 2.8s;
         }
-        
+
         .portfolio-shape-3d.shape-3 {
             width: 135px;
             height: 135px;
@@ -165,7 +171,7 @@
             left: 16%;
             animation-delay: 5.5s;
         }
-        
+
         .portfolio-shape-3d.shape-4 {
             width: 95px;
             height: 95px;
@@ -176,58 +182,82 @@
             transform: rotateZ(45deg);
             animation-delay: 8s;
         }
-        
+
         @keyframes portfolioRotate {
-            0% { transform: rotate(0deg) translateZ(0); }
-            100% { transform: rotate(360deg) translateZ(0); }
+            0% {
+                transform: rotate(0deg) translateZ(0);
+            }
+
+            100% {
+                transform: rotate(360deg) translateZ(0);
+            }
         }
-        
+
         @keyframes portfolioFloat {
-            0%, 100% { transform: translateY(0) translateZ(0); }
-            50% { transform: translateY(-23px) translateZ(13px); }
+
+            0%,
+            100% {
+                transform: translateY(0) translateZ(0);
+            }
+
+            50% {
+                transform: translateY(-23px) translateZ(13px);
+            }
         }
-        
+
         @keyframes portfolioFloat3D {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
             }
+
             25% {
                 transform: translateY(-33px) translateX(23px) rotateZ(90deg) translateZ(23px);
             }
+
             50% {
                 transform: translateY(-68px) translateX(-23px) rotateZ(180deg) translateZ(47px);
             }
+
             75% {
                 transform: translateY(-33px) translateX(13px) rotateZ(270deg) translateZ(23px);
             }
         }
-        
+
         .portfolio-hero .hero-content {
             position: relative;
             z-index: 2;
             transform-style: preserve-3d;
         }
-        
+
         .portfolio-hero .hero-title {
             transform: translateZ(57px);
             text-shadow: 0 13px 38px rgba(0, 255, 255, 0.37);
         }
-        
+
         .portfolio-hero .hero-subtitle {
             transform: translateZ(33px);
         }
     </style>
 </head>
+
 <body>
     <!-- Ebook Promo Modal for Portfolio Page -->
-    <div id="ebookPromoModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(10,30,63,0.85); align-items:center; justify-content:center;">
-        <div style="background:#fff; border-radius:18px; max-width:400px; width:90vw; padding:2em 1.5em; box-shadow:0 8px 32px rgba(10,30,63,0.18); text-align:center; position:relative;">
-            <button id="closePromoModal" style="position:absolute; top:0.7em; right:1em; background:none; border:none; font-size:1.5em; color:#0A1E3F; cursor:pointer;">&times;</button>
-            <img src="/images/still-life-books-versus-technology.webp" alt="Latest Ebook" style="width:80px; height:110px; object-fit:cover; border-radius:8px; margin-bottom:1em;" />
+    <div id="ebookPromoModal"
+        style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(10,30,63,0.85); align-items:center; justify-content:center;">
+        <div
+            style="background:#fff; border-radius:18px; max-width:400px; width:90vw; padding:2em 1.5em; box-shadow:0 8px 32px rgba(10,30,63,0.18); text-align:center; position:relative;">
+            <button id="closePromoModal"
+                style="position:absolute; top:0.7em; right:1em; background:none; border:none; font-size:1.5em; color:#0A1E3F; cursor:pointer;">&times;</button>
+            <img src="/images/still-life-books-versus-technology.webp" alt="Latest Ebook"
+                style="width:80px; height:110px; object-fit:cover; border-radius:8px; margin-bottom:1em;" />
             <h3 style="color:#0A1E3F; margin-bottom:0.5em;">New! Mastering Digital Marketing in Africa</h3>
-            <p style="color:#444; margin-bottom:1em;">Unlock proven strategies, case studies, and actionable tips tailored for African entrepreneurs and businesses.</p>
+            <p style="color:#444; margin-bottom:1em;">Unlock proven strategies, case studies, and actionable tips
+                tailored for African entrepreneurs and businesses.</p>
             <a href="/shop" class="btn btn-outline" style="margin-bottom:0.5em;">See All Ebooks</a>
-            <a href="/shop" class="btn btn-outline" style="background:#00FFFF; color:#0A1E3F; border-color:#00FFFF;">Buy Now</a>
+            <a href="/shop" class="btn btn-outline" style="background:#00FFFF; color:#0A1E3F; border-color:#00FFFF;">Buy
+                Now</a>
         </div>
     </div>
 
@@ -235,7 +265,8 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="/">
-                    <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="logo-img" onerror="this.src='/images/Trendtactics_logo.jpg'; this.onerror=null;">
+                    <img src="/images/Trendtactics_logo.jpg?v=2" alt="Trendtactics Digital" class="logo-img"
+                        onerror="this.src='/images/Trendtactics_logo.jpg?v=2'; this.onerror=null;">
                 </a>
             </div>
             <div class="nav-actions">
@@ -243,7 +274,8 @@
                     <a href="/" class="nav-link">Home</a>
                     <a href="/about" class="nav-link">About</a>
                     <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/service-email-marketing">Email Marketing</a></li>
                             <li><a href="/service-content-creation">Content Creation</a></li>
@@ -252,7 +284,8 @@
                         </ul>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/ebooks">Free Books</a></li>
                             <li><a href="/tools">Marketing Tools</a></li>
@@ -292,15 +325,19 @@
             <div class="hero-content">
                 <h1 class="hero-title">Our Portfolio</h1>
                 <p class="hero-subtitle">
-                    Explore our diverse work in digital marketing, web design, creative media, and ad campaigns. Each project reflects our commitment to innovation and results.
+                    Explore our diverse work in digital marketing, web design, creative media, and ad campaigns. Each
+                    project reflects our commitment to innovation and results.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- After hero or main intro section -->
-    <div id="ebookPromoMarquee" style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
-        <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to buy now and unlock your success! 🔥</marquee>
+    <div id="ebookPromoMarquee"
+        style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
+        <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business growth!
+            Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to buy now and
+            unlock your success! 🔥</marquee>
     </div>
 
     <!-- Category Filters -->
@@ -308,7 +345,8 @@
         <div class="content-block-bg-image">
             <picture>
                 <source srcset="/images/email-marketing-parallele.jpg" type="image/jpeg">
-                <img src="/images/email-marketing-parallele.jpg" alt="Portfolio Filters" loading="lazy" decoding="async" class="image-filter-darken">
+                <img src="/images/email-marketing-parallele.jpg" alt="Portfolio Filters" loading="lazy" decoding="async"
+                    class="image-filter-darken">
             </picture>
         </div>
         <div class="bg-overlay-dark"></div>
@@ -330,7 +368,8 @@
         <div class="content-block-bg-image">
             <picture>
                 <source srcset="/images/portfolio_parallele.jpg" type="image/jpeg">
-                <img src="/images/portfolio_parallele.jpg" alt="Portfolio Showcase" loading="lazy" decoding="async" class="image-filter-darken">
+                <img src="/images/portfolio_parallele.jpg" alt="Portfolio Showcase" loading="lazy" decoding="async"
+                    class="image-filter-darken">
             </picture>
         </div>
         <div class="bg-overlay-dark"></div>
@@ -354,11 +393,12 @@
                         <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
                     </div>
                     <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
+                        We don't just market brands — we engineer digital growth.
                         Unlock strategy, creativity, and AI power — all in one studio.
                     </p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
@@ -376,7 +416,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
@@ -385,7 +425,7 @@
                         <li><a href="/services#digital-marketing">Digital Marketing</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul>
@@ -395,10 +435,11 @@
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/pricing">Pricing</a></li>
                         <li><a href="/academy">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
+                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column footer-resources">
                     <h3>Resources</h3>
                     <ul>
@@ -419,7 +460,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
                 <div class="footer-legal">
@@ -438,96 +479,99 @@
     <script src="/js/parallax.js"></script>
     <script src="/js/media-optimizer.js" defer></script>
     <script>
-    // Show modal after 7 seconds (once per session)
-    if (!sessionStorage.getItem('ebookPromoModalPortfolioShown')) {
-        setTimeout(function() {
-            document.getElementById('ebookPromoModal').style.display = 'flex';
-            sessionStorage.setItem('ebookPromoModalPortfolioShown', 'yes');
-        }, 7000);
-    }
-    document.getElementById('closePromoModal').onclick = function() {
-        document.getElementById('ebookPromoModal').style.display = 'none';
-    };
+        // Show modal after 7 seconds (once per session)
+        if (!sessionStorage.getItem('ebookPromoModalPortfolioShown')) {
+            setTimeout(function () {
+                document.getElementById('ebookPromoModal').style.display = 'flex';
+                sessionStorage.setItem('ebookPromoModalPortfolioShown', 'yes');
+            }, 7000);
+        }
+        document.getElementById('closePromoModal').onclick = function () {
+            document.getElementById('ebookPromoModal').style.display = 'none';
+        };
     </script>
 
     <!-- Scroll to Top Functionality -->
     <script>
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    // Show/hide scroll to top button based on scroll position
-    window.addEventListener('scroll', function() {
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('visible');
-        } else {
-            scrollToTopBtn.classList.remove('visible');
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
-    });
+
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
     </script>
 
     <!-- Floating Language Selector -->
-    <div id="floating-translate-btn" style="position:fixed;bottom:30px;left:30px;z-index:9999;display:flex;align-items:center;gap:8px;">
-        <button id="toggle-translate" style="background:#0A1E3F;color:#00FFFF;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,30,63,0.18);cursor:pointer;font-size:1.6rem;transition:background 0.2s;">
+    <div id="floating-translate-btn"
+        style="position:fixed;bottom:30px;left:30px;z-index:9999;display:flex;align-items:center;gap:8px;">
+        <button id="toggle-translate"
+            style="background:#0A1E3F;color:#00FFFF;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,30,63,0.18);cursor:pointer;font-size:1.6rem;transition:background 0.2s;">
             <i class="fas fa-globe"></i>
         </button>
         <div id="floating-translate-widget" style="display:none;"></div>
     </div>
     <div id="google_translate_element" style="display:none;"></div>
     <script>
-    // Move Google Translate widget into floating widget and toggle visibility
-    document.addEventListener('DOMContentLoaded', function() {
-        var translateWidget = document.getElementById('google_translate_element');
-        var floatingWidget = document.getElementById('floating-translate-widget');
-        var toggleBtn = document.getElementById('toggle-translate');
-        if (translateWidget && floatingWidget && toggleBtn) {
-            floatingWidget.appendChild(translateWidget);
-            toggleBtn.addEventListener('click', function() {
-                if (floatingWidget.style.display === 'none' || floatingWidget.style.display === '') {
-                    floatingWidget.style.display = 'block';
-                } else {
-                    floatingWidget.style.display = 'none';
-                }
-            });
-        }
-    });
+        // Move Google Translate widget into floating widget and toggle visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            var translateWidget = document.getElementById('google_translate_element');
+            var floatingWidget = document.getElementById('floating-translate-widget');
+            var toggleBtn = document.getElementById('toggle-translate');
+            if (translateWidget && floatingWidget && toggleBtn) {
+                floatingWidget.appendChild(translateWidget);
+                toggleBtn.addEventListener('click', function () {
+                    if (floatingWidget.style.display === 'none' || floatingWidget.style.display === '') {
+                        floatingWidget.style.display = 'block';
+                    } else {
+                        floatingWidget.style.display = 'none';
+                    }
+                });
+            }
+        });
     </script>
     <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- Add dark mode script at end of body -->
     <script>
-    (function() {
-      const root = document.documentElement;
-      const darkClass = 'dark-mode';
-      const toggleBtn = document.getElementById('darkModeToggle');
-      function setDarkMode(enabled) {
-        if (enabled) {
-          root.classList.add(darkClass);
-          localStorage.setItem('ttDarkMode', '1');
-          if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-          root.classList.remove(darkClass);
-          localStorage.setItem('ttDarkMode', '0');
-          if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-      }
-      const saved = localStorage.getItem('ttDarkMode');
-      setDarkMode(saved === '1' || (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches));
-      if (toggleBtn) {
-        toggleBtn.onclick = function() {
-          setDarkMode(!root.classList.contains(darkClass));
-        };
-      }
-      const style = document.createElement('style');
-      style.textContent = `
+        (function () {
+            const root = document.documentElement;
+            const darkClass = 'dark-mode';
+            const toggleBtn = document.getElementById('darkModeToggle');
+            function setDarkMode(enabled) {
+                if (enabled) {
+                    root.classList.add(darkClass);
+                    localStorage.setItem('ttDarkMode', '1');
+                    if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    root.classList.remove(darkClass);
+                    localStorage.setItem('ttDarkMode', '0');
+                    if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            }
+            const saved = localStorage.getItem('ttDarkMode');
+            setDarkMode(saved === '1' || (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches));
+            if (toggleBtn) {
+                toggleBtn.onclick = function () {
+                    setDarkMode(!root.classList.contains(darkClass));
+                };
+            }
+            const style = document.createElement('style');
+            style.textContent = `
         .dark-mode, .dark-mode body { background: #0A1E3F !important; color: #fff !important; transition: background 0.4s, color 0.4s; }
         .dark-mode .footer, .dark-mode .section, .dark-mode .portfolio-hero, .dark-mode .portfolio-section { background: #162447 !important; color: #fff !important; }
         .dark-mode h1, .dark-mode h2, .dark-mode h3 { color: #00FFFF !important; }
@@ -537,8 +581,9 @@
         .dark-mode .footer a { color: #00FFFF !important; }
         .dark-mode .footer a:hover { color: #fff !important; }
       `;
-      document.head.appendChild(style);
-    })();
+            document.head.appendChild(style);
+        })();
     </script>
 </body>
-</html> 
+
+</html>
