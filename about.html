@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Trendtactics Digital</title>
-    <meta name="description" content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+    <meta name="description"
+        content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
     <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
     <meta name="author" content="Akinola Olujobi">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="About Us - Trendtactics Digital">
-    <meta property="og:description" content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+    <meta property="og:description"
+        content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
     <meta property="og:url" content="https://trendtacticsdigital.com/about">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Us - Trendtactics Digital">
-    <meta name="twitter:description" content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+    <meta name="twitter:description"
+        content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- React CDN -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+
     <!-- Supabase CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/supabase-utils.js"></script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
@@ -43,7 +49,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
@@ -87,7 +93,7 @@
             overflow: hidden;
             perspective: 1000px;
         }
-        
+
         .page-hero::before {
             content: '';
             position: absolute;
@@ -95,14 +101,14 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: 
+            background:
                 radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
                 radial-gradient(circle at 70% 70%, rgba(64, 224, 208, 0.15) 0%, transparent 50%),
                 linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
             animation: heroRotate 20s linear infinite;
             transform-style: preserve-3d;
         }
-        
+
         .page-hero::after {
             content: '';
             position: absolute;
@@ -110,12 +116,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="about-3d" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%2300FFFF" opacity="0.1"/><circle cx="5" cy="5" r="1" fill="%2340E0D0" opacity="0.08"/><circle cx="35" cy="35" r="1.5" fill="%2300FFFF" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23about-3d)"/></svg>');
             opacity: 0.4;
             animation: heroFloat 15s ease-in-out infinite;
         }
-        
+
         /* 3D Floating Shapes */
         .hero-3d-shapes {
             position: absolute;
@@ -126,13 +132,13 @@
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .shape-3d {
             position: absolute;
             opacity: 0.3;
             animation: float3D 20s ease-in-out infinite;
         }
-        
+
         .shape-3d.shape-1 {
             width: 150px;
             height: 150px;
@@ -143,7 +149,7 @@
             transform: rotateZ(45deg);
             animation-delay: 0s;
         }
-        
+
         .shape-3d.shape-2 {
             width: 100px;
             height: 100px;
@@ -153,7 +159,7 @@
             right: 15%;
             animation-delay: 2s;
         }
-        
+
         .shape-3d.shape-3 {
             width: 120px;
             height: 120px;
@@ -163,7 +169,7 @@
             left: 20%;
             animation-delay: 4s;
         }
-        
+
         .shape-3d.shape-4 {
             width: 80px;
             height: 80px;
@@ -174,59 +180,79 @@
             transform: rotateZ(45deg);
             animation-delay: 6s;
         }
-        
+
         @keyframes heroRotate {
-            0% { transform: rotate(0deg) translateZ(0); }
-            100% { transform: rotate(360deg) translateZ(0); }
+            0% {
+                transform: rotate(0deg) translateZ(0);
+            }
+
+            100% {
+                transform: rotate(360deg) translateZ(0);
+            }
         }
-        
+
         @keyframes heroFloat {
-            0%, 100% { transform: translateY(0) translateZ(0); }
-            50% { transform: translateY(-20px) translateZ(10px); }
+
+            0%,
+            100% {
+                transform: translateY(0) translateZ(0);
+            }
+
+            50% {
+                transform: translateY(-20px) translateZ(10px);
+            }
         }
-        
+
         @keyframes float3D {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
             }
+
             25% {
                 transform: translateY(-30px) translateX(20px) rotateZ(90deg) translateZ(20px);
             }
+
             50% {
                 transform: translateY(-60px) translateX(-20px) rotateZ(180deg) translateZ(40px);
             }
+
             75% {
                 transform: translateY(-30px) translateX(10px) rotateZ(270deg) translateZ(20px);
             }
         }
-        
+
         .page-hero .hero-content {
             position: relative;
             z-index: 2;
             transform-style: preserve-3d;
         }
-        
+
         .page-hero .hero-title {
             transform: translateZ(50px);
             text-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
         }
-        
+
         .page-hero .hero-subtitle {
             transform: translateZ(30px);
         }
     </style>
 </head>
+
 <body>
     <nav id="navigation" class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
                     <div style="display: flex; gap: 2px; align-items: flex-end;">
                         <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
                         <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
                         <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
                     </div>
-                    <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
+                    <span
+                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
+                        Digital</span>
                 </a>
             </div>
             <div class="nav-actions">
@@ -234,7 +260,8 @@
                     <a href="/" class="nav-link">Home</a>
                     <a href="/about" class="nav-link active">About</a>
                     <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/service-email-marketing">Email Marketing</a></li>
                             <li><a href="/service-content-creation">Content Creation</a></li>
@@ -243,7 +270,8 @@
                         </ul>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/ebooks">Free Books</a></li>
                             <li><a href="/tools">Marketing Tools</a></li>
@@ -285,7 +313,7 @@
                 <div class="hero-content">
                     <h1 class="hero-title">About Trendtactics Digital</h1>
                     <p class="hero-subtitle">
-                        We don't just market brands — we engineer digital growth. 
+                        We don't just market brands — we engineer digital growth.
                         Discover our story, mission, and the team behind your success.
                     </p>
                 </div>
@@ -297,7 +325,8 @@
             <div class="content-block-bg-image">
                 <picture>
                     <source srcset="/images/still-life-book-hero-section.webp" type="image/webp">
-                    <img src="/images/still-life-book-hero-section.webp" alt="Company Story Background" loading="lazy" decoding="async" class="image-filter-darken">
+                    <img src="/images/still-life-book-hero-section.webp" alt="Company Story Background" loading="lazy"
+                        decoding="async" class="image-filter-darken">
                 </picture>
             </div>
             <div class="bg-overlay-dark"></div>
@@ -306,18 +335,18 @@
                     <div class="story-content">
                         <h2>Our Story</h2>
                         <p class="story-intro">
-                            Founded in 2020 by Akinola Olujobi, Trendtactics Digital emerged from a simple belief: 
+                            Founded in 2020 by Akinola Olujobi, Trendtactics Digital emerged from a simple belief:
                             that every business deserves access to world-class digital marketing expertise.
                         </p>
                         <p>
-                            What started as a one-person operation in Lagos has grown into a dedicated team of 
-                            strategists, designers, developers, and marketers committed to delivering exceptional 
-                            digital solutions. We've helped numerous businesses transform their digital presence 
+                            What started as a one-person operation in Lagos has grown into a dedicated team of
+                            strategists, designers, developers, and marketers committed to delivering exceptional
+                            digital solutions. We've helped numerous businesses transform their digital presence
                             and achieve remarkable growth.
                         </p>
                         <p>
-                            Our journey has been driven by innovation, creativity, and an unwavering commitment 
-                            to delivering measurable results. From small startups to established companies, 
+                            Our journey has been driven by innovation, creativity, and an unwavering commitment
+                            to delivering measurable results. From small startups to established companies,
                             we've proven that the right digital strategy can change everything.
                         </p>
                     </div>
@@ -330,7 +359,8 @@
             <div class="content-block-bg-image">
                 <picture>
                     <source srcset="/images/digital-marketing-parallex.jpg" type="image/jpeg">
-                    <img src="/images/digital-marketing-parallex.jpg" alt="Mission and Vision" loading="lazy" decoding="async" class="image-filter-darken">
+                    <img src="/images/digital-marketing-parallex.jpg" alt="Mission and Vision" loading="lazy"
+                        decoding="async" class="image-filter-darken">
                 </picture>
             </div>
             <div class="bg-overlay-dark"></div>
@@ -342,7 +372,7 @@
                         </div>
                         <h3>Our Mission</h3>
                         <p>
-                            To democratize access to world-class digital marketing by providing innovative, 
+                            To democratize access to world-class digital marketing by providing innovative,
                             data-driven solutions that drive real business growth for companies of all sizes.
                         </p>
                     </div>
@@ -352,8 +382,8 @@
                         </div>
                         <h3>Our Vision</h3>
                         <p>
-                            To be the leading digital growth partner for ambitious businesses worldwide, 
-                            known for delivering exceptional results through creativity, technology, and 
+                            To be the leading digital growth partner for ambitious businesses worldwide,
+                            known for delivering exceptional results through creativity, technology, and
                             strategic thinking.
                         </p>
                     </div>
@@ -366,7 +396,8 @@
             <div class="content-block-bg-image">
                 <picture>
                     <source srcset="/images/service-parallex.jpg" type="image/jpeg">
-                    <img src="/images/service-parallex.jpg" alt="Our Core Values" loading="lazy" decoding="async" class="image-filter-darken">
+                    <img src="/images/service-parallex.jpg" alt="Our Core Values" loading="lazy" decoding="async"
+                        class="image-filter-darken">
                 </picture>
             </div>
             <div class="bg-overlay-dark"></div>
@@ -386,16 +417,18 @@
             <div class="content-block-bg-image">
                 <picture>
                     <source srcset="/images/web-deve-parallex.jpg" type="image/jpeg">
-                    <img src="/images/web-deve-parallex.jpg" alt="What Makes Us Different" loading="lazy" decoding="async" class="image-filter-darken">
+                    <img src="/images/web-deve-parallex.jpg" alt="What Makes Us Different" loading="lazy"
+                        decoding="async" class="image-filter-darken">
                 </picture>
             </div>
             <div class="bg-overlay-dark"></div>
             <div class="container content-block-bg-content">
                 <div class="section-header">
                     <h2 class="section-title">What Makes Us Different</h2>
-                    <p class="section-subtitle">Our unique approach combines cutting-edge technology with proven strategies to deliver exceptional results.</p>
+                    <p class="section-subtitle">Our unique approach combines cutting-edge technology with proven
+                        strategies to deliver exceptional results.</p>
                 </div>
-                
+
                 <div class="usp-grid-redesigned">
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
@@ -411,7 +444,7 @@
                             <div class="usp-accent-line"></div>
                         </div>
                     </div>
-                    
+
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
                             <div class="usp-icon-wrapper">
@@ -426,7 +459,7 @@
                             <div class="usp-accent-line"></div>
                         </div>
                     </div>
-                    
+
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
                             <div class="usp-icon-wrapper">
@@ -441,7 +474,7 @@
                             <div class="usp-accent-line"></div>
                         </div>
                     </div>
-                    
+
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
                             <div class="usp-icon-wrapper">
@@ -456,7 +489,7 @@
                             <div class="usp-accent-line"></div>
                         </div>
                     </div>
-                    
+
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
                             <div class="usp-icon-wrapper">
@@ -471,7 +504,7 @@
                             <div class="usp-accent-line"></div>
                         </div>
                     </div>
-                    
+
                     <div class="usp-card-redesigned">
                         <div class="usp-card-inner">
                             <div class="usp-icon-wrapper">
@@ -495,7 +528,8 @@
             <div class="content-block-bg-image">
                 <picture>
                     <source srcset="/images/resources-parallelx.jpg" type="image/jpeg">
-                    <img src="/images/resources-parallelx.jpg" alt="Our Journey" loading="lazy" decoding="async" class="image-filter-darken">
+                    <img src="/images/resources-parallelx.jpg" alt="Our Journey" loading="lazy" decoding="async"
+                        class="image-filter-darken">
                 </picture>
             </div>
             <div class="bg-overlay-dark"></div>
@@ -520,23 +554,28 @@
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-image founder-image">
-                            <img src="/images/akinola.jpg" alt="Akinola Olujobi - Founder & CEO" loading="lazy">
+                            <img src="/images/akinola.jpg.jpg" alt="Akinola Olujobi - Founder & CEO" loading="lazy">
                         </div>
                         <div class="member-info">
                             <h3 class="member-name">Akinola Olujobi</h3>
                             <div class="member-position">Founder & CEO</div>
-                            <p class="member-bio">Digital marketing expert with 10+ years of experience helping brands grow online. Passionate about democratizing access to world-class digital solutions.</p>
+                            <p class="member-bio">Digital marketing expert with 10+ years of experience helping brands
+                                grow online. Passionate about democratizing access to world-class digital solutions.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/akinola-olujobi" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://linkedin.com/in/akinola-olujobi" target="_blank"
+                                    rel="noopener noreferrer" class="social-link">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://twitter.com/akinola_olujobi" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://twitter.com/akinola_olujobi" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="https://instagram.com/akinola_olujobi" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://instagram.com/akinola_olujobi" target="_blank"
+                                    rel="noopener noreferrer" class="social-link">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://facebook.com/akinola.olujobi" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://facebook.com/akinola.olujobi" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </div>
@@ -545,23 +584,29 @@
 
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=faces" alt="Sarah Johnson - Creative Director" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=faces"
+                                alt="Sarah Johnson - Creative Director" loading="lazy">
                         </div>
                         <div class="member-info">
                             <h3 class="member-name">Sarah Johnson</h3>
                             <div class="member-position">Creative Director</div>
-                            <p class="member-bio">Award-winning designer passionate about creating beautiful, functional digital experiences that drive results and delight users.</p>
+                            <p class="member-bio">Award-winning designer passionate about creating beautiful, functional
+                                digital experiences that drive results and delight users.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/sarah-johnson" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://linkedin.com/in/sarah-johnson" target="_blank"
+                                    rel="noopener noreferrer" class="social-link">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://twitter.com/sarah_johnson" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://twitter.com/sarah_johnson" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="https://instagram.com/sarah_johnson" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://instagram.com/sarah_johnson" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://facebook.com/sarah.johnson" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://facebook.com/sarah.johnson" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </div>
@@ -570,23 +615,29 @@
 
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Michael Chen - Technical Lead" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+                                alt="Michael Chen - Technical Lead" loading="lazy">
                         </div>
                         <div class="member-info">
                             <h3 class="member-name">Michael Chen</h3>
                             <div class="member-position">Technical Lead</div>
-                            <p class="member-bio">Full-stack developer specializing in modern web technologies and AI integration. Expert in building scalable, high-performance solutions.</p>
+                            <p class="member-bio">Full-stack developer specializing in modern web technologies and AI
+                                integration. Expert in building scalable, high-performance solutions.</p>
                             <div class="member-social">
-                                <a href="https://linkedin.com/in/michael-chen" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://linkedin.com/in/michael-chen" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://github.com/michaelchen" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://github.com/michaelchen" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://instagram.com/michael_chen" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://instagram.com/michael_chen" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://facebook.com/michael.chen" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <a href="https://facebook.com/michael.chen" target="_blank" rel="noopener noreferrer"
+                                    class="social-link">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </div>
@@ -623,9 +674,10 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Why Brands Trust Us</h2>
-                    <p>Join hundreds of satisfied clients who have transformed their digital presence with our proven strategies.</p>
+                    <p>Join hundreds of satisfied clients who have transformed their digital presence with our proven
+                        strategies.</p>
                 </div>
-                
+
                 <!-- Client Testimonials -->
                 <div class="trust-testimonials">
                     <h3 class="trust-subtitle">Client Testimonials</h3>
@@ -641,7 +693,9 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <p class="trust-quote-redesigned">"Trendtactics Digital transformed our online presence completely. Our website traffic increased by 300% and our conversion rate doubled within just 3 months."</p>
+                            <p class="trust-quote-redesigned">"Trendtactics Digital transformed our online presence
+                                completely. Our website traffic increased by 300% and our conversion rate doubled within
+                                just 3 months."</p>
                             <div class="trust-author-redesigned">
                                 <div class="author-info-wrapper">
                                     <strong>John Smith</strong>
@@ -650,7 +704,7 @@
                             </div>
                             <div class="testimonial-accent"></div>
                         </div>
-                        
+
                         <div class="trust-testimonial-card-redesigned">
                             <div class="testimonial-quote-icon">
                                 <i class="fas fa-quote-left"></i>
@@ -662,7 +716,9 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <p class="trust-quote-redesigned">"The team at Trendtactics Digital is exceptional. They delivered our e-commerce platform on time and exceeded our expectations. Our online sales have increased by 400% since launch!"</p>
+                            <p class="trust-quote-redesigned">"The team at Trendtactics Digital is exceptional. They
+                                delivered our e-commerce platform on time and exceeded our expectations. Our online
+                                sales have increased by 400% since launch!"</p>
                             <div class="trust-author-redesigned">
                                 <div class="author-info-wrapper">
                                     <strong>Sarah Johnson</strong>
@@ -671,7 +727,7 @@
                             </div>
                             <div class="testimonial-accent"></div>
                         </div>
-                        
+
                         <div class="trust-testimonial-card-redesigned">
                             <div class="testimonial-quote-icon">
                                 <i class="fas fa-quote-left"></i>
@@ -683,7 +739,9 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <p class="trust-quote-redesigned">"Working with Trendtactics Digital has been a game-changer. Their AI-powered strategies helped us reduce costs by 40% while increasing our ROI by 250%."</p>
+                            <p class="trust-quote-redesigned">"Working with Trendtactics Digital has been a
+                                game-changer. Their AI-powered strategies helped us reduce costs by 40% while increasing
+                                our ROI by 250%."</p>
                             <div class="trust-author-redesigned">
                                 <div class="author-info-wrapper">
                                     <strong>Michael Chen</strong>
@@ -694,7 +752,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Certifications -->
                 <div class="trust-certifications">
                     <h3 class="trust-subtitle">Certifications & Partnerships</h3>
@@ -737,7 +795,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
@@ -756,8 +814,11 @@
         </section>
 
         <!-- After Ready to Work with Us section -->
-        <div id="ebookPromoMarquee" style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
-          <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to buy now and unlock your success! 🔥</marquee>
+        <div id="ebookPromoMarquee"
+            style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
+            <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business
+                growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to
+                buy now and unlock your success! 🔥</marquee>
         </div>
     </main>
 
@@ -775,11 +836,12 @@
                         <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
                     </div>
                     <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
+                        We don't just market brands — we engineer digital growth.
                         Unlock strategy, creativity, and AI power — all in one studio.
                     </p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
@@ -797,7 +859,7 @@
                     </div>
                     <div id="google_translate_element"></div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul>
@@ -806,7 +868,7 @@
                         <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul>
@@ -816,10 +878,11 @@
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/pricing">Pricing</a></li>
                         <li><a href="/academy">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
+                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column footer-resources">
                     <h3>Resources</h3>
                     <ul>
@@ -833,14 +896,14 @@
                     <div class="footer-newsletter-inline">
                         <h4>Stay Updated</h4>
                         <p>Get insights delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
                 <div class="footer-legal">
@@ -856,20 +919,21 @@
     <script src="/js/about.js"></script>
     <script src="/js/parallax.js"></script>
     <script>
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-    window.addEventListener('scroll', function() {
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('visible');
-        } else {
-            scrollToTopBtn.classList.remove('visible');
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
-    });
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
     </script>
 </body>
-</html> 
+
+</html>
