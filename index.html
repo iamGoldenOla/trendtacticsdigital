@@ -49,12 +49,12 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css?v=3">
+    <link rel="stylesheet" href="/styles/main.css?v=4">
     <link rel="stylesheet" href="/styles/shared-effects.css">
     <link rel="stylesheet" href="/styles/about.css">
     <link rel="stylesheet" href="/styles/images.css">
     <link rel="stylesheet" href="/styles/media-optimization.css">
-    <link rel="stylesheet" href="/styles/homepage-improvements.css">
+    <link rel="stylesheet" href="/styles/homepage-improvements.css?v=2">
 
     <!-- Browser Compatibility -->
     <script src="/js/browser-compat.js"></script>
@@ -184,7 +184,8 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-video-background">
-                <video autoplay muted loop playsinline preload="metadata" loading="lazy">
+                <video autoplay muted loop playsinline id="hero-video" preload="auto">
+                    <!-- Added timestamp to force cache clear -->
                     <source src="/images/Trendtactics-digital-promo.mp4?v=2" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -285,31 +286,31 @@
                     <div class="brands-grid" id="brands-grid">
                         <!-- Kevtos Catering (Orange/Gold) -->
                         <div class="brand-card-custom brand-bg-kevtos">
-                            <img src="/images/kevtos-catering.png" alt="Kevtos Catering"
+                            <img src="/images/KEVTOS-CATERING.jpg" alt="Kevtos Catering"
                                 onerror="this.onerror=null; this.parentElement.innerText='KEVTOS CATERING'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
                         </div>
 
                         <!-- Realtreasure (Blue) -->
                         <div class="brand-card-custom brand-bg-realtreasure">
-                            <img src="/images/realtreasure.png" alt="Realtreasure"
+                            <img src="/images/Realtreasure.jpg" alt="Realtreasure"
                                 onerror="this.onerror=null; this.parentElement.innerText='REALTREASURE'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
                         </div>
 
                         <!-- HustleNChill (Purple) -->
                         <div class="brand-card-custom brand-bg-hustlenchill">
-                            <img src="/images/hustlenchill.png" alt="HustleNChill"
+                            <img src="/images/HustleNChill---My-Presi-2.jpg" alt="HustleNChill"
                                 onerror="this.onerror=null; this.parentElement.innerText='HUSTLENCHILL'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
                         </div>
 
                         <!-- Greentick (Green) -->
                         <div class="brand-card-custom brand-bg-greentick">
-                            <img src="/images/greentick.png" alt="Greentick"
+                            <img src="/images/GREENTICK---My-Presi.jpg" alt="Greentick"
                                 onerror="this.onerror=null; this.parentElement.innerText='GREENTICK'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
                         </div>
 
                         <!-- Gabson (Green/Yellow) -->
                         <div class="brand-card-custom brand-bg-gabson">
-                            <img src="/images/gabson.png" alt="Gabson"
+                            <img src="/images/Gabson--PICP.jpg" alt="Gabson"
                                 onerror="this.onerror=null; this.parentElement.innerText='GABSON'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
                         </div>
                     </div>
