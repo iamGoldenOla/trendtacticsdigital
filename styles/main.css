@@ -229,6 +229,14 @@ section {
     section {
         padding: var(--section-padding-mobile-vertical) var(--section-padding-mobile-horizontal);
     }
+
+    /* Mobile Hero Padding Fix */
+    .hero,
+    .hero-content-centered,
+    .page-hero {
+        padding-top: calc(85px + var(--spacing-2xl));
+        /* 70px nav + extra spacing */
+    }
 }
 
 /* Reduce padding for the footer container on large screens */
@@ -537,6 +545,10 @@ section {
     border-radius: 8px;
     outline: none;
     transition: all 0.3s ease;
+    cursor: pointer;
+    /* Ensure pointer cursor */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight */
 }
 
 .nav-toggle:hover {
@@ -574,6 +586,8 @@ section {
 @media (max-width: 768px) {
     .navbar {
         padding: 0 var(--spacing-xs);
+        height: 70px;
+        /* Force height */
     }
 
     .nav-container {
