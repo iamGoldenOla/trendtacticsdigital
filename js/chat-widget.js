@@ -113,36 +113,69 @@
             }
         });
 
-        function handleChatbotQuestion(question) {
+        async function handleChatbotQuestion(question) {
             const messagesDiv = document.getElementById('chatbot-messages');
             const userMsg = document.createElement('div');
             userMsg.className = 'chat-message user';
             userMsg.innerHTML = `<p><strong>You:</strong> ${question}</p>`;
             userMsg.style.cssText = 'text-align: right; margin-bottom: 10px;';
             messagesDiv.appendChild(userMsg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
-            // Simple keyword matching for responses
-            const lowerQuestion = question.toLowerCase();
-            let answer = 'Thanks for your question! Our team will get back to you soon. In the meantime, feel free to explore our website or contact us directly.';
+            // Show typing indicator
+            const typingMsg = document.createElement('div');
+            typingMsg.className = 'chat-message bot typing';
+            typingMsg.innerHTML = `<p><strong>Assistant:</strong> <span class="typing-dots">Thinking...</span></p>`;
+            typingMsg.style.cssText = 'margin-bottom: 10px;';
+            messagesDiv.appendChild(typingMsg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
-            if (lowerQuestion.includes('service')) {
-                answer = faqAnswers.services;
-            } else if (lowerQuestion.includes('price') || lowerQuestion.includes('cost')) {
-                answer = faqAnswers.pricing;
-            } else if (lowerQuestion.includes('start') || lowerQuestion.includes('begin')) {
-                answer = faqAnswers['get started'];
-            } else if (lowerQuestion.includes('contact') || lowerQuestion.includes('reach')) {
-                answer = faqAnswers.contact;
+            let answer = '';
+
+            try {
+                // Try Puter AI first
+                if (typeof puter !== 'undefined' && puter.ai) {
+                    // Use a system prompt to give the AI context
+                    const systemPrompt = `You are the helpful AI assistant for Trendtactics Digital, a digital marketing agency. 
+                    Services: Web Development, App Development, Digital Marketing (SEO, Email, Social, Ads). 
+                    Pricing: Web Dev starts $2500, Marketing starts $1500. 
+                    Tone: Professional, friendly, concise. 
+                    Goal: Encourage users to contact us or check services.
+                    Answer the following user question:`;
+
+                    const response = await puter.ai.chat(`${systemPrompt}\n\nUser: ${question}`);
+                    answer = response.toString(); // Ensure string
+                } else {
+                    throw new Error('Puter AI not available');
+                }
+            } catch (error) {
+                console.warn('AI Chat failed, using fallback:', error);
+                // Fallback to local keyword matching
+                const lowerQuestion = question.toLowerCase();
+                answer = 'Thanks for your question! Our team will get back to you soon. In the meantime, feel free to explore our website or contact us directly.';
+
+                if (lowerQuestion.includes('service')) {
+                    answer = faqAnswers.services;
+                } else if (lowerQuestion.includes('price') || lowerQuestion.includes('cost')) {
+                    answer = faqAnswers.pricing;
+                } else if (lowerQuestion.includes('start') || lowerQuestion.includes('begin')) {
+                    answer = faqAnswers['get started'];
+                } else if (lowerQuestion.includes('contact') || lowerQuestion.includes('reach')) {
+                    answer = faqAnswers.contact;
+                }
             }
 
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-message bot';
-                botMsg.innerHTML = `<p><strong>Assistant:</strong> ${answer}</p>`;
-                botMsg.style.cssText = 'margin-bottom: 10px;';
-                messagesDiv.appendChild(botMsg);
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }, 500);
+            // Remove typing indicator and show answer
+            messagesDiv.removeChild(typingMsg);
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'chat-message bot';
+            // Simple markdown parsing for bolding
+            const formattedAnswer = answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            botMsg.innerHTML = `<p><strong>Assistant:</strong> ${formattedAnswer}</p>`;
+            botMsg.style.cssText = 'margin-bottom: 10px;';
+            messagesDiv.appendChild(botMsg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
     }
 
