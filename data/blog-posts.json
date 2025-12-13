@@ -11,7 +11,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2025-06-15",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": true,
       "tags": [
         "AI",
@@ -37,7 +37,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2025-05-20",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "Social Media",
@@ -62,7 +62,7 @@
       "author": "Michael Chen",
       "authorBio": "SEO Specialist with expertise in technical SEO and algorithm analysis.",
       "date": "2025-04-10",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": [
         "Google",
@@ -87,7 +87,7 @@
       "author": "Emily Rodriguez",
       "authorBio": "Content Marketing Manager with expertise in content strategy and audience development.",
       "date": "2025-03-15",
-      "image": "images/blog3.jpg",
+      "image": "/images/blog3.jpg",
       "featured": false,
       "tags": [
         "Content Marketing",
@@ -112,7 +112,7 @@
       "author": "David Kim",
       "authorBio": "Digital Marketing Analyst specializing in emerging technologies and market trends.",
       "date": "2025-02-28",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "AI",
@@ -137,7 +137,7 @@
       "author": "Lisa Wang",
       "authorBio": "Brand Strategist with expertise in digital brand development and identity design.",
       "date": "2025-01-20",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": [
         "Branding",
@@ -162,7 +162,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2025-01-15",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "E-commerce",
@@ -187,7 +187,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2025-01-10",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "Digital Marketing",
@@ -212,7 +212,7 @@
       "author": "Emily Rodriguez",
       "authorBio": "Content Marketing Manager with expertise in content strategy and audience development.",
       "date": "2025-01-05",
-      "image": "images/blog3.jpg",
+      "image": "/images/blog3.jpg",
       "featured": false,
       "tags": [
         "Landing Page",
@@ -237,7 +237,7 @@
       "author": "David Kim",
       "authorBio": "Digital Marketing Analyst specializing in emerging technologies and market trends.",
       "date": "2024-12-28",
-      "image": "images/blog2.jpg",
+      "image": "/images/blog2.jpg",
       "featured": false,
       "tags": [
         "Marketing Automation",
@@ -262,7 +262,7 @@
       "author": "Sarah Johnson",
       "authorBio": "Social Media Strategist at Trendtactics Digital, specializing in community building and engagement optimization.",
       "date": "2024-12-20",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "Social Media",
@@ -287,7 +287,7 @@
       "author": "Akinola Olujobi",
       "authorBio": "Founder and CEO of Trendtactics Digital, with over 10 years of experience in digital marketing and AI solutions.",
       "date": "2024-12-15",
-      "image": "images/blog1.jpg",
+      "image": "/images/blog1.jpg",
       "featured": false,
       "tags": [
         "ROI",

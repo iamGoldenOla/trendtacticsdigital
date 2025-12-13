@@ -1,7 +1,7 @@
 // ===== MAIN JAVASCRIPT FUNCTIONALITY =====
 
 // DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeNavigation();
     initializeSmoothScrolling();
     // Only load content on homepage (index.html)
@@ -21,11 +21,11 @@ function initializeNavigation() {
 
     // Mobile menu toggle
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
+        navToggle.addEventListener('click', function (e) {
             e.stopPropagation();
             const isActive = navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
+
             // Prevent body scroll when menu is open
             if (isActive) {
                 document.body.classList.add('menu-open');
@@ -37,25 +37,25 @@ function initializeNavigation() {
         // Close menu when clicking on a link
         const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-menu a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.classList.remove('menu-open');
             });
         });
-        
+
         // Close menu when clicking outside (but not on dropdown items)
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             // Don't close if clicking inside menu or toggle button
             if (navMenu.contains(e.target) || navToggle.contains(e.target)) {
                 return;
             }
-            
+
             // Don't close if clicking on a dropdown item
             if (e.target.closest('.nav-item.dropdown')) {
                 return;
             }
-            
+
             // Close the menu
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
@@ -64,7 +64,7 @@ function initializeNavigation() {
     }
 
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
@@ -77,47 +77,47 @@ function initializeNavigation() {
     dropdownItems.forEach(item => {
         const dropdownLink = item.querySelector('.nav-link');
         const dropdownMenu = item.querySelector('.dropdown-menu');
-        
+
         if (dropdownLink && dropdownMenu) {
             // Prevent dropdown from closing when clicking inside
-            dropdownMenu.addEventListener('mouseenter', function() {
+            dropdownMenu.addEventListener('mouseenter', function () {
                 item.classList.add('active');
             });
-            
-            dropdownMenu.addEventListener('mouseleave', function() {
+
+            dropdownMenu.addEventListener('mouseleave', function () {
                 if (window.innerWidth > 768) {
                     item.classList.remove('active');
                 }
             });
-            
+
             // Toggle dropdown on click (for mobile)
-            dropdownLink.addEventListener('click', function(e) {
+            dropdownLink.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     e.stopPropagation();
                     const isActive = item.classList.contains('active');
-                    
+
                     // Close other dropdowns first
                     dropdownItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('active');
                         }
                     });
-                    
+
                     // Toggle current dropdown
                     item.classList.toggle('active');
                 }
             });
-            
+
             // Keep dropdown open when hovering over it
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 if (window.innerWidth > 768) {
                     item.classList.add('active');
                     dropdownMenu.style.display = 'block';
                 }
             });
-            
-            item.addEventListener('mouseleave', function() {
+
+            item.addEventListener('mouseleave', function () {
                 if (window.innerWidth > 768) {
                     setTimeout(() => {
                         if (!item.matches(':hover')) {
@@ -127,9 +127,9 @@ function initializeNavigation() {
                     }, 200);
                 }
             });
-            
+
             // Close dropdown when clicking outside (mobile only)
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (!item.contains(e.target) && window.innerWidth <= 768) {
                     item.classList.remove('active');
                     dropdownMenu.style.display = 'none';
@@ -142,17 +142,17 @@ function initializeNavigation() {
 // ===== SMOOTH SCROLLING =====
 function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -173,14 +173,14 @@ async function loadContent() {
         }
         const data = await response.json();
         console.log('Loaded data:', data);
-        
+
         loadBrands(data.brands);
         loadServices(data.services);
         loadTestimonials(data.testimonials);
         loadFooterLinks(data.footer);
         loadSocialLinks(data.social);
         loadLatestBlogPosts();
-        
+
     } catch (error) {
         console.error('Error loading content:', error);
         console.log('Using fallback content data');
@@ -192,10 +192,10 @@ async function loadContent() {
 function loadBrands(brands) {
     const brandsGrid = document.getElementById('brands-grid');
     if (!brandsGrid || !brands) return;
-    
+
     // Create duplicate items for infinite scroll
     const duplicatedBrands = [...brands, ...brands];
-    
+
     let brandsHTML = '';
     duplicatedBrands.forEach(brand => {
         brandsHTML += `
@@ -204,7 +204,7 @@ function loadBrands(brands) {
             </div>
         `;
     });
-    
+
     brandsGrid.innerHTML = brandsHTML;
 }
 
@@ -256,7 +256,7 @@ function loadFooterLinks(footer) {
     // Services links
     const footerServices = document.getElementById('footer-services');
     if (footerServices) {
-        footerServices.innerHTML = footer.services.map(service => 
+        footerServices.innerHTML = footer.services.map(service =>
             `<li><a href="#services">${service}</a></li>`
         ).join('');
     }
@@ -264,7 +264,7 @@ function loadFooterLinks(footer) {
     // Company links
     const footerCompany = document.getElementById('footer-company');
     if (footerCompany) {
-        footerCompany.innerHTML = footer.company.map(link => 
+        footerCompany.innerHTML = footer.company.map(link =>
             `<li><a href="#${link.toLowerCase().replace(' ', '-')}">${link}</a></li>`
         ).join('');
     }
@@ -272,7 +272,7 @@ function loadFooterLinks(footer) {
     // Resources links
     const footerResources = document.getElementById('footer-resources');
     if (footerResources) {
-        footerResources.innerHTML = footer.resources.map(resource => 
+        footerResources.innerHTML = footer.resources.map(resource =>
             `<li><a href="#${resource.toLowerCase().replace(' ', '-')}">${resource}</a></li>`
         ).join('');
     }
@@ -367,7 +367,7 @@ function initializeAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in-up');
@@ -386,7 +386,7 @@ function initializeVideoPlayer() {
     if (!video) return;
 
     // Add play/pause functionality
-    video.addEventListener('click', function() {
+    video.addEventListener('click', function () {
         if (video.paused) {
             video.play();
         } else {
@@ -395,11 +395,11 @@ function initializeVideoPlayer() {
     });
 
     // Add loading state
-    video.addEventListener('loadstart', function() {
+    video.addEventListener('loadstart', function () {
         video.style.opacity = '0.7';
     });
 
-    video.addEventListener('canplay', function() {
+    video.addEventListener('canplay', function () {
         video.style.opacity = '1';
     });
 }
@@ -407,18 +407,18 @@ function initializeVideoPlayer() {
 // ===== FORM HANDLING =====
 function initializeForms() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            
+
             // Show success message (replace with actual form submission)
             showNotification('Thank you! We\'ll get back to you soon.', 'success');
-            
+
             // Reset form
             form.reset();
         });
@@ -435,14 +435,14 @@ function showNotification(message, type = 'info') {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         notification.remove();
     }, 5000);
-    
+
     // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
@@ -465,7 +465,7 @@ function debounce(func, wait) {
 
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -478,7 +478,7 @@ function throttle(func, limit) {
 
 // ===== PERFORMANCE OPTIMIZATION =====
 // Throttled scroll handler
-const throttledScrollHandler = throttle(function() {
+const throttledScrollHandler = throttle(function () {
     // Handle scroll-based animations
 }, 16); // ~60fps
 
@@ -487,7 +487,7 @@ window.addEventListener('scroll', throttledScrollHandler);
 // ===== ACCESSIBILITY =====
 function initializeAccessibility() {
     // Add keyboard navigation
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             // Close mobile menu
             const navToggle = document.getElementById('nav-toggle');
@@ -502,11 +502,11 @@ function initializeAccessibility() {
     // Add focus indicators
     const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
     focusableElements.forEach(el => {
-        el.addEventListener('focus', function() {
+        el.addEventListener('focus', function () {
             this.style.outline = '2px solid var(--primary)';
         });
-        
-        el.addEventListener('blur', function() {
+
+        el.addEventListener('blur', function () {
             this.style.outline = 'none';
         });
     });
@@ -525,20 +525,20 @@ function initTestimonialsCarousel() {
     const navContainer = document.getElementById('testimonials-nav');
     const prevBtn = document.getElementById('prev-testimonial');
     const nextBtn = document.getElementById('next-testimonial');
-    
+
     if (!testimonialsGrid || !navContainer) return;
-    
+
     // Get all testimonial cards
     testimonials = Array.from(testimonialsGrid.children);
-    
+
     if (testimonials.length === 0) return;
-    
+
     // Clear previous dots
     navContainer.innerHTML = '';
-    
+
     // Calculate number of possible views (one for each testimonial)
     const numViews = testimonials.length;
-    
+
     // Create navigation dots
     for (let i = 0; i < numViews; i++) {
         const dot = document.createElement('div');
@@ -546,7 +546,7 @@ function initTestimonialsCarousel() {
         dot.addEventListener('click', () => goToTestimonial(i));
         navContainer.appendChild(dot);
     }
-    
+
     // Add button event listeners
     if (prevBtn) {
         prevBtn.onclick = () => {
@@ -554,21 +554,21 @@ function initTestimonialsCarousel() {
             updateTestimonials();
         };
     }
-    
+
     if (nextBtn) {
         nextBtn.onclick = () => {
             currentTestimonial = (currentTestimonial + 1) % numViews;
             updateTestimonials();
         };
     }
-    
+
     // Auto-advance testimonials with longer interval
     if (window.testimonialsInterval) clearInterval(window.testimonialsInterval);
     window.testimonialsInterval = setInterval(() => {
         currentTestimonial = (currentTestimonial + 1) % numViews;
         updateTestimonials();
     }, 5000); // Back to 5 seconds for single card
-    
+
     // Initial setup
     updateTestimonials();
 }
@@ -582,16 +582,16 @@ function updateTestimonials() {
     const testimonialsGrid = document.getElementById('testimonials-grid');
     const navContainer = document.getElementById('testimonials-nav');
     const dots = navContainer ? Array.from(navContainer.children) : [];
-    
+
     if (!testimonialsGrid) return;
-    
+
     // Calculate transform for single card display
     const cardWidth = 400; // Base card width
     const gap = 32; // Gap between cards
     const transform = -currentTestimonial * (cardWidth + gap);
-    
+
     testimonialsGrid.style.transform = `translateX(${transform}px)`;
-    
+
     // Update navigation dots with smooth transitions
     dots.forEach((dot, index) => {
         if (index === currentTestimonial) {
@@ -602,21 +602,21 @@ function updateTestimonials() {
             dot.style.transform = 'scale(1)';
         }
     });
-    
+
     // Update button states
     const prevBtn = document.getElementById('prev-testimonial');
     const nextBtn = document.getElementById('next-testimonial');
-    
+
     if (prevBtn) {
         prevBtn.disabled = false; // Always enabled for circular navigation
         prevBtn.style.opacity = '1';
     }
-    
+
     if (nextBtn) {
         nextBtn.disabled = false; // Always enabled for circular navigation
         nextBtn.style.opacity = '1';
     }
-    
+
     // Add subtle animation to current card
     testimonials.forEach((card, index) => {
         if (index === currentTestimonial) {
@@ -635,22 +635,23 @@ function updateTestimonials() {
 async function loadLatestBlogPosts() {
     const blogGrid = document.getElementById('blog-grid-home');
     if (!blogGrid) return;
-    
+
     try {
         const response = await fetch('/data/blog-posts.json');
         if (!response.ok) throw new Error('Failed to load blog posts');
         const data = await response.json();
-        
+
         // Get latest 3 posts (excluding featured)
         const latestPosts = data.posts
             .filter(post => !post.featured)
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 3);
-        
+
         blogGrid.innerHTML = latestPosts.map(post => `
             <article class="blog-card-home">
                 <div class="blog-card-image-home">
-                    <img src="${post.image}" alt="${post.title}" loading="lazy">
+                    <img src="${post.image}" alt="${post.title}" 
+                        onerror="this.onerror=null; this.src='/images/Trendtactics_logo.jpg'; console.error('Failed to load image:', '${post.image}');">
                     <div class="category-badge-home">${post.category}</div>
                 </div>
                 <div class="blog-card-content-home">
