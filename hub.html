@@ -493,12 +493,18 @@
                 academyBtn.href = '/login.html';
                 
                 // Update card click handlers to go to login
-                clientCard.addEventListener('click', function() {
-                    window.location.href = '/login.html';
+                clientCard.addEventListener('click', function(event) {
+                    // Only redirect if the click wasn't on the button itself
+                    if (event.target !== clientBtn) {
+                        window.location.href = '/login.html';
+                    }
                 });
                 
-                academyCard.addEventListener('click', function() {
-                    window.location.href = '/login.html';
+                academyCard.addEventListener('click', function(event) {
+                    // Only redirect if the click wasn't on the button itself
+                    if (event.target !== academyBtn) {
+                        window.location.href = '/login.html';
+                    }
                 });
             } else {
                 // If authenticated, set buttons to go to respective dashboards
@@ -508,12 +514,18 @@
                 academyBtn.href = '/academy.html';
                 
                 // Update card click handlers to go to respective dashboards
-                clientCard.addEventListener('click', function() {
-                    window.location.href = '/client-dashboard.html';
+                clientCard.addEventListener('click', function(event) {
+                    // Only redirect if the click wasn't on the button itself
+                    if (event.target !== clientBtn) {
+                        window.location.href = '/client-dashboard.html';
+                    }
                 });
                 
-                academyCard.addEventListener('click', function() {
-                    window.location.href = '/academy.html';
+                academyCard.addEventListener('click', function(event) {
+                    // Only redirect if the click wasn't on the button itself
+                    if (event.target !== academyBtn) {
+                        window.location.href = '/academy.html';
+                    }
                 });
             }
         });
