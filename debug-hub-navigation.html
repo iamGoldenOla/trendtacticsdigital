@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Navigation Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .debug-info {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hub Navigation Debug</h1>
+        
+        <div class="debug-info">
+            <h2>Current Page Information</h2>
+            <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+            <p><strong>Referrer:</strong> <span id="referrer"></span></p>
+            <p><strong>Hash:</strong> <span id="hash-value"></span></p>
+        </div>
+        
+        <div class="debug-info">
+            <h2>Test Navigation</h2>
+            <button onclick="testHubNavigation()">Test Hub Navigation</button>
+            <button onclick="testClientDashboardNavigation()">Test Client Dashboard Navigation</button>
+            <button onclick="testAcademyNavigation()">Test Academy Navigation</button>
+            <button onclick="clearHash()">Clear Hash</button>
+        </div>
+        
+        <div class="debug-info">
+            <h2>Event Listener Test</h2>
+            <button id="test-button">Test Button (No Link)</button>
+            <p>Click this button to see if any event listeners are adding hash to URL</p>
+        </div>
+        
+        <div class="debug-info">
+            <h2>Manual Navigation Test</h2>
+            <p>Click these links to test navigation:</p>
+            <p><a href="/hub.html" id="manual-hub-link">Go to Hub (Manual Link)</a></p>
+            <p><a href="/client-dashboard.html" id="manual-client-link">Go to Client Dashboard (Manual Link)</a></p>
+            <p><a href="/academy.html" id="manual-academy-link">Go to Academy (Manual Link)</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Display current page information
+        function displayPageInfo() {
+            document.getElementById('current-url').textContent = window.location.href;
+            document.getElementById('referrer').textContent = document.referrer || 'None';
+            document.getElementById('hash-value').textContent = window.location.hash || 'None';
+        }
+        
+        // Test hub navigation
+        function testHubNavigation() {
+            console.log('Testing hub navigation');
+            window.location.href = '/hub.html';
+        }
+        
+        // Test client dashboard navigation
+        function testClientDashboardNavigation() {
+            console.log('Testing client dashboard navigation');
+            window.location.href = '/client-dashboard.html';
+        }
+        
+        // Test academy navigation
+        function testAcademyNavigation() {
+            console.log('Testing academy navigation');
+            window.location.href = '/academy.html';
+        }
+        
+        // Clear hash
+        function clearHash() {
+            window.location.hash = '';
+            displayPageInfo();
+        }
+        
+        // Test button event listener
+        document.getElementById('test-button').addEventListener('click', function() {
+            console.log('Test button clicked');
+            displayPageInfo();
+        });
+        
+        // Initialize
+        displayPageInfo();
+        
+        // Update info when hash changes
+        window.addEventListener('hashchange', displayPageInfo);
+    </script>
+</body>
+</html>
