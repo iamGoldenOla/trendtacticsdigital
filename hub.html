@@ -465,11 +465,9 @@
             const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
             const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
             
-            // Check if supabase is available
-            if (typeof supabaseJs !== 'undefined' && supabaseJs.createClient) {
-                supabase = supabaseJs.createClient(supabaseUrl, supabaseAnonKey);
-            } else if (typeof createClient !== 'undefined') {
-                supabase = createClient(supabaseUrl, supabaseAnonKey);
+            // Check if supabase is available (using the new CDN)
+            if (typeof supabase !== 'undefined') {
+                supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
             } else {
                 console.warn('Supabase library not loaded properly');
                 supabase = null;
