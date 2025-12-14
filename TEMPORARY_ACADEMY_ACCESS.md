@@ -60,7 +60,7 @@ Modify `js/academy-supabase.js` for testing:
 ```javascript
 // Temporary configuration for local/testing
 const ACADEMY_SUPABASE_URL = 'https://uimdbodamoeyukrghchb.supabase.co';
-const ACADEMY_SUPABASE_KEY = 'YOUR_CURRENT_ANON_KEY';
+const ACADEMY_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpbWRib2RhbW9leXVrcmdoY2hiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0NTYwMzksImV4cCI6MjA4MTAzMjAzOX0.kMFpnaZN04ac94u0wcXJFsS58lX88h8RCM2de3rwYIc';
 
 // For production, these will be different
 // const ACADEMY_SUPABASE_URL = 'https://your-production-url.supabase.co';
