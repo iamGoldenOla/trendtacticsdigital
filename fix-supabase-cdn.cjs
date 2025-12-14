@@ -13,6 +13,7 @@ const htmlFiles = [
   'contact.html',
   'dashboard.html',
   'ebooks.html',
+  'hub.html',
   'index.html',
   'login.html',
   'portfolio.html',

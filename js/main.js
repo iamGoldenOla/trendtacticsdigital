@@ -821,4 +821,5 @@ function initializeNavigation() {
             month: 'short',
             day: 'numeric'
         });
-    } 
+    }
+}

@@ -9,6 +9,9 @@
     <title>Welcome to TrendTactics | Choose Your Path</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <!-- Content Security Policy to allow YouTube embeds and other resources -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https:; media-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self' https:;">
     <!-- Supabase CDN - Moved to comply with CSP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
     <style>
@@ -460,50 +463,79 @@
 
     <script>
         // Simple direct navigation handler to ensure buttons work
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get the buttons
-            const clientBtn = document.getElementById('client-dashboard-btn');
-            const academyBtn = document.getElementById('academy-btn');
-            
-            // Add click handlers to buttons
-            if (clientBtn) {
-                clientBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.location.href = '/client-dashboard.html';
-                });
-            }
-            
-            if (academyBtn) {
-                academyBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.location.href = '/academy.html';
-                });
-            }
-            
-            // Also handle card clicks directly
-            const clientCard = document.getElementById('client-dashboard-card');
-            const academyCard = document.getElementById('academy-card');
-            
-            if (clientCard) {
-                clientCard.addEventListener('click', function(e) {
-                    // Only navigate if the click wasn't on the button itself
-                    if (!clientBtn || e.target !== clientBtn && !clientBtn.contains(e.target)) {
+        function initializeHubNavigation() {
+            try {
+                // Get the buttons
+                const clientBtn = document.getElementById('client-dashboard-btn');
+                const academyBtn = document.getElementById('academy-btn');
+                
+                // Add click handlers to buttons
+                if (clientBtn) {
+                    clientBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
                         window.location.href = '/client-dashboard.html';
-                    }
-                });
-            }
-            
-            if (academyCard) {
-                academyCard.addEventListener('click', function(e) {
-                    // Only navigate if the click wasn't on the button itself
-                    if (!academyBtn || e.target !== academyBtn && !academyBtn.contains(e.target)) {
+                    });
+                }
+                
+                if (academyBtn) {
+                    academyBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
                         window.location.href = '/academy.html';
-                    }
-                });
+                    });
+                }
+                
+                // Also handle card clicks directly
+                const clientCard = document.getElementById('client-dashboard-card');
+                const academyCard = document.getElementById('academy-card');
+                
+                if (clientCard) {
+                    clientCard.addEventListener('click', function(e) {
+                        // Only navigate if the click wasn't on the button itself
+                        if (!clientBtn || e.target !== clientBtn && !clientBtn.contains(e.target)) {
+                            window.location.href = '/client-dashboard.html';
+                        }
+                    });
+                }
+                
+                if (academyCard) {
+                    academyCard.addEventListener('click', function(e) {
+                        // Only navigate if the click wasn't on the button itself
+                        if (!academyBtn || e.target !== academyBtn && !academyBtn.contains(e.target)) {
+                            window.location.href = '/academy.html';
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Error initializing hub navigation:', error);
+                // Fallback: ensure buttons still work even if JavaScript fails
+                const clientBtn = document.getElementById('client-dashboard-btn');
+                const academyBtn = document.getElementById('academy-btn');
+                
+                if (clientBtn) {
+                    clientBtn.onclick = function() {
+                        window.location.href = '/client-dashboard.html';
+                        return false;
+                    };
+                }
+                
+                if (academyBtn) {
+                    academyBtn.onclick = function() {
+                        window.location.href = '/academy.html';
+                        return false;
+                    };
+                }
             }
-        });
+        }
+        
+        // Initialize navigation when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeHubNavigation);
+        } else {
+            // DOM is already loaded
+            initializeHubNavigation();
+        }
     </script>
 
     <!-- Main JavaScript -->
