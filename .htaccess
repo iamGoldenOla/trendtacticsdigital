@@ -52,9 +52,9 @@ RewriteRule ^ebooks/?$ /ebooks.html [L,QSA]
 # Then handle other specific routes with explicit file checks - MUST come before SPA fallback
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} ^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ [NC]
+RewriteCond %{REQUEST_URI} ^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop|hub)/?$ [NC]
 RewriteCond %{DOCUMENT_ROOT}/%1.html -f
-RewriteRule ^(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)/?$ /%1.html [L]
+RewriteRule ^(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop|hub)/?$ /$1.html [L]
 
 # Then handle other single-word routes
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -74,7 +74,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # CRITICAL: Exclude /ebooks/ from SPA fallback (must match exactly)
 RewriteCond %{REQUEST_URI} !^/ebooks/?$ [NC]
 # Exclude all other known static HTML pages from SPA fallback
-RewriteCond %{REQUEST_URI} !^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop)(\.html)?/?$ [NC]
+RewriteCond %{REQUEST_URI} !^/(tools|blog|about|services|portfolio|contact|pricing|academy|quiz|resources|shop|hub)(\.html)?/?$ [NC]
 # Exclude root and index
 RewriteCond %{REQUEST_URI} !^/?$ [NC]
 RewriteCond %{REQUEST_URI} !^/index/?$ [NC]
