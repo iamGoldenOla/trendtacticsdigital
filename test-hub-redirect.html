@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Redirect Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hub Redirect Test</h1>
+        
+        <div class="test-result" id="current-url">
+            <strong>Current URL:</strong> <span id="url-display"></span>
+        </div>
+        
+        <div class="test-result" id="referrer-info">
+            <strong>Referrer:</strong> <span id="referrer-display"></span>
+        </div>
+        
+        <div class="test-result" id="hash-info">
+            <strong>Hash:</strong> <span id="hash-display"></span>
+        </div>
+        
+        <h2>Test Navigation</h2>
+        <button onclick="navigateToHub()">Navigate to /hub</button>
+        <button onclick="navigateToHubHtml()">Navigate to /hub.html</button>
+        <button onclick="navigateWithHash()">Navigate to /hub#test</button>
+        <button onclick="clearHash()">Clear Hash</button>
+        
+        <h2>Debug Info</h2>
+        <div class="test-result" id="debug-info">
+            <p><strong>Window Location Properties:</strong></p>
+            <pre id="location-properties"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Display current URL information
+        function displayUrlInfo() {
+            document.getElementById('url-display').textContent = window.location.href;
+            document.getElementById('referrer-display').textContent = document.referrer || 'None';
+            document.getElementById('hash-display').textContent = window.location.hash || 'None';
+            
+            // Display all location properties
+            const loc = window.location;
+            const props = {
+                href: loc.href,
+                origin: loc.origin,
+                protocol: loc.protocol,
+                host: loc.host,
+                hostname: loc.hostname,
+                port: loc.port,
+                pathname: loc.pathname,
+                search: loc.search,
+                hash: loc.hash
+            };
+            
+            document.getElementById('location-properties').textContent = JSON.stringify(props, null, 2);
+        }
+        
+        // Navigation functions
+        function navigateToHub() {
+            window.location.href = '/hub';
+        }
+        
+        function navigateToHubHtml() {
+            window.location.href = '/hub.html';
+        }
+        
+        function navigateWithHash() {
+            window.location.href = '/hub#test';
+        }
+        
+        function clearHash() {
+            window.location.hash = '';
+        }
+        
+        // Initialize
+        displayUrlInfo();
+        
+        // Update info when hash changes
+        window.addEventListener('hashchange', displayUrlInfo);
+    </script>
+</body>
+</html>
