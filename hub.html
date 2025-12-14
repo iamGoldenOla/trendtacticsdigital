@@ -1,548 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Welcome to TrendTactics | Choose Your Path</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <!-- Content Security Policy to allow YouTube embeds and other resources -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https:; media-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self' https:;">
-    <!-- Supabase CDN - Moved to comply with CSP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TrendTactics Hub</title>
     <style>
-        :root {
-            --primary: #00FFFF;
-            --primary-dark: #00CED1;
-            --secondary: #64F5D3;
-            --accent: #FF00FF;
-            --base-dark: #0A1E3F;
-            --base-dark-light: #162447;
-            --base-dark-lighter: #1F4068;
-            --white: #FFFFFF;
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-300: #dee2e6;
-            --gray-700: #495057;
-            --gray-800: #343a40;
-            --gray-900: #212529;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --radius-xl: 16px;
-            --radius-2xl: 24px;
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.5rem;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2rem;
-            --spacing-2xl: 2.5rem;
-            --spacing-3xl: 3rem;
-            --spacing-4xl: 4rem;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-primary: 0 0 20px rgba(0, 255, 255, 0.3);
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
-            --gradient-primary: linear-gradient(90deg, #00FFFF, #0A1E3F);
-            --gradient-secondary: linear-gradient(90deg, #64F5D3, #00FFFF);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--base-dark) 0%, #000 100%);
-            color: var(--white);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
-        }
-
-        .hub-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-4xl) var(--spacing-lg);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hub-header {
+            font-family: Arial, sans-serif;
+            background: #0A1E3F;
+            color: white;
             text-align: center;
-            margin-bottom: var(--spacing-4xl);
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
             max-width: 800px;
+            margin: 0 auto;
         }
-
-        .hub-header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: var(--spacing-md);
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .card {
+            background: #162447;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-
-        .hub-header p {
-            font-size: 1.25rem;
-            color: var(--gray-300);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-3xl);
-            width: 100%;
-            max-width: 900px;
-        }
-
-        .hub-card {
-            background: linear-gradient(135deg, var(--base-dark-light) 0%, var(--base-dark-lighter) 100%);
-            border-radius: var(--radius-2xl);
-            padding: var(--spacing-3xl);
-            box-shadow:
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                0 4px 16px rgba(0, 255, 255, 0.1),
-                0 0 0 1px rgba(0, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .hub-card:hover {
-            transform: translateY(-10px);
-            box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 10px 20px rgba(0, 255, 255, 0.2),
-                0 0 0 1px rgba(0, 255, 255, 0.3);
-        }
-
-        .card-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--spacing-xl);
-            font-size: 3rem;
-            color: var(--base-dark);
-            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .hub-card:hover .card-icon {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(0, 255, 255, 0.4);
-        }
-
-        .card-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: var(--spacing-md);
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-        }
-
-        .card-description {
-            color: var(--white);
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: var(--spacing-2xl);
-            font-size: 1.1rem;
-        }
-
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            border: none;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: var(--base-dark);
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .hub-footer {
-            margin-top: var(--spacing-4xl);
-            text-align: center;
-            color: var(--gray-300);
-            font-size: 0.9rem;
-        }
-
-        .back-to-home {
             display: inline-block;
-            margin-top: var(--spacing-xl);
-            color: var(--primary);
+            background: #00FFFF;
+            color: #0A1E3F;
+            padding: 15px 30px;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
         }
-
-        .back-to-home:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hub-container {
-                padding: var(--spacing-2xl) var(--spacing-sm);
-            }
-
-            .hub-header h1 {
-                font-size: 2rem;
-            }
-
-            .hub-header p {
-                font-size: 1.1rem;
-            }
-
-            .cards-container {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-2xl);
-            }
-
-            .hub-card {
-                padding: var(--spacing-2xl);
-            }
-
-            .card-icon {
-                width: 80px;
-                height: 80px;
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hub-header h1 {
-                font-size: 1.75rem;
-            }
-
-            .hub-header p {
-                font-size: 1rem;
-            }
-
-            .card-title {
-                font-size: 1.5rem;
-            }
-
-            .card-description {
-                font-size: 1rem;
-            }
+        .btn:hover {
+            background: #00CED1;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Navigation -->
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
-                </a>
-            </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="hub-container">
-        <div class="hub-header">
-            <h1>Welcome to TrendTactics</h1>
-            <p>Choose your path to digital success</p>
-        </div>
-
-        <div class="cards-container">
-            <div class="hub-card" id="client-dashboard-card">
-                <div class="card-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h2 class="card-title">Client Dashboard</h2>
-                <p class="card-description">Manage your campaigns and services</p>
-                <a href="/client-dashboard.html" class="btn btn-primary" id="client-dashboard-btn">Access Dashboard</a>
-            </div>
-
-            <div class="hub-card" id="academy-card">
-                <div class="card-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2 class="card-title">Academy</h2>
-                <p class="card-description">Learn digital marketing and grow your skills</p>
-                <a href="/academy.html" class="btn btn-primary" id="academy-btn">Access Academy</a>
-            </div>
-        </div>
-
-        <div class="hub-footer">
-            <p>Unified authentication system - one login works for both dashboard and academy</p>
-            <a href="/" class="back-to-home">← Back to Homepage</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="/services#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Simple direct navigation handler to ensure buttons work
-        function initializeHubNavigation() {
-            try {
-                // Get the buttons
-                const clientBtn = document.getElementById('client-dashboard-btn');
-                const academyBtn = document.getElementById('academy-btn');
-                
-                // Add click handlers to buttons
-                if (clientBtn) {
-                    clientBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        window.location.href = '/client-dashboard.html';
-                    });
-                }
-                
-                if (academyBtn) {
-                    academyBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        window.location.href = '/academy.html';
-                    });
-                }
-                
-                // Also handle card clicks directly
-                const clientCard = document.getElementById('client-dashboard-card');
-                const academyCard = document.getElementById('academy-card');
-                
-                if (clientCard) {
-                    clientCard.addEventListener('click', function(e) {
-                        // Only navigate if the click wasn't on the button itself
-                        if (!clientBtn || e.target !== clientBtn && !clientBtn.contains(e.target)) {
-                            window.location.href = '/client-dashboard.html';
-                        }
-                    });
-                }
-                
-                if (academyCard) {
-                    academyCard.addEventListener('click', function(e) {
-                        // Only navigate if the click wasn't on the button itself
-                        if (!academyBtn || e.target !== academyBtn && !academyBtn.contains(e.target)) {
-                            window.location.href = '/academy.html';
-                        }
-                    });
-                }
-            } catch (error) {
-                console.error('Error initializing hub navigation:', error);
-                // Fallback: ensure buttons still work even if JavaScript fails
-                const clientBtn = document.getElementById('client-dashboard-btn');
-                const academyBtn = document.getElementById('academy-btn');
-                
-                if (clientBtn) {
-                    clientBtn.onclick = function() {
-                        window.location.href = '/client-dashboard.html';
-                        return false;
-                    };
-                }
-                
-                if (academyBtn) {
-                    academyBtn.onclick = function() {
-                        window.location.href = '/academy.html';
-                        return false;
-                    };
-                }
-            }
-        }
+    <div class="container">
+        <h1>Welcome to TrendTactics</h1>
+        <p>Choose your path to digital success</p>
         
-        // Initialize navigation when DOM is loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeHubNavigation);
-        } else {
-            // DOM is already loaded
-            initializeHubNavigation();
-        }
-    </script>
-
-    <!-- Main JavaScript -->
-    <script src="/js/main.js"></script>
-
-    <!-- Browser Compatibility -->
-    <script src="/js/browser-compat.js"></script>
+        <div class="card">
+            <h2>Client Dashboard</h2>
+            <p>Manage your campaigns and services</p>
+            <a href="/client-dashboard.html" class="btn">Access Dashboard</a>
+        </div>
+        
+        <div class="card">
+            <h2>Academy</h2>
+            <p>Learn digital marketing and grow your skills</p>
+            <a href="/academy.html" class="btn">Access Academy</a>
+        </div>
+        
+        <p><a href="/" class="btn" style="background: #64F5D3;">Back to Homepage</a></p>
+    </div>
 </body>
-
 </html>
