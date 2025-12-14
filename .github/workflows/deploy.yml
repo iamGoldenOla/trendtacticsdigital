@@ -1,95 +1,37 @@
-name: Deploy to FTP
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Validate FTP Secrets
-        run: |
-          if [ -z "${{ secrets.FTP_SERVER }}" ]; then
-            echo "❌ FTP_SERVER secret is not set"
-            echo "📝 Please set FTP_SERVER in: Repository → Settings → Secrets and variables → Actions"
-            echo "📖 See GITHUB_SECRETS_SETUP.md for instructions"
-            exit 1
-          fi
-          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then
-            echo "❌ FTP_USERNAME secret is not set"
-            echo "📝 Please set FTP_USERNAME in: Repository → Settings → Secrets and variables → Actions"
-            exit 1
-          fi
-          if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then
-            echo "❌ FTP_PASSWORD secret is not set"
-            echo "📝 Please set FTP_PASSWORD in: Repository → Settings → Secrets and variables → Actions"
-            exit 1
-          fi
-          echo "✅ All FTP secrets are configured"
-          echo "🔍 FTP_SERVER: ${{ secrets.FTP_SERVER }}"
-          echo "👤 FTP_USERNAME: ${{ secrets.FTP_USERNAME }}"
-          echo "🔒 FTP_PASSWORD: [HIDDEN]"
-
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
-          server-dir: /public_html/
-          local-dir: ./
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/node_modules/**
-            **/.env
-            **/.env.*
-            **/temp_env.txt
-            **/env.example
-            # Development folders
-            **/frontend/**
-            **/backend/**
-            **/trendtacticsdigital/**
-            **/trendtactics-digital/**
-            # Development files
-            **/server.js
-            **/simple-server.js
-            **/package.json
-            **/package-lock.json
-            **/create-env-file.js
-            **/setup-api-keys.js
-            **/generate-ebooks-json.js
-            **/add_keys.bat
-            **/add_keys.ps1
-            **/get-pip.py
-            **/prompt.txt
-            # Documentation files
-            **/*.md
-            **/README*
-            # Test and debug files
-            **/test-*.html
-            **/debug-*.html
-            **/diagnostic.html
-            **/coming-soon.html
-            **/quick-test.html
-            **/pricing-test.html
-            **/pricing-template.html
-            # Admin/development pages (keep if needed, remove if not)
-            **/admin*.html
-            **/dashboard.html
-            **/login.html
-            **/courses.html
-            **/header.html
-            # Backup folder (if exists locally)
-            **/_backup/**
-            # Public folder (duplicate of root files)
-            **/public/**
+          path: '.'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
