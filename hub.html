@@ -9,8 +9,8 @@
     <title>Welcome to TrendTactics | Choose Your Path</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/styles/main.css">
-    <!-- Supabase CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase CDN - Moved to comply with CSP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
     <style>
         :root {
             --primary: #00FFFF;
@@ -459,14 +459,33 @@
     </footer>
 
     <script>
-        // Initialize Supabase client
-        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
-        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        // Initialize Supabase client with error handling
+        let supabase;
+        try {
+            const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+            const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+            
+            // Check if supabase is available
+            if (typeof supabaseJs !== 'undefined' && supabaseJs.createClient) {
+                supabase = supabaseJs.createClient(supabaseUrl, supabaseAnonKey);
+            } else if (typeof createClient !== 'undefined') {
+                supabase = createClient(supabaseUrl, supabaseAnonKey);
+            } else {
+                console.warn('Supabase library not loaded properly');
+                supabase = null;
+            }
+        } catch (error) {
+            console.error('Error initializing Supabase:', error);
+            supabase = null;
+        }
 
-        // Check authentication status
+        // Check authentication status with error handling
         async function checkAuthStatus() {
             try {
+                if (!supabase) {
+                    console.warn('Supabase client not initialized');
+                    return null;
+                }
                 const { data: { session } } = await supabase.auth.getSession();
                 return session;
             } catch (error) {
@@ -483,7 +502,13 @@
             const academyCard = document.getElementById('academy-card');
 
             // Check authentication status on page load
-            const session = await checkAuthStatus();
+            let session = null;
+            try {
+                session = await checkAuthStatus();
+            } catch (error) {
+                console.error('Error checking auth status:', error);
+                session = null;
+            }
             
             // Prevent default behavior for buttons to ensure proper navigation
             if (clientBtn) {
@@ -563,13 +588,17 @@
 
         // Check for redirect after login
         document.addEventListener('DOMContentLoaded', async function () {
-            const redirectUrl = localStorage.getItem('redirectAfterLogin');
-            if (redirectUrl) {
-                localStorage.removeItem('redirectAfterLogin');
-                const session = await checkAuthStatus();
-                if (session) {
-                    window.location.href = redirectUrl;
+            try {
+                const redirectUrl = localStorage.getItem('redirectAfterLogin');
+                if (redirectUrl) {
+                    localStorage.removeItem('redirectAfterLogin');
+                    const session = await checkAuthStatus();
+                    if (session) {
+                        window.location.href = redirectUrl;
+                    }
                 }
+            } catch (error) {
+                console.error('Error checking redirect after login:', error);
             }
         });
     </script>
