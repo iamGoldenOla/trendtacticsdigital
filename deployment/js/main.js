@@ -1,22 +1,40 @@
 // Main JavaScript file for Trendtactics Digital
 
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle - Consolidated Implementation
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        // Remove any existing event listeners by cloning the element
+        const newNavToggle = navToggle.cloneNode(true);
+        navToggle.parentNode.replaceChild(newNavToggle, navToggle);
+        
+        newNavToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle active classes
+            this.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Toggle body scroll lock
+            if (navMenu.classList.contains('active')) {
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!newNavToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                newNavToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
         });
     }
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-            navMenu.classList.remove('active');
-        }
-    });
 });
 
 // Dropdown Menus
@@ -147,62 +165,19 @@ function initializeNavigation() {
     const navMenu = document.getElementById('nav-menu');
     const navbar = document.getElementById('navigation');
 
-    // Mobile menu toggle
+    // Close menu when clicking on a link (mobile only)
     if (navToggle && navMenu) {
-        // Mobile menu toggle - Robust Implementation
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default behavior
-                e.stopPropagation(); // Stop bubbling
-                console.log('Hamburger clicked'); // Debugging
-
-                const isActive = navToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-
-                // Prevent body scroll when menu is open
-                if (isActive) {
-                    document.body.classList.add('menu-open');
-                    // Ensure menu is visible
-                    navMenu.style.visibility = 'visible';
-                    navMenu.style.opacity = '1';
-                    navMenu.style.transform = 'translateX(0)';
-                } else {
-                    document.body.classList.remove('menu-open');
-                    // Reset styles to CSS defaults (let CSS handle transition)
-                    navMenu.style.visibility = '';
-                    navMenu.style.opacity = '';
-                    navMenu.style.transform = '';
-                }
-            });
-
-            // Close menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function () {
+        const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
                     navToggle.classList.remove('active');
                     navMenu.classList.remove('active');
                     document.body.classList.remove('menu-open');
-                });
-            });
-
-            // Close menu when clicking outside (but not on dropdown items)
-            document.addEventListener('click', function (e) {
-                // Don't close if clicking inside menu or toggle button
-                if (navMenu.contains(e.target) || navToggle.contains(e.target)) {
-                    return;
                 }
-
-                // Don't close if clicking on a dropdown item
-                if (e.target.closest('.nav-item.dropdown')) {
-                    return;
-                }
-
-                // Close the menu
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
             });
-        }
+        });
+    }
 
         // Navbar scroll effect
         window.addEventListener('scroll', function () {
@@ -822,4 +797,3 @@ function initializeSmoothScrolling() {
             day: 'numeric'
         });
     }
-}
