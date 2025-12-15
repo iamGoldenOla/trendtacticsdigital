@@ -203,16 +203,30 @@
                 padding: 20px;
             }
         }
+        
+        .login-container {
+            position: relative;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00FFFF, #FF6B6B);
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
             <div class="logo">
-                <h1>Trend<span style="color: #00FFFF;">Tactics</span></h1>
+                <h1>Trend<span style="color: #00FFFF;">Tactics</span> <span style="color: #FF6B6B;">Client</span></h1>
             </div>
-            <h1>Welcome Back</h1>
-            <p>Sign in to access your dashboard</p>
+            <h1>Client Portal Login</h1>
+            <p>Sign in to access your client dashboard and marketing tools</p>
         </div>
         
         <div class="login-form">

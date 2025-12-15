@@ -233,16 +233,30 @@
                 padding: 20px;
             }
         }
+        
+        .register-container {
+            position: relative;
+        }
+        
+        .register-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00FFFF, #FF6B6B);
+        }
     </style>
 </head>
 <body>
     <div class="register-container">
         <div class="register-header">
             <div class="logo">
-                <h1>Trend<span>Tactics</span></h1>
+                <h1>Trend<span style="color: #00FFFF;">Tactics</span> <span style="color: #FF6B6B;">Client</span></h1>
             </div>
-            <h1>Create Account</h1>
-            <p>Join Trendtactics Digital today</p>
+            <h1>Client Account Registration</h1>
+            <p>Create your client portal account</p>
         </div>
         
         <div class="register-form">
@@ -365,6 +379,8 @@
             registerBtn.disabled = true;
             
             try {
+                console.log('Attempting registration with:', { email, fullName });
+                
                 // Sign up with Supabase
                 const { data, error } = await supabase.auth.signUp({
                     email: email,
@@ -376,6 +392,8 @@
                     }
                 });
                 
+                console.log('Supabase response:', { data, error });
+                
                 if (error) throw error;
                 
                 // Store user info in localStorage for demo mode fallback
@@ -384,12 +402,12 @@
                     localStorage.setItem('userEmail', data.user.email);
                     
                     // Show success message
-                    showAlert('Account created successfully! Please check your email for confirmation.', 'success');
+                    showAlert('Account created successfully! Redirecting to dashboard...', 'success');
                     
                     // Redirect to dashboard after a short delay
                     setTimeout(() => {
                         window.location.href = '/client-dashboard.html';
-                    }, 3000);
+                    }, 2000);
                 } else {
                     // Email confirmation required
                     showAlert('Account created! Please check your email for confirmation link.', 'success');
