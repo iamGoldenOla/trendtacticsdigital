@@ -315,6 +315,13 @@
                 
                 if (error) throw error;
                 
+                // Check if we got a session
+                if (data && data.session) {
+                    console.log('Session established:', data.session);
+                } else {
+                    console.warn('No session in response');
+                }
+                
                 // Hide alert and show success
                 showAlert('Login successful! Redirecting...', 'success');
                 

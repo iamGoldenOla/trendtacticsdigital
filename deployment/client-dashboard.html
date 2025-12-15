@@ -468,10 +468,14 @@
         // Check if user is authenticated on page load
         document.addEventListener('DOMContentLoaded', async function() {
             try {
+                console.log('Checking authentication status...');
                 // Check if user is logged in
                 const { data: { session } } = await window.supabaseUtils.supabase.auth.getSession();
                 
+                console.log('Session check result:', { session });
+                
                 if (!session) {
+                    console.log('No session found, redirecting to login');
                     // Redirect to login page
                     window.location.href = '/login.html';
                     return;
