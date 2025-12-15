@@ -4092,7 +4092,7 @@ blockquote.service-quote {
 .scrolling-content {
     display: flex;
     gap: var(--spacing-4xl);
-    animation: scroll-trust 20s linear infinite;
+    animation: scroll-trust 40s linear infinite; /* Slowed down from 20s to 40s */
     white-space: nowrap;
 }
 
