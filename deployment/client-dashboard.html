@@ -494,6 +494,25 @@
         });
         
         // Logout function
+        // Function to show different sections
+        function showSection(sectionId) {
+            // Hide all sections (you would implement this based on your actual sections)
+            console.log('Showing section:', sectionId);
+            
+            // Update active class on sidebar links
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+            sidebarLinks.forEach(link => {
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Show the selected section (implement based on your actual content)
+            alert('Section "' + sectionId + '" would be displayed here.');
+        }
+
         async function logout() {
             try {
                 // Logout from Supabase
@@ -527,18 +546,19 @@
             </div>
             
             <ul class="sidebar-menu">
-                <li><a href="javascript:void(0);" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-chart-line"></i> <span>Analytics</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-bullhorn"></i> <span>Campaigns</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-envelope"></i> <span>Email Marketing</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-share-alt"></i> <span>Social Media</span></a></li>
+                <li><a href="#dashboard" class="active" onclick="showSection('dashboard')"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="#analytics" onclick="showSection('analytics')"><i class="fas fa-chart-line"></i> <span>Analytics</span></a></li>
+                <li><a href="#campaigns" onclick="showSection('campaigns')"><i class="fas fa-bullhorn"></i> <span>Campaigns</span></a></li>
+                <li><a href="#email-marketing" onclick="showSection('email-marketing')"><i class="fas fa-envelope"></i> <span>Email Marketing</span></a></li>
+                <li><a href="#social-media" onclick="showSection('social-media')"><i class="fas fa-share-alt"></i> <span>Social Media</span></a></li>
                 
                 <div class="sidebar-divider"></div>
                 
-                <li><a href="javascript:void(0);"><i class="fas fa-file-invoice"></i> <span>Invoices</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-headset"></i> <span>Support</span></a></li>
-                <li><a href="javascript:void(0);"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                <li><a href="javascript:void(0);" onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>            </ul>
+                <li><a href="#invoices" onclick="showSection('invoices')"><i class="fas fa-file-invoice"></i> <span>Invoices</span></a></li>
+                <li><a href="#support" onclick="showSection('support')"><i class="fas fa-headset"></i> <span>Support</span></a></li>
+                <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li><a href="javascript:void(0);" onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
         </aside>
 
         <!-- Main Content -->

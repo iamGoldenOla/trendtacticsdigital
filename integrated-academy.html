@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy - Trendtactics Digital</title>
+    <meta name="description" content="Premium online courses and training programs from Trendtactics Digital. Learn digital marketing, web development, AI solutions, and business growth strategies.">
+    <meta name="keywords" content="online courses, digital marketing training, web development courses, AI training, business growth, LMS">
+    <meta name="author" content="Akinola Olujobi">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Academy - Trendtactics Digital">
+    <meta property="og:description" content="Premium online courses and training programs from Trendtactics Digital.">
+    <meta property="og:url" content="https://trendtacticsdigital.com/academy">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Supabase CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
+    <!-- Main website Supabase utilities -->
+    <script src="/js/supabase-utils.js"></script>
+    <!-- Academy link integration -->
+    <script src="/js/academy-link.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    <link rel="stylesheet" href="/styles/about.css">
+    <style>
+        /* ===== 3D HERO EFFECTS FOR ACADEMY PAGE ===== */
+        .academy-hero {
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        
+        .academy-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(64, 224, 208, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
+            animation: academyRotate 20s linear infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .academy-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="academy-3d" width="45" height="45" patternUnits="userSpaceOnUse"><circle cx="22" cy="22" r="2" fill="%2300FFFF" opacity="0.12"/><circle cx="8" cy="8" r="1.2" fill="%2340E0D0" opacity="0.1"/><circle cx="37" cy="37" r="1.8" fill="%2300FFFF" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23academy-3d)"/></svg>');
+            opacity: 0.45;
+            animation: academyFloat 15s ease-in-out infinite;
+        }
+        
+        .academy-hero-3d-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .academy-shape-3d {
+            position: absolute;
+            opacity: 0.3;
+            animation: academyFloat3D 20s ease-in-out infinite;
+        }
+        
+        .academy-shape-3d.shape-1 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(64, 224, 208, 0.2));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            top: 15%;
+            left: 10%;
+            transform: rotateZ(45deg);
+            animation-delay: 0s;
+        }
+        
+        .academy-shape-3d.shape-2 {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.3), rgba(0, 255, 255, 0.2));
+            border-radius: 50%;
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        .academy-shape-3d.shape-3 {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.25), rgba(10, 30, 63, 0.3));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            bottom: 20%;
+            left: 18%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes academyRotate {
+            0% { transform: rotate(0deg) translateZ(0); }
+            100% { transform: rotate(360deg) translateZ(0); }
+        }
+        
+        @keyframes academyFloat {
+            0%, 100% { transform: translateY(0) translateZ(0); }
+            50% { transform: translateY(-20px) translateZ(10px); }
+        }
+        
+        @keyframes academyFloat3D {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px) rotateZ(90deg) translateZ(20px);
+            }
+            50% {
+                transform: translateY(-60px) translateX(-20px) rotateZ(180deg) translateZ(40px);
+            }
+            75% {
+                transform: translateY(-30px) translateX(10px) rotateZ(270deg) translateZ(20px);
+            }
+        }
+        
+        .academy-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            transform-style: preserve-3d;
+        }
+        
+        .academy-hero .hero-title {
+            transform: translateZ(50px);
+            text-shadow: 0 10px 30px rgba(0, 255, 255, 0.35);
+        }
+        
+        .academy-hero .hero-subtitle {
+            transform: translateZ(30px);
+        }
+        
+        /* Academy Main Content */
+        .academy-main {
+            padding: var(--spacing-5xl) 0;
+            background: var(--base-dark);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-3xl);
+            margin-top: var(--spacing-4xl);
+        }
+        
+        .course-card {
+            background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            border: 1.5px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.08);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 16px 48px rgba(0, 255, 255, 0.2);
+        }
+        
+        .course-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-image i {
+            font-size: 4rem;
+            color: var(--base-dark);
+        }
+        
+        .course-content {
+            padding: var(--spacing-xl);
+        }
+        
+        .course-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+        }
+        
+        .course-description {
+            color: var(--gray-300);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .course-duration, .course-lessons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+        
+        .course-meta i {
+            color: var(--primary);
+        }
+        
+        .enroll-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .enroll-btn:disabled {
+            background: var(--gray-700);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Loading and error states */
+        .loading, .error, .no-courses {
+            text-align: center;
+            padding: var(--spacing-4xl) var(--spacing-xl);
+            color: var(--gray-400);
+        }
+        
+        .loading i, .error i, .no-courses i {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+            display: block;
+        }
+        
+        .error {
+            color: var(--danger);
+        }
+        
+        .no-courses {
+            color: var(--gray-500);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .academy-hero .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                    <div style="display: flex; gap: 2px; align-items: flex-end;">
+                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
+                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
+                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
+                    </div>
+                    <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/service-email-marketing">Email Marketing</a></li>
+                            <li><a href="/service-content-creation">Content Creation</a></li>
+                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
+                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ebooks">Free Books</a></li>
+                            <li><a href="/tools">Marketing Tools</a></li>
+                            <li><a href="/quiz">Growth Quiz</a></li>
+                            <li><a href="/academy" class="active">Academy</a></li>
+                            <li><a href="/contact">Free Consultation</a></li>
+                        </ul>
+                    </div>
+                    <a href="/pricing" class="nav-link">Pricing</a>
+                    <a href="/blog" class="nav-link">Blog</a>
+                    <a href="/portfolio" class="nav-link">Portfolio</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-cta">
+                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
+                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="academy-hero">
+        <div class="academy-hero-3d-shapes">
+            <div class="academy-shape-3d shape-1"></div>
+            <div class="academy-shape-3d shape-2"></div>
+            <div class="academy-shape-3d shape-3"></div>
+        </div>
+        <div class="hero-content container">
+            <div class="hero-content-centered">
+                <h1 class="hero-title academy-hero-title">
+                    <span class="text-gradient">Master Digital Skills</span>
+                </h1>
+                <p class="hero-subtitle academy-hero-subtitle">
+                    Premium courses designed to transform beginners into experts. 
+                    Learn from industry professionals and build real-world projects.
+                </p>
+                <div class="hero-cta">
+                    <a href="#courses" class="btn btn-primary btn-large">Explore Courses</a>
+                    <a href="/hub.html" class="btn btn-outline btn-large">Client Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Academy Content -->
+    <main class="academy-main">
+        <div class="container">
+            <section class="section-header text-center">
+                <h2 class="section-title">Our Premium Courses</h2>
+                <p class="section-subtitle">
+                    Cutting-edge curriculum designed by industry experts to give you the skills 
+                    needed to succeed in today's digital landscape.
+                </p>
+            </section>
+
+            <!-- Courses Container -->
+            <div id="courses-container">
+                <div id="courses-loading" class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading courses...</p>
+                </div>
+                <div id="courses-grid" class="courses-grid" style="display: none;">
+                    <!-- Courses will be loaded here dynamically -->
+                </div>
+                <div id="no-courses-message" class="no-courses" style="display: none;">
+                    <i class="fas fa-book-open"></i>
+                    <h3>No Courses Available</h3>
+                    <p>We're working on adding exciting new courses. Check back soon!</p>
+                </div>
+                <div id="courses-error" class="error" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error Loading Courses</h3>
+                    <p>Unable to load courses at the moment. Please try again later.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div style="display: flex; gap: 2px; align-items: flex-end; margin-bottom: 1rem;">
+                            <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
+                            <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
+                            <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
+                        </div>
+                        <h3>Trendtactics Digital</h3>
+                    </div>
+                    <p class="footer-description">
+                        Engineering digital growth through strategy, creativity, and AI-powered solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/team">Our Team</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/academy">Academy</a></li>
+                            <li><a href="/trendy-ai">Trendy AI</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/service-digital-marketing">Digital Marketing</a></li>
+                            <li><a href="/service-web-development">Web Development</a></li>
+                            <li><a href="/service-app-development">App Development</a></li>
+                            <li><a href="/service-content-creation">Content Creation</a></li>
+                            <li><a href="/service-email-marketing">Email Marketing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/ebooks">Free Books</a></li>
+                            <li><a href="/tools">Marketing Tools</a></li>
+                            <li><a href="/quiz">Growth Quiz</a></li>
+                            <li><a href="/academy">Academy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                            <li><a href="/support">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Check if user is logged in
+                const { data: { session } } = await supabase.auth.getSession();
+                
+                // Store session info for demo mode fallback
+                if (session) {
+                    localStorage.setItem('userId', session.user.id);
+                    localStorage.setItem('userEmail', session.user.email);
+                }
+                
+                // If not logged in, redirect to login page
+                if (!session && !localStorage.getItem('userId')) {
+                    window.location.href = '/login.html';
+                    return;
+                }
+                
+                // User is authenticated, load courses
+                await loadCourses();
+            } catch (error) {
+                console.error('Error checking authentication:', error);
+                // Fallback to login page
+                window.location.href = '/login.html';
+            }
+        });
+
+        // Function to load courses
+        async function loadCourses() {
+            try {
+                // Show loading indicator
+                document.getElementById('courses-loading').style.display = 'block';
+                document.getElementById('courses-grid').style.display = 'none';
+                document.getElementById('no-courses-message').style.display = 'none';
+                document.getElementById('courses-error').style.display = 'none';
+                
+                // Get user ID
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    throw new Error('User not authenticated');
+                }
+                
+                // Get user's courses from Academy
+                const result = await academyLink.getUserCourses(userId);
+                
+                if (result.success && result.data) {
+                    renderCourses(result.data);
+                } else {
+                    console.error('Failed to load courses:', result.error);
+                    document.getElementById('courses-error').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading courses:', error);
+                document.getElementById('courses-error').style.display = 'block';
+            } finally {
+                // Hide loading indicator
+                document.getElementById('courses-loading').style.display = 'none';
+            }
+        }
+
+        // Function to render courses
+        function renderCourses(courses) {
+            const coursesGrid = document.getElementById('courses-grid');
+            
+            if (!courses || courses.length === 0) {
+                document.getElementById('no-courses-message').style.display = 'block';
+                return;
+            }
+            
+            // Clear existing courses
+            coursesGrid.innerHTML = '';
+            
+            // Render each course
+            courses.forEach(courseEnrollment => {
+                const course = courseEnrollment.courses;
+                if (!course) return;
+                
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.innerHTML = `
+                    <div class="course-image">
+                        <i class="${getCourseIcon(course.title)}"></i>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">${getCourseCategory(course.title)}</span>
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-description">${course.description || 'Learn valuable skills in this comprehensive course.'}</p>
+                        <div class="course-meta">
+                            <div class="course-duration">
+                                <i class="fas fa-clock"></i>
+                                <span>${course.duration || 'Self-paced'}</span>
+                            </div>
+                            <div class="course-lessons">
+                                <i class="fas fa-book"></i>
+                                <span>${course.lesson_count || 'Multiple'} lessons</span>
+                            </div>
+                        </div>
+                        <button class="enroll-btn" onclick="enrollInCourse('${course.id}')">
+                            <i class="fas fa-graduation-cap"></i> Continue Learning
+                        </button>
+                    </div>
+                `;
+                
+                coursesGrid.appendChild(courseCard);
+            });
+            
+            // Show courses grid
+            coursesGrid.style.display = 'grid';
+        }
+
+        // Function to get course icon based on title
+        function getCourseIcon(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('marketing')) return 'fas fa-bullhorn';
+            if (titleLower.includes('web') || titleLower.includes('development')) return 'fas fa-laptop-code';
+            if (titleLower.includes('design')) return 'fas fa-paint-brush';
+            if (titleLower.includes('seo')) return 'fas fa-search';
+            if (titleLower.includes('social')) return 'fas fa-hashtag';
+            if (titleLower.includes('email')) return 'fas fa-envelope';
+            if (titleLower.includes('ai') || titleLower.includes('artificial')) return 'fas fa-robot';
+            return 'fas fa-graduation-cap';
+        }
+
+        // Function to get course category based on title
+        function getCourseCategory(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('marketing')) return 'Digital Marketing';
+            if (titleLower.includes('web') || titleLower.includes('development')) return 'Web Development';
+            if (titleLower.includes('design')) return 'Design';
+            if (titleLower.includes('seo')) return 'SEO';
+            if (titleLower.includes('social')) return 'Social Media';
+            if (titleLower.includes('email')) return 'Email Marketing';
+            if (titleLower.includes('ai') || titleLower.includes('artificial')) return 'AI & Automation';
+            return 'General';
+        }
+
+        // Function to enroll in a course
+        async function enrollInCourse(courseId) {
+            try {
+                // Get user ID
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    alert('Please log in to enroll in courses.');
+                    window.location.href = '/login.html';
+                    return;
+                }
+                
+                // Show loading state on button
+                const buttons = document.querySelectorAll('.enroll-btn');
+                buttons.forEach(btn => {
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enrolling...';
+                });
+                
+                // Enroll user in course
+                const result = await academyLink.enrollInCourse(userId, courseId);
+                
+                if (result.success) {
+                    alert('Successfully enrolled in the course! You can now continue learning.');
+                    // Refresh courses to show updated enrollment status
+                    await loadCourses();
+                } else {
+                    alert('Error enrolling in course: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Enrollment error:', error);
+                alert('An error occurred while enrolling in the course.');
+            } finally {
+                // Reset button states
+                const buttons = document.querySelectorAll('.enroll-btn');
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-graduation-cap"></i> Continue Learning';
+                });
+            }
+        }
+    </script>
+</body>
+</html>

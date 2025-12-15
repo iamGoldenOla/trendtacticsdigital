@@ -26,8 +26,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
     <!-- Main website Supabase utilities -->
     <script src="/js/supabase-utils.js"></script>
-    <!-- Academy-specific Supabase utilities -->
-    <script src="/js/academy-supabase.js"></script>
+    <!-- Academy link integration -->
+    <script src="/js/academy-link.js"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/main.css">
@@ -681,10 +681,26 @@
                     return;
                 }
                 
-                // Use Academy-specific Supabase client for enrollment
-                const result = await academySupabaseUtils.enrollInAcademyCourse(courseId);
+                // Get user ID
+                const userId = localStorage.getItem('userId');
+                if (!userId) {
+                    // Try to get from session
+                    const { data: { session } } = await supabase.auth.getSession();
+                    if (session && session.user) {
+                        userId = session.user.id;
+                    } else {
+                        alert('Unable to identify user. Please log in again.');
+                        window.location.href = '/login.html';
+                        return;
+                    }
+                }
+                
+                // Use Academy link integration for enrollment
+                const result = await academyLink.enrollInCourse(userId, courseId);
                 if (result.success) {
                     alert('Successfully enrolled in the course!');
+                    // Refresh courses to show updated enrollment status
+                    await loadCourses();
                 } else {
                     alert('Error enrolling in course: ' + result.error);
                 }
