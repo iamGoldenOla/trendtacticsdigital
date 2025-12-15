@@ -4,7 +4,14 @@
 // Initialize Supabase client
 const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA'; // Your actual Supabase anon key
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+// Only initialize if Supabase SDK is loaded
+let supabase;
+if (typeof window !== 'undefined' && window.supabase) {
+    supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+} else {
+    console.warn('Supabase SDK not loaded yet');
+}
 
 /**
  * Check if user is logged in
