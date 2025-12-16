@@ -116,6 +116,17 @@ function initializeNavigation() {
     const navMenu = document.getElementById('nav-menu');
     const navbar = document.getElementById('navigation');
 
+    // Toggle mobile menu
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            if (navMenu) {
+                navMenu.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            }
+        });
+    }
+
     // Close menu when clicking on a link (mobile only)
     if (navToggle && navMenu) {
         const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-menu a');
