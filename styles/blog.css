@@ -955,11 +955,11 @@
 }
 
 /* Fix footer logo size */
-.footer-logo img {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: var(--radius-md);
-    object-fit: cover;
+.footer-logo a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
 .footer-logo span {

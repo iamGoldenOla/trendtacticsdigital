@@ -440,27 +440,18 @@ section {
     /* Subtle glow effect on hover */
 }
 
-.footer-logo-img {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
+.footer-logo a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
     transition: all var(--transition-normal);
-    /* Remove background and border completely to eliminate thick border */
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-    border: none;
-    box-shadow: none;
-    outline: none;
 }
 
-.footer-logo:hover .footer-logo-img {
+.footer-logo a:hover {
     transform: scale(1.05);
-    background: transparent;
-    border: none;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     /* Subtle glow effect on hover */
-    outline: none;
 }
 
 .nav-menu {
@@ -5182,7 +5173,7 @@ footer.footer>.container {
     display: inline-block;
 }
 
-.footer .footer-logo-img {
+.footer .footer-logo a {
     background: #ffffff;
     padding: 6px 10px;
     border-radius: 10px;
