@@ -2647,7 +2647,7 @@ section {
 .footer {
     background: linear-gradient(135deg, var(--base-dark) 80%, #13294b 100%);
     color: var(--white);
-    padding: var(--spacing-xl) 0 var(--spacing-md);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -2px 24px 0 rgba(10, 30, 63, 0.08);
@@ -2703,6 +2703,12 @@ section {
     flex-direction: column;
 }
 
+.footer-column:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .footer-column h3 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -2744,9 +2750,11 @@ section {
 }
 
 .footer-newsletter-inline {
-    margin-top: var(--spacing-lg);
+    margin-top: auto;
     padding-top: var(--spacing-md);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-self: flex-end;
+    text-align: right;
 }
 
 .footer-newsletter-inline h4 {
@@ -2768,6 +2776,7 @@ section {
     flex-direction: row;
     gap: 0.5rem;
     align-items: stretch;
+    justify-content: flex-end;
 }
 
 .footer-newsletter-inline .newsletter-form input {
