@@ -2709,6 +2709,29 @@ section {
     justify-content: space-between;
 }
 
+.footer-contact-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-newsletter-inline {
+    flex: 1;
+    min-width: 200px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    align-self: flex-start;
+    text-align: left;
+}
+
 .footer-column h3 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -2815,6 +2838,11 @@ section {
 @media (max-width: 600px) {
     .footer-newsletter-inline .newsletter-form {
         flex-direction: column;
+    }
+    
+    .footer-contact-content {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
