@@ -2656,7 +2656,7 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-md);
     align-items: flex-start;
@@ -2905,7 +2905,7 @@ section {
 
 @media (max-width: 1100px) {
     .footer-content {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         gap: var(--spacing-2xl);
     }
 
@@ -2978,7 +2978,7 @@ section {
         max-width: 100%;
         justify-self: flex-start;
     }
-
+}
     .services-grid {
         grid-template-columns: 1fr;
     }
