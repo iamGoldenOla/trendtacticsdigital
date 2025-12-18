@@ -280,6 +280,26 @@
         min-height: 100%;
         width: auto;
     }
+    
+    .trust-testimonials-grid-redesigned {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+    }
+    
+    .trust-testimonial-card-redesigned {
+        padding: var(--spacing-xl);
+    }
+    
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+    }
+    
+    .reason-card {
+        padding: var(--spacing-xl);
+    }
 }
 
 @media (max-width: 480px) {
@@ -300,6 +320,15 @@
         width: 40px;
         height: 40px;
         font-size: 16px;
+    }
+    
+    .trust-testimonials-grid-redesigned {
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .trust-testimonial-card-redesigned {
+        padding: var(--spacing-lg);
     }
 }
 
