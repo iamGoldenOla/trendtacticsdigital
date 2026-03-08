@@ -1,24 +1,56 @@
 {
   "brands": [
     {
-      "name": "KEVTOS CATERING",
-      "logo": "/images/brands/kevtos-catering.png"
+      "name": "Google",
+      "logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
     },
     {
-      "name": "Realtreasure",
-      "logo": "/images/brands/realtreasure.png"
+      "name": "Amazon",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+    },
+    {
+      "name": "Meta",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+    },
+    {
+      "name": "Apple",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+    },
+    {
+      "name": "Microsoft",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+    },
+    {
+      "name": "Allengreen",
+      "logo": "/images/brands/ALLENGREEN_LOGO..png"
+    },
+    {
+      "name": "Gabson",
+      "logo": "/images/brands/gabson.png"
+    },
+    {
+      "name": "Greentick",
+      "logo": "/images/brands/greentick.png"
     },
     {
       "name": "HustleNChill",
       "logo": "/images/brands/hustlenchill.png"
     },
     {
-      "name": "GREENTICK",
-      "logo": "/images/brands/greentick.png"
+      "name": "Kevtos Catering",
+      "logo": "/images/brands/kevtos-catering.png"
     },
     {
-      "name": "Gabson",
-      "logo": "/images/brands/gabson.png"
+      "name": "Midway Health",
+      "logo": "/images/brands/MIDWAY HEALTH INC - LOGO.jpeg"
+    },
+    {
+      "name": "Trafesplace",
+      "logo": "/images/brands/trafesplace_logo.jpeg"
+    },
+    {
+      "name": "Realtreasure",
+      "logo": "/images/brands/realtreasure.png"
     }
   ],
   "services": [

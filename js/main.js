@@ -5,11 +5,11 @@
 // Dropdown Menus - Handled in initializeNavigation function below
 
 // Smooth Scrolling for Anchor Links
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
@@ -22,16 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Form Submission Handling
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Newsletter Form
     const newsletterForms = document.querySelectorAll('.newsletter-form');
     newsletterForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const emailInput = form.querySelector('input[type="email"]');
             const email = emailInput.value.trim();
-            
+
             if (email) {
                 // In a real implementation, you would send this to your backend
                 alert('Thank you for subscribing! We will send updates to ' + email);
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Dynamic Year for Copyright
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add Admin and Analytics links for authenticated admin users
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     // This is a simplified implementation
     // In a real application, you would check user roles from your backend
     const isAdmin = localStorage.getItem('isAdmin') === 'true';
-    
+
     if (isAdmin) {
         // Add Admin Dashboard link to navigation
         const navMenu = document.getElementById('nav-menu');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             adminLink.textContent = 'Admin';
             adminLink.style.color = '#00FFFF';
             adminLink.style.fontWeight = 'bold';
-            
+
             // Insert before the last few items
             const contactLink = navMenu.querySelector('a[href="/contact"]');
             if (contactLink) {
@@ -91,7 +91,7 @@ function scrollToSection(targetId) {
 }
 
 // Initialize all interactive elements
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Trendtactics Digital JavaScript initialized');
 });
 
@@ -118,7 +118,7 @@ function initializeNavigation() {
 
     // Toggle mobile menu
     if (navToggle) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navToggle.classList.toggle('active');
             if (navMenu) {
                 navMenu.classList.toggle('active');
@@ -141,87 +141,85 @@ function initializeNavigation() {
         });
     }
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
-        // Dropdown menu functionality
-        const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
-        dropdownItems.forEach(item => {
-            const dropdownLink = item.querySelector('.nav-link');
-            const dropdownMenu = item.querySelector('.dropdown-menu');
+    // Dropdown menu functionality
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+    dropdownItems.forEach(item => {
+        const dropdownLink = item.querySelector('.nav-link');
+        const dropdownMenu = item.querySelector('.dropdown-menu');
 
-            if (dropdownLink && dropdownMenu) {
-                // Prevent dropdown from closing when clicking inside
-                dropdownMenu.addEventListener('mouseenter', function () {
-                    item.classList.add('active');
-                });
+        if (dropdownLink && dropdownMenu) {
+            // Prevent dropdown from closing when clicking inside
+            dropdownMenu.addEventListener('mouseenter', function () {
+                item.classList.add('active');
+            });
 
-                dropdownMenu.addEventListener('mouseleave', function () {
-                    if (window.innerWidth > 768) {
-                        item.classList.remove('active');
-                    }
-                });
+            dropdownMenu.addEventListener('mouseleave', function () {
+                if (window.innerWidth > 768) {
+                    item.classList.remove('active');
+                }
+            });
 
-                // Toggle dropdown on click (for mobile)
-                dropdownLink.addEventListener('click', function (e) {
-                    // Always prevent default for dropdown toggle links
-                    if (dropdownLink.classList.contains('dropdown-toggle')) {
+            // Toggle dropdown on click (for mobile)
+            dropdownLink.addEventListener('click', function (e) {
+                if (dropdownLink.classList.contains('dropdown-toggle')) {
+                    if (window.innerWidth <= 992) {
                         e.preventDefault();
                         e.stopPropagation();
-                        
-                        // On mobile, toggle the dropdown
-                        if (window.innerWidth <= 768) {
-                            const isActive = item.classList.contains('active');
 
-                            // Close other dropdowns first
-                            dropdownItems.forEach(otherItem => {
-                                if (otherItem !== item) {
-                                    otherItem.classList.remove('active');
-                                }
-                            });
+                        const isActive = item.classList.contains('active');
 
-                            // Toggle current dropdown
-                            item.classList.toggle('active');
-                        }
-                        // On desktop, let the hover handle it but still prevent default
-                        return;
-                    }
-                });
-
-                // Keep dropdown open when hovering over it
-                item.addEventListener('mouseenter', function () {
-                    if (window.innerWidth > 768) {
-                        item.classList.add('active');
-                    }
-                });
-
-                item.addEventListener('mouseleave', function () {
-                    if (window.innerWidth > 768) {
-                        setTimeout(() => {
-                            if (!item.matches(':hover')) {
-                                item.classList.remove('active');
+                        // Close other dropdowns first
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
                             }
-                        }, 200);
-                    }
-                });
+                        });
 
-                // Close dropdown when clicking outside (mobile only)
-                document.addEventListener('click', function (e) {
-                    if (!item.contains(e.target) && window.innerWidth <= 768) {
-                        item.classList.remove('active');
+                        // Toggle current dropdown
+                        item.classList.toggle('active');
                     }
-                });
-            }
-        });
-    }
+                    // On desktop > 992px, do nothing here so browser naturally follows the href.
+                    return;
+                }
+            });
 
-    // ===== SMOOTH SCROLLING =====
+            // Keep dropdown open when hovering over it
+            item.addEventListener('mouseenter', function () {
+                if (window.innerWidth > 768) {
+                    item.classList.add('active');
+                }
+            });
+
+            item.addEventListener('mouseleave', function () {
+                if (window.innerWidth > 768) {
+                    setTimeout(() => {
+                        if (!item.matches(':hover')) {
+                            item.classList.remove('active');
+                        }
+                    }, 200);
+                }
+            });
+
+            // Close dropdown when clicking outside (mobile only)
+            document.addEventListener('click', function (e) {
+                if (!item.contains(e.target) && window.innerWidth <= 768) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    });
+}
+
+// ===== SMOOTH SCROLLING =====
 function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
 
@@ -244,58 +242,58 @@ function initializeSmoothScrolling() {
     });
 }
 
-    // ===== CONTENT LOADING =====
-    async function loadContent() {
-        try {
-            console.log('Attempting to load content from ./data/content.json');
-            const response = await fetch('/data/content.json');
-            console.log('Response status:', response.status);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            console.log('Loaded data:', data);
-
-            loadBrands(data.brands);
-            loadServices(data.services);
-            loadTestimonials(data.testimonials);
-            loadFooterLinks(data.footer);
-            loadSocialLinks(data.social);
-            loadLatestBlogPosts();
-
-        } catch (error) {
-            console.error('Error loading content:', error);
-            console.log('Using fallback content data');
-            loadFallbackContent();
+// ===== CONTENT LOADING =====
+async function loadContent() {
+    try {
+        console.log('Attempting to load content from ./data/content.json');
+        const response = await fetch('/data/content.json');
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+        const data = await response.json();
+        console.log('Loaded data:', data);
+
+        // loadBrands(data.brands); // Disabled to prevent overwriting the 13-logo unified grid in HTML
+        loadServices(data.services);
+        loadTestimonials(data.testimonials);
+        loadFooterLinks(data.footer);
+        loadSocialLinks(data.social);
+        loadLatestBlogPosts();
+
+    } catch (error) {
+        console.error('Error loading content:', error);
+        console.log('Using fallback content data');
+        loadFallbackContent();
     }
+}
 
-    // ===== BRANDS SECTION =====
-    function loadBrands(brands) {
-        const brandsGrid = document.getElementById('brands-grid');
-        if (!brandsGrid || !brands) return;
+// ===== BRANDS SECTION =====
+function loadBrands(brands) {
+    const brandsGrid = document.getElementById('brands-grid');
+    if (!brandsGrid || !brands) return;
 
-        // Create duplicate items for infinite scroll
-        const duplicatedBrands = [...brands, ...brands];
+    // Create duplicate items for infinite scroll
+    const duplicatedBrands = [...brands, ...brands];
 
-        let brandsHTML = '';
-        duplicatedBrands.forEach(brand => {
-            brandsHTML += `
+    let brandsHTML = '';
+    duplicatedBrands.forEach(brand => {
+        brandsHTML += `
             <div class="brand-item">
                 <img src="${brand.logo}" alt="${brand.name}" class="brand-logo">
             </div>
         `;
-        });
+    });
 
-        brandsGrid.innerHTML = brandsHTML;
-    }
+    brandsGrid.innerHTML = brandsHTML;
+}
 
-    // ===== SERVICES SECTION =====
-    function loadServices(services) {
-        const servicesGrid = document.getElementById('services-grid');
-        if (!servicesGrid) return;
+// ===== SERVICES SECTION =====
+function loadServices(services) {
+    const servicesGrid = document.getElementById('services-grid');
+    if (!servicesGrid) return;
 
-        servicesGrid.innerHTML = services.map(service => `
+    servicesGrid.innerHTML = services.map(service => `
         <div class="service-card animate-fade-in-up">
             <div class="service-icon">
                 <i class="${service.icon}"></i>
@@ -309,14 +307,14 @@ function initializeSmoothScrolling() {
             <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
     `).join('');
-    }
+}
 
-    // ===== TESTIMONIALS SECTION =====
-    function loadTestimonials(testimonials) {
-        const testimonialsGrid = document.getElementById('testimonials-grid');
-        if (!testimonialsGrid) return;
+// ===== TESTIMONIALS SECTION =====
+function loadTestimonials(testimonials) {
+    const testimonialsGrid = document.getElementById('testimonials-grid');
+    if (!testimonialsGrid) return;
 
-        testimonialsGrid.innerHTML = testimonials.map(testimonial => `
+    testimonialsGrid.innerHTML = testimonials.map(testimonial => `
         <div class="testimonial-card animate-fade-in-up">
             <p class="testimonial-content">"${testimonial.content}"</p>
             <div class="testimonial-author">
@@ -330,408 +328,408 @@ function initializeSmoothScrolling() {
             </div>
         </div>
     `).join('');
-        initTestimonialsCarousel();
+    initTestimonialsCarousel();
+}
+
+// ===== FOOTER LINKS =====
+function loadFooterLinks(footer) {
+    // Services links
+    const footerServices = document.getElementById('footer-services');
+    if (footerServices) {
+        footerServices.innerHTML = footer.services.map(service =>
+            `<li><a href="#services">${service}</a></li>`
+        ).join('');
     }
 
-    // ===== FOOTER LINKS =====
-    function loadFooterLinks(footer) {
-        // Services links
-        const footerServices = document.getElementById('footer-services');
-        if (footerServices) {
-            footerServices.innerHTML = footer.services.map(service =>
-                `<li><a href="#services">${service}</a></li>`
-            ).join('');
-        }
-
-        // Company links
-        const footerCompany = document.getElementById('footer-company');
-        if (footerCompany) {
-            footerCompany.innerHTML = footer.company.map(link =>
-                `<li><a href="#${link.toLowerCase().replace(' ', '-')}">${link}</a></li>`
-            ).join('');
-        }
-
-        // Resources links
-        const footerResources = document.getElementById('footer-resources');
-        if (footerResources) {
-            footerResources.innerHTML = footer.resources.map(resource =>
-                `<li><a href="#${resource.toLowerCase().replace(' ', '-')}">${resource}</a></li>`
-            ).join('');
-        }
+    // Company links
+    const footerCompany = document.getElementById('footer-company');
+    if (footerCompany) {
+        footerCompany.innerHTML = footer.company.map(link =>
+            `<li><a href="#${link.toLowerCase().replace(' ', '-')}">${link}</a></li>`
+        ).join('');
     }
 
-    // ===== SOCIAL LINKS =====
-    function loadSocialLinks(social) {
-        const socialLinks = document.getElementById('social-links');
-        if (!socialLinks) return;
+    // Resources links
+    const footerResources = document.getElementById('footer-resources');
+    if (footerResources) {
+        footerResources.innerHTML = footer.resources.map(resource =>
+            `<li><a href="#${resource.toLowerCase().replace(' ', '-')}">${resource}</a></li>`
+        ).join('');
+    }
+}
 
-        socialLinks.innerHTML = social.map(platform => `
+// ===== SOCIAL LINKS =====
+function loadSocialLinks(social) {
+    const socialLinks = document.getElementById('social-links');
+    if (!socialLinks) return;
+
+    socialLinks.innerHTML = social.map(platform => `
         <a href="${platform.url}" class="social-link" target="_blank" rel="noopener noreferrer">
             <i class="${platform.icon}"></i>
         </a>
     `).join('');
-    }
+}
 
-    // ===== FALLBACK CONTENT =====
-    function loadFallbackContent() {
-        // Fallback brands
-        const fallbackBrands = [
-            { name: 'Brand 1', logo: '/images/brand1.png' },
-            { name: 'Brand 2', logo: '/images/brand2.png' },
-            { name: 'Brand 3', logo: '/images/brand3.png' },
-            { name: 'Brand 4', logo: '/images/brand4.png' },
-            { name: 'Brand 5', logo: '/images/brand5.png' },
-            { name: 'Brand 6', logo: '/images/brand6.png' }
-        ];
-        loadBrands(fallbackBrands);
+// ===== FALLBACK CONTENT =====
+function loadFallbackContent() {
+    // Fallback brands
+    const fallbackBrands = [
+        { name: 'Brand 1', logo: '/images/brand1.png' },
+        { name: 'Brand 2', logo: '/images/brand2.png' },
+        { name: 'Brand 3', logo: '/images/brand3.png' },
+        { name: 'Brand 4', logo: '/images/brand4.png' },
+        { name: 'Brand 5', logo: '/images/brand5.png' },
+        { name: 'Brand 6', logo: '/images/brand6.png' }
+    ];
+    loadBrands(fallbackBrands);
 
-        // Fallback services
-        const fallbackServices = [
-            {
-                title: 'Web Design & Development',
-                description: 'Custom websites that convert visitors into customers.',
-                icon: 'fas fa-code',
-                features: ['Responsive Design', 'SEO Optimization', 'Fast Loading', 'Custom CMS'],
-                price: 'From $2,500'
-            },
-            {
-                title: 'Digital Marketing',
-                description: 'Strategic marketing campaigns that drive real results.',
-                icon: 'fas fa-chart-line',
-                features: ['SEO & PPC', 'Social Media', 'Content Marketing', 'Analytics'],
-                price: 'From $1,500'
-            },
-            {
-                title: 'AI Solutions',
-                description: 'Cutting-edge AI tools to automate and optimize your business.',
-                icon: 'fas fa-robot',
-                features: ['Chatbots', 'Data Analysis', 'Process Automation', 'Predictive Analytics'],
-                price: 'From $3,000'
+    // Fallback services
+    const fallbackServices = [
+        {
+            title: 'Web Design & Development',
+            description: 'Custom websites that convert visitors into customers.',
+            icon: 'fas fa-code',
+            features: ['Responsive Design', 'SEO Optimization', 'Fast Loading', 'Custom CMS'],
+            price: 'From $2,500'
+        },
+        {
+            title: 'Digital Marketing',
+            description: 'Strategic marketing campaigns that drive real results.',
+            icon: 'fas fa-chart-line',
+            features: ['SEO & PPC', 'Social Media', 'Content Marketing', 'Analytics'],
+            price: 'From $1,500'
+        },
+        {
+            title: 'AI Solutions',
+            description: 'Cutting-edge AI tools to automate and optimize your business.',
+            icon: 'fas fa-robot',
+            features: ['Chatbots', 'Data Analysis', 'Process Automation', 'Predictive Analytics'],
+            price: 'From $3,000'
+        }
+    ];
+    loadServices(fallbackServices);
+
+    // Fallback testimonials
+    const fallbackTestimonials = [
+        {
+            content: 'Trendtactics transformed our online presence completely. Our website now converts 3x better!',
+            author: {
+                name: 'Sarah Johnson',
+                position: 'CEO',
+                company: 'TechStart Inc.'
             }
-        ];
-        loadServices(fallbackServices);
-
-        // Fallback testimonials
-        const fallbackTestimonials = [
-            {
-                content: 'Trendtactics transformed our online presence completely. Our website now converts 3x better!',
-                author: {
-                    name: 'Sarah Johnson',
-                    position: 'CEO',
-                    company: 'TechStart Inc.'
-                }
-            },
-            {
-                content: 'The AI solutions they implemented saved us 40 hours per week. Incredible ROI!',
-                author: {
-                    name: 'Michael Chen',
-                    position: 'Operations Director',
-                    company: 'Global Solutions'
-                }
-            },
-            {
-                content: 'Professional, creative, and results-driven. Exactly what we needed for our growth.',
-                author: {
-                    name: 'Emily Rodriguez',
-                    position: 'Marketing Manager',
-                    company: 'Innovate Labs'
-                }
+        },
+        {
+            content: 'The AI solutions they implemented saved us 40 hours per week. Incredible ROI!',
+            author: {
+                name: 'Michael Chen',
+                position: 'Operations Director',
+                company: 'Global Solutions'
             }
-        ];
-        loadTestimonials(fallbackTestimonials);
-    }
+        },
+        {
+            content: 'Professional, creative, and results-driven. Exactly what we needed for our growth.',
+            author: {
+                name: 'Emily Rodriguez',
+                position: 'Marketing Manager',
+                company: 'Innovate Labs'
+            }
+        }
+    ];
+    loadTestimonials(fallbackTestimonials);
+}
 
-    // ===== ANIMATIONS =====
-    function initializeAnimations() {
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+// ===== ANIMATIONS =====
+function initializeAnimations() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        const animateElements = document.querySelectorAll('.service-card, .testimonial-card, .brand-item');
-        animateElements.forEach(el => observer.observe(el));
-    }
-
-    // ===== VIDEO PLAYER =====
-    function initializeVideoPlayer() {
-        const video = document.getElementById('promo-video');
-        if (!video) return;
-
-        // Add play/pause functionality
-        video.addEventListener('click', function () {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
             }
         });
+    }, observerOptions);
 
-        // Add loading state
-        video.addEventListener('loadstart', function () {
-            video.style.opacity = '0.7';
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.service-card, .testimonial-card, .brand-item');
+    animateElements.forEach(el => observer.observe(el));
+}
+
+// ===== VIDEO PLAYER =====
+function initializeVideoPlayer() {
+    const video = document.getElementById('promo-video');
+    if (!video) return;
+
+    // Add play/pause functionality
+    video.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+
+    // Add loading state
+    video.addEventListener('loadstart', function () {
+        video.style.opacity = '0.7';
+    });
+
+    video.addEventListener('canplay', function () {
+        video.style.opacity = '1';
+    });
+}
+
+// ===== FORM HANDLING =====
+function initializeForms() {
+    const forms = document.querySelectorAll('form');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // Show success message (replace with actual form submission)
+            showNotification('Thank you! We\'ll get back to you soon.', 'success');
+
+            // Reset form
+            form.reset();
         });
+    });
+}
 
-        video.addEventListener('canplay', function () {
-            video.style.opacity = '1';
-        });
-    }
-
-    // ===== FORM HANDLING =====
-    function initializeForms() {
-        const forms = document.querySelectorAll('form');
-
-        forms.forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Get form data
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData);
-
-                // Show success message (replace with actual form submission)
-                showNotification('Thank you! We\'ll get back to you soon.', 'success');
-
-                // Reset form
-                form.reset();
-            });
-        });
-    }
-
-    // ===== NOTIFICATIONS =====
-    function showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
+// ===== NOTIFICATIONS =====
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
         <div class="notification-content">
             <span>${message}</span>
             <button class="notification-close">&times;</button>
         </div>
     `;
 
-        document.body.appendChild(notification);
+    document.body.appendChild(notification);
 
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            notification.remove();
-        }, 5000);
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
 
-        // Close button functionality
-        const closeBtn = notification.querySelector('.notification-close');
-        closeBtn.addEventListener('click', () => {
-            notification.remove();
-        });
-    }
+    // Close button functionality
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.addEventListener('click', () => {
+        notification.remove();
+    });
+}
 
-    // ===== UTILITY FUNCTIONS =====
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
+// ===== UTILITY FUNCTIONS =====
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
             clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function () {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// ===== PERFORMANCE OPTIMIZATION =====
+// Throttled scroll handler
+const throttledScrollHandler = throttle(function () {
+    // Handle scroll-based animations
+}, 16); // ~60fps
+
+window.addEventListener('scroll', throttledScrollHandler);
+
+// ===== ACCESSIBILITY =====
+function initializeAccessibility() {
+    // Add keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            // Close mobile menu
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            if (navToggle && navMenu) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+
+    // Add focus indicators
+    const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
+    focusableElements.forEach(el => {
+        el.addEventListener('focus', function () {
+            this.style.outline = '2px solid var(--primary)';
+        });
+
+        el.addEventListener('blur', function () {
+            this.style.outline = 'none';
+        });
+    });
+}
+
+// Initialize accessibility features
+initializeAccessibility();
+
+// Testimonials Carousel
+let currentTestimonial = 0;
+let testimonials = [];
+const VISIBLE_CARDS = 1; // Changed to 1 for single card display
+
+function initTestimonialsCarousel() {
+    const testimonialsGrid = document.getElementById('testimonials-grid');
+    const navContainer = document.getElementById('testimonials-nav');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+
+    if (!testimonialsGrid || !navContainer) return;
+
+    // Get all testimonial cards
+    testimonials = Array.from(testimonialsGrid.children);
+
+    if (testimonials.length === 0) return;
+
+    // Clear previous dots
+    navContainer.innerHTML = '';
+
+    // Calculate number of possible views (one for each testimonial)
+    const numViews = testimonials.length;
+
+    // Create navigation dots
+    for (let i = 0; i < numViews; i++) {
+        const dot = document.createElement('div');
+        dot.className = `testimonial-dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToTestimonial(i));
+        navContainer.appendChild(dot);
+    }
+
+    // Add button event listeners
+    if (prevBtn) {
+        prevBtn.onclick = () => {
+            currentTestimonial = currentTestimonial === 0 ? numViews - 1 : currentTestimonial - 1;
+            updateTestimonials();
         };
     }
 
-    function throttle(func, limit) {
-        let inThrottle;
-        return function () {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
-    }
-
-    // ===== PERFORMANCE OPTIMIZATION =====
-    // Throttled scroll handler
-    const throttledScrollHandler = throttle(function () {
-        // Handle scroll-based animations
-    }, 16); // ~60fps
-
-    window.addEventListener('scroll', throttledScrollHandler);
-
-    // ===== ACCESSIBILITY =====
-    function initializeAccessibility() {
-        // Add keyboard navigation
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                // Close mobile menu
-                const navToggle = document.getElementById('nav-toggle');
-                const navMenu = document.getElementById('nav-menu');
-                if (navToggle && navMenu) {
-                    navToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            }
-        });
-
-        // Add focus indicators
-        const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
-        focusableElements.forEach(el => {
-            el.addEventListener('focus', function () {
-                this.style.outline = '2px solid var(--primary)';
-            });
-
-            el.addEventListener('blur', function () {
-                this.style.outline = 'none';
-            });
-        });
-    }
-
-    // Initialize accessibility features
-    initializeAccessibility();
-
-    // Testimonials Carousel
-    let currentTestimonial = 0;
-    let testimonials = [];
-    const VISIBLE_CARDS = 1; // Changed to 1 for single card display
-
-    function initTestimonialsCarousel() {
-        const testimonialsGrid = document.getElementById('testimonials-grid');
-        const navContainer = document.getElementById('testimonials-nav');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-
-        if (!testimonialsGrid || !navContainer) return;
-
-        // Get all testimonial cards
-        testimonials = Array.from(testimonialsGrid.children);
-
-        if (testimonials.length === 0) return;
-
-        // Clear previous dots
-        navContainer.innerHTML = '';
-
-        // Calculate number of possible views (one for each testimonial)
-        const numViews = testimonials.length;
-
-        // Create navigation dots
-        for (let i = 0; i < numViews; i++) {
-            const dot = document.createElement('div');
-            dot.className = `testimonial-dot ${i === 0 ? 'active' : ''}`;
-            dot.addEventListener('click', () => goToTestimonial(i));
-            navContainer.appendChild(dot);
-        }
-
-        // Add button event listeners
-        if (prevBtn) {
-            prevBtn.onclick = () => {
-                currentTestimonial = currentTestimonial === 0 ? numViews - 1 : currentTestimonial - 1;
-                updateTestimonials();
-            };
-        }
-
-        if (nextBtn) {
-            nextBtn.onclick = () => {
-                currentTestimonial = (currentTestimonial + 1) % numViews;
-                updateTestimonials();
-            };
-        }
-
-        // Auto-advance testimonials with longer interval
-        if (window.testimonialsInterval) clearInterval(window.testimonialsInterval);
-        window.testimonialsInterval = setInterval(() => {
+    if (nextBtn) {
+        nextBtn.onclick = () => {
             currentTestimonial = (currentTestimonial + 1) % numViews;
             updateTestimonials();
-        }, 5000); // Back to 5 seconds for single card
+        };
+    }
 
-        // Initial setup
+    // Auto-advance testimonials with longer interval
+    if (window.testimonialsInterval) clearInterval(window.testimonialsInterval);
+    window.testimonialsInterval = setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % numViews;
         updateTestimonials();
-    }
+    }, 5000); // Back to 5 seconds for single card
 
-    function goToTestimonial(index) {
-        currentTestimonial = index;
-        updateTestimonials();
-    }
+    // Initial setup
+    updateTestimonials();
+}
 
-    function updateTestimonials() {
-        const testimonialsGrid = document.getElementById('testimonials-grid');
-        const navContainer = document.getElementById('testimonials-nav');
-        const dots = navContainer ? Array.from(navContainer.children) : [];
+function goToTestimonial(index) {
+    currentTestimonial = index;
+    updateTestimonials();
+}
 
-        if (!testimonialsGrid) return;
+function updateTestimonials() {
+    const testimonialsGrid = document.getElementById('testimonials-grid');
+    const navContainer = document.getElementById('testimonials-nav');
+    const dots = navContainer ? Array.from(navContainer.children) : [];
 
-        // Calculate transform for single card display
-        const cardWidth = 400; // Base card width
-        const gap = 32; // Gap between cards
-        const transform = -currentTestimonial * (cardWidth + gap);
+    if (!testimonialsGrid) return;
 
-        testimonialsGrid.style.transform = `translateX(${transform}px)`;
+    // Calculate transform for single card display
+    const cardWidth = 400; // Base card width
+    const gap = 32; // Gap between cards
+    const transform = -currentTestimonial * (cardWidth + gap);
 
-        // Update navigation dots with smooth transitions
-        dots.forEach((dot, index) => {
-            if (index === currentTestimonial) {
-                dot.classList.add('active');
-                dot.style.transform = 'scale(1.2)';
-            } else {
-                dot.classList.remove('active');
-                dot.style.transform = 'scale(1)';
-            }
-        });
+    testimonialsGrid.style.transform = `translateX(${transform}px)`;
 
-        // Update button states
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-
-        if (prevBtn) {
-            prevBtn.disabled = false; // Always enabled for circular navigation
-            prevBtn.style.opacity = '1';
+    // Update navigation dots with smooth transitions
+    dots.forEach((dot, index) => {
+        if (index === currentTestimonial) {
+            dot.classList.add('active');
+            dot.style.transform = 'scale(1.2)';
+        } else {
+            dot.classList.remove('active');
+            dot.style.transform = 'scale(1)';
         }
+    });
 
-        if (nextBtn) {
-            nextBtn.disabled = false; // Always enabled for circular navigation
-            nextBtn.style.opacity = '1';
-        }
+    // Update button states
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
 
-        // Add subtle animation to current card
-        testimonials.forEach((card, index) => {
-            if (index === currentTestimonial) {
-                card.style.opacity = '1';
-                card.style.transform = 'scale(1)';
-                card.style.zIndex = '2';
-            } else {
-                card.style.opacity = '0.3';
-                card.style.transform = 'scale(0.95)';
-                card.style.zIndex = '1';
-            }
-        });
+    if (prevBtn) {
+        prevBtn.disabled = false; // Always enabled for circular navigation
+        prevBtn.style.opacity = '1';
     }
 
-    // ===== LATEST BLOG POSTS SECTION =====
-    async function loadLatestBlogPosts() {
-        const blogGrid = document.getElementById('blog-grid-home');
-        if (!blogGrid) return;
+    if (nextBtn) {
+        nextBtn.disabled = false; // Always enabled for circular navigation
+        nextBtn.style.opacity = '1';
+    }
 
-        try {
-            const response = await fetch('/data/blog-posts.json');
-            if (!response.ok) throw new Error('Failed to load blog posts');
-            const data = await response.json();
+    // Add subtle animation to current card
+    testimonials.forEach((card, index) => {
+        if (index === currentTestimonial) {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+            card.style.zIndex = '2';
+        } else {
+            card.style.opacity = '0.3';
+            card.style.transform = 'scale(0.95)';
+            card.style.zIndex = '1';
+        }
+    });
+}
 
-            // Get latest 3 posts (excluding featured)
-            const latestPosts = data.posts
-                .filter(post => !post.featured)
-                .sort((a, b) => new Date(b.date) - new Date(a.date))
-                .slice(0, 3);
+// ===== LATEST BLOG POSTS SECTION =====
+async function loadLatestBlogPosts() {
+    const blogGrid = document.getElementById('blog-grid-home');
+    if (!blogGrid) return;
 
-            console.log('Latest posts to display:', latestPosts);
+    try {
+        const response = await fetch('/data/blog-posts.json');
+        if (!response.ok) throw new Error('Failed to load blog posts');
+        const data = await response.json();
 
-            blogGrid.innerHTML = latestPosts.map(post => `
+        // Get latest 3 posts (excluding featured)
+        const latestPosts = data.posts
+            .filter(post => !post.featured)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3);
+
+        console.log('Latest posts to display:', latestPosts);
+
+        blogGrid.innerHTML = latestPosts.map(post => `
             <article class="blog-card-home">
                 <div class="blog-card-image-home">
                     <img src="${post.image}" alt="${post.title}" 
@@ -751,17 +749,19 @@ function initializeSmoothScrolling() {
                 </div>
             </article>
         `).join('');
-        } catch (error) {
-            console.error('Error loading blog posts:', error);
-            blogGrid.innerHTML = '<p>Unable to load blog posts at this time.</p>';
-        }
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+        blogGrid.innerHTML = '<p>Unable to load blog posts at this time.</p>';
     }
+}
 
-    function formatBlogDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        });
-    }
+function formatBlogDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+}
+
+

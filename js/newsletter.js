@@ -150,7 +150,7 @@
     
     // Initialize newsletter forms
     function initNewsletterForms() {
-        const forms = document.querySelectorAll('.newsletter-form, [data-newsletter]');
+        const forms = document.querySelectorAll('.newsletter-form, .newsletter-form-lovable, [data-newsletter]');
         
         forms.forEach(form => {
             form.addEventListener('submit', async (e) => {

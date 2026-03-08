@@ -353,8 +353,8 @@ function displayTags(tags) {
     const tagsContainer = document.getElementById('post-tags');
     if (!tagsContainer) return;
     
-    tagsContainer.innerHTML = tags.map(tag => `
-        <span class="tag">${tag}</span>
+    tagsContainer.innerHTML = '<span style="font-weight: 600; color: #0A1E3F; margin-right: 15px; display: flex; align-items: center;">Tags:</span>' + tags.map(tag => `
+        <a href="#" style="padding: 6px 15px; background: #f8f9fa; border: 1px solid #e2e8f0; border-radius: 50px; color: #4a5568; text-decoration: none; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f8f9fa'">${tag}</a>
     `).join('');
 }
 
@@ -380,15 +380,11 @@ function displayAuthorBio(post) {
     if (!bioContainer) return;
     
     const bioContent = `
-        <div class="author-bio-content">
-            <div class="author-bio-avatar">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="author-bio-text">
-                <h4>${post.author}</h4>
-                <p class="author-title">${getAuthorTitle(post.author)}</p>
-                <p>${getAuthorBio(post.author)}</p>
-            </div>
+        <img src="images/professional-ceo.png" alt="${post.author}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+        <div style="flex: 1;">
+            <h3 style="font-size: 1.5rem; color: #0A1E3F; margin: 0 0 10px 0; font-weight: 700;">${post.author}</h3>
+            <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6; margin: 0 0 20px 0;">${getAuthorBio(post.author)}</p>
+            <a href="about.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">View Profile</a>
         </div>
     `;
     

@@ -65,26 +65,43 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitStatus('success');
-            setFormData({
-                name: '',
-                email: '',
-                company: '',
-                service: '',
-                message: ''
+
+        try {
+            const response = await fetch('http://localhost:5000/api/leads/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
-            
-            // Reset status after 3 seconds
-            setTimeout(() => setSubmitStatus(null), 3000);
-        }, 2000);
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: '',
+                    email: '',
+                    company: '',
+                    service: '',
+                    message: ''
+                });
+            } else {
+                const error = await response.json();
+                alert('Error: ' + (error.message || 'Failed to send message'));
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Could not connect to the server. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+            // Reset status after 5 seconds
+            if (submitStatus === 'success') {
+                setTimeout(() => setSubmitStatus(null), 5000);
+            }
+        }
     };
 
     return (
-        <div id="contact-form" className="contact-form-modal" style={{display: 'none'}}>
+        <div id="contact-form" className="contact-form-modal" style={{ display: 'none' }}>
             <div className="modal-content">
                 <div className="modal-header">
                     <h3>Get Your Free Consultation</h3>
@@ -92,7 +109,7 @@ const ContactForm = () => {
                         &times;
                     </button>
                 </div>
-                
+
                 {submitStatus === 'success' ? (
                     <div className="success-message">
                         <i className="fas fa-check-circle"></i>
@@ -112,7 +129,7 @@ const ContactForm = () => {
                                 required
                             />
                         </div>
-                        
+
                         <div className="form-group">
                             <label htmlFor="email">Email Address *</label>
                             <input
@@ -124,7 +141,7 @@ const ContactForm = () => {
                                 required
                             />
                         </div>
-                        
+
                         <div className="form-group">
                             <label htmlFor="company">Company</label>
                             <input
@@ -135,7 +152,7 @@ const ContactForm = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        
+
                         <div className="form-group">
                             <label htmlFor="service">Service Interest</label>
                             <select
@@ -153,7 +170,7 @@ const ContactForm = () => {
                                 <option value="consulting">Consulting & Strategy</option>
                             </select>
                         </div>
-                        
+
                         <div className="form-group">
                             <label htmlFor="message">Message *</label>
                             <textarea
@@ -165,9 +182,9 @@ const ContactForm = () => {
                                 required
                             ></textarea>
                         </div>
-                        
-                        <button 
-                            type="submit" 
+
+                        <button
+                            type="submit"
                             className="btn btn-primary btn-large w-full"
                             disabled={isSubmitting}
                         >
@@ -184,14 +201,35 @@ const ContactForm = () => {
 const NewsletterSignup = () => {
     const [email, setEmail] = React.useState('');
     const [isSubscribed, setIsSubscribed] = React.useState(false);
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Simulate subscription
-        setIsSubscribed(true);
-        setEmail('');
-        
-        setTimeout(() => setIsSubscribed(false), 3000);
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch('http://localhost:5000/api/leads/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            if (response.ok) {
+                setIsSubscribed(true);
+                setEmail('');
+                setTimeout(() => setIsSubscribed(false), 5000);
+            } else {
+                const error = await response.json();
+                alert('Error: ' + (error.message || 'Failed to subscribe'));
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            alert('Could not connect to the server. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -199,7 +237,7 @@ const NewsletterSignup = () => {
             <div className="newsletter-content">
                 <h4>Stay Updated</h4>
                 <p>Get the latest digital marketing insights and tips delivered to your inbox.</p>
-                
+
                 {isSubscribed ? (
                     <div className="success-message">
                         <i className="fas fa-check"></i>
@@ -214,8 +252,8 @@ const NewsletterSignup = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <button type="submit" className="btn btn-primary">
-                            Subscribe
+                        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                            {isSubmitting ? '...' : 'Subscribe'}
                         </button>
                     </form>
                 )}
@@ -251,7 +289,7 @@ const CookieConsent = () => {
         <div className="cookie-consent">
             <div className="cookie-content">
                 <p>
-                    We use cookies to enhance your experience and analyze our traffic. 
+                    We use cookies to enhance your experience and analyze our traffic.
                     By clicking "Accept", you consent to our use of cookies.
                 </p>
                 <div className="cookie-buttons">
@@ -281,7 +319,7 @@ const ServiceCard = ({ service }) => (
             ))}
         </ul>
         <div className="service-price">{service.price}</div>
-        <button 
+        <button
             className="btn btn-primary"
             onClick={() => {
                 document.getElementById('contact-form').style.display = 'flex';
@@ -367,10 +405,10 @@ const StatsCounter = ({ stat }) => {
     return (
         <div className="stat-item" data-stat={stat.label}>
             <div className="stat-number">
-                {stat.number.includes('+') ? `${count}+` : 
-                 stat.number.includes('%') ? `${count}%` :
-                 stat.number.includes('x') ? `${count}x` :
-                 stat.number}
+                {stat.number.includes('+') ? `${count}+` :
+                    stat.number.includes('%') ? `${count}%` :
+                        stat.number.includes('x') ? `${count}x` :
+                            stat.number}
             </div>
             <div className="stat-label">{stat.label}</div>
         </div>

@@ -1,794 +1,1410 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Blog - Trendtactics Digital</title>
+
     <meta name="description"
         content="Latest insights on digital marketing, web design, AI solutions, and growth strategies. Expert tips and industry trends from Trendtactics Digital.">
-    <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
-    <meta name="author" content="Akinola Olujobi">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Blog - Trendtactics Digital">
-    <meta property="og:description"
-        content="Latest insights on digital marketing, web design, AI solutions, and growth strategies. Expert tips and industry trends from Trendtactics Digital.">
-    <meta property="og:url" content="https://trendtacticsdigital.com/blog">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog - Trendtactics Digital">
-    <meta name="twitter:description"
-        content="Latest insights on digital marketing, web design, AI solutions, and growth strategies. Expert tips and industry trends from Trendtactics Digital.">
-    <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
-    <!-- Google Fonts -->
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/services-premium.css?v=1772546233">
+
+
+
     <!-- React CDN -->
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
 
-    <link rel="stylesheet" href="/styles/blog.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Trendtactics Digital",
-      "url": "https://trendtacticsdigital.com/",
-      "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
-      "sameAs": [
-        "https://linkedin.com/company/trendtactics-digital",
-        "https://twitter.com/trendtactics",
-        "https://instagram.com/trendtactics",
-        "https://facebook.com/trendtactics",
-        "https://youtube.com/trendtactics"
-      ],
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "telephone": "+234-800-000-0000",
-        "contactType": "customer service",
-        "areaServed": "NG, US, UK, CA",
-        "availableLanguage": ["English"]
-      }]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "url": "https://trendtacticsdigital.com/blog.html",
-      "name": "Blog - Trendtactics Digital",
-      "description": "Latest insights on digital marketing, web design, AI solutions, and growth strategies. Expert tips and industry trends from Trendtactics Digital."
-    }
-    </script>
-    <!-- Add dark mode toggle button to nav -->
     <style>
-        /* ===== BLOG PAGE HERO - REDESIGNED WITH DARK BACKGROUND ===== */
-        .blog-hero {
-            position: relative;
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        /* Blog Specific Premium Styles */
+
+        .blog-main-premium {
+
+            padding: 80px 0;
+
+            background: #ffffff;
+
+        }
+
+
+
+        .blog-grid-premium {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+            gap: 40px;
+
+        }
+
+
+
+        .blog-card-premium {
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
             overflow: hidden;
-            background: linear-gradient(135deg, #0A1E3F 0%, #162447 50%, #0A1E3F 100%);
-            min-height: 60vh;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+            transition: all 0.3s ease;
+
+            border: 1px solid #f1f5f9;
+
+        }
+
+
+
+        .blog-card-premium:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.1);
+
+        }
+
+
+
+        .blog-card-img {
+
+            height: 220px;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .blog-card-img img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+
+        .blog-card-content {
+
+            padding: 30px;
+
+        }
+
+
+
+        .blog-card-tag {
+
+            display: inline-block;
+
+            padding: 5px 15px;
+
+            background: rgba(0, 255, 255, 0.1);
+
+            color: #0A1E3F;
+
+            border-radius: 50px;
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .blog-card-content h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+
+            color: #0A1E3F;
+
+            line-height: 1.4;
+
+        }
+
+
+
+        .blog-card-content p {
+
+            color: #64748b;
+
+            font-size: 1rem;
+
+            margin-bottom: 20px;
+
+            line-height: 1.6;
+
+        }
+
+
+
+        .blog-meta-premium {
+
             display: flex;
+
             align-items: center;
-            padding: 120px 0 100px;
+
+            gap: 15px;
+
+            color: #94a3b8;
+
+            font-size: 0.85rem;
+
+            border-top: 1px solid #f1f5f9;
+
+            padding-top: 20px;
+
         }
 
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            animation: blogHeroPulse 8s ease-in-out infinite;
+
+
+        @media (max-width: 992px) {
+
+            .blog-layout-container {
+
+                flex-direction: column !important;
+
+            }
+
+            .blog-sidebar-layout {
+
+                width: 100% !important;
+
+            }
+
+        }
+    </style>
+
+
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
         }
 
-        .blog-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="blog-pattern-dark" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1.5" fill="%2300FFFF" opacity="0.12"/><circle cx="10" cy="10" r="0.8" fill="%230066FF" opacity="0.08"/><circle cx="40" cy="40" r="1" fill="%2300FFFF" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23blog-pattern-dark)"/></svg>');
-            opacity: 0.6;
-            pointer-events: none;
+        .goog-te-gadget img {
+
+            display: none !important;
+
         }
 
-        @keyframes blogHeroPulse {
+        .goog-te-gadget .goog-te-combo {
 
-            0%,
-            100% {
-                opacity: 1;
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+
+
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent
             }
 
             50% {
-                opacity: 0.8;
-            }
-        }
-
-        .blog-hero .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .blog-hero .hero-title {
-            color: #00FFFF !important;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-            text-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
-            position: relative;
-            display: inline-block;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-
-        .blog-hero .hero-title::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #00FFFF, transparent);
-            border-radius: 2px;
-            opacity: 0.6;
-        }
-
-        .blog-hero .hero-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, #0066FF, #00FFFF, #0066FF);
-            border-radius: 2px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-        }
-
-        .blog-hero .hero-subtitle {
-            color: #00FFFF !important;
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            max-width: 750px;
-            margin: 2.5rem auto 0;
-            opacity: 0.95;
-            line-height: 1.7;
-            font-weight: 400;
-            text-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
-        }
-
-        /* Floating decorative elements */
-        .blog-hero-decorative {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .blog-hero-shape {
-            position: absolute;
-            opacity: 0.2;
-            animation: blogFloatShape 12s ease-in-out infinite;
-        }
-
-        .blog-hero-shape.shape-1 {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.3), transparent);
-            border-radius: 50%;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .blog-hero-shape.shape-2 {
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.25), transparent);
-            border-radius: 50%;
-            bottom: 15%;
-            right: 15%;
-            animation-delay: 3s;
-        }
-
-        .blog-hero-shape.shape-3 {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
-            border-radius: 50%;
-            top: 50%;
-            right: 20%;
-            animation-delay: 6s;
-        }
-
-        @keyframes blogFloatShape {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) scale(1);
+                border-color: #00FFFF;
             }
 
-            33% {
-                transform: translateY(-30px) translateX(20px) scale(1.1);
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
             }
 
-            66% {
-                transform: translateY(20px) translateX(-15px) scale(0.9);
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
             }
-        }
 
-        /* Blog Main Layout - White Background */
-        .blog-main {
-            background: #ffffff;
-        }
+            .typewriter-text {
 
-        .blog-layout {
-            background: #ffffff !important;
-        }
+                max-width: 100%;
 
-        /* Blog Cards - White Theme */
-        .blog-card {
-            background: #ffffff !important;
-            border: 1.5px solid #e2e8f0 !important;
-            box-shadow: 0 4px 20px rgba(10, 30, 63, 0.08) !important;
-        }
+                overflow: hidden;
 
-        .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 102, 255, 0.15) !important;
-            border-color: #0066FF !important;
-        }
+                text-overflow: ellipsis;
 
-        .blog-card-content h3 {
-            color: #0A1E3F !important;
-        }
+            }
 
-        .blog-card-content p {
-            color: #4a5568 !important;
-        }
+            #google_translate_element_top .goog-te-combo {
 
-        .blog-card-content .post-meta {
-            color: #718096 !important;
-        }
+                width: 60px;
 
-        /* Featured Post - White Theme */
-        .featured-post-content {
-            background: #ffffff !important;
-            border: 1.5px solid #e2e8f0 !important;
-            box-shadow: 0 8px 30px rgba(10, 30, 63, 0.1) !important;
-        }
+                padding: 1px;
 
-        .featured-post-content:hover {
-            border-color: #0066FF !important;
-            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.2) !important;
-        }
+            }
 
-        .featured-post-text {
-            background: transparent !important;
-        }
 
-        .featured-post-text h2 {
-            color: #0A1E3F !important;
-        }
 
-        .featured-post-text p {
-            color: #4a5568 !important;
-        }
+            /* Hide Google Translate Logo */
 
-        .featured-post-text .post-meta {
-            color: #718096 !important;
-        }
+            .goog-te-gadget {
 
-        /* Sidebar - Keep but adjust for white theme */
-        .sidebar-section {
-            background: #f8f9fa !important;
-            border: 1px solid #e2e8f0 !important;
-        }
+                color: transparent !important;
 
-        .sidebar-section h4 {
-            color: #0A1E3F !important;
-        }
+                font-size: 0px !important;
 
-        .search-input {
-            background: #ffffff !important;
-            border: 1.5px solid #e2e8f0 !important;
-            color: #0A1E3F !important;
-        }
+            }
 
-        .search-input:focus {
-            border-color: #0066FF !important;
-            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1) !important;
-        }
+            .goog-te-gadget img {
 
-        .category-filter {
-            color: #4a5568 !important;
-        }
+                display: none !important;
 
-        .category-filter:hover,
-        .category-filter.active {
-            background: #0A1E3F !important;
-            color: #0066FF !important;
-        }
+            }
 
-        .recent-post-content h4 a {
-            color: #0A1E3F !important;
-        }
+            .goog-te-gadget .goog-te-combo {
 
-        .recent-post-content h4 a:hover {
-            color: #0066FF !important;
-        }
+                color: #cbd5e1 !important;
 
-        .recent-post-content .date {
-            color: #718096 !important;
-        }
+                background-color: #1e293b !important;
 
-        .newsletter-form input[type="email"] {
-            background: #ffffff !important;
-            border: 1.5px solid #e2e8f0 !important;
-            color: #0A1E3F !important;
-        }
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
 
-        .newsletter-form input[type="email"]:focus {
-            border-color: #0066FF !important;
-        }
+                border-radius: 4px;
 
-        /* Read More Button */
-        .read-more {
-            background: #0A1E3F !important;
-            color: #0066FF !important;
-            padding: 10px 20px !important;
-            border-radius: 8px !important;
-            font-weight: 600 !important;
-        }
+                padding: 3px 6px;
 
-        .read-more:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3) !important;
-        }
+                font-size: 0.8rem;
 
-        /* Category Badges */
-        .category-badge,
-        .category {
-            background: #0A1E3F !important;
-            color: #0066FF !important;
-        }
+                outline: none;
 
-        /* Post Stats */
-        .post-stats {
-            color: #718096 !important;
-        }
+                cursor: pointer;
 
-        .post-stats i {
-            color: #0066FF !important;
+            }
+
+            .goog-te-gadget .goog-te-combo:focus {
+
+                border-color: #00FFFF !important;
+
+            }
+
+
+
+            .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
         }
     </style>
+
 </head>
 
+
+
 <body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/">
-                    <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                        <div style="display: flex; gap: 2px; align-items: flex-end;">
-                            <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                            <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                            <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                        </div>
-                        <span
-                            style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                            Digital</span>
-                    </a>
-                </a>
+
+    <!-- Top Bar -->
+    <div class="top-bar-redesigned">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <i class="fas fa-bullhorn text-accent-cyan"></i>
+                <span id="typewriter-text" class="typewriter-text">Welcome to Trendtactics Digital</span>
             </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-
-                        </ul>
-                    </div>
-                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank" rel="noopener noreferrer">Academy</a>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link active">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+            <div class="top-bar-right">
+                <div class="social-icons-top">
+                    <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/trendtactics" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+                <a href="contact.html" class="top-book-call">
+                    <i class="fas fa-phone-alt"></i> Book a Call
+                </a>
+                
+                <a href="hub.html" class="top-get-started">Get Started</a>
             </div>
         </div>
+    </div>
+
+
+
+
+
+
+    <nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </nav>
 
-    <!-- Blog Hero Section -->
-    <section class="page-hero blog-hero">
+
+
+    <!-- Hero Section -->
+
+    <section class="service-page-hero-clean">
+
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Blog</h1>
-                <p class="hero-subtitle">Latest digital marketing tips, news, and case studies from Trendtactics
-                    Digital.</p>
+
+            <div class="service-hero-grid">
+
+                <div class="service-hero-content">
+
+                    <div class="service-hero-badge">Latest Insights</div>
+
+                    <h1 class="service-hero-title">Trendtactics <span class="text-gradient">Blog</span></h1>
+
+                    <p class="service-hero-subtitle">
+
+                        Expert perspectives on digital transformation, marketing strategy, and technological innovation.
+
+                        Stay ahead of the curve with our latest updates.
+
+                    </p>
+
+                    <div class="service-hero-actions">
+
+                        <a href="#articles" class="btn btn-primary btn-large">Read Articles</a>
+
+                    </div>
+
+                </div>
+
+                <div class="service-hero-image-wrapper">
+
+                    <img src="images/digital-marketing-parallex.jpg" alt="Blog Illustration" class="service-hero-img"
+                        loading="lazy">
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Blog Main Content -->
-    <main class="blog-main">
-        <div class="container blog-layout">
-            <!-- Blog Content Area -->
-            <div class="blog-content">
-                <!-- Featured Post -->
-                <div class="featured-post">
-                    <!-- Featured post will be loaded here -->
-                </div>
 
-                <!-- Blog Post Grid -->
-                <div class="blog-grid">
-                    <!-- Blog posts will be loaded here -->
-                </div>
 
-                <!-- Pagination -->
-                <div class="pagination">
-                    <!-- Pagination will be added if needed -->
-                </div>
-            </div>
+    <!-- Blog Section -->
 
-            <!-- Blog Sidebar -->
-            <aside class="blog-sidebar">
-                <!-- Ad Spot 1 - Top of Sidebar -->
-                <div class="sidebar-ad-spot ad-spot-top">
-                    <div class="ad-label">Advertisement</div>
-                    <div class="ad-container">
-                        <!-- Google AdSense or other ad code goes here -->
-                        <div class="ad-placeholder">
-                            <i class="fas fa-ad"></i>
-                            <p>Ad Space</p>
-                            <span>300x250</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="blog-main-premium" id="articles">
 
-                <div class="sidebar-section">
-                    <h4>Search</h4>
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search blog...">
-                        <div class="search-results" style="display: none;">
-                            <!-- Search results will appear here -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h4>Categories</h4>
-                    <ul class="categories-list">
-                        <!-- Categories will be loaded here -->
-                    </ul>
-                </div>
-
-                <div class="sidebar-section">
-                    <h4>Recent Posts</h4>
-                    <ul class="recent-posts-list">
-                        <!-- Recent posts will be loaded here -->
-                    </ul>
-                </div>
-
-                <!-- Ad Spot 2 - Middle of Sidebar -->
-                <div class="sidebar-ad-spot ad-spot-middle">
-                    <div class="ad-label">Sponsored</div>
-                    <div class="ad-container">
-                        <div class="ad-placeholder">
-                            <i class="fas fa-ad"></i>
-                            <p>Ad Space</p>
-                            <span>300x250</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ad Spot 3 - Bottom of Sidebar -->
-                <div class="sidebar-ad-spot ad-spot-bottom">
-                    <div class="ad-label">Advertisement</div>
-                    <div class="ad-container">
-                        <div class="ad-placeholder">
-                            <i class="fas fa-ad"></i>
-                            <p>Ad Space</p>
-                            <span>300x250</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </main>
-
-    <!-- Blog CTA Section -->
-    <section class="cta blog-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Stay Updated with Our Latest Insights</h2>
-                <p class="cta-subtitle">Get weekly digital marketing tips, industry updates, and exclusive content
-                    delivered to your inbox.</p>
-                <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large">Subscribe to Newsletter</a>
-                    <a href="https://academy.trendtacticsdigital.com" class="btn btn-outline btn-large" target="_blank" rel="noopener noreferrer">Join Our Academy</a>
-                </div>
+
+            <div class="wwo-header text-center mb-16">
+
+                <h2 class="premium-title">Featured Articles</h2>
+
+                <p class="premium-subtitle">Knowledge to power your business growth</p>
+
             </div>
+
+
+
+
+
+            <div class="blog-layout-container" style="display: flex; gap: 40px; align-items: flex-start;">
+
+                <div class="blog-main-content" style="flex: 1; min-width: 0;">
+
+                    <div class="blog-grid-premium"
+                        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
+
+
+
+                        <!-- Blog posts will be loaded here via React or manually if preferred -->
+
+                        <!-- For now, I'll place the static versions to ensure immediate premium look -->
+
+
+
+                        <!-- Post 1 -->
+
+                        <div class="blog-card-premium">
+
+                            <div class="blog-card-img">
+
+                                <img src="images/blog1.jpg" alt="Digital Marketing" loading="lazy">
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <div class="blog-card-tag">Marketing</div>
+
+                                <h3>Mastering Digital Marketing in 2026</h3>
+
+                                <p>Discover the core strategies that are driving massive growth for top-tier brands this
+                                    year.
+
+                                </p>
+
+                                <div class="blog-meta-premium">
+
+                                    <span><i class="far fa-calendar"></i> Oct 15, 2025</span>
+
+                                    <span><i class="far fa-clock"></i> 5 min read</span>
+
+                                </div>
+
+                                <a href="blog-post.html?id=1" class="btn btn-outline"
+                                    style="margin-top: 15px; display: inline-block;">Read More</a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Post 2 -->
+
+                        <div class="blog-card-premium">
+
+                            <div class="blog-card-img">
+
+                                <img src="images/blog2.jpg" alt="Web AI" loading="lazy">
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <div class="blog-card-tag">Technology</div>
+
+                                <h3>The Future of AI in Development</h3>
+
+                                <p>How artificial intelligence is reshaping the way we build, test, and deploy modern
+                                    web
+
+                                    applications.</p>
+
+                                <div class="blog-meta-premium">
+
+                                    <span><i class="far fa-calendar"></i> Oct 12, 2025</span>
+
+                                    <span><i class="far fa-clock"></i> 8 min read</span>
+
+                                </div>
+
+                                <a href="blog-post.html?id=2" class="btn btn-outline"
+                                    style="margin-top: 15px; display: inline-block;">Read More</a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Post 3 -->
+
+                        <div class="blog-card-premium">
+
+                            <div class="blog-card-img">
+
+                                <img src="images/blog3.jpg" alt="Branding" loading="lazy">
+
+                            </div>
+
+                            <div class="blog-card-content">
+
+                                <div class="blog-card-tag">Branding</div>
+
+                                <h3>Why Brand Identity Matters</h3>
+
+                                <p>A deep dive into why local businesses need a premium brand presence to compete in a
+                                    global
+
+                                    market.</p>
+
+                                <div class="blog-meta-premium">
+
+                                    <span><i class="far fa-calendar"></i> Oct 10, 2025</span>
+
+                                    <span><i class="far fa-clock"></i> 6 min read</span>
+
+                                </div>
+
+                                <a href="blog-post.html?id=3" class="btn btn-outline"
+                                    style="margin-top: 15px; display: inline-block;">Read More</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <aside class="blog-sidebar-layout"
+                    style="width: 350px; flex-shrink: 0; display: flex; flex-direction: column; gap: 40px;">
+
+                    <!-- Categories -->
+
+                    <div class="sidebar-widget"
+                        style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;">
+
+                        <h3
+                            style="font-size: 1.25rem; color: #0A1E3F; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid #00FFFF; padding-bottom: 10px; display: inline-block;">
+                            Categories</h3>
+
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+
+                            <li style="margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;"><a
+                                    href="#"
+                                    style="color: #4a5568; text-decoration: none; display: flex; justify-content: space-between;"><span>Marketing</span>
+                                    <span style="color: #00FFFF; font-weight: bold;">(12)</span></a></li>
+
+                            <li style="margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;"><a
+                                    href="#"
+                                    style="color: #4a5568; text-decoration: none; display: flex; justify-content: space-between;"><span>Technology</span>
+                                    <span style="color: #00FFFF; font-weight: bold;">(8)</span></a></li>
+
+                            <li style="margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;"><a
+                                    href="#"
+                                    style="color: #4a5568; text-decoration: none; display: flex; justify-content: space-between;"><span>Branding</span>
+                                    <span style="color: #00FFFF; font-weight: bold;">(5)</span></a></li>
+
+                            <li style="margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;"><a
+                                    href="#"
+                                    style="color: #4a5568; text-decoration: none; display: flex; justify-content: space-between;"><span>SEO
+                                        Content</span> <span style="color: #00FFFF; font-weight: bold;">(14)</span></a>
+                            </li>
+
+                            <li><a href="#"
+                                    style="color: #4a5568; text-decoration: none; display: flex; justify-content: space-between;"><span>Web
+                                        Design</span> <span style="color: #00FFFF; font-weight: bold;">(9)</span></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- Recent Posts -->
+
+                    <div class="sidebar-widget"
+                        style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;">
+
+                        <h3
+                            style="font-size: 1.25rem; color: #0A1E3F; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid #00FFFF; padding-bottom: 10px; display: inline-block;">
+                            Recent Posts</h3>
+
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+
+                            <a href="blog-post.html?id=1" style="display: flex; gap: 15px; text-decoration: none;">
+
+                                <img src="images/blog1.jpg" alt="Post"
+                                    style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;"
+                                    loading="lazy">
+
+                                <div>
+
+                                    <h4 style="color: #0A1E3F; font-size: 1rem; margin: 0 0 5px 0; line-height: 1.4;">
+                                        Mastering Digital Marketing in 2026</h4>
+
+                                    <span style="color: #94a3b8; font-size: 0.85rem;"><i class="far fa-calendar"></i>
+                                        Oct 15, 2025</span>
+
+                                </div>
+
+                            </a>
+
+                            <a href="blog-post.html?id=2" style="display: flex; gap: 15px; text-decoration: none;">
+
+                                <img src="images/blog2.jpg" alt="Post"
+                                    style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;"
+                                    loading="lazy">
+
+                                <div>
+
+                                    <h4 style="color: #0A1E3F; font-size: 1rem; margin: 0 0 5px 0; line-height: 1.4;">
+                                        The Future of AI in Development</h4>
+
+                                    <span style="color: #94a3b8; font-size: 0.85rem;"><i class="far fa-calendar"></i>
+                                        Oct 12, 2025</span>
+
+                                </div>
+
+                            </a>
+
+                            <a href="blog-post.html?id=3" style="display: flex; gap: 15px; text-decoration: none;">
+
+                                <img src="images/blog3.jpg" alt="Post"
+                                    style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;"
+                                    loading="lazy">
+
+                                <div>
+
+                                    <h4 style="color: #0A1E3F; font-size: 1rem; margin: 0 0 5px 0; line-height: 1.4;">
+                                        Why Brand Identity Matters</h4>
+
+                                    <span style="color: #94a3b8; font-size: 0.85rem;"><i class="far fa-calendar"></i>
+                                        Oct 10, 2025</span>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Newsletter Signup -->
+
+                    <div class="sidebar-widget"
+                        style="background: linear-gradient(135deg, #0A1E3F 0%, #1a365d 100%); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #fff; text-align: center;">
+
+                        <h3 style="font-size: 1.25rem; margin-bottom: 15px; font-weight: 700;">Subscribe to Newsletter
+                        </h3>
+
+                        <p
+                            style="font-size: 0.95rem; margin-bottom: 20px; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                            Get the latest digital marketing insights delivered to your inbox.</p>
+
+                        <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 10px;">
+
+                            <input type="email" placeholder="Enter your email" required
+                                style="padding: 12px 15px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; width: 100%;">
+
+                            <button type="submit" class="btn btn-primary"
+                                style="background: #00FFFF; color: #0A1E3F; font-weight: 700; padding: 12px; width: 100%; border-radius: 6px; border: none; cursor: pointer;">Subscribe</button>
+
+                        </form>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+
+            <!-- CTA Banner -->
+
+            <div class="wwo-cta-banner mt-16">
+
+                <div class="wwo-cta-content text-center">
+
+                    <h3>Subscribe to Our Insights</h3>
+
+                    <p>Get the latest digital growth strategies delivered to your inbox weekly.</p>
+
+                    <a href="contact.html" class="btn btn-primary btn-large wwo-btn">Join the Newsletter</a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- After Stay Updated with Our Latest Insights section -->
-    <div id="ebookPromoMarquee"
-        style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
-        <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business growth!
-            Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to buy now and
-            unlock your success! 🔥</marquee>
-    </div>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
-    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="/services#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
+    <footer class="footer site-footer">
 
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener noreferrer">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="container footer-container">
 
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                </div>
+            <div class="footer-col brand-col">
 
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved. info@trendtacticsdigital.com</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <link rel="stylesheet" href="/styles/about.css">
 
-    <!-- Scripts -->
-    <script src="/js/browser-compat.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/blog.js"></script>
-    <script src="/js/ad-management.js"></script>
 
-    <!-- Scroll to Top Functionality -->
+    <script src="js/main.js"></script>
+
+
+
+    
+
+    
+
     <script>
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
 
-        // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function () {
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-    </script>
-
-    <!-- Floating Language Selector -->
-    <div id="floating-translate-btn"
-        style="position:fixed;bottom:30px;left:30px;z-index:9999;display:flex;align-items:center;gap:8px;">
-        <button id="toggle-translate"
-            style="background:#0A1E3F;color:#00FFFF;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,30,63,0.18);cursor:pointer;font-size:1.6rem;transition:background 0.2s;">
-            <i class="fas fa-globe"></i>
-        </button>
-        <div id="floating-translate-widget" style="display:none;"></div>
-    </div>
-    <div id="google_translate_element" style="display:none;"></div>
-    <script>
-        // Move Google Translate widget into floating widget and toggle visibility
         document.addEventListener('DOMContentLoaded', function () {
-            var translateWidget = document.getElementById('google_translate_element');
-            var floatingWidget = document.getElementById('floating-translate-widget');
-            var toggleBtn = document.getElementById('toggle-translate');
-            if (translateWidget && floatingWidget && toggleBtn) {
-                floatingWidget.appendChild(translateWidget);
-                toggleBtn.addEventListener('click', function () {
-                    if (floatingWidget.style.display === 'none' || floatingWidget.style.display === '') {
-                        floatingWidget.style.display = 'block';
-                    } else {
-                        floatingWidget.style.display = 'none';
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
                     }
-                });
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
-    <!-- Add dark mode script at end of body -->
-    <script>
-        (function () {
-            const root = document.documentElement;
-            const darkClass = 'dark-mode';
-            const toggleBtn = document.getElementById('darkModeToggle');
-            function setDarkMode(enabled) {
-                if (enabled) {
-                    root.classList.add(darkClass);
-                    localStorage.setItem('ttDarkMode', '1');
-                    if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    root.classList.remove(darkClass);
-                    localStorage.setItem('ttDarkMode', '0');
-                    if (toggleBtn) toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
                 }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
             }
-            const saved = localStorage.getItem('ttDarkMode');
-            setDarkMode(saved === '1' || (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches));
-            if (toggleBtn) {
-                toggleBtn.onclick = function () {
-                    setDarkMode(!root.classList.contains(darkClass));
-                };
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
             }
-            const style = document.createElement('style');
-            style.textContent = `
-        .dark-mode, .dark-mode body { background: #0A1E3F !important; color: #fff !important; transition: background 0.4s, color 0.4s; }
-        .dark-mode .footer, .dark-mode .section, .dark-mode .blog-hero, .dark-mode .blog-section { background: #162447 !important; color: #fff !important; }
-        .dark-mode h1, .dark-mode h2, .dark-mode h3 { color: #00FFFF !important; }
-        .dark-mode .btn, .dark-mode .btn-primary, .dark-mode .btn-outline { background: #00FFFF !important; color: #0A1E3F !important; border-color: #00FFFF !important; }
-        .dark-mode .btn:hover, .dark-mode .btn-primary:hover, .dark-mode .btn-outline:hover { background: #0A1E3F !important; color: #00FFFF !important; }
-        .dark-mode input, .dark-mode textarea, .dark-mode select { background: #0A1E3F !important; color: #fff !important; border: 1px solid #00FFFF !important; }
-        .dark-mode .footer a { color: #00FFFF !important; }
-        .dark-mode .footer a:hover { color: #fff !important; }
-      `;
-            document.head.appendChild(style);
-        })();
+
+        });
+
     </script>
-    <!-- Add ARIA, alt text, and keyboard accessibility improvements to all forms, buttons, links, and icons as in tools.html -->
-    <script src="/js/chat-widget.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/newsletter.js" defer></script>
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
 
 </html>

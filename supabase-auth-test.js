@@ -17,7 +17,7 @@ async function testSupabaseConnection() {
     try {
         // Simple health check using Supabase client
         const { data, error } = await supabase.from('users').select('count').limit(1);
-        
+
         if (error) {
             console.log('Connection test result (may show auth error which is expected):');
             console.log('Error:', error.message);
@@ -37,7 +37,7 @@ async function testUserRegistration() {
             email: 'test@trendtacticsdigital.com',
             password: 'SecurePass123!'
         });
-        
+
         if (error) {
             console.log('Registration result:');
             console.log('Error:', error.message);
@@ -60,7 +60,7 @@ async function testUserLogin() {
             email: 'test@trendtacticsdigital.com',
             password: 'SecurePass123!'
         });
-        
+
         if (error) {
             console.log('Login result:');
             console.log('Error:', error.message);
@@ -83,7 +83,7 @@ async function testDirectFunctionCall(token) {
             console.log('No token provided - skipping direct function test');
             return;
         }
-        
+
         // Test calling your analyze-content function directly
         const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-content`, {
             method: 'POST',
@@ -96,7 +96,7 @@ async function testDirectFunctionCall(token) {
                 contentType: 'text'
             })
         });
-        
+
         const result = await response.json();
         console.log('Function call result:');
         console.log('Status:', response.status);
@@ -108,24 +108,24 @@ async function testDirectFunctionCall(token) {
 
 async function runAllTests() {
     console.log('🚀 Starting Supabase Authenticated Tests\n');
-    
+
     // Test 1: Basic connection
     await testSupabaseConnection();
-    
+
     // Test 2: User registration
     const token = await testUserRegistration();
-    
+
     // Test 3: User login (alternative)
     const loginToken = token ? null : await testUserLogin();
-    
+
     // Use whichever token we got
     const authToken = token || loginToken;
-    
+
     // Test 4: Direct function call with token
     if (authToken) {
         await testDirectFunctionCall(authToken);
     }
-    
+
     console.log('\n🏁 All tests completed!');
     console.log('\n📝 Next steps:');
     console.log('1. Get your ANON_KEY and SERVICE_KEY from Supabase Dashboard');

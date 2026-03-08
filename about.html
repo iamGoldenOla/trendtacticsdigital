@@ -1,967 +1,2355 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About Us - Trendtactics Digital</title>
+
     <meta name="description"
         content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+
     <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
+
     <meta name="author" content="Akinola Olujobi">
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="About Us - Trendtactics Digital">
+
     <meta property="og:description"
         content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com/about">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
+
     <!-- Twitter Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta name="twitter:title" content="About Us - Trendtactics Digital">
+
     <meta name="twitter:description"
         content="Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide.">
+
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- React CDN -->
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/about.css?v=horizon1">
-    <link rel="stylesheet" href="/styles/images.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+
+    <!-- <script>
+
         window.dataLayer = window.dataLayer || [];
+
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+
+        gtag(\'js\', new Date());
+
+        gtag(\'config\', \'GA_MEASUREMENT_ID\');
+
+    </script> -->
+
     <!-- JSON-LD Structured Data -->
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "Organization",
+
       "name": "Trendtactics Digital",
+
       "url": "https://trendtacticsdigital.com/",
+
       "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
+
       "sameAs": [
+
         "https://linkedin.com/company/trendtactics-digital",
+
         "https://twitter.com/trendtactics",
+
         "https://instagram.com/trendtactics",
+
         "https://facebook.com/trendtactics",
+
         "https://youtube.com/trendtactics"
+
       ],
+
       "contactPoint": [{
+
         "@type": "ContactPoint",
+
         "telephone": "+234-800-000-0000",
+
         "contactType": "customer service",
+
         "areaServed": "NG, US, UK, CA",
+
         "availableLanguage": ["English"]
+
       }]
+
     }
+
     </script>
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "WebPage",
+
       "url": "https://trendtacticsdigital.com/about.html",
+
       "name": "About Us - Trendtactics Digital",
+
       "description": "Learn about Trendtactics Digital - our story, mission, team, and commitment to engineering digital growth for businesses worldwide."
+
     }
+
     </script>
+
     <style>
-        /* ===== 3D HERO EFFECTS FOR ABOUT PAGE ===== */
-        .page-hero {
-            position: relative;
-            overflow: hidden;
-            perspective: 1000px;
+        /* Custom padding for redesigned hero to account for fixed navbar */
+
+        .about-hero-redesigned {
+
+            padding-top: 140px;
+
+            background: #ffffff !important;
+
         }
 
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(64, 224, 208, 0.15) 0%, transparent 50%),
-                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
-            animation: heroRotate 20s linear infinite;
-            transform-style: preserve-3d;
+
+
+        .hero-title-main {
+
+            color: #0A1E3F !important;
+
+            font-weight: 800;
+
         }
 
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="about-3d" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%2300FFFF" opacity="0.1"/><circle cx="5" cy="5" r="1" fill="%2340E0D0" opacity="0.08"/><circle cx="35" cy="35" r="1.5" fill="%2300FFFF" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23about-3d)"/></svg>');
-            opacity: 0.4;
-            animation: heroFloat 15s ease-in-out infinite;
+
+
+        .text-accent-navy {
+
+            color: #0A1E3F !important;
+
         }
 
-        /* 3D Floating Shapes */
-        .hero-3d-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
+
+
+        .btn-hero-primary {
+
+            background: #0A1E3F !important;
+
+            color: #fadb24 !important;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            display: inline-block;
+
+            transition: all 0.3s ease;
+
+            box-shadow: none !important;
+
         }
 
-        .shape-3d {
-            position: absolute;
-            opacity: 0.3;
-            animation: float3D 20s ease-in-out infinite;
+
+
+        .btn-hero-primary:hover {
+
+            background: #1a2e4f !important;
+
+            transform: translateY(-3px);
+
         }
 
-        .shape-3d.shape-1 {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(64, 224, 208, 0.2));
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            top: 10%;
-            left: 10%;
-            transform: rotateZ(45deg);
-            animation-delay: 0s;
+
+
+        .btn-hero-outline {
+
+            border: 2px solid #0A1E3F !important;
+
+            color: #0A1E3F !important;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            display: inline-block;
+
+            transition: all 0.3s ease;
+
+            margin-left: 15px;
+
         }
 
-        .shape-3d.shape-2 {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.3), rgba(0, 255, 255, 0.2));
-            border-radius: 50%;
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
+
+
+        .btn-hero-outline:hover {
+
+            background: #0A1E3F !important;
+
+            color: #fadb24 !important;
+
         }
 
-        .shape-3d.shape-3 {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.25), rgba(10, 30, 63, 0.3));
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
+
+
+        .trust-badge-new {
+
+            background: #f1f5f9 !important;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+
         }
 
-        .shape-3d.shape-4 {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.3), rgba(0, 255, 255, 0.2));
-            border-radius: 20px;
-            top: 30%;
-            right: 30%;
-            transform: rotateZ(45deg);
-            animation-delay: 6s;
+
+
+        .trust-badge-new i {
+
+            color: #0A1E3F !important;
+
         }
 
-        @keyframes heroRotate {
-            0% {
-                transform: rotate(0deg) translateZ(0);
-            }
 
-            100% {
-                transform: rotate(360deg) translateZ(0);
-            }
-        }
 
-        @keyframes heroFloat {
+        .trust-badge-new span {
 
-            0%,
-            100% {
-                transform: translateY(0) translateZ(0);
-            }
+            color: #475569 !important;
 
-            50% {
-                transform: translateY(-20px) translateZ(10px);
-            }
-        }
+            font-weight: 600;
 
-        @keyframes float3D {
+            font-size: 0.9rem;
 
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
-            }
-
-            25% {
-                transform: translateY(-30px) translateX(20px) rotateZ(90deg) translateZ(20px);
-            }
-
-            50% {
-                transform: translateY(-60px) translateX(-20px) rotateZ(180deg) translateZ(40px);
-            }
-
-            75% {
-                transform: translateY(-30px) translateX(10px) rotateZ(270deg) translateZ(20px);
-            }
-        }
-
-        .page-hero {
-            padding-top: 70px; /* Account for navbar height */
-        }
-        
-        .page-hero .hero-content {
-            position: relative;
-            z-index: 2;
-            transform-style: preserve-3d;
-        }
-
-        .page-hero .hero-title {
-            transform: translateZ(50px);
-            text-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
-        }
-
-        .page-hero .hero-subtitle {
-            transform: translateZ(30px);
         }
     </style>
+
+
+
+    <style>
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255, 255, 255, 0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+    </style>
+
+
+
+    <style>
+        /* --- WHITE BACKGROUND UI REFINEMENTS --- */
+
+        .pricing-hero,
+
+        .portfolio-hero,
+
+        .contact-hero,
+
+        .resource-hero,
+
+        .auth-hero,
+
+        .about-hero {
+
+            background: #ffffff !important;
+
+            color: #0A1E3F !important;
+
+            border-bottom: 1px solid #e2e8f0;
+
+        }
+
+
+
+        .pricing-hero-title,
+
+        .portfolio-hero-title,
+
+        .contact-hero-title,
+
+        .resource-hero-title,
+
+        .auth-hero-title,
+
+        .about-title {
+
+            color: #0A1E3F !important;
+
+        }
+
+
+
+        .pricing-hero-subtitle,
+
+        .portfolio-hero-subtitle,
+
+        .contact-hero-subtitle,
+
+        .resource-hero-subtitle,
+
+        .auth-hero-subtitle,
+
+        .about-subtitle {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+        .pricing-hero-badge,
+
+        .portfolio-hero-badge,
+
+        .contact-hero-badge,
+
+        .resource-hero-badge,
+
+        .auth-hero-badge,
+
+        .about-badge {
+
+            background: rgba(10, 30, 63, 0.05) !important;
+
+            border-color: rgba(10, 30, 63, 0.1) !important;
+
+            color: #0088cc !important;
+
+        }
+
+
+
+        .pricing-stat-item .stat-label {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+        .pricing-stat-item .stat-number {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+
+
+        /* Hide dark mode decorative background patterns */
+
+        .pricing-hero-background,
+
+        .pricing-hero-pattern,
+
+        .portfolio-hero-pattern,
+
+        .floating-icon {
+
+            display: none !important;
+
+        }
+    </style>
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+    </style>
+
+
+
+    <style>
+        @media (min-width: 993px) {
+
+            .philosophy-layout {
+
+                display: flex !important;
+
+                flex-direction: row-reverse !important;
+
+                gap: 50px;
+
+                align-items: center;
+
+            }
+
+            .philosophy-layout>div {
+
+                flex: 1;
+
+                /* Ensure they take equal space */
+
+            }
+
+        }
+    </style>
+
 </head>
 
+
+
 <body>
+
     <nav id="navigation" class="navbar">
+
         <div class="nav-container">
+
             <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
                 </a>
+
             </div>
+
             <div class="nav-actions">
+
                 <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link active">About</a>
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
                                 style="font-size:0.8em;margin-left:6px;"></i></a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
 
                         </ul>
+
                     </div>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
 
                         </ul>
+
                     </div>
-                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank" rel="noopener noreferrer">Academy</a>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
+                        </ul>
+                    </div>
+
                 </div>
+
                 <div class="nav-toggle" id="nav-toggle">
+
                     <span></span>
+
                     <span></span>
+
                     <span></span>
+
                 </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+
             </div>
+
         </div>
+
     </nav>
 
+
+
     <!-- Main Content -->
+
     <main>
-        <!-- Hero Section -->
-        <section class="page-hero">
-            <div class="hero-3d-shapes">
-                <div class="shape-3d shape-1"></div>
-                <div class="shape-3d shape-2"></div>
-                <div class="shape-3d shape-3"></div>
-                <div class="shape-3d shape-4"></div>
-            </div>
+
+        <!-- Redesigned Hero Section -->
+
+        <section class="about-hero-redesigned" style="background: #ffffff; color: #0A1E3F;">
+
+
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">About Trendtactics Digital</h1>
-                    <p class="hero-subtitle">
-                        We don't just market brands — we engineer digital growth.
-                        Discover our story, mission, and the team behind your success.
-                    </p>
+
+                <div class="hero-layout">
+
+                    <!-- Left: Content Container -->
+
+                    <div class="hero-content-left">
+
+                        <div class="trust-badge-new">
+
+                            <i class="fas fa-check-circle"></i>
+
+                            <span>Trusted by 10,000+ customers</span>
+
+                        </div>
+
+
+
+                        <h1 class="hero-title-main">
+
+                            Transform Your <span class="text-accent-navy">Business</span> Today
+
+                        </h1>
+
+
+
+                        <p class="hero-description-main" style="color: #4a5568; font-size: 1.25rem;">
+
+                            The complete solution for modern businesses. Streamline your workflow, boost productivity,
+
+                            and achieve your goals faster than ever before.
+
+                        </p>
+
+
+
+                        <div class="hero-actions-main">
+
+                            <a href="services.html" class="btn-hero-primary">
+
+                                Start Free Trial <i class="fas fa-arrow-right"></i>
+
+                            </a>
+
+                            <a href="portfolio.html" class="btn-hero-outline">
+
+                                <i class="fas fa-play"></i> Watch Demo
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="hero-metrics-main">
+
+                            <div class="metric-item">
+
+                                <span class="metric-value" style="color: #0A1E3F;">99%</span>
+
+                                <span class="metric-label" style="color: #718096;">Customer
+
+                                    Satisfaction</span>
+
+                            </div>
+
+                            <div class="metric-divider" style="background: rgba(255,255,255,0.2);"></div>
+
+                            <div class="metric-item">
+
+                                <span class="metric-value" style="color: #0A1E3F;">24/7</span>
+
+                                <span class="metric-label" style="color: #718096;">Support
+
+                                    Available</span>
+
+                            </div>
+
+                            <div class="metric-divider" style="background: rgba(255,255,255,0.2);"></div>
+
+                            <div class="metric-item">
+
+                                <span class="metric-value" style="color: #0A1E3F;">50+</span>
+
+                                <span class="metric-label" style="color: #718096;">Integrations</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Right: Visual Container -->
+
+                    <div class="hero-visual-right">
+
+                        <div class="visual-wrapper" style="max-height: 400px; max-width: 450px;">
+
+                            <div class="main-image-frame"
+                                style="border: 2px solid rgba(0,255,255,0.3); box-shadow: 0 20px 50px rgba(0,255,255,0.15);">
+
+                                <img src="images/professional-ceo.png" alt="Akinola Olujobi - CEO" class="hero-main-img"
+                                    style="object-fit:cover; height:400px; width:100%;" loading="lazy">
+
+                            </div>
+
+
+
+                            <!-- Floating Cards Removed -->
+
+
+
+                            <div class="visual-glow-effect"></div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Company Story (Modern Horizon V3) -->
-        <section class="story-horizon" id="our-story">
+
+        <section class="story-horizon" id="our-story" style="background: #ffffff; padding: 40px 0 100px;">
+
             <div class="container">
+
                 <div class="horizon-wrapper">
+
                     <!-- Dominant Image Side -->
+
                     <div class="horizon-image-container">
+
                         <div class="horizon-glow"></div>
-                        <img src="/images/still-life-book-hero-section.webp" alt="Trendtactics Journey" loading="lazy"
-                            decoding="async">
-                        <div class="horizon-badge">
+
+                        <img src="images/still-life-book-hero-section.webp" alt="Trendtactics Journey" loading="lazy"
+                            decoding="async" style="border-radius: 20px; box-shadow: none;">
+
+                        <div class="horizon-badge" style="background: #0A1E3F; color: #ffffff;">
+
                             <span class="h-badge-year">2020</span>
+
                             <span class="h-badge-text">ESTABLISHED</span>
+
                         </div>
+
                     </div>
+
+
 
                     <!-- Overlapping Content Side -->
-                    <div class="horizon-content-card">
-                        <h2 class="horizon-title">Our Story</h2>
+
+                    <div class="horizon-content-card"
+                        style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 40px; box-shadow: none;">
+
+                        <h2 class="horizon-title" style="color: #0A1E3F;">Our Story</h2>
+
                         <div class="horizon-text">
-                            <p>
+
+                            <p style="color: #4a5568;">
+
                                 Founded in 2020 by Akinola Olujobi, <span class="text-gradient">Trendtactics
+
                                     Digital</span> emerged from a bold vision: to democratize world-class digital
+
                                 expertise.
+
                             </p>
-                            <p>
+
+                            <p style="color: #4a5568;">
+
                                 What started as a solo mission in Lagos is now a global powerhouse. We don't just build
+
                                 websites; we engineer digital ecosystems that drive growth.
+
                             </p>
+
                         </div>
+
+
 
                         <div class="horizon-stats">
+
                             <div class="h-stat">
-                                <span class="hs-num">50+</span>
-                                <span class="hs-label">Projects</span>
+
+                                <span class="hs-num"
+                                    style="background: none !important; -webkit-text-fill-color: #00FFFF !important; color: #00FFFF !important;">50+</span>
+
+                                <span class="hs-label" style="color: #718096;">Projects Completed</span>
+
                             </div>
+
                             <div class="h-stat">
-                                <span class="hs-num">98%</span>
-                                <span class="hs-label">Satisfaction</span>
+
+                                <span class="hs-num"
+                                    style="background: none !important; -webkit-text-fill-color: #00FFFF !important; color: #00FFFF !important;">98%</span>
+
+                                <span class="hs-label" style="color: #718096;">Client Satisfaction</span>
+
                             </div>
+
                             <div class="h-stat">
-                                <span class="hs-num">3+</span>
-                                <span class="hs-label">Years</span>
+
+                                <span class="hs-num"
+                                    style="background: none !important; -webkit-text-fill-color: #00FFFF !important; color: #00FFFF !important;">3x</span>
+
+                                <span class="hs-label" style="color: #718096;">Average ROI Increase</span>
+
                             </div>
+
                             <div class="h-stat">
-                                <span class="hs-num">200%</span>
-                                <span class="hs-label">ROI</span>
+
+                                <span class="hs-num"
+                                    style="background: none !important; -webkit-text-fill-color: #00FFFF !important; color: #00FFFF !important;">24/7</span>
+
+                                <span class="hs-label" style="color: #718096;">Support Available</span>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Mission & Vision -->
-        <section class="mission-vision content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/digital-marketing-parallex.jpg" type="image/jpeg">
-                    <img src="/images/digital-marketing-parallex.jpg" alt="Mission and Vision" loading="lazy"
-                        decoding="async" class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="mv-grid">
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <i class="fas fa-rocket"></i>
+
+
+        <!-- Consolidated Brand Philosophy Section -->
+
+        <section class="about-philosophy-redesigned" style="background: #ffffff; padding: 100px 0;">
+
+            <div class="container relative-z">
+
+                <div class="philosophy-layout">
+
+                    <!-- Left: CEO / Founder Feature -->
+
+                    <div class="ceo-feature">
+
+                        <div class="ceo-image-container">
+
+                            <div class="ceo-frame-accent" style="border-color: #00FFFF;"></div>
+
+                            <img src="images/akinola.jpg.jpg" alt="Akinola Olujobi - Founder & CEO" class="ceo-img"
+                                style="border-radius: 20px; box-shadow: none !important; opacity: 1 !important; filter: none !important;"
+                                loading="lazy">
+
+                            <div class="ceo-label"
+                                style="background: #0A1E3F; color: #00FFFF; opacity: 1 !important; visibility: visible !important; padding: 10px 15px; border-radius: 8px; bottom: 15px; left: 15px; right: auto; min-width: 150px; box-shadow: none !important;">
+
+                                <span class="ceo-name"
+                                    style="color: #ffffff; font-size: 1rem; margin-bottom: 2px;">Akinola Olujobi</span>
+
+                                <span class="ceo-title" style="color: #00FFFF !important; font-size: 0.8rem;">Founder &
+
+                                    CEO</span>
+
+                            </div>
+
                         </div>
-                        <h3>Our Mission</h3>
-                        <p>
-                            To democratize access to world-class digital marketing by providing innovative,
-                            data-driven solutions that drive real business growth for companies of all sizes.
-                        </p>
+
                     </div>
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <i class="fas fa-mountain"></i>
+
+
+
+                    <!-- Right: Mission, Vision & Values (Compact Tabbed Interface) -->
+
+                    <div class="philosophy-content">
+
+                        <div class="philosophy-tabs-container">
+
+                            <div class="philosophy-tabs-nav">
+
+                                <button class="tab-btn active" data-tab="mission"
+                                    style="background: #0A1E3F; color: #ffffff;">
+
+                                    <span class="tab-number"
+                                        style="color: #00FFFF !important; opacity: 1 !important;">01</span>
+
+                                    <span class="tab-text"
+                                        style="color: #ffffff !important; opacity: 1 !important; visibility: visible !important;">Mission</span>
+
+                                </button>
+
+                                <button class="tab-btn" data-tab="vision" style="background: #0A1E3F; color: #ffffff;">
+
+                                    <span class="tab-number"
+                                        style="color: #00FFFF !important; opacity: 1 !important;">02</span>
+
+                                    <span class="tab-text"
+                                        style="color: #ffffff !important; opacity: 1 !important; visibility: visible !important;">Vision</span>
+
+                                </button>
+
+                                <button class="tab-btn" data-tab="values" style="background: #0A1E3F; color: #ffffff;">
+
+                                    <span class="tab-number"
+                                        style="color: #00FFFF !important; opacity: 1 !important;">03</span>
+
+                                    <span class="tab-text"
+                                        style="color: #ffffff !important; opacity: 1 !important; visibility: visible !important;">Values</span>
+
+                                </button>
+
+                            </div>
+
+
+
+                            <div class="philosophy-tabs-content"
+                                style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 30px; box-shadow: none;">
+
+                                <!-- Mission Tab -->
+
+                                <div id="tab-mission" class="tab-panel active">
+
+                                    <div class="panel-header">
+
+                                        <div class="dna-icon" style="background: #0A1E3F; color: #00FFFF;"><i
+                                                class="fas fa-rocket"></i></div>
+
+                                        <h3 style="color: #0A1E3F;">Our Mission</h3>
+
+                                    </div>
+
+                                    <p style="color: #4a5568;">To democratize access to world-class digital marketing by
+
+                                        providing innovative,
+
+                                        data-driven solutions that drive real business growth with AI-powered
+
+                                        efficiency.</p>
+
+                                    <div class="tab-accent-line line-red" style="background: #ff4d4d;"></div>
+
+                                </div>
+
+
+
+                                <!-- Vision Tab -->
+
+                                <div id="tab-vision" class="tab-panel">
+
+                                    <div class="panel-header">
+
+                                        <div class="dna-icon" style="background: #0A1E3F; color: #00FFFF;"><i
+                                                class="fas fa-mountain"></i></div>
+
+                                        <h3 style="color: #0A1E3F;">Our Vision</h3>
+
+                                    </div>
+
+                                    <p style="color: #4a5568;">To be the leading global partner for ambitious businesses
+
+                                        worldwide, engineering
+
+                                        digital
+
+                                        ecosystems that set the standard for excellence, innovation, and sustainable
+
+                                        scaling.</p>
+
+                                    <div class="tab-accent-line line-gold" style="background: #ffd700;"></div>
+
+                                </div>
+
+
+
+                                <!-- Values Tab -->
+
+                                <div id="tab-values" class="tab-panel">
+
+                                    <div class="panel-header">
+
+                                        <div class="dna-icon" style="background: #0A1E3F; color: #00FFFF;"><i
+                                                class="fas fa-shield-alt"></i></div>
+
+                                        <h3 style="color: #0A1E3F;">Our Core Values</h3>
+
+                                    </div>
+
+                                    <ul class="values-list-compact">
+
+                                        <li style="color: #4a5568;"><i class="fas fa-check" style="color: #00FFFF;"></i>
+
+                                            Excellence in engineering</li>
+
+                                        <li style="color: #4a5568;"><i class="fas fa-check" style="color: #00FFFF;"></i>
+
+                                            Innovation through Strategy</li>
+
+                                        <li style="color: #4a5568;"><i class="fas fa-check" style="color: #00FFFF;"></i>
+
+                                            Absolute Transparency</li>
+
+                                        <li style="color: #4a5568;"><i class="fas fa-check" style="color: #00FFFF;"></i>
+
+                                            Scalable Brand Growth</li>
+
+                                    </ul>
+
+                                    <div class="tab-accent-line line-cyan" style="background: #00FFFF;"></div>
+
+                                </div>
+
+                            </div>
+
                         </div>
-                        <h3>Our Vision</h3>
-                        <p>
-                            To be the leading digital growth partner for ambitious businesses worldwide,
-                            known for delivering exceptional results through creativity, technology, and
-                            strategic thinking.
-                        </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Values -->
-        <section class="values content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/service-parallex.jpg" type="image/jpeg">
-                    <img src="/images/service-parallex.jpg" alt="Our Core Values" loading="lazy" decoding="async"
-                        class="image-filter-darken">
-                </picture>
+
+
+        <!-- Redesigned USP Section: Parallax & Flat Design -->
+
+        <section class="about-usp-parallax"
+            style="background-image: url('images/image5.jpg'); background-attachment: fixed; background-size: cover; background-position: center; padding: 120px 0; position: relative;">
+
+            <div
+                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 30, 63, 0.85); z-index: 1;">
+
             </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2>Our Core Values</h2>
-                    <p>These principles guide everything we do and every decision we make.</p>
+
+            <div class="container" style="position: relative; z-index: 2;">
+
+                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+
+                    <span class="section-badge"
+                        style="background: rgba(0, 255, 255, 0.1); color: #00FFFF; border: 1px solid rgba(0, 255, 255, 0.2); display: inline-block; padding: 6px 16px; border-radius: 50px; font-weight: 600; margin-bottom: 15px;">Why
+
+                        We Lead</span>
+
+                    <h2 class="section-title"
+                        style="color: #ffffff; font-size: 3rem; font-weight: 800; margin-bottom: 15px;">
+
+                        What Makes <span class="text-accent-cyan" style="color: #00FFFF;">Us Different</span>
+
+                    </h2>
+
+                    <p class="section-subtitle"
+                        style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
+
+                        A unique blend of strategy, technology, and creativity.
+
+                    </p>
+
                 </div>
-                <div class="values-grid" id="values-grid">
-                    <!-- Values will be loaded from JSON -->
+
+
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                    <!-- Card 1 -->
+
+                    <div class="service-card-flat"
+                        style="background: #ffffff; padding: 40px; text-align: left; transition: transform 0.3s ease;">
+
+                        <div class="card-icon" style="color: #0A1E3F; font-size: 2.5rem; margin-bottom: 20px;">
+
+                            <i class="fas fa-robot"></i>
+
+                        </div>
+
+                        <h3 style="color: #0A1E3F; font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">AI-Powered
+
+                            Marketing</h3>
+
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 0;">We leverage cutting-edge AI to
+
+                            predict trends and automate growth for superior ROI.</p>
+
+                    </div>
+
+
+
+                    <!-- Card 2 -->
+
+                    <div class="service-card-flat"
+                        style="background: #ffffff; padding: 40px; text-align: left; transition: transform 0.3s ease;">
+
+                        <div class="card-icon" style="color: #0A1E3F; font-size: 2.5rem; margin-bottom: 20px;">
+
+                            <i class="fas fa-chart-bar"></i>
+
+                        </div>
+
+                        <h3 style="color: #0A1E3F; font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">
+
+                            Data-Driven Strategies</h3>
+
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 0;">Every decision we make is backed
+
+                            by real-time analytics and rigorous testing.</p>
+
+                    </div>
+
+
+
+                    <!-- Card 3 -->
+
+                    <div class="service-card-flat"
+                        style="background: #ffffff; padding: 40px; text-align: left; transition: transform 0.3s ease;">
+
+                        <div class="card-icon" style="color: #0A1E3F; font-size: 2.5rem; margin-bottom: 20px;">
+
+                            <i class="fas fa-trophy"></i>
+
+                        </div>
+
+                        <h3 style="color: #0A1E3F; font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">Proven
+
+                            Results</h3>
+
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 0;">Over 10,000 satisfied customers
+
+                            and hundreds of successful brand transformations.</p>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- USP Section: What Makes Us Different -->
-        <section class="usp-section-redesigned content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/web-deve-parallex.jpg" type="image/jpeg">
-                    <img src="/images/web-deve-parallex.jpg" alt="What Makes Us Different" loading="lazy"
-                        decoding="async" class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2 class="section-title">What Makes Us Different</h2>
-                    <p class="section-subtitle">Our unique approach combines cutting-edge technology with proven
-                        strategies to deliver exceptional results.</p>
-                </div>
 
-                <div class="usp-grid-redesigned">
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>AI-Powered Marketing</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
 
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-chart-bar"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>Data-Driven Strategies</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
 
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>Proven Results</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
-
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>Full-Service Solutions</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
-
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>Customer-Centric Approach</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
-
-                    <div class="usp-card-redesigned">
-                        <div class="usp-card-inner">
-                            <div class="usp-icon-wrapper">
-                                <div class="usp-icon-bg"></div>
-                                <div class="usp-icon-redesigned">
-                                    <i class="fas fa-user-graduate"></i>
-                                </div>
-                            </div>
-                            <div class="usp-content">
-                                <h3>Expert Team</h3>
-                            </div>
-                            <div class="usp-accent-line"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section class="timeline content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/resources-parallelx.jpg" type="image/jpeg">
-                    <img src="/images/resources-parallelx.jpg" alt="Our Journey" loading="lazy" decoding="async"
-                        class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2>Our Journey</h2>
-                    <p>Key milestones in our growth story.</p>
-                </div>
-                <div class="timeline-container" id="timeline-container">
-                    <!-- Timeline will be loaded from JSON -->
-                </div>
-            </div>
-        </section>
 
         <!-- Team -->
-        <section class="team">
+
+        <section class="team" style="background: #ffffff; padding: 100px 0;">
+
             <div class="container">
+
                 <div class="section-header">
-                    <h2>Meet Our Team</h2>
-                    <p>The brilliant minds behind your digital success.</p>
+
+                    <h2 style="color: #0A1E3F;">Meet Our Team</h2>
+
+                    <p style="color: #4a5568 !important; opacity: 1 !important; visibility: visible !important;">The
+
+                        brilliant minds behind your digital success.</p>
+
                 </div>
+
                 <div class="team-grid">
+
                     <div class="team-member">
-                        <div class="member-image founder-image">
-                            <img src="/images/akinola.jpg.jpg" alt="Akinola Olujobi - Founder & CEO" loading="lazy">
-                        </div>
+
+                        <div class="member-image member-initials"
+                            style="background: #0A1E3F; color: #00FFFF !important; -webkit-text-fill-color: #00FFFF !important; opacity: 1 !important;">
+
+                            AO</div>
+
                         <div class="member-info">
+
                             <h3 class="member-name">Akinola Olujobi</h3>
+
                             <div class="member-position">Founder & CEO</div>
+
                             <p class="member-bio">Digital marketing expert with 10+ years of experience helping brands
+
                                 grow online. Passionate about democratizing access to world-class digital solutions.</p>
+
                             <div class="member-social">
+
                                 <a href="https://linkedin.com/in/akinola-olujobi" target="_blank"
                                     rel="noopener noreferrer" class="social-link">
+
                                     <i class="fab fa-linkedin"></i>
+
                                 </a>
+
                                 <a href="https://twitter.com/akinola_olujobi" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-twitter"></i>
+
                                 </a>
+
                                 <a href="https://instagram.com/akinola_olujobi" target="_blank"
                                     rel="noopener noreferrer" class="social-link">
+
                                     <i class="fab fa-instagram"></i>
+
                                 </a>
+
                                 <a href="https://facebook.com/akinola.olujobi" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-facebook"></i>
+
                                 </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+
                     <div class="team-member">
-                        <div class="member-image">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=faces"
-                                alt="Sarah Johnson - Creative Director" loading="lazy">
-                        </div>
+
+                        <div class="member-image member-initials"
+                            style="background: #0A1E3F; color: #00FFFF !important; -webkit-text-fill-color: #00FFFF !important; opacity: 1 !important;">
+
+                            SJ</div>
+
                         <div class="member-info">
+
                             <h3 class="member-name">Sarah Johnson</h3>
+
                             <div class="member-position">Creative Director</div>
+
                             <p class="member-bio">Award-winning designer passionate about creating beautiful, functional
+
                                 digital experiences that drive results and delight users.</p>
+
                             <div class="member-social">
+
                                 <a href="https://linkedin.com/in/sarah-johnson" target="_blank"
                                     rel="noopener noreferrer" class="social-link">
+
                                     <i class="fab fa-linkedin"></i>
+
                                 </a>
+
                                 <a href="https://twitter.com/sarah_johnson" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-twitter"></i>
+
                                 </a>
+
                                 <a href="https://instagram.com/sarah_johnson" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-instagram"></i>
+
                                 </a>
+
                                 <a href="https://facebook.com/sarah.johnson" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-facebook"></i>
+
                                 </a>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="team-member">
-                        <div class="member-image">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-                                alt="Michael Chen - Technical Lead" loading="lazy">
-                        </div>
+
+                        <div class="member-image member-initials"
+                            style="background: #0A1E3F; color: #00FFFF !important; -webkit-text-fill-color: #00FFFF !important; opacity: 1 !important;">
+
+                            MC</div>
+
                         <div class="member-info">
+
                             <h3 class="member-name">Michael Chen</h3>
+
                             <div class="member-position">Technical Lead</div>
+
                             <p class="member-bio">Full-stack developer specializing in modern web technologies and AI
+
                                 integration. Expert in building scalable, high-performance solutions.</p>
+
                             <div class="member-social">
+
                                 <a href="https://linkedin.com/in/michael-chen" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-linkedin"></i>
+
                                 </a>
+
                                 <a href="https://github.com/michaelchen" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-github"></i>
+
                                 </a>
+
                                 <a href="https://instagram.com/michael_chen" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-instagram"></i>
+
                                 </a>
+
                                 <a href="https://facebook.com/michael.chen" target="_blank" rel="noopener noreferrer"
                                     class="social-link">
+
                                     <i class="fab fa-facebook"></i>
+
                                 </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Stats -->
-        <section class="stats">
+
+        <section class="stats" style="background: #ffffff; padding: 60px 0;">
+
             <div class="container">
+
                 <div class="stats-grid" id="stats-grid">
+
                     <!-- Stats will be loaded from JSON -->
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Brands Section -->
-        <section class="brands">
+
+
+        <!-- Redesigned Brands Section: Static & Professional -->
+
+        <section class="about-brands-static" style="background: #ffffff; padding: 80px 0;">
+
             <div class="container">
-                <p class="brands-label">Trusted by leading brands</p>
-                <div class="brands-container">
-                    <div class="brands-grid" id="brands-grid-about">
-                        <!-- Brands will be loaded from JSON -->
-                    </div>
+
+                <p class="brands-static-label">Our customers manage thousands of partners worldwide</p>
+
+                <div class="brands-static-grid">
+
+                    <div class="brand-item-static"><i class="fab fa-google"></i><span>Google</span></div>
+
+                    <div class="brand-item-static"><i class="fab fa-amazon"></i><span>Amazon</span></div>
+
+                    <div class="brand-item-static"><i class="fab fa-meta"></i><span>Meta</span></div>
+
+                    <div class="brand-item-static"><i class="fab fa-apple"></i><span>Apple</span></div>
+
+                    <div class="brand-item-static"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Why Brands Trust You Section -->
-        <section class="trust-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Why Brands Trust Us</h2>
-                    <p>Join hundreds of satisfied clients who have transformed their digital presence with our proven
+
+        <section class="trust-section"
+            style="background-image: url('images/image5.jpg'); background-attachment: fixed; background-size: cover; background-position: center; padding: 120px 0 80px; position: relative;">
+
+            <div
+                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 30, 63, 0.85); z-index: 1;">
+
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+
+                <div class="section-header" style="margin-bottom: 50px;">
+
+                    <h2 style="color: #ffffff;">Why Brands Trust Us</h2>
+
+                    <p
+                        style="color: rgba(255,255,255,0.9) !important; opacity: 1 !important; visibility: visible !important;">
+
+                        Join
+
+                        hundreds of satisfied clients who have transformed their digital presence with our proven
+
                         strategies.</p>
+
                 </div>
+
+
 
                 <!-- Client Testimonials -->
+
                 <div class="trust-testimonials">
+
                     <h3 class="trust-subtitle">Client Testimonials</h3>
+
                     <div class="trust-testimonials-grid-redesigned">
+
                         <div class="trust-testimonial-card-redesigned">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <div class="trust-rating-redesigned">
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                             </div>
+
                             <p class="trust-quote-redesigned">"Trendtactics Digital transformed our online presence
+
                                 completely. Our website traffic increased by 300% and our conversion rate doubled within
+
                                 just 3 months."</p>
+
                             <div class="trust-author-redesigned">
+
                                 <div class="author-info-wrapper">
-                                    <strong>John Smith</strong>
-                                    <span>CEO, TechStart Solutions</span>
+
+                                    <strong
+                                        style="color: #00FFFF !important; opacity: 1 !important; visibility: visible !important;">John
+
+                                        Smith</strong>
+
+                                    <span
+                                        style="color: #cbd5e1 !important; opacity: 1 !important; visibility: visible !important;">CEO,
+
+                                        TechStart Solutions</span>
+
                                 </div>
+
                             </div>
+
                             <div class="testimonial-accent"></div>
+
                         </div>
 
+
+
                         <div class="trust-testimonial-card-redesigned">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <div class="trust-rating-redesigned">
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                             </div>
+
                             <p class="trust-quote-redesigned">"The team at Trendtactics Digital is exceptional. They
+
                                 delivered our e-commerce platform on time and exceeded our expectations. Our online
+
                                 sales have increased by 400% since launch!"</p>
+
                             <div class="trust-author-redesigned">
+
                                 <div class="author-info-wrapper">
-                                    <strong>Sarah Johnson</strong>
-                                    <span>Marketing Director, RetailPro</span>
+
+                                    <strong
+                                        style="color: #00FFFF !important; opacity: 1 !important; visibility: visible !important;">Sarah
+
+                                        Johnson</strong>
+
+                                    <span
+                                        style="color: #cbd5e1 !important; opacity: 1 !important; visibility: visible !important;">Marketing
+
+                                        Director, RetailPro</span>
+
                                 </div>
+
                             </div>
+
                             <div class="testimonial-accent"></div>
+
                         </div>
+
+
 
                         <div class="trust-testimonial-card-redesigned">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <div class="trust-rating-redesigned">
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
+
                             </div>
+
                             <p class="trust-quote-redesigned">"Working with Trendtactics Digital has been a
+
                                 game-changer. Their AI-powered strategies helped us reduce costs by 40% while increasing
+
                                 our ROI by 250%."</p>
+
                             <div class="trust-author-redesigned">
+
                                 <div class="author-info-wrapper">
-                                    <strong>Michael Chen</strong>
-                                    <span>Founder, Innovate Labs</span>
+
+                                    <strong
+                                        style="color: #00FFFF !important; opacity: 1 !important; visibility: visible !important;">Michael
+
+                                        Chen</strong>
+
+                                    <span
+                                        style="color: #cbd5e1 !important; opacity: 1 !important; visibility: visible !important;">Founder,
+
+                                        Innovate Labs</span>
+
                                 </div>
+
                             </div>
+
                             <div class="testimonial-accent"></div>
+
                         </div>
+
                     </div>
+
                 </div>
 
-                <!-- Certifications -->
-                <div class="trust-certifications">
-                    <h3 class="trust-subtitle">Certifications & Partnerships</h3>
-                    <div class="certifications-grid-redesigned">
-                        <div class="certification-item-redesigned">
-                            <div class="cert-badge">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>DSA - Digital Skillup Certificate</h4>
-                                <p>Professional Digital Marketing Certification</p>
-                            </div>
-                        </div>
-                        <div class="certification-item-redesigned">
-                            <div class="cert-badge">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>DMSI Certified</h4>
-                                <p>Professional Diploma in Digital Marketing Certification</p>
-                            </div>
-                        </div>
-                        <div class="certification-item-redesigned">
-                            <div class="cert-badge">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>ALX Certified</h4>
-                                <p>Artificial Intelligence Certificate Essentials [AICE]</p>
-                            </div>
-                        </div>
-                        <div class="certification-item-redesigned">
-                            <div class="cert-badge">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>Digital Ad Expert by Aleph</h4>
-                                <p>Certified Digital Advertising Professional</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
+
         </section>
+
+
 
         <!-- CTA -->
-        <section class="cta">
-            <div class="container">
-                <h2 class="cta-title">Ready to Work with Us?</h2>
-                <p class="cta-subtitle">
-                    Let's discuss how we can help your business achieve its digital growth goals.
-                </p>
-                <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large">Get Free Consultation</a>
-                    <a href="/portfolio" class="btn btn-primary btn-large">View Our Work</a>
-                    <a href="/contact" class="btn btn-primary btn-large">Get In Touch</a>
-                </div>
+
+        <section class="cta"
+            style="background-image: url('images/parallax-bg2.jpg'); background-attachment: fixed; background-size: cover; background-position: center; padding: 100px 0; position: relative; display: block !important; visibility: visible !important; opacity: 1 !important;">
+
+            <div
+                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.9); z-index: 1;">
+
             </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+
+                <h2 class="cta-title"
+                    style="background: none !important; -webkit-text-fill-color: #0A1E3F !important; color: #0A1E3F !important; font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; text-shadow: none !important;">
+
+                    Ready to Work with Us?</h2>
+
+                <p class="cta-subtitle"
+                    style="color: #1a2e4f !important; font-size: 1.25rem; max-width: 800px; margin: 0 auto 2.5rem; opacity: 1 !important; visibility: visible !important;">
+
+                    Let's discuss how we can help your business achieve its digital growth goals.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="contact.html" class="btn btn-primary btn-large"
+                        style="background: #0A1E3F !important; color: #fadb24 !important; border: none !important; font-weight: 700 !important; box-shadow: none !important;">Get
+
+                        Free Consultation</a>
+
+                    <a href="portfolio.html" class="btn btn-primary btn-large"
+                        style="background: #0A1E3F !important; color: #fadb24 !important; border: none !important; font-weight: 700 !important; box-shadow: none !important;">View
+
+                        Our Work</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-large"
+                        style="background: #0A1E3F !important; color: #fadb24 !important; border: none !important; font-weight: 700 !important; box-shadow: none !important;">Get
+
+                        In Touch</a>
+
+                </div>
+
+            </div>
+
         </section>
 
+
+
         <!-- After Ready to Work with Us section -->
+
         <div id="ebookPromoMarquee"
-            style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
+            style="background:#fadb24; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em; display:block !important; visibility: visible !important; opacity: 1 !important;">
+
             <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business
+
                 growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to
+
                 buy now and unlock your success! 🔥</marquee>
+
         </div>
+
     </main>
 
+
+
     <!-- Scroll to Top Button -->
+
     <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+
         <i class="fas fa-chevron-up"></i>
+
     </div>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
+    <footer class="footer site-footer">
 
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener noreferrer">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="container footer-container">
 
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                </div>
+            <div class="footer-col brand-col">
 
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved. info@trendtacticsdigital.com</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
+
     <!-- Only keep necessary scripts here -->
-    <script src="/js/browser-compat.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/chat-widget.js" defer></script>
-    <script src="/js/about.js"></script>
-    <script src="/js/parallax.js"></script>
+
+    <script src="js/browser-compat.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/about.js"></script>
+
+    <script src="js/parallax.js"></script>
+
+    <script src="js/about-tabs.js"></script>
+
     <script>
+
         function scrollToTop() {
+
             window.scrollTo({
+
                 top: 0,
+
                 behavior: 'smooth'
+
             });
+
         }
+
         window.addEventListener('scroll', function () {
+
             const scrollToTopBtn = document.getElementById('scrollToTop');
+
             if (window.pageYOffset > 300) {
+
                 scrollToTopBtn.classList.add('visible');
+
             } else {
+
                 scrollToTopBtn.classList.remove('visible');
+
             }
+
         });
+
     </script>
+
+
+
+    
+
+    
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
+                }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
+            }
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
+            }
+
+        });
+
+    </script>
+
+    <script src="js/newsletter.js" defer></script>
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
 
 </html>

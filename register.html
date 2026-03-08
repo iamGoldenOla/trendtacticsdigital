@@ -7,7 +7,7 @@
     <meta name="description" content="Create a new Trendtactics Digital account to access our services and dashboard.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <style>
         * {
@@ -240,12 +240,331 @@
         
         .register-container::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, #00FFFF, #FF6B6B);
+        }
+    
+        </style>
+
+    <style>
+        /* --- LOVABLE REVAMPED FOOTER --- */
+        .site-footer {
+            background-color: #061226 !important;
+            color: #cbd5e1 !important;
+            padding: 70px 0 0 0 !important;
+            font-family: 'Inter', sans-serif !important;
+            border-top: none !important;
+        }
+
+        .site-footer .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 992px) {
+            .site-footer .footer-container {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .site-footer .footer-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .site-footer .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .site-footer .brand-desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            max-width: 85%;
+        }
+
+        .site-footer .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .site-footer .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 1.1rem;
+        }
+
+        .site-footer .social-icons a:hover {
+            background-color: #1e293b;
+            border-color: #334155;
+            color: #00FFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .site-footer h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            margin-top: 0;
+            letter-spacing: 0.3px;
+        }
+
+        .site-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .site-footer ul li {
+            margin-bottom: 14px;
+        }
+
+        .site-footer ul a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer ul a:hover {
+            color: #fff;
+        }
+
+        .site-footer .newsletter-col p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form-lovable {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form-lovable input {
+            flex: 1;
+            padding: 12px 16px;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-form-lovable input::placeholder {
+            color: #64748b;
+        }
+
+        .newsletter-form-lovable input:focus {
+            outline: none;
+            border-color: #00FFFF;
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .newsletter-form-lovable button {
+            padding: 12px 20px;
+            background-color: #1e293b; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form-lovable button:hover {
+            background-color: #334155;
+            border-color: #475569;
+        }
+
+        .site-footer .footer-bottom {
+            padding: 25px 0;
+            background-color: #040d1f;
+        }
+
+        .site-footer .footer-bottom p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style>
+
+    <style>
+        
+        /* Hide Google Translate Logo */
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0px !important;
+        }
+        .goog-te-gadget img {
+            display: none !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            color: #cbd5e1 !important;
+            background-color: #1e293b !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .goog-te-gadget .goog-te-combo:focus {
+            border-color: #00FFFF !important;
+        }
+        
+        .top-bar-redesigned {
+            background-color: #061226;
+            color: #cbd5e1;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            overflow: hidden;
+            z-index: 1001;
+        }
+        .navbar {
+            top: 40px !important;
+            transition: top 0.3s ease, background 0.3s ease !important;
+        }
+        .navbar.scrolled {
+            top: 0 !important;
+        }
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .top-bar-left .social-icons-top a {
+            color: #cbd5e1;
+            margin-right: 12px;
+            transition: color 0.3s ease;
+        }
+        .top-bar-left .social-icons-top a:hover {
+            color: #00FFFF;
+        }
+        .top-bar-center {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        .typewriter-text {
+            border-right: 2px solid #00FFFF;
+            padding-right: 4px;
+            animation: blinkCursor 0.75s step-end infinite;
+        }
+        @keyframes blinkCursor {
+            from, to { border-color: transparent }
+            50% { border-color: #00FFFF; }
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+        }
+        /* Make translate widget small */
+        #google_translate_element_top .goog-te-gadget {
+            font-size: 0px !important;
+            color: transparent;
+        }
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+            background-color: transparent;
+            color: #cbd5e1;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 5px;
+            }
+            .top-bar-center {
+                max-width: 50%;
+                font-size: 0.70rem;
+            }
+            .typewriter-text {
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #google_translate_element_top .goog-te-combo {
+                width: 60px;
+                padding: 1px;
+            }
+            
+        /* Hide Google Translate Logo */
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0px !important;
+        }
+        .goog-te-gadget img {
+            display: none !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            color: #cbd5e1 !important;
+            background-color: #1e293b !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .goog-te-gadget .goog-te-combo:focus {
+            border-color: #00FFFF !important;
+        }
+        
+        .top-bar-redesigned {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -305,14 +624,14 @@
             <!-- Demo login removed for production security -->
             
             <div class="form-footer">
-                <p>Already have an account? <a href="/login.html">Sign in</a></p>
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
             </div>
         </div>
     </div>
 
     <!-- Load Supabase SDK first -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-utils.js"></script>
     <script>
         // Use the shared Supabase client from supabase-utils.js
         const supabase = window.supabaseUtils.supabase;
@@ -443,5 +762,79 @@
             }, 5000);
         }
     </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const phrases = [
+            "Welcome to Trendtactics Digital",
+            "Read our latest blog: The Future of AI",
+            "Next Event: Digital Growth Webinar - Oct 25",
+            "Scale your revenue with our experts",
+            "" 
+        ];
+        let i = 0;
+        let j = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+        
+        const typeWriterElement = document.getElementById('typewriter-text');
+        
+        function loop() {
+            if (!typeWriterElement) return;
+            
+            // Add live time to the last phrase dynamically
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+            
+            isEnd = false;
+            typeWriterElement.innerHTML = currentPhrase.join('');
+            
+            if (i < phrases.length) {
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase.push(phrases[i][j]);
+                    j++;
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+                }
+                
+                if (isDeleting && j <= phrases[i].length) {
+                    currentPhrase.pop();
+                    j--;
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+                }
+                
+                if (j == phrases[i].length) {
+                    isEnd = true;
+                    isDeleting = true;
+                }
+                
+                if (isDeleting && j === 0) {
+                    currentPhrase = [];
+                    isDeleting = false;
+                    i++;
+                    if (i === phrases.length) {
+                        i = 0;
+                    }
+                }
+            }
+            
+            const speeding = Math.random() * (50 - 30) + 30;
+            const normal = Math.random() * (100 - 50) + 50;
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+            
+            setTimeout(loop, time);
+        }
+        
+        if (typeWriterElement) {
+            loop();
+        }
+    });
+</script>
+<script src="js/newsletter.js" defer></script>
+<script src="js/livechat.js" defer></script>
+<script src="js/consent.js" defer></script>
+
+    <script src="js/global-translate.js" defer></script>
 </body>
 </html>

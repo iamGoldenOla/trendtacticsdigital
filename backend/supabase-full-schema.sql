@@ -212,6 +212,27 @@ CREATE TABLE IF NOT EXISTS quiz_results (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- System settings table for storing API keys and other configuration
+CREATE TABLE IF NOT EXISTS system_settings (
+  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  key_name VARCHAR(100) UNIQUE NOT NULL,
+  key_value TEXT NOT NULL,
+  description TEXT,
+  is_encrypted BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS on system_settings
+ALTER TABLE system_settings ENABLE ROW LEVEL SECURITY;
+
+-- Only service role can access system_settings
+DROP POLICY IF EXISTS "Service role can access system_settings" ON system_settings;
+CREATE POLICY "Service role can access system_settings" ON system_settings
+  FOR ALL USING (CURRENT_ROLE = 'service_role');
+
+GRANT ALL ON system_settings TO service_role;
+
 -- Create indexes for better query performance
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
@@ -243,75 +264,98 @@ ALTER TABLE learning_stats ENABLE ROW LEVEL SECURITY;
 ALTER TABLE quiz_results ENABLE ROW LEVEL SECURITY;
 
 -- Create policies for users to access their own data
+DROP POLICY IF EXISTS "Users can view their own data" ON users;
 CREATE POLICY "Users can view their own data" ON users
   FOR SELECT USING (id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can update their own data" ON users;
 CREATE POLICY "Users can update their own data" ON users
   FOR UPDATE USING (id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own subscriptions" ON subscriptions;
 CREATE POLICY "Users can view their own subscriptions" ON subscriptions
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own preferences" ON user_preferences;
 CREATE POLICY "Users can view their own preferences" ON user_preferences
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can update their own preferences" ON user_preferences;
 CREATE POLICY "Users can update their own preferences" ON user_preferences
   FOR UPDATE USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own enrollments" ON user_enrollments;
 CREATE POLICY "Users can view their own enrollments" ON user_enrollments
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own module completions" ON user_module_completions;
 CREATE POLICY "Users can view their own module completions" ON user_module_completions
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own lesson completions" ON user_lesson_completions;
 CREATE POLICY "Users can view their own lesson completions" ON user_lesson_completions
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own certificates" ON certificates;
 CREATE POLICY "Users can view their own certificates" ON certificates
   FOR SELECT USING (EXISTS (
     SELECT 1 FROM user_certificates uc WHERE uc.certificate_id = certificates.id AND uc.user_id = auth.uid()
   ));
 
+DROP POLICY IF EXISTS "Users can view their own achievements" ON user_achievements;
 CREATE POLICY "Users can view their own achievements" ON user_achievements
   FOR SELECT USING (user_id = auth.uid());
 
+DROP POLICY IF EXISTS "Users can view their own learning stats" ON learning_stats;
 CREATE POLICY "Users can view their own learning stats" ON learning_stats
   FOR SELECT USING (user_id = auth.uid());
 
 -- Allow service role to access all data for backend operations
+DROP POLICY IF EXISTS "Service role can access all user data" ON users;
 CREATE POLICY "Service role can access all user data" ON users
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all subscriptions" ON subscriptions;
 CREATE POLICY "Service role can access all subscriptions" ON subscriptions
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all preferences" ON user_preferences;
 CREATE POLICY "Service role can access all preferences" ON user_preferences
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all enrollments" ON user_enrollments;
 CREATE POLICY "Service role can access all enrollments" ON user_enrollments
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all module completions" ON user_module_completions;
 CREATE POLICY "Service role can access all module completions" ON user_module_completions
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all lesson completions" ON user_lesson_completions;
 CREATE POLICY "Service role can access all lesson completions" ON user_lesson_completions
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all certificates" ON certificates;
 CREATE POLICY "Service role can access all certificates" ON certificates
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all user certificates" ON user_certificates;
 CREATE POLICY "Service role can access all user certificates" ON user_certificates
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all achievements" ON achievements;
 CREATE POLICY "Service role can access all achievements" ON achievements
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all user achievements" ON user_achievements;
 CREATE POLICY "Service role can access all user achievements" ON user_achievements
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all learning stats" ON learning_stats;
 CREATE POLICY "Service role can access all learning stats" ON learning_stats
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 
+DROP POLICY IF EXISTS "Service role can access all quiz results" ON quiz_results;
 CREATE POLICY "Service role can access all quiz results" ON quiz_results
   FOR ALL USING (CURRENT_ROLE = 'service_role');
 

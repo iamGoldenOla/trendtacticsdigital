@@ -1,749 +1,2247 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Marketing Tools - Trendtactics Digital</title>
+
     <meta name="description"
         content="Free marketing tools to analyze, audit, and grow your brand. SEO checker, website audit, social analyzer, hashtag generator, and more.">
+
     <meta name="keywords" content="marketing tools, SEO tools, brand tools, free tools, digital marketing">
+
     <meta name="author" content="Akinola Olujobi">
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Marketing Tools - Trendtactics Digital">
+
     <meta property="og:description" content="Free marketing tools to analyze, audit, and grow your brand.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com/tools">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/tools.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/tools.css?v=1772546233">
+
     <style>
         /* ===== 3D HERO EFFECTS FOR TOOLS PAGE ===== */
+
         .tools-hero {
+
             position: relative;
+
             overflow: hidden;
+
             perspective: 1000px;
+
         }
+
+
 
         .tools-hero::before {
+
             content: '';
+
             position: absolute;
+
             top: -50%;
+
             left: -50%;
+
             width: 200%;
+
             height: 200%;
+
             background:
+
                 radial-gradient(circle at 28% 28%, rgba(0, 255, 255, 0.22) 0%, transparent 50%),
+
                 radial-gradient(circle at 72% 72%, rgba(64, 224, 208, 0.18) 0%, transparent 50%),
+
                 linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
+
             animation: toolsRotate 22s linear infinite;
+
             transform-style: preserve-3d;
+
         }
+
+
 
         .tools-hero::after {
+
             content: '';
-            position: absolute;
+
+            position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             bottom: 0;
+
             background:
+
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ebooks-3d" width="47" height="47" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.1" fill="%2300FFFF" opacity="0.11"/><circle cx="8.5" cy="8.5" r="1.25" fill="%2340E0D0" opacity="0.09"/><circle cx="37.5" cy="37.5" r="1.85" fill="%2300FFFF" opacity="0.09"/></pattern></defs><rect width="100" height="100" fill="url(%23ebooks-3d)"/></svg>');
+
             opacity: 0.44;
+
             animation: toolsFloat 17s ease-in-out infinite;
+
         }
+
+
 
         .tools-hero-3d-shapes {
+
             position: absolute;
+
             width: 100%;
+
             height: 100%;
+
             top: 0;
+
             left: 0;
+
             pointer-events: none;
+
             z-index: 1;
+
         }
+
+
 
         .tools-shape-3d {
+
             position: absolute;
+
             opacity: 0.31;
+
             animation: toolsFloat3D 22s ease-in-out infinite;
+
         }
+
+
 
         .tools-shape-3d.shape-1 {
+
             width: 160px;
+
             height: 160px;
+
             background: linear-gradient(135deg, rgba(0, 255, 255, 0.31), rgba(64, 224, 208, 0.21));
+
             border-radius: 34% 66% 66% 34% / 34% 34% 66% 66%;
+
             top: 12%;
+
             left: 9.5%;
+
             transform: rotateZ(45deg);
+
             animation-delay: 0s;
+
         }
+
+
 
         .tools-shape-3d.shape-2 {
+
             width: 108px;
+
             height: 108px;
+
             background: linear-gradient(135deg, rgba(64, 224, 208, 0.31), rgba(0, 255, 255, 0.21));
+
             border-radius: 50%;
+
             top: 58%;
+
             right: 14%;
+
             animation-delay: 3.5s;
+
         }
+
+
 
         .tools-shape-3d.shape-3 {
+
             width: 128px;
+
             height: 128px;
+
             background: linear-gradient(135deg, rgba(0, 255, 255, 0.27), rgba(10, 30, 63, 0.31));
+
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
             bottom: 19%;
+
             left: 17%;
+
             animation-delay: 7s;
+
         }
+
+
 
         @keyframes toolsRotate {
+
             0% {
+
                 transform: rotate(0deg) translateZ(0);
+
             }
 
+
+
             100% {
+
                 transform: rotate(360deg) translateZ(0);
+
             }
+
         }
+
+
 
         @keyframes toolsFloat {
 
+
+
             0%,
+
             100% {
+
                 transform: translateY(0) translateZ(0);
+
             }
 
+
+
             50% {
+
                 transform: translateY(-21px) translateZ(11px);
+
             }
+
         }
+
+
 
         @keyframes toolsFloat3D {
 
+
+
             0%,
+
             100% {
+
                 transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
+
             }
+
+
 
             25% {
+
                 transform: translateY(-31px) translateX(21px) rotateZ(90deg) translateZ(21px);
+
             }
+
+
 
             50% {
+
                 transform: translateY(-63px) translateX(-21px) rotateZ(180deg) translateZ(43px);
+
             }
+
+
 
             75% {
+
                 transform: translateY(-31px) translateX(11px) rotateZ(270deg) translateZ(21px);
+
             }
+
         }
+
+
 
         .tools-hero .hero-content {
+
             position: relative;
+
             z-index: 2;
+
             transform-style: preserve-3d;
+
             text-align: center;
+
             max-width: 900px;
+
             margin: 0 auto;
+
         }
+
+
 
         /* Enhanced Hero Section Design */
+
         .tools-hero {
+
             padding: 8rem 0 6rem;
+
             min-height: 60vh;
+
             display: flex;
+
             align-items: center;
-            padding-top: 70px; /* Account for navbar height */
+
+            padding-top: 70px;
+
+            /* Account for navbar height */
+
         }
 
+
+
         .tools-hero .hero-title {
+
             font-size: clamp(2.5rem, 5vw, 4.5rem);
+
             font-weight: 900;
+
             margin-bottom: var(--spacing-xl);
+
             line-height: 1.2;
+
             transform: translateZ(55px);
+
             position: relative;
+
             z-index: 10;
+
             display: block;
+
             /* Always visible with solid color first */
+
             color: #00FFFF;
+
             text-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.4), 0 0 90px rgba(0, 255, 255, 0.2);
+
             /* Gradient overlay for modern browsers */
+
             background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 50%, #00FFFF 100%);
+
             background-size: 200% auto;
+
             -webkit-background-clip: text;
+
             background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             animation: gradientShift 3s ease infinite;
+
         }
+
+
 
         @keyframes gradientShift {
 
+
+
             0%,
+
             100% {
+
                 background-position: 0% center;
+
             }
+
+
 
             50% {
+
                 background-position: 100% center;
+
             }
+
         }
+
+
 
         /* Fallback for browsers that don't support background-clip */
+
         @supports not (-webkit-background-clip: text) {
+
             .tools-hero .hero-title {
+
                 color: #00FFFF !important;
+
                 background: none !important;
+
                 -webkit-text-fill-color: #00FFFF !important;
+
                 text-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
+
             }
+
         }
+
+
 
         .tools-hero .hero-subtitle {
+
             font-size: clamp(1.1rem, 2vw, 1.3rem);
+
             line-height: 1.8;
+
             opacity: 0.95;
+
             max-width: 700px;
+
             margin: 0 auto;
+
             transform: translateZ(32px);
+
             color: var(--white);
+
         }
+
+
 
         /* Ebooks Main Content */
+
         .tools-main-section {
+
             padding: var(--spacing-5xl) 0;
+
             background: var(--base-dark);
+
             margin-top: 4rem;
+
         }
+
+
 
         .tools-intro {
+
             text-align: center;
+
             max-width: 800px;
+
             margin: 0 auto var(--spacing-4xl);
+
         }
+
+
 
         .tools-intro h2 {
+
             font-size: 2.5rem;
+
             font-weight: 800;
+
             color: var(--primary);
+
             margin-bottom: var(--spacing-lg);
+
         }
+
+
 
         .tools-intro p {
+
             font-size: 1.2rem;
+
             color: var(--white);
+
             opacity: 0.9;
+
             line-height: 1.7;
+
         }
+
+
 
         /* Category Filters */
+
         .ebooks-filters {
+
             display: flex;
+
             justify-content: center;
+
             gap: var(--spacing-md);
+
             margin-bottom: var(--spacing-4xl);
+
             flex-wrap: wrap;
+
         }
+
+
 
         .ebook-filter-btn {
+
             padding: 0.75rem 1.5rem;
+
             background: rgba(255, 255, 255, 0.05);
+
             border: 2px solid rgba(0, 255, 255, 0.2);
+
             border-radius: var(--radius-lg);
+
             color: var(--white);
+
             font-weight: 600;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .ebook-filter-btn:hover,
+
         .ebook-filter-btn.active {
+
             background: var(--primary);
+
             border-color: var(--primary);
+
             color: var(--base-dark);
+
             transform: translateY(-2px);
+
         }
+
+
 
         /* ===== BEAUTIFUL TOOL CARDS DESIGN ===== */
+
         .tools-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
             gap: 2rem;
+
             margin-top: var(--spacing-3xl);
+
         }
+
+
 
         .tool-card {
+
             background: linear-gradient(145deg, rgba(10, 30, 63, 0.95) 0%, rgba(26, 46, 79, 0.95) 100%);
+
             backdrop-filter: blur(10px);
+
             border-radius: 24px;
+
             padding: 2rem;
+
             display: flex;
+
             flex-direction: column;
+
             align-items: flex-start;
+
             position: relative;
+
             border: 2px solid rgba(0, 255, 255, 0.15);
+
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
             box-shadow: 0 10px 40px rgba(0, 255, 255, 0.1), 0 0 0 1px rgba(0, 255, 255, 0.05);
+
             overflow: hidden;
+
         }
+
+
 
         .tool-card::before {
+
             content: '';
-            position: absolute;
+
+            position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             height: 5px;
+
             background: linear-gradient(90deg, #00FFFF, #40E0D0, #00FFFF);
+
             background-size: 200% auto;
+
             transform: scaleX(0);
+
             transform-origin: left;
+
             transition: transform 0.5s ease;
+
         }
+
+
 
         .tool-card::after {
+
             content: '';
+
             position: absolute;
+
             top: -50%;
+
             left: -50%;
+
             width: 200%;
+
             height: 200%;
+
             background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+
             opacity: 0;
+
             transition: opacity 0.5s ease;
+
             pointer-events: none;
+
         }
+
+
 
         .tool-card:hover {
+
             transform: translateY(-12px) scale(1.02);
+
             border-color: rgba(0, 255, 255, 0.5);
+
             box-shadow: 0 20px 60px rgba(0, 255, 255, 0.25), 0 0 40px rgba(64, 224, 208, 0.15), inset 0 0 60px rgba(0, 255, 255, 0.05);
+
             background: linear-gradient(145deg, rgba(10, 30, 63, 1) 0%, rgba(26, 46, 79, 1) 100%);
+
         }
+
+
 
         .tool-card:hover::before {
+
             transform: scaleX(1);
+
         }
+
+
 
         .tool-card:hover::after {
+
             opacity: 1;
+
         }
+
+
 
         .tool-icon-wrapper {
+
             width: 80px;
+
             height: 80px;
+
             background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+
             border-radius: 20px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             margin-bottom: 1.5rem;
+
             position: relative;
+
             overflow: hidden;
+
             box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.2);
+
             transition: all 0.4s ease;
+
         }
+
+
 
         .tool-icon-wrapper::before {
+
             content: '';
+
             position: absolute;
+
             top: -50%;
+
             left: -50%;
+
             width: 200%;
+
             height: 200%;
+
             background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+
             animation: iconShine 4s ease-in-out infinite;
+
         }
 
+
+
         .tool-card:hover .tool-icon-wrapper {
+
             transform: rotate(5deg) scale(1.1);
+
             box-shadow: 0 12px 32px rgba(0, 255, 255, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.3);
+
         }
+
+
 
         @keyframes iconShine {
 
+
+
             0%,
+
             100% {
+
                 transform: rotate(0deg);
+
             }
+
+
 
             50% {
+
                 transform: rotate(180deg);
+
             }
+
         }
+
+
 
         .tool-card .fa,
+
         .tool-card .fab {
+
             font-size: 2.2rem;
+
             color: #0A1E3F;
+
             z-index: 2;
+
             position: relative;
+
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+
         }
+
+
 
         .tool-title {
+
             font-size: 1.5rem;
+
             font-weight: 800;
+
             background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
+
             margin-bottom: 0.75rem;
+
             line-height: 1.3;
+
             letter-spacing: -0.02em;
+
         }
+
+
 
         .tool-desc {
+
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
+
+            color: #4a5568;
+
             margin-bottom: 1.5rem;
+
             line-height: 1.7;
+
             flex: 1;
+
             font-weight: 400;
+
         }
+
+
 
         .tool-form {
+
             width: 100%;
+
             margin-top: auto;
+
         }
+
+
 
         .tool-form input,
+
         .tool-form textarea,
+
         .tool-form select {
+
             width: 100%;
+
             padding: 1rem 1.25rem;
+
             margin-bottom: 1rem;
+
             border-radius: 12px;
+
             border: 2px solid rgba(0, 255, 255, 0.25);
+
             background: rgba(10, 30, 63, 0.7);
+
             color: #FFFFFF;
+
             font-size: 1rem;
+
             transition: all 0.3s ease;
+
             font-family: var(--font-primary);
+
             backdrop-filter: blur(10px);
+
         }
+
+
 
         .tool-form input:focus,
+
         .tool-form textarea:focus,
+
         .tool-form select:focus {
+
             outline: none;
+
             border-color: #00FFFF;
-            background: rgba(10, 30, 63, 0.9);
+
+            background: #f8f9fa;
+
             box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.15), 0 0 20px rgba(0, 255, 255, 0.2);
+
             transform: translateY(-2px);
+
         }
+
+
 
         .tool-form input::placeholder,
+
         .tool-form textarea::placeholder {
+
             color: rgba(255, 255, 255, 0.5);
+
         }
+
+
 
         .tool-form button {
+
             width: 100%;
+
             background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+
             color: #0A1E3F;
+
             border: none;
+
             border-radius: 12px;
+
             padding: 1rem 1.5rem;
+
             font-size: 1rem;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             gap: 0.5rem;
+
             box-shadow: 0 4px 16px rgba(0, 255, 255, 0.3);
+
             position: relative;
+
             overflow: hidden;
+
         }
+
+
 
         .tool-form button::before {
+
             content: '';
-            position: absolute;
+
+            position: fixed;
+
             top: 0;
+
             left: -100%;
+
             width: 100%;
+
             height: 100%;
+
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+
             transition: left 0.5s ease;
+
         }
+
+
 
         .tool-form button:hover {
+
             transform: translateY(-3px);
+
             box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4), 0 0 40px rgba(64, 224, 208, 0.2);
+
             background: linear-gradient(135deg, #33FFFF 0%, #66E6D6 100%);
+
         }
+
+
 
         .tool-form button:hover::before {
+
             left: 100%;
+
         }
+
+
 
         .tool-form button:active {
+
             transform: translateY(-1px);
+
         }
+
+
 
         .tool-result {
+
             margin-top: 1rem;
+
             background: rgba(0, 255, 255, 0.08);
+
             border: 2px solid rgba(0, 255, 255, 0.25);
+
             border-radius: 16px;
+
             padding: 1.25rem;
+
             min-height: 60px;
+
             color: #FFFFFF;
+
             font-size: 0.95rem;
+
             line-height: 1.8;
+
             display: none;
+
             backdrop-filter: blur(10px);
+
             box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
+
         }
+
+
 
         .tool-result.active {
+
             display: block;
+
             animation: resultFadeIn 0.5s ease;
+
         }
+
+
 
         @keyframes resultFadeIn {
+
             from {
+
                 opacity: 0;
+
                 transform: translateY(15px) scale(0.95);
+
             }
+
+
 
             to {
+
                 opacity: 1;
+
                 transform: translateY(0) scale(1);
+
             }
+
         }
+
+
 
         /* Lead Capture Modal */
+
         .lead-modal {
+
             display: none;
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             bottom: 0;
+
             background: rgba(10, 30, 63, 0.95);
+
             backdrop-filter: blur(10px);
+
             z-index: 10000;
+
             align-items: center;
+
             justify-content: center;
+
             padding: var(--spacing-lg);
+
         }
+
+
 
         .lead-modal.active {
+
             display: flex;
+
         }
+
+
 
         .lead-modal-content {
+
             background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
+
             border-radius: var(--radius-2xl);
+
             padding: var(--spacing-4xl);
+
             max-width: 500px;
+
             width: 100%;
+
             border: 2px solid var(--primary);
+
             box-shadow: 0 20px 60px rgba(0, 255, 255, 0.3);
+
             position: relative;
+
         }
+
+
 
         /* PDF Viewer Modal */
+
         .pdf-viewer-modal {
+
             display: none;
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
+
             bottom: 0;
+
             background: rgba(10, 30, 63, 0.98);
+
             backdrop-filter: blur(10px);
+
             z-index: 10001;
+
             padding: var(--spacing-lg);
+
         }
+
+
 
         .pdf-viewer-modal.active {
+
             display: flex;
+
             flex-direction: column;
+
         }
+
+
 
         .pdf-viewer-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: var(--spacing-lg);
+
             background: rgba(0, 255, 255, 0.1);
+
             border-bottom: 2px solid var(--primary);
+
             margin-bottom: var(--spacing-lg);
+
         }
+
+
 
         .pdf-viewer-header h3 {
+
             font-size: 1.5rem;
+
             font-weight: 700;
+
             color: var(--primary);
+
             margin: 0;
+
         }
+
+
 
         .pdf-viewer-actions {
+
             display: flex;
+
             gap: var(--spacing-md);
+
         }
+
+
 
         .pdf-viewer-actions .btn {
+
             padding: 0.6rem 1.2rem;
+
             font-size: 0.9rem;
+
             border-radius: var(--radius-md);
+
         }
+
+
 
         .pdf-viewer-close {
+
             background: transparent;
+
             border: 2px solid var(--primary);
+
             color: var(--primary);
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .pdf-viewer-close:hover {
+
             background: var(--primary);
+
             color: var(--base-dark);
+
         }
+
+
 
         .pdf-viewer-container {
+
             flex: 1;
+
             overflow: auto;
+
             background: #fff;
+
             border-radius: var(--radius-lg);
+
             border: 2px solid var(--primary);
+
         }
+
+
 
         .pdf-viewer-container iframe {
+
             width: 100%;
+
             height: 100%;
+
             min-height: 600px;
+
             border: none;
+
             border-radius: var(--radius-lg);
+
         }
+
+
 
         /* CTA Section Spacing */
+
         .tools-main-section+.cta {
+
             margin-top: 4rem;
+
             padding-top: var(--spacing-4xl);
+
         }
+
+
 
         .tools-main-section .tools-grid {
+
             margin-bottom: 4rem;
+
         }
+
+
 
         .lead-modal-close {
+
             position: absolute;
+
             top: var(--spacing-lg);
+
             right: var(--spacing-lg);
+
             background: transparent;
+
             border: none;
+
             color: var(--primary);
+
             font-size: 2rem;
+
             cursor: pointer;
+
             width: 40px;
+
             height: 40px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             border-radius: 50%;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .lead-modal-close:hover {
+
             background: rgba(0, 255, 255, 0.1);
+
             transform: rotate(90deg);
+
         }
+
+
 
         .lead-modal-content h3 {
+
             font-size: 1.8rem;
+
             font-weight: 800;
+
             color: var(--primary);
+
             margin-bottom: var(--spacing-md);
+
         }
+
+
 
         .lead-modal-content p {
+
             color: var(--white);
+
             opacity: 0.9;
+
             margin-bottom: var(--spacing-2xl);
+
             line-height: 1.7;
+
         }
+
+
 
         .lead-form {
+
             display: flex;
+
             flex-direction: column;
+
             gap: var(--spacing-lg);
+
         }
+
+
 
         .lead-form label {
+
             display: block;
+
             font-size: 0.9rem;
+
             font-weight: 600;
+
             color: var(--primary);
+
             margin-bottom: var(--spacing-sm);
+
             text-transform: uppercase;
+
             letter-spacing: 0.5px;
+
         }
+
+
 
         .lead-form input {
+
             width: 100%;
+
             padding: 1rem 1.25rem;
+
             background: rgba(255, 255, 255, 0.05);
+
             border: 2px solid rgba(0, 255, 255, 0.2);
+
             border-radius: var(--radius-lg);
+
             color: var(--white);
+
             font-size: 1rem;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .lead-form input:focus {
+
             outline: none;
+
             border-color: var(--primary);
+
             background: rgba(255, 255, 255, 0.08);
+
             box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1);
+
         }
+
+
 
         .lead-form input::placeholder {
+
             color: rgba(255, 255, 255, 0.5);
+
         }
+
+
 
         .lead-form button {
+
             width: 100%;
+
             padding: 1.1rem;
+
             background: linear-gradient(135deg, var(--primary), var(--accent));
+
             color: var(--base-dark);
+
             border: none;
+
             border-radius: var(--radius-lg);
+
             font-size: 1.1rem;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
+
         }
+
+
 
         .lead-form button:hover {
+
             transform: translateY(-2px);
+
             box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
+
         }
 
+
+
         /* Additional Beautiful Enhancements */
+
         .tools-main-section {
+
+            position: relative;
+
+        }
+
+
+
+        .tools-main-section::before {
+
+            content: '';
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 1px;
+
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.5), transparent);
+
+        }
+
+
+
+        .tools-intro h2 {
+
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .tools-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 1.5rem;
+
+            }
+
+
+
+            .tool-card {
+
+                padding: 1.5rem;
+
+            }
+
+
+
+            .tools-hero {
+
+                padding: 6rem 0 4rem;
+
+                min-height: 50vh;
+
+            }
+
+
+
+            .tool-icon-wrapper {
+
+                width: 70px;
+
+                height: 70px;
+
+            }
+
+        }
+
+
+
+        /* Fix CTA Visibility & excessive spacing between main section and CTA */
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+            /* Reduce excessive gap */
+
+        }
+
+        .cta {
+
+            background-color: #ffffff !important;
+
+            padding: 4rem 0 !important;
+
+            margin-top: 0 !important;
+
+        }
+
+        .cta::before,
+        .cta::after {
+            display: none !important;
+        }
+
+        .cta .cta-title,
+        .cta h2 {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+        .cta .cta-subtitle,
+        .cta p {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+
+
+        /* Force Remove CTA Spacing */
+
+        section.cta {
+
+            background-color: #ffffff !important;
+
+            padding: 40px 0 !important;
+
+            margin-top: 0 !important;
+
+            border-top: 1px solid #f1f5f9 !important;
+
+        }
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+
+            margin-bottom: 0 !important;
+
+        }
+    </style>
+
+
+
+    <style>
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255, 255, 255, 0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+
+
+        /* Fix CTA Visibility & excessive spacing between main section and CTA */
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+            /* Reduce excessive gap */
+
+        }
+
+        .cta {
+
+            background-color: #ffffff !important;
+
+            padding: 4rem 0 !important;
+
+            margin-top: 0 !important;
+
+        }
+
+        .cta::before,
+        .cta::after {
+            display: none !important;
+        }
+
+        .cta .cta-title,
+        .cta h2 {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+        .cta .cta-subtitle,
+        .cta p {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+
+
+        /* Force Remove CTA Spacing */
+
+        section.cta {
+
+            background-color: #ffffff !important;
+
+            padding: 40px 0 !important;
+
+            margin-top: 0 !important;
+
+            border-top: 1px solid #f1f5f9 !important;
+
+        }
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+
+            margin-bottom: 0 !important;
+
+        }
+    </style>
+
+
+
+    <style>
+        /* --- WHITE BACKGROUND UI REFINEMENTS --- */
+
+        .pricing-hero,
+
+        .portfolio-hero,
+
+        .contact-hero,
+
+        .resource-hero,
+
+        .auth-hero,
+
+        .about-hero {
+
+            background: #ffffff !important;
+
+            color: #0A1E3F !important;
+
+            border-bottom: 1px solid #e2e8f0;
+
+        }
+
+
+
+        .pricing-hero-title,
+
+        .portfolio-hero-title,
+
+        .contact-hero-title,
+
+        .resource-hero-title,
+
+        .auth-hero-title,
+
+        .about-title {
+
+            color: #0A1E3F !important;
+
+        }
+
+
+
+        .pricing-hero-subtitle,
+
+        .portfolio-hero-subtitle,
+
+        .contact-hero-subtitle,
+
+        .resource-hero-subtitle,
+
+        .auth-hero-subtitle,
+
+        .about-subtitle {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+        .pricing-hero-badge,
+
+        .portfolio-hero-badge,
+
+        .contact-hero-badge,
+
+        .resource-hero-badge,
+
+        .auth-hero-badge,
+
+        .about-badge {
+
+            background: rgba(10, 30, 63, 0.05) !important;
+
+            border-color: rgba(10, 30, 63, 0.1) !important;
+
+            color: #0088cc !important;
+
+        }
+
+
+
+        .pricing-stat-item .stat-label {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+        .pricing-stat-item .stat-number {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+
+
+        /* Hide dark mode decorative background patterns */
+
+        .pricing-hero-background,
+
+        .pricing-hero-pattern,
+
+        .portfolio-hero-pattern,
+
+        .floating-icon {
+
+            display: none !important;
+
+        }
+
+
+
+        /* Fix CTA Visibility & excessive spacing between main section and CTA */
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+            /* Reduce excessive gap */
+
+        }
+
+        .cta {
+
+            background-color: #ffffff !important;
+
+            padding: 4rem 0 !important;
+
+            margin-top: 0 !important;
+
+        }
+
+        .cta::before,
+        .cta::after {
+            display: none !important;
+        }
+
+        .cta .cta-title,
+        .cta h2 {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+        .cta .cta-subtitle,
+        .cta p {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+
+
+        /* Force Remove CTA Spacing */
+
+        section.cta {
+
+            background-color: #ffffff !important;
+
+            padding: 40px 0 !important;
+
+            margin-top: 0 !important;
+
+            border-top: 1px solid #f1f5f9 !important;
+
+        }
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+
+            margin-bottom: 0 !important;
+
+        }
+    </style>
+
+    <style id="white-theme-overrides">
+        /* Premium Dark/Parallax Theme Overrides for Tools */
+        .tools-main-section {
+            background-image: url('images/service-parallex.jpg') !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
+            background-position: center !important;
             position: relative;
         }
 
@@ -752,575 +2250,1839 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.5), transparent);
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 18, 38, 0.85) !important;
+            z-index: 0;
+            display: block !important;
         }
 
-        .tools-intro h2 {
-            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        .tools-grid {
+            position: relative;
+            z-index: 1;
         }
 
-        @media (max-width: 768px) {
-            .tools-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+        .service-page-hero-clean,
+        .ebooks-hero,
+        .tools-hero {
+            background: #ffffff !important;
+        }
 
-            .tool-card {
-                padding: 1.5rem;
-            }
+        .ebooks-main-section,
+        .quiz-wrapper,
+        #quiz-container,
+        .quiz-card {
+            background: #ffffff !important;
+        }
 
-            .tools-hero {
-                padding: 6rem 0 4rem;
-                min-height: 50vh;
-            }
+        .ebooks-main-section::before,
+        .parallax-strip {
+            display: none !important;
+        }
 
-            .tool-icon-wrapper {
-                width: 70px;
-                height: 70px;
-            }
+
+
+        /* Hero Text Adjustments */
+
+        .service-page-hero-clean .service-hero-title,
+        .ebooks-hero .hero-title,
+        .tools-hero .hero-title {
+
+            color: #0A1E3F !important;
+
+            -webkit-text-fill-color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+
+
+        .service-page-hero-clean .service-hero-subtitle,
+        .ebooks-hero .hero-subtitle,
+        .tools-hero .hero-subtitle,
+
+        .ebooks-intro p,
+        .tools-intro p {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+        .service-page-hero-clean .service-hero-badge {
+
+            background: rgba(10, 30, 63, 0.05) !important;
+
+            border-color: rgba(10, 30, 63, 0.1) !important;
+
+            color: #0088cc !important;
+
+        }
+
+
+
+        /* Cards and Elements (BLUE ON WHITE) */
+
+        .ebook-card,
+        .tool-card,
+        .resource-card-premium {
+
+            background: #0A1E3F !important;
+
+            border: 1px solid rgba(0, 255, 255, 0.2) !important;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+
+        }
+
+        .ebook-card:hover,
+        .tool-card:hover,
+        .resource-card-premium:hover {
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+
+            border-color: #00FFFF !important;
+
+        }
+
+        .ebook-content h3,
+        .tool-title,
+        .resource-card-premium h3 {
+
+            background: none !important;
+
+            -webkit-text-fill-color: #00FFFF !important;
+
+            color: #00FFFF !important;
+
+            text-shadow: none !important;
+
+            margin-bottom: 12px;
+
+        }
+
+        .tool-desc,
+        .ebook-content p,
+        .resource-card-premium p {
+
+            color: #ffffff !important;
+
+            opacity: 1 !important;
+
+        }
+
+
+
+        .tools-intro h2,
+        .ebooks-intro h2,
+        h1.text-center {
+
+            background: none !important;
+
+            -webkit-text-fill-color: #0A1E3F !important;
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+
+
+        /* Form Inputs & Result */
+
+        .tool-form input,
+        .tool-form textarea,
+        .tool-form select {
+
+            background: rgba(255, 255, 255, 0.05) !important;
+
+            color: #ffffff !important;
+
+            border-color: rgba(255, 255, 255, 0.2) !important;
+
+        }
+
+        .tool-form input::placeholder {
+
+            color: rgba(255, 255, 255, 0.6) !important;
+
+        }
+
+        .tool-form button,
+        .ebook-category,
+        .ebook-actions .btn-read {
+
+            background: #00FFFF !important;
+
+            color: #0A1E3F !important;
+
+            font-weight: bold;
+
+        }
+
+        .ebook-actions .btn-download {
+
+            border-color: #00FFFF !important;
+
+            color: #00FFFF !important;
+
+        }
+
+        .ebook-actions .btn-download:hover {
+
+            background: #00FFFF !important;
+
+            color: #0A1E3F !important;
+
+        }
+
+        .tool-result {
+
+            background: rgba(0, 255, 255, 0.1) !important;
+
+            color: #ffffff !important;
+
+        }
+
+
+
+        .ebook-card::before,
+        .tool-card::before {
+            display: none !important;
+        }
+
+
+
+        /* Quiz Specific - Kept White */
+
+        .bg-overlay-dark {
+            display: none !important;
+        }
+
+        #start-screen,
+        #quiz-screen,
+        #result-screen {
+
+            background: #ffffff !important;
+
+            color: #0A1E3F !important;
+
+            padding: 2rem;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+            border: 1px solid #e2e8f0;
+
+        }
+
+        #question-text {
+            color: #0A1E3F !important;
+        }
+
+        .quiz-wrapper .option {
+
+            background: #f8f9fa !important;
+
+            border-color: #e2e8f0 !important;
+
+            color: #0A1E3F !important;
+
+        }
+
+        .quiz-wrapper .option:hover {
+
+            border-color: #0A1E3F !important;
+
+            background: #f0f4f8 !important;
+
+        }
+
+        .quiz-wrapper .small-muted {
+            color: #718096 !important;
+        }
+
+
+
+        /* Filter Buttons */
+
+        .ebook-filter-btn {
+
+            color: #0A1E3F !important;
+
+            background: #f8f9fa !important;
+
+            border-color: #e2e8f0 !important;
+
+        }
+
+        .ebook-filter-btn:hover,
+        .ebook-filter-btn.active {
+
+            background: #0A1E3F !important;
+
+            color: #00FFFF !important;
+
+            border-color: #0A1E3F !important;
+
+        }
+
+
+
+        /* Loading spinner */
+
+        *[style*="color: var(--white)"] {
+
+            color: #0A1E3F !important;
+
+        }
+
+
+
+        /* Fix CTA Visibility & excessive spacing between main section and CTA */
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+            /* Reduce excessive gap */
+
+        }
+
+        .cta {
+
+            background-color: #ffffff !important;
+
+            padding: 4rem 0 !important;
+
+            margin-top: 0 !important;
+
+        }
+
+        .cta::before,
+        .cta::after {
+            display: none !important;
+        }
+
+        .cta .cta-title,
+        .cta h2 {
+
+            color: #0A1E3F !important;
+
+            text-shadow: none !important;
+
+        }
+
+        .cta .cta-subtitle,
+        .cta p {
+
+            color: #4a5568 !important;
+
+        }
+
+
+
+
+
+        /* Force Remove CTA Spacing */
+
+        section.cta {
+
+            background-color: #ffffff !important;
+
+            padding: 40px 0 !important;
+
+            margin-top: 0 !important;
+
+            border-top: 1px solid #f1f5f9 !important;
+
+        }
+
+        .tools-main-section {
+
+            padding-bottom: 2rem !important;
+
+            margin-bottom: 0 !important;
+
         }
     </style>
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+
+
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00FFFF;
+            }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+
+
+            /* Hide Google Translate Logo */
+
+            .goog-te-gadget {
+
+                color: transparent !important;
+
+                font-size: 0px !important;
+
+            }
+
+            .goog-te-gadget img {
+
+                display: none !important;
+
+            }
+
+            .goog-te-gadget .goog-te-combo {
+
+                color: #cbd5e1 !important;
+
+                background-color: #1e293b !important;
+
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+                border-radius: 4px;
+
+                padding: 3px 6px;
+
+                font-size: 0.8rem;
+
+                outline: none;
+
+                cursor: pointer;
+
+            }
+
+            .goog-te-gadget .goog-te-combo:focus {
+
+                border-color: #00FFFF !important;
+
+            }
+
+
+
+
+        }
+    </style>
+
 </head>
 
+
+
 <body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
-                </a>
+
+    <!-- Top Bar -->
+    <div class="top-bar-redesigned">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <i class="fas fa-bullhorn text-accent-cyan"></i>
+                <span id="typewriter-text" class="typewriter-text">Welcome to Trendtactics Digital</span>
             </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                            <li><a href="/services">View All Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                            <li><a href="/resources">View All Resources</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+            <div class="top-bar-right">
+                <div class="social-icons-top">
+                    <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/trendtactics" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+                <a href="contact.html" class="top-book-call">
+                    <i class="fas fa-phone-alt"></i> Book a Call
+                </a>
+
+                <a href="hub.html" class="top-get-started">Get Started</a>
             </div>
         </div>
+    </div>
+
+
+
+
+
+
+    <nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0"
+                            style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start
+                                    a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take
+                                    Free Quiz</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </nav>
 
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
 
     <!-- Authentication Check -->
+
     <script>
+
         // Initialize Supabase client
+
         const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+
         const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+
         const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 
+
+
         // Check if user is authenticated on page load
+
         document.addEventListener('DOMContentLoaded', async function () {
+
             try {
+
                 // Check if user is logged in
+
                 const { data: { session } } = await supabase.auth.getSession();
 
+
+
                 if (!session) {
+
                     // Check localStorage fallback for demo mode
+
                     const localStorageLoggedIn = localStorage.getItem('userId');
+
                     if (!localStorageLoggedIn) {
+
                         // Redirect to login page
+
                         // window.location.href = '/login';
+
                         console.log('User not authenticated - in demo mode');
+
                     }
+
                 }
 
+
+
                 // User is authenticated, continue loading page
+
                 console.log('User is authenticated');
 
+
+
             } catch (error) {
+
                 console.error('Error checking authentication:', error);
+
                 // Redirect to login page on error
+
                 // window.location.href = '/login';
+
             }
+
         });
+
     </script>
 
-    <!-- Hero Section -->
-    <section class="page-hero tools-hero">
-        <div class="tools-hero-3d-shapes">
-            <div class="tools-shape-3d shape-1"></div>
-            <div class="tools-shape-3d shape-2"></div>
-            <div class="tools-shape-3d shape-3"></div>
-        </div>
+
+
+    <!-- Redesigned Hero Section -->
+
+    <section class="about-hero-redesigned" style="background: #ffffff; color: #0A1E3F;">
+
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Marketing Tools</h1>
-                <p class="hero-subtitle">
-                    Powerful, free marketing tools to analyze, audit, and grow your brand. No signup required. Get
-                    instant insights and actionable recommendations.
-                </p>
+
+            <div class="hero-layout">
+
+                <div class="hero-content-left">
+
+                    <div class="trust-badge-new">
+
+                        <i class="fas fa-tools"></i>
+
+                        <span>AI-Powered Marketing Tools</span>
+
+                    </div>
+
+
+
+                    <h1 class="hero-title-main">
+
+                        Marketing <span class="text-accent-navy">Tools</span>
+
+                    </h1>
+
+
+
+                    <p class="hero-description-main" style="color: #4a5568; font-size: 1.25rem;">
+
+                        Powerful, free marketing tools to analyze, audit, and grow your brand. No signup required. Get
+                        instant insights and actionable recommendations.
+
+                    </p>
+
+
+
+                    <div class="hero-actions-main">
+
+                        <a href="#tools-grid" class="btn-hero-primary">
+
+                            Explore Tools <i class="fas fa-arrow-down"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-visual-right">
+
+                    <div class="visual-wrapper" style="max-height: 400px; max-width: 450px;">
+
+                        <div class="main-image-frame"
+                            style="border: 2px solid rgba(0,255,255,0.3); box-shadow: 0 20px 50px rgba(0,255,255,0.15);">
+
+                            <img src="images/content-creation-parallex.jpg" alt="Hero Image" class="hero-main-img"
+                                style="object-fit:cover; height:400px; width:100%;" loading="lazy">
+
+                        </div>
+
+                        <div class="visual-glow-effect"></div>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Tools Main Section -->
+
     <section class="tools-main-section">
+
         <div class="container">
+
             <div class="tools-intro">
+
                 <h2>Free Marketing Tools</h2>
+
                 <p>
+
                     Access our comprehensive suite of marketing tools designed to help you optimize your digital
+
                     presence, create engaging content, and drive business growth.
+
                 </p>
+
             </div>
+
             <div class="tools-grid" id="tools-grid">
+
                 <!-- Hashtag Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-hashtag"></i>
+
                     </div>
+
                     <div class="tool-title">Hashtag Generator</div>
+
                     <div class="tool-desc">Get trending hashtags for your campaign or post to maximize reach and
+
                         engagement.</div>
+
                     <form class="tool-form" id="hashtagForm">
+
                         <input type="text" id="hashtagInput" placeholder="Describe your post or topic..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Hashtags</button>
+
                     </form>
+
                     <div class="tool-result" id="hashtagResult"></div>
+
                 </div>
+
+
 
                 <!-- Headline Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-heading"></i>
+
                     </div>
+
                     <div class="tool-title">Headline Generator</div>
+
                     <div class="tool-desc">Create catchy, conversion-focused headlines for your blog posts, ads, or
+
                         emails.</div>
+
                     <form class="tool-form" id="headlineForm">
+
                         <input type="text" id="headlineInput" placeholder="Describe your content..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Headlines</button>
+
                     </form>
+
                     <div class="tool-result" id="headlineResult"></div>
+
                 </div>
+
+
 
                 <!-- Content Idea Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-lightbulb"></i>
+
                     </div>
+
                     <div class="tool-title">Content Idea Generator</div>
+
                     <div class="tool-desc">Get fresh, creative content ideas for your blog, social media, or marketing
+
                         campaigns.</div>
+
                     <form class="tool-form" id="contentIdeaForm">
+
                         <input type="text" id="contentIdeaInput" placeholder="Your niche or topic..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Get Ideas</button>
+
                     </form>
+
                     <div class="tool-result" id="contentIdeaResult"></div>
+
                 </div>
+
+
 
                 <!-- Business Strategy Analyzer -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-chart-line"></i>
+
                     </div>
+
                     <div class="tool-title">Business Strategy Analyzer</div>
+
                     <div class="tool-desc">Get a comprehensive SWOT analysis and strategic recommendations for your
+
                         business.</div>
+
                     <form class="tool-form" id="strategyForm">
+
                         <input type="text" id="strategyInput" placeholder="Describe your business or challenge..."
                             required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Analyze</button>
+
                     </form>
+
                     <div class="tool-result" id="strategyResult"></div>
+
                 </div>
+
+
 
                 <!-- Customer Persona Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-user"></i>
+
                     </div>
+
                     <div class="tool-title">Customer Persona Generator</div>
+
                     <div class="tool-desc">Generate detailed customer personas to better understand and target your
+
                         audience.</div>
+
                     <form class="tool-form" id="personaForm">
+
                         <input type="text" id="personaInput" placeholder="Describe your target audience..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Personas</button>
+
                     </form>
+
                     <div class="tool-result" id="personaResult"></div>
+
                 </div>
+
+
 
                 <!-- SEO Content Strategy -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-search"></i>
+
                     </div>
+
                     <div class="tool-title">SEO Content Strategy</div>
+
                     <div class="tool-desc">Get a comprehensive content plan to boost your search rankings and organic
+
                         traffic.</div>
+
                     <form class="tool-form" id="seoContentForm">
+
                         <input type="text" id="seoContentInput" placeholder="Your website or topic..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Strategy</button>
+
                     </form>
+
                     <div class="tool-result" id="seoContentResult"></div>
+
                 </div>
+
+
 
                 <!-- Brand Voice & Tone Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-microphone"></i>
+
                     </div>
+
                     <div class="tool-title">Brand Voice & Tone Generator</div>
+
                     <div class="tool-desc">Define your brand's unique voice and tone guidelines for consistent
+
                         messaging.</div>
+
                     <form class="tool-form" id="brandVoiceForm">
+
                         <input type="text" id="brandVoiceInput" placeholder="Describe your brand..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Voice & Tone</button>
+
                     </form>
+
                     <div class="tool-result" id="brandVoiceResult"></div>
+
                 </div>
+
+
 
                 <!-- Color Palette Generator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-palette"></i>
+
                     </div>
+
                     <div class="tool-title">Color Palette Generator</div>
+
                     <div class="tool-desc">Get a professional 5-color palette for your brand or project with hex codes.
+
                     </div>
+
                     <form class="tool-form" id="colorPaletteForm">
+
                         <input type="text" id="colorPaletteInput" placeholder="Brand name or mood..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Palette</button>
+
                     </form>
+
                     <div class="tool-result" id="colorPaletteResult"></div>
+
                 </div>
+
+
 
                 <!-- Instagram Reels Strategy -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fab fa-instagram"></i>
+
                     </div>
+
                     <div class="tool-title">Instagram Reels Strategy</div>
+
                     <div class="tool-desc">Get viral content ideas, hashtag strategies, and tips for Instagram Reels.
+
                     </div>
+
                     <form class="tool-form" id="reelsStrategyForm">
+
                         <input type="text" id="reelsStrategyInput" placeholder="Business or industry..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Generate Strategy</button>
+
                     </form>
+
                     <div class="tool-result" id="reelsStrategyResult"></div>
+
                 </div>
+
+
 
                 <!-- LinkedIn Content Planner -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fab fa-linkedin"></i>
+
                     </div>
+
                     <div class="tool-title">LinkedIn Content Planner</div>
+
                     <div class="tool-desc">Plan your LinkedIn posts for thought leadership and professional networking.
+
                     </div>
+
                     <form class="tool-form" id="linkedinPlannerForm">
+
                         <input type="text" id="linkedinPlannerInput" placeholder="Your industry or goal..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Plan Content</button>
+
                     </form>
+
                     <div class="tool-result" id="linkedinPlannerResult"></div>
+
                 </div>
+
+
 
                 <!-- Market Research Assistant -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-chart-pie"></i>
+
                     </div>
+
                     <div class="tool-title">Market Research Assistant</div>
+
                     <div class="tool-desc">Get trend analysis, market opportunities, and competitive insights.</div>
+
                     <form class="tool-form" id="marketResearchForm">
+
                         <input type="text" id="marketResearchInput" placeholder="Industry or business context..."
                             required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Research Market</button>
+
                     </form>
+
                     <div class="tool-result" id="marketResearchResult"></div>
+
                 </div>
+
+
 
                 <!-- Pricing Strategy Optimizer -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-tags"></i>
+
                     </div>
+
                     <div class="tool-title">Pricing Strategy Optimizer</div>
+
                     <div class="tool-desc">Get data-driven pricing recommendations for your product or service.</div>
+
                     <form class="tool-form" id="pricingForm">
+
                         <input type="text" id="pricingInput" placeholder="Product/service and current price..."
                             required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Optimize Pricing</button>
+
                     </form>
+
                     <div class="tool-result" id="pricingResult"></div>
+
                 </div>
+
+
 
                 <!-- Sales Funnel Analyzer -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-filter"></i>
+
                     </div>
+
                     <div class="tool-title">Sales Funnel Analyzer</div>
+
                     <div class="tool-desc">Find bottlenecks in your sales funnel and get optimization recommendations.
+
                     </div>
+
                     <form class="tool-form" id="funnelForm">
+
                         <input type="text" id="funnelInput" placeholder="Describe your sales funnel..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Analyze Funnel</button>
+
                     </form>
+
                     <div class="tool-result" id="funnelResult"></div>
+
                 </div>
+
+
 
                 <!-- TikTok Marketing Strategy -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fab fa-tiktok"></i>
+
                     </div>
+
                     <div class="tool-title">TikTok Marketing Strategy</div>
+
                     <div class="tool-desc">Get viral content ideas, hashtag trends, and engagement strategies for
+
                         TikTok.</div>
+
                     <form class="tool-form" id="tiktokForm">
+
                         <input type="text" id="tiktokInput" placeholder="Your business or niche..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Get Strategy</button>
+
                     </form>
+
                     <div class="tool-result" id="tiktokResult"></div>
+
                 </div>
+
+
 
                 <!-- Website Speed Optimizer -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-tachometer-alt"></i>
+
                     </div>
+
                     <div class="tool-title">Website Speed Optimizer</div>
+
                     <div class="tool-desc">Get actionable tips to improve your website's loading speed and performance.
+
                     </div>
+
                     <form class="tool-form" id="speedForm">
+
                         <input type="text" id="speedInput" placeholder="Your website URL..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Optimize Speed</button>
+
                     </form>
+
                     <div class="tool-result" id="speedResult"></div>
+
                 </div>
+
+
 
                 <!-- SEO Technical Audit Tool -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-bug"></i>
+
                     </div>
+
                     <div class="tool-title">SEO Technical Audit Tool</div>
+
                     <div class="tool-desc">Find and fix technical SEO issues that may be hurting your search rankings.
+
                     </div>
+
                     <form class="tool-form" id="seoAuditForm">
+
                         <input type="text" id="seoAuditInput" placeholder="Your website URL..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Audit Site</button>
+
                     </form>
+
                     <div class="tool-result" id="seoAuditResult"></div>
+
                 </div>
+
+
 
                 <!-- E-commerce Conversion Optimizer -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-shopping-cart"></i>
+
                     </div>
+
                     <div class="tool-title">E-commerce Conversion Optimizer</div>
+
                     <div class="tool-desc">Get proven tips to boost your online store's conversion rate and sales.</div>
+
                     <form class="tool-form" id="ecommerceForm">
+
                         <input type="text" id="ecommerceInput" placeholder="Describe your store or challenge..."
                             required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Optimize Conversion</button>
+
                     </form>
+
                     <div class="tool-result" id="ecommerceResult"></div>
+
                 </div>
+
+
 
                 <!-- Business Scaling Strategy Planner -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-expand-arrows-alt"></i>
+
                     </div>
+
                     <div class="tool-title">Business Scaling Strategy Planner</div>
+
                     <div class="tool-desc">Get a comprehensive plan to scale your business to the next level.</div>
+
                     <form class="tool-form" id="scalingForm">
+
                         <input type="text" id="scalingInput" placeholder="Describe your business..." required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Get Scaling Plan</button>
+
                     </form>
+
                     <div class="tool-result" id="scalingResult"></div>
+
                 </div>
+
+
 
                 <!-- Advanced Marketing ROI Calculator -->
+
                 <div class="tool-card">
+
                     <div class="tool-icon-wrapper">
+
                         <i class="fa fa-percentage"></i>
+
                     </div>
+
                     <div class="tool-title">Advanced Marketing ROI Calculator</div>
+
                     <div class="tool-desc">Calculate ROI for multiple marketing channels and campaigns with detailed
+
                         insights.</div>
+
                     <form class="tool-form" id="advancedROIForm">
+
                         <input type="text" id="channel1Revenue" placeholder="Channel 1 Revenue (₦)..." required>
+
                         <input type="text" id="channel1Cost" placeholder="Channel 1 Cost (₦)..." required>
+
                         <input type="text" id="channel2Revenue" placeholder="Channel 2 Revenue (₦)..." required>
+
                         <input type="text" id="channel2Cost" placeholder="Channel 2 Cost (₦)..." required>
+
                         <input type="text" id="customerLifetimeValue" placeholder="Customer Lifetime Value (₦)..."
                             required>
+
                         <button type="submit"><i class="fas fa-magic"></i> Calculate ROI</button>
+
                     </form>
+
                     <div class="tool-result" id="advancedROIResult"></div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- CTA Section -->
+
     <section class="cta">
+
         <div class="container">
-            <h2 class="cta-title">Need More Advanced Tools?</h2>
-            <p class="cta-subtitle">
+
+            <h2 class="cta-title"
+                style="background: none !important; -webkit-text-fill-color: #0A1E3F !important; color: #0A1E3F !important; font-weight: 800; text-shadow: none !important; z-index: 10; position: relative;">
+                Need More Advanced Tools?</h2>
+
+            <p class="cta-subtitle" style="color: #4a5568 !important;">
+
                 Get personalized marketing strategies and expert consultation to take your business to the next level.
+
             </p>
+
             <div class="cta-buttons">
-                <a href="/contact" class="btn btn-primary btn-large">Get Free Consultation</a>
-                <a href="/services" class="btn btn-outline btn-large">View Services</a>
+
+                <a href="contact.html" class="btn btn-primary btn-large"
+                    style="background: #0A1E3F !important; color: #fadb24 !important; border: none !important; font-weight: 700 !important; box-shadow: none !important;">Get
+                    Free Consultation</a>
+
+                <a href="services.html" class="btn btn-primary btn-large"
+                    style="background: #0A1E3F !important; color: #fadb24 !important; border: none !important; font-weight: 700 !important; box-shadow: none !important;">View
+                    Services</a>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
+    <footer class="footer site-footer">
 
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                    </ul>
-                </div>
+        <div class="container footer-container">
 
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                </div>
+            <div class="footer-col brand-col">
 
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
 
             </div>
 
-            <!-- Newsletter Subscribe moved to bottom -->
-            <div class="footer-newsletter-inline" style="text-align: right; margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <h4>Stay Updated</h4>
-                <p>Get insights delivered to your inbox.</p>
-                <form class="newsletter-form" style="justify-content: flex-end;">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
                 </form>
+
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved. info@trendtacticsdigital.com</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
-            </div>
         </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/tools.js"></script>
-    <script src="/js/chat-widget.js" defer></script>
+
+
+    <script src="js/main.js"></script>
+
+    <script src="js/tools.js"></script>
+
+
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
+                }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
+            }
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
+            }
+
+        });
+
+    </script>
+
+    <script src="js/newsletter.js" defer></script>
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
 
 </html>

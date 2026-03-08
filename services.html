@@ -1,1248 +1,2904 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Services - Trendtactics Digital</title>
+
     <meta name="description"
         content="Comprehensive digital marketing services including web design, SEO, social media, AI solutions, and more. Transform your business with our expert strategies.">
+
     <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
+
     <meta name="author" content="Akinola Olujobi">
 
+
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Services - Trendtactics Digital">
+
     <meta property="og:description"
         content="Comprehensive digital marketing services including web design, SEO, social media, AI solutions, and more. Transform your business with our expert strategies.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com/services">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
 
+
+
     <!-- Twitter Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta name="twitter:title" content="Services - Trendtactics Digital">
+
     <meta name="twitter:description"
         content="Comprehensive digital marketing services including web design, SEO, social media, AI solutions, and more. Transform your business with our expert strategies.">
+
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
 
+
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
+
 
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
 
     <!-- React CDN -->
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/shared-effects.css">
-    <link rel="stylesheet" href="/styles/about.css">
-    <link rel="stylesheet" href="/styles/services.css">
-    <link rel="stylesheet" href="/styles/images.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/shared-effects.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/services.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+
+    <!-- <script>
+
         window.dataLayer = window.dataLayer || [];
+
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+
+        gtag(\'js\', new Date());
+
+        gtag(\'config\', \'GA_MEASUREMENT_ID\');
+
+    </script> -->
+
     <!-- JSON-LD Structured Data -->
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "Organization",
+
       "name": "Trendtactics Digital",
+
       "url": "https://trendtacticsdigital.com/",
+
       "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
+
       "sameAs": [
+
         "https://linkedin.com/company/trendtactics-digital",
+
         "https://twitter.com/trendtactics",
+
         "https://instagram.com/trendtactics",
+
         "https://facebook.com/trendtactics",
+
         "https://youtube.com/trendtactics"
+
       ],
+
       "contactPoint": [{
+
         "@type": "ContactPoint",
+
         "telephone": "+234-800-000-0000",
+
         "contactType": "customer service",
+
         "areaServed": "NG, US, UK, CA",
+
         "availableLanguage": ["English"]
+
       }]
+
     }
+
     </script>
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "WebPage",
+
       "url": "https://trendtacticsdigital.com/services.html",
+
       "name": "Services - Trendtactics Digital",
+
       "description": "Comprehensive digital marketing services including web design, SEO, social media, AI solutions, and more. Transform your business with our expert strategies."
+
     }
+
     </script>
+
+
+
+
+
     <style>
-        /* ===== 3D HERO EFFECTS FOR SERVICES PAGE ===== */
-        .services-hero {
-            position: relative;
-            overflow: hidden;
-            perspective: 1200px;
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
         }
 
-        .services-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(64, 224, 208, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(10, 30, 63, 0.4) 0%, transparent 70%),
-                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
-            animation: servicesRotate 25s linear infinite;
-            transform-style: preserve-3d;
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
         }
 
-        .services-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="services-3d" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2.5" fill="%2300FFFF" opacity="0.12"/><circle cx="10" cy="10" r="1.5" fill="%2340E0D0" opacity="0.1"/><circle cx="40" cy="40" r="2" fill="%2300FFFF" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23services-3d)"/></svg>');
-            opacity: 0.5;
-            animation: servicesFloat 18s ease-in-out infinite;
-        }
 
-        .services-hero-3d-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
 
-        .services-shape-3d {
-            position: absolute;
-            opacity: 0.35;
-            animation: servicesFloat3D 22s ease-in-out infinite;
-        }
+        @media (max-width: 992px) {
 
-        .services-shape-3d.shape-1 {
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.35), rgba(64, 224, 208, 0.25));
-            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-            top: 15%;
-            left: 8%;
-            transform: rotateZ(45deg);
-            animation-delay: 0s;
-        }
+            .site-footer .footer-container {
 
-        .services-shape-3d.shape-2 {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.35), rgba(0, 255, 255, 0.25));
-            border-radius: 50%;
-            top: 55%;
-            right: 12%;
-            animation-delay: 3s;
-        }
+                grid-template-columns: 1fr 1fr !important;
 
-        .services-shape-3d.shape-3 {
-            width: 140px;
-            height: 140px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(10, 30, 63, 0.35));
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            bottom: 15%;
-            left: 15%;
-            animation-delay: 6s;
-        }
-
-        .services-shape-3d.shape-4 {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.35), rgba(0, 255, 255, 0.25));
-            border-radius: 25px;
-            top: 25%;
-            right: 25%;
-            transform: rotateZ(45deg);
-            animation-delay: 9s;
-        }
-
-        @keyframes servicesRotate {
-            0% {
-                transform: rotate(0deg) translateZ(0);
             }
 
-            100% {
-                transform: rotate(360deg) translateZ(0);
-            }
         }
 
-        @keyframes servicesFloat {
+        @media (max-width: 576px) {
 
-            0%,
-            100% {
-                transform: translateY(0) translateZ(0);
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
             }
 
-            50% {
-                transform: translateY(-25px) translateZ(15px);
-            }
         }
 
-        @keyframes servicesFloat3D {
 
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
-            }
 
-            25% {
-                transform: translateY(-35px) translateX(25px) rotateZ(90deg) translateZ(25px);
-            }
+        .site-footer .footer-logo-img {
 
-            50% {
-                transform: translateY(-70px) translateX(-25px) rotateZ(180deg) translateZ(50px);
-            }
+            height: 40px;
 
-            75% {
-                transform: translateY(-35px) translateX(15px) rotateZ(270deg) translateZ(25px);
-            }
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
         }
 
-        .services-hero .hero-content {
-            position: relative;
-            z-index: 2;
-            transform-style: preserve-3d;
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
         }
 
-        .services-hero .hero-title {
-            transform: translateZ(60px);
-            text-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
         }
 
-        .services-hero .hero-subtitle {
-            transform: translateZ(35px);
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255, 255, 255, 0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+
+
+        /* --- WHITE THEME PREMIUM OVERRIDES --- */
+
+        body,
+        main {
+
+            background-color: #ffffff !important;
+
+            color: #0A1E3F !important;
+
+        }
+
+
+
+        /* Stats Showcase Container */
+
+        .services-stats-showcase {
+
+            background: #ffffff !important;
+
+            background-image: none !important;
+
+            border-bottom: 1px solid #f1f5f9;
+
+        }
+
+        .services-stats-showcase::before {
+            display: none !important;
+        }
+
+
+
+        .stat-item {
+
+            background: #f8f9fa !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02) !important;
+
+        }
+
+        .stat-item:hover {
+
+            background: #ffffff !important;
+
+            border-color: #00FFFF !important;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05) !important;
+
+        }
+
+        .stat-number {
+            color: #0A1E3F !important;
+        }
+
+        .stat-label {
+            color: #64748b !important;
+            font-weight: 600 !important;
+        }
+
+
+
+        /* Service Icon Showcase */
+
+        .showcase-title {
+            color: #0A1E3F !important;
+            text-shadow: none !important;
+        }
+
+        .service-icon-item {
+
+            background: #ffffff !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03) !important;
+
+        }
+
+        .service-icon-item span {
+            color: #4a5568 !important;
+        }
+
+        .service-icon-item i {
+            color: #0066FF !important;
+        }
+
+        .service-icon-item:hover,
+        .service-icon-item.active {
+
+            background: #f8f9fa !important;
+
+            border-color: #0066FF !important;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+
+        }
+
+        .service-icon-item:hover span,
+        .service-icon-item.active span {
+            color: #0A1E3F !important;
+        }
+
+        .service-description {
+
+            background: #ffffff !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+
+        }
+
+        .service-description p {
+            color: #334155 !important;
+        }
+
+
+
+        /* Sub Services */
+
+        .connector-circle {
+            background: #ffffff !important;
+        }
+
+        .sub-service-card {
+
+            background: #ffffff !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02) !important;
+
+        }
+
+        .sub-service-card::before {
+            display: none !important;
+        }
+
+        .sub-service-card span {
+            color: #4a5568 !important;
+        }
+
+        .sub-service-card:hover {
+
+            background: #f8f9fa !important;
+
+            border-color: #0066FF !important;
+
+            transform: translateY(-5px) !important;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
+
+        }
+
+        .sub-service-card:hover i {
+            color: #0066FF !important;
+        }
+
+        .sub-service-card:hover span {
+            color: #0A1E3F !important;
+        }
+
+
+
+        /* Overview Parallax Section */
+
+        .services-overview {
+
+            background: #f8f9fa !important;
+
+        }
+
+        .parallax-categories img {
+
+            opacity: 0.08 !important;
+
+            filter: grayscale(100%) !important;
+
+        }
+
+        .section-title {
+            color: #0A1E3F !important;
+        }
+
+        .section-subtitle {
+            color: #4a5568 !important;
+        }
+
+        .category-card {
+
+            background: #ffffff !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+
+        }
+
+        .category-card:hover {
+
+            border-color: #0066FF !important;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+
+            transform: translateY(-10px) !important;
+
+        }
+
+        .category-card h3 {
+            color: #0A1E3F !important;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .category-card p {
+            color: #64748b !important;
+            text-align: left;
+        }
+
+        .category-link {
+            color: #0066FF !important;
+            font-weight: 700;
+        }
+
+
+
+        /* ZigZag Section */
+
+        .detailed-services {
+            background: #ffffff !important;
+        }
+
+        .zigzag-section {
+            background: #ffffff !important;
+        }
+
+        .zigzag-content .section-title {
+            color: #0A1E3F !important;
+        }
+
+        .zigzag-content .section-subtitle {
+            color: #4a5568 !important;
+        }
+
+        .step-text h3 {
+            color: #0A1E3F !important;
+            font-weight: 700 !important;
+        }
+
+        .step-text p {
+            color: #4a5568 !important;
+            font-size: 1.1rem !important;
+            line-height: 1.6;
+        }
+
+
+
+        /* Remove lingering dark overlays */
+
+        .bg-overlay-dark {
+            display: none !important;
+        }
+
+        .content-block-bg-image img.image-filter-darken {
+            opacity: 0.1 !important;
+            filter: grayscale(100%) brightness(1.5) !important;
+        }
+
+
+
+        /* Ensure link visibility */
+
+        .category-link {
+            background: none;
+            color: #0066FF;
+            padding: 0;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .category-link:hover {
+            color: #0044cc;
+            text-decoration: underline;
+        }
+
+
+
+
+
+        /* --- Testimonials, FAQ, and CTA WHITE THEME --- */
+
+        /* Testimonials */
+
+        .services-testimonials {
+
+            background-color: #ffffff !important;
+
+            background-image: none !important;
+
+        }
+
+        .services-testimonials::before {
+            display: none !important;
+        }
+
+        .services-testimonials .section-title {
+            color: #0A1E3F !important;
+        }
+
+        .services-testimonials .section-subtitle {
+            color: #4a5568 !important;
+        }
+
+        .testimonial-slide {
+
+            background: #f8f9fa !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+
+        }
+
+        .testimonial-text {
+            color: #334155 !important;
+        }
+
+        .testimonial-author h4 {
+            color: #0A1E3F !important;
+        }
+
+        .testimonial-author p {
+            color: #64748b !important;
+        }
+
+
+
+        /* FAQ Section */
+
+        .services-faq {
+
+            background-color: #f8f9fa !important;
+            /* Slight off-white to contrast */
+
+            border-top: 1px solid #f1f5f9;
+
+            border-bottom: 1px solid #f1f5f9;
+
+        }
+
+        .services-faq .section-title {
+            color: #0A1E3F !important;
+        }
+
+        .services-faq .section-subtitle {
+            color: #4a5568 !important;
+        }
+
+
+
+        .faq-item-slim {
+
+            background: #ffffff !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+
+        }
+
+        .faq-q-text h3 {
+            color: #0A1E3F !important;
+            font-weight: 700 !important;
+        }
+
+        .faq-icon-slim {
+            color: #0066FF !important;
+        }
+
+        .faq-a-text {
+            border-top: 1px solid #e2e8f0 !important;
+        }
+
+        .faq-a-text p {
+            color: #4a5568 !important;
+            font-size: 1.05rem !important;
+        }
+
+
+
+        /* CTA Section */
+
+        .cta-clean {
+
+            background: #ffffff !important;
+
+            border-top: 1px solid #f1f5f9;
+
+        }
+
+        .cta-clean::before,
+        .cta-clean::after {
+            display: none !important;
+        }
+
+        .cta-clean .cta-title,
+        .cta-clean h2 {
+            color: #0A1E3F !important;
+            text-shadow: none !important;
+        }
+
+        .cta-clean .cta-subtitle,
+        .cta-clean p {
+            color: #4a5568 !important;
         }
     </style>
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+
+
+        .top-bar-redesigned { display: none !important; }
+
+        .navbar {
+
+            top: 0 !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00FFFF;
+            }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+
+
+            /* Hide Google Translate Logo */
+
+            .goog-te-gadget {
+
+                color: transparent !important;
+
+                font-size: 0px !important;
+
+            }
+
+            .goog-te-gadget img {
+
+                display: none !important;
+
+            }
+
+            .goog-te-gadget .goog-te-combo {
+
+                color: #cbd5e1 !important;
+
+                background-color: #1e293b !important;
+
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+                border-radius: 4px;
+
+                padding: 3px 6px;
+
+                font-size: 0.8rem;
+
+                outline: none;
+
+                cursor: pointer;
+
+            }
+
+            .goog-te-gadget .goog-te-combo:focus {
+
+                border-color: #00FFFF !important;
+
+            }
+
+
+
+
+        }
+    </style>
+
 </head>
 
+
+
 <body>
-    <!-- Floating Language Selector -->
-    <div id="floating-translate-btn"
-        style="position:fixed;bottom:30px;left:30px;z-index:9999;display:flex;align-items:center;gap:8px;">
-        <button id="toggle-translate"
-            style="background:#0A1E3F;color:#00FFFF;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,30,63,0.18);cursor:pointer;font-size:1.6rem;transition:background 0.2s;">
-            <i class="fas fa-globe"></i>
-        </button>
-        <div id="floating-translate-widget" style="display:none;"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar-redesigned">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <i class="fas fa-bullhorn text-accent-cyan"></i>
+                <span id="typewriter-text" class="typewriter-text">Welcome to Trendtactics Digital</span>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons-top">
+                    <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/trendtactics" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="contact.html" class="top-book-call">
+                    <i class="fas fa-phone-alt"></i> Book a Call
+                </a>
+                
+                <a href="hub.html" class="top-get-started">Get Started</a>
+            </div>
+        </div>
     </div>
-    <div id="google_translate_element" style="display:none;"></div>
-    <script>
-        // Move Google Translate widget into floating widget and toggle visibility
-        document.addEventListener('DOMContentLoaded', function () {
-            var translateWidget = document.getElementById('google_translate_element');
-            var floatingWidget = document.getElementById('floating-translate-widget');
-            var toggleBtn = document.getElementById('toggle-translate');
-            if (translateWidget && floatingWidget && toggleBtn) {
-                floatingWidget.appendChild(translateWidget);
-                toggleBtn.addEventListener('click', function () {
-                    if (floatingWidget.style.display === 'none' || floatingWidget.style.display === '') {
-                        floatingWidget.style.display = 'block';
-                    } else {
-                        floatingWidget.style.display = 'none';
-                    }
-                });
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
+
+
+    <!-- Floating Language Selector -->
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
 
     <nav id="navigation" class="navbar">
+
         <div class="nav-container">
+
             <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
                 </a>
+
             </div>
+
             <div class="nav-actions">
+
                 <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link active dropdown-toggle">Services <i class="fas fa-chevron-down"
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
                                 style="font-size:0.8em;margin-left:6px;"></i></a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                            <li><a href="/services">View All Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
 
                         </ul>
+
                     </div>
-                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank" rel="noopener noreferrer">Academy</a>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
+                        </ul>
+                    </div>
+
                 </div>
+
                 <div class="nav-toggle" id="nav-toggle">
+
                     <span></span>
+
                     <span></span>
+
                     <span></span>
+
                 </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+
             </div>
-            <!-- Add dark mode toggle button to nav -->
+
         </div>
+
     </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="page-hero services-hero">
-            <div class="services-hero-3d-shapes">
-                <div class="services-shape-3d shape-1"></div>
-                <div class="services-shape-3d shape-2"></div>
-                <div class="services-shape-3d shape-3"></div>
-                <div class="services-shape-3d shape-4"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Comprehensive Digital Marketing Services
-                    </h1>
-                    <p class="hero-subtitle">
-                        From strategy to execution, we provide end-to-end digital marketing solutions that drive real
-                        business growth. Choose from our specialized services or get a custom package tailored to your
-                        needs.
-                    </p>
 
-                    <div class="hero-cta">
-                        <a href="#services-grid" class="btn btn-primary btn-large">Explore Services</a>
-                        <a href="/contact" class="btn btn-primary btn-large">Get Free Audit</a>
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Redesigned Hero Section -->
+
+        <section class="about-hero-redesigned" style="background: #ffffff; color: #0A1E3F;">
+
+            <div class="container">
+
+                <div class="hero-layout">
+
+                    <div class="hero-content-left">
+
+                        <div class="trust-badge-new">
+
+                            <i class="fas fa-layer-group"></i>
+
+                            <span>End-to-End Solutions</span>
+
+                        </div>
+
+
+
+                        <h1 class="hero-title-main">
+
+                            Comprehensive Digital <br><span class="text-accent-navy">Marketing Services</span>
+
+                        </h1>
+
+
+
+                        <p class="hero-description-main" style="color: #4a5568; font-size: 1.25rem;">
+
+                            From strategy to execution, we provide end-to-end digital marketing solutions that drive
+                            real business growth. Expertly crafted strategies tailored to your unique brand goals.
+
+                        </p>
+
+
+
+                        <div class="hero-actions-main">
+
+                            <a href="#detailed-services" class="btn-hero-primary">
+
+                                Explore Services <i class="fas fa-arrow-down"></i>
+
+                            </a>
+
+                            <a href="contact.html" class="btn-hero-outline"
+                                style="border: 2px solid #0A1E3F; color: #0A1E3F;">
+
+                                Get Free Audit
+
+                            </a>
+
+                        </div>
+
                     </div>
+
+
+
+                    <div class="hero-visual-right">
+
+                        <div class="visual-wrapper" style="max-height: 400px; max-width: 450px;">
+
+                            <div class="main-image-frame"
+                                style="border: 2px solid rgba(0,255,255,0.3); box-shadow: 0 20px 50px rgba(0,255,255,0.15);">
+
+                                <img src="images/image9.jpg" alt="Hero Image" class="hero-main-img"
+                                    style="object-fit:cover; height:400px; width:100%;" loading="lazy">
+
+                            </div>
+
+                            <div class="visual-glow-effect"></div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Scrolling Banner -->
+
         <section class="freelance-banner">
+
             <div class="banner-track">
+
                 <span>I AM OPEN FOR FREELANCING</span>
+
                 <span>I AM OPEN FOR FREELANCING</span>
+
                 <span>I AM OPEN FOR FREELANCING</span>
+
             </div>
+
         </section>
+
+
 
         <!-- Statistics and Service Showcase Section -->
+
         <section class="services-stats-showcase">
+
             <div class="container">
+
                 <!-- Statistics Section -->
+
                 <div class="hero-stats">
+
                     <div class="stat-item">
+
                         <div class="stat-number" data-target="50" data-suffix="+">0</div>
+
                         <div class="stat-label">Projects Delivered</div>
+
                     </div>
+
                     <div class="stat-item">
+
                         <div class="stat-number" data-target="98">0</div>
+
                         <div class="stat-label">Client Satisfaction %</div>
+
                     </div>
+
                     <div class="stat-item">
+
                         <div class="stat-number" data-target="200">0</div>
+
                         <div class="stat-label">Avg. ROI Increase %</div>
+
                     </div>
+
                     <div class="stat-item">
+
                         <div class="stat-number" data-target="3" data-suffix="+">0</div>
+
                         <div class="stat-label">Years Experience</div>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Service Showcase -->
+
                 <div class="service-showcase">
+
                     <div class="showcase-title">Our Core Services</div>
+
                     <div class="service-icons-wrapper">
+
                         <div class="service-icons">
+
                             <div class="service-icon-item active" data-service="web-development">
+
                                 <i class="fas fa-code"></i>
+
                                 <span>Web Development</span>
+
                             </div>
+
                             <div class="service-icon-item" data-service="app-development">
+
                                 <i class="fas fa-mobile-alt"></i>
+
                                 <span>App Development</span>
+
                             </div>
+
                             <div class="service-icon-item service-icon-item-expandable"
                                 data-service="digital-marketing">
+
                                 <i class="fas fa-chart-line"></i>
+
                                 <span>Digital Marketing</span>
+
                             </div>
+
                         </div>
+
                         <!-- Digital Marketing Sub-Services (appears when Digital Marketing is active) -->
+
                         <div class="digital-marketing-subs" id="digital-marketing-subs">
+
                             <div class="sub-service-connector">
+
                                 <div class="connector-line"></div>
+
                                 <div class="connector-arrow">
+
                                     <i class="fas fa-arrow-down"></i>
+
                                 </div>
+
                             </div>
+
                             <div class="sub-services-grid">
+
                                 <div class="sub-service-card" data-sub="email-marketing">
+
                                     <i class="fas fa-envelope"></i>
+
                                     <span>Email Marketing</span>
+
                                 </div>
+
                                 <div class="sub-service-card" data-sub="content-creation">
+
                                     <i class="fas fa-pen-nib"></i>
+
                                     <span>Content Creation</span>
+
                                 </div>
+
                                 <div class="sub-service-card" data-sub="social-media">
+
                                     <i class="fas fa-share-alt"></i>
+
                                     <span>Social Media Marketing</span>
+
                                 </div>
+
                                 <div class="sub-service-card" data-sub="facebook-ads">
+
                                     <i class="fab fa-facebook"></i>
+
                                     <span>Facebook Ads</span>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                     <div class="service-description">
+
                         <p id="service-desc">Custom, responsive websites that convert visitors into customers with
+
                             modern design and seamless user experience.</p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Services Overview -->
+
         <section class="services-overview">
-            <div class="parallax-strip" data-speed="0.3">
-                <div class="parallax-inner">
-                    <picture>
-                        <source srcset="/images/web-deve-parallex.jpg" type="image/jpeg">
-                        <img src="/images/web-deve-parallex.jpg" alt="Modern web development environment" loading="lazy"
-                            decoding="async">
-                    </picture>
-                </div>
-                <div class="bg-overlay-dark"></div>
+
+            <div class="parallax-categories" data-speed="0.2">
+
+                <img src="images/web-deve-parallex.jpg" alt="Professional background" loading="lazy">
+
             </div>
-            <div class="container">
+
+            <div class="container" style="position: relative; z-index: 3;">
+
                 <div class="section-header">
+
                     <h2 class="section-title">Our Service Categories</h2>
+
                     <p class="section-subtitle">
+
                         Comprehensive digital solutions designed to transform your business and drive measurable growth.
+
                     </p>
+
                 </div>
 
-                <div class="services-categories">
+            </div>
+
+
+
+            <div class="services-categories-outer">
+
+                <div class="services-categories-track">
+
+                    <!-- Original Set -->
+
                     <div class="category-card" data-category="web-design">
+
                         <div class="category-icon">
+
                             <i class="fas fa-code"></i>
+
                         </div>
+
                         <h3>Web Development</h3>
-                        <p>Custom websites that convert visitors into customers with modern design and seamless user
+
+                        <p>Custom websites that convert visitors into customers with modern design and seamless
+
                             experience.</p>
-                        <div class="category-features">
-                            <div class="features-track">
-                                <span>Responsive Design</span>
-                                <span>E-commerce</span>
-                                <span>CMS</span>
-                                <span>Landing Page</span>
-                                <span>Portfolio Website</span>
-                                <span>Business Website</span>
-                                <span>Responsive Design</span>
-                                <span>E-commerce</span>
-                                <span>CMS</span>
-                                <span>Landing Page</span>
-                                <span>Portfolio Website</span>
-                                <span>Business Website</span>
-                            </div>
-                        </div>
-                        <a href="/service-web-development" class="category-link">Learn More →</a>
+
+                        <a href="service-web-development.html" class="category-link">Learn More ?</a>
+
                     </div>
+
+
 
                     <div class="category-card" data-category="app-development">
+
                         <div class="category-icon">
+
                             <i class="fas fa-mobile-alt"></i>
+
                         </div>
+
                         <h3>App Development</h3>
-                        <p>Cross-platform and native mobile apps designed for user retention and scalability. Intuitive
-                            apps that scale with your business.</p>
-                        <div class="category-features">
-                            <div class="features-track">
-                                <span>iOS Apps</span>
-                                <span>Android Apps</span>
-                                <span>Cross-Platform</span>
-                                <span>iOS Apps</span>
-                                <span>Android Apps</span>
-                                <span>Cross-Platform</span>
-                            </div>
-                        </div>
-                        <a href="/service-app-development" class="category-link">Learn More →</a>
+
+                        <p>Cross-platform mobile apps designed for user retention and scalability.</p>
+
+                        <a href="service-app-development.html" class="category-link">Learn More ?</a>
+
                     </div>
+
+
 
                     <div class="category-card" data-category="digital-marketing">
+
                         <div class="category-icon">
+
                             <i class="fas fa-chart-line"></i>
+
                         </div>
+
                         <h3>Digital Marketing</h3>
-                        <p>Strategic marketing campaigns across all digital channels to increase brand awareness and
-                            drive conversions.</p>
-                        <div class="category-features">
-                            <div class="features-track">
-                                <span>Email Marketing</span>
-                                <span>Content Creation</span>
-                                <span>Social Media Marketing</span>
-                                <span>Facebook Ads</span>
-                                <span>Email Marketing</span>
-                                <span>Content Creation</span>
-                                <span>Social Media Marketing</span>
-                                <span>Facebook Ads</span>
-                            </div>
-                        </div>
-                        <a href="/service-digital-marketing" class="category-link">Learn More →</a>
+
+                        <p>Strategic marketing campaigns across all digital channels to drive conversions.</p>
+
+                        <a href="service-digital-marketing.html" class="category-link">Learn More ?</a>
+
                     </div>
+
+
+
+                    <!-- Duplicate Set for Seamless Loop -->
+
+                    <div class="category-card" data-category="web-design">
+
+                        <div class="category-icon">
+
+                            <i class="fas fa-code"></i>
+
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>Custom websites that convert visitors into customers with modern design and seamless
+
+                            experience.</p>
+
+                        <a href="service-web-development.html" class="category-link">Learn More ?</a>
+
+                    </div>
+
+
+
+                    <div class="category-card" data-category="app-development">
+
+                        <div class="category-icon">
+
+                            <i class="fas fa-mobile-alt"></i>
+
+                        </div>
+
+                        <h3>App Development</h3>
+
+                        <p>Cross-platform mobile apps designed for user retention and scalability.</p>
+
+                        <a href="service-app-development.html" class="category-link">Learn More ?</a>
+
+                    </div>
+
+
+
+                    <div class="category-card" data-category="digital-marketing">
+
+                        <div class="category-icon">
+
+                            <i class="fas fa-chart-line"></i>
+
+                        </div>
+
+                        <h3>Digital Marketing</h3>
+
+                        <p>Strategic marketing campaigns across all digital channels to drive conversions.</p>
+
+                        <a href="service-digital-marketing.html" class="category-link">Learn More ?</a>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Detailed Services -->
+
         <section class="detailed-services content-block-bg" id="detailed-services">
+
             <div class="content-block-bg-image">
+
                 <picture>
-                    <source srcset="/images/website-development-parallex.jpg" type="image/jpeg">
-                    <img src="/images/website-development-parallex.jpg" alt="Detailed Services" loading="lazy"
+
+                    <source srcset="images/website-development-parallex.jpg" type="image/jpeg">
+
+                    <img src="images/website-development-parallex.jpg" alt="Detailed Services" loading="lazy"
                         decoding="async" class="image-filter-darken">
+
                 </picture>
+
             </div>
+
             <div class="bg-overlay-dark"></div>
+
             <!-- Content will be loaded from JSON -->
+
         </section>
 
-        <!-- Process Section -->
-        <section class="process-section content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/content-creation-parallex.jpg" type="image/jpeg">
-                    <img src="/images/content-creation-parallex.jpg" alt="Our Process" loading="lazy" decoding="async"
-                        class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2 class="section-title">Our Process</h2>
-                    <p class="section-subtitle">
-                        A proven methodology that ensures successful project delivery and measurable results.
-                    </p>
-                </div>
 
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h3>Discovery & Strategy</h3>
-                            <p>We start by understanding your business, goals, and challenges to develop a tailored
-                                strategy that aligns with your objectives.</p>
-                        </div>
+
+        <!-- Process Section (Zigzag) -->
+
+        <section class="zigzag-section">
+
+            <div class="container">
+
+                <div class="zigzag-container">
+
+                    <div class="zigzag-image">
+
+                        <img src="images/content-creation-parallex.jpg" alt="Our Strategy & Development Process"
+                            loading="lazy">
+
                     </div>
 
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h3>Planning & Design</h3>
-                            <p>Create detailed plans and designs that align with your strategy and brand requirements,
-                                ensuring every element serves a purpose.</p>
-                        </div>
-                    </div>
+                    <div class="zigzag-content">
 
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h3>Development & Implementation</h3>
-                            <p>Execute the plan with precision, using the latest technologies and best practices to
-                                bring your vision to life.</p>
-                        </div>
-                    </div>
+                        <h2 class="section-title">Our Strategic Process</h2>
 
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <div class="step-content">
-                            <h3>Testing & Launch</h3>
-                            <p>Rigorous testing and optimization to ensure peak performance, followed by a successful
-                                launch with full support.</p>
-                        </div>
-                    </div>
+                        <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">A proven methodology
 
-                    <div class="process-step">
-                        <div class="step-number">05</div>
-                        <div class="step-content">
-                            <h3>Growth & Support</h3>
-                            <p>Ongoing support, monitoring, continuous optimization, and scaling strategies to maximize
-                                your ROI and ensure sustained growth.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            that ensures successful project delivery and measurable results.</p>
 
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-us content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/social-media-parallelx.jpg" type="image/jpeg">
-                    <img src="/images/social-media-parallelx.jpg" alt="Why Choose Us" loading="lazy" decoding="async"
-                        class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2 class="section-title">Why Choose Us</h2>
-                    <p class="section-subtitle">
-                        What sets us apart in delivering exceptional digital solutions that drive real business results.
-                    </p>
-                </div>
 
-                <div class="differentiators-grid">
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI-Powered Solutions</h3>
-                        <p>Leverage cutting-edge AI technology to automate processes, optimize campaigns, and drive
-                            intelligent decision-making for maximum efficiency.</p>
-                    </div>
 
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h3>Data-Driven Approach</h3>
-                        <p>Every strategy is backed by comprehensive analytics and real-time insights to ensure
-                            measurable, impactful results that move the needle.</p>
-                    </div>
+                        <div class="process-steps"
+                            style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
 
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Proven Track Record</h3>
-                        <p>98% client satisfaction rate with consistent growth across all campaigns. We deliver
-                            exceptional ROI that speaks for itself.</p>
-                    </div>
+                            <div class="process-step-item" style="display: flex; gap: 1rem;">
 
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3>Full-Service Solutions</h3>
-                        <p>From strategy to execution, we handle every aspect of your digital presence with seamless
-                            integration and comprehensive support.</p>
-                    </div>
+                                <div class="step-num"
+                                    style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">01.</div>
 
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Expert Team</h3>
-                        <p>Certified professionals with years of experience, continuously trained on the latest tools
-                            and methodologies in digital marketing and development.</p>
-                    </div>
+                                <div class="step-text">
 
-                    <div class="differentiator-card">
-                        <div class="differentiator-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Client-Focused</h3>
-                        <p>Your success is our priority. We build long-term partnerships and provide dedicated support
-                            to ensure your business thrives.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                                    <h4 style="color: #0A1E3F; margin-bottom: 0.3rem; font-weight: 700;">Discovery &
+                                        Strategy</h4>
 
-        <!-- Case Studies Section -->
-        <section class="case-studies content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/portfolio_parallele.jpg" type="image/jpeg">
-                    <img src="/images/portfolio_parallele.jpg" alt="Success Stories" loading="lazy" decoding="async"
-                        class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2 class="section-title">Success Stories</h2>
-                    <p class="section-subtitle">
-                        Real results from real clients. See how we've helped businesses achieve remarkable growth.
-                    </p>
-                </div>
+                                    <p style="font-size: 0.95rem; color: #4a5568;">We start by understanding your
 
-                <div class="case-studies-grid">
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <h3>E-commerce Platform Transformation</h3>
-                            <span class="case-study-tag">Web Development</span>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Problem</h4>
-                                <p>An outdated e-commerce platform with slow load times, poor mobile experience, and low
-                                    conversion rates was losing potential customers daily.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                                <p>We redesigned and rebuilt the platform with modern technology, optimized for speed
-                                    and mobile responsiveness, and implemented advanced analytics tracking.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-chart-line"></i> Results</h4>
-                                <div class="results-grid">
-                                    <div class="results-track">
-                                        <div class="result-item">
-                                            <span class="result-number">300%</span>
-                                            <span class="result-label">Traffic Increase</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">250%</span>
-                                            <span class="result-label">Sales Growth</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.2s</span>
-                                            <span class="result-label">Load Time</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">300%</span>
-                                            <span class="result-label">Traffic Increase</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">250%</span>
-                                            <span class="result-label">Sales Growth</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.2s</span>
-                                            <span class="result-label">Load Time</span>
-                                        </div>
-                                    </div>
+                                        business, goals, and challenges to develop a tailored strategy.</p>
+
                                 </div>
+
                             </div>
+
+                            <div class="process-step-item" style="display: flex; gap: 1rem;">
+
+                                <div class="step-num"
+                                    style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">02.</div>
+
+                                <div class="step-text">
+
+                                    <h4 style="color: #0A1E3F; margin-bottom: 0.3rem; font-weight: 700;">Planning &
+                                        Design</h4>
+
+                                    <p style="font-size: 0.95rem; color: #4a5568;">Create detailed plans and designs
+                                        that
+
+                                        align with your strategy and brand requirements.</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="process-step-item" style="display: flex; gap: 1rem;">
+
+                                <div class="step-num"
+                                    style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">03.</div>
+
+                                <div class="step-text">
+
+                                    <h4 style="color: #0A1E3F; margin-bottom: 0.3rem; font-weight: 700;">Growth &
+                                        Support</h4>
+
+                                    <p style="font-size: 0.95rem; color: #4a5568;">Ongoing monitoring and optimization
+                                        to
+
+                                        maximize your ROI and ensure sustained growth.</p>
+
+                                </div>
+
+                            </div>
+
                         </div>
+
                     </div>
 
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <h3>Digital Marketing Campaign Success</h3>
-                            <span class="case-study-tag">Digital Marketing</span>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Problem</h4>
-                                <p>A startup struggling with low brand awareness, minimal online presence, and limited
-                                    lead generation needed to scale quickly.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                                <p>We developed a comprehensive digital marketing strategy including social media
-                                    marketing, content creation, email campaigns, and targeted Facebook Ads.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-chart-line"></i> Results</h4>
-                                <div class="results-grid">
-                                    <div class="results-track">
-                                        <div class="result-item">
-                                            <span class="result-number">500%</span>
-                                            <span class="result-label">Lead Increase</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.5x</span>
-                                            <span class="result-label">ROAS</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">200%</span>
-                                            <span class="result-label">ROI</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">500%</span>
-                                            <span class="result-label">Lead Increase</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.5x</span>
-                                            <span class="result-label">ROAS</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">200%</span>
-                                            <span class="result-label">ROI</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="case-study-card">
-                        <div class="case-study-header">
-                            <h3>Mobile App Launch Success</h3>
-                            <span class="case-study-tag">App Development</span>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Problem</h4>
-                                <p>A business needed a mobile presence but lacked technical expertise to build a
-                                    user-friendly app that could compete in the market.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                                <p>We developed a cross-platform mobile app with intuitive UX/UI design, seamless
-                                    performance, and integrated analytics for user behavior tracking.</p>
-                            </div>
-                            <div class="case-study-item">
-                                <h4><i class="fas fa-chart-line"></i> Results</h4>
-                                <div class="results-grid">
-                                    <div class="results-track">
-                                        <div class="result-item">
-                                            <span class="result-number">50K+</span>
-                                            <span class="result-label">Downloads</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.8</span>
-                                            <span class="result-label">App Rating</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">85%</span>
-                                            <span class="result-label">Retention</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">50K+</span>
-                                            <span class="result-label">Downloads</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">4.8</span>
-                                            <span class="result-label">App Rating</span>
-                                        </div>
-                                        <div class="result-item">
-                                            <span class="result-number">85%</span>
-                                            <span class="result-label">Retention</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
             </div>
+
         </section>
+
+
+
+        <!-- Why Choose Us (Zigzag Reverse) -->
+
+        <section class="zigzag-section">
+
+            <div class="container">
+
+                <div class="zigzag-container zigzag-reverse">
+
+                    <div class="zigzag-image">
+
+                        <img src="images/social-media-parallelx.jpg" alt="Why Choose Trendtactics" loading="lazy">
+
+                    </div>
+
+                    <div class="zigzag-content">
+
+                        <h2 class="section-title">Why Partner With Us?</h2>
+
+                        <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">What sets us apart in
+
+                            delivering exceptional digital solutions that drive real results.</p>
+
+
+
+                        <div class="differentiators-compact"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+
+                            <div class="diff-item">
+
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-brain"></i>
+
+                                    AI-Powered</h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568;">Leverage cutting-edge AI to automate and
+
+                                    optimize your campaigns.</p>
+
+                            </div>
+
+                            <div class="diff-item">
+
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i
+                                        class="fas fa-chart-bar"></i> Data-Driven</h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568;">Back every strategy with measurable
+
+                                    analytics and real-time insights.</p>
+
+                            </div>
+
+                            <div class="diff-item">
+
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-trophy"></i>
+
+                                    Proven ROI</h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568;">98% satisfaction rate with consistent
+                                    growth
+
+                                    across all campaigns.</p>
+
+                            </div>
+
+                            <div class="diff-item">
+
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-users"></i>
+
+                                    Expert Team</h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568;">Certified professionals dedicated to your
+
+                                    long-term success.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- Case Studies Section (Zigzag) -->
+
+        <section class="zigzag-section">
+
+            <div class="container">
+
+                <div class="zigzag-container">
+
+                    <div class="zigzag-image">
+
+                        <img src="images/portfolio_parallele.jpg" alt="Success Stories" loading="lazy">
+
+                    </div>
+
+                    <div class="zigzag-content">
+
+                        <h2 class="section-title">Measurable Success</h2>
+
+                        <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">Real results from real
+
+                            clients. See how we've helped businesses achieve remarkable growth.</p>
+
+
+
+                        <div class="results-highlight" style="display: flex; flex-direction: column; gap: 2rem;">
+
+                            <div class="res-item" style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+
+                                <h4 style="color: #0A1E3F; margin-bottom: 0.5rem; font-weight: 700;">E-commerce Growth
+                                </h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568; margin-bottom: 0.5rem;">Redesigned
+                                    platform
+
+                                    for speed and conversion.</p>
+
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">300% Traffic
+
+                                    Increase 250% Sales Growth</div>
+
+                            </div>
+
+                            <div class="res-item" style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+
+                                <h4 style="color: #0A1E3F; margin-bottom: 0.5rem; font-weight: 700;">Marketing Campaign
+                                </h4>
+
+                                <p style="font-size: 0.95rem; color: #4a5568; margin-bottom: 0.5rem;">Strategic brand
+
+                                    awareness and lead generation.</p>
+
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">500% Lead
+
+                                    Increase 4.5x ROAS</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
         <!-- Testimonials Slider Section -->
+
         <section class="services-testimonials">
+
             <div class="container">
+
                 <div class="section-header">
+
                     <h2 class="section-title">What Our Clients Say</h2>
+
                     <p class="section-subtitle">
+
                         Don't just take our word for it. Here's what our clients have to say about working with us.
+
                     </p>
+
                 </div>
+
+
 
                 <div class="testimonials-slider-wrapper">
+
                     <div class="testimonials-slider" id="services-testimonials-slider">
+
                         <div class="testimonial-slide">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <p class="testimonial-text">"Trendtactics Digital transformed our online presence
+
                                 completely. Our website traffic increased by 300% and our conversion rate doubled within
+
                                 just 3 months. The team is professional, responsive, and truly understands digital
+
                                 marketing."</p>
+
                             <div class="testimonial-author">
+
                                 <div class="author-info">
+
                                     <h4>John Smith</h4>
+
                                     <p>CEO, TechStart Solutions</p>
+
                                 </div>
+
                                 <div class="testimonial-rating">
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="testimonial-slide">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <p class="testimonial-text">"The team at Trendtactics Digital is exceptional. They delivered
+
                                 our e-commerce platform on time and exceeded our expectations. Our online sales have
+
                                 increased by 400% since launch! Highly recommend their services."</p>
+
                             <div class="testimonial-author">
+
                                 <div class="author-info">
+
                                     <h4>Sarah Johnson</h4>
+
                                     <p>Marketing Director, RetailPro</p>
+
                                 </div>
+
                                 <div class="testimonial-rating">
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="testimonial-slide">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <p class="testimonial-text">"Working with Trendtactics Digital has been a game-changer.
+
                                 Their AI-powered strategies helped us reduce costs by 40% while increasing our ROI by
+
                                 250%. The data-driven approach makes all the difference."</p>
+
                             <div class="testimonial-author">
+
                                 <div class="author-info">
+
                                     <h4>Michael Chen</h4>
+
                                     <p>Founder, Innovate Labs</p>
+
                                 </div>
+
                                 <div class="testimonial-rating">
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="testimonial-slide">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <p class="testimonial-text">"Outstanding service from start to finish. They built our mobile
+
                                 app with such attention to detail and user experience. We've seen incredible user
+
                                 engagement and retention rates. Truly professional team!"</p>
+
                             <div class="testimonial-author">
+
                                 <div class="author-info">
+
                                     <h4>Emily Rodriguez</h4>
+
                                     <p>Product Manager, AppVenture</p>
+
                                 </div>
+
                                 <div class="testimonial-rating">
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="testimonial-slide">
+
                             <div class="testimonial-quote-icon">
+
                                 <i class="fas fa-quote-left"></i>
+
                             </div>
+
                             <p class="testimonial-text">"The digital marketing campaigns they created for us have been
+
                                 phenomenal. Our lead generation increased by 500% and we're seeing consistent growth
+
                                 month over month. Best investment we've made!"</p>
+
                             <div class="testimonial-author">
+
                                 <div class="author-info">
+
                                     <h4>David Thompson</h4>
+
                                     <p>CMO, GrowthCo</p>
+
                                 </div>
+
                                 <div class="testimonial-rating">
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                     <i class="fas fa-star"></i>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="testimonials-controls">
+
                         <button class="testimonial-btn prev-btn" id="services-testimonial-prev">
+
                             <i class="fas fa-chevron-left"></i>
+
                         </button>
+
                         <div class="testimonial-dots" id="services-testimonial-dots"></div>
+
                         <button class="testimonial-btn next-btn" id="services-testimonial-next">
+
                             <i class="fas fa-chevron-right"></i>
+
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- FAQ Section -->
-        <section class="services-faq">
+
+        <section class="services-faq" id="faq">
+
             <div class="container">
+
                 <div class="section-header">
+
                     <h2 class="section-title">Frequently Asked Questions</h2>
+
                     <p class="section-subtitle">
+
                         Everything you need to know about our services and how we work.
+
                     </p>
+
                 </div>
 
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
+
+
+                <div class="faq-grid-compact">
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
                             <h3>What services do you offer?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
+
+                        <div class="faq-a-text">
+
                             <p>We offer comprehensive digital solutions including Web Development, App Development, and
-                                Digital Marketing services. Our digital marketing services include Email Marketing,
-                                Content Creation, Social Media Marketing, and Facebook Ads.</p>
+
+                                Digital Marketing services (Social Media, Facebook Ads, etc.).</p>
+
                         </div>
+
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
-                            <h3>How long does a typical project take?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
+                            <h3>How long does a project take?</h3>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
-                            <p>Project timelines vary based on scope and complexity. A standard website typically takes
-                                4-8 weeks, mobile apps 8-12 weeks, and digital marketing campaigns can show results
-                                within 30-90 days. We'll provide a detailed timeline during our initial consultation.
-                            </p>
+
+                        <div class="faq-a-text">
+
+                            <p>Timelines vary: Websites (4-8 weeks), Mobile Apps (8-12 weeks), Marketing results (30-90
+
+                                days).</p>
+
                         </div>
+
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
-                            <h3>Do you provide ongoing support after launch?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
+                            <h3>Do you provide ongoing support?</h3>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
-                            <p>Yes! We offer comprehensive post-launch support including maintenance, updates,
-                                monitoring, and optimization. Our Growth & Support phase ensures your digital presence
-                                continues to perform at its best.</p>
+
+                        <div class="faq-a-text">
+
+                            <p>Yes, we offer comprehensive post-launch support including maintenance, updates, and
+
+                                optimization.</p>
+
                         </div>
+
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
+
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
                             <h3>What is your pricing model?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
-                            <p>We offer custom pricing based on your specific needs and project requirements. We provide
-                                detailed quotes after understanding your goals and scope. Contact us for a free
-                                consultation and personalized quote.</p>
+
+                        <div class="faq-a-text">
+
+                            <p>We offer custom quotes based on project scope. Contact us for a free consultation and
+
+                                personalized estimate.</p>
+
                         </div>
+
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
-                            <h3>Can you work with our existing team?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
+                            <h3>Can you work with our team?</h3>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
-                            <p>Absolutely! We excel at collaborating with in-house teams. We can integrate seamlessly
-                                with your existing workflows, provide training, and work as an extension of your team to
-                                achieve your digital goals.</p>
+
+                        <div class="faq-a-text">
+
+                            <p>Absolutely! We often work as an extension of in-house teams to achieve shared digital
+
+                                goals.</p>
+
                         </div>
+
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleServicesFAQ(this)">
-                            <h3>What makes your approach different?</h3>
-                            <i class="fas fa-chevron-down"></i>
+
+
+                    <div class="faq-item-slim">
+
+                        <div class="faq-q-text" onclick="toggleSlimFAQ(this)">
+
+                            <h3>What makes you different?</h3>
+
+                            <span class="faq-icon-slim">+</span>
+
                         </div>
-                        <div class="faq-answer">
-                            <p>Our approach combines AI-powered solutions, data-driven strategies, and proven
-                                methodologies. We focus on measurable results, maintain 98% client satisfaction, and
-                                provide full-service solutions from strategy to execution with dedicated support.</p>
+
+                        <div class="faq-a-text">
+
+                            <p>Our approach combines AI power, data-driven strategies, and a 98% client satisfaction
+
+                                rate.</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta cta-bg">
-            <div class="cta-bg-image">
-                <picture>
-                    <source srcset="/images/digital-marketing-parallex.jpg" type="image/jpeg">
-                    <img src="/images/digital-marketing-parallex.jpg" alt="Transform Your Business" loading="lazy"
-                        decoding="async">
-                </picture>
+
+
+        <!-- Udacity-Style Featured Showcase (Moved below FAQ) -->
+
+        <section class="feature-showcase">
+
+            <div class="container">
+
+                <div class="feature-card-wrapper">
+
+                    <div class="feature-bg">
+
+                        <img src="images/portfolio_parallele.jpg" alt="Our Featured Success Story" loading="lazy">
+
+                    </div>
+
+                    <div class="feature-overlay"></div>
+
+                    <div class="feature-content-card">
+
+                        <span class="feature-label">Featured Story</span>
+
+                        <h3 class="feature-card-title">From Local Business to Digital Market Leader</h3>
+
+                        <p class="feature-card-text">
+
+                            See how we helped a transitioning business achieve a 300% increase in traffic and 250% sales
+
+                            growth through our end-to-end digital engineering.
+
+                        </p>
+
+                        <a href="portfolio.html" class="btn btn-primary">Watch Featured Story</a>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="bg-overlay-gradient"></div>
-            <div class="container cta-bg-content">
-                <h2 class="cta-title">Ready to Transform Your Business?</h2>
-                <p class="cta-subtitle">
-                    Let's discuss how our services can help you achieve your digital growth goals and drive real
-                    results.
+
+        </section>
+
+
+
+        <!-- CTA Section (Clean) -->
+
+        <section class="cta-clean">
+
+            <div class="container">
+
+                <h2 class="cta-title" style="color: #0A1E3F !important;">Ready to Transform Your Business?</h2>
+
+                <p class="cta-subtitle" style="color: #4a5568 !important;">
+
+                    Let's discuss how our expert services can help you achieve your digital growth goals and drive real
+
+                    measurable results.
+
                 </p>
+
                 <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large">Get Free Consultation</a>
-                    <a href="/pricing" class="btn btn-outline btn-large">View Pricing</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-large">Get Free Consultation</a>
+
+                    <a href="pricing.html" class="btn btn-outline btn-large">View Pricing</a>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
+
+
     <!-- Scroll to Top Button -->
+
     <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+
         <i class="fas fa-chevron-up"></i>
+
     </div>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
+    <footer class="footer site-footer">
 
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener noreferrer">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="container footer-container">
 
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                </div>
+            <div class="footer-col brand-col">
 
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved. info@trendtacticsdigital.com</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
+
     <!-- Only keep necessary scripts here -->
-    <script src="/js/browser-compat.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/services.js"></script>
-    <script src="/js/parallax.js"></script>
+
+    <script src="js/browser-compat.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/services.js"></script>
+
+    <script src="js/parallax.js"></script>
+
     <script>
+
         function scrollToTop() {
+
             window.scrollTo({
+
                 top: 0,
+
                 behavior: 'smooth'
+
             });
+
         }
+
         window.addEventListener('scroll', function () {
+
             const scrollToTopBtn = document.getElementById('scrollToTop');
+
             if (window.pageYOffset > 300) {
+
                 scrollToTopBtn.classList.add('visible');
+
             } else {
+
                 scrollToTopBtn.classList.remove('visible');
+
             }
+
         });
+
     </script>
-    <script src="/js/chat-widget.js" defer></script>
+
+    
+
+    
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
+                }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
+            }
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
+            }
+
+        });
+
+    </script>
+
+    <script src="js/newsletter.js" defer></script>
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
 
 </html>

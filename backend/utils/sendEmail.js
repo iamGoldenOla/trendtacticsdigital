@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 // Create transporter
 const createTransporter = () => {
-    return nodemailer.createTransporter({
+    return nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
         secure: process.env.EMAIL_PORT === '465',
@@ -232,6 +232,25 @@ const emailTemplates = {
             </body>
             </html>
         `
+    }),
+
+    adminNewLead: (data) => ({
+        subject: `🚀 New Lead: ${data.name || 'Newsletter Signup'}`,
+        html: `
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <h2>New Lead Captured</h2>
+                <p><strong>Type:</strong> ${data.type}</p>
+                <p><strong>Name:</strong> ${data.name || 'N/A'}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                ${data.service ? `<p><strong>Service:</strong> ${data.service}</p>` : ''}
+                ${data.message ? `<p><strong>Message:</strong><br>${data.message}</p>` : ''}
+                <hr>
+                <p>Sent from Trendtactics Digital Backend</p>
+            </body>
+            </html>
+        `
     })
 };
 
@@ -239,7 +258,7 @@ const emailTemplates = {
 const sendEmail = async (options) => {
     try {
         const transporter = createTransporter();
-        
+
         const mailOptions = {
             from: `${process.env.EMAIL_FROM_NAME || 'Trendtactics Digital Academy'} <${process.env.EMAIL_FROM}>`,
             to: options.email,
@@ -265,7 +284,7 @@ const sendEmailWithTemplate = async (email, templateName, data) => {
         }
 
         const emailData = template(data);
-        
+
         return await sendEmail({
             email,
             subject: emailData.subject,

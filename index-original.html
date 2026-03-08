@@ -1,767 +1,2348 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Trendtactics Digital - We Engineer Digital Growth | Deployed Successfully</title>
+
     <meta name="description"
-        content="Unlock strategy, creativity, and AI power — all in one studio. Professional digital marketing agency based in Lagos, London, Toronto, and NYC.">
+
+        content="Unlock strategy, creativity, and AI power â all in one studio. Professional digital marketing agency based in Lagos, London, Toronto, and NYC.">
+
     <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
+
     <meta name="author" content="Akinola Olujobi">
+
     <!-- Content Security Policy to allow YouTube embeds and other resources -->
+
     <meta http-equiv="Content-Security-Policy"
+
         content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https:; media-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self' https:;">
 
+
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Trendtactics Digital - We Engineer Digital Growth">
-    <meta property="og:description" content="Unlock strategy, creativity, and AI power — all in one studio.">
+
+    <meta property="og:description" content="Unlock strategy, creativity, and AI power â all in one studio.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
 
+
+
     <!-- Twitter Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta name="twitter:title" content="Trendtactics Digital - We Engineer Digital Growth">
-    <meta name="twitter:description" content="Unlock strategy, creativity, and AI power — all in one studio.">
+
+    <meta name="twitter:description" content="Unlock strategy, creativity, and AI power â all in one studio.">
+
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
 
+
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
+
 
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
+
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+
         rel="stylesheet">
 
+
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
 
     <!-- React CDN -->
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css?v=4">
-    <link rel="stylesheet" href="/styles/shared-effects.css">
-    <link rel="stylesheet" href="/styles/about.css">
-    <link rel="stylesheet" href="/styles/images.css">
-    <link rel="stylesheet" href="/styles/media-optimization.css">
-    <link rel="stylesheet" href="/styles/homepage-improvements.css?v=2">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/shared-effects.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/media-optimization.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/homepage-improvements.css?v=1772546233">
+
+
 
     <!-- Browser Compatibility -->
-    <script src="/js/browser-compat.js"></script>
+
+    <script src="js/browser-compat.js"></script>
+
+
 
     <!-- Performance Optimizer (Load Early) -->
-    <script src="/js/performance-optimizer.js"></script>
+
+    <script src="js/performance-optimizer.js"></script>
+
+
 
     <!-- Media Optimizer (Image & Video Compression) -->
-    <script src="/js/media-optimizer.js" defer></script>
+
+    <script src="js/media-optimizer.js" defer></script>
+
+
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+
+    <!-- <script>
+
         window.dataLayer = window.dataLayer || [];
+
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+
+        gtag(\'js\', new Date());
+
+        gtag(\'config\', \'GA_MEASUREMENT_ID\');
+
+    </script> -->
+
+
 
     <!-- Preconnect to external domains for performance -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
 
+
+
+
     <!-- JSON-LD Structured Data -->
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "Organization",
+
       "name": "Trendtactics Digital",
+
       "url": "https://trendtacticsdigital.com/",
+
       "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
+
       "sameAs": [
+
         "https://linkedin.com/company/trendtactics-digital",
+
         "https://twitter.com/trendtactics",
+
         "https://instagram.com/trendtactics",
+
         "https://facebook.com/trendtactics",
+
         "https://youtube.com/trendtactics"
+
       ],
+
       "contactPoint": [{
+
         "@type": "ContactPoint",
+
         "telephone": "+234-800-000-0000",
+
         "contactType": "customer service",
+
         "areaServed": "NG, US, UK, CA",
+
         "availableLanguage": ["English"]
+
       }]
+
     }
+
     </script>
+
     <script type="application/ld+json">
+
     {
+
       "@context": "https://schema.org",
+
       "@type": "WebSite",
+
       "url": "https://trendtacticsdigital.com/",
+
       "name": "Trendtactics Digital",
+
       "potentialAction": {
+
         "@type": "SearchAction",
+
         "target": "https://trendtacticsdigital.com/search?q={search_term_string}",
+
         "query-input": "required name=search_term_string"
+
       }
+
     }
+
     </script>
+
+
+
+    <style>
+
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255,255,255,0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b; 
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+    
+
+        </style>
+
+
+
+    <style>
+
+        
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+            background-color: #061226;
+
+            color: #cbd5e1;
+
+            padding: 8px 0;
+
+            font-size: 0.85rem;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            overflow: hidden;
+
+            z-index: 1001;
+
+        }
+
+        .navbar {
+
+            top: 40px !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from, to { border-color: transparent }
+
+            50% { border-color: #00FFFF; }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+        
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+            
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
+
 <body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
+
+            
+
+    <!-- Top Bar -->
+
+    <div class="top-bar-redesigned" style="background-color: #0A1E3F !important; overflow: visible !important; z-index: 9999 !important;">
+
+        <div class="top-bar-container" style="justify-content: space-between; overflow: visible !important;">
+
+            
+
+            <div class="top-bar-left" style="flex: 1; display: flex; align-items: center; gap: 10px; max-width: 50%;">
+
+                <i class="fas fa-bullhorn text-accent-cyan" style="color: #00FFFF; margin-right: 8px;"></i>
+
+                <span id="typewriter-text" class="typewriter-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: #fff;">Welcome to Trendtactics Digital</span>
+
+            </div>
+
+            
+
+            <div class="top-bar-right" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; overflow: visible !important;">
+
+                
+
+                <div class="social-icons-top" style="display: flex; gap: 10px;">
+
+                    <a href="https://facebook.com/trendtactics" target="_blank" style="color:#fff;"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" target="_blank" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+
+                </div>
+
+                
+
+                <a href="contact.html" class="top-book-call" style="color: #fff; text-decoration: none;">
+
+                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Book a Call
+
                 </a>
-            </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link active">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-video-background">
-                <video autoplay muted loop playsinline id="hero-video" preload="auto">
-                    <!-- Added timestamp to force cache clear -->
-                    <source src="/images/Trendtactics-digital-promo.mp4?v=2" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay"></div>
-            </div>
-            <div class="hero-content-centered">
-                <h1 class="hero-title">
-                    <span class="text-gradient">We Engineer Digital Growth</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Unlock strategy, creativity, and AI power — all in one studio.
-                    Transform your business with data-driven digital marketing that delivers real results.
-                </p>
-                <div class="hero-cta">
-                    <a href="/services" class="btn btn-primary btn-large">Explore Services</a>
-                    <a href="/portfolio" class="btn btn-outline btn-large">View Our Work</a>
-                </div>
-            </div>
-        </section>
+                
 
-        <!-- About Trendtactics Digital Section -->
-        <section class="about-trendtactics">
-            <div class="container">
-                <div class="about-content-wrapper">
-                    <div class="about-text-content">
-                        <div class="about-badge">
-                            <span class="badge-icon"><i class="fas fa-rocket"></i></span>
-                            <span>About Us</span>
-                        </div>
-                        <h2 class="about-title">
-                            We Don't Just Market Brands —
-                            <span class="text-highlight">We Engineer Digital Growth</span>
-                        </h2>
-                        <p class="about-description">
-                            At Trendtactics Digital, we combine strategic thinking, creative excellence, and
-                            cutting-edge AI technology to transform businesses. With offices in Lagos, London, Toronto,
-                            and NYC, we're a global team of digital growth engineers dedicated to delivering measurable
-                            results.
-                        </p>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <div class="stat-number" data-target="50">0</div>
-                                <div class="stat-label">Projects Delivered</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-target="98">0</div>
-                                <div class="stat-label">Client Satisfaction %</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-target="3">0</div>
-                                <div class="stat-label">Years Experience</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" data-target="200">0</div>
-                                <div class="stat-label">Average ROI Increase %</div>
-                            </div>
-                        </div>
-                        <div class="about-cta">
-                            <a href="/about" class="btn btn-primary">Learn More About Us</a>
-                            <a href="/contact" class="btn btn-primary">Get In Touch</a>
-                        </div>
-                    </div>
-                    <div class="about-visual-content">
-                        <div class="about-card-stack">
-                            <div class="about-card card-1">
-                                <div class="card-icon">
-                                    <i class="fas fa-lightbulb"></i>
-                                </div>
-                                <h3>Innovation</h3>
-                                <p>We stay ahead with the latest technologies and strategies</p>
-                            </div>
-                            <div class="about-card card-2">
-                                <div class="card-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h3>Results-Driven</h3>
-                                <p>Every campaign is optimized for measurable business growth</p>
-                            </div>
-                            <div class="about-card card-3">
-                                <div class="card-icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h3>Client-Focused</h3>
-                                <p>Your success is our mission - we're with you every step</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-background-decoration"></div>
-        </section>
+                <div class="top-search">
 
-        <!-- Brands Section -->
-        <section class="brands">
-            <div class="container">
-                <p class="brands-label">Trusted by leading brands</p>
-                <div class="brands-container">
-                    <div class="brands-grid" id="brands-grid">
-                        <!-- Kevtos Catering (Orange/Gold) -->
-                        <div class="brand-card-custom brand-bg-kevtos">
-                            <img src="/images/KEVTOS-CATERING.jpg" alt="Kevtos Catering"
-                                onerror="this.onerror=null; this.parentElement.innerText='KEVTOS CATERING'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
-                        </div>
+                    <i class="fas fa-search" style="color: #fff;"></i>
 
-                        <!-- Realtreasure (Blue) -->
-                        <div class="brand-card-custom brand-bg-realtreasure">
-                            <img src="/images/Realtreasure.jpg" alt="Realtreasure"
-                                onerror="this.onerror=null; this.parentElement.innerText='REALTREASURE'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
-                        </div>
+                    <input type="text" placeholder="Search..." style="background:transparent; border:none; color:#fff;">
 
-                        <!-- HustleNChill (Purple) -->
-                        <div class="brand-card-custom brand-bg-hustlenchill">
-                            <img src="/images/HustleNChill---My-Presi-2.jpg" alt="HustleNChill"
-                                onerror="this.onerror=null; this.parentElement.innerText='HUSTLENCHILL'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
-                        </div>
-
-                        <!-- Greentick (Green) -->
-                        <div class="brand-card-custom brand-bg-greentick">
-                            <img src="/images/GREENTICK---My-Presi.jpg" alt="Greentick"
-                                onerror="this.onerror=null; this.parentElement.innerText='GREENTICK'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
-                        </div>
-
-                        <!-- Gabson (Green/Yellow) -->
-                        <div class="brand-card-custom brand-bg-gabson">
-                            <img src="/images/Gabson--PICP.jpg" alt="Gabson"
-                                onerror="this.onerror=null; this.parentElement.innerText='GABSON'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-us content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/service-parallex.jpg" type="image/jpeg">
-                    <img src="/images/service-parallex.jpg" alt="Digital Marketing Services" loading="lazy"
-                        decoding="async" class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-dark"></div>
-            <div class="side-accent"></div>
-            <div class="container content-block-bg-content">
-                <div class="section-header">
-                    <h2 class="section-title">Why Choose Trendtactics Digital?</h2>
-                    <p class="section-subtitle">
-                        We don't just deliver results — we engineer sustainable growth through strategic innovation and
-                        proven methodologies.
-                    </p>
                 </div>
 
-                <div class="reasons-grid">
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Proven Results</h3>
-                        <p>We've helped 500+ businesses achieve an average of 300% ROI increase and 200% traffic growth
-                            within 6 months.</p>
-                    </div>
+                
 
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI-Powered Strategy</h3>
-                        <p>Leverage cutting-edge AI tools and data analytics to make informed decisions and optimize
-                            campaigns in real-time.</p>
-                    </div>
+                <a href="academy.html" class="top-cart" title="Ebook Cart" style="color: #fff;">
 
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Expert Team</h3>
-                        <p>Our certified professionals bring 10+ years of experience in digital marketing, SEO, and
-                            growth hacking.</p>
-                    </div>
+                    <i class="fas fa-shopping-cart"></i>
 
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Transparent Reporting</h3>
-                        <p>Get detailed monthly reports with actionable insights, performance metrics, and growth
-                            recommendations.</p>
-                    </div>
+                    <span class="cart-badge">0</span>
 
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Fast Implementation</h3>
-                        <p>See results within 30 days with our rapid deployment strategies and optimized workflows.</p>
-                    </div>
+                </a>
 
-                    <div class="reason-card">
-                        <div class="reason-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Risk-Free Guarantee</h3>
-                        <p>100% satisfaction guarantee with performance-based pricing and no long-term contracts
-                            required.</p>
-                    </div>
-                </div>
+                
+
+                
+
+                
+
+                <a href="hub.html" class="top-get-started" style="background: #00FFFF; color: #0A1E3F; font-weight: 700; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s ease;">
+
+                    Get Started
+
+                </a>
+
             </div>
-        </section>
 
-        <!-- Services Section -->
-        <section class="services">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="section-subtitle">
-                        Comprehensive digital marketing solutions designed to accelerate your business growth and
-                        maximize ROI.
-                    </p>
-                </div>
+            
 
-                <div class="services-grid">
-                    <div class="service-card" onclick="window.location.href='/service-web-development'">
-                        <div class="service-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Custom, responsive websites built for performance, accessibility, and conversion.</p>
-                        <blockquote class="service-quote">"We build fast, reliable websites that engage users and drive
-                            growth."</blockquote>
-                        <a href="/service-web-development" class="service-link">Learn More →</a>
-                    </div>
-
-                    <div class="service-card" onclick="window.location.href='/service-app-development'">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-screen-button"></i>
-                        </div>
-                        <h3>App Development</h3>
-                        <p>Cross-platform and native mobile apps designed for user retention and scalability.</p>
-                        <blockquote class="service-quote">"Intuitive apps that scale with your business and delight
-                            users."</blockquote>
-                        <a href="/service-app-development" class="service-link">Learn More →</a>
-                    </div>
-
-                    <div class="service-card" onclick="window.location.href='/service-digital-marketing'">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Digital Marketing</h3>
-                        <p>Integrated campaigns across paid, owned, and earned channels to grow revenue.</p>
-                        <blockquote class="service-quote">"Data-driven marketing that moves the needle — from awareness
-                            to conversion."</blockquote>
-                        <a href="/service-digital-marketing" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-            </div>
-            <!-- SVG Divider directly under the cards -->
-            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-divider">
-                <path d="M0,40 C360,120 1080,-40 1440,60 L1440,100 L0,100 Z" fill="#00FFFF" fill-opacity="0.12" />
-            </svg>
-        </section>
-
-        <!-- Scrolling Trust Bar -->
-        <div class="scrolling-trust-bar">
-            <div class="scrolling-content">
-                <div class="trust-item"><i class="fas fa-star"></i> 98% Client Satisfaction</div>
-                <div class="trust-item"><i class="fas fa-award"></i> 3+ Years Experience</div>
-                <div class="trust-item"><i class="fas fa-briefcase"></i> 50+ Projects Delivered</div>
-                <div class="trust-item"><i class="fas fa-star"></i> 98% Client Satisfaction</div>
-                <div class="trust-item"><i class="fas fa-award"></i> 3+ Years Experience</div>
-                <div class="trust-item"><i class="fas fa-briefcase"></i> 50+ Projects Delivered</div>
-            </div>
         </div>
 
-        <!-- Testimonials Section - Modern Scrolling Design -->
-        <section class="testimonials">
-            <div class="testimonials-background-pattern"></div>
-            <div class="container">
-                <div class="testimonials-header">
-                    <div class="testimonials-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Client Testimonials</span>
-                    </div>
-                    <h2 class="testimonials-main-title">
-                        What Our <span class="title-highlight">Clients Say</span>
-                    </h2>
-                    <p class="testimonials-subtitle">
-                        Real results from real businesses. See how we've helped companies achieve remarkable growth.
-                    </p>
-                </div>
-
-                <!-- Static Testimonials Grid -->
-                <!-- Static Testimonials Grid -->
-                <div class="trust-testimonials-grid-redesigned">
-                    <!-- Testimonial 1 -->
-                    <div class="trust-testimonial-card-redesigned">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <div class="trust-rating-redesigned">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="trust-quote-redesigned">"Working with Trendtactics Digital transformed our online
-                            presence. Their strategic approach to digital marketing increased our revenue by 300% in
-                            just 6 months!"</p>
-                        <div class="trust-author-redesigned">
-                            <div class="author-info-wrapper">
-                                <strong>Michael Chen</strong>
-                                <span>CEO, TechStart Inc.</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-accent"></div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="trust-testimonial-card-redesigned">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <div class="trust-rating-redesigned">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="trust-quote-redesigned">"The team at Trendtactics is exceptional! They delivered a
-                            beautiful website and our conversion rate doubled. Highly recommend their services!"</p>
-                        <div class="trust-author-redesigned">
-                            <div class="author-info-wrapper">
-                                <strong>Sarah Johnson</strong>
-                                <span>Marketing Director, GrowthCo</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-accent"></div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="trust-testimonial-card-redesigned">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <div class="trust-rating-redesigned">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="trust-quote-redesigned">"Outstanding results! Our social media engagement skyrocketed
-                            and we gained 10,000+ new followers in 3 months. Professional team that delivers!"</p>
-                        <div class="trust-author-redesigned">
-                            <div class="author-info-wrapper">
-                                <strong>David Martinez</strong>
-                                <span>Founder, EcoStore</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-accent"></div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- Latest Blog Section -->
-        <section class="latest-blog">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Latest Blog Posts</h2>
-                    <p class="section-subtitle">
-                        Stay updated with the latest insights, tips, and strategies from our digital marketing experts.
-                    </p>
-                </div>
-                <div class="blog-grid-home" id="blog-grid-home">
-                    <!-- Blog posts will be loaded here -->
-                </div>
-                <div class="blog-cta-home">
-                    <a href="/blog" class="btn btn-outline btn-large">View All Posts</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta cta-bg">
-            <div class="cta-bg-image">
-                <picture>
-                    <source srcset="/images/digital-marketing-parallex.jpg" type="image/jpeg">
-                    <img src="/images/digital-marketing-parallex.jpg" alt="Digital Growth" loading="lazy"
-                        decoding="async">
-                </picture>
-            </div>
-            <div class="bg-overlay-gradient"></div>
-            <div class="container cta-bg-content">
-                <h2 class="cta-title">Ready to Accelerate Your Growth?</h2>
-                <p class="cta-subtitle">
-                    Let's discuss how we can help you achieve your digital marketing goals and drive real business
-                    results.
-                </p>
-                <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large">Get Free Consultation</a>
-                    <a href="/quiz" class="btn btn-outline btn-large">Take Growth Quiz</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- After Ready to Accelerate Your Growth section -->
-        <div id="ebookPromoMarquee"
-            style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
-            <marquee behavior="scroll" direction="left" scrollamount="7">🔥 Discover my premium ebooks for business
-                growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to
-                buy now and unlock your success! 🔥</marquee>
-        </div>
-    </main>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="/services#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
-            </div>
         </div>
+
+    </div>
+
+    </div>
+
+<nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital"
+
+                        data-optimized="true" style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;" loading="lazy">
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <a href="quiz.html" class="nav-link" style="font-weight: bold;">Take Quiz</a>
+
+                    
+
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="hero-video-background">
+
+                <video autoplay muted loop playsinline id="hero-video" preload="auto">
+
+                    <!-- Added timestamp to force cache clear -->
+
+                    <source src="images/Trendtactics-digital-promo.mp4?v=2" type="video/mp4">
+
+                    Your browser does not support the video tag.
+
+                </video>
+
+                <div class="video-overlay"></div>
+
+            </div>
+
+            <div class="hero-content-centered">
+
+                <h1 class="hero-title">
+
+                    <span class="text-gradient">We Engineer Digital Growth</span>
+
+                </h1>
+
+                <p class="hero-subtitle">
+
+                    Unlock strategy, creativity, and AI power â all in one studio.
+
+                    Transform your business with data-driven digital marketing that delivers real results.
+
+                </p>
+
+                <div class="hero-cta">
+
+                    <a href="services.html" class="btn btn-primary btn-large">Explore Services</a>
+
+                    <a href="portfolio.html" class="btn btn-outline btn-large">View Our Work</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- About Trendtactics Digital Section -->
+
+        <section class="about-trendtactics">
+
+            <div class="container">
+
+                <div class="about-content-wrapper">
+
+                    <div class="about-text-content">
+
+                        <div class="about-badge">
+
+                            <span class="badge-icon"><i class="fas fa-rocket"></i></span>
+
+                            <span>About Us</span>
+
+                        </div>
+
+                        <h2 class="about-title">
+
+                            We Don't Just Market Brands â
+
+                            <span class="text-highlight">We Engineer Digital Growth</span>
+
+                        </h2>
+
+                        <p class="about-description">
+
+                            At Trendtactics Digital, we combine strategic thinking, creative excellence, and
+
+                            cutting-edge AI technology to transform businesses. With offices in Lagos, London, Toronto,
+
+                            and NYC, we're a global team of digital growth engineers dedicated to delivering measurable
+
+                            results.
+
+                        </p>
+
+                        <div class="about-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-number" data-target="50">0</div>
+
+                                <div class="stat-label">Projects Delivered</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-number" data-target="98">0</div>
+
+                                <div class="stat-label">Client Satisfaction %</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-number" data-target="3">0</div>
+
+                                <div class="stat-label">Years Experience</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-number" data-target="200">0</div>
+
+                                <div class="stat-label">Average ROI Increase %</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="about-cta">
+
+                            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+
+                            <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="about-visual-content">
+
+                        <div class="about-card-stack">
+
+                            <div class="about-card card-1">
+
+                                <div class="card-icon">
+
+                                    <i class="fas fa-lightbulb"></i>
+
+                                </div>
+
+                                <h3>Innovation</h3>
+
+                                <p>We stay ahead with the latest technologies and strategies</p>
+
+                            </div>
+
+                            <div class="about-card card-2">
+
+                                <div class="card-icon">
+
+                                    <i class="fas fa-chart-line"></i>
+
+                                </div>
+
+                                <h3>Results-Driven</h3>
+
+                                <p>Every campaign is optimized for measurable business growth</p>
+
+                            </div>
+
+                            <div class="about-card card-3">
+
+                                <div class="card-icon">
+
+                                    <i class="fas fa-users"></i>
+
+                                </div>
+
+                                <h3>Client-Focused</h3>
+
+                                <p>Your success is our mission - we're with you every step</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-background-decoration"></div>
+
+        </section>
+
+
+
+        <!-- Brands Section -->
+
+        <section class="brands">
+
+            <div class="container">
+
+                <p class="brands-label">Trusted by leading brands</p>
+
+                <div class="brands-container">
+
+                    <div class="brands-grid" id="brands-grid">
+
+                        <!-- Kevtos Catering (Orange/Gold) -->
+
+                        <div class="brand-card-custom brand-bg-kevtos">
+
+                            <img src="images/KEVTOS-CATERING.jpg" alt="Kevtos Catering"
+
+                                onerror="this.onerror=null; this.parentElement.innerText='KEVTOS CATERING'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';" loading="lazy">
+
+                        </div>
+
+
+
+                        <!-- Realtreasure (Blue) -->
+
+                        <div class="brand-card-custom brand-bg-realtreasure">
+
+                            <img src="images/Realtreasure.jpg" alt="Realtreasure"
+
+                                onerror="this.onerror=null; this.parentElement.innerText='REALTREASURE'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';" loading="lazy">
+
+                        </div>
+
+
+
+                        <!-- HustleNChill (Purple) -->
+
+                        <div class="brand-card-custom brand-bg-hustlenchill">
+
+                            <img src="images/HustleNChill---My-Presi-2.jpg" alt="HustleNChill"
+
+                                onerror="this.onerror=null; this.parentElement.innerText='HUSTLENCHILL'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';" loading="lazy">
+
+                        </div>
+
+
+
+                        <!-- Greentick (Green) -->
+
+                        <div class="brand-card-custom brand-bg-greentick">
+
+                            <img src="images/GREENTICK---My-Presi.jpg" alt="Greentick"
+
+                                onerror="this.onerror=null; this.parentElement.innerText='GREENTICK'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';" loading="lazy">
+
+                        </div>
+
+
+
+                        <!-- Gabson (Green/Yellow) -->
+
+                        <div class="brand-card-custom brand-bg-gabson">
+
+                            <img src="images/Gabson--PICP.jpg" alt="Gabson"
+
+                                onerror="this.onerror=null; this.parentElement.innerText='GABSON'; this.parentElement.style.color='white'; this.parentElement.style.fontWeight='bold';" loading="lazy">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Why Choose Us Section -->
+
+        <section class="why-choose-us content-block-bg">
+
+            <div class="content-block-bg-image">
+
+                <picture>
+
+                    <source srcset="images/service-parallex.jpg" type="image/jpeg">
+
+                    <img src="images/service-parallex.jpg" alt="Digital Marketing Services" loading="lazy"
+
+                        decoding="async" class="image-filter-darken">
+
+                </picture>
+
+            </div>
+
+            <div class="bg-overlay-dark"></div>
+
+            <div class="side-accent"></div>
+
+            <div class="container content-block-bg-content">
+
+                <div class="section-header">
+
+                    <h2 class="section-title">Why Choose Trendtactics Digital?</h2>
+
+                    <p class="section-subtitle">
+
+                        We don't just deliver results â we engineer sustainable growth through strategic innovation and
+
+                        proven methodologies.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="reasons-grid">
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-rocket"></i>
+
+                        </div>
+
+                        <h3>Proven Results</h3>
+
+                        <p>We've helped 500+ businesses achieve an average of 300% ROI increase and 200% traffic growth
+
+                            within 6 months.</p>
+
+                    </div>
+
+
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-brain"></i>
+
+                        </div>
+
+                        <h3>AI-Powered Strategy</h3>
+
+                        <p>Leverage cutting-edge AI tools and data analytics to make informed decisions and optimize
+
+                            campaigns in real-time.</p>
+
+                    </div>
+
+
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-users"></i>
+
+                        </div>
+
+                        <h3>Expert Team</h3>
+
+                        <p>Our certified professionals bring 10+ years of experience in digital marketing, SEO, and
+
+                            growth hacking.</p>
+
+                    </div>
+
+
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-chart-line"></i>
+
+                        </div>
+
+                        <h3>Transparent Reporting</h3>
+
+                        <p>Get detailed monthly reports with actionable insights, performance metrics, and growth
+
+                            recommendations.</p>
+
+                    </div>
+
+
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-clock"></i>
+
+                        </div>
+
+                        <h3>Fast Implementation</h3>
+
+                        <p>See results within 30 days with our rapid deployment strategies and optimized workflows.</p>
+
+                    </div>
+
+
+
+                    <div class="reason-card">
+
+                        <div class="reason-icon">
+
+                            <i class="fas fa-shield-alt"></i>
+
+                        </div>
+
+                        <h3>Risk-Free Guarantee</h3>
+
+                        <p>100% satisfaction guarantee with performance-based pricing and no long-term contracts
+
+                            required.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Services Section -->
+
+        <section class="services">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2 class="section-title">Our Services</h2>
+
+                    <p class="section-subtitle">
+
+                        Comprehensive digital marketing solutions designed to accelerate your business growth and
+
+                        maximize ROI.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="services-grid">
+
+                    <div class="service-card" onclick="window.location.href='service-web-development.html'">
+
+                        <div class="service-icon">
+
+                            <i class="fas fa-desktop"></i>
+
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>Custom, responsive websites built for performance, accessibility, and conversion.</p>
+
+                        <blockquote class="service-quote">"We build fast, reliable websites that engage users and drive
+
+                            growth."</blockquote>
+
+                        <a href="service-web-development.html" class="service-link">Learn More â</a>
+
+                    </div>
+
+
+
+                    <div class="service-card" onclick="window.location.href='service-app-development.html'">
+
+                        <div class="service-icon">
+
+                            <i class="fas fa-mobile-screen-button"></i>
+
+                        </div>
+
+                        <h3>App Development</h3>
+
+                        <p>Cross-platform and native mobile apps designed for user retention and scalability.</p>
+
+                        <blockquote class="service-quote">"Intuitive apps that scale with your business and delight
+
+                            users."</blockquote>
+
+                        <a href="service-app-development.html" class="service-link">Learn More â</a>
+
+                    </div>
+
+
+
+                    <div class="service-card" onclick="window.location.href='service-digital-marketing.html'">
+
+                        <div class="service-icon">
+
+                            <i class="fas fa-bullhorn"></i>
+
+                        </div>
+
+                        <h3>Digital Marketing</h3>
+
+                        <p>Integrated campaigns across paid, owned, and earned channels to grow revenue.</p>
+
+                        <blockquote class="service-quote">"Data-driven marketing that moves the needle â from awareness
+
+                            to conversion."</blockquote>
+
+                        <a href="service-digital-marketing.html" class="service-link">Learn More â</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SVG Divider directly under the cards -->
+
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-divider">
+
+                <path d="M0,40 C360,120 1080,-40 1440,60 L1440,100 L0,100 Z" fill="#00FFFF" fill-opacity="0.12" />
+
+            </svg>
+
+        </section>
+
+
+
+        <!-- Scrolling Trust Bar -->
+
+        <div class="scrolling-trust-bar">
+
+            <div class="scrolling-content">
+
+                <div class="trust-item"><i class="fas fa-star"></i> 98% Client Satisfaction</div>
+
+                <div class="trust-item"><i class="fas fa-award"></i> 3+ Years Experience</div>
+
+                <div class="trust-item"><i class="fas fa-briefcase"></i> 50+ Projects Delivered</div>
+
+                <div class="trust-item"><i class="fas fa-star"></i> 98% Client Satisfaction</div>
+
+                <div class="trust-item"><i class="fas fa-award"></i> 3+ Years Experience</div>
+
+                <div class="trust-item"><i class="fas fa-briefcase"></i> 50+ Projects Delivered</div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Testimonials Section - Modern Scrolling Design -->
+
+        <section class="testimonials">
+
+            <div class="testimonials-background-pattern"></div>
+
+            <div class="container">
+
+                <div class="testimonials-header">
+
+                    <div class="testimonials-badge">
+
+                        <i class="fas fa-star"></i>
+
+                        <span>Client Testimonials</span>
+
+                    </div>
+
+                    <h2 class="testimonials-main-title">
+
+                        What Our <span class="title-highlight">Clients Say</span>
+
+                    </h2>
+
+                    <p class="testimonials-subtitle">
+
+                        Real results from real businesses. See how we've helped companies achieve remarkable growth.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Static Testimonials Grid -->
+
+                <!-- Static Testimonials Grid -->
+
+                <div class="trust-testimonials-grid-redesigned">
+
+                    <!-- Testimonial 1 -->
+
+                    <div class="trust-testimonial-card-redesigned">
+
+                        <div class="testimonial-quote-icon">
+
+                            <i class="fas fa-quote-left"></i>
+
+                        </div>
+
+                        <div class="trust-rating-redesigned">
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                        </div>
+
+                        <p class="trust-quote-redesigned">"Working with Trendtactics Digital transformed our online
+
+                            presence. Their strategic approach to digital marketing increased our revenue by 300% in
+
+                            just 6 months!"</p>
+
+                        <div class="trust-author-redesigned">
+
+                            <div class="author-info-wrapper">
+
+                                <strong>Michael Chen</strong>
+
+                                <span>CEO, TechStart Inc.</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-accent"></div>
+
+                    </div>
+
+
+
+                    <!-- Testimonial 2 -->
+
+                    <div class="trust-testimonial-card-redesigned">
+
+                        <div class="testimonial-quote-icon">
+
+                            <i class="fas fa-quote-left"></i>
+
+                        </div>
+
+                        <div class="trust-rating-redesigned">
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                        </div>
+
+                        <p class="trust-quote-redesigned">"The team at Trendtactics is exceptional! They delivered a
+
+                            beautiful website and our conversion rate doubled. Highly recommend their services!"</p>
+
+                        <div class="trust-author-redesigned">
+
+                            <div class="author-info-wrapper">
+
+                                <strong>Sarah Johnson</strong>
+
+                                <span>Marketing Director, GrowthCo</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-accent"></div>
+
+                    </div>
+
+
+
+                    <!-- Testimonial 3 -->
+
+                    <div class="trust-testimonial-card-redesigned">
+
+                        <div class="testimonial-quote-icon">
+
+                            <i class="fas fa-quote-left"></i>
+
+                        </div>
+
+                        <div class="trust-rating-redesigned">
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                            <i class="fas fa-star"></i>
+
+                        </div>
+
+                        <p class="trust-quote-redesigned">"Outstanding results! Our social media engagement skyrocketed
+
+                            and we gained 10,000+ new followers in 3 months. Professional team that delivers!"</p>
+
+                        <div class="trust-author-redesigned">
+
+                            <div class="author-info-wrapper">
+
+                                <strong>David Martinez</strong>
+
+                                <span>Founder, EcoStore</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-accent"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- Latest Blog Section -->
+
+        <section class="latest-blog">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2 class="section-title">Latest Blog Posts</h2>
+
+                    <p class="section-subtitle">
+
+                        Stay updated with the latest insights, tips, and strategies from our digital marketing experts.
+
+                    </p>
+
+                </div>
+
+                <div class="blog-grid-home" id="blog-grid-home">
+
+                    <!-- Blog posts will be loaded here -->
+
+                </div>
+
+                <div class="blog-cta-home">
+
+                    <a href="blog.html" class="btn btn-outline btn-large">View All Posts</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CTA Section -->
+
+        <section class="cta cta-bg">
+
+            <div class="cta-bg-image">
+
+                <picture>
+
+                    <source srcset="images/digital-marketing-parallex.jpg" type="image/jpeg">
+
+                    <img src="images/digital-marketing-parallex.jpg" alt="Digital Growth" loading="lazy"
+
+                        decoding="async">
+
+                </picture>
+
+            </div>
+
+            <div class="bg-overlay-gradient"></div>
+
+            <div class="container cta-bg-content">
+
+                <h2 class="cta-title">Ready to Accelerate Your Growth?</h2>
+
+                <p class="cta-subtitle">
+
+                    Let's discuss how we can help you achieve your digital marketing goals and drive real business
+
+                    results.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="contact.html" class="btn btn-primary btn-large">Get Free Consultation</a>
+
+                    <a href="quiz.html" class="btn btn-outline btn-large">Take Growth Quiz</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- After Ready to Accelerate Your Growth section -->
+
+        <div id="ebookPromoMarquee"
+
+            style="background:#A8FF8A; color:#0A1E3F; padding:0.5em 0; font-weight:600; font-size:1.1em; white-space:nowrap; overflow:hidden; margin-bottom:1.5em;">
+
+            <marquee behavior="scroll" direction="left" scrollamount="7">ð¥ Discover my premium ebooks for business
+
+                growth! Visit the <a href="/shop" style="color:#0A1E3F; text-decoration:underline;">Author Shop</a> to
+
+                buy now and unlock your success! ð¥</marquee>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Scroll to Top Button -->
+
+    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+
+        <i class="fas fa-chevron-up"></i>
+
+    </div>
+
+
+
+    <!-- Footer -->
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img" loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism, prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
+
+
 
     <!-- Only keep necessary scripts here, remove <div id="react-app"></div> and floating translate button/widget from after the footer -->
 
+
+
     <script>
+
         function scrollToTop() {
+
             window.scrollTo({
+
                 top: 0,
+
                 behavior: 'smooth'
+
             });
+
         }
+
         window.addEventListener('scroll', function () {
+
             const scrollToTopBtn = document.getElementById('scrollToTop');
+
             if (window.pageYOffset > 300) {
+
                 scrollToTopBtn.classList.add('visible');
+
             } else {
+
                 scrollToTopBtn.classList.remove('visible');
+
             }
+
         });
+
+
 
         // Animated counter for About section stats
+
         function animateCounter(element, target, duration = 2000) {
+
             let start = 0;
+
             const increment = target / (duration / 16);
+
             const timer = setInterval(() => {
+
                 start += increment;
+
                 if (start >= target) {
+
                     element.textContent = target + (target === 98 ? '%' : target === 200 ? '%' : '+');
+
                     clearInterval(timer);
+
                 } else {
+
                     element.textContent = Math.floor(start) + (target === 98 ? '%' : target === 200 ? '%' : '+');
+
                 }
+
             }, 16);
+
         }
 
+
+
         // Intersection Observer for stats animation
+
         document.addEventListener('DOMContentLoaded', function () {
+
             const stats = document.querySelectorAll('.stat-number');
+
             const observerOptions = {
+
                 threshold: 0.5,
+
                 rootMargin: '0px'
+
             };
 
+
+
             const observer = new IntersectionObserver((entries) => {
+
                 entries.forEach(entry => {
+
                     if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+
                         const target = parseInt(entry.target.getAttribute('data-target'));
+
                         animateCounter(entry.target, target);
+
                         entry.target.classList.add('animated');
+
                     }
+
                 });
+
             }, observerOptions);
 
+
+
             stats.forEach(stat => {
+
                 observer.observe(stat);
+
             });
+
         });
+
     </script>
+
     <!-- Growth & Conversion Features -->
-    <script src="/js/growth-features.js" defer></script>
+
+    <script src="js/growth-features.js" defer></script>
+
+
 
     <!-- Social Sharing -->
-    <script src="/js/social-sharing.js" defer></script>
+
+    <script src="js/social-sharing.js" defer></script>
+
+
 
     <!-- Newsletter Integration -->
-    <script src="/js/newsletter.js" defer></script>
+
+    <script src="js/newsletter.js" defer></script>
+
+
 
     <!-- Main Scripts -->
+
     <script src="https://js.puter.com/v2/"></script>
-    <script src="/js/chat-widget.js" defer></script>
-    <script src="/js/main.js" defer></script>
-    <script src="/js/testimonials-scroll.js" defer></script>
-    <script src="/js/parallax.js" defer></script>
+
+    <script src="js/chat-widget.js" defer></script>
+
+    <script src="js/main.js" defer></script>
+
+    <script src="js/testimonials-scroll.js" defer></script>
+
+    <script src="js/parallax.js" defer></script>
+
+
+
+
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const phrases = [
+
+            "Welcome to Trendtactics Digital",
+
+            "Read our latest blog: The Future of AI",
+
+            "Next Event: Digital Growth Webinar - Oct 25",
+
+            "Scale your revenue with our experts",
+
+            "" 
+
+        ];
+
+        let i = 0;
+
+        let j = 0;
+
+        let currentPhrase = [];
+
+        let isDeleting = false;
+
+        let isEnd = false;
+
+        
+
+        const typeWriterElement = document.getElementById('typewriter-text');
+
+        
+
+        function loop() {
+
+            if (!typeWriterElement) return;
+
+            
+
+            // Add live time to the last phrase dynamically
+
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+            
+
+            isEnd = false;
+
+            typeWriterElement.innerHTML = currentPhrase.join('');
+
+            
+
+            if (i < phrases.length) {
+
+                if (!isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.push(phrases[i][j]);
+
+                    j++;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.pop();
+
+                    j--;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (j == phrases[i].length) {
+
+                    isEnd = true;
+
+                    isDeleting = true;
+
+                }
+
+                
+
+                if (isDeleting && j === 0) {
+
+                    currentPhrase = [];
+
+                    isDeleting = false;
+
+                    i++;
+
+                    if (i === phrases.length) {
+
+                        i = 0;
+
+                    }
+
+                }
+
+            }
+
+            
+
+            const speeding = Math.random() * (50 - 30) + 30;
+
+            const normal = Math.random() * (100 - 50) + 50;
+
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+            
+
+            setTimeout(loop, time);
+
+        }
+
+        
+
+        if (typeWriterElement) {
+
+            loop();
+
+        }
+
+    });
+
+</script>
+
+<script src="js/livechat.js" defer></script>
+
+<script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
 
+
+
 </html>
+

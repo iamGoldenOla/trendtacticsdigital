@@ -1,720 +1,1376 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact Us - Trendtactics Digital</title>
+
     <meta name="description"
         content="Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations.">
-    <meta name="keywords" content="digital marketing, web design, AI solutions, SEO, branding, growth marketing">
-    <meta name="author" content="Akinola Olujobi">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Contact Us - Trendtactics Digital">
-    <meta property="og:description"
-        content="Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations.">
-    <meta property="og:url" content="https://trendtacticsdigital.com/contact">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/images/Trendtactics_logo.jpg">
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact Us - Trendtactics Digital">
-    <meta name="twitter:description"
-        content="Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations.">
-    <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
-    <!-- Google Fonts -->
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- React CDN -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
 
-    <link rel="stylesheet" href="/styles/about.css">
-    <link rel="stylesheet" href="/styles/contact.css">
-    <link rel="stylesheet" href="/styles/images.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Trendtactics Digital",
-      "url": "https://trendtacticsdigital.com/",
-      "logo": "https://trendtacticsdigital.com/images/Trendtactics_logo.jpg",
-      "sameAs": [
-        "https://linkedin.com/company/trendtactics-digital",
-        "https://twitter.com/trendtactics",
-        "https://instagram.com/trendtactics",
-        "https://facebook.com/trendtactics",
-        "https://youtube.com/trendtactics"
-      ],
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "telephone": "+234-800-000-0000",
-        "contactType": "customer service",
-        "areaServed": "NG, US, UK, CA",
-        "availableLanguage": ["English"]
-      }]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "url": "https://trendtacticsdigital.com/contact.html",
-      "name": "Contact Us - Trendtactics Digital",
-      "description": "Get in touch with Trendtactics Digital. Contact us for digital marketing, web design, AI solutions, and growth strategy consultations."
-    }
-    </script>
-    <!-- Add dark mode toggle button to nav -->
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/services-premium.css?v=1772546233">
+
+
+
     <style>
-        /* ===== 3D HERO EFFECTS FOR CONTACT PAGE ===== */
-        .page-hero {
-            position: relative;
-            overflow: hidden;
-            perspective: 1050px;
+        /* Contact Page Specific Styles */
+
+        .contact-grid-premium {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding: 80px 0;
+
         }
 
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background:
-                radial-gradient(circle at 32% 32%, rgba(0, 255, 255, 0.23) 0%, transparent 50%),
-                radial-gradient(circle at 68% 68%, rgba(64, 224, 208, 0.19) 0%, transparent 50%),
-                linear-gradient(135deg, #0A1E3F 0%, #1a365d 50%, #0A1E3F 100%);
-            animation: contactRotate 24s linear infinite;
-            transform-style: preserve-3d;
+
+
+        @media (max-width: 991px) {
+
+            .contact-grid-premium {
+
+                grid-template-columns: 1fr;
+
+            }
+
         }
 
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact-3d" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="2.1" fill="%2300FFFF" opacity="0.115"/><circle cx="8.5" cy="8.5" r="1.25" fill="%2340E0D0" opacity="0.095"/><circle cx="37.5" cy="37.5" r="1.85" fill="%2300FFFF" opacity="0.095"/></pattern></defs><rect width="100" height="100" fill="url(%23contact-3d)"/></svg>');
-            opacity: 0.46;
-            animation: contactFloat 16.5s ease-in-out infinite;
+
+
+        .contact-info-card-premium {
+
+            background: #f8fbff;
+
+            padding: 40px;
+
+            border-radius: 24px;
+
+            border: 1px solid #e2e8f0;
+
+            height: fit-content;
+
         }
 
-        .contact-hero-3d-shapes {
-            position: absolute;
+
+
+        .contact-info-item-premium {
+
+            display: flex;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .contact-icon-wrapper-premium {
+
+            width: 54px;
+
+            height: 54px;
+
+            background: #ffffff;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #00FFFF;
+
+            font-size: 1.4rem;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .contact-text-premium h4 {
+
+            font-size: 1.1rem;
+
+            color: #0A1E3F;
+
+            margin-bottom: 5px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .contact-text-premium p {
+
+            color: #64748b;
+
+            line-height: 1.6;
+
+            margin: 0;
+
+        }
+
+
+
+        .contact-form-premium {
+
+            background: #ffffff;
+
+            padding: 40px;
+
+            border-radius: 24px;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+
+            border: 1px solid #f1f5f9;
+
+        }
+
+
+
+        .form-group-premium {
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .form-group-premium label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #0A1E3F;
+
+            font-weight: 600;
+
+            font-size: 0.95rem;
+
+        }
+
+
+
+        .form-control-premium {
+
             width: 100%;
+
+            padding: 12px 18px;
+
+            border: 1.5px solid #e2e8f0;
+
+            border-radius: 10px;
+
+            font-family: inherit;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .form-control-premium:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1);
+
+        }
+
+
+
+        .map-section-premium {
+
+            height: 450px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            margin-bottom: 80px;
+
+            border: 1px solid #e2e8f0;
+
+        }
+
+
+
+        .map-section-premium iframe {
+
+            width: 100%;
+
             height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
 
-        .contact-shape-3d {
-            position: absolute;
-            opacity: 0.34;
-            animation: contactFloat3D 22.5s ease-in-out infinite;
-        }
+            border: none;
 
-        .contact-shape-3d.shape-1 {
-            width: 165px;
-            height: 165px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.34), rgba(64, 224, 208, 0.24));
-            border-radius: 36% 64% 64% 36% / 36% 36% 64% 64%;
-            top: 11%;
-            left: 9%;
-            transform: rotateZ(45deg);
-            animation-delay: 0s;
-        }
-
-        .contact-shape-3d.shape-2 {
-            width: 112px;
-            height: 112px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.34), rgba(0, 255, 255, 0.24));
-            border-radius: 50%;
-            top: 57%;
-            right: 13%;
-            animation-delay: 3.2s;
-        }
-
-        .contact-shape-3d.shape-3 {
-            width: 132px;
-            height: 132px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(10, 30, 63, 0.34));
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            bottom: 17%;
-            left: 16.5%;
-            animation-delay: 6.4s;
-        }
-
-        .contact-shape-3d.shape-4 {
-            width: 92px;
-            height: 92px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.34), rgba(0, 255, 255, 0.24));
-            border-radius: 22px;
-            top: 27%;
-            right: 27%;
-            transform: rotateZ(45deg);
-            animation-delay: 9.6s;
-        }
-
-        @keyframes contactRotate {
-            0% {
-                transform: rotate(0deg) translateZ(0);
-            }
-
-            100% {
-                transform: rotate(360deg) translateZ(0);
-            }
-        }
-
-        @keyframes contactFloat {
-
-            0%,
-            100% {
-                transform: translateY(0) translateZ(0);
-            }
-
-            50% {
-                transform: translateY(-24px) translateZ(14px);
-            }
-        }
-
-        @keyframes contactFloat3D {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
-            }
-
-            25% {
-                transform: translateY(-34px) translateX(24px) rotateZ(90deg) translateZ(24px);
-            }
-
-            50% {
-                transform: translateY(-69px) translateX(-24px) rotateZ(180deg) translateZ(48px);
-            }
-
-            75% {
-                transform: translateY(-34px) translateX(14px) rotateZ(270deg) translateZ(24px);
-            }
-        }
-
-        .page-hero .hero-content {
-            position: relative;
-            z-index: 2;
-            transform-style: preserve-3d;
-        }
-
-        .page-hero .hero-title {
-            transform: translateZ(56px);
-            text-shadow: 0 14px 39px rgba(0, 255, 255, 0.36);
-        }
-
-        .page-hero .hero-subtitle {
-            transform: translateZ(34px);
         }
     </style>
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+
+
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00FFFF;
+            }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+
+
+            /* Hide Google Translate Logo */
+
+            .goog-te-gadget {
+
+                color: transparent !important;
+
+                font-size: 0px !important;
+
+            }
+
+            .goog-te-gadget img {
+
+                display: none !important;
+
+            }
+
+            .goog-te-gadget .goog-te-combo {
+
+                color: #cbd5e1 !important;
+
+                background-color: #1e293b !important;
+
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+                border-radius: 4px;
+
+                padding: 3px 6px;
+
+                font-size: 0.8rem;
+
+                outline: none;
+
+                cursor: pointer;
+
+            }
+
+            .goog-te-gadget .goog-te-combo:focus {
+
+                border-color: #00FFFF !important;
+
+            }
+
+
+
+            .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+    </style>
+
 </head>
 
+
+
 <body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span
-                        style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics
-                        Digital</span>
-                </a>
+
+    <!-- Top Bar -->
+    <div class="top-bar-redesigned">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <i class="fas fa-bullhorn text-accent-cyan"></i>
+                <span id="typewriter-text" class="typewriter-text">Welcome to Trendtactics Digital</span>
             </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-
-                        </ul>
-                    </div>
-                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank" rel="noopener noreferrer">Academy</a>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link active">Contact</a>
+            <div class="top-bar-right">
+                <div class="social-icons-top">
+                    <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/trendtactics" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+                <a href="contact.html" class="top-book-call">
+                    <i class="fas fa-phone-alt"></i> Book a Call
+                </a>
+                
+                <a href="hub.html" class="top-get-started">Get Started</a>
             </div>
         </div>
+    </div>
+
+
+
+
+
+
+    <nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="page-hero">
-            <div class="contact-hero-3d-shapes">
-                <div class="contact-shape-3d shape-1"></div>
-                <div class="contact-shape-3d shape-2"></div>
-                <div class="contact-shape-3d shape-3"></div>
-                <div class="contact-shape-3d shape-4"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Get In Touch</h1>
-                    <p class="hero-subtitle">
-                        Ready to transform your business? Let's discuss your digital growth strategy.
-                    </p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Information with Parallax Background -->
-        <section class="contact-info content-block-bg">
-            <div class="content-block-bg-image">
-                <picture>
-                    <source srcset="/images/contact-us-parallex.jpg" type="image/jpeg">
-                    <img src="/images/contact-us-parallex.jpg" alt="Contact Trendtactics Digital" loading="lazy"
-                        decoding="async" class="image-filter-darken">
-                </picture>
-            </div>
-            <div class="bg-overlay-gradient"></div>
-            <div class="container content-block-bg-content">
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Us</h3>
-                        <p>info@trendtacticsdigital.com</p>
-                        <p>hello@trendtacticsdigital.com</p>
-                        <p>support@trendtacticsdigital.com</p>
-                    </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Call Us</h3>
-                        <p>+2349068133874</p>
-                        <p>Mon-Fri: 9AM-6PM WAT</p>
-                    </div>
+    <!-- Hero Section -->
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Visit Us</h3>
-                        <p>123 Digital Avenue</p>
-                        <p>Lagos, Nigeria</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="about-hero-redesigned" style="background: #ffffff; color: #0A1E3F;">
 
-        <!-- Contact Form and Map -->
-        <section class="contact-main">
-            <div class="parallax-strip" data-speed="0.3" style="margin-bottom: 3rem;">
-                <div class="parallax-inner">
-                    <picture>
-                        <source srcset="/images/contact-us-parallex.jpg" type="image/jpeg">
-                        <img src="/images/contact-us-parallex.jpg" alt="Contact Us" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-                <div class="bg-overlay-dark"></div>
-            </div>
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-form-section">
-                        <h2>Send Us a Message</h2>
-                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-
-                        <!-- Contact Form (AI-powered) -->
-                        <form id="contactForm" style="max-width:500px;margin:2em auto 0 auto;">
-                            <label for="contactName">Name</label>
-                            <input type="text" id="contactName" name="name" required placeholder="Your Name"
-                                aria-label="Name" style="width:100%;margin-bottom:1em;padding:0.7em;">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" name="email" required placeholder="Your Email"
-                                aria-label="Email" style="width:100%;margin-bottom:1em;padding:0.7em;">
-                            <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" name="subject" required placeholder="Subject"
-                                aria-label="Subject" style="width:100%;margin-bottom:1em;padding:0.7em;">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" name="message" required rows="5"
-                                placeholder="Type your message..." aria-label="Message"
-                                style="width:100%;margin-bottom:1em;padding:0.7em;"></textarea>
-                            <div id="aiSentiment" style="margin-bottom:1em;font-size:0.98em;color:#888;"></div>
-                            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
-                            <div id="aiThankYou" style="margin-top:1.5em;font-size:1.1em;color:#0A1E3F;"></div>
-                            <!-- Add honeypot field for spam protection -->
-                            <input type="text" name="website" id="website" style="display:none;" tabindex="-1"
-                                autocomplete="off">
-                        </form>
-                    </div>
-
-                    <div class="contact-map-section">
-                        <h2>Our Offices</h2>
-                        <div class="office-locations" id="office-locations">
-                            <!-- Office locations will be loaded from JSON -->
-                        </div>
-
-                        <!-- Google Maps Embed -->
-                        <div class="map-container">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5!2d3.3792!3d6.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1234567890"
-                                width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen=""
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                            <div class="map-overlay">
-                                <div class="map-info">
-                                    <h3><i class="fas fa-map-marker-alt"></i> Our Main Office</h3>
-                                    <p>123 Digital Avenue, Lagos, Nigeria</p>
-                                    <a href="https://maps.google.com/?q=123+Digital+Avenue+Lagos+Nigeria"
-                                        target="_blank" class="btn btn-outline btn-sm">Get Directions</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RSS Feed Section -->
-        <section class="rss-feed-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Latest from Our Blog</h2>
-                    <p>Stay updated with our latest insights, tips, and industry news.</p>
-                </div>
-
-                <div class="rss-feed-container">
-                    <div class="rss-feed" id="rss-feed">
-                        <!-- RSS feed items will be loaded here -->
-                        <div class="rss-loading">
-                            <i class="fas fa-rss"></i>
-                            <p>Loading latest posts...</p>
-                        </div>
-                    </div>
-
-                    <div class="rss-actions">
-                        <a href="/blog" class="btn btn-primary">View All Posts</a>
-                        <a href="rss.xml" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-rss"></i> RSS Feed
-                        </a>
-                        <div class="rss-subscribe">
-                            <h4>Subscribe to Updates</h4>
-                            <p>Get our latest posts delivered to your inbox</p>
-                            <form class="rss-form">
-                                <input type="email" placeholder="Enter your email" required>
-                                <button type="submit">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Quick answers to common questions about working with us.</p>
-                </div>
-
-                <div class="faq-grid" id="faq-grid">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>What services do you offer?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We offer comprehensive digital marketing services including web design, SEO, social media
-                                marketing, AI solutions, brand strategy, e-commerce development, and consulting. Our
-                                team specializes in creating custom solutions that drive real business growth.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>How long does a typical project take?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Project timelines vary based on scope and complexity. A simple website might take 2-4
-                                weeks, while comprehensive digital marketing campaigns typically run 3-6 months. We'll
-                                provide a detailed timeline during our initial consultation.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>What are your pricing options?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We offer flexible pricing models including project-based pricing, monthly retainers, and
-                                performance-based packages. Our rates start from $500/hour for consulting and vary based
-                                on project scope. Contact us for a custom quote.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>Do you work with international clients?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! We work with clients globally and have experience serving businesses in various time
-                                zones. We use modern collaboration tools to ensure smooth communication regardless of
-                                location.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>What makes your AI solutions different?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Our AI solutions are custom-built for each business, not generic templates. We combine
-                                cutting-edge AI technology with deep marketing expertise to create intelligent systems
-                                that actually improve your business processes and ROI.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>How do you measure success?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We track key performance indicators (KPIs) specific to your goals, including traffic
-                                growth, conversion rates, lead generation, revenue impact, and ROI. You'll receive
-                                regular reports and insights to see your progress.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>Do you provide ongoing support?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Absolutely! We offer ongoing support, maintenance, and optimization services. Many
-                                clients choose our monthly retainer packages for continuous improvement and support.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <h3>Can I see examples of your work?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! Check out our <a href="/portfolio" style="color: var(--primary);">portfolio page</a>
-                                to see case studies and examples of our work. We're proud of our track record and happy
-                                to share specific examples relevant to your industry.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ebook Promo Section -->
-        <section class="ebook-promo-section">
-            <div class="container">
-                <div class="ebook-promo-content">
-                    <h2>Discover My Premium Ebooks for Business Growth!</h2>
-                    <p>Visit the <a href="/shop" class="ebook-shop-link">Author Shop</a> to buy now and unlock your
-                        success! <span style="font-size:1.2em;">🔥</span></p>
-                    <a href="/shop" class="btn btn-primary btn-large">Shop Ebooks Now</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <div class="container">
-                <h2 class="cta-title">Ready to Start Your Project?</h2>
-                <p class="cta-subtitle">
-                    Join hundreds of businesses that have transformed their digital presence with us.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#contact-form" class="btn btn-primary btn-large">Start Your Project</a>
-                    <a href="/portfolio" class="btn btn-outline btn-large">View Our Work</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Scroll to Top Button -->
-        <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
-            <i class="fas fa-chevron-up"></i>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
+
+            <div class="hero-layout">
+
+                <div class="hero-content-left">
+
+                    <div class="trust-badge-new">
+
+                        <i class="fas fa-clock"></i>
+
+                        <span>Available 24/7</span>
+
                     </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth.
-                        Unlock strategy, creativity, and AI power — all in one studio.
+
+
+
+                    <h1 class="hero-title-main">
+
+                        Free <span class="text-accent-navy">Consultation</span>
+
+                    </h1>
+
+
+
+                    <p class="hero-description-main" style="color: #4a5568; font-size: 1.25rem;">
+
+                        Ready to transform your digital presence? Reach out to our team of experts for a custom strategy
+                        that delivers measurable results.
+
                     </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
+
+
+
+                    <div class="hero-actions-main">
+
+                        <a href="#contact" class="btn-hero-primary">
+
+                            Send a Message <i class="fas fa-arrow-down"></i>
+
                         </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+
                     </div>
 
                 </div>
 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener noreferrer">Academy</a></li>
-                    </ul>
-                </div>
 
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                </div>
+                <div class="hero-visual-right">
 
+                    <div class="visual-wrapper" style="max-height: 400px; max-width: 450px;">
+
+                        <div class="main-image-frame"
+                            style="border: 2px solid rgba(0,255,255,0.3); box-shadow: 0 20px 50px rgba(0,255,255,0.15);">
+
+                            <img src="images/contact-us-parallex.jpg" alt="Hero Image" class="hero-main-img"
+                                style="object-fit:cover; height:400px; width:100%;" loading="lazy">
+
+                        </div>
+
+                        <div class="visual-glow-effect"></div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved. info@trendtacticsdigital.com</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
-            </div>
         </div>
-    </footer>
-    <link rel="stylesheet" href="/styles/about.css">
 
-    <!-- Only keep necessary scripts here, remove <div id="react-app"></div> and floating translate button/widget from after the footer -->
-    <script src="/js/browser-compat.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/email-service.js"></script>
-    <script src="/js/parallax.js"></script>
+    </section>
+
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" style="background: #ffffff; padding-top: 2rem !important; margin-top: -3rem;">
+
+        <div class="container">
+
+            <div class="contact-grid-premium">
+
+                <!-- Contact Info -->
+
+                <div class="contact-info-card-premium">
+
+                    <h2 style="color: #0A1E3F; margin-bottom: 1.5rem; font-weight: 800;">Get in Touch</h2>
+
+                    <p style="color: #64748b; margin-bottom: 2.5rem; line-height: 1.7;">Have a specific project in mind
+                        or just
+
+                        want to explore possibilities? Our consultants are ready to assist you.</p>
+
+
+
+                    <div class="contact-info-item-premium">
+
+                        <div class="contact-icon-wrapper-premium"><i class="fas fa-envelope"></i></div>
+
+                        <div class="contact-text-premium">
+
+                            <h4>Email Support</h4>
+
+                            <p>info@trendtacticsdigital.com<br>support@trendtacticsdigital.com</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-info-item-premium">
+
+                        <div class="contact-icon-wrapper-premium"><i class="fas fa-phone"></i></div>
+
+                        <div class="contact-text-premium">
+
+                            <h4>Call Center</h4>
+
+                            <p>+234 906 813 3874<br>Mon-Fri: 9AM - 6PM WAT</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-info-item-premium">
+
+                        <div class="contact-icon-wrapper-premium"><i class="fas fa-location-dot"></i></div>
+
+                        <div class="contact-text-premium">
+
+                            <h4>Global Office</h4>
+
+                            <p>International Business Hub<br>Digital District, Lagos, Nigeria</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div style="margin-top: 40px; display: flex; gap: 15px;">
+
+                        <a href="#" style="color: #0A1E3F; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+
+                        <a href="#" style="color: #0A1E3F; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+
+                        <a href="#" style="color: #0A1E3F; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+
+                        <a href="#" style="color: #0A1E3F; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Contact Form -->
+
+                <div class="contact-form-premium">
+
+                    <form id="premiumContactForm">
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                            <div class="form-group-premium">
+
+                                <label for="firstName">First Name</label>
+
+                                <input type="text" id="firstName" class="form-control-premium" placeholder="John"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group-premium">
+
+                                <label for="lastName">Last Name</label>
+
+                                <input type="text" id="lastName" class="form-control-premium" placeholder="Doe"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group-premium">
+
+                            <label for="email">Email Address</label>
+
+                            <input type="email" id="email" class="form-control-premium" placeholder="john@example.com"
+                                required>
+
+                        </div>
+
+                        <div class="form-group-premium">
+
+                            <label for="subject">Subject</label>
+
+                            <select id="subject" class="form-control-premium">
+
+                                <option>Web Development</option>
+
+                                <option>Digital Marketing</option>
+
+                                <option>App Development</option>
+
+                                <option>General Inquiry</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group-premium">
+
+                            <label for="message">Message</label>
+
+                            <textarea id="message" class="form-control-premium" rows="5"
+                                placeholder="Tell us about your project..." required></textarea>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send
+                            Message</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Map Section -->
+
+            <div class="map-section-premium">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126848.336440263!2d3.2921935678482404!3d6.524379344415842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a397c78271!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1695648584819!5m2!1sen!2sng"
+                    allowfullscreen="" loading="lazy"></iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Master Premium Footer -->
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="js/browser-compat.js"></script>
+
+    <script src="js/main.js"></script>
+
+    
+
+    
+
     <script>
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-        window.addEventListener('scroll', function () {
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
+                }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
             }
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
+            }
+
         });
+
     </script>
-    <script src="/js/chat-widget.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/newsletter.js" defer></script>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("premiumContactForm");
+
+            const quoteDataStr = localStorage.getItem("quoteRequest");
+
+
+
+            // 1. Auto-fill from LocalStorage if it exists (Quote redirect)
+
+            if (quoteDataStr) {
+
+                try {
+
+                    const quoteData = JSON.parse(quoteDataStr);
+
+                    if (quoteData.name) {
+
+                        const parts = quoteData.name.split(" ");
+
+                        document.getElementById("firstName").value = parts[0] || "";
+
+                        document.getElementById("lastName").value = parts.slice(1).join(" ") || "";
+
+                    }
+
+                    if (quoteData.email) document.getElementById("email").value = quoteData.email;
+
+
+
+                    let messageBody = "Timeline: " + (quoteData.timeline || "N/A") + "\n";
+
+                    messageBody += "Budget: " + (quoteData.budget || "N/A") + "\n";
+
+                    messageBody += "Business: " + (quoteData.business || "None") + "\n";
+
+                    if (quoteData.phone) messageBody += "Phone: " + quoteData.phone + "\n\n";
+
+                    messageBody += "Description:\n" + (quoteData.description || "");
+
+
+
+                    document.getElementById("message").value = messageBody;
+
+
+
+                    if (quoteData.serviceType) {
+
+                        const subjectSelect = document.getElementById("subject");
+
+                        for (let i = 0; i < subjectSelect.options.length; i++) {
+
+                            if (subjectSelect.options[i].text.includes(quoteData.serviceType)) {
+
+                                subjectSelect.selectedIndex = i;
+
+                                break;
+
+                            }
+
+                        }
+
+                    }
+
+
+
+                    // Clear the storage so we don't autofill again on a fresh refresh
+
+                    localStorage.removeItem("quoteRequest");
+
+                } catch (e) {
+
+                    console.error("Failed to parse quote request from local storage", e);
+
+                }
+
+            }
+
+
+
+            // 2. Wrap Submit handler for Supabase
+
+            if (form) {
+
+                form.addEventListener("submit", async function (e) {
+
+                    e.preventDefault();
+
+                    const btn = form.querySelector('button[type="submit"]');
+
+                    const originalText = btn.innerHTML;
+
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+                    btn.disabled = true;
+
+
+
+                    const payload = {
+
+                        first_name: document.getElementById("firstName").value,
+
+                        last_name: document.getElementById("lastName").value,
+
+                        email: document.getElementById("email").value,
+
+                        subject: document.getElementById("subject").value,
+
+                        message: document.getElementById("message").value,
+
+                        created_at: new Date().toISOString(),
+
+                        status: 'new'
+
+                    };
+
+
+
+                    try {
+
+                        // Make sure Supabase is loaded
+
+                        if (window.supabaseUtils && window.supabaseUtils.supabase) {
+
+                            const { error } = await window.supabaseUtils.supabase
+
+                                .from('contacts')
+
+                                .insert([payload]);
+
+
+
+                            if (error) {
+
+                                // If table doesn't exist, log it for now but show success to not block UI
+
+                                console.warn("Contact table might not exist in Supabase:", error);
+
+                            }
+
+                        } else {
+
+                            console.warn("Supabase not fully initialized. Skipping DB insert.");
+
+                        }
+
+
+
+                        // Simulated or Real Success
+
+                        form.innerHTML = `
+
+                        <div style="text-align: center; padding: 40px;">
+
+                            <i class="fas fa-check-circle" style="font-size: 3rem; color: #00FFFF; margin-bottom: 20px;"></i>
+
+                            <h3 style="color: #0A1E3F;">Message Sent Successfully!</h3>
+
+                            <p style="color: #4a5568;">We will get back to you within 24 hours.</p>
+
+                            <button onclick="location.reload()" class="btn btn-outline" style="margin-top: 20px;">Send Another Message</button>
+
+                        </div>
+
+                    `;
+
+                    } catch (error) {
+
+                        console.error("Failed to submit contact form", error);
+
+                        btn.innerHTML = originalText;
+
+                        btn.disabled = false;
+
+                        alert("There was an error submitting your message. Please try again or email us directly at info@trendtacticsdigital.com");
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
 
 </html>

@@ -1,11 +1,240 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Preconnects for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
     <title>Deployment Test</title>
+
+    <style>
+        
+        /* Hide Google Translate Logo */
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0px !important;
+        }
+        .goog-te-gadget img {
+            display: none !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            color: #cbd5e1 !important;
+            background-color: #1e293b !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .goog-te-gadget .goog-te-combo:focus {
+            border-color: #00FFFF !important;
+        }
+        
+        .top-bar-redesigned {
+            background-color: #061226;
+            color: #cbd5e1;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            overflow: hidden;
+            z-index: 1001;
+        }
+        .navbar {
+            top: 40px !important;
+            transition: top 0.3s ease, background 0.3s ease !important;
+        }
+        .navbar.scrolled {
+            top: 0 !important;
+        }
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .top-bar-left .social-icons-top a {
+            color: #cbd5e1;
+            margin-right: 12px;
+            transition: color 0.3s ease;
+        }
+        .top-bar-left .social-icons-top a:hover {
+            color: #00FFFF;
+        }
+        .top-bar-center {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        .typewriter-text {
+            border-right: 2px solid #00FFFF;
+            padding-right: 4px;
+            animation: blinkCursor 0.75s step-end infinite;
+        }
+        @keyframes blinkCursor {
+            from, to { border-color: transparent }
+            50% { border-color: #00FFFF; }
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+        }
+        /* Make translate widget small */
+        #google_translate_element_top .goog-te-gadget {
+            font-size: 0px !important;
+            color: transparent;
+        }
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+            background-color: transparent;
+            color: #cbd5e1;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 5px;
+            }
+            .top-bar-center {
+                max-width: 50%;
+                font-size: 0.70rem;
+            }
+            .typewriter-text {
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #google_translate_element_top .goog-te-combo {
+                width: 60px;
+                padding: 1px;
+            }
+            
+        /* Hide Google Translate Logo */
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0px !important;
+        }
+        .goog-te-gadget img {
+            display: none !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            color: #cbd5e1 !important;
+            background-color: #1e293b !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .goog-te-gadget .goog-te-combo:focus {
+            border-color: #00FFFF !important;
+        }
+        
+        .top-bar-redesigned {
+                height: 40px;
+            }
+        }
+    
+        </style>
 </head>
 <body>
     <h1>✅ Auto-Deployment Setup Complete!</h1>
     <p>This file was automatically deployed via GitHub Actions.</p>
     <p>Last updated: 2025-12-14T21:30:44.710Z</p>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const phrases = [
+            "Welcome to Trendtactics Digital",
+            "Read our latest blog: The Future of AI",
+            "Next Event: Digital Growth Webinar - Oct 25",
+            "Scale your revenue with our experts",
+            "" 
+        ];
+        let i = 0;
+        let j = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+        
+        const typeWriterElement = document.getElementById('typewriter-text');
+        
+        function loop() {
+            if (!typeWriterElement) return;
+            
+            // Add live time to the last phrase dynamically
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+            
+            isEnd = false;
+            typeWriterElement.innerHTML = currentPhrase.join('');
+            
+            if (i < phrases.length) {
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase.push(phrases[i][j]);
+                    j++;
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+                }
+                
+                if (isDeleting && j <= phrases[i].length) {
+                    currentPhrase.pop();
+                    j--;
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+                }
+                
+                if (j == phrases[i].length) {
+                    isEnd = true;
+                    isDeleting = true;
+                }
+                
+                if (isDeleting && j === 0) {
+                    currentPhrase = [];
+                    isDeleting = false;
+                    i++;
+                    if (i === phrases.length) {
+                        i = 0;
+                    }
+                }
+            }
+            
+            const speeding = Math.random() * (50 - 30) + 30;
+            const normal = Math.random() * (100 - 50) + 50;
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+            
+            setTimeout(loop, time);
+        }
+        
+        if (typeWriterElement) {
+            loop();
+        }
+    });
+</script>
+<script src="js/livechat.js" defer></script>
+<script src="js/consent.js" defer></script>
+
+    <script src="js/global-translate.js" defer></script>
 </body>
 </html>

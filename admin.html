@@ -1,527 +1,1730 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Dashboard - Trendtactics Digital</title>
+
     <meta name="description" content="Admin dashboard for managing blog posts, pricing, ebooks, and LMS content.">
+
     <meta name="keywords" content="admin dashboard, content management, blog management">
+
     <meta name="author" content="Akinola Olujobi">
+
     
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     
+
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
     
-    <link rel="stylesheet" href="/styles/admin.css">
+
+    <link rel="stylesheet" href="styles/admin.css?v=1772546233">
+
+
+
+    <style>
+
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255,255,255,0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b; 
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+    
+
+        </style>
+
+
+
+    <style>
+
+        
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+            background-color: #061226;
+
+            color: #cbd5e1;
+
+            padding: 8px 0;
+
+            font-size: 0.85rem;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            overflow: hidden;
+
+            z-index: 1001;
+
+        }
+
+        .navbar {
+
+            top: 40px !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from, to { border-color: transparent }
+
+            50% { border-color: #00FFFF; }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+        
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+            
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
+
     <!-- Login Screen -->
+
     <div id="login-screen" class="login-screen">
+
         <div class="login-container">
+
             <div class="login-header">
+
                 <div class="logo-icon">T</div>
+
                 <h1>Admin Dashboard</h1>
+
                 <p>Sign in to manage your content</p>
+
             </div>
+
             <form id="login-form" class="login-form">
+
                 <div class="form-group">
+
                     <label for="username">Username</label>
+
                     <input type="text" id="username" name="username" required>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="password">Password</label>
+
                     <input type="password" id="password" name="password" required>
+
                 </div>
+
                 <button type="submit" class="btn btn-primary btn-large">Sign In</button>
+
             </form>
+
             <div class="login-footer">
+
                 <a href="index.html">? Back to Website</a>
+
             </div>
+
         </div>
+
     </div>
+
+
 
     <!-- Admin Dashboard -->
+
     <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+
         <!-- Admin Navigation -->
+
         <nav class="admin-nav">
+
             <div class="admin-nav-header">
+
                 <div class="admin-logo">
+
                     <div class="logo-icon">T</div>
+
                     <span>Admin Panel</span>
+
                 </div>
+
                 <button id="logout-btn" class="btn btn-outline">
+
                     <i class="fas fa-sign-out-alt"></i>
+
                     Logout
+
                 </button>
+
             </div>
+
             <div class="admin-nav-menu">
+
                 <button class="nav-tab active" data-tab="dashboard">
+
                     <i class="fas fa-tachometer-alt"></i>
+
                     Dashboard
+
                 </button>
+
                 <button class="nav-tab" data-tab="blog">
+
                     <i class="fas fa-blog"></i>
+
                     Blog Posts
+
                 </button>
+
                 <button class="nav-tab" data-tab="pricing">
+
                     <i class="fas fa-tags"></i>
+
                     Pricing
+
                 </button>
+
                 <button class="nav-tab" data-tab="leads">
+
                     <i class="fas fa-users"></i>
+
                     Leads
+
                 </button>
+
                 <button class="nav-tab" data-tab="analytics">
+
                     <i class="fas fa-chart-bar"></i>
+
                     Analytics
+
                 </button>
+
             </div>
+
         </nav>
 
+
+
         <!-- Admin Content -->
+
         <main class="admin-content">
+
             <!-- Dashboard Tab -->
+
             <div id="dashboard-tab" class="tab-content active">
+
                 <div class="dashboard-header">
+
                     <h1>Dashboard Overview</h1>
+
                     <p>Welcome back! Here's what's happening with your website.</p>
+
                 </div>
+
                 
+
                 <div class="stats-grid">
+
                     <div class="stat-card">
+
                         <div class="stat-icon">
+
                             <i class="fas fa-eye"></i>
+
                         </div>
+
                         <div class="stat-content">
+
                             <h3 id="total-views">0</h3>
+
                             <p>Total Views</p>
+
                         </div>
+
                     </div>
+
                     <div class="stat-card">
+
                         <div class="stat-icon">
+
                             <i class="fas fa-users"></i>
+
                         </div>
+
                         <div class="stat-content">
+
                             <h3 id="total-leads">0</h3>
+
                             <p>Total Leads</p>
+
                         </div>
+
                     </div>
+
                     <div class="stat-card">
+
                         <div class="stat-icon">
+
                             <i class="fas fa-download"></i>
+
                         </div>
+
                         <div class="stat-content">
+
                             <h3 id="total-downloads">0</h3>
+
                             <p>Ebook Downloads</p>
+
                         </div>
+
                     </div>
+
                     <div class="stat-card">
+
                         <div class="stat-icon">
+
                             <i class="fas fa-graduation-cap"></i>
+
                         </div>
+
                         <div class="stat-content">
+
                             <h3 id="total-students">0</h3>
+
                             <p>Academy Students</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <div class="dashboard-grid">
+
                     <div class="dashboard-card">
+
                         <h3>Recent Leads</h3>
+
                         <div class="leads-list" id="recent-leads">
+
                             <!-- Recent leads will be loaded here -->
+
                         </div>
+
                     </div>
+
                     <div class="dashboard-card">
+
                         <h3>Quick Actions</h3>
+
                         <div class="quick-actions">
+
                             <button class="btn btn-primary" onclick="showTab('blog')">
+
                                 <i class="fas fa-plus"></i>
+
                                 New Blog Post
+
                             </button>
+
                             <button class="btn btn-outline" onclick="showTab('ebooks')">
+
                                 <i class="fas fa-upload"></i>
+
                                 Upload Ebook
+
                             </button>
+
                             <button class="btn btn-outline" onclick="showTab('courses')">
+
                                 <i class="fas fa-video"></i>
+
                                 Add Course
+
                             </button>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
+
 
             <!-- Blog Posts Tab -->
+
             <div id="blog-tab" class="tab-content">
+
                 <div class="tab-header">
+
                     <h2>Blog Posts Management</h2>
+
                     <button id="add-blog-btn" class="btn btn-primary">
+
                         <i class="fas fa-plus"></i>
+
                         New Post
+
                     </button>
+
                 </div>
+
                 
+
                 <div class="content-table">
+
                     <table id="blog-table">
+
                         <thead>
+
                             <tr>
+
                                 <th>Title</th>
+
                                 <th>Category</th>
+
                                 <th>Status</th>
+
                                 <th>Date</th>
+
                                 <th>Actions</th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="blog-tbody">
+
                             <!-- Blog posts will be loaded here -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
+
 
             <!-- Blog Post Modal (Add/Edit) -->
+
             <div id="blog-modal" class="modal" style="display:none;">
+
                 <div class="modal-content">
+
                     <span class="close" id="close-blog-modal">&times;</span>
+
                     <h2 id="blog-modal-title">New Blog Post</h2>
+
                     <form id="blog-form">
+
                         <input type="hidden" id="blog-id">
+
                         <div class="form-group">
+
                             <label for="blog-title">Title</label>
+
                             <input type="text" id="blog-title" name="title" required>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-slug">Slug</label>
+
                             <input type="text" id="blog-slug" name="slug" required>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-excerpt">Excerpt</label>
+
                             <textarea id="blog-excerpt" name="excerpt" rows="2" required></textarea>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-content">Content</label>
+
                             <textarea id="blog-content" name="content" rows="8" required></textarea>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-category">Category</label>
+
                             <input type="text" id="blog-category" name="category" required>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-author">Author</label>
+
                             <input type="text" id="blog-author" name="author" required>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-date">Date</label>
+
                             <input type="date" id="blog-date" name="date" required>
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-image">Image URL</label>
+
                             <input type="text" id="blog-image" name="image">
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-tags">Tags (comma separated)</label>
+
                             <input type="text" id="blog-tags" name="tags">
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-featured">Featured</label>
+
                             <input type="checkbox" id="blog-featured" name="featured">
+
                         </div>
+
                         <div class="form-group">
+
                             <label for="blog-cta">CTA</label>
+
                             <input type="text" id="blog-cta" name="cta">
+
                         </div>
+
                         <div class="form-actions">
+
                             <button type="submit" class="btn btn-primary">Save Post</button>
+
                             <button type="button" class="btn btn-outline" id="cancel-blog-modal">Cancel</button>
+
                         </div>
+
                     </form>
+
                 </div>
+
             </div>
+
             <!-- End Blog Post Modal -->
 
+
+
             <!-- Pricing Tab -->
+
             <div id="pricing-tab" class="tab-content">
+
                 <div class="tab-header">
+
                     <h2>Pricing Management</h2>
+
                     <button id="add-pricing-btn" class="btn btn-primary">
+
                         <i class="fas fa-plus"></i>
+
                         New Plan
+
                     </button>
+
                 </div>
+
                 
+
                 <div class="content-table">
+
                     <table id="pricing-table">
+
                         <thead>
+
                             <tr>
+
                                 <th>Plan Name</th>
+
                                 <th>Price</th>
+
                                 <th>Currency</th>
+
                                 <th>Status</th>
+
                                 <th>Actions</th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="pricing-tbody">
+
                             <!-- Pricing plans will be loaded here -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
+
 
             <!-- Leads Tab -->
+
             <div id="leads-tab" class="tab-content">
+
                 <div class="tab-header">
+
                     <h2>Leads Management</h2>
+
                     <button id="export-leads-btn" class="btn btn-outline">
+
                         <i class="fas fa-download"></i>
+
                         Export CSV
+
                     </button>
+
                 </div>
+
                 
+
                 <div class="content-table">
+
                     <table id="leads-table">
+
                         <thead>
+
                             <tr>
+
                                 <th>Name</th>
+
                                 <th>Email</th>
+
                                 <th>Source</th>
+
                                 <th>Date</th>
+
                                 <th>Status</th>
+
                                 <th>Actions</th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="leads-tbody">
+
                             <!-- Leads will be loaded here -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
+
 
             <!-- Analytics Tab -->
+
             <div id="analytics-tab" class="tab-content">
+
                 <div class="tab-header">
+
                     <h2>Analytics Overview</h2>
+
                     <div class="date-filter">
+
                         <select id="analytics-period">
+
                             <option value="7">Last 7 days</option>
+
                             <option value="30" selected>Last 30 days</option>
+
                             <option value="90">Last 90 days</option>
+
                         </select>
+
                     </div>
+
                 </div>
+
                 
+
                 <div class="analytics-grid">
+
                     <div class="analytics-card">
+
                         <h3>Page Views</h3>
+
                         <div class="chart-container">
+
                             <canvas id="page-views-chart"></canvas>
+
                         </div>
+
                     </div>
+
                     <div class="analytics-card">
+
                         <h3>Lead Sources</h3>
+
                         <div class="chart-container">
+
                             <canvas id="lead-sources-chart"></canvas>
+
                         </div>
+
                     </div>
+
                     <div class="analytics-card">
+
                         <h3>Conversion Rate</h3>
+
                         <div class="chart-container">
+
                             <canvas id="conversion-chart"></canvas>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </main>
+
     </div>
+
+
 
     <!-- Add/Edit Modal -->
+
     <div id="content-modal" class="modal">
+
         <div class="modal-content">
+
             <span class="close">&times;</span>
+
             <h2 id="modal-title">Add New Content</h2>
+
             <form id="content-form" class="content-form">
+
                 <div class="form-group">
+
                     <label for="content-title">Title</label>
+
                     <input type="text" id="content-title" name="title" required>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="content-description">Description</label>
+
                     <textarea id="content-description" name="description" rows="3"></textarea>
+
                 </div>
+
                 <div class="form-row">
+
                     <div class="form-group">
+
                         <label for="content-category">Category</label>
+
                         <select id="content-category" name="category">
+
                             <option value="">Select Category</option>
+
                             <option value="strategy">Strategy</option>
+
                             <option value="social-media">Social Media</option>
+
                             <option value="seo">SEO</option>
+
                             <option value="content">Content Marketing</option>
+
                             <option value="analytics">Analytics</option>
+
                         </select>
+
                     </div>
+
                     <div class="form-group">
+
                         <label for="content-status">Status</label>
+
                         <select id="content-status" name="status">
+
                             <option value="draft">Draft</option>
+
                             <option value="published">Published</option>
+
                             <option value="archived">Archived</option>
+
                         </select>
+
                     </div>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="content-file">Upload File</label>
+
                     <input type="file" id="content-file" name="file" accept=".pdf,.doc,.docx,.mp4,.jpg,.png">
+
                 </div>
+
                 <div class="form-actions">
+
                     <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+
                     <button type="submit" class="btn btn-primary">Save Content</button>
+
                 </div>
+
             </form>
+
         </div>
+
     </div>
+
+
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span>Trendtactics Digital</span>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img" loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism, prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Design</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                        <li><a href="services.html#brand-strategy">Brand Strategy</a></li>
-                        <li><a href="services.html#ecommerce">E-commerce</a></li>
-                        <li><a href="services.html#consulting">Consulting</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="portfolio.html">Our Work</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="academy.html">Academy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="ebooks.html">Free Ebooks</a></li>
-                        <li><a href="tools.html">Marketing Tools</a></li>
-                        <li><a href="quiz.html">Growth Quiz</a></li>
-                        <li><a href="blog.html">Latest Articles</a></li>
-                        <li><a href="academy.html">Online Courses</a></li>
-                        <li><a href="contact.html">Free Consultation</a></li>
-                    </ul>
-                </div>
+
             </div>
+
             
-            <div class="footer-newsletter-section">
-                <div class="footer-newsletter">
-                    <h3>Stay Updated</h3>
-                    <p>Get the latest digital marketing insights and tips delivered to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
             
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
             </div>
+
+            
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+        
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
-    <link rel="stylesheet" href="/styles/about.css">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+
 
     <!-- Scripts -->
-    <script src="/js/main.js"></script>
-    <script src="/js/admin.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/admin.js"></script>
+
+
 
     <!-- Floating Language Selector -->
-    <div id="floating-translate-btn" style="position:fixed;bottom:30px;left:30px;z-index:9999;display:flex;align-items:center;gap:8px;">
-        <button id="toggle-translate" style="background:#0A1E3F;color:#00FFFF;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,30,63,0.18);cursor:pointer;font-size:1.6rem;transition:background 0.2s;">
-            <i class="fas fa-globe"></i>
-        </button>
-        <div id="floating-translate-widget" style="display:none;"></div>
-    </div>
-    <div id="google_translate_element" style="display:none;"></div>
-    <script>
-    // Move Google Translate widget into floating widget and toggle visibility
-    document.addEventListener('DOMContentLoaded', function() {
-        var translateWidget = document.getElementById('google_translate_element');
-        var floatingWidget = document.getElementById('floating-translate-widget');
-        var toggleBtn = document.getElementById('toggle-translate');
-        if (translateWidget && floatingWidget && toggleBtn) {
-            floatingWidget.appendChild(translateWidget);
-            toggleBtn.addEventListener('click', function() {
-                if (floatingWidget.style.display === 'none' || floatingWidget.style.display === '') {
-                    floatingWidget.style.display = 'block';
-                } else {
-                    floatingWidget.style.display = 'none';
-                }
-            });
-        }
-    });
-    </script>
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
 
     <!-- Quill.js for WYSIWYG -->
+
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+
+
+
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const phrases = [
+
+            "Welcome to Trendtactics Digital",
+
+            "Read our latest blog: The Future of AI",
+
+            "Next Event: Digital Growth Webinar - Oct 25",
+
+            "Scale your revenue with our experts",
+
+            "" 
+
+        ];
+
+        let i = 0;
+
+        let j = 0;
+
+        let currentPhrase = [];
+
+        let isDeleting = false;
+
+        let isEnd = false;
+
+        
+
+        const typeWriterElement = document.getElementById('typewriter-text');
+
+        
+
+        function loop() {
+
+            if (!typeWriterElement) return;
+
+            
+
+            // Add live time to the last phrase dynamically
+
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+            
+
+            isEnd = false;
+
+            typeWriterElement.innerHTML = currentPhrase.join('');
+
+            
+
+            if (i < phrases.length) {
+
+                if (!isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.push(phrases[i][j]);
+
+                    j++;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.pop();
+
+                    j--;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (j == phrases[i].length) {
+
+                    isEnd = true;
+
+                    isDeleting = true;
+
+                }
+
+                
+
+                if (isDeleting && j === 0) {
+
+                    currentPhrase = [];
+
+                    isDeleting = false;
+
+                    i++;
+
+                    if (i === phrases.length) {
+
+                        i = 0;
+
+                    }
+
+                }
+
+            }
+
+            
+
+            const speeding = Math.random() * (50 - 30) + 30;
+
+            const normal = Math.random() * (100 - 50) + 50;
+
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+            
+
+            setTimeout(loop, time);
+
+        }
+
+        
+
+        if (typeWriterElement) {
+
+            loop();
+
+        }
+
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/newsletter.js" defer></script>
+
+<script src="js/livechat.js" defer></script>
+
+<script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
 </html>
+
+
+

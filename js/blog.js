@@ -1,5 +1,5 @@
 // Blog functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Blog page loaded');
     loadBlogPosts();
 });
@@ -86,7 +86,7 @@ function loadBlogPosts() {
 function displayFeaturedPost() {
     const featuredPost = blogData.posts.find(post => post.featured);
     const featuredSection = document.querySelector('.featured-post');
-    
+
     if (featuredPost && featuredSection) {
         featuredSection.innerHTML = `
             <div class="featured-post-content">
@@ -115,7 +115,7 @@ function displayFeaturedPost() {
 function displayBlogGrid() {
     const regularPosts = blogData.posts.filter(post => !post.featured);
     const blogGrid = document.querySelector('.blog-grid');
-    
+
     if (blogGrid) {
         blogGrid.innerHTML = regularPosts.map(post => `
             <article class="blog-card">
@@ -134,7 +134,7 @@ function displayBlogGrid() {
                         <span><i class="fas fa-comments"></i> ${post.comments}</span>
                     </div>
                     <div class="blog-card-footer">
-                        <a href="blog-post.html?id=${post.id}" class="read-more">Read More</a>
+                        <a href="blog-post.html?id=${post.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </article>
@@ -145,7 +145,7 @@ function displayBlogGrid() {
 function updateRecentPosts() {
     const recentPosts = blogData.posts.slice(0, 5);
     const recentPostsList = document.querySelector('.recent-posts-list');
-    
+
     if (recentPostsList) {
         recentPostsList.innerHTML = recentPosts.map(post => `
             <li>

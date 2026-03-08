@@ -20,19 +20,29 @@
 
 .hero-video-background video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
     opacity: 1 !important;
-    /* Force visibility in case of JS conflicts */
     visibility: visible !important;
     display: block !important;
+}
+
+.hero {
+    min-height: 80vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content-centered {
+    position: relative;
+    z-index: 3;
+    margin-top: -5vh;
+    /* Pull content up slightly */
 }
 
 .video-overlay {
@@ -52,73 +62,138 @@
     z-index: 3;
 }
 
-/* ===== BRANDS SECTION FIX ===== */
+/* ===== CHECKERED DRAUGHT DESIGN FOR BRANDS ===== */
 .brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 0 !important;
+    /* No gap for checkered effect */
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    animation: none !important;
+    transform: none !important;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
 }
 
 .brand-card-custom {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
-    border-radius: 16px;
-    height: 120px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    height: 180px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(162, 174, 191, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-card-custom:nth-child(odd) {
+    background: #ffffff;
+}
+
+.brand-card-custom:nth-child(even) {
+    background: #0A1E3F;
 }
 
 .brand-card-custom:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     filter: brightness(1.1);
 }
 
+.brand-card-custom i {
+    font-size: 3.5rem !important;
+    margin-bottom: 15px;
+}
+
+.brand-card-custom span {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.brand-card-custom:nth-child(odd) i,
+.brand-card-custom:nth-child(odd) span {
+    color: #0A1E3F !important;
+}
+
+.brand-card-custom:nth-child(even) i,
+.brand-card-custom:nth-child(even) span {
+    color: #ffffff !important;
+}
+
 .brand-card-custom img {
-    max-width: 120px;
-    max-height: 60px;
-    /* Removed white filter to show original logo colors */
+    max-width: 140px;
+    max-height: 80px;
     object-fit: contain;
     width: auto;
     height: auto;
+}
+
+.brand-card-custom:nth-child(even) img {
+    filter: brightness(0) invert(1);
+}
+
+.brand-card-custom:nth-child(odd) img {
     mix-blend-mode: multiply !important;
-    filter: none !important;
-    background: transparent !important;
 }
 
-/* Specific Brand Colors */
-.brand-bg-kevtos {
-    background: linear-gradient(135deg, #E65100 0%, #F57C00 100%);
-    /* Orange/Gold */
+/* ===== STATIC BRANDS SECTION (REPLICATED FROM ABOUT PAGE) ===== */
+.homepage-brands-static {
+    padding: 80px 0;
+    background: #fdfdfd;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.brand-bg-realtreasure {
-    background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
-    /* Royal Blue */
+.brands-static-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 50px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.brand-bg-hustlenchill {
-    background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 100%);
-    /* Purple */
+.brands-static-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
 }
 
-.brand-bg-greentick {
-    background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%);
-    /* Green */
+.brand-item-static {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #333;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    filter: grayscale(1);
 }
 
-.brand-bg-gabson {
-    background: linear-gradient(135deg, #33691E 0%, #558B2F 100%);
-    /* Green/Yellow mix */
+.brand-item-static:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: translateY(-5px);
 }
 
-/* ===== MODERN SCROLLING TESTIMONIALS ===== */
+.brand-item-static i {
+    font-size: 2.2rem;
+}
+
+.brand-item-static span {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
 .testimonials-scroll-container {
     position: relative;
     width: 100%;
@@ -280,23 +355,23 @@
         min-height: 100%;
         width: auto;
     }
-    
+
     .trust-testimonials-grid-redesigned {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         padding: 0 var(--spacing-md);
     }
-    
+
     .trust-testimonial-card-redesigned {
         padding: var(--spacing-xl);
     }
-    
+
     .reasons-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         padding: 0 var(--spacing-md);
     }
-    
+
     .reason-card {
         padding: var(--spacing-xl);
     }
@@ -321,12 +396,12 @@
         height: 40px;
         font-size: 16px;
     }
-    
+
     .trust-testimonials-grid-redesigned {
         gap: var(--spacing-lg);
         padding: 0 var(--spacing-sm);
     }
-    
+
     .trust-testimonial-card-redesigned {
         padding: var(--spacing-lg);
     }
@@ -456,4 +531,258 @@
 
 .trust-testimonial-card-redesigned:hover .testimonial-accent {
     width: 100%;
+}
+
+/* ===== MODERN CLEAN FLAT DESIGN FOR HOMEPAGE SECTIONS ===== */
+/* PARALLAX SERVICES SECTION */
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+    position: relative;
+    background-color: #0A1E3F;
+}
+
+.solid-header {
+    background: #ffffff;
+    padding: 40px;
+    text-align: center;
+    border: 3px solid #00FFFF;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solid-header .section-title {
+    color: #0A1E3F !important;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: none !important;
+}
+
+.solid-header .section-subtitle {
+    color: #4a5568 !important;
+    font-size: 1.1rem;
+    text-shadow: none !important;
+}
+
+.modern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* FLAT SERVICE CARDS */
+.service-card-flat {
+    background: #ffffff;
+    border: 3px solid #0A1E3F;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card-flat:hover {
+    transform: translateY(-8px);
+    background: #fdfdfd;
+    border-color: #00FFFF;
+}
+
+.service-card-flat .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #00FFFF;
+    background: #0A1E3F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #00FFFF;
+    margin-bottom: 25px;
+}
+
+.service-card-flat h3 {
+    color: #0A1E3F;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: none !important;
+}
+
+.service-card-flat p {
+    color: #4a5568;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-card-flat blockquote {
+    background: #f8fbff;
+    border-left: 4px solid #00FFFF;
+    padding: 15px 20px;
+    font-style: normal;
+    color: #0A1E3F;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.btn-flat {
+    background: #0A1E3F;
+    color: #00FFFF;
+    border: 2px solid #0A1E3F;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-flat:hover {
+    background: #00FFFF;
+    color: #0A1E3F;
+    border-color: #00FFFF;
+    text-decoration: none;
+}
+
+.accent-btn {
+    background: #fadb24;
+    color: #0A1E3F;
+    border-color: #fadb24;
+}
+
+.accent-btn:hover {
+    background: #0A1E3F;
+    color: #fadb24;
+    border-color: #0A1E3F;
+}
+
+/* FLAT TESTIMONIAL CARDS */
+.flat-section {
+    background: #0A1E3F;
+    padding: 120px 0;
+    border-top: 4px solid #00FFFF;
+    position: relative;
+    z-index: 10;
+}
+
+.clean-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonials-badge-flat {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.clean-header .testimonials-main-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: none !important;
+}
+
+.clean-header .testimonials-subtitle {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-card-flat {
+    background: #ffffff;
+    border: 4px solid #00FFFF;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card-flat:hover {
+    transform: translateY(-8px);
+    border-color: #fadb24;
+}
+
+.testimonial-card-flat .quote-icon {
+    font-size: 2.5rem;
+    color: #0A1E3F;
+    margin-bottom: 20px;
+}
+
+.testimonial-card-flat .rating {
+    color: #fadb24;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.testimonial-card-flat .quote-text {
+    color: #0A1E3F;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 500;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    text-shadow: none !important;
+}
+
+.testimonial-card-flat .author-info {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.testimonial-card-flat .author-info strong {
+    color: #0A1E3F;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 5px;
+    text-shadow: none !important;
+}
+
+.testimonial-card-flat .author-info span {
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .solid-header {
+        padding: 20px;
+    }
+
+    .clean-header .testimonials-main-title {
+        font-size: 2rem;
+    }
+
+    .service-card-flat {
+        padding: 30px 20px;
+    }
+
+    .testimonial-card-flat {
+        padding: 30px 20px;
+    }
 }

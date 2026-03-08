@@ -1,952 +1,2735 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Client Dashboard | Trendtactics Digital</title>
-    <meta name="description" content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
+    <meta name="description"
+        content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
     <meta name="keywords" content="client dashboard, campaign analytics, digital marketing, performance tracking">
+
     <meta name="author" content="Akinola Olujobi">
-    
+
+
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Client Dashboard | Trendtactics Digital">
-    <meta property="og:description" content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
+    <meta property="og:description"
+        content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com/client-dashboard">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
-    
+
+
+
     <!-- Twitter Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta name="twitter:title" content="Client Dashboard | Trendtactics Digital">
-    <meta name="twitter:description" content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
+    <meta name="twitter:description"
+        content="Access your personalized client dashboard to track campaign performance, view analytics, and manage your digital marketing services.">
+
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
-    
+
+
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
-    
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
+
+
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/about.css">
-    <link rel="stylesheet" href="/styles/images.css">
-    
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+
+
     <style>
         /* ===== DASHBOARD STYLES ===== */
+
         .dashboard-container {
+
             display: flex;
+
             min-height: calc(100vh - 120px);
+
             background: #0a1833;
+
         }
-        
+
+
+
         /* ===== SIDEBAR ===== */
+
         .dashboard-sidebar {
+
             width: 250px;
+
             background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
+
             border-right: 1px solid rgba(0, 255, 255, 0.2);
+
             padding: 1.5rem 0;
+
             transition: all 0.3s ease;
+
             position: fixed;
+
             height: calc(100vh - 120px);
+
             overflow-y: auto;
+
             z-index: 100;
+
         }
-        
+
+
+
         .sidebar-logo {
+
             padding: 0 1.5rem 1.5rem;
+
             border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+
             margin-bottom: 1.5rem;
+
         }
-        
+
+
+
         .sidebar-logo img {
+
             max-width: 180px;
+
         }
-        
+
+
+
         .sidebar-menu {
+
             list-style: none;
+
             padding: 0;
+
             margin: 0;
+
         }
-        
+
+
+
         .sidebar-menu li {
+
             margin-bottom: 0.25rem;
+
         }
-        
+
+
+
         .sidebar-menu a {
+
             display: flex;
+
             align-items: center;
+
             gap: 0.75rem;
+
             padding: 0.75rem 1.5rem;
+
             color: var(--white);
+
             text-decoration: none;
+
             font-weight: 500;
+
             transition: all 0.3s ease;
+
             border-left: 3px solid transparent;
+
         }
-        
+
+
+
         .sidebar-menu a:hover,
+
         .sidebar-menu a.active {
+
             background: rgba(0, 255, 255, 0.1);
+
             border-left: 3px solid #00FFFF;
+
             color: #00FFFF;
+
         }
-        
+
+
+
         .sidebar-menu a i {
+
             width: 20px;
+
             text-align: center;
+
         }
-        
+
+
+
         .sidebar-divider {
+
             height: 1px;
+
             background: rgba(0, 255, 255, 0.1);
+
             margin: 1rem 1.5rem;
+
         }
-        
+
+
+
         /* ===== MAIN CONTENT ===== */
+
         .dashboard-main {
+
             flex: 1;
+
             margin-left: 250px;
+
             padding: 2rem;
+
         }
-        
+
+
+
         .dashboard-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 2rem;
+
         }
-        
+
+
+
         .dashboard-title {
+
             font-size: 1.75rem;
+
             font-weight: 700;
+
             color: var(--white);
+
             margin: 0;
+
         }
-        
+
+
+
         .dashboard-user {
+
             display: flex;
+
             align-items: center;
+
             gap: 0.75rem;
+
         }
-        
+
+
+
         .user-avatar {
+
             width: 40px;
+
             height: 40px;
+
             border-radius: 50%;
+
             background: linear-gradient(135deg, #00FFFF, #40E0D0);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             color: #0A1E3F;
+
             font-weight: 700;
+
         }
-        
+
+
+
         /* ===== STATS CARDS ===== */
+
         .stats-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 1.5rem;
+
             margin-bottom: 2rem;
+
         }
-        
+
+
+
         .stat-card {
+
             background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
+
             border-radius: var(--radius-xl);
+
             padding: 1.5rem;
+
             border: 1px solid rgba(0, 255, 255, 0.2);
+
             transition: all 0.3s ease;
+
         }
-        
+
+
+
         .stat-card:hover {
+
             transform: translateY(-5px);
+
             border-color: #00FFFF;
+
             box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .stat-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 1rem;
+
         }
-        
+
+
+
         .stat-icon {
+
             width: 50px;
+
             height: 50px;
+
             border-radius: var(--radius-lg);
+
             background: rgba(0, 255, 255, 0.1);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             color: #00FFFF;
+
             font-size: 1.25rem;
+
         }
-        
+
+
+
         .stat-title {
+
             font-size: 0.9rem;
+
             color: rgba(255, 255, 255, 0.7);
+
             margin: 0 0 0.25rem 0;
+
         }
-        
+
+
+
         .stat-value {
+
             font-size: 1.75rem;
+
             font-weight: 700;
+
             color: var(--white);
+
             margin: 0;
+
         }
-        
+
+
+
         .stat-change {
+
             font-size: 0.85rem;
+
             font-weight: 600;
+
             margin-top: 0.5rem;
+
         }
-        
+
+
+
         .positive {
+
             color: #00FF00;
+
         }
-        
+
+
+
         .negative {
+
             color: #FF0000;
+
         }
-        
+
+
+
         /* ===== CHARTS AND TABLES ===== */
+
         .dashboard-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
             gap: 1.5rem;
+
             margin-bottom: 2rem;
+
         }
-        
+
+
+
         .dashboard-card {
+
             background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
+
             border-radius: var(--radius-xl);
+
             padding: 1.5rem;
+
             border: 1px solid rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .card-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 1.5rem;
+
         }
-        
+
+
+
         .card-title {
+
             font-size: 1.25rem;
+
             font-weight: 700;
+
             color: var(--white);
+
             margin: 0;
+
         }
-        
+
+
+
         .chart-container {
+
             height: 250px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background: rgba(10, 30, 63, 0.5);
+
             border-radius: var(--radius-lg);
+
             margin: 1rem 0;
+
         }
-        
+
+
+
         .placeholder-chart {
+
             text-align: center;
+
             padding: 2rem;
+
             color: rgba(255, 255, 255, 0.5);
+
             background: rgba(10, 30, 63, 0.3);
+
             border-radius: var(--radius-md);
+
             border: 1px dashed rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .placeholder-chart i {
+
             font-size: 3rem;
+
             margin-bottom: 1rem;
+
             color: rgba(0, 255, 255, 0.3);
+
         }
-        
+
+
+
         .placeholder-chart h3 {
+
             margin: 1rem 0 0.5rem 0;
+
             color: #00FFFF;
+
         }
-        
+
+
+
         /* ===== RECENT ACTIVITY ===== */
+
         .activity-list {
+
             list-style: none;
+
             padding: 0;
+
             margin: 0;
+
         }
-        
+
+
+
         .activity-item {
+
             display: flex;
+
             gap: 1rem;
+
             padding: 1rem 0;
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
         }
-        
+
+
+
         .activity-item:last-child {
+
             border-bottom: none;
+
         }
-        
+
+
+
         .activity-icon {
+
             width: 40px;
+
             height: 40px;
+
             border-radius: 50%;
+
             background: rgba(0, 255, 255, 0.1);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             color: #00FFFF;
+
             flex-shrink: 0;
+
         }
-        
+
+
+
         .activity-content {
+
             flex: 1;
+
         }
-        
+
+
+
         .activity-title {
+
             font-weight: 600;
+
             color: var(--white);
+
             margin: 0 0 0.25rem 0;
+
         }
-        
+
+
+
         .activity-desc {
+
             font-size: 0.9rem;
+
             color: rgba(255, 255, 255, 0.7);
+
             margin: 0 0 0.25rem 0;
+
         }
-        
+
+
+
         .activity-time {
+
             font-size: 0.8rem;
+
             color: rgba(255, 255, 255, 0.5);
+
         }
-        
+
+
+
         /* ===== RESPONSIVE ===== */
+
         @media (max-width: 992px) {
+
             .dashboard-sidebar {
+
                 width: 70px;
+
             }
-            
+
+
+
             .sidebar-menu a span {
+
                 display: none;
+
             }
-            
+
+
+
             .sidebar-logo span,
+
             .sidebar-divider,
+
             .sidebar-menu a i {
+
                 display: flex;
+
                 justify-content: center;
+
             }
-            
+
+
+
             .dashboard-main {
+
                 margin-left: 70px;
+
             }
+
         }
-        
+
+
+
         @media (max-width: 768px) {
+
             .dashboard-container {
+
                 flex-direction: column;
+
             }
-            
+
+
+
             .dashboard-sidebar {
+
                 width: 100%;
+
                 height: auto;
+
                 position: relative;
+
                 display: flex;
+
                 overflow-x: auto;
+
                 padding: 0.5rem;
+
             }
-            
+
+
+
             .sidebar-menu {
+
                 display: flex;
+
                 gap: 0.5rem;
+
             }
-            
+
+
+
             .sidebar-menu li {
+
                 margin-bottom: 0;
+
             }
-            
+
+
+
             .sidebar-menu a {
+
                 flex-direction: column;
+
                 gap: 0.25rem;
+
                 padding: 0.5rem;
+
                 border-left: none;
+
                 border-top: 3px solid transparent;
+
                 text-align: center;
+
                 font-size: 0.8rem;
+
             }
-            
+
+
+
             .sidebar-menu a:hover,
+
             .sidebar-menu a.active {
+
                 border-left: none;
+
                 border-top: 3px solid #00FFFF;
+
             }
-            
+
+
+
             .sidebar-logo,
+
             .sidebar-divider {
+
                 display: none;
+
             }
-            
+
+
+
             .dashboard-main {
+
                 margin-left: 0;
+
                 padding: 1rem;
+
             }
-            
+
+
+
             .dashboard-header {
+
                 flex-direction: column;
+
                 gap: 1rem;
+
                 text-align: center;
+
             }
+
         }
     </style>
+
+
+
+    <style>
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255, 255, 255, 0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+    </style>
+
+
+
+    <style>
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+
+
+        .top-bar-redesigned {
+
+            background-color: #061226;
+
+            color: #cbd5e1;
+
+            padding: 8px 0;
+
+            font-size: 0.85rem;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            overflow: hidden;
+
+            z-index: 1001;
+
+        }
+
+        .navbar {
+
+            top: 40px !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00FFFF;
+            }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+
+
+            /* Hide Google Translate Logo */
+
+            .goog-te-gadget {
+
+                color: transparent !important;
+
+                font-size: 0px !important;
+
+            }
+
+            .goog-te-gadget img {
+
+                display: none !important;
+
+            }
+
+            .goog-te-gadget .goog-te-combo {
+
+                color: #cbd5e1 !important;
+
+                background-color: #1e293b !important;
+
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+                border-radius: 4px;
+
+                padding: 3px 6px;
+
+                font-size: 0.8rem;
+
+                outline: none;
+
+                cursor: pointer;
+
+            }
+
+            .goog-te-gadget .goog-te-combo:focus {
+
+                border-color: #00FFFF !important;
+
+            }
+
+
+
+            .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+    </style>
+
 </head>
+
 <body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
+
+
+
+    <!-- Top Bar -->
+
+    <div class="top-bar-redesigned"
+        style="background-color: #0A1E3F !important; overflow: visible !important; z-index: 9999 !important;">
+
+        <div class="top-bar-container" style="justify-content: space-between; overflow: visible !important;">
+
+
+
+            <div class="top-bar-left" style="flex: 1; display: flex; align-items: center; gap: 10px; max-width: 50%;">
+
+                <i class="fas fa-bullhorn text-accent-cyan" style="color: #00FFFF; margin-right: 8px;"></i>
+
+                <span id="typewriter-text" class="typewriter-text"
+                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: #fff;">Welcome
+                    to Trendtactics Digital</span>
+
+            </div>
+
+
+
+            <div class="top-bar-right"
+                style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; overflow: visible !important;">
+
+
+
+                <div class="social-icons-top" style="display: flex; gap: 10px;">
+
+                    <a href="https://facebook.com/trendtactics" target="_blank" style="color:#fff;"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" target="_blank" style="color:#fff;"><i
+                            class="fab fa-instagram"></i></a>
+
+                </div>
+
+
+
+                <a href="contact.html" class="top-book-call" style="color: #fff; text-decoration: none;">
+
+                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Book a Call
+
                 </a>
+
+
+
+                <div class="top-search">
+
+                    <i class="fas fa-search" style="color: #fff;"></i>
+
+                    <input type="text" placeholder="Search..." style="background:transparent; border:none; color:#fff;">
+
+                </div>
+
+
+
+                <a href="academy.html" class="top-cart" title="Ebook Cart" style="color: #fff;">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                    <span class="cart-badge">0</span>
+
+                </a>
+
+
+
+
+
+
+
+                <a href="hub.html" class="top-get-started"
+                    style="background: #00FFFF; color: #0A1E3F; font-weight: 700; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s ease;">
+
+                    Get Started
+
+                </a>
+
             </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
+
+
+
         </div>
-    </nav>
-    
-    <!-- Authentication Check -->
-    <script>
-        // Check if user is authenticated on page load
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                console.log('Checking authentication status...');
-                // Check if user is logged in
-                const { data: { session } } = await window.supabaseUtils.supabase.auth.getSession();
-                
-                console.log('Session check result:', { session });
-                
-                if (!session) {
-                    console.log('No session found, redirecting to login');
-                    // Redirect to login page
-                    window.location.href = '/login.html';
-                    return;
-                }
-                
-                // User is authenticated, continue loading dashboard
-                console.log('User is authenticated');
-                
-                // Update user info in header
-                const userEmail = session.user.email;
-                const userInitials = userEmail.charAt(0).toUpperCase();
-                document.querySelector('.user-avatar').textContent = userInitials;
-                document.querySelector('.dashboard-user div:first-child').innerHTML = `<div style="font-weight: 600; color: var(--white);">${userEmail.split('@')[0]}</div>`;
-                
-                // Show default dashboard section
-                showSection('dashboard');
-                
-            } catch (error) {
-                console.error('Error checking authentication:', error);
-                // Redirect to login page on error
-                window.location.href = '/login.html';
-            }
-        });
-        
-        // Function to show different sections
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.dashboard-section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show the selected section
-            const targetSection = document.getElementById(sectionId + '-section');
-            if (targetSection) {
-                targetSection.style.display = 'block';
-            } else {
-                // If section doesn't exist, show dashboard as default
-                document.getElementById('dashboard-section').style.display = 'block';
-            }
-            
-            // Update active class on sidebar links
-            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
-            sidebarLinks.forEach(link => {
-                if (link.getAttribute('href') === '#' + sectionId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
 
-        async function logout() {
-            try {
-                // Logout from Supabase
-                const { error } = await window.supabaseUtils.supabase.auth.signOut();
-                
-                if (error) {
-                    throw new Error(error.message);
-                }
-                
-                // Clear localStorage
-                localStorage.removeItem('userId');
-                localStorage.removeItem('userEmail');
-                
-                // Redirect to login page
-                window.location.href = '/login.html';
-                
-            } catch (error) {
-                console.error('Logout error:', error);
-                // Fallback to localStorage clear and redirect
-                localStorage.clear();
-                window.location.href = '/login.html';
-            }
-        }
-    </script>
-    <!-- Dashboard Container -->
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="dashboard-sidebar">
-            <div class="sidebar-logo">
-                <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital">
-            </div>
-            
-            <ul class="sidebar-menu">
-                <li><a href="#dashboard" class="active" onclick="showSection('dashboard')"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="#analytics" onclick="showSection('analytics')"><i class="fas fa-chart-line"></i> <span>Analytics</span></a></li>
-                <li><a href="#campaigns" onclick="showSection('campaigns')"><i class="fas fa-bullhorn"></i> <span>Campaigns</span></a></li>
-                <li><a href="#email-marketing" onclick="showSection('email-marketing')"><i class="fas fa-envelope"></i> <span>Email Marketing</span></a></li>
-                <li><a href="#social-media" onclick="showSection('social-media')"><i class="fas fa-share-alt"></i> <span>Social Media</span></a></li>
-                
-                <div class="sidebar-divider"></div>
-                
-                <li><a href="#invoices" onclick="showSection('invoices')"><i class="fas fa-file-invoice"></i> <span>Invoices</span></a></li>
-                <li><a href="#support" onclick="showSection('support')"><i class="fas fa-headset"></i> <span>Support</span></a></li>
-                <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                <li><a href="javascript:void(0);" onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
-            </ul>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="dashboard-main">
-            <div class="dashboard-header">
-                <h1 class="dashboard-title">Client Dashboard</h1>
-                <div class="dashboard-user">
-                    <div class="user-avatar">JD</div>
-                    <div>
-                        <div style="font-weight: 600; color: var(--white);">John Doe</div>
-                        <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Premium Client</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats Cards -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div>
-                            <h3 class="stat-title">Total Visitors</h3>
-                            <h2 class="stat-value">24,531</h2>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                    <div class="stat-change positive">
-                        <i class="fas fa-arrow-up"></i> 12.5% from last month
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div>
-                            <h3 class="stat-title">Conversion Rate</h3>
-                            <h2 class="stat-value">4.8%</h2>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-percentage"></i>
-                        </div>
-                    </div>
-                    <div class="stat-change positive">
-                        <i class="fas fa-arrow-up"></i> 2.3% from last month
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div>
-                            <h3 class="stat-title">Avg. Session</h3>
-                            <h2 class="stat-value">4m 32s</h2>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
-                    <div class="stat-change negative">
-                        <i class="fas fa-arrow-down"></i> 0.8% from last month
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div>
-                            <h3 class="stat-title">Bounce Rate</h3>
-                            <h2 class="stat-value">32.4%</h2>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </div>
-                    </div>
-                    <div class="stat-change positive">
-                        <i class="fas fa-arrow-down"></i> 3.1% from last month
-                    </div>
-                </div>
-            </div>
-
-            <!-- Charts and Tables -->
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Traffic Overview</h2>
-                        <select style="background: rgba(10, 30, 63, 0.5); color: white; border: 1px solid rgba(0, 255, 255, 0.3); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">
-                            <option>Last 7 Days</option>
-                            <option>Last 30 Days</option>
-                            <option>Last 90 Days</option>
-                        </select>
-                    </div>
-                    <div class="chart-container">
-                        <div class="placeholder-chart">
-                            <i class="fas fa-chart-bar"></i>
-                            <p>Traffic Chart Visualization</p>
-                            <small>(Actual implementation would show interactive chart)</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Top Performing Pages</h2>
-                        <a href="javascript:void(0);" style="color: #00FFFF; text-decoration: none; font-size: 0.9rem;">View All</a>
-                    </div>
-                    <div class="chart-container">
-                        <div class="placeholder-chart">
-                            <i class="fas fa-file-alt"></i>
-                            <p>Pages Performance Table</p>
-                            <small>(Actual implementation would show data table)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dashboard Section (Default) -->
-            <div id="dashboard-section" class="dashboard-section">
-                <!-- Recent Activity -->
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Recent Activity</h2>
-                        <a href="javascript:void(0);" style="color: #00FFFF; text-decoration: none; font-size: 0.9rem;">View All</a>
-                    </div>
-                    <ul class="activity-list">
-                        <li class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                            <div class="activity-content">
-                                <h3 class="activity-title">New Campaign Launched</h3>
-                                <p class="activity-desc">Summer Sale Email Campaign has been launched successfully</p>
-                                <p class="activity-time">2 hours ago</p>
-                            </div>
-                        </li>
-                        
-                        <li class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="activity-content">
-                                <h3 class="activity-title">Performance Report</h3>
-                                <p class="activity-desc">Monthly analytics report is now available for review</p>
-                                <p class="activity-time">Yesterday</p>
-                            </div>
-                        </li>
-                        
-                        <li class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-comment"></i>
-                            </div>
-                            <div class="activity-content">
-                                <h3 class="activity-title">Support Ticket Closed</h3>
-                                <p class="activity-desc">Ticket #1245 regarding landing page optimization has been resolved</p>
-                                <p class="activity-time">2 days ago</p>
-                            </div>
-                        </li>
-                        
-                        <li class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-file-invoice"></i>
-                            </div>
-                            <div class="activity-content">
-                                <h3 class="activity-title">Invoice Generated</h3>
-                                <p class="activity-desc">Q2 service invoice #INV-2025-004 has been generated</p>
-                                <p class="activity-time">3 days ago</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Analytics Section -->
-            <div id="analytics-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Analytics Dashboard</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Analytics Data</h3>
-                        <p>Detailed analytics and reporting features would be displayed here.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Campaigns Section -->
-            <div id="campaigns-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Campaign Management</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Campaign Tools</h3>
-                        <p>Create, manage, and track your marketing campaigns here.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Email Marketing Section -->
-            <div id="email-marketing-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Email Marketing</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email Campaigns</h3>
-                        <p>Design and send email campaigns to your audience.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Social Media Section -->
-            <div id="social-media-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Social Media Management</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-share-alt"></i>
-                        <h3>Social Media Tools</h3>
-                        <p>Manage your social media presence and scheduling.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Invoices Section -->
-            <div id="invoices-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Invoices & Billing</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-file-invoice"></i>
-                        <h3>Billing Information</h3>
-                        <p>View and manage your invoices and payment history.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Support Section -->
-            <div id="support-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Support Center</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-headset"></i>
-                        <h3>Customer Support</h3>
-                        <p>Get help and support for your services.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Settings Section -->
-            <div id="settings-section" class="dashboard-section" style="display: none;">
-                <div class="dashboard-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Account Settings</h2>
-                    </div>
-                    <div class="placeholder-chart">
-                        <i class="fas fa-cog"></i>
-                        <h3>Configuration</h3>
-                        <p>Manage your account preferences and settings.</p>
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="/services#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
+                        loading="lazy">
+
+                </a>
+
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <a href="quiz.html" class="nav-link" style="font-weight: bold;">Take Quiz</a>
+
+
+
                 </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
             </div>
+
         </div>
+
+    </nav>
+
+
+
+    <!-- Authentication Check -->
+
+    <script>
+
+        // Check if user is authenticated on page load
+
+        document.addEventListener('DOMContentLoaded', async function () {
+
+            try {
+
+                console.log('Checking authentication status...');
+
+                // Check if user is logged in
+
+                const { data: { session } } = await window.supabaseUtils.supabase.auth.getSession();
+
+
+
+                console.log('Session check result:', { session });
+
+
+
+                if (!session) {
+
+                    console.log('No session found, redirecting to login');
+
+                    // Redirect to login page
+
+                    window.location.href = '/login.html';
+
+                    return;
+
+                }
+
+
+
+                // User is authenticated, continue loading dashboard
+
+                console.log('User is authenticated');
+
+
+
+                // Update user info in header
+                const userEmail = session.user.email;
+                const userFullName = session.user.user_metadata?.full_name || userEmail.split('@')[0];
+                const userInitials = userFullName.charAt(0).toUpperCase();
+
+                document.querySelector('.user-avatar').textContent = userInitials;
+                document.querySelector('.dashboard-user div:first-child').innerHTML = `<div style="font-weight: 600; color: var(--white);">${userFullName}</div>`;
+
+
+
+                // Show default dashboard section
+
+                showSection('dashboard');
+
+
+
+            } catch (error) {
+
+                console.error('Error checking authentication:', error);
+
+                // Redirect to login page on error
+
+                window.location.href = '/login.html';
+
+            }
+
+        });
+
+
+
+        // Function to show different sections
+
+        function showSection(sectionId) {
+
+            // Hide all sections
+
+            const sections = document.querySelectorAll('.dashboard-section');
+
+            sections.forEach(section => {
+
+                section.style.display = 'none';
+
+            });
+
+
+
+            // Show the selected section
+
+            const targetSection = document.getElementById(sectionId + '-section');
+
+            if (targetSection) {
+
+                targetSection.style.display = 'block';
+
+            } else {
+
+                // If section doesn't exist, show dashboard as default
+
+                document.getElementById('dashboard-section').style.display = 'block';
+
+            }
+
+
+
+            // Update active class on sidebar links
+
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+
+            sidebarLinks.forEach(link => {
+
+                if (link.getAttribute('href') === '#' + sectionId) {
+
+                    link.classList.add('active');
+
+                } else {
+
+                    link.classList.remove('active');
+
+                }
+
+            });
+
+        }
+
+
+
+        async function logout() {
+
+            try {
+
+                // Logout from Supabase
+
+                const { error } = await window.supabaseUtils.supabase.auth.signOut();
+
+
+
+                if (error) {
+
+                    throw new Error(error.message);
+
+                }
+
+
+
+                // Clear localStorage
+
+                localStorage.removeItem('userId');
+
+                localStorage.removeItem('userEmail');
+
+
+
+                // Redirect to login page
+
+                window.location.href = '/login.html';
+
+
+
+            } catch (error) {
+
+                console.error('Logout error:', error);
+
+                // Fallback to localStorage clear and redirect
+
+                localStorage.clear();
+
+                window.location.href = '/login.html';
+
+            }
+
+        }
+
+    </script>
+
+    <!-- Dashboard Container -->
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="dashboard-sidebar">
+
+            <div class="sidebar-logo">
+
+                <img src="images/Trendtactics_logo.jpg" alt="Trendtactics Digital" loading="lazy">
+
+            </div>
+
+
+
+            <ul class="sidebar-menu">
+
+                <li><a href="#dashboard" class="active" onclick="showSection('dashboard')"><i class="fas fa-home"></i>
+                        <span>Dashboard</span></a></li>
+
+                <li><a href="#analytics" onclick="showSection('analytics')"><i class="fas fa-chart-line"></i>
+                        <span>Analytics</span></a></li>
+
+                <li><a href="#campaigns" onclick="showSection('campaigns')"><i class="fas fa-bullhorn"></i>
+                        <span>Campaigns</span></a></li>
+
+                <li><a href="#email-marketing" onclick="showSection('email-marketing')"><i class="fas fa-envelope"></i>
+                        <span>Email Marketing</span></a></li>
+
+                <li><a href="#social-media" onclick="showSection('social-media')"><i class="fas fa-share-alt"></i>
+                        <span>Social Media</span></a></li>
+
+
+
+                <div class="sidebar-divider"></div>
+
+
+
+                <li><a href="#invoices" onclick="showSection('invoices')"><i class="fas fa-file-invoice"></i>
+                        <span>Invoices</span></a></li>
+
+                <li><a href="#support" onclick="showSection('support')"><i class="fas fa-headset"></i>
+                        <span>Support</span></a></li>
+
+                <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i>
+                        <span>Settings</span></a></li>
+
+                <li><a href="javascript:void(0);" onclick="logout()"><i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span></a></li>
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- Main Content -->
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+
+                <h1 class="dashboard-title">Client Dashboard</h1>
+
+                <div class="dashboard-user">
+
+                    <div class="user-avatar">JD</div>
+
+                    <div>
+
+                        <div style="font-weight: 600; color: var(--white);">John Doe</div>
+
+                        <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Premium Client</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Stats Cards -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div>
+
+                            <h3 class="stat-title">Total Visitors</h3>
+
+                            <h2 class="stat-value">24,531</h2>
+
+                        </div>
+
+                        <div class="stat-icon">
+
+                            <i class="fas fa-users"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-change positive">
+
+                        <i class="fas fa-arrow-up"></i> 12.5% from last month
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div>
+
+                            <h3 class="stat-title">Conversion Rate</h3>
+
+                            <h2 class="stat-value">4.8%</h2>
+
+                        </div>
+
+                        <div class="stat-icon">
+
+                            <i class="fas fa-percentage"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-change positive">
+
+                        <i class="fas fa-arrow-up"></i> 2.3% from last month
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div>
+
+                            <h3 class="stat-title">Avg. Session</h3>
+
+                            <h2 class="stat-value">4m 32s</h2>
+
+                        </div>
+
+                        <div class="stat-icon">
+
+                            <i class="fas fa-clock"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-change negative">
+
+                        <i class="fas fa-arrow-down"></i> 0.8% from last month
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div>
+
+                            <h3 class="stat-title">Bounce Rate</h3>
+
+                            <h2 class="stat-value">32.4%</h2>
+
+                        </div>
+
+                        <div class="stat-icon">
+
+                            <i class="fas fa-sign-out-alt"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-change positive">
+
+                        <i class="fas fa-arrow-down"></i> 3.1% from last month
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Charts and Tables -->
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Traffic Overview</h2>
+
+                        <select
+                            style="background: rgba(10, 30, 63, 0.5); color: white; border: 1px solid rgba(0, 255, 255, 0.3); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">
+
+                            <option>Last 7 Days</option>
+
+                            <option>Last 30 Days</option>
+
+                            <option>Last 90 Days</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <div class="placeholder-chart">
+
+                            <i class="fas fa-chart-bar"></i>
+
+                            <p>Traffic Chart Visualization</p>
+
+                            <small>(Actual implementation would show interactive chart)</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Top Performing Pages</h2>
+
+                        <a href="javascript:void(0);"
+                            style="color: #00FFFF; text-decoration: none; font-size: 0.9rem;">View All</a>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <div class="placeholder-chart">
+
+                            <i class="fas fa-file-alt"></i>
+
+                            <p>Pages Performance Table</p>
+
+                            <small>(Actual implementation would show data table)</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Dashboard Section (Default) -->
+
+            <div id="dashboard-section" class="dashboard-section">
+
+                <!-- Recent Activity -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Recent Activity</h2>
+
+                        <a href="javascript:void(0);"
+                            style="color: #00FFFF; text-decoration: none; font-size: 0.9rem;">View All</a>
+
+                    </div>
+
+                    <ul class="activity-list">
+
+                        <li class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-bullhorn"></i>
+
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h3 class="activity-title">New Campaign Launched</h3>
+
+                                <p class="activity-desc">Summer Sale Email Campaign has been launched successfully</p>
+
+                                <p class="activity-time">2 hours ago</p>
+
+                            </div>
+
+                        </li>
+
+
+
+                        <li class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-chart-line"></i>
+
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h3 class="activity-title">Performance Report</h3>
+
+                                <p class="activity-desc">Monthly analytics report is now available for review</p>
+
+                                <p class="activity-time">Yesterday</p>
+
+                            </div>
+
+                        </li>
+
+
+
+                        <li class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-comment"></i>
+
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h3 class="activity-title">Support Ticket Closed</h3>
+
+                                <p class="activity-desc">Ticket #1245 regarding landing page optimization has been
+                                    resolved</p>
+
+                                <p class="activity-time">2 days ago</p>
+
+                            </div>
+
+                        </li>
+
+
+
+                        <li class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-file-invoice"></i>
+
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h3 class="activity-title">Invoice Generated</h3>
+
+                                <p class="activity-desc">Q2 service invoice #INV-2025-004 has been generated</p>
+
+                                <p class="activity-time">3 days ago</p>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Analytics Section -->
+
+            <div id="analytics-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Analytics Dashboard</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-chart-line"></i>
+
+                        <h3>Analytics Data</h3>
+
+                        <p>Detailed analytics and reporting features would be displayed here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Campaigns Section -->
+
+            <div id="campaigns-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Campaign Management</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-bullhorn"></i>
+
+                        <h3>Campaign Tools</h3>
+
+                        <p>Create, manage, and track your marketing campaigns here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Email Marketing Section -->
+
+            <div id="email-marketing-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Email Marketing</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <h3>Email Campaigns</h3>
+
+                        <p>Design and send email campaigns to your audience.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Social Media Section -->
+
+            <div id="social-media-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Social Media Management</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-share-alt"></i>
+
+                        <h3>Social Media Tools</h3>
+
+                        <p>Manage your social media presence and scheduling.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Invoices Section -->
+
+            <div id="invoices-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Invoices & Billing</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-file-invoice"></i>
+
+                        <h3>Billing Information</h3>
+
+                        <p>View and manage your invoices and payment history.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Support Section -->
+
+            <div id="support-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Support Center</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-headset"></i>
+
+                        <h3>Customer Support</h3>
+
+                        <p>Get help and support for your services.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Settings Section -->
+
+            <div id="settings-section" class="dashboard-section" style="display: none;">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2 class="card-title">Account Settings</h2>
+
+                    </div>
+
+                    <div class="placeholder-chart">
+
+                        <i class="fas fa-cog"></i>
+
+                        <h3>Configuration</h3>
+
+                        <p>Manage your account preferences and settings.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- Footer -->
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                        loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
+                    prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <script src="/js/main.js"></script>
+
+
+    <script src="js/main.js"></script>
+
     <script>
+
         // Dashboard functionality would be implemented here
+
         // This is a placeholder for actual dashboard implementation
-        document.addEventListener('DOMContentLoaded', function() {
+
+        document.addEventListener('DOMContentLoaded', function () {
+
             // Simulate loading data
+
             console.log('Dashboard initialized');
-            
+
+
+
             // Add any interactive functionality here
+
             // For example, chart rendering, data fetching, etc.
+
         });
+
     </script>
+
+
+
+
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const phrases = [
+
+                "Welcome to Trendtactics Digital",
+
+                "Read our latest blog: The Future of AI",
+
+                "Next Event: Digital Growth Webinar - Oct 25",
+
+                "Scale your revenue with our experts",
+
+                ""
+
+            ];
+
+            let i = 0;
+
+            let j = 0;
+
+            let currentPhrase = [];
+
+            let isDeleting = false;
+
+            let isEnd = false;
+
+
+
+            const typeWriterElement = document.getElementById('typewriter-text');
+
+
+
+            function loop() {
+
+                if (!typeWriterElement) return;
+
+
+
+                // Add live time to the last phrase dynamically
+
+                phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+
+
+                isEnd = false;
+
+                typeWriterElement.innerHTML = currentPhrase.join('');
+
+
+
+                if (i < phrases.length) {
+
+                    if (!isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.push(phrases[i][j]);
+
+                        j++;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (isDeleting && j <= phrases[i].length) {
+
+                        currentPhrase.pop();
+
+                        j--;
+
+                        typeWriterElement.innerHTML = currentPhrase.join('');
+
+                    }
+
+
+
+                    if (j == phrases[i].length) {
+
+                        isEnd = true;
+
+                        isDeleting = true;
+
+                    }
+
+
+
+                    if (isDeleting && j === 0) {
+
+                        currentPhrase = [];
+
+                        isDeleting = false;
+
+                        i++;
+
+                        if (i === phrases.length) {
+
+                            i = 0;
+
+                        }
+
+                    }
+
+                }
+
+
+
+                const speeding = Math.random() * (50 - 30) + 30;
+
+                const normal = Math.random() * (100 - 50) + 50;
+
+                const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+
+
+                setTimeout(loop, time);
+
+            }
+
+
+
+            if (typeWriterElement) {
+
+                loop();
+
+            }
+
+        });
+
+    </script>
+
+    <script src="js/newsletter.js" defer></script>
+
+    <script src="js/livechat.js" defer></script>
+
+    <script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
 </html>

@@ -1,1043 +1,2027 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Facebook Ads Services - Trendtactics Digital</title>
-    <meta name="description" content="Professional Facebook and Instagram advertising services. Targeted ad campaigns that reach your ideal customers and drive conversions.">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+    <meta name="description"
+
+        content="Professional Facebook and Instagram advertising services. Targeted ad campaigns that reach your ideal customers and drive conversions.">
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/about.css">
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+
+
+    <link rel="stylesheet" href="styles/services-premium.css?v=1772546233">
+
+
+
     <style>
-        .service-hero {
-            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
-            padding: 140px 0 100px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            perspective: 1200px;
+
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
         }
-        .service-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.26) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(64, 224, 208, 0.21) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(10, 30, 63, 0.4) 0%, transparent 70%),
-                linear-gradient(135deg, #0A1E3F 0%, #162447 50%, #0A1E3F 100%);
-            animation: serviceRotate 26s linear infinite;
-            transform-style: preserve-3d;
-            pointer-events: none;
-        }
-        .service-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="service-3d" width="52" height="52" patternUnits="userSpaceOnUse"><circle cx="26" cy="26" r="2.6" fill="%2300FFFF" opacity="0.13"/><circle cx="11" cy="11" r="1.6" fill="%2340E0D0" opacity="0.11"/><circle cx="41" cy="41" r="2.1" fill="%2300FFFF" opacity="0.11"/></pattern></defs><rect width="100" height="100" fill="url(%23service-3d)"/></svg>');
-            opacity: 0.48;
-            animation: serviceFloat 19s ease-in-out infinite;
-            pointer-events: none;
-        }
-        .service-hero-3d-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .service-shape-3d {
-            position: absolute;
-            opacity: 0.36;
-            animation: serviceFloat3D 24s ease-in-out infinite;
-        }
-        .service-shape-3d.shape-1 {
-            width: 190px;
-            height: 190px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.36), rgba(64, 224, 208, 0.26));
-            border-radius: 42% 58% 58% 42% / 42% 42% 58% 58%;
-            top: 16%;
-            left: 7%;
-            transform: rotateZ(45deg);
-            animation-delay: 0s;
-        }
-        .service-shape-3d.shape-2 {
-            width: 125px;
-            height: 125px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.36), rgba(0, 255, 255, 0.26));
-            border-radius: 50%;
-            top: 54%;
-            right: 11%;
-            animation-delay: 3.5s;
-        }
-        .service-shape-3d.shape-3 {
-            width: 145px;
-            height: 145px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.31), rgba(10, 30, 63, 0.36));
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            bottom: 14%;
-            left: 14%;
-            animation-delay: 7s;
-        }
-        .service-shape-3d.shape-4 {
-            width: 105px;
-            height: 105px;
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.36), rgba(0, 255, 255, 0.26));
-            border-radius: 26px;
-            top: 24%;
-            right: 24%;
-            transform: rotateZ(45deg);
-            animation-delay: 10.5s;
-        }
-        @keyframes serviceRotate {
-            0% { transform: rotate(0deg) translateZ(0); }
-            100% { transform: rotate(360deg) translateZ(0); }
-        }
-        @keyframes serviceFloat {
-            0%, 100% { transform: translateY(0) translateZ(0); }
-            50% { transform: translateY(-26px) translateZ(16px); }
-        }
-        @keyframes serviceFloat3D {
-            0%, 100% {
-                transform: translateY(0) translateX(0) rotateZ(0deg) translateZ(0);
-            }
-            25% {
-                transform: translateY(-36px) translateX(26px) rotateZ(90deg) translateZ(26px);
-            }
-            50% {
-                transform: translateY(-72px) translateX(-26px) rotateZ(180deg) translateZ(52px);
-            }
-            75% {
-                transform: translateY(-36px) translateX(16px) rotateZ(270deg) translateZ(26px);
-            }
-        }
-        .service-hero h1 {
-            color: #ffffff !important;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-        }
-        .service-hero-icon {
-            font-size: 4rem;
-            color: #00FFFF;
-            margin-bottom: 2rem;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        .service-content-section {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-        }
-        .service-content-grid {
+
+
+
+        .site-footer .footer-container {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .service-feature-card {
-            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-        }
-        .service-feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15), 0 15px 40px rgba(0, 255, 255, 0.2);
-        }
-        .service-feature-icon {
-            font-size: 3rem;
-            color: #00FFFF;
-            margin-bottom: 1.5rem;
-        }
-        .service-feature-card h3 {
-            color: #0A1E3F;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .service-feature-card p {
-            color: #4a5568;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-        .faq-section {
-            background: #f9f9f9;
-            padding: 80px 0;
-        }
-        .faq-item {
-            background: #ffffff;
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .faq-item:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        .faq-question {
-            background: #ffffff;
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        .faq-question:hover {
-            background: #f8f9fa;
-        }
-        .faq-question h3 {
-            color: #0A1E3F;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0;
-        }
-        .faq-question i {
-            color: #00FFFF;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            padding: 0 1.5rem;
-            color: #0A1E3F;
-            line-height: 1.8;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 1.5rem 1.5rem;
-        }
-        .faq-answer p {
-            margin: 0;
-            color: #0A1E3F;
-        }
-        .pricing-section {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        }
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .pricing-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: #0A1E3F;
-            font-weight: 800;
-        }
-        .pricing-header p {
-            font-size: 1.2rem;
-            color: #4a5568;
-            max-width: 600px;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
             margin: 0 auto;
+
         }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
+            }
+
         }
-        .pricing-card {
-            background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 2px solid rgba(0, 255, 255, 0.2);
-            position: relative;
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
         }
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.3), 0 0 0 2px rgba(0, 255, 255, 0.5);
-            border-color: rgba(0, 255, 255, 0.6);
-        }
-        .pricing-card.featured {
-            border-color: #00FFFF;
-            transform: scale(1.05);
-            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.4);
-        }
-        .pricing-card.featured::before {
-            content: 'POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #00FFFF;
-            color: #0A1E3F;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-        .pricing-card-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .pricing-card-header h3 {
-            font-size: 1.8rem;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .pricing-card-header .target-user {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-style: italic;
-        }
-        .pricing-deliverables {
-            margin-top: 2rem;
-        }
-        .pricing-deliverables h4 {
-            font-size: 1.1rem;
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .pricing-deliverables ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .pricing-deliverables li {
-            padding: 0.75rem 0;
-            color: rgba(255, 255, 255, 0.9);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: flex-start;
-        }
-        .pricing-deliverables li:last-child {
-            border-bottom: none;
-        }
-        .pricing-deliverables li::before {
-            content: '✓';
-            color: #00FFFF;
-            font-weight: bold;
-            margin-right: 0.75rem;
-            font-size: 1.2rem;
-        }
-        .compare-packages {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            margin: 4rem 0;
-            overflow-x: auto;
-        }
-        .compare-packages h3 {
-            text-align: center;
-            font-size: 2rem;
-            color: #0A1E3F;
-            font-weight: 800;
-            margin-bottom: 2rem;
-        }
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-        }
-        .compare-table th {
-            background: #0A1E3F;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        .compare-table th:first-child {
-            border-radius: 10px 0 0 0;
-        }
-        .compare-table th:last-child {
-            border-radius: 0 10px 0 0;
-        }
-        .compare-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-            color: #4a5568;
-        }
-        .compare-table tr:last-child td {
-            border-bottom: none;
-        }
-        .compare-table .feature-name {
-            font-weight: 600;
-            color: #0A1E3F;
-        }
-        .compare-table .check {
-            color: #00FFFF;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-        .quote-form-section {
-            background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%);
-            padding: 80px 0;
-            border-radius: 24px;
-            margin: 4rem 0;
-        }
-        .quote-form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-        .quote-form-container h3 {
-            text-align: center;
-            font-size: 2rem;
-            color: #0A1E3F;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-        .quote-form-container p {
-            text-align: center;
-            color: #4a5568;
-            margin-bottom: 2rem;
-        }
-        .quote-form-group {
-            margin-bottom: 1.5rem;
-        }
-        .quote-form-group label {
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
             display: block;
-            color: #0A1E3F;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
             font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
         }
-        .quote-form-group input,
-        .quote-form-group select,
-        .quote-form-group textarea {
-            width: 100%;
-            padding: 0.875rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 1rem;
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
             transition: all 0.3s ease;
-            font-family: inherit;
-        }
-        .quote-form-group input:focus,
-        .quote-form-group select:focus,
-        .quote-form-group textarea:focus {
-            outline: none;
-            border-color: #00FFFF;
-            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
-        }
-        .quote-form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .quote-form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: #00FFFF;
-            color: #0A1E3F;
-            border: none;
-            border-radius: 10px;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
             font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
+
         }
-        .quote-form-submit:hover {
-            background: #0A1E3F;
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
             color: #00FFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
         }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255,255,255,0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b; 
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+    
+
+        </style>
+
+
+
+    <style>
+
+        
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned { display: none !important; }
+
+        .navbar {
+
+            top: 0 !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from, to { border-color: transparent }
+
+            50% { border-color: #00FFFF; }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+        
+
         @media (max-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
             }
-            .pricing-card.featured {
-                transform: scale(1);
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
             }
-            .quote-form-container {
-                padding: 2rem 1.5rem;
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
             }
-            .compare-packages {
-                padding: 2rem 1rem;
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
             }
+
+            
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
         }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
+
+
 <body>
-    <nav id="navigation" class="navbar">
+
+<nav id="navigation" class="navbar">
+
         <div class="nav-container">
+
             <div class="nav-logo">
-                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-    <div style="display: flex; gap: 2px; align-items: flex-end;">
-        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-    </div>
-    <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-</a>
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital"
+
+                        data-optimized="true" style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;" loading="lazy">
+
+                </a>
+
             </div>
+
             <div class="nav-actions">
+
                 <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
                     <div class="nav-item dropdown">
-                        <a href="/services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                            <li><a href="/services">View All Services</a></li>
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    
+                    <div class="nav-item dropdown" style="margin-left: auto;">
+                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                            Get Started
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub.html" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz.html" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
                         </ul>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="/resources" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                            <li><a href="/resources">View All Resources</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+
                 </div>
+
                 <div class="nav-toggle" id="nav-toggle">
+
                     <span></span>
+
                     <span></span>
+
                     <span></span>
+
                 </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
+
             </div>
+
         </div>
+
     </nav>
 
+
+
     <main>
+
         <!-- Service Hero Section -->
-        <section class="service-hero">
-            <div class="service-hero-3d-shapes">
-                <div class="service-shape-3d shape-1"></div>
-                <div class="service-shape-3d shape-2"></div>
-                <div class="service-shape-3d shape-3"></div>
-                <div class="service-shape-3d shape-4"></div>
-            </div>
+
+        <section class="service-page-hero-clean">
+
             <div class="container">
-                <div class="hero-content" style="text-align: center; position: relative; z-index: 2; transform-style: preserve-3d;">
-                    <div class="service-hero-icon" style="transform: translateZ(40px);">
-                        <i class="fab fa-facebook"></i>
+
+                <div class="service-hero-grid">
+
+                    <div class="service-hero-content">
+
+                        <div class="service-hero-badge">Facebook & Instagram Ads</div>
+
+                        <h1 class="service-hero-title">Targeted Ads That Drive Real Conversions</h1>
+
+                        <p class="service-hero-subtitle">
+
+                            Targeted Facebook and Instagram ad campaigns that reach your ideal customers and drive
+
+                            conversions. We optimize for maximum ROI and engagement.
+
+                        </p>
+
+                        <div class="service-hero-actions">
+
+                            <a href="contact.html" class="btn btn-primary btn-large">Get Free Quote</a>
+
+                            <a href="portfolio.html" class="btn btn-outline btn-large">View Our Work</a>
+
+                        </div>
+
                     </div>
-                    <h1 style="transform: translateZ(60px); text-shadow: 0 16px 42px rgba(0, 255, 255, 0.4);">Facebook Ads Services</h1>
-                    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95;">
-                        Targeted Facebook and Instagram ad campaigns that reach your ideal customers and drive conversions. We optimize for maximum ROI and engagement.
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="/contact" class="btn btn-primary btn-large">Get Free Quote</a>
-                        <a href="/portfolio" class="btn btn-outline btn-large">View Our Work</a>
+
+                    <div class="service-hero-image-wrapper">
+
+                        <img src="images/digital-marketing-parallex.jpg" alt="Facebook Ads Dashboard"
+
+                            class="service-hero-img" loading="lazy">
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- Service Content Section -->
-        <section class="service-content-section">
-            <div class="container">
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <div style="text-align: center; margin-bottom: 4rem;">
-                        <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">What We Offer</h2>
-                        <p style="font-size: 1.2rem; color: #4a5568; max-width: 600px; margin: 0 auto;">Comprehensive Facebook and Instagram advertising solutions tailored to your business needs</p>
-                    </div>
-                    
-                    <div class="service-content-grid">
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h3>Audience Targeting</h3>
-                            <p>Precise audience targeting using Facebook's advanced targeting options. We create custom audiences, lookalike audiences, and retargeting campaigns to reach your ideal customers.</p>
-                        </div>
-                        
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-ad"></i>
-                            </div>
-                            <h3>Ad Creative Design</h3>
-                            <p>Compelling ad creatives including images, videos, and carousel ads that capture attention and drive clicks. We design ads that align with your brand and resonate with your target audience.</p>
-                        </div>
-                        
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Campaign Optimization</h3>
-                            <p>Continuous campaign optimization to improve performance and ROI. We monitor campaigns daily, test different ad variations, and adjust targeting and budgets for maximum results.</p>
-                        </div>
-                        
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Instagram Ads</h3>
-                            <p>Leverage Instagram's visual platform with Stories ads, Feed ads, and Reels ads. We create Instagram campaigns that drive engagement and conversions on this highly visual platform.</p>
-                        </div>
-                        
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <h3>Conversion Tracking</h3>
-                            <p>Set up and monitor conversion tracking to measure the true ROI of your campaigns. We track website visits, form submissions, purchases, and other key actions to optimize for conversions.</p>
-                        </div>
-                        
-                        <div class="service-feature-card">
-                            <div class="service-feature-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h3>Performance Reporting</h3>
-                            <p>Detailed monthly reports with campaign performance metrics, insights, and recommendations. You'll always know how your campaigns are performing and what we're doing to improve them.</p>
-                        </div>
-                    </div>
+
+
+
+        <!-- Premium What We Offer Section -->
+
+        <section class="premium-wwo-section" id="services-detail">
+
+            <div class="container relative z-10">
+
+                <div class="wwo-header text-center mb-16">
+
+                    <h2 class="premium-title">What We Offer</h2>
+
+                    <p class="premium-subtitle">Comprehensive
+
+                        Facebook and Instagram advertising solutions tailored to your business needs</p>
+
                 </div>
+
+
+
+                <div class="wwo-grid">
+
+                    <!-- Content Column (Left) -->
+
+                    <div class="wwo-content-col">
+
+                        <div class="wwo-features-list">
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-bullseye"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Audience Targeting</h3>
+
+                                    <p>Precise audience targeting using Facebook's advanced targeting options. We create
+
+                                        custom
+
+                                        audiences, lookalike audiences, and retargeting campaigns to reach your ideal
+
+                                        customers.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-ad"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Ad Creative Design</h3>
+
+                                    <p>Compelling ad creatives including images, videos, and carousel ads that capture
+
+                                        attention
+
+                                        and drive clicks. We design ads that align with your brand and resonate with
+
+                                        your target
+
+                                        audience.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-chart-line"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Campaign Optimization</h3>
+
+                                    <p>Continuous campaign optimization to improve performance and ROI. We monitor
+
+                                        campaigns
+
+                                        daily, test different ad variations, and adjust targeting and budgets for
+
+                                        maximum
+
+                                        results.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-mobile-alt"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Instagram Ads</h3>
+
+                                    <p>Leverage Instagram's visual platform with Stories ads, Feed ads, and Reels ads.
+
+                                        We create
+
+                                        Instagram campaigns that drive engagement and conversions on this highly visual
+
+                                        platform.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-shopping-cart"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Conversion Tracking</h3>
+
+                                    <p>Set up and monitor conversion tracking to measure the true ROI of your campaigns.
+
+                                        We
+
+                                        track website visits, form submissions, purchases, and other key actions to
+
+                                        optimize for
+
+                                        conversions.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="wwo-feature-card">
+
+                                <div class="wwo-icon"><i class="fas fa-file-alt"></i></div>
+
+                                <div class="wwo-text">
+
+                                    <h3>Performance Reporting</h3>
+
+                                    <p>Detailed monthly reports with campaign performance metrics, insights, and
+
+                                        recommendations. You'll always know how your campaigns are performing and what
+
+                                        we're
+
+                                        doing to improve them.</p>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Image Column (Right) -->
+
+                    <div class="wwo-image-col hidden-mobile">
+
+                        <div class="wwo-image-wrapper sticky-top">
+
+                            <img src="images/social-media-parallelx.jpg" alt="What We Offer"
+
+                                class="wwo-main-image shadow-premium" loading="lazy">
+
+                            <!-- Decorative element -->
+
+                            <div class="wwo-floating-card">
+
+                                <div class="floating-icon"><i class="fas fa-check-circle text-cyan"></i></div>
+
+                                <div class="floating-text">
+
+                                    <strong>Premium Service</strong>
+
+                                    <span>High quality execution</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CTA Banner -->
+
+                <div class="wwo-cta-banner mt-16">
+
+                    <div class="wwo-cta-content text-center">
+
+                        <h3>Ready to Get Started?</h3>
+
+                        <p>Get a custom quote tailored to your Facebook Ads needs.</p>
+
+                        <a href="contact.html" class="btn btn-primary btn-large wwo-btn">Request a Free Quote</a>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
+
+
+
+
 
         <!-- Pricing / Packages Section -->
+
         <section class="pricing-section">
+
             <div class="container">
+
                 <div style="max-width: 1200px; margin: 0 auto;">
+
                     <div class="pricing-header">
-                        <h2>📢 Facebook/IG Ads Packages</h2>
-                        <p>Choose the perfect package for your Facebook and Instagram advertising needs. All packages include professional campaign management and optimization.</p>
+
+                        <h2>Facebook/IG Ads Packages</h2>
+
+                        <p>Choose the perfect package for your Facebook and Instagram advertising needs. All packages
+
+                            include professional campaign management and optimization.</p>
+
                     </div>
+
+
 
                     <div class="pricing-grid">
+
                         <!-- Starter Package -->
+
                         <div class="pricing-card">
+
                             <div class="pricing-card-header">
+
                                 <h3>Starter</h3>
+
                                 <p class="target-user">Individuals, new businesses</p>
+
                             </div>
+
                             <div class="pricing-deliverables">
+
                                 <h4>Deliverables:</h4>
+
                                 <ul>
+
                                     <li>1 campaign</li>
+
                                     <li>Basic targeting</li>
+
                                     <li>Monthly optimization</li>
+
                                 </ul>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Growth Package -->
+
                         <div class="pricing-card featured">
+
                             <div class="pricing-card-header">
+
                                 <h3>Growth</h3>
+
                                 <p class="target-user">SMEs that need consistency and results</p>
+
                             </div>
+
                             <div class="pricing-deliverables">
+
                                 <h4>Deliverables:</h4>
+
                                 <ul>
+
                                     <li>3 campaigns</li>
+
                                     <li>Retargeting</li>
+
                                     <li>Creative testing</li>
+
                                     <li>Bi-weekly optimization</li>
+
                                 </ul>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Pro Package -->
+
                         <div class="pricing-card">
+
                             <div class="pricing-card-header">
+
                                 <h3>Pro</h3>
+
                                 <p class="target-user">Established brands seeking full-scale execution</p>
+
                             </div>
+
                             <div class="pricing-deliverables">
+
                                 <h4>Deliverables:</h4>
+
                                 <ul>
+
                                     <li>Unlimited campaigns</li>
+
                                     <li>Funnel setup</li>
+
                                     <li>Advanced pixel events</li>
+
                                     <li>Weekly optimization and reporting</li>
+
                                 </ul>
+
                             </div>
+
                         </div>
+
                     </div>
+
+
 
                     <!-- Compare Packages Table -->
+
                     <div class="compare-packages">
+
                         <h3>Compare Packages</h3>
+
                         <table class="compare-table">
+
                             <thead>
+
                                 <tr>
+
                                     <th>Feature</th>
+
                                     <th>Starter</th>
+
                                     <th>Growth</th>
+
                                     <th>Pro</th>
+
                                 </tr>
+
                             </thead>
+
                             <tbody>
+
                                 <tr>
+
                                     <td class="feature-name">Campaigns</td>
+
                                     <td>1</td>
+
                                     <td>3</td>
+
                                     <td>Unlimited</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Targeting</td>
+
                                     <td>Basic</td>
+
                                     <td>Advanced</td>
+
                                     <td>Advanced + Retargeting</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Retargeting</td>
+
                                     <td>-</td>
+
                                     <td class="check">✓</td>
+
                                     <td class="check">✓</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Creative Testing</td>
+
                                     <td>-</td>
+
                                     <td class="check">✓</td>
+
                                     <td class="check">✓</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Funnel Setup</td>
+
                                     <td>-</td>
+
                                     <td>-</td>
+
                                     <td class="check">✓</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Advanced Pixel Events</td>
+
                                     <td>-</td>
+
                                     <td>-</td>
+
                                     <td class="check">✓</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Optimization</td>
+
                                     <td>Monthly</td>
+
                                     <td>Bi-weekly</td>
+
                                     <td>Weekly</td>
+
                                 </tr>
+
                                 <tr>
+
                                     <td class="feature-name">Reporting</td>
+
                                     <td>Monthly</td>
+
                                     <td>Bi-weekly</td>
+
                                     <td>Weekly</td>
+
                                 </tr>
+
                             </tbody>
+
                         </table>
+
                     </div>
+
+
 
                     <!-- Get a Quote Form -->
+
                     <div class="quote-form-section">
+
                         <div class="quote-form-container">
+
                             <h3>Get a Custom Quote</h3>
-                            <p>Fill out the form below and we'll provide a tailored quote for your Facebook Ads project.</p>
+
+                            <p>Fill out the form below and we'll provide a tailored quote for your Facebook Ads project.
+
+                            </p>
+
                             <form id="quoteForm" onsubmit="handleQuoteSubmit(event, 'Facebook Ads')">
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteName">Name *</label>
+
                                     <input type="text" id="quoteName" name="name" required>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteEmail">Email *</label>
+
                                     <input type="email" id="quoteEmail" name="email" required>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quotePhone">Phone *</label>
+
                                     <input type="tel" id="quotePhone" name="phone" required>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteBusiness">Business Name</label>
+
                                     <input type="text" id="quoteBusiness" name="business">
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteService">Type of Service *</label>
+
                                     <select id="quoteService" name="service" required>
+
                                         <option value="Web Development">Web Development</option>
+
                                         <option value="App Development">App Development</option>
+
                                         <option value="Digital Marketing">Digital Marketing</option>
+
                                         <option value="Email Marketing">Email Marketing</option>
+
                                         <option value="Content Creation">Content Creation</option>
+
                                         <option value="Social Media Marketing">Social Media Marketing</option>
+
                                         <option value="Facebook Ads" selected>Facebook Ads</option>
+
                                     </select>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteBudget">Budget Range *</label>
+
                                     <select id="quoteBudget" name="budget" required>
+
                                         <option value="">Select budget range</option>
+
                                         <option value="Under $1,000">Under $1,000</option>
+
                                         <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+
                                         <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+
                                         <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+
                                         <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+
                                         <option value="Above $25,000">Above $25,000</option>
+
                                     </select>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteTimeline">Project Timeline *</label>
+
                                     <select id="quoteTimeline" name="timeline" required>
+
                                         <option value="">Select timeline</option>
+
                                         <option value="ASAP / Urgent">ASAP / Urgent</option>
+
                                         <option value="1-2 weeks">1-2 weeks</option>
+
                                         <option value="2-4 weeks">2-4 weeks</option>
+
                                         <option value="1-2 months">1-2 months</option>
+
                                         <option value="2-3 months">2-3 months</option>
+
                                         <option value="3+ months">3+ months</option>
+
                                     </select>
+
                                 </div>
+
                                 <div class="quote-form-group">
+
                                     <label for="quoteDescription">Project Description *</label>
-                                    <textarea id="quoteDescription" name="description" required placeholder="Tell us about your Facebook Ads requirements..."></textarea>
+
+                                    <textarea id="quoteDescription" name="description" required
+
+                                        placeholder="Tell us about your Facebook Ads requirements..."></textarea>
+
                                 </div>
+
                                 <button type="submit" class="quote-form-submit">Request a Custom Quote</button>
+
                             </form>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- FAQ Section -->
+
         <section class="faq-section">
+
             <div class="container">
+
                 <div style="max-width: 900px; margin: 0 auto;">
+
                     <div style="text-align: center; margin-bottom: 3rem;">
-                        <h2 style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">Frequently Asked Questions</h2>
-                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our Facebook Ads services</p>
+
+                        <h2
+
+                            style="font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; color: #0A1E3F; font-weight: 800;">
+
+                            Frequently Asked Questions</h2>
+
+                        <p style="font-size: 1.1rem; color: #4a5568;">Common questions about our Facebook Ads services
+
+                        </p>
+
                     </div>
-                    
+
+
+
                     <div class="faq-grid" id="faq-grid">
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>How much should I budget for Facebook Ads?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>Facebook ad budgets vary based on your goals and industry. We typically recommend starting with a minimum of $500-1000 per month for testing and optimization. Larger budgets allow for better scaling and results. We'll help you determine the right budget based on your objectives.</p>
+
+                                <p>Facebook ad budgets vary based on your goals and industry. We typically recommend
+
+                                    starting with a minimum of $500-1000 per month for testing and optimization. Larger
+
+                                    budgets allow for better scaling and results. We'll help you determine the right
+
+                                    budget based on your objectives.</p>
+
                             </div>
+
                         </div>
-                        
+
+
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>How long does it take to see results from Facebook Ads?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>You can start seeing results within days of launching campaigns. However, it typically takes 1-2 weeks for Facebook's algorithm to optimize and find your best-performing audiences. We continuously optimize campaigns to improve performance over time.</p>
+
+                                <p>You can start seeing results within days of launching campaigns. However, it
+
+                                    typically takes 1-2 weeks for Facebook's algorithm to optimize and find your
+
+                                    best-performing audiences. We continuously optimize campaigns to improve performance
+
+                                    over time.</p>
+
                             </div>
+
                         </div>
-                        
+
+
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>What types of Facebook Ads do you create?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>We create all types of Facebook and Instagram ads including image ads, video ads, carousel ads, collection ads, Stories ads, and Reels ads. We choose the best ad format based on your goals and what resonates with your target audience.</p>
+
+                                <p>We create all types of Facebook and Instagram ads including image ads, video ads,
+
+                                    carousel ads, collection ads, Stories ads, and Reels ads. We choose the best ad
+
+                                    format based on your goals and what resonates with your target audience.</p>
+
                             </div>
+
                         </div>
-                        
+
+
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>Do you manage Instagram Ads as well?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>Yes! Since Facebook and Instagram are part of the same advertising platform, we manage ads on both platforms. We can run campaigns on Facebook, Instagram, or both, depending on where your target audience is most active.</p>
+
+                                <p>Yes! Since Facebook and Instagram are part of the same advertising platform, we
+
+                                    manage ads on both platforms. We can run campaigns on Facebook, Instagram, or both,
+
+                                    depending on where your target audience is most active.</p>
+
                             </div>
+
                         </div>
-                        
+
+
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>How do you target the right audience?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>We use Facebook's advanced targeting options including demographics, interests, behaviors, and custom audiences. We also create lookalike audiences based on your existing customers and use retargeting to reach people who have visited your website or engaged with your brand.</p>
+
+                                <p>We use Facebook's advanced targeting options including demographics, interests,
+
+                                    behaviors, and custom audiences. We also create lookalike audiences based on your
+
+                                    existing customers and use retargeting to reach people who have visited your website
+
+                                    or engaged with your brand.</p>
+
                             </div>
+
                         </div>
-                        
+
+
+
                         <div class="faq-item">
+
                             <div class="faq-question" onclick="toggleFAQ(this)">
+
                                 <h3>What kind of ROI can I expect from Facebook Ads?</h3>
+
                                 <i class="fas fa-chevron-down"></i>
+
                             </div>
+
                             <div class="faq-answer">
-                                <p>ROI varies by industry and campaign goals. On average, our clients see 3-5x ROAS (Return on Ad Spend) for e-commerce campaigns and strong lead generation results for B2B campaigns. We'll set realistic expectations based on your specific business and goals.</p>
+
+                                <p>ROI varies by industry and campaign goals. On average, our clients see 3-5x ROAS
+
+                                    (Return on Ad Spend) for e-commerce campaigns and strong lead generation results for
+
+                                    B2B campaigns. We'll set realistic expectations based on your specific business and
+
+                                    goals.</p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <!-- CTA Section -->
-        <section class="cta" style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
+
+        <section class="cta"
+
+            style="padding: 100px 0 120px; background: linear-gradient(135deg, #0A1E3F 0%, #162447 100%); margin-bottom: 0;">
+
             <div class="container">
+
                 <h2 class="cta-title" style="color: #ffffff;">Ready to Drive Results with Facebook Ads?</h2>
-                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's create Facebook and Instagram ad campaigns that reach your ideal customers and drive conversions for your business.</p>
+
+                <p class="cta-subtitle" style="color: rgba(255, 255, 255, 0.9);">Let's create Facebook and Instagram ad
+
+                    campaigns that reach your ideal customers and drive conversions for your business.</p>
+
                 <div class="cta-buttons">
-                    <a href="/contact" class="btn btn-primary btn-large" style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
-                    <a href="/portfolio" class="btn btn-outline btn-large" style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-large"
+
+                        style="background: #00FFFF; color: #0A1E3F; font-weight: 700;">Get Free Consultation</a>
+
+                    <a href="portfolio.html" class="btn btn-outline btn-large"
+
+                        style="border-color: #00FFFF; color: #00FFFF;">View Portfolio</a>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <div style="display: flex; gap: 2px; align-items: flex-end;">
-                                <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                                <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                            </div>
-                            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                        </a>
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img" loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism, prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
+
             
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
+            
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+        
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
 
+
+
     <script>
-    function toggleFAQ(element) {
-        const faqItem = element.closest('.faq-item');
-        const isActive = faqItem.classList.contains('active');
-        
-        // Close all FAQs
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Open clicked FAQ if it wasn't active
-        if (!isActive) {
-            faqItem.classList.add('active');
+
+        function toggleFAQ(element) {
+
+            const faqItem = element.closest('.faq-item');
+
+            const isActive = faqItem.classList.contains('active');
+
+
+
+            // Close all FAQs
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+
+                item.classList.remove('active');
+
+            });
+
+
+
+            // Open clicked FAQ if it wasn't active
+
+            if (!isActive) {
+
+                faqItem.classList.add('active');
+
+            }
+
         }
-    }
-    
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    
-    function handleQuoteSubmit(event, serviceType) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        data.serviceType = serviceType;
-        
-        // Store in localStorage for contact page
-        localStorage.setItem('quoteRequest', JSON.stringify(data));
-        
-        // Redirect to contact page
-        window.location.href = 'contact.html?quote=submitted';
-    }
+
+
+
+        function scrollToTop() {
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        }
+
+
+
+        function handleQuoteSubmit(event, serviceType) {
+
+            event.preventDefault();
+
+            const form = event.target;
+
+            const formData = new FormData(form);
+
+            const data = Object.fromEntries(formData);
+
+            data.serviceType = serviceType;
+
+
+
+            // Store in localStorage for contact page
+
+            localStorage.setItem('quoteRequest', JSON.stringify(data));
+
+
+
+            // Redirect to contact page
+
+            window.location.href = 'contact.html?quote=submitted';
+
+        }
+
     </script>
-    <script src="/js/main.js"></script>
+
+    <script src="js/main.js"></script>
+
+
+
+
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const phrases = [
+
+            "Welcome to Trendtactics Digital",
+
+            "Read our latest blog: The Future of AI",
+
+            "Next Event: Digital Growth Webinar - Oct 25",
+
+            "Scale your revenue with our experts",
+
+            "" 
+
+        ];
+
+        let i = 0;
+
+        let j = 0;
+
+        let currentPhrase = [];
+
+        let isDeleting = false;
+
+        let isEnd = false;
+
+        
+
+        const typeWriterElement = document.getElementById('typewriter-text');
+
+        
+
+        function loop() {
+
+            if (!typeWriterElement) return;
+
+            
+
+            // Add live time to the last phrase dynamically
+
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+            
+
+            isEnd = false;
+
+            typeWriterElement.innerHTML = currentPhrase.join('');
+
+            
+
+            if (i < phrases.length) {
+
+                if (!isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.push(phrases[i][j]);
+
+                    j++;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.pop();
+
+                    j--;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (j == phrases[i].length) {
+
+                    isEnd = true;
+
+                    isDeleting = true;
+
+                }
+
+                
+
+                if (isDeleting && j === 0) {
+
+                    currentPhrase = [];
+
+                    isDeleting = false;
+
+                    i++;
+
+                    if (i === phrases.length) {
+
+                        i = 0;
+
+                    }
+
+                }
+
+            }
+
+            
+
+            const speeding = Math.random() * (50 - 30) + 30;
+
+            const normal = Math.random() * (100 - 50) + 50;
+
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+            
+
+            setTimeout(loop, time);
+
+        }
+
+        
+
+        if (typeWriterElement) {
+
+            loop();
+
+        }
+
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/newsletter.js" defer></script>
+
+<script src="js/livechat.js" defer></script>
+
+<script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
+
 </html>
+
+
 

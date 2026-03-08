@@ -3,19 +3,49 @@
   "version": "1.0.0",
   "description": "Trendtactics Academy - Learning Management System",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test-server": "node -e \"require('child_process').exec('python -m http.server 8000 || npx serve || php -S localhost:8000', (error, stdout, stderr) => { console.log('Starting local server...'); console.log(stdout); console.error(stderr); })\"",
     "create-test-user": "node create-test-user.js",
     "add-sample-courses": "node add-sample-courses.js",
     "add-course-structure": "node add-course-structure.js",
     "verify-setup": "node verify-academy-setup.js",
-    "test-backend": "node test-supabase-connection.js"
+    "test-backend": "node test-supabase-connection.js",
+    "start": "node server.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0"
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.13.6",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.2.0",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dompurify": "^3.3.2",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.0",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "http": "^0.0.1-security",
+    "jsdom": "^28.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.17.23",
+    "luxon": "^3.7.2",
+    "mongoose": "^9.2.4",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.1",
+    "path": "^0.12.7",
+    "puppeteer": "^24.38.0",
+    "sharp": "^0.34.5",
+    "slugify": "^1.6.6",
+    "socket.io": "^4.8.3",
+    "stripe": "^20.4.0",
+    "uuid": "^13.0.0",
+    "xss": "^1.0.15"
   },
-  "devDependencies": {},
   "keywords": [
     "lms",
     "academy",
@@ -24,5 +54,14 @@
     "trendtactics"
   ],
   "author": "Trendtactics Digital",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamGoldenOla/trendtacticsdigital.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamGoldenOla/trendtacticsdigital/issues"
+  },
+  "homepage": "https://github.com/iamGoldenOla/trendtacticsdigital#readme"
 }

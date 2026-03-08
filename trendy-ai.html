@@ -1,641 +1,2128 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Trendy AI - Coming Soon | Trendtactics Digital</title>
-    <meta name="description" content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
+    <meta name="description"
+
+        content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
     <meta name="keywords" content="AI, artificial intelligence, digital marketing, automation, Trendy AI">
+
     <meta name="author" content="Akinola Olujobi">
-    
+
+
+
     <!-- Open Graph Meta Tags -->
+
     <meta property="og:title" content="Trendy AI - Coming Soon | Trendtactics Digital">
-    <meta property="og:description" content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
+    <meta property="og:description"
+
+        content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
     <meta property="og:url" content="https://trendtacticsdigital.com/trendy-ai">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="/images/Trendtactics_logo.jpg">
-    
+
+
+
     <!-- Twitter Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta name="twitter:title" content="Trendy AI - Coming Soon | Trendtactics Digital">
-    <meta name="twitter:description" content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
+    <meta name="twitter:description"
+
+        content="Experience the future of digital marketing with Trendy AI - our cutting-edge artificial intelligence platform. Coming soon for select clients.">
+
     <meta name="twitter:image" content="/images/Trendtactics_logo.jpg">
-    
+
+
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
-    
+
+    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+
+
+
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+
+        rel="stylesheet">
+
+
+
     <!-- Font Awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+
+
     <!-- Supabase CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
-    <script src="/js/supabase-utils.js"></script>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-utils.js"></script>
+
+
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/about.css">
-    <link rel="stylesheet" href="/styles/images.css">
-    
+
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/about.css?v=1772546233">
+
+    <link rel="stylesheet" href="styles/images.css?v=1772546233">
+
+
+
     <style>
+
         /* ===== TRENDY AI HERO SECTION ===== */
+
         .ai-hero {
+
             min-height: 90vh;
+
             background: linear-gradient(135deg, #0A1E3F 0%, #162447 50%, #0A1E3F 100%);
+
             position: relative;
+
             overflow: hidden;
+
             display: flex;
+
             align-items: center;
+
             padding: 120px 0 80px;
+
         }
-        
+
+
+
         .ai-hero-background {
-            position: absolute;
+
+            position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
-            background: 
+
+            background:
+
                 radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+
                 radial-gradient(circle at 80% 70%, rgba(64, 224, 208, 0.1) 0%, transparent 50%);
+
         }
-        
+
+
+
         .ai-hero-pattern {
-            position: absolute;
+
+            position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
-            background: 
+
+            background:
+
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="ai-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%2300FFFF" opacity="0.2"/><circle cx="5" cy="5" r="1" fill="%2340E0D0" opacity="0.15"/><circle cx="35" cy="35" r="1.5" fill="%2300FFFF" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23ai-pattern)"/></svg>');
+
             opacity: 0.3;
+
         }
-        
+
+
+
         .ai-hero-content {
+
             position: relative;
+
             z-index: 2;
+
             text-align: center;
+
             max-width: 800px;
+
             margin: 0 auto;
+
         }
-        
+
+
+
         .ai-hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
             background: rgba(0, 255, 255, 0.15);
+
             color: #00FFFF;
+
             padding: 0.5rem 1rem;
+
             border-radius: 50px;
+
             font-weight: 600;
+
             margin-bottom: 2rem;
+
             backdrop-filter: blur(10px);
+
         }
-        
+
+
+
         .ai-hero-badge i {
+
             color: #00FFFF;
+
         }
-        
+
+
+
         .ai-hero-title {
+
             font-size: clamp(2.5rem, 5vw, 4rem);
+
             font-weight: 900;
+
             margin-bottom: 1.5rem;
+
             color: var(--white);
+
             line-height: 1.2;
+
         }
-        
+
+
+
         .ai-hero-subtitle {
+
             font-size: clamp(1.1rem, 2vw, 1.3rem);
+
             color: var(--white);
+
             opacity: 0.9;
+
             max-width: 700px;
+
             margin: 0 auto 2rem;
+
             line-height: 1.7;
+
         }
-        
+
+
+
         .ai-hero-cta {
+
             display: flex;
+
             gap: 1rem;
+
             justify-content: center;
+
             flex-wrap: wrap;
+
             margin-top: 2rem;
+
         }
-        
+
+
+
         /* ===== FEATURES SECTION ===== */
+
         .ai-features {
+
             padding: 6rem 0;
+
             background: #0a1833;
+
         }
-        
+
+
+
         .ai-features-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
             gap: 2rem;
+
             margin-top: 3rem;
+
         }
-        
+
+
+
         .ai-feature-card {
+
             background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
+
             border-radius: var(--radius-2xl);
+
             padding: 2rem;
+
             border: 1px solid rgba(0, 255, 255, 0.2);
+
             transition: all 0.3s ease;
+
             text-align: center;
+
         }
-        
+
+
+
         .ai-feature-card:hover {
+
             transform: translateY(-10px);
+
             border-color: #00FFFF;
+
             box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .ai-feature-icon {
+
             width: 80px;
+
             height: 80px;
+
             background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(64, 224, 208, 0.2));
+
             border-radius: var(--radius-xl);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             margin: 0 auto 1.5rem;
+
             font-size: 2rem;
+
             color: #00FFFF;
+
         }
-        
+
+
+
         .ai-feature-card h3 {
+
             font-size: 1.5rem;
+
             font-weight: 700;
+
             margin-bottom: 1rem;
+
             color: #00FFFF;
+
         }
-        
+
+
+
         .ai-feature-card p {
+
             color: var(--white);
+
             opacity: 0.9;
+
             line-height: 1.7;
+
         }
-        
+
+
+
         /* ===== COMING SOON SECTION ===== */
+
         .ai-coming-soon {
+
             padding: 6rem 0;
+
             background: linear-gradient(135deg, #0A1E3F 0%, #1a365d 100%);
+
             text-align: center;
+
         }
-        
+
+
+
         .ai-coming-soon-content {
+
             max-width: 600px;
+
             margin: 0 auto;
+
         }
-        
+
+
+
         .ai-coming-soon-title {
+
             font-size: 2.5rem;
+
             font-weight: 800;
+
             margin-bottom: 1.5rem;
+
             color: #00FFFF;
+
         }
-        
+
+
+
         .ai-coming-soon-text {
+
             font-size: 1.2rem;
+
             color: var(--white);
+
             opacity: 0.9;
+
             margin-bottom: 2rem;
+
             line-height: 1.7;
+
         }
-        
+
+
+
         /* ===== ACCESS REQUEST FORM ===== */
+
         .ai-access-form {
+
             background: linear-gradient(145deg, #0A1E3F 0%, #162447 100%);
+
             border-radius: var(--radius-2xl);
+
             padding: 2rem;
+
             max-width: 500px;
+
             margin: 2rem auto 0;
+
             border: 1px solid rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .ai-access-form h3 {
+
             color: #00FFFF;
+
             margin-bottom: 1.5rem;
+
             text-align: center;
+
         }
-        
+
+
+
         .form-group {
+
             margin-bottom: 1.5rem;
+
         }
-        
+
+
+
         .form-group label {
+
             display: block;
+
             color: var(--white);
+
             margin-bottom: 0.5rem;
+
             font-weight: 500;
+
         }
-        
+
+
+
         .form-group input,
+
         .form-group textarea,
+
         .form-group select {
+
             width: 100%;
+
             padding: 0.75rem 1rem;
+
             border-radius: var(--radius-lg);
+
             border: 1px solid rgba(0, 255, 255, 0.3);
+
             background: rgba(10, 30, 63, 0.5);
+
             color: var(--white);
+
             font-size: 1rem;
+
             transition: all 0.3s ease;
+
         }
-        
+
+
+
         .form-group input:focus,
+
         .form-group textarea:focus,
+
         .form-group select:focus {
+
             outline: none;
+
             border-color: #00FFFF;
+
             box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2);
+
         }
-        
+
+
+
         .form-group textarea {
+
             min-height: 120px;
+
             resize: vertical;
+
         }
-        
+
+
+
         /* ===== RESPONSIVE ===== */
+
         @media (max-width: 768px) {
+
             .ai-hero {
+
                 padding: 100px 0 60px;
+
             }
-            
+
+
+
             .ai-hero-cta {
+
                 flex-direction: column;
+
                 gap: 1rem;
+
             }
-            
+
+
+
             .ai-hero-cta .btn {
+
                 width: 100%;
+
             }
+
         }
-    </style>
-</head>
-<body>
-    <nav id="navigation" class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                                <a href="/" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <div style="display: flex; gap: 2px; align-items: flex-end;">
-                        <div style="width: 4px; height: 16px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 20px; background: #00FFFF; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 24px; background: #00FFFF; border-radius: 1px;"></div>
-                    </div>
-                    <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: #FFFFFF; letter-spacing: -0.5px;">Trendtactics Digital</span>
-                </a>
-            </div>
-            <div class="nav-actions">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service-email-marketing">Email Marketing</a></li>
-                            <li><a href="/service-content-creation">Content Creation</a></li>
-                            <li><a href="/service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="/service-facebook-ads">Facebook Ads</a></li>
-                            <li><a href="/services">View All Services</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ebooks">Free Books</a></li>
-                            <li><a href="/tools">Marketing Tools</a></li>
-                            <li><a href="/quiz">Growth Quiz</a></li>
-                            <li><a href="/academy">Academy</a></li>
-                            <li><a href="/contact">Free Consultation</a></li>
-                            <li><a href="/resources">View All Resources</a></li>
-                        </ul>
-                    </div>
-                    <a href="/pricing" class="nav-link">Pricing</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/portfolio" class="nav-link">Portfolio</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="nav-cta">
-                    <a href="/quiz" class="btn btn-outline">Take Quiz</a>
-                    <!-- Updated CTA to open hub page -->
-                    <a href="/hub.html" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+
     
-    <!-- Authentication Check -->
-    <script>
-        // Initialize Supabase client
-        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
-        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
-        
-        // Check if user is authenticated on page load
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                // Check if user is logged in
-                const { data: { session } } = await supabase.auth.getSession();
-                
-                if (!session) {
-                    // Check localStorage fallback for demo mode
-                    const localStorageLoggedIn = localStorage.getItem('userId');
-                    if (!localStorageLoggedIn) {
-                        // Redirect to login page
-                        window.location.href = '/login';
-                        return;
-                    }
-                }
-                
-                // User is authenticated, continue loading page
-                console.log('User is authenticated');
-                
-            } catch (error) {
-                console.error('Error checking authentication:', error);
-                // Redirect to login page on error
-                window.location.href = '/login';
+
+        </style>
+
+
+
+    <style>
+
+        /* --- LOVABLE REVAMPED FOOTER --- */
+
+        .site-footer {
+
+            background-color: #061226 !important;
+
+            color: #cbd5e1 !important;
+
+            padding: 70px 0 0 0 !important;
+
+            font-family: 'Inter', sans-serif !important;
+
+            border-top: none !important;
+
+        }
+
+
+
+        .site-footer .footer-container {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        @media (max-width: 992px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr 1fr !important;
+
             }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .site-footer .footer-container {
+
+                grid-template-columns: 1fr !important;
+
+            }
+
+        }
+
+
+
+        .site-footer .footer-logo-img {
+
+            height: 40px;
+
+            width: auto;
+
+            margin-bottom: 25px;
+
+            display: block;
+
+        }
+
+
+
+        .site-footer .brand-desc {
+
+            font-size: 0.95rem;
+
+            line-height: 1.7;
+
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+
+            max-width: 85%;
+
+        }
+
+
+
+        .site-footer .social-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+
+        .site-footer .social-icons a {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #fff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            font-size: 1.1rem;
+
+        }
+
+
+
+        .site-footer .social-icons a:hover {
+
+            background-color: #1e293b;
+
+            border-color: #334155;
+
+            color: #00FFFF;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        .site-footer h4 {
+
+            color: #ffffff;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            margin-top: 0;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        .site-footer ul {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+
+        .site-footer ul li {
+
+            margin-bottom: 14px;
+
+        }
+
+
+
+        .site-footer ul a {
+
+            color: #94a3b8;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        .site-footer ul a:hover {
+
+            color: #fff;
+
+        }
+
+
+
+        .site-footer .newsletter-col p {
+
+            font-size: 0.95rem;
+
+            color: #94a3b8;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .newsletter-form-lovable {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+
+        .newsletter-form-lovable input {
+
+            flex: 1;
+
+            padding: 12px 16px;
+
+            background-color: transparent;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 6px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .newsletter-form-lovable input::placeholder {
+
+            color: #64748b;
+
+        }
+
+
+
+        .newsletter-form-lovable input:focus {
+
+            outline: none;
+
+            border-color: #00FFFF;
+
+            background-color: rgba(255,255,255,0.02);
+
+        }
+
+
+
+        .newsletter-form-lovable button {
+
+            padding: 12px 20px;
+
+            background-color: #1e293b; 
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            font-size: 0.95rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .newsletter-form-lovable button:hover {
+
+            background-color: #334155;
+
+            border-color: #475569;
+
+        }
+
+
+
+        .site-footer .footer-bottom {
+
+            padding: 25px 0;
+
+            background-color: #040d1f;
+
+        }
+
+
+
+        .site-footer .footer-bottom p {
+
+            color: #64748b;
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+    </style>
+
+
+
+    <style>
+
+        
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+            background-color: #061226;
+
+            color: #cbd5e1;
+
+            padding: 8px 0;
+
+            font-size: 0.85rem;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            overflow: hidden;
+
+            z-index: 1001;
+
+        }
+
+        .navbar {
+
+            top: 40px !important;
+
+            transition: top 0.3s ease, background 0.3s ease !important;
+
+        }
+
+        .navbar.scrolled {
+
+            top: 0 !important;
+
+        }
+
+        .top-bar-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 5%;
+
+        }
+
+        .top-bar-left .social-icons-top a {
+
+            color: #cbd5e1;
+
+            margin-right: 12px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .top-bar-left .social-icons-top a:hover {
+
+            color: #00FFFF;
+
+        }
+
+        .top-bar-center {
+
+            display: flex;
+
+            align-items: center;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            flex-grow: 1;
+
+            justify-content: center;
+
+            padding: 0 20px;
+
+        }
+
+        .typewriter-text {
+
+            border-right: 2px solid #00FFFF;
+
+            padding-right: 4px;
+
+            animation: blinkCursor 0.75s step-end infinite;
+
+        }
+
+        @keyframes blinkCursor {
+
+            from, to { border-color: transparent }
+
+            50% { border-color: #00FFFF; }
+
+        }
+
+        .top-bar-right {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        /* Make translate widget small */
+
+        #google_translate_element_top .goog-te-gadget {
+
+            font-size: 0px !important;
+
+            color: transparent;
+
+        }
+
+        #google_translate_element_top .goog-te-gadget .goog-te-combo {
+
+            background-color: transparent;
+
+            color: #cbd5e1;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 4px;
+
+            padding: 2px 5px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+        }
+
+        
+
+        @media (max-width: 768px) {
+
+            .top-bar-container {
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                gap: 5px;
+
+            }
+
+            .top-bar-center {
+
+                max-width: 50%;
+
+                font-size: 0.70rem;
+
+            }
+
+            .typewriter-text {
+
+                max-width: 100%;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
+
+            }
+
+            #google_translate_element_top .goog-te-combo {
+
+                width: 60px;
+
+                padding: 1px;
+
+            }
+
+            
+
+        /* Hide Google Translate Logo */
+
+        .goog-te-gadget {
+
+            color: transparent !important;
+
+            font-size: 0px !important;
+
+        }
+
+        .goog-te-gadget img {
+
+            display: none !important;
+
+        }
+
+        .goog-te-gadget .goog-te-combo {
+
+            color: #cbd5e1 !important;
+
+            background-color: #1e293b !important;
+
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+            border-radius: 4px;
+
+            padding: 3px 6px;
+
+            font-size: 0.8rem;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+        .goog-te-gadget .goog-te-combo:focus {
+
+            border-color: #00FFFF !important;
+
+        }
+
+        
+
+        .top-bar-redesigned {
+
+                height: 40px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+            
+
+    <!-- Top Bar -->
+
+    <div class="top-bar-redesigned" style="background-color: #0A1E3F !important; overflow: visible !important; z-index: 9999 !important;">
+
+        <div class="top-bar-container" style="justify-content: space-between; overflow: visible !important;">
+
+            
+
+            <div class="top-bar-left" style="flex: 1; display: flex; align-items: center; gap: 10px; max-width: 50%;">
+
+                <i class="fas fa-bullhorn text-accent-cyan" style="color: #00FFFF; margin-right: 8px;"></i>
+
+                <span id="typewriter-text" class="typewriter-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: #fff;">Welcome to Trendtactics Digital</span>
+
+            </div>
+
+            
+
+            <div class="top-bar-right" style="flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 15px; flex-wrap: wrap; overflow: visible !important;">
+
+                
+
+                <div class="social-icons-top" style="display: flex; gap: 10px;">
+
+                    <a href="https://facebook.com/trendtactics" target="_blank" style="color:#fff;"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" target="_blank" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+
+                </div>
+
+                
+
+                <a href="contact.html" class="top-book-call" style="color: #fff; text-decoration: none;">
+
+                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Book a Call
+
+                </a>
+
+                
+
+                <div class="top-search">
+
+                    <i class="fas fa-search" style="color: #fff;"></i>
+
+                    <input type="text" placeholder="Search..." style="background:transparent; border:none; color:#fff;">
+
+                </div>
+
+                
+
+                <a href="academy.html" class="top-cart" title="Ebook Cart" style="color: #fff;">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                    <span class="cart-badge">0</span>
+
+                </a>
+
+                
+
+                
+
+                
+
+                <a href="hub.html" class="top-get-started" style="background: #00FFFF; color: #0A1E3F; font-weight: 700; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s ease;">
+
+                    Get Started
+
+                </a>
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+<nav id="navigation" class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital"
+
+                        data-optimized="true" style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;" loading="lazy">
+
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div class="nav-menu" id="nav-menu">
+
+                    <a href="index.html" class="nav-link">Home</a>
+
+                    <a href="about.html" class="nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
+
+                                style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="services.html">Service Overview</a></li>
+
+                            <li class="dropdown-header">Tech & Development</li>
+
+                            <li><a href="service-web-development.html">Web Development</a></li>
+
+                            <li><a href="service-app-development.html">App Development</a></li>
+
+                            <li class="dropdown-header">Digital Growth Lab</li>
+
+                            <li><a href="service-digital-marketing.html">Digital Marketing Overview</a></li>
+
+                            <li><a href="service-social-media-marketing.html">Social Media Marketing</a></li>
+
+                            <li><a href="service-facebook-ads.html">Facebook Ads</a></li>
+
+                            <li><a href="service-content-creation.html">Content Creation</a></li>
+
+                            <li><a href="service-email-marketing.html">Email Marketing</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="nav-item dropdown">
+
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i
+
+                                class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="resources.html">Resource Overview</a></li>
+
+                            <li><a href="ebooks.html">Free Books</a></li>
+
+                            <li><a href="tools.html">Marketing Tools</a></li>
+
+                            <li><a href="quiz.html">Growth Quiz</a></li>
+
+                            <li><a href="contact.html">Free Consultation</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <a href="https://academy.trendtacticsdigital.com" class="nav-link" target="_blank"
+
+                        rel="noopener noreferrer">Academy</a>
+
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+
+                    <a href="blog.html" class="nav-link">Blog</a>
+
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <a href="quiz.html" class="nav-link" style="font-weight: bold;">Take Quiz</a>
+
+                    
+
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Authentication Check -->
+
+    <script>
+
+        // Initialize Supabase client
+
+        const supabaseUrl = 'https://wtgwxnhnqdnbzpetltrt.supabase.co';
+
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0Z3d4bmhucWRuYnpwZXRsdHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjQ2NjUsImV4cCI6MjA4MDY0MDY2NX0.3eblmq4lsnDQU33M9XqZpBqux9bi9hX2G0yUuPScHJA';
+
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+
+
+
+        // Check if user is authenticated on page load
+
+        document.addEventListener('DOMContentLoaded', async function () {
+
+            try {
+
+                // Check if user is logged in
+
+                const { data: { session } } = await supabase.auth.getSession();
+
+
+
+                if (!session) {
+
+                    // Check localStorage fallback for demo mode
+
+                    const localStorageLoggedIn = localStorage.getItem('userId');
+
+                    if (!localStorageLoggedIn) {
+
+                        // Redirect to login page
+
+                        window.location.href = '/login';
+
+                        return;
+
+                    }
+
+                }
+
+
+
+                // User is authenticated, continue loading page
+
+                console.log('User is authenticated');
+
+
+
+            } catch (error) {
+
+                console.error('Error checking authentication:', error);
+
+                // Redirect to login page on error
+
+                window.location.href = '/login';
+
+            }
+
         });
+
     </script>
+
+
 
     <!-- Hero Section -->
+
     <section class="ai-hero">
+
         <div class="ai-hero-background"></div>
+
         <div class="ai-hero-pattern"></div>
+
         <div class="container">
+
             <div class="ai-hero-content">
+
                 <div class="ai-hero-badge">
+
                     <i class="fas fa-robot"></i>
+
                     <span>Artificial Intelligence</span>
+
                 </div>
+
                 <h1 class="ai-hero-title">
+
                     <span class="text-gradient">Trendy AI</span> is Coming Soon
+
                 </h1>
+
                 <p class="ai-hero-subtitle">
-                    Experience the future of digital marketing with our cutting-edge artificial intelligence platform. 
+
+                    Experience the future of digital marketing with our cutting-edge artificial intelligence platform.
+
                     Harness the power of AI to automate, optimize, and supercharge your marketing efforts.
+
                 </p>
+
                 <div class="ai-hero-cta">
+
                     <a href="#notify" class="btn btn-primary btn-large">Get Early Access</a>
-                    <a href="/contact" class="btn btn-outline btn-large">Contact Sales</a>
+
+                    <a href="contact.html" class="btn btn-outline btn-large">Contact Sales</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Features Section -->
+
     <section class="ai-features">
+
         <div class="container">
+
             <div class="section-header">
+
                 <h2 class="section-title">Powered by Advanced AI</h2>
+
                 <p class="section-subtitle">
-                    Trendy AI combines machine learning, natural language processing, and predictive analytics to deliver unprecedented marketing results.
+
+                    Trendy AI combines machine learning, natural language processing, and predictive analytics to
+
+                    deliver unprecedented marketing results.
+
                 </p>
+
             </div>
-            
+
+
+
             <div class="ai-features-grid">
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-brain"></i>
+
                     </div>
+
                     <h3>Intelligent Automation</h3>
-                    <p>Automate repetitive tasks and focus on strategy while AI handles execution with precision and consistency.</p>
+
+                    <p>Automate repetitive tasks and focus on strategy while AI handles execution with precision and
+
+                        consistency.</p>
+
                 </div>
-                
+
+
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-chart-line"></i>
+
                     </div>
+
                     <h3>Predictive Analytics</h3>
-                    <p>Forecast trends, customer behavior, and campaign performance with machine learning algorithms.</p>
+
+                    <p>Forecast trends, customer behavior, and campaign performance with machine learning algorithms.
+
+                    </p>
+
                 </div>
-                
+
+
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-comments"></i>
+
                     </div>
+
                     <h3>Smart Content Creation</h3>
+
                     <p>Generate compelling copy, headlines, and creative content optimized for your audience.</p>
+
                 </div>
-                
+
+
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-bullseye"></i>
+
                     </div>
+
                     <h3>Precision Targeting</h3>
+
                     <p>Identify and reach your ideal customers with AI-powered audience segmentation.</p>
+
                 </div>
-                
+
+
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-bolt"></i>
+
                     </div>
+
                     <h3>Real-Time Optimization</h3>
+
                     <p>Continuously optimize campaigns based on performance data and market conditions.</p>
+
                 </div>
-                
+
+
+
                 <div class="ai-feature-card">
+
                     <div class="ai-feature-icon">
+
                         <i class="fas fa-shield-alt"></i>
+
                     </div>
+
                     <h3>Advanced Security</h3>
+
                     <p>Enterprise-grade security protecting your data and ensuring compliance with regulations.</p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
 
     <!-- Coming Soon Section -->
+
     <section class="ai-coming-soon" id="notify">
+
         <div class="container">
+
             <div class="ai-coming-soon-content">
+
                 <h2 class="ai-coming-soon-title">Coming Soon for Select Clients</h2>
+
                 <p class="ai-coming-soon-text">
-                    Trendy AI is currently in development and will be released to our most valued clients first. 
+
+                    Trendy AI is currently in development and will be released to our most valued clients first.
+
                     Join our priority access list to be among the first to experience the future of digital marketing.
+
                 </p>
-                
+
+
+
                 <div class="ai-access-form">
+
                     <h3>Request Priority Access</h3>
+
                     <form id="aiAccessForm">
+
                         <div class="form-group">
+
                             <label for="fullName">Full Name</label>
+
                             <input type="text" id="fullName" name="fullName" required>
+
                         </div>
-                        
+
+
+
                         <div class="form-group">
+
                             <label for="email">Email Address</label>
+
                             <input type="email" id="email" name="email" required>
+
                         </div>
-                        
+
+
+
                         <div class="form-group">
+
                             <label for="company">Company Name</label>
+
                             <input type="text" id="company" name="company">
+
                         </div>
-                        
+
+
+
                         <div class="form-group">
+
                             <label for="interest">Area of Interest</label>
+
                             <select id="interest" name="interest">
+
                                 <option value="">Select an option</option>
+
                                 <option value="content-creation">AI Content Creation</option>
+
                                 <option value="campaign-optimization">Campaign Optimization</option>
+
                                 <option value="audience-targeting">Audience Targeting</option>
+
                                 <option value="analytics">Predictive Analytics</option>
+
                                 <option value="automation">Marketing Automation</option>
+
                                 <option value="other">Other</option>
+
                             </select>
+
                         </div>
-                        
+
+
+
                         <div class="form-group">
+
                             <label for="message">Message (Optional)</label>
-                            <textarea id="message" name="message" placeholder="Tell us what you hope to achieve with AI..."></textarea>
+
+                            <textarea id="message" name="message"
+
+                                placeholder="Tell us what you hope to achieve with AI..."></textarea>
+
                         </div>
-                        
+
+
+
                         <button type="submit" class="btn btn-primary btn-large" style="width:100%;">
+
                             Request Access
+
                         </button>
+
                     </form>
+
                     <div id="aiFormResponse" style="margin-top: 1rem; color: #00FFFF; font-weight: 600;"></div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="/images/Trendtactics_logo.jpg" alt="Trendtactics Digital" class="footer-logo-img">
-                    </div>
-                    <p class="footer-description">
-                        We don't just market brands — we engineer digital growth. 
-                        Unlock strategy, creativity, and AI power — all in one studio.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/company/trendtactics-digital" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://twitter.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/trendtactics" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <div id="google_translate_element"></div>
+
+    <footer class="footer site-footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-col brand-col">
+
+                <a href="index.html" class="footer-logo-link">
+
+                    <img src="images/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img" loading="lazy">
+
+                </a>
+
+                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism, prestige, and modern clarity across every touchpoint.</p>
+
+                <div class="social-icons">
+
+                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="/services#web-design">Web Development</a></li>
-                        <li><a href="/services">App Development</a></li>
-                        <li><a href="/services#digital-marketing">Digital Marketing</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/portfolio">Our Work</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/academy">Academy</a></li>
-                        <li><a href="/trendy-ai">Trendy AI <span class="badge badge-coming-soon">Coming Soon</span></a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column footer-resources">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="/ebooks">Free Ebooks</a></li>
-                        <li><a href="/tools">Marketing Tools</a></li>
-                        <li><a href="/quiz">Growth Quiz</a></li>
-                        <li><a href="/blog">Latest Articles</a></li>
-                        <li><a href="/contact">Free Consultation</a></li>
-                    </ul>
-                    <!-- Newsletter Subscribe Below Resources -->
-                    <div class="footer-newsletter-inline">
-                        <h4>Stay Updated</h4>
-                        <p>Get insights delivered to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Enter your email" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
+
             
-            <div class="footer-bottom">
-                <p>&copy; 2025 Trendtactics Digital. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#cookies">Cookie Policy</a>
-                </div>
+
+            <div class="footer-col links-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="services.html">Services</a></li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
             </div>
+
+            
+
+            <div class="footer-col help-col">
+
+                <h4>Help Center</h4>
+
+                <ul>
+
+                    <li><a href="#">FAQ</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Cookie Policy</a></li>
+
+                    <li><a href="#">Refund Policy</a></li>
+
+                    <li><a href="#">Disclaimer</a></li>
+
+                    <li><a href="#">Consent Preferences</a></li>
+
+                </ul>
+
+            </div>
+
+            
+
+            <div class="footer-col newsletter-col">
+
+                <h4>Subscribe to Newsletter</h4>
+
+                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
+
+                <form class="newsletter-form-lovable" action="#">
+
+                    <input type="email" placeholder="Enter email" required>
+
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+
+                </form>
+
+            </div>
+
         </div>
+
+        
+
+        <div class="footer-bottom">
+
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+                <p>Copyright &copy; 2026 Akinola Olujobi. All rights reserved.</p>
+
+                
+
+            </div>
+
+        </div>
+
     </footer>
 
-    <script src="/js/main.js"></script>
+
+
+    <script src="js/main.js"></script>
+
     <script>
+
         // AI Access Form Handler
-        document.getElementById('aiAccessForm').addEventListener('submit', function(e) {
+
+        document.getElementById('aiAccessForm').addEventListener('submit', function (e) {
+
             e.preventDefault();
-            
+
+
+
             // Get form data
+
             const formData = new FormData(this);
+
             const data = Object.fromEntries(formData);
-            
+
+
+
             // In a real implementation, you would send this to your backend
+
             // For now, we'll just show a success message
+
             const responseDiv = document.getElementById('aiFormResponse');
+
             responseDiv.innerHTML = 'Thank you! We\'ll notify you when Trendy AI is available.';
+
             responseDiv.style.color = '#00FF00';
-            
+
+
+
             // Reset form
+
             this.reset();
-            
+
+
+
             // In a real implementation, you might do something like:
+
             /*
+
             fetch('/api/request-ai-access', {
+
                 method: 'POST',
+
                 headers: {
+
                     'Content-Type': 'application/json',
+
                 },
+
                 body: JSON.stringify(data)
+
             })
+
             .then(response => response.json())
+
             .then(result => {
+
                 responseDiv.innerHTML = 'Thank you! We\'ll notify you when Trendy AI is available.';
+
                 responseDiv.style.color = '#00FF00';
+
                 this.reset();
+
             })
+
             .catch(error => {
+
                 responseDiv.innerHTML = 'Sorry, there was an error. Please try again.';
+
                 responseDiv.style.color = '#FF0000';
+
             });
+
             */
+
         });
+
     </script>
+
+
+
+
+
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const phrases = [
+
+            "Welcome to Trendtactics Digital",
+
+            "Read our latest blog: The Future of AI",
+
+            "Next Event: Digital Growth Webinar - Oct 25",
+
+            "Scale your revenue with our experts",
+
+            "" 
+
+        ];
+
+        let i = 0;
+
+        let j = 0;
+
+        let currentPhrase = [];
+
+        let isDeleting = false;
+
+        let isEnd = false;
+
+        
+
+        const typeWriterElement = document.getElementById('typewriter-text');
+
+        
+
+        function loop() {
+
+            if (!typeWriterElement) return;
+
+            
+
+            // Add live time to the last phrase dynamically
+
+            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
+
+            
+
+            isEnd = false;
+
+            typeWriterElement.innerHTML = currentPhrase.join('');
+
+            
+
+            if (i < phrases.length) {
+
+                if (!isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.push(phrases[i][j]);
+
+                    j++;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (isDeleting && j <= phrases[i].length) {
+
+                    currentPhrase.pop();
+
+                    j--;
+
+                    typeWriterElement.innerHTML = currentPhrase.join('');
+
+                }
+
+                
+
+                if (j == phrases[i].length) {
+
+                    isEnd = true;
+
+                    isDeleting = true;
+
+                }
+
+                
+
+                if (isDeleting && j === 0) {
+
+                    currentPhrase = [];
+
+                    isDeleting = false;
+
+                    i++;
+
+                    if (i === phrases.length) {
+
+                        i = 0;
+
+                    }
+
+                }
+
+            }
+
+            
+
+            const speeding = Math.random() * (50 - 30) + 30;
+
+            const normal = Math.random() * (100 - 50) + 50;
+
+            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
+
+            
+
+            setTimeout(loop, time);
+
+        }
+
+        
+
+        if (typeWriterElement) {
+
+            loop();
+
+        }
+
+    });
+
+</script>
+
+<script src="js/newsletter.js" defer></script>
+
+<script src="js/livechat.js" defer></script>
+
+<script src="js/consent.js" defer></script>
+
+
+    <script src="js/global-translate.js" defer></script>
 </body>
+
+
+
 </html>
+
+
+
