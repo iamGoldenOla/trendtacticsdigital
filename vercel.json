@@ -1,0 +1,76 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+        {
+            "source": "/me",
+            "destination": "/me.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Frame-Options",
+                    "value": "SAMEORIGIN"
+                },
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                }
+            ]
+        },
+        {
+            "source": "/images/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=15552000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/videos/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=15552000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/styles/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/js/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, immutable"
+                }
+            ]
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/admin",
+            "destination": "/me",
+            "permanent": true
+        }
+    ]
+}

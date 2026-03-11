@@ -1,27 +1,109 @@
+# Trendtactics Digital - .htaccess (403-Fix Edition)
 # ----------------------------------------------------------
-# Trendtactics Digital - SIMPLE .htaccess for cPanel
-# ----------------------------------------------------------
 
-Options +FollowSymLinks -Indexes
-RewriteEngine On
-RewriteBase /
+# ── 1. Directory Options (must be ONE combined line to avoid conflicts) ──
+Options -Indexes +SymLinksIfOwnerMatch
+DirectoryIndex index.html
 
-# Allow all static files directly
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+# ── 2. Custom Error Pages (outside mod_rewrite so they always work) ──
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
 
-# Redirect .html to clean URLs
-RewriteCond %{THE_REQUEST} /([^.]+)\.html\s [NC]
-RewriteRule ^ /%1 [R=301,L]
+# ── 3. Clean URL Rewrites ──
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# Serve .html files for common routes
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f [NC]
-RewriteRule ^(.*?)/?$ $1.html [L]
+    # Skip real files and directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
 
-# Fallback to index.html for SPA
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [L,QSA]
+    # Redirect /index.html -> / (canonical)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+    RewriteRule ^index\.html$ / [R=301,L]
+
+    # Redirect /page.html -> /page (clean URL, external)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+)\.html\ HTTP/
+    RewriteRule ^([^/]+)\.html$ /$1 [R=301,L]
+
+    # Special: /me -> me.html (admin login page)
+    RewriteRule ^me/?$ me.html [L]
+
+    # Internal rewrite: /page -> page.html (if file exists)
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+</IfModule>
+
+# ── 4. MIME Types ──
+<IfModule mod_mime.c>
+    AddType text/html .html .htm
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType application/json .json
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+</IfModule>
+
+# ── 5. Browser Caching (speeds up the site, reduces server load) ──
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 6 months"
+</IfModule>
+
+# ── 6. Security Headers ──
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    # Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── 7. Block access to sensitive files ──
+<FilesMatch "\.(env|git|gitignore|sql|log|py|ps1|bat|sh|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+# Allow robots.txt, sitemap.xml and rss.xml publicly
+<Files "robots.txt">
+    Order allow,deny
+    Allow from all
+</Files>
+<Files "sitemap.xml">
+    Order allow,deny
+    Allow from all
+</Files>
+<Files "rss.xml">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# ── 8. Block access to backend and node_modules directories ──
+<IfModule mod_rewrite.c>
+    RewriteRule ^backend/ - [F,L]
+    RewriteRule ^node_modules/ - [F,L]
+    RewriteRule ^supabase/ - [F,L]
+    RewriteRule ^\.git/ - [F,L]
+</IfModule>
+
+# ── 9. Gzip Compression ──
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/xml
+</IfModule>
