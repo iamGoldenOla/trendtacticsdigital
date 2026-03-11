@@ -33,10 +33,13 @@ Thumbs.db
 *.swp
 *.bak
 
-# Git LFS already tracking media
-*.mp4
+# Exclude large media/zip by default
 *.mov
 *.zip
+
+# Allow the hero video in videos/ folder
+!videos/*.mp4
+!videos/**/*.mp4
 
 # Ignore images elsewhere first
 *.png
