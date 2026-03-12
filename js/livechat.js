@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // 2. Build HTML Structure
-    const avatarPath = /trendy_chatlive_image.jpg";
+    const avatarPath = "/img/trendy_chatlive_image.jpg";
 
     const chatContainer = document.createElement('div');
     chatContainer.innerHTML = `
