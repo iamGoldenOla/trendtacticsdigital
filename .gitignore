@@ -38,22 +38,27 @@ Thumbs.db
 *.zip
 
 # Allow the hero video in videos/ folder
-!videos/*.mp4
-!videos/**/*.mp4
+!videos/# *.mp4
+!videos/**/# *.mp4
 
 # Ignore images elsewhere first
-*.png
-*.jpg
-*.jpeg
+# *.png
+# *.jpg
+# *.jpeg
 *.gif
-*.webp
+# *.webp
 
 # Allow images in images/ folder (needed for website) - must come after ignore rules
 !images/
-!images/**/*.png
-!images/**/*.jpg
-!images/**/*.jpeg
+!images/**/# *.png
+!images/**/# *.jpg
+!images/**/# *.jpeg
 !images/**/*.gif
-!images/**/*.webp
+!images/**/# *.webp
 !images/**/*.svg
 !images/**/*.ico
+
+!images/
+!images/**/*
+!videos/
+!videos/**/*
