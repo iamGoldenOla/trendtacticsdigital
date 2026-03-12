@@ -1,0 +1,191 @@
+/* ===== MEDIA OPTIMIZATION STYLES ===== */
+
+/* Responsive Image Container */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Picture Element Optimization */
+picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video Optimization */
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video Cover Image Refinement - Global Styles */
+video[poster] {
+    background-size: 120% 120% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Refined video poster styling - zoomed in for better balance */
+.portfolio-media video[poster],
+.hero-video-background video[poster] {
+    background-size: 130% 130%;
+    background-position: center center;
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* Optimized video loading states */
+video[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+video[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Image lazy loading optimization */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: var(--soft-gray);
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Responsive srcset support */
+img[srcset] {
+    width: 100%;
+    height: auto;
+}
+
+/* WebP/AVIF fallback handling */
+picture source {
+    display: none;
+}
+
+/* Video responsive sources */
+video source {
+    display: none;
+}
+
+/* Optimized image sizes for different viewports */
+@media (max-width: 480px) {
+    img[srcset],
+    picture img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 800px) {
+    img[srcset],
+    picture img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+    img[srcset],
+    picture img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    img[srcset],
+    picture img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Video cover image refinement for portfolio */
+.portfolio-media video {
+    background-size: 120% 120% !important;
+    background-position: center center !important;
+    transform: scale(1.1);
+    transform-origin: center center;
+}
+
+/* Hero video optimization */
+.hero-video-background video {
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+/* Reduce video poster distraction */
+video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 30, 63, 0.1);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+video[poster]::before {
+    opacity: 1;
+}
+
+/* Image compression visual feedback */
+img[data-compressing="true"] {
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+/* Video compression visual feedback */
+video[data-compressing="true"] {
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    video {
+        preload: none;
+    }
+    
+    img[loading="lazy"] {
+        loading: lazy;
+    }
+    
+    .portfolio-media video {
+        background-size: 125% 125% !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    img[loading="lazy"],
+    video[loading="lazy"] {
+        transition: none;
+    }
+    
+    video::before {
+        transition: none;
+    }
+}
+

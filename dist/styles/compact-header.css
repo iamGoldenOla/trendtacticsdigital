@@ -1,0 +1,71 @@
+/* Compact Header Styles - Applied to all pages */
+
+/* Ensure header spacing matches main.css */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem; /* match main.css .container padding */
+  height: 70px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  margin-left: 0;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+/* Compact navigation links */
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 48px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Compact CTA buttons */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  margin-left: 0.25rem;
+}
+
+.nav-cta .btn {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Compact logo */
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+} 
