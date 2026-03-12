@@ -57,7 +57,29 @@ def unified_sync():
                 with open(path, 'w', encoding='utf-8') as f:
                     f.write(new_content)
 
-    # 3. Sync careers.html to dist
+    # 4. Sync admin redesign to dist login if it exists
+    admin_login_dist = os.path.join(root_dir, "dist", "admin-login.html")
+    if os.path.exists(admin_login_dist):
+        with open(admin_login_dist, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+        
+        # Replace purple gradient with brand dark navy
+        purple_grad = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        brand_grad = "linear-gradient(135deg, #0A1E3F 0%, #061226 100%)"
+        new_content = content.replace(purple_grad, brand_grad)
+        
+        # Also fix buttons
+        purple_grad_btn = "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
+        brand_btn = "#00FFFF"
+        new_content = new_content.replace(purple_grad_btn, brand_btn)
+        new_content = new_content.replace("color: white; font-weight: 600;", "color: #0A1E3F; font-weight: 700;")
+
+        if new_content != content:
+            print(f"Redesigned admin-login in {admin_login_dist}")
+            with open(admin_login_dist, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+
+    # 5. Sync careers.html to dist
     careers_src = os.path.join(root_dir, "careers.html")
     careers_dest = os.path.join(root_dir, "dist", "careers.html")
     if os.path.exists(careers_src):
