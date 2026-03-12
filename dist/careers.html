@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Trendtactics Digital</title>
-    <link rel="icon" type="image/png" href="/img/Trendtactics_digital_favicon.png">
+    <link rel="icon" type="image/png" href="img/Trendtactics_digital_favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/main.css?v=1772546233">
+    <link rel="stylesheet" href="styles/main.css?v=1772546233">
     <style>
         .careers-hero {
-            padding: 80px 0 60px;
-            background: linear-gradient(135deg, #0A1E3F 0%, #061226 100%);
+            padding: 120px 0 100px;
+            background-image: url('img/careers_premium_parallax.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             color: #fff;
             position: relative;
             overflow: hidden;
@@ -23,21 +26,22 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('/img/careers_premium_parallax.png') no-repeat center center;
-            background-size: cover;
-            opacity: 0.3;
+            background: rgba(10, 30, 63, 0.8);
             z-index: 1;
         }
         .careers-hero h1 {
             color: #FFFFFF !important;
             text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-size: 3.5rem;
+            font-weight: 800;
         }
         .careers-hero p {
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.95) !important;
             font-weight: 500;
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
+            line-height: 1.6;
         }
         .careers-hero .container {
             position: relative;
@@ -93,18 +97,11 @@
     </style>
 </head>
 <body>
-    <!-- Navigation will be injected via JS or copied from index -->
-        .nav-logo {
-            margin-right: auto !important;
-        }
-    </style>
-</head>
-<body>
     <nav id="navigation" class="navbar">
         <div class="nav-container container">
             <div class="nav-logo">
                 <a href="index" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
+                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
                         style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
                         loading="lazy">
                 </a>
@@ -154,9 +151,8 @@
                     <a href="contact" class="nav-link">Contact</a>
 
                     <div class="nav-item dropdown" style="margin-left: auto;">
-                        <a href="#" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            style="padding: 8px 20px; color: #0A1E3F !important; font-weight: 700; border-radius: 50px; text-decoration: none;">
+                        <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Get Started
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0"
@@ -168,14 +164,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </nav><section class="careers-hero">
+    </nav>
+
+    <section class="careers-hero">
         <div class="container text-center">
             <h1 class="display-3 fw-black mb-4">Build the Future of <br><span class="text-gradient">Digital Growth</span></h1>
             <p class="lead text-white-50 mx-auto" style="max-width: 700px;">
@@ -217,7 +216,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <img src="/img/culture_team.png" alt="Our Team Culture" class="culture-img">
+                    <img src="img/culture_team.png" alt="Our Team Culture" class="culture-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="mb-4">Innovation First Culture</h2>
@@ -238,7 +237,7 @@
         <div class="container footer-container">
             <div class="footer-col brand-col">
                 <a href="index" class="footer-logo-link">
-                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
+                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img"
                         loading="lazy">
                 </a>
                 <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism,
@@ -356,18 +355,18 @@
         });
     </script>
     <!-- Growth & Conversion Features -->
-    <script src="/js/growth-features.js" defer></script>
+    <script src="js/growth-features.js" defer></script>
 
     <!-- Social Sharing -->
-    <script src="/js/social-sharing.js" defer></script>
+    <script src="js/social-sharing.js" defer></script>
 
     <!-- Newsletter Integration -->
-    <script src="/js/newsletter.js" defer></script>
+    <script src="js/newsletter.js" defer></script>
 
     <!-- Main Scripts -->
-    <script src="/js/main.js" defer></script>
-    <script src="/js/testimonials-scroll.js" defer></script>
-    <script src="/js/parallax.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/testimonials-scroll.js" defer></script>
+    <script src="js/parallax.js" defer></script>
 
 
 
@@ -437,10 +436,10 @@
             }
         });
     </script>
-    <script src="/js/livechat.js" defer></script>
-    <script src="/js/consent.js" defer></script>
+    <script src="js/livechat.js" defer></script>
+    <script src="js/consent.js" defer></script>
 
-    <script src="/js/global-translate.js" defer></script>
+    <script src="js/global-translate.js" defer></script>
 </body>
 
 </html>
