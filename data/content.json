@@ -1,8 +1,8 @@
-{
+﻿{
   "brands": [
     {
       "name": "Google",
-      "logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+      "logo": "https://www.google.com/img/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
     },
     {
       "name": "Amazon",
@@ -22,35 +22,35 @@
     },
     {
       "name": "Allengreen",
-      "logo": "/images/brands/ALLENGREEN_LOGO..png"
+      "logo": "/img/brands/ALLENGREEN_LOGO..png"
     },
     {
       "name": "Gabson",
-      "logo": "/images/brands/gabson.png"
+      "logo": "/img/brands/gabson.png"
     },
     {
       "name": "Greentick",
-      "logo": "/images/brands/greentick.png"
+      "logo": "/img/brands/greentick.png"
     },
     {
       "name": "HustleNChill",
-      "logo": "/images/brands/hustlenchill.png"
+      "logo": "/img/brands/hustlenchill.png"
     },
     {
       "name": "Kevtos Catering",
-      "logo": "/images/brands/kevtos-catering.png"
+      "logo": "/img/brands/kevtos-catering.png"
     },
     {
       "name": "Midway Health",
-      "logo": "/images/brands/MIDWAY HEALTH INC - LOGO.jpeg"
+      "logo": "/img/brands/MIDWAY HEALTH INC - LOGO.jpeg"
     },
     {
       "name": "Trafesplace",
-      "logo": "/images/brands/trafesplace_logo.jpeg"
+      "logo": "/img/brands/trafesplace_logo.jpeg"
     },
     {
       "name": "Realtreasure",
-      "logo": "/images/brands/realtreasure.png"
+      "logo": "/img/brands/realtreasure.png"
     }
   ],
   "services": [
@@ -155,7 +155,7 @@
         "name": "Sarah Johnson",
         "position": "CEO",
         "company": "TechStart Inc.",
-        "avatar": "/images/akinola.jpg.jpg"
+        "avatar": "/img/akinola.jpg.jpg"
       },
       "rating": 5
     },
@@ -165,7 +165,7 @@
         "name": "Michael Chen",
         "position": "Operations Director",
         "company": "Global Solutions",
-        "avatar": "/images/akinola.jpg.jpg"
+        "avatar": "/img/akinola.jpg.jpg"
       },
       "rating": 5
     },
@@ -175,7 +175,7 @@
         "name": "Emily Rodriguez",
         "position": "Marketing Manager",
         "company": "Innovate Labs",
-        "avatar": "/images/akinola.jpg.jpg"
+        "avatar": "/img/akinola.jpg.jpg"
       },
       "rating": 5
     }

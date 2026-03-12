@@ -1,11 +1,11 @@
-// Test script to verify video files exist and are accessible
+﻿// Test script to verify video files exist and are accessible
 const fs = require('fs');
 const path = require('path');
 
 const videoFiles = [
-  'images/Trendtactics-digital-promo.mp4',
-  'images/Trendtactics-digital-promo-480p.mp4',
-  'images/Trendtactics-digital-promo-720p.mp4'
+  /Trendtactics-digital-promo.mp4',
+  /Trendtactics-digital-promo-480p.mp4',
+  /Trendtactics-digital-promo-720p.mp4'
 ];
 
 console.log('Checking video files...\n');

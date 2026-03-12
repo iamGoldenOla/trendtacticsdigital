@@ -1,4 +1,4 @@
-// ===== ABOUT PAGE FUNCTIONALITY =====
+﻿// ===== ABOUT PAGE FUNCTIONALITY =====
 
 document.addEventListener('DOMContentLoaded', function () {
     loadAboutContent();
@@ -295,23 +295,23 @@ function loadFallbackAboutContent() {
     const fallbackBrands = [
         {
             name: "KEVTOS CATERING",
-            logo: "/images/brands/kevtos-catering.png"
+            logo: "/img/brands/kevtos-catering.png"
         },
         {
             name: "Realtreasure",
-            logo: "/images/brands/realtreasure.png"
+            logo: "/img/brands/realtreasure.png"
         },
         {
             name: "HustleNChill",
-            logo: "/images/brands/hustlenchill.png"
+            logo: "/img/brands/hustlenchill.png"
         },
         {
             name: "GREENTICK",
-            logo: "/images/brands/greentick.png"
+            logo: "/img/brands/greentick.png"
         },
         {
             name: "Gabson",
-            logo: "/images/brands/gabson.png"
+            logo: "/img/brands/gabson.png"
         }
     ];
     // loadBrandsAbout(fallbackBrands);

@@ -1,4 +1,4 @@
-// Social Sharing Functions for Trendtactics Digital
+﻿// Social Sharing Functions for Trendtactics Digital
 // Handles sharing to Facebook, LinkedIn, X (Twitter), WhatsApp, and more
 
 (function() {
@@ -16,7 +16,7 @@
                            document.querySelector('meta[name="description"]')?.content ||
                            'Unlock strategy, creativity, and AI power — all in one studio.';
         const image = document.querySelector('meta[property="og:image"]')?.content ||
-                     `${baseUrl}/images/Trendtactics_logo.jpg`;
+                     `${baseUrl}/img/Trendtactics_logo.jpg`;
         
         return { url, title, description, image };
     }

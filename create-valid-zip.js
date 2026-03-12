@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -17,10 +17,10 @@ fs.mkdirSync('dist');
 const essentialFiles = [
     'index.html', 'about.html', 'academy.html', 'academy-enroll.html',
     'admin.html', 'admin-dashboard.html', 'admin-login.html',
-    'analytics-dashboard.html', 'blog.html', 'blog-post.html',
+    'analytics-dashboard.html', 'blog.html', 'blog-post',
     'client-dashboard.html', 'coming-soon.html', 'contact.html',
     'dashboard.html', 'ebooks.html', 'hub.html', 'login.html',
-    'portfolio.html', 'pricing.html', 'privacy-policy.html',
+    'portfolio.html', 'pricing.html', 'privacy-policy',
     'quiz.html', 'register.html', 'resources.html', 'services.html',
     'service-web-development.html', 'service-app-development.html',
     'service-digital-marketing.html', 'service-email-marketing.html',

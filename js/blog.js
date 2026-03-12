@@ -1,4 +1,4 @@
-// Blog functionality
+﻿// Blog functionality
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Blog page loaded');
     loadBlogPosts();
@@ -13,7 +13,7 @@ const blogData = {
             excerpt: 'Discover how Trendtactics Digital used AI-powered strategies to triple organic traffic for a leading e-commerce brand in just 6 months.',
             category: 'Case Study',
             date: '2025-06-15',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             featured: true,
             views: 1247,
             comments: 23
@@ -24,7 +24,7 @@ const blogData = {
             excerpt: 'Learn actionable strategies to increase your brand engagement and reach on social platforms in 2025.',
             category: 'Tips',
             date: '2025-05-20',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             featured: false,
             views: 892,
             comments: 15
@@ -35,7 +35,7 @@ const blogData = {
             excerpt: 'Stay ahead of the curve with our breakdown of the latest Google update and how it impacts your SEO strategy.',
             category: 'News',
             date: '2025-04-10',
-            image: '/images/blog2.jpg',
+            image: '/img/blog2.jpg',
             featured: false,
             views: 1567,
             comments: 31
@@ -46,7 +46,7 @@ const blogData = {
             excerpt: 'Everything you need to know to launch a successful content marketing campaign this year.',
             category: 'How-To',
             date: '2025-03-15',
-            image: '/images/blog3.jpg',
+            image: '/img/blog3.jpg',
             featured: false,
             views: 743,
             comments: 12
@@ -57,7 +57,7 @@ const blogData = {
             excerpt: 'Explore how artificial intelligence and automation are reshaping the digital marketing landscape.',
             category: 'Trends',
             date: '2025-02-28',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             featured: false,
             views: 1123,
             comments: 18
@@ -68,7 +68,7 @@ const blogData = {
             excerpt: 'Learn the essential elements of creating a memorable and effective brand identity online.',
             category: 'Branding',
             date: '2025-01-20',
-            image: '/images/blog2.jpg',
+            image: '/img/blog2.jpg',
             featured: false,
             views: 678,
             comments: 9
@@ -105,7 +105,7 @@ function displayFeaturedPost() {
                         <span><i class="fas fa-eye"></i> ${featuredPost.views.toLocaleString()}</span>
                         <span><i class="fas fa-comments"></i> ${featuredPost.comments}</span>
                     </div>
-                    <a href="blog-post.html?id=${featuredPost.id}" class="btn btn-primary">Read Full Article</a>
+                    <a href="blog-post?id=${featuredPost.id}" class="btn btn-primary">Read Full Article</a>
                 </div>
             </div>
         `;
@@ -134,7 +134,7 @@ function displayBlogGrid() {
                         <span><i class="fas fa-comments"></i> ${post.comments}</span>
                     </div>
                     <div class="blog-card-footer">
-                        <a href="blog-post.html?id=${post.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog-post?id=${post.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </article>
@@ -153,7 +153,7 @@ function updateRecentPosts() {
                     <img src="${post.image}" alt="${post.title}">
                 </div>
                 <div class="recent-post-content">
-                    <h4><a href="blog-post.html?id=${post.id}">${post.title}</a></h4>
+                    <h4><a href="blog-post?id=${post.id}">${post.title}</a></h4>
                     <span class="date">${formatDate(post.date)}</span>
                 </div>
             </li>

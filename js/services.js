@@ -1,4 +1,4 @@
-// Services Page JavaScript
+﻿// Services Page JavaScript
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize services page
     initServicesPage();
@@ -139,7 +139,7 @@ function loadDetailedServices(services) {
                             </ul>
                             <div class="subcategory-cta">
                                 <span class="price">${subcategory.price}</span>
-                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                <a href="contact" class="btn btn-primary">Get Started</a>
                             </div>
                         </div>
                     `).join('')}

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Script to update hub.html from GitHub to cPanel
 echo "<h1>Hub Page Update Script</h1>";
 
@@ -24,7 +24,7 @@ if ($result === FALSE) {
 // Also update index.html if needed
 $indexPath = 'index.html';
 if (file_exists($indexPath)) {
-    echo "<p><a href='index.html'>Check Homepage</a></p>";
+    echo "<p><a href=''>Check Homepage</a></p>";
 }
-echo "<p><a href='hub.html'>Check Hub Page</a></p>";
+echo "<p><a href=''>Check Hub Page</a></p>";
 ?>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * GitHub Deployment Verification Script
  * 
  * This script verifies that all recent fixes have been deployed to GitHub
@@ -83,7 +83,7 @@ console.log();
 // Check hub.html fixes
 try {
   const hubContent = execSync('git show HEAD:hub.html', { encoding: 'utf8' });
-  if (hubContent.includes('href="/client-dashboard.html"') && hubContent.includes('href="/academy.html"')) {
+  if (hubContent.includes('href="/client-dashboard"') && hubContent.includes('href="/academy"')) {
     console.log('✅ Hub page button links fixed (no more # hrefs)');
   } else {
     console.log('⚠️  Hub page button links may not be fixed');

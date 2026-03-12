@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 
 // Demo data
@@ -9,7 +9,7 @@ const demoCourses = [
         slug: 'complete-digital-marketing-masterclass',
         description: 'Learn everything you need to know about digital marketing from SEO to social media advertising.',
         shortDescription: 'Master digital marketing strategies and tactics',
-        thumbnail: '/images/blog1.jpg',
+        thumbnail: '/img/blog1.jpg',
         category: 'Digital Marketing',
         level: 'Beginner',
         duration: '8 weeks',
@@ -21,7 +21,7 @@ const demoCourses = [
             _id: '1',
             firstName: 'Akinola',
             lastName: 'Olujobi',
-            avatar: '/images/Trendtactics-logo.jpg'
+            avatar: '/img/Trendtactics-logo.jpg'
         },
         stats: {
             enrollments: 1250,
@@ -39,7 +39,7 @@ const demoCourses = [
         slug: 'seo-fundamentals-for-beginners',
         description: 'Master the basics of Search Engine Optimization and improve your website rankings.',
         shortDescription: 'Learn SEO from scratch',
-        thumbnail: '/images/blog2.jpg',
+        thumbnail: '/img/blog2.jpg',
         category: 'SEO',
         level: 'Beginner',
         duration: '4 weeks',
@@ -51,7 +51,7 @@ const demoCourses = [
             _id: '1',
             firstName: 'Akinola',
             lastName: 'Olujobi',
-            avatar: '/images/Trendtactics-logo.jpg'
+            avatar: '/img/Trendtactics-logo.jpg'
         },
         stats: {
             enrollments: 890,
@@ -69,7 +69,7 @@ const demoCourses = [
         slug: 'social-media-marketing-strategy',
         description: 'Develop winning social media strategies for Facebook, Instagram, Twitter, and LinkedIn.',
         shortDescription: 'Create effective social media campaigns',
-        thumbnail: '/images/blog3.jpg',
+        thumbnail: '/img/blog3.jpg',
         category: 'Social Media',
         level: 'Intermediate',
         duration: '6 weeks',
@@ -81,7 +81,7 @@ const demoCourses = [
             _id: '1',
             firstName: 'Akinola',
             lastName: 'Olujobi',
-            avatar: '/images/Trendtactics-logo.jpg'
+            avatar: '/img/Trendtactics-logo.jpg'
         },
         stats: {
             enrollments: 650,
@@ -99,7 +99,7 @@ const demoCourses = [
         slug: 'google-ads-mastery',
         description: 'Learn to create and optimize Google Ads campaigns that convert.',
         shortDescription: 'Master Google Ads advertising',
-        thumbnail: '/images/advert-image-generation.jpg',
+        thumbnail: '/img/advert-image-generation.jpg',
         category: 'PPC',
         level: 'Advanced',
         duration: '5 weeks',
@@ -111,7 +111,7 @@ const demoCourses = [
             _id: '1',
             firstName: 'Akinola',
             lastName: 'Olujobi',
-            avatar: '/images/Trendtactics-logo.jpg'
+            avatar: '/img/Trendtactics-logo.jpg'
         },
         stats: {
             enrollments: 450,
@@ -129,7 +129,7 @@ const demoCourses = [
         slug: 'content-marketing-fundamentals',
         description: 'Create compelling content that attracts, engages, and converts your audience.',
         shortDescription: 'Learn content marketing basics',
-        thumbnail: '/images/image-generation-4.jpg',
+        thumbnail: '/img/image-generation-4.jpg',
         category: 'Content Marketing',
         level: 'Beginner',
         duration: '4 weeks',
@@ -141,7 +141,7 @@ const demoCourses = [
             _id: '1',
             firstName: 'Akinola',
             lastName: 'Olujobi',
-            avatar: '/images/Trendtactics-logo.jpg'
+            avatar: '/img/Trendtactics-logo.jpg'
         },
         stats: {
             enrollments: 2100,
@@ -163,7 +163,7 @@ const demoUsers = [
         email: 'admin@trendtacticsdigital.com',
         role: 'admin',
         isEmailVerified: true,
-        avatar: '/images/Trendtactics-logo.jpg',
+        avatar: '/img/Trendtactics-logo.jpg',
         profile: {
             bio: 'Digital Marketing Expert and Founder of Trendtactics Digital',
             phone: '+234 123 456 7890',
@@ -382,7 +382,7 @@ router.post('/auth/login', (req, res) => {
             email: email,
             role: 'student',
             isEmailVerified: true,
-            avatar: '/images/Trendtactics-logo.jpg',
+            avatar: '/img/Trendtactics-logo.jpg',
             profile: {
                 bio: 'Demo student account',
                 phone: '',
@@ -430,7 +430,7 @@ router.post('/auth/register', (req, res) => {
         email,
         role: 'student',
         isEmailVerified: true,
-        avatar: '/images/Trendtactics-logo.jpg',
+        avatar: '/img/Trendtactics-logo.jpg',
         profile: {
             bio: 'New demo student',
             phone: '',

@@ -1,4 +1,4 @@
-// Blog Content Recommendation Engine
+﻿// Blog Content Recommendation Engine
 // Shows "Most Read", "Trending", and "Similar Posts" sections
 
 (async function() {
@@ -93,7 +93,7 @@
         return `
             <article class="recommended-post-card">
                 ${post.image ? `
-                    <a href="/blog/${slug}.html" class="post-image-link">
+                    <a href="/blog/${slug}" class="post-image-link">
                         <img src="${post.image}" alt="${post.title}" loading="lazy" class="post-thumbnail">
                     </a>
                 ` : ''}
@@ -102,7 +102,7 @@
                         <span class="post-category">${post.category}</span>
                     ` : ''}
                     <h3 class="post-title">
-                        <a href="/blog/${slug}.html">${post.title}</a>
+                        <a href="/blog/${slug}">${post.title}</a>
                     </h3>
                     <p class="post-excerpt">${post.excerpt || ''}</p>
                     <div class="post-meta">

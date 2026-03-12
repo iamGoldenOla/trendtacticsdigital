@@ -1,4 +1,4 @@
-// Jotform AI Style Live Chat Agent - "Trendy AI"
+﻿// Jotform AI Style Live Chat Agent - "Trendy AI"
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Inject Styles
     const style = document.createElement('style');
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
     // 2. Build HTML Structure
-    const avatarPath = "images/trendy_chatlive_image.jpg";
+    const avatarPath = /trendy_chatlive_image.jpg";
 
     const chatContainer = document.createElement('div');
     chatContainer.innerHTML = `
@@ -591,12 +591,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Book / Consultation
         {
             keywords: ["book", "schedule", "consult", "free call", "meeting", "appointment", "talk to someone"],
-            response: "📅 Let's make it happen!<br><br><strong>Book your FREE 30-minute strategy consultation</strong> — we'll review your digital presence, identify growth opportunities, and recommend the right services for your goals.<br><br>Zero commitment. 100% value.<br><br><a href='contact.html' style='display:inline-block;margin-top:8px;padding:8px 16px;background:#0A1E3F;color:#fadb24;border-radius:8px;font-weight:700;text-decoration:none;'>Book Free Consultation →</a>"
+            response: "📅 Let's make it happen!<br><br><strong>Book your FREE 30-minute strategy consultation</strong> — we'll review your digital presence, identify growth opportunities, and recommend the right services for your goals.<br><br>Zero commitment. 100% value.<br><br><a href='' style='display:inline-block;margin-top:8px;padding:8px 16px;background:#0A1E3F;color:#fadb24;border-radius:8px;font-weight:700;text-decoration:none;'>Book Free Consultation →</a>"
         },
         // Thanks
         {
             keywords: ["thank you", "thanks", "helpful", "appreciate", "great", "perfect", "awesome"],
-            response: "You're very welcome! 😊 I'm always here if you have more questions.<br><br>🔗 <strong>Quick links:</strong><br><a href='services.html' style='color:#00bdff;font-weight:bold;'>Our Services</a> | <a href='pricing.html' style='color:#00bdff;font-weight:bold;'>Pricing</a> | <a href='contact.html' style='color:#00bdff;font-weight:bold;'>Book a Call</a>"
+            response: "You're very welcome! 😊 I'm always here if you have more questions.<br><br>🔗 <strong>Quick links:</strong><br><a href='' style='color:#00bdff;font-weight:bold;'>Our Services</a> | <a href='' style='color:#00bdff;font-weight:bold;'>Pricing</a> | <a href='' style='color:#00bdff;font-weight:bold;'>Book a Call</a>"
         },
         // Digital Marketing
         {
@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Default fallback
         if (!foundMatch) {
-            baseResponse = "That's a great question! While I might not have a specific answer for that, our expert team will. 🙌<br><br>👉 <a href='contact.html' style='color:#00FFFF;font-weight:bold;'>Contact our team directly</a> for a personalized answer, or ask me about our <strong>services, pricing, or process</strong>!";
+            baseResponse = "That's a great question! While I might not have a specific answer for that, our expert team will. 🙌<br><br>👉 <a href='' style='color:#00FFFF;font-weight:bold;'>Contact our team directly</a> for a personalized answer, or ask me about our <strong>services, pricing, or process</strong>!";
         }
 
         // --- Proactive Intelligence Follow-up ---

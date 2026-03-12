@@ -1,4 +1,4 @@
-// Blog Post functionality
+﻿// Blog Post functionality
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Blog post page loaded');
     loadBlogPost();
@@ -69,7 +69,7 @@ const blogData = {
             funnel_stage: 'BOFU',
             author: 'Akinola Olujobi',
             date: '2025-06-15',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             tags: ['AI', 'SEO', 'E-commerce', 'Traffic', 'Case Study', 'ROI'],
             readTime: '8 min read',
             views: 1247,
@@ -100,7 +100,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Sarah Johnson',
             date: '2025-05-20',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             tags: ['Social Media', 'Engagement', 'Strategy', '2025', 'Content'],
             readTime: '6 min read',
             views: 892,
@@ -136,7 +136,7 @@ const blogData = {
             funnel_stage: 'TOFU',
             author: 'Michael Chen',
             date: '2025-04-10',
-            image: '/images/blog2.jpg',
+            image: '/img/blog2.jpg',
             tags: ['Google', 'Algorithm', 'SEO', 'Update', 'Technical SEO'],
             readTime: '7 min read',
             views: 1567,
@@ -171,7 +171,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Emily Rodriguez',
             date: '2025-03-15',
-            image: '/images/blog3.jpg',
+            image: '/img/blog3.jpg',
             tags: ['Content Marketing', 'Strategy', 'Beginner', '2025', 'Guide'],
             readTime: '10 min read',
             views: 743,
@@ -206,7 +206,7 @@ const blogData = {
             funnel_stage: 'TOFU',
             author: 'David Kim',
             date: '2025-02-28',
-            image: '/images/blog1.jpg',
+            image: '/img/blog1.jpg',
             tags: ['AI', 'Automation', 'Future', 'Digital Marketing', 'Technology'],
             readTime: '9 min read',
             views: 1123,
@@ -241,7 +241,7 @@ const blogData = {
             funnel_stage: 'MOFU',
             author: 'Lisa Wang',
             date: '2025-01-20',
-            image: '/images/blog2.jpg',
+            image: '/img/blog2.jpg',
             tags: ['Branding', 'Identity', 'Digital', 'Strategy', 'Design'],
             readTime: '7 min read',
             views: 678,
@@ -312,7 +312,7 @@ function displayBlogPost(post) {
         imageElement.alt = post.title;
         // Add error handling for broken images
         imageElement.onerror = function() {
-            this.src = '/images/blog1.jpg'; // Fallback image
+            this.src = '/img/blog1.jpg'; // Fallback image
         };
     }
     
@@ -367,7 +367,7 @@ function displayCTA(post) {
         <div class="cta-content">
             <h3>${post.cta}</h3>
             <p>Ready to take your ${post.category.toLowerCase()} to the next level? Get started today with our expert team.</p>
-            <a href="contact.html" class="btn btn-primary">Get Started Now</a>
+            <a href="contact" class="btn btn-primary">Get Started Now</a>
         </div>
     `;
     
@@ -380,11 +380,11 @@ function displayAuthorBio(post) {
     if (!bioContainer) return;
     
     const bioContent = `
-        <img src="images/professional-ceo.png" alt="${post.author}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+        <img src=/professional-ceo.png" alt="${post.author}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
         <div style="flex: 1;">
             <h3 style="font-size: 1.5rem; color: #0A1E3F; margin: 0 0 10px 0; font-weight: 700;">${post.author}</h3>
             <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6; margin: 0 0 20px 0;">${getAuthorBio(post.author)}</p>
-            <a href="about.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">View Profile</a>
+            <a href="about" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">View Profile</a>
         </div>
     `;
     
@@ -419,7 +419,7 @@ function displayRelatedPosts(posts, container) {
                 <img src="${post.image}" alt="${post.title}">
             </div>
             <div class="related-post-content">
-                <h4><a href="blog-post.html?id=${post.id}">${post.title}</a></h4>
+                <h4><a href="blog-post?id=${post.id}">${post.title}</a></h4>
                 <span class="date">${formatDate(post.date)}</span>
                 <span class="funnel-badge ${post.funnel_stage.toLowerCase()}">${getFunnelStageName(post.funnel_stage)}</span>
             </div>
@@ -507,7 +507,7 @@ function displayError(message) {
                 <i class="fas fa-exclamation-triangle"></i>
                 <h2>Post Not Found</h2>
                 <p>${message}</p>
-                <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+                <a href="blog" class="btn btn-primary">Back to Blog</a>
             </div>
         `;
     }

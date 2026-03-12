@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 
 const files = ['portfolio.html', 'contact.html'];
 
@@ -15,7 +15,7 @@ for (const file of files) {
     desc = 'Explore our diverse work in digital marketing, web design, creative media, and ad campaigns. Each project reflects our commitment to innovation and results.';
     btnHref = '#portfolio-filters';
     btnText = 'View Our Work';
-    imgSrc = 'images/portfolio_parallele.jpg';
+    imgSrc = /portfolio_parallele.jpg';
     imgAlt = 'Portfolio Showcase';
   } else {
     match = content.match(/<section class="page-hero[\s\S]*?<\/section>/);
@@ -24,7 +24,7 @@ for (const file of files) {
     desc = 'Ready to transform your business? Get in touch with our team of digital experts and let\'s discuss your custom strategy.';
     btnHref = '.contact-main';
     btnText = 'Send Message';
-    imgSrc = 'images/contact-us-parallex.jpg';
+    imgSrc = /contact-us-parallex.jpg';
     imgAlt = 'Contact Us';
   }
 

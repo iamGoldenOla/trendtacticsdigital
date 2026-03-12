@@ -1,4 +1,4 @@
-{
+﻿{
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
@@ -30,7 +30,7 @@
             ]
         },
         {
-            "source": "/images/(.*)",
+            "source": "/img/(.*)",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "source": "/videos/(.*)",
+            "source": "/vid/(.*)",
             "headers": [
                 {
                     "key": "Cache-Control",

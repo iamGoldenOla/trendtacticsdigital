@@ -1,4 +1,4 @@
-// Cookie Consent & Privacy Logic
+﻿// Cookie Consent & Privacy Logic
 document.addEventListener('DOMContentLoaded', () => {
     const consentName = 'trendtactics_cookie_consent';
     
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         banner.innerHTML = `
             <div class="cc-content">
                 <h3>🍪 We value your privacy</h3>
-                <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <a href="privacy-policy.html">Privacy Policy</a> to learn more.</p>
+                <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <a href="privacy-policy">Privacy Policy</a> to learn more.</p>
             </div>
             <div class="cc-actions">
                 <button class="cc-btn cc-reject" id="cc-reject-btn">Decline All</button>

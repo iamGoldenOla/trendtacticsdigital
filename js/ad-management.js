@@ -1,4 +1,4 @@
-// Ad Management System for Blog
+﻿// Ad Management System for Blog
 
 class AdManager {
     constructor() {
@@ -154,21 +154,21 @@ class AdManager {
                 description: 'Learn advanced strategies from industry experts',
                 cta: 'Enroll Now',
                 link: '#',
-                image: '/images/blog1.jpg'
+                image: '/img/blog1.jpg'
             },
             {
                 title: 'Free SEO Audit',
                 description: 'Get a comprehensive analysis of your website',
                 cta: 'Get Free Audit',
                 link: '#',
-                image: '/images/blog2.jpg'
+                image: '/img/blog2.jpg'
             },
             {
                 title: 'AI Marketing Tools',
                 description: 'Automate your marketing with AI',
                 cta: 'Learn More',
                 link: '#',
-                image: '/images/blog3.jpg'
+                image: '/img/blog3.jpg'
             }
         ];
 

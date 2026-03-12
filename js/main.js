@@ -1,4 +1,4 @@
-// Main JavaScript file for Trendtactics Digital
+﻿// Main JavaScript file for Trendtactics Digital
 
 
 
@@ -374,12 +374,12 @@ function loadSocialLinks(social) {
 function loadFallbackContent() {
     // Fallback brands
     const fallbackBrands = [
-        { name: 'Brand 1', logo: '/images/brand1.png' },
-        { name: 'Brand 2', logo: '/images/brand2.png' },
-        { name: 'Brand 3', logo: '/images/brand3.png' },
-        { name: 'Brand 4', logo: '/images/brand4.png' },
-        { name: 'Brand 5', logo: '/images/brand5.png' },
-        { name: 'Brand 6', logo: '/images/brand6.png' }
+        { name: 'Brand 1', logo: '/img/brand1.png' },
+        { name: 'Brand 2', logo: '/img/brand2.png' },
+        { name: 'Brand 3', logo: '/img/brand3.png' },
+        { name: 'Brand 4', logo: '/img/brand4.png' },
+        { name: 'Brand 5', logo: '/img/brand5.png' },
+        { name: 'Brand 6', logo: '/img/brand6.png' }
     ];
     // loadBrands(fallbackBrands); // Disabled to prevent overwriting the static brand grid in HTML
 
@@ -733,7 +733,7 @@ async function loadLatestBlogPosts() {
             <article class="blog-card-home">
                 <div class="blog-card-image-home">
                     <img src="${post.image}" alt="${post.title}" 
-                        onerror="this.onerror=null; this.src='/images/Trendtactics_logo.jpg'; console.error('Failed to load image:', '${post.image}');">
+                        onerror="this.onerror=null; this.src='/img/Trendtactics_logo.jpg'; console.error('Failed to load image:', '${post.image}');">
                     <div class="category-badge-home">${post.category}</div>
                 </div>
                 <div class="blog-card-content-home">
@@ -741,10 +741,10 @@ async function loadLatestBlogPosts() {
                         <span class="date-home">${formatBlogDate(post.date)}</span>
                         <span class="read-time-home">${post.readTime || '5 min read'}</span>
                     </div>
-                    <h3><a href="blog-post.html?id=${post.id}">${post.title}</a></h3>
+                    <h3><a href="blog-post?id=${post.id}">${post.title}</a></h3>
                     <p>${post.excerpt}</p>
                     <div class="blog-card-footer-home">
-                        <a href="blog-post.html?id=${post.id}" class="read-more-home">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="blog-post?id=${post.id}" class="read-more-home">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </article>

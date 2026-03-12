@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 /**
  * Restore Original Homepage
@@ -32,15 +32,15 @@ console.log('✅ Restored original homepage as index.html');
 // Update the "Get Started" button in the restored homepage to point to the hub
 let updatedHomepage = originalHomepage;
 updatedHomepage = updatedHomepage.replace(
-    /<a href="\/hub\.html" class="btn btn-primary">Get Started<\/a>/g,
-    '<a href="/hub.html" class="btn btn-primary">Get Started</a>'
+    /<a href="\/hub\" class="btn btn-primary">Get Started<\/a>/g,
+    '<a href="/hub" class="btn btn-primary">Get Started</a>'
 );
 
 // Make sure the Get Started button points to hub.html
-if (!updatedHomepage.includes('href="/hub.html"') && updatedHomepage.includes('Get Started')) {
+if (!updatedHomepage.includes('href="/hub"') && updatedHomepage.includes('Get Started')) {
     updatedHomepage = updatedHomepage.replace(
         /(<a[^>]*>Get Started<\/a>)/g,
-        '<a href="/hub.html" class="btn btn-primary">Get Started</a>'
+        '<a href="/hub" class="btn btn-primary">Get Started</a>'
     );
 }
 

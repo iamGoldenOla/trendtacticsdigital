@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Deployment Verification Script - Hash Issue Fixes
  * 
  * This script verifies that all recent fixes for the hash issue have been deployed
@@ -94,7 +94,7 @@ console.log();
 // Check hub.html fixes
 try {
     const hubContent = readFileSync('hub.html', 'utf8');
-    if (hubContent.includes('href="/client-dashboard.html"') && hubContent.includes('href="/academy.html"')) {
+    if (hubContent.includes('href="/client-dashboard"') && hubContent.includes('href="/academy"')) {
         console.log('✅ Hub page button links fixed (no more # hrefs)');
     } else {
         console.log('⚠️  Hub page button links may not be fixed');

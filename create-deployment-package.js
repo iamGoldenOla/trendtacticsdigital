@@ -1,4 +1,4 @@
-// Create cPanel deployment package
+﻿// Create cPanel deployment package
 const fs = require('fs');
 const path = require('path');
 
@@ -13,7 +13,7 @@ const deployFiles = [
     'admin-login.html',
     'analytics-dashboard.html',
     'blog.html',
-    'blog-post.html',
+    'blog-post',
     'client-dashboard.html',
     'coming-soon.html',
     'contact.html',
@@ -23,7 +23,7 @@ const deployFiles = [
     'login.html',
     'portfolio.html',
     'pricing.html',
-    'privacy-policy.html',
+    'privacy-policy',
     'quiz.html',
     'register.html',
     'resources.html',

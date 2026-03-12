@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Test script for hub page functionality
  * This script verifies that the hub page works correctly with authentication
  */
@@ -19,7 +19,7 @@ fetch('/hub.html')
 
 // Test 2: Check if Get Started buttons point to hub page
 console.log('\nTest 2: Checking Get Started button links...');
-const getStartedButtons = document.querySelectorAll('a[href="/hub.html"]');
+const getStartedButtons = document.querySelectorAll('a[href="/hub"]');
 if (getStartedButtons.length > 0) {
   console.log(`✅ Found ${getStartedButtons.length} Get Started buttons pointing to hub page`);
 } else {

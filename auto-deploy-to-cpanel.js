@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 /**
  * Auto-deploy script for cPanel hosting
@@ -61,7 +61,7 @@ if (\$result === FALSE) {
     echo "<p>🕒 Timestamp: " . \$timestamp . "</p>";
 }
 
-echo "<p><a href='/hub.html' target='_blank'>🔗 Test Hub Page</a></p>";
+echo "<p><a href='' target='_blank'>🔗 Test Hub Page</a></p>";
 echo "<p><a href='/'>🏠 Back to Homepage</a></p>";
 ?>`;
     

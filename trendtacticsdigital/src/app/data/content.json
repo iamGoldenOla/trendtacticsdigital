@@ -1,24 +1,24 @@
-{
+﻿{
   "brands": [
     {
       "name": "KEVTOS CATERING",
-      "logo": "./images/brands/kevtos-catering.png"
+      "logo": "./img/brands/kevtos-catering.png"
     },
     {
       "name": "Realtreasure",
-      "logo": "./images/brands/realtreasure.png"
+      "logo": "./img/brands/realtreasure.png"
     },
     {
       "name": "Gabson",
-      "logo": "./images/brands/gabson.png"
+      "logo": "./img/brands/gabson.png"
     },
     {
       "name": "GREENTICK",
-      "logo": "./images/brands/greentick.png"
+      "logo": "./img/brands/greentick.png"
     },
     {
       "name": "HustleNChill",
-      "logo": "./images/brands/hustlenchill.png"
+      "logo": "./img/brands/hustlenchill.png"
     }
   ],
   "services": [
@@ -123,7 +123,7 @@
         "name": "Sarah Johnson",
         "position": "CEO",
         "company": "TechStart Inc.",
-        "avatar": "./images/testimonials/sarah.jpg"
+        "avatar": "./img/testimonials/sarah.jpg"
       },
       "rating": 5
     },
@@ -133,7 +133,7 @@
         "name": "Michael Chen",
         "position": "Operations Director",
         "company": "Global Solutions",
-        "avatar": "./images/testimonials/michael.jpg"
+        "avatar": "./img/testimonials/michael.jpg"
       },
       "rating": 5
     },
@@ -143,7 +143,7 @@
         "name": "Emily Rodriguez",
         "position": "Marketing Manager",
         "company": "Innovate Labs",
-        "avatar": "./images/testimonials/emily.jpg"
+        "avatar": "./img/testimonials/emily.jpg"
       },
       "rating": 5
     },
@@ -153,7 +153,7 @@
         "name": "David Thompson",
         "position": "Founder",
         "company": "EcoProducts",
-        "avatar": "./images/testimonials/david.jpg"
+        "avatar": "./img/testimonials/david.jpg"
       },
       "rating": 5
     },
@@ -163,7 +163,7 @@
         "name": "Lisa Wang",
         "position": "Creative Director",
         "company": "Design Studio",
-        "avatar": "./images/testimonials/lisa.jpg"
+        "avatar": "./img/testimonials/lisa.jpg"
       },
       "rating": 5
     },
@@ -173,7 +173,7 @@
         "name": "Robert Kim",
         "position": "CTO",
         "company": "FinTech Solutions",
-        "avatar": "./images/testimonials/robert.jpg"
+        "avatar": "./img/testimonials/robert.jpg"
       },
       "rating": 5
     }
@@ -215,7 +215,7 @@
       "name": "Akinola Olujobi",
       "position": "Founder & CEO",
       "bio": "Digital marketing expert with 10+ years of experience helping brands grow online.",
-      "avatar": "./images/team/akinola.jpg",
+      "avatar": "./img/team/akinola.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/akinola-olujobi",
         "twitter": "https://twitter.com/akinola_olujobi"
@@ -225,7 +225,7 @@
       "name": "Sarah Johnson",
       "position": "Creative Director",
       "bio": "Award-winning designer passionate about creating beautiful, functional digital experiences.",
-      "avatar": "./images/team/sarah.jpg",
+      "avatar": "./img/team/sarah.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/sarah-johnson",
         "twitter": "https://twitter.com/sarah_johnson"
@@ -235,7 +235,7 @@
       "name": "Michael Chen",
       "position": "Technical Lead",
       "bio": "Full-stack developer specializing in modern web technologies and AI integration.",
-      "avatar": "./images/team/michael.jpg",
+      "avatar": "./img/team/michael.jpg",
       "social": {
         "linkedin": "https://linkedin.com/in/michael-chen",
         "github": "https://github.com/michaelchen"
@@ -295,7 +295,7 @@
         "category": "ecommerce",
         "client": "EcoProducts",
         "description": "Complete e-commerce solution with custom payment integration and inventory management.",
-        "image": "./images/portfolio/ecoproducts.jpg",
+        "image": "./img/portfolio/ecoproducts.jpg",
         "results": {
           "sales_increase": "200%",
           "conversion_rate": "15%",
@@ -321,7 +321,7 @@
         "category": "digital-marketing",
         "client": "TechStart Inc.",
         "description": "Comprehensive digital marketing campaign including SEO, PPC, and social media.",
-        "image": "./images/portfolio/techstart.jpg",
+        "image": "./img/portfolio/techstart.jpg",
         "results": {
           "traffic_increase": "300%",
           "lead_generation": "150%",
@@ -346,7 +346,7 @@
         "category": "ai-solutions",
         "client": "Global Solutions",
         "description": "Custom AI chatbot that handles customer inquiries and improves response time.",
-        "image": "./images/portfolio/ai-chatbot.jpg",
+        "image": "./img/portfolio/ai-chatbot.jpg",
         "results": {
           "response_time": "80% faster",
           "customer_satisfaction": "92%",
@@ -379,7 +379,7 @@
         "450% ROI on marketing spend",
         "25% improvement in conversion rate"
       ],
-      "image": "./images/case-studies/techstart-case-study.jpg"
+      "image": "./img/case-studies/techstart-case-study.jpg"
     }
   },
   "blog": {
@@ -390,7 +390,7 @@
       "date": "2024-01-15",
       "category": "AI & Technology",
       "read_time": "8 min read",
-      "image": "./images/blog/ai-marketing-future.jpg",
+      "image": "./img/blog/ai-marketing-future.jpg",
       "tags": [
         "AI",
         "Digital Marketing",
@@ -406,7 +406,7 @@
         "date": "2024-01-10",
         "category": "SEO",
         "read_time": "6 min read",
-        "image": "./images/blog/seo-strategies.jpg",
+        "image": "./img/blog/seo-strategies.jpg",
         "tags": [
           "SEO",
           "Search Engine",
@@ -420,7 +420,7 @@
         "date": "2024-01-08",
         "category": "Social Media",
         "read_time": "7 min read",
-        "image": "./images/blog/social-media-strategy.jpg",
+        "image": "./img/blog/social-media-strategy.jpg",
         "tags": [
           "Social Media",
           "Strategy",

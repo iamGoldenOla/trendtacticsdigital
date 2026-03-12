@@ -1,4 +1,4 @@
-// Performance Optimizer for Trendtactics Digital
+﻿// Performance Optimizer for Trendtactics Digital
 // Handles lazy loading, critical CSS, and performance optimizations
 
 (function() {
@@ -101,7 +101,7 @@
         
         // Preload critical images
         const criticalImages = [
-            '/images/Trendtactics_logo.jpg'
+            '/img/Trendtactics_logo.jpg'
         ];
         
         criticalImages.forEach(src => {
