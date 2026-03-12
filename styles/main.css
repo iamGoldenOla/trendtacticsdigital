@@ -414,7 +414,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 15px; /* Reduced from 20px */
     height: 80px;
     width: 100%;
     max-width: 100% !important; /* Force to extreme edges */
@@ -520,7 +520,7 @@ section {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.15rem; /* Reduced from 0.25rem */
     margin-left: 0;
 }
 
@@ -528,8 +528,8 @@ section {
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.125rem;
-    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem; /* Reduced from 1.125rem */
+    padding: 6px 10px; /* Reduced from var(--spacing-sm) var(--spacing-md) */
     border-radius: var(--radius-lg);
     transition: all var(--transition-normal);
     position: relative;
