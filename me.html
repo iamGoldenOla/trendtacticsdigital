@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,42 +16,49 @@
     <link rel="icon" type="image/png" href="/img/Trendtactics_digital_favicon.png">
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0A1E3F 0%, #1e293b 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            margin: 0;
         }
 
         .login-container {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(102, 126, 234, 0.15);
+            background: #ffffff;
+            padding: 45px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
+            position: relative;
+            z-index: 2;
         }
 
         .login-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .login-header h1 {
-            color: #764ba2;
+            color: #0A1E3F;
+            font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .login-header p {
-            color: #666;
-            font-size: 1rem;
+            color: #64748b;
+            font-size: 0.95rem;
         }
 
         .login-form {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
         }
 
         .form-group {
@@ -60,58 +67,58 @@
         }
 
         .form-group label {
-            color: #333;
-            font-weight: 500;
-            margin-bottom: 6px;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .form-group input {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
         }
 
         .form-group input:focus {
-            border-color: #764ba2;
+            border-color: #00FFFF;
             outline: none;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1);
         }
 
         .btn {
-            padding: 12px;
+            padding: 14px;
             border: none;
-            border-radius: 6px;
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            border-radius: 12px;
+            background: #0A1E3F;
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            margin-top: 10px;
         }
 
         .btn:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .demo-info {
-            background: #f3e5f5;
-            color: #6a1b9a;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 18px;
-            font-size: 0.98rem;
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .error-msg {
-            color: #d32f2f;
-            margin-bottom: 10px;
+            color: #ef4444;
+            margin-top: 10px;
             text-align: center;
-        }
-
-        .success-msg {
-            color: #388e3c;
-            margin-bottom: 10px;
-            text-align: center;
+            font-size: 0.85rem;
+            background: #fef2f2;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
         }
     </style>
 
@@ -502,6 +509,7 @@
             <button type="submit" class="btn">Login</button>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/supabase-utils.js"></script>
     <script>
         document.getElementById('adminLoginForm').addEventListener('submit', async function (e) {
@@ -614,7 +622,6 @@
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/js/newsletter.js" defer></script>
     <script src="/js/livechat.js" defer></script>
     <script src="/js/consent.js" defer></script>
