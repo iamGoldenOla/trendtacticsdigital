@@ -54,11 +54,16 @@ async function loginUser(email, password) {
             password
         });
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase Login Error:', error);
+            return { success: false, error: error.message };
+        }
+        
+        console.log('Login successful for:', data.user.email);
         return { success: true, data };
     } catch (error) {
-        console.error('Login error:', error);
-        return { success: false, error: error.message };
+        console.error('Unexpected Login error:', error);
+        return { success: false, error: 'An unexpected error occurred. Please try again later.' };
     }
 }
 

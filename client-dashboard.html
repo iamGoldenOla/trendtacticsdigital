@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -2546,6 +2546,29 @@
     </footer>
 
 
+
+    <!-- Load Supabase SDK first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-utils.js"></script>
+    <script>
+        // Check session immediately
+        document.addEventListener('DOMContentLoaded', async function() {
+            const supabase = window.supabaseUtils.supabase;
+            const { data: { session }, error } = await supabase.auth.getSession();
+            
+            if (error || !session) {
+                console.warn('No active session found, redirecting to login');
+                window.location.href = '/login.html';
+                return;
+            }
+            
+            console.log('Session active for:', session.user.email);
+            // Optionally load user profile data here
+            if (typeof loadDashboardData === 'function') {
+                loadDashboardData(session.user);
+            }
+        });
+    </script>
 
     <script src="/js/main.js"></script>
 

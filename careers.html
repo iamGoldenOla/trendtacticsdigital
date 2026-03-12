@@ -131,8 +131,28 @@
             .hero-content-side p { margin: 0 auto 40px; }
             .hero-image-side img { transform: none; }
         }
+        .text-gradient {
+            background: linear-gradient(135deg, #00FFFF 0%, #0066FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .careers-hero {
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+            background: #ffffff;
+        }
+        .hero-leader {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
     </style>
-</head>
 <body>
     <nav id="navigation" class="navbar">
         <div class="nav-container">
@@ -179,10 +199,10 @@
                         <ul class="dropdown-menu">
                             <li><a href="https://akinolaolujobi.com" target="_blank">Academy Hub</a></li>
                             <li><a href="https://akinolaolujobi.com" target="_blank">Akinola Olujobi</a></li>
+                            <li><a href="blog" class="dropdown-item">Blog</a></li>
                         </ul>
                     </div>
                     <a href="pricing" class="nav-link">Pricing</a>
-                    <a href="blog" class="nav-link">Blog</a>
                     <a href="careers" class="nav-link">Careers</a>
                     <a href="portfolio" class="nav-link">Portfolio</a>
                     <a href="contact" class="nav-link">Contact</a>
@@ -239,19 +259,65 @@
                     <span class="job-tag">Marketing</span>
                     <h3>Senior Digital Strategist</h3>
                     <p>Lead multi-channel campaigns for global brands using data-driven insights.</p>
-                    <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="#apply-form" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="job-card">
                     <span class="job-tag">Development</span>
                     <h3>Full Stack Web Developer</h3>
                     <p>Build premium, high-performance web applications using modern stacks.</p>
-                    <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="#apply-form" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="job-card">
                     <span class="job-tag">AI & Data</span>
                     <h3>AI Solutions Architect</h3>
                     <p>Integrate cutting-edge AI technologies into marketing workflows.</p>
-                    <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="#apply-form" class="apply-btn">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="apply-form" class="apply-section" style="padding: 100px 0; background: #f8fafc;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="application-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h2 class="text-center mb-4" style="color: #0A1E3F; font-weight: 800;">Apply for a Position</h2>
+                        <form id="career-application-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" name="full_name" required style="padding: 12px; border-radius: 8px;">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" name="email" required style="padding: 12px; border-radius: 8px;">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Position of Interest</label>
+                                <select class="form-select" name="position" required style="padding: 12px; border-radius: 8px;">
+                                    <option value="">Select a position</option>
+                                    <option value="Senior Digital Strategist">Senior Digital Strategist</option>
+                                    <option value="Full Stack Web Developer">Full Stack Web Developer</option>
+                                    <option value="AI Solutions Architect">AI Solutions Architect</option>
+                                    <option value="Other">Other / General Interest</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Resume / CV (PDF preferred)</label>
+                                <input type="file" class="form-control" name="resume" required style="padding: 10px; border-radius: 8px;">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Why do you want to join us?</label>
+                                <textarea class="form-control" name="message" rows="4" style="border-radius: 8px;"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-get-started" style="width: 100%; border: none;">Submit Application</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -406,6 +472,60 @@
     <script src="js/social-sharing.js" defer></script>
 
     <!-- Newsletter Integration -->
+    <script>
+        // Form Handling with Supabase
+        const supabase = window.supabaseUtils.supabase;
+        const applicationForm = document.getElementById('career-application-form'); // Matches the HTML ID
+        
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = applicationForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerText;
+                
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Submitting...';
+                
+                try {
+                    const formData = new FormData(applicationForm);
+                    const file = formData.get('resume');
+                    let resumeUrl = '';
+                    
+                    if (file && file.size > 0) {
+                        const fileExt = file.name.split('.').pop();
+                        const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+                        const { data: uploadData, error: uploadError } = await supabase.storage
+                            .from('resumes')
+                            .upload(fileName, file);
+                            
+                        if (uploadError) throw uploadError;
+                        resumeUrl = `https://your_supabase_project_id.supabase.co/storage/v1/object/public/resumes/${fileName}`; // Construct public URL
+                    }
+                    
+                    const { error: dbError } = await supabase
+                        .from('job_applications')
+                        .insert([{
+                            full_name: formData.get('full_name'), // Changed to match input name
+                            email: formData.get('email'),
+                            position: formData.get('position'), // Changed to match input name
+                            message: formData.get('message'), // Changed to match input name
+                            resume_url: resumeUrl
+                        }]);
+                        
+                    if (dbError) throw dbError;
+                    
+                    alert('Application submitted successfully!');
+                    applicationForm.reset();
+                } catch (err) {
+                    console.error('Error:', err);
+                    alert('Submission failed: ' + err.message);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalText;
+                }
+            });
+        }
+    </script>
     <script src="js/newsletter.js" defer></script>
 
     <!-- Main Scripts -->
