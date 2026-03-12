@@ -1,6 +1,6 @@
 // ===== ABOUT PAGE FUNCTIONALITY =====
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     loadAboutContent();
     initializeAboutAnimations();
 });
@@ -10,7 +10,7 @@ async function loadAboutContent() {
     try {
         const response = await fetch('/data/content.json');
         const data = await response.json();
-        
+
         loadValues(data.values);
         loadTeam(data.team);
         loadStats(data.stats);
@@ -18,7 +18,7 @@ async function loadAboutContent() {
         loadBrandsAbout(data.brands);
         loadFooterLinks(data.footer);
         loadSocialLinks(data.social);
-        
+
     } catch (error) {
         console.log('Using fallback about content data');
         loadFallbackAboutContent();
@@ -49,31 +49,31 @@ function loadTeam(team) {
     teamGrid.innerHTML = team.map(member => `
         <div class="team-card animate-fade-in-up">
             <div class="team-avatar">
-                ${member.avatar ? 
-                    `<img src="${member.avatar}" alt="${member.name}" loading="lazy">` : 
-                    member.name.charAt(0)
-                }
+                ${member.avatar ?
+            `<img src="${member.avatar}" alt="${member.name}" loading="lazy">` :
+            member.name.charAt(0)
+        }
             </div>
             <div class="team-info">
                 <h3>${member.name}</h3>
                 <div class="team-position">${member.position}</div>
                 <p class="team-bio">${member.bio}</p>
                 <div class="team-social">
-                    ${member.social.linkedin ? 
-                        `<a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer">
+                    ${member.social.linkedin ?
+            `<a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>` : ''
-                    }
-                    ${member.social.twitter ? 
-                        `<a href="${member.social.twitter}" target="_blank" rel="noopener noreferrer">
+        }
+                    ${member.social.twitter ?
+            `<a href="${member.social.twitter}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter"></i>
                         </a>` : ''
-                    }
-                    ${member.social.github ? 
-                        `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer">
+        }
+                    ${member.social.github ?
+            `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>` : ''
-                    }
+        }
                 </div>
             </div>
         </div>
@@ -114,10 +114,10 @@ function loadTimeline(timeline) {
 function loadBrandsAbout(brands) {
     const brandsGrid = document.getElementById('brands-grid-about');
     if (!brandsGrid || !brands) return;
-    
+
     // Create duplicate items for infinite scroll
     const duplicatedBrands = [...brands, ...brands];
-    
+
     let brandsHTML = '';
     duplicatedBrands.forEach(brand => {
         brandsHTML += `
@@ -126,7 +126,7 @@ function loadBrandsAbout(brands) {
             </div>
         `;
     });
-    
+
     brandsGrid.innerHTML = brandsHTML;
 }
 
@@ -138,11 +138,11 @@ function initializeAboutAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in-up');
-                
+
                 // Animate stats counters
                 if (entry.target.classList.contains('stat-item')) {
                     animateStatCounter(entry.target);
@@ -160,16 +160,16 @@ function initializeAboutAnimations() {
 function animateStatCounter(statElement) {
     const numberElement = statElement.querySelector('.stat-number');
     const targetText = numberElement.textContent;
-    
+
     // Extract number from text (e.g., "500+" -> 500)
     const targetNumber = parseInt(targetText.replace(/\D/g, ''));
     const suffix = targetText.replace(/\d/g, '');
-    
+
     if (isNaN(targetNumber)) return;
-    
+
     let current = 0;
     const increment = targetNumber / 50;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= targetNumber) {
@@ -314,14 +314,14 @@ function loadFallbackAboutContent() {
             logo: "/images/brands/gabson.png"
         }
     ];
-    loadBrandsAbout(fallbackBrands);
+    // loadBrandsAbout(fallbackBrands);
 }
 
 // Add timeline animation on scroll
 function initializeTimelineAnimations() {
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
-    const timelineObserver = new IntersectionObserver(function(entries) {
+
+    const timelineObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -339,24 +339,24 @@ function initializeTimelineAnimations() {
 }
 
 // Initialize timeline animations
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     setTimeout(initializeTimelineAnimations, 1000);
 });
 
 // Add smooth scrolling for internal links
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const internalLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     internalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop - 100;
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -371,7 +371,7 @@ function initializeParallax() {
     const hero = document.querySelector('.page-hero');
     if (!hero) return;
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
         hero.style.transform = `translateY(${rate}px)`;
@@ -379,6 +379,6 @@ function initializeParallax() {
 }
 
 // Initialize parallax
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeParallax();
 }); 

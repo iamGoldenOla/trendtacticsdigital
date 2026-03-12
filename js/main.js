@@ -381,7 +381,7 @@ function loadFallbackContent() {
         { name: 'Brand 5', logo: '/images/brand5.png' },
         { name: 'Brand 6', logo: '/images/brand6.png' }
     ];
-    loadBrands(fallbackBrands);
+    // loadBrands(fallbackBrands); // Disabled to prevent overwriting the static brand grid in HTML
 
     // Fallback services
     const fallbackServices = [

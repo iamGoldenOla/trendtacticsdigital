@@ -33,7 +33,7 @@ const essentialFiles = [
 const configFiles = ['.htaccess', 'robots.txt', 'sitemap.xml', 'rss.xml', 'CNAME', 'package.json'];
 
 // Folders to include
-const folders = ['js', 'styles', 'data', 'ebooks', 'components', 'public'];
+const folders = ['js', 'styles', 'data', 'ebooks', 'components', 'public', 'videos'];
 
 let copiedCount = 0;
 
@@ -68,10 +68,10 @@ folders.forEach(folder => {
 console.log('Copying images...');
 if (fs.existsSync('images')) {
     fs.mkdirSync(path.join('dist', 'images'), { recursive: true });
-    
+
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg'];
     const maxFileSize = 50 * 1024 * 1024; // 50MB
-    
+
     // Copy root level images
     fs.readdirSync('images').forEach(file => {
         const ext = path.extname(file).toLowerCase();
@@ -84,7 +84,7 @@ if (fs.existsSync('images')) {
             }
         }
     });
-    
+
     // Copy subdirectories (brands, team, testimonials, etc.)
     fs.readdirSync('images').forEach(item => {
         const itemPath = path.join('images', item);
@@ -100,23 +100,26 @@ console.log(`\n✓ Copied ${copiedCount} items to dist folder`);
 // Use Windows built-in compression
 console.log('\nCompressing to ZIP using Windows native compression...');
 try {
-    const zipCommand = `(New-Object -ComObject Shell.Application).NameSpace('${process.cwd()}\\trendtactics-digital-cpanel-LITE.zip').CopyFrom((New-Object -ComObject Shell.Application).NameSpace('${process.cwd()}\\dist').Items())`;
+    const zipName = 'trendtactics-frontend-deploy.zip';
+    if (fs.existsSync(zipName)) fs.unlinkSync(zipName);
+
+    const zipCommand = `Compress-Archive -Path 'dist\\*' -DestinationPath '${zipName}' -Force`;
     execSync(`powershell -Command "${zipCommand}"`, { stdio: 'inherit' });
-    
+
     // Wait a moment for compression to complete
     setTimeout(() => {
-        const zipSize = fs.statSync('trendtactics-digital-cpanel-LITE.zip');
+        const zipSize = fs.statSync(zipName);
         const sizeMB = (zipSize.size / (1024 * 1024)).toFixed(2);
-        
+
         console.log('\n✅ Deployment package created successfully!');
-        console.log(`📦 File: trendtactics-digital-cpanel-LITE.zip`);
+        console.log(`📦 File: ${zipName}`);
         console.log(`📊 Size: ${sizeMB} MB`);
         console.log('\n✅ This ZIP file is compatible with cPanel extraction!');
     }, 3000);
 } catch (error) {
     console.error('❌ Error creating ZIP:', error.message);
     console.log('\nTrying alternative method...');
-    
+
     // Alternative: Just copy to dist and let user zip manually
     console.log('✅ Files copied to "dist" folder.');
     console.log('You can manually zip the dist folder using Windows Explorer:');

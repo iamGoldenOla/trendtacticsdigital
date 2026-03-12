@@ -7,7 +7,7 @@
     <meta name="description" content="Create a new Trendtactics Digital account to access our services and dashboard.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/Trendtactics_digital_favicon.png">
+    <link rel="icon" type="image/png" href="/images/Trendtactics_digital_favicon.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -610,7 +610,7 @@
                 
                 <div class="terms">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a></label>
+                    <label for="terms">I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></label>
                 </div>
                 
                 <button type="submit" class="btn btn-primary" id="registerBtn">
@@ -624,14 +624,14 @@
             <!-- Demo login removed for production security -->
             
             <div class="form-footer">
-                <p>Already have an account? <a href="login.html">Sign in</a></p>
+                <p>Already have an account? <a href="login">Sign in</a></p>
             </div>
         </div>
     </div>
 
     <!-- Load Supabase SDK first -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase-utils.js"></script>
+    <script src="/js/supabase-utils.js"></script>
     <script>
         // Use the shared Supabase client from supabase-utils.js
         const supabase = window.supabaseUtils.supabase;
@@ -831,10 +831,11 @@
         }
     });
 </script>
-<script src="js/newsletter.js" defer></script>
-<script src="js/livechat.js" defer></script>
-<script src="js/consent.js" defer></script>
+<script src="/js/newsletter.js" defer></script>
+<script src="/js/livechat.js" defer></script>
+<script src="/js/consent.js" defer></script>
 
-    <script src="js/global-translate.js" defer></script>
+    <script src="/js/global-translate.js" defer></script>
 </body>
 </html>
+
