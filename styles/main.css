@@ -278,6 +278,10 @@ section {
     gap: var(--spacing-sm);
     position: relative;
     overflow: hidden;
+    line-height: 1;
+    min-height: 50px;
+    letter-spacing: 0.5px;
+    outline: none !important;
 }
 
 .btn::before {
@@ -298,15 +302,37 @@ section {
 .btn-primary {
     background: #00FFFF;
     color: #0A1E3F;
-    box-shadow: none !important;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.15) !important;
     font-weight: 700;
     transition: all var(--transition-normal);
 }
 
 .btn-primary:hover {
-    background: #00CED1;
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 206, 209, 0.3) !important;
+    background: #FFFFFF;
+    color: #0A1E3F;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* Sleek Get Started Button */
+.btn-get-started {
+    background: linear-gradient(135deg, #00FFFF 0%, #0088cc 100%) !important;
+    color: #0A1E3F !important;
+    border: none !important;
+    font-weight: 800 !important;
+    padding: 10px 24px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+.btn-get-started:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4) !important;
+    background: #FFFFFF !important;
 }
 
 .btn-outline {
@@ -320,8 +346,8 @@ section {
 .btn-outline:hover {
     background: #00FFFF;
     color: #0A1E3F;
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2) !important;
 }
 
 .btn-large {
@@ -367,15 +393,14 @@ section {
 .navbar {
     position: fixed !important;
     top: 0;
-    /* no top-bar, navbar goes to the very top */
     left: 0;
     right: 0;
-    background: rgba(10, 24, 51, 0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    background: rgba(10, 24, 51, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
     z-index: 1000;
-    transition: top var(--transition-normal), background var(--transition-normal);
-    padding: 0 var(--spacing-sm);
+    transition: all var(--transition-normal);
+    padding: 0;
 }
 
 /* When scrolled: top-bar hides behind navbar which moves up to top:0 */
@@ -389,9 +414,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0;
-    height: 70px;
+    padding: 0 20px;
+    height: 80px;
     width: 100%;
+    max-width: 100% !important; /* Force to extreme edges */
 }
 
 .nav-actions {
@@ -411,8 +437,8 @@ section {
     text-decoration: none;
     transition: all var(--transition-normal);
     flex-shrink: 0;
-    /* Reduce the intensity of the glow effect to make logo more visible */
-    filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.2));
+    margin-right: auto; /* Push others to right */
+    filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.1));
 }
 
 .nav-logo:hover {

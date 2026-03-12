@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="/styles/main.css?v=1772546233">
     <style>
         .careers-hero {
-            padding: 120px 0 80px;
+            padding: 80px 0 60px;
             background: linear-gradient(135deg, #0A1E3F 0%, #061226 100%);
             color: #fff;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         .careers-hero::before {
             content: '';
@@ -24,7 +25,7 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: url('/img/careers_premium_parallax.png') no-repeat center center;
             background-size: cover;
-            opacity: 0.4;
+            opacity: 0.3;
             z-index: 1;
         }
         .careers-hero h1 {
@@ -32,8 +33,11 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         .careers-hero p {
-            color: #00FFFF !important;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25rem;
         }
         .careers-hero .container {
             position: relative;
@@ -77,8 +81,9 @@
             text-decoration: none;
         }
         .culture-section {
-            padding: 100px 0;
+            padding: 120px 0;
             background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
         }
         .culture-img {
             width: 100%;
@@ -89,6 +94,12 @@
 </head>
 <body>
     <!-- Navigation will be injected via JS or copied from index -->
+        .nav-logo {
+            margin-right: auto !important;
+        }
+    </style>
+</head>
+<body>
     <nav id="navigation" class="navbar">
         <div class="nav-container container">
             <div class="nav-logo">
@@ -173,10 +184,11 @@
         </div>
     </section>
 
-    <section class="py-5">
+    <section class="positions-section" style="padding: 100px 0; background: #ffffff;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title">Open Positions</h2>
+                <p class="section-subtitle">Join us in shaping the future of digital innovation. We offer a competitive environment where talent meets opportunity.</p>
             </div>
             <div class="careers-grid">
                 <div class="job-card">
