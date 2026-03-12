@@ -22,10 +22,18 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('/img/careers_hero.png') no-repeat center center;
+            background: url('/img/careers_premium_parallax.png') no-repeat center center;
             background-size: cover;
-            opacity: 0.3;
+            opacity: 0.4;
             z-index: 1;
+        }
+        .careers-hero h1 {
+            color: #FFFFFF !important;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .careers-hero p {
+            color: #00FFFF !important;
+            font-weight: 600;
         }
         .careers-hero .container {
             position: relative;
@@ -121,8 +129,13 @@
                             <li><a href="contact">Free Consultation</a></li>
                         </ul>
                     </div>
-                    <a href="https://akinolaolujobi.com" class="nav-link" target="_blank"
-                        rel="noopener noreferrer">Academy</a>
+                    <div class="nav-item dropdown">
+                        <a href="https://akinolaolujobi.com" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://akinolaolujobi.com" target="_blank">Academy Hub</a></li>
+                            <li><a href="https://akinolaolujobi.com" target="_blank">Akinola Olujobi</a></li>
+                        </ul>
+                    </div>
                     <a href="pricing" class="nav-link">Pricing</a>
                     <a href="blog" class="nav-link">Blog</a>
                     <a href="careers" class="nav-link">Careers</a>
