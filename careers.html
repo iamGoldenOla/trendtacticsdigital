@@ -143,7 +143,7 @@
             display: flex;
             align-items: center;
             min-height: 80vh;
-            background: #ffffff;
+            background: #0A1E3F; /* Reverted to blue */
         }
         .hero-leader {
             font-size: 1.25rem;
@@ -151,6 +151,90 @@
             max-width: 800px;
             margin-bottom: 2rem;
             line-height: 1.6;
+        }
+
+        /* Revamped Form Styling */
+        .apply-section {
+            background: #f8fafc;
+            position: relative;
+        }
+        .application-form-wrapper {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .form-group-custom {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #0A1E3F;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.95rem;
+        }
+        .form-control-custom {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            background: #fcfdfe;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: #2d3748;
+        }
+        .form-control-custom:focus {
+            outline: none;
+            border-color: #00FFFF;
+            background: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+        }
+        .form-select-custom {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230A1E3F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        .file-upload-wrapper {
+            position: relative;
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e0;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .file-upload-wrapper:hover {
+            border-color: #00FFFF;
+            background: #edf2f7;
+        }
+        .file-upload-input {
+            opacity: 0;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            cursor: pointer;
+        }
+        .btn-submit-careers {
+            background: linear-gradient(135deg, #0A1E3F 0%, #1A2E4F 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            width: 100%;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn-submit-careers:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(10, 30, 63, 0.2);
+            background: #00FFFF;
+            color: #0A1E3F;
         }
     </style>
 <body>
@@ -282,22 +366,25 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="application-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                        <h2 class="text-center mb-4" style="color: #0A1E3F; font-weight: 800;">Apply for a Position</h2>
+                    <div class="application-form-wrapper">
+                        <div class="text-center mb-5">
+                            <h2 style="color: #0A1E3F; font-weight: 800; font-size: 2.5rem; margin-bottom: 10px;">Apply for a Position</h2>
+                            <p style="color: #64748b;">Join our network of innovators and shape the digital landscape.</p>
+                        </div>
                         <form id="career-application-form">
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 form-group-custom">
                                     <label class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" name="full_name" required style="padding: 12px; border-radius: 8px;">
+                                    <input type="text" class="form-control-custom" name="full_name" placeholder="John Doe" required>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 form-group-custom">
                                     <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" name="email" required style="padding: 12px; border-radius: 8px;">
+                                    <input type="email" class="form-control-custom" name="email" placeholder="john@example.com" required>
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <div class="form-group-custom">
                                 <label class="form-label">Position of Interest</label>
-                                <select class="form-select" name="position" required style="padding: 12px; border-radius: 8px;">
+                                <select class="form-control-custom form-select-custom" name="position" required>
                                     <option value="">Select a position</option>
                                     <option value="Senior Digital Strategist">Senior Digital Strategist</option>
                                     <option value="Full Stack Web Developer">Full Stack Web Developer</option>
@@ -305,16 +392,20 @@
                                     <option value="Other">Other / General Interest</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <div class="form-group-custom">
                                 <label class="form-label">Resume / CV (PDF preferred)</label>
-                                <input type="file" class="form-control" name="resume" required style="padding: 10px; border-radius: 8px;">
+                                <div class="file-upload-wrapper">
+                                    <i class="fas fa-cloud-upload-alt mb-2" style="font-size: 2rem; color: #cbd5e0;"></i>
+                                    <p class="mb-0" id="file-name-display" style="color: #64748b;">Click or drag to upload your CV</p>
+                                    <input type="file" class="file-upload-input" name="resume" required onchange="document.getElementById('file-name-display').innerText = this.files[0].name; document.getElementById('file-name-display').style.color = '#00FFFF';">
+                                </div>
                             </div>
-                            <div class="mb-4">
+                            <div class="form-group-custom">
                                 <label class="form-label">Why do you want to join us?</label>
-                                <textarea class="form-control" name="message" rows="4" style="border-radius: 8px;"></textarea>
+                                <textarea class="form-control-custom" name="message" rows="4" placeholder="Tell us about your passion for digital growth..."></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn-get-started" style="width: 100%; border: none;">Submit Application</button>
+                                <button type="submit" class="btn-submit-careers">Submit Application</button>
                             </div>
                         </form>
                     </div>
