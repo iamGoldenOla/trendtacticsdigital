@@ -1448,15 +1448,9 @@
         .tools-intro h2,
         .ebooks-intro h2,
         h1.text-center {
-
             background: none !important;
-
-            -webkit-text-fill-color: #0A1E3F !important;
-
             color: #0A1E3F !important;
-
             text-shadow: none !important;
-
         }
 
 
@@ -1870,7 +1864,14 @@
 <body>
 
     <!-- Top Bar -->
-    
+    <div class="top-bar" id="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <div id="google_translate_element_top"></div>
+            </div>
+            <div class="top-bar-center">
+                <span id="typewriter-text" class="typewriter-text"></span>
+            </div>
             <div class="top-bar-right">
                 <div class="social-icons-top">
                     <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -1879,7 +1880,6 @@
                 <a href="contact" class="top-book-call">
                     <i class="fas fa-phone-alt"></i> Book a Call
                 </a>
-                
                 <a href="hub" class="top-get-started">Get Started</a>
             </div>
         </div>
@@ -1890,22 +1890,20 @@
 
 
 
+    <!-- Navigation Header -->
     <nav id="navigation" class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index" style="display: flex; align-items: center; text-decoration: none; padding-left: 10px;">
-                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
-                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
-                        loading="lazy">
+                <a href="index">
+                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true" style="height: 48px; width: auto;" loading="lazy">
                 </a>
             </div>
-            <div class="nav-actions" style="margin-left: auto; padding-right: 15px;">
+            <div class="nav-actions">
                 <div class="nav-menu" id="nav-menu">
                     <a href="index" class="nav-link">Home</a>
                     <a href="about" class="nav-link">About</a>
                     <div class="nav-item dropdown">
-                        <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="services">Service Overview</a></li>
                             <li class="dropdown-header">Tech & Development</li>
@@ -1920,8 +1918,7 @@
                         </ul>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="resources" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down"
-                                style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <a href="resources" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="resources">Resource Overview</a></li>
                             <li><a href="ebooks">Free Books</a></li>
@@ -1942,18 +1939,14 @@
                     <a href="careers" class="nav-link">Careers</a>
                     <a href="portfolio" class="nav-link">Portfolio</a>
                     <a href="contact" class="nav-link">Contact</a>
-
+                    
                     <div class="nav-item dropdown" style="margin-left: 10px;">
-                        <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Get Started
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0"
-                            style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
-                            <li><a class="dropdown-item" href="hub" style="color: #fff; padding: 10px 20px;">Start
-                                    a project</a></li>
-                            <li><a class="dropdown-item" href="quiz" style="color: #fff; padding: 10px 20px;">Take
-                                    Free Quiz</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
+                            <li><a class="dropdown-item" href="hub" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
+                            <li><a class="dropdown-item" href="quiz" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
                         </ul>
                     </div>
                 </div>
@@ -2126,8 +2119,8 @@
 
                     <li><a href="portfolio">Portfolio</a></li>
 
-                    <li><a href="blog">Blog</a>
-                    <a href="careers" class="nav-link">Careers</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="careers" class="nav-link">Careers</a></li>
 
                     <li><a href="contact">Contact</a></li>
 

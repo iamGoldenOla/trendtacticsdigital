@@ -399,7 +399,7 @@
 
 
         .compare-table td.check::before {
-            color: #fadb24 !important;
+            color: #0A1E3F !important;
         }
         /* Hide Google Translate Logo */
         .goog-te-gadget {
@@ -1250,116 +1250,81 @@
                         <p>Fill out the form below and we'll provide a tailored quote for your project.</p>
 
                         <form id="quoteForm" onsubmit="handleQuoteSubmit(event, 'Pricing Page')">
+                            <div class="quote-form-grid">
+                                <div class="quote-form-group">
+                                    <label for="quoteName">Name *</label>
+                                    <input type="text" id="quoteName" name="name" required>
+                                </div>
 
-                            <div class="quote-form-group">
+                                <div class="quote-form-group">
+                                    <label for="quoteEmail">Email *</label>
+                                    <input type="email" id="quoteEmail" name="email" required>
+                                </div>
 
-                                <label for="quoteName">Name *</label>
+                                <div class="quote-form-group">
+                                    <label for="quotePhone">Phone *</label>
+                                    <input type="tel" id="quotePhone" name="phone" required>
+                                </div>
 
-                                <input type="text" id="quoteName" name="name" required>
+                                <div class="quote-form-group">
+                                    <label for="quoteBusiness">Business Name</label>
+                                    <input type="text" id="quoteBusiness" name="business">
+                                </div>
 
-                            </div>
+                                <div class="quote-form-group">
+                                    <label for="quoteService">Type of Service *</label>
+                                    <select id="quoteService" name="service" required>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="App Development">App Development</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Multiple Services">Multiple Services / Custom Package</option>
+                                    </select>
+                                </div>
 
-                            <div class="quote-form-group">
+                                <div class="quote-form-group">
+                                    <label for="quoteCurrency">Preferred Currency</label>
+                                    <select id="quoteCurrency" onchange="updateBudgetOptions()">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="NGN">NGN (₦)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                    </select>
+                                </div>
 
-                                <label for="quoteEmail">Email *</label>
+                                <div class="quote-form-group">
+                                    <label for="quoteBudget">Budget Range *</label>
+                                    <select id="quoteBudget" name="budget" required>
+                                        <option value="">Select budget range</option>
+                                        <option value="Under $1,000">Under $1,000</option>
+                                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                                        <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                                        <option value="Above $25,000">Above $25,000</option>
+                                    </select>
+                                </div>
 
-                                <input type="email" id="quoteEmail" name="email" required>
+                                <div class="quote-form-group">
+                                    <label for="quoteTimeline">Project Timeline *</label>
+                                    <select id="quoteTimeline" name="timeline" required>
+                                        <option value="">Select timeline</option>
+                                        <option value="ASAP / Urgent">ASAP / Urgent</option>
+                                        <option value="1-2 weeks">1-2 weeks</option>
+                                        <option value="2-4 weeks">2-4 weeks</option>
+                                        <option value="1-2 months">1-2 months</option>
+                                        <option value="2-3 months">2-3 months</option>
+                                        <option value="3+ months">3+ months</option>
+                                    </select>
+                                </div>
 
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quotePhone">Phone *</label>
-
-                                <input type="tel" id="quotePhone" name="phone" required>
-
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quoteBusiness">Business Name</label>
-
-                                <input type="text" id="quoteBusiness" name="business">
-
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quoteService">Type of Service *</label>
-
-                                <select id="quoteService" name="service" required>
-
-                                    <option value="Web Development">Web Development</option>
-
-                                    <option value="App Development">App Development</option>
-
-                                    <option value="Digital Marketing">Digital Marketing</option>
-
-                                    <option value="Multiple Services">Multiple Services / Custom Package</option>
-
-                                </select>
-
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quoteBudget">Budget Range *</label>
-
-                                <select id="quoteBudget" name="budget" required>
-
-                                    <option value="">Select budget range</option>
-
-                                    <option value="Under $1,000">Under $1,000</option>
-
-                                    <option value="$1,000 - $2,500">$1,000 - $2,500</option>
-
-                                    <option value="$2,500 - $5,000">$2,500 - $5,000</option>
-
-                                    <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-
-                                    <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-
-                                    <option value="Above $25,000">Above $25,000</option>
-
-                                </select>
-
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quoteTimeline">Project Timeline *</label>
-
-                                <select id="quoteTimeline" name="timeline" required>
-
-                                    <option value="">Select timeline</option>
-
-                                    <option value="ASAP / Urgent">ASAP / Urgent</option>
-
-                                    <option value="1-2 weeks">1-2 weeks</option>
-
-                                    <option value="2-4 weeks">2-4 weeks</option>
-
-                                    <option value="1-2 months">1-2 months</option>
-
-                                    <option value="2-3 months">2-3 months</option>
-
-                                    <option value="3+ months">3+ months</option>
-
-                                </select>
-
-                            </div>
-
-                            <div class="quote-form-group">
-
-                                <label for="quoteDescription">Project Description *</label>
-
-                                <textarea id="quoteDescription" name="description" required
-                                    placeholder="Tell us about your project requirements..."></textarea>
-
+                                <div class="quote-form-group full-width">
+                                    <label for="quoteDescription">Project Description *</label>
+                                    <textarea id="quoteDescription" name="description" required
+                                        placeholder="Tell us about your project requirements..."></textarea>
+                                </div>
                             </div>
 
                             <button type="submit" class="quote-form-submit">Request a Custom Quote</button>
-
                         </form>
 
                     </div>
@@ -1578,8 +1543,8 @@
 
                     <li><a href="portfolio">Portfolio</a></li>
 
-                    <li><a href="blog">Blog</a>
-                    <a href="careers" class="nav-link">Careers</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="careers" class="nav-link">Careers</a></li>
 
                     <li><a href="contact">Contact</a></li>
 
@@ -1824,6 +1789,59 @@
             }
 
         });
+
+        const budgetData = {
+            USD: [
+                { value: "Under $1,000", label: "Under $1,000" },
+                { value: "$1,000 - $2,500", label: "$1,000 - $2,500" },
+                { value: "$2,500 - $5,000", label: "$2,500 - $5,000" },
+                { value: "$5,000 - $10,000", label: "$5,000 - $10,000" },
+                { value: "$10,000 - $25,000", label: "$10,000 - $25,000" },
+                { value: "Above $25,000", label: "Above $25,000" }
+            ],
+            NGN: [
+                { value: "Under ₦1,500,000", label: "Under ₦1,500,000" },
+                { value: "₦1,500,000 - ₦4,000,000", label: "₦1,500,000 - ₦4,000,000" },
+                { value: "₦4,000,000 - ₦8,000,000", label: "₦4,000,000 - ₦8,000,000" },
+                { value: "₦8,000,000 - ₦15,000,000", label: "₦8,000,000 - ₦15,000,000" },
+                { value: "₦15,000,000 - ₦40,000,000", label: "₦15,000,000 - ₦40,000,000" },
+                { value: "Above ₦40,000,000", label: "Above ₦40,000,000" }
+            ],
+            GBP: [
+                { value: "Under £800", label: "Under £800" },
+                { value: "£800 - £2,000", label: "£800 - £2,000" },
+                { value: "£2,000 - £4,000", label: "£2,000 - £4,000" },
+                { value: "£4,000 - £8,000", label: "£4,000 - £8,000" },
+                { value: "£8,000 - £20,000", label: "£8,000 - £20,000" },
+                { value: "Above £20,000", label: "Above £20,000" }
+            ],
+            EUR: [
+                { value: "Under €950", label: "Under €950" },
+                { value: "€950 - €2,400", label: "€950 - €2,400" },
+                { value: "€2,400 - €4,800", label: "€2,400 - €4,800" },
+                { value: "€4,800 - €9,500", label: "€4,800 - €9,500" },
+                { value: "€9,500 - €24,000", label: "€9,500 - €24,000" },
+                { value: "Above €24,000", label: "Above €24,000" }
+            ]
+        };
+
+        function updateBudgetOptions() {
+            const currency = document.getElementById('quoteCurrency').value;
+            const budgetSelect = document.getElementById('quoteBudget');
+            const options = budgetData[currency];
+            
+            // Keep the first option (placeholder)
+            const firstOption = budgetSelect.options[0];
+            budgetSelect.innerHTML = '';
+            budgetSelect.appendChild(firstOption);
+            
+            options.forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.textContent = opt.label;
+                budgetSelect.appendChild(option);
+            });
+        }
 
     </script>
 

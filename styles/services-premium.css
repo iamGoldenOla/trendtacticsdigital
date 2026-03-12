@@ -246,7 +246,7 @@
     content: '\f00c';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    color: #fadb24;
+    color: #0A1E3F;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -305,6 +305,22 @@
     color: #4a5568;
     margin-bottom: 3rem;
     font-size: 1.1rem;
+}
+
+.quote-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quote-form-group.full-width {
+    grid-column: 1 / -1;
 }
 
 .quote-form-group {
