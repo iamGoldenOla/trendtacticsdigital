@@ -161,8 +161,8 @@ function renderEbooks() {
                     <button class="btn btn-read" onclick="openPdfViewer('${ebook.id}', '${ebook.title.replace(/'/g, "\\'")}', '${ebook.file}')">
                         <i class="fas fa-book-open"></i> Read Now
                     </button>
-                    <a href="/${ebook.file}" class="btn btn-download" download>
-                        <i class="fas fa-download"></i> Download
+                    <a href="/${ebook.file}" class="btn btn-download" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open PDF
                     </a>
                 </div>
             </div>
