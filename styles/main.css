@@ -406,8 +406,21 @@ section {
 /* When scrolled: top-bar hides behind navbar which moves up to top:0 */
 .navbar.scrolled {
     top: 0 !important;
-    background: var(--base-dark);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: #0A1E3F !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Force nav links to remain visible when scrolled — prevent any white background from leaking through */
+.navbar.scrolled .nav-link,
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: #FFFFFF !important;
+}
+
+.navbar.scrolled .navbar i,
+.navbar.scrolled .nav-link i,
+.navbar.scrolled .nav-link svg {
+    color: #FFFFFF !important;
 }
 
 .nav-container {

@@ -654,6 +654,7 @@
     </style>
 
     <link rel="stylesheet" href="/styles/rate-card.css">
+    <link rel="stylesheet" href="/styles/pricing-cards.css">
 </head>
 
 
@@ -1087,267 +1088,283 @@
 
 
 
-                <!-- Compare Packages Table -->
+                <!-- Interactive Pricing Cards -->
+                <div class="rc-section" id="pricing-cards">
 
-                <div class="rate-card-wrapper">
-<div class="rate-card-header">
-  <div class="brand-line">Trendtactics Digital<span class="accent">.</span></div>
-  <div class="slogan">Clean. &nbsp; Fast. &nbsp; Well-Optimised. &nbsp; Scalable.</div>
-  <div class="rate-card-line">
-    <span class="rc-main">Rate Card</span>
-    <span class="rc-year">2026</span>
-    <span class="rc-divider">·</span>
-    <span class="rc-sub">Web &amp; App Development</span>
-  </div>
-</div>
+                  <!-- Currency Toggle -->
+                  <div class="rc-currency-toggle-wrap">
+                    <span class="rc-currency-label active" id="rc-label-ngn">&#8358; NGN</span>
+                    <label class="rc-toggle-switch" aria-label="Switch currency">
+                      <input type="checkbox" id="rc-currency-toggle">
+                      <span class="rc-toggle-slider"></span>
+                    </label>
+                    <span class="rc-currency-label" id="rc-label-usd">$ USD</span>
+                  </div>
 
-<div class="intro-strip">
-  <span>Digital Platforms</span>
-  <span>Web & Mobile Dev</span>
-  <span>Nigeria & International</span>
-  <span>Free Consultation</span>
-  <span>Full Quote After Consultation</span>
-</div>
+                  <!-- Section 01: Corporate Website -->
+                  <div class="rc-section-header">
+                    <span class="rc-section-num">01</span>
+                    <div>
+                      <div class="rc-section-label">Service Category</div>
+                      <div class="rc-section-title">Business / Corporate Website</div>
+                    </div>
+                    <div class="rc-section-line"></div>
+                  </div>
 
-<div class="rate-card-main">
+                  <div class="rc-card-grid">
+                    <div class="rc-card">
+                      <div class="rc-card-tier">Tier 01 &mdash; Basic</div>
+                      <div class="rc-card-name">Static Website</div>
+                      <div class="rc-card-desc">Perfect for small businesses needing a solid online presence</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-label">Starting From</div>
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;200,000</span>
+                          <span class="price-usd" style="display:none;">$130</span>
+                        </div>
+                        <div class="rc-price-hosting price-ngn">With Domain &amp; Hosting: <strong>&#8358;300,000</strong></div>
+                        <div class="rc-price-hosting price-usd" style="display:none;">With Domain &amp; Hosting: <strong>$200</strong></div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>Up to 5 pages</li>
+                        <li>Mobile responsive design</li>
+                        <li>Contact form integration</li>
+                        <li>Social media links</li>
+                        <li>Basic SEO setup</li>
+                        <li>3 months support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
 
-  <div class="section-header">
-    <div class="section-num">01</div>
-    <div>
-      <div class="section-label">Service Category</div>
-      <div class="section-title">Business / Corporate Website</div>
-    </div>
-    <div class="section-divider"></div>
-  </div>
+                    <div class="rc-card rc-card-featured">
+                      <div class="rc-card-badge">Most Popular</div>
+                      <div class="rc-card-tier">Tier 02 &mdash; Standard</div>
+                      <div class="rc-card-name">Dynamic Website</div>
+                      <div class="rc-card-desc">For growing businesses ready to scale their online presence</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-label">Starting From</div>
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;500,000</span>
+                          <span class="price-usd" style="display:none;">$320</span>
+                        </div>
+                        <div class="rc-price-hosting price-ngn">With Domain &amp; Hosting: <strong>&#8358;600,000</strong></div>
+                        <div class="rc-price-hosting price-usd" style="display:none;">With Domain &amp; Hosting: <strong>$390</strong></div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>Everything in Basic, plus:</li>
+                        <li>10+ pages</li>
+                        <li>CMS / admin dashboard</li>
+                        <li>Blog &amp; news section</li>
+                        <li>Advanced forms &amp; validation</li>
+                        <li>Analytics integration</li>
+                        <li>6 months support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
 
-  <div class="tier-grid">
-    <div class="tier-card">
-      <div class="tier-level">Tier 01 — Basic</div>
-      <div class="tier-name">Static Website</div>
-      <div class="tier-best-for">For small businesses that need a solid online presence</div>
-      <div class="price-block">
-        <div class="price-label">Starting From</div>
-        <div class="price-main">₦500,000</div>
-        <div class="price-hosting">With Domain & Hosting: <strong>₦600,000</strong></div>
-      </div>
-      <ul class="feature-list">
-        <li>Up to 5 pages</li>
-        <li>Mobile responsive design</li>
-        <li>Contact form</li>
-        <li>Clean UI design</li>
-      </ul>
-    </div>
+                    <div class="rc-card">
+                      <div class="rc-card-tier">Tier 03 &mdash; Premium</div>
+                      <div class="rc-card-name">Advanced Platform</div>
+                      <div class="rc-card-desc">For serious brands, organisations &amp; complex platforms</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-label">Starting From</div>
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;1,200,000</span>
+                          <span class="price-usd" style="display:none;">$770</span>
+                        </div>
+                        <div class="rc-price-hosting price-ngn">With Domain &amp; Hosting: <strong>&#8358;1,300,000</strong></div>
+                        <div class="rc-price-hosting price-usd" style="display:none;">With Domain &amp; Hosting: <strong>$840</strong></div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>Everything in Standard, plus:</li>
+                        <li>User login &amp; client portal</li>
+                        <li>Custom dashboard features</li>
+                        <li>Automation-ready structure</li>
+                        <li>Advanced security features</li>
+                        <li>Priority response</li>
+                        <li>12 months support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
+                  </div>
 
-    <div class="tier-card featured">
-      <div class="tier-level">Tier 02 — Standard</div>
-      <div class="tier-name">Dynamic Website</div>
-      <div class="tier-best-for">For growing businesses ready to scale</div>
-      <div class="price-block">
-        <div class="price-label">Starting From</div>
-        <div class="price-main">₦800,000</div>
-        <div class="price-hosting">With Domain & Hosting: <strong>₦900,000</strong></div>
-      </div>
-      <ul class="feature-list">
-        <li class="inherited">Everything in Basic, plus:</li>
-        <li>Admin dashboard</li>
-        <li>Editable content (CMS)</li>
-        <li>Blog / updates section</li>
-        <li>Advanced forms</li>
-      </ul>
-    </div>
+                  <!-- Section 02: Other Web Packages -->
+                  <div class="rc-section-header">
+                    <span class="rc-section-num">02</span>
+                    <div>
+                      <div class="rc-section-label">Service Category</div>
+                      <div class="rc-section-title">Other Web Packages</div>
+                    </div>
+                    <div class="rc-section-line"></div>
+                  </div>
 
-    <div class="tier-card">
-      <div class="tier-level">Tier 03 — Premium</div>
-      <div class="tier-name">Advanced Platform</div>
-      <div class="tier-best-for">For serious brands and organizations</div>
-      <div class="price-block">
-        <div class="price-label">Starting From</div>
-        <div class="price-main">₦1,200,000</div>
-        <div class="price-hosting">With Domain & Hosting: <strong>₦1,300,000</strong></div>
-      </div>
-      <ul class="feature-list">
-        <li class="inherited">Everything in Standard, plus:</li>
-        <li>User login / client portal</li>
-        <li>Custom dashboard features</li>
-        <li>Automation-ready structure</li>
-        <li>Scalable architecture</li>
-      </ul>
-    </div>
-  </div>
+                  <div class="rc-package-list">
+                    <div class="rc-pkg-row">
+                      <div class="rc-pkg-info">
+                        <div class="rc-pkg-name">Landing Page</div>
+                        <div class="rc-pkg-note">High-converting single-page sites</div>
+                      </div>
+                      <div class="rc-pkg-price-wrap">
+                        <div class="rc-pkg-price price-ngn">&#8358;150,000</div>
+                        <div class="rc-pkg-price price-usd" style="display:none;">$97</div>
+                        <div class="rc-pkg-hosting price-ngn">With Domain &amp; Hosting: &#8358;250,000</div>
+                        <div class="rc-pkg-hosting price-usd" style="display:none;">With Domain &amp; Hosting: $162</div>
+                      </div>
+                    </div>
+                    <div class="rc-pkg-row">
+                      <div class="rc-pkg-info">
+                        <div class="rc-pkg-name">Portfolio / Personal Website</div>
+                        <div class="rc-pkg-note">Showcase your work and identity</div>
+                      </div>
+                      <div class="rc-pkg-price-wrap">
+                        <div class="rc-pkg-price price-ngn">&#8358;400,000</div>
+                        <div class="rc-pkg-price price-usd" style="display:none;">$258</div>
+                        <div class="rc-pkg-hosting price-ngn">With Domain &amp; Hosting: &#8358;500,000</div>
+                        <div class="rc-pkg-hosting price-usd" style="display:none;">With Domain &amp; Hosting: $323</div>
+                      </div>
+                    </div>
+                    <div class="rc-pkg-row">
+                      <div class="rc-pkg-info">
+                        <div class="rc-pkg-name">E-Commerce Website</div>
+                        <div class="rc-pkg-note">Full online store with payments &amp; inventory</div>
+                      </div>
+                      <div class="rc-pkg-price-wrap">
+                        <div class="rc-pkg-price price-ngn">&#8358;2,000,000</div>
+                        <div class="rc-pkg-price price-usd" style="display:none;">$1,290</div>
+                        <div class="rc-pkg-hosting price-ngn">With Domain &amp; Hosting: &#8358;2,100,000</div>
+                        <div class="rc-pkg-hosting price-usd" style="display:none;">With Domain &amp; Hosting: $1,355</div>
+                      </div>
+                    </div>
+                    <div class="rc-pkg-row">
+                      <div class="rc-pkg-info">
+                        <div class="rc-pkg-name">LMS &mdash; E-Learning Platform</div>
+                        <div class="rc-pkg-note">Courses, students &amp; certifications</div>
+                      </div>
+                      <div class="rc-pkg-price-wrap">
+                        <div class="rc-pkg-price price-ngn">&#8358;2,500,000</div>
+                        <div class="rc-pkg-price price-usd" style="display:none;">$1,613</div>
+                        <div class="rc-pkg-hosting price-ngn">With Domain &amp; Hosting: &#8358;2,600,000</div>
+                        <div class="rc-pkg-hosting price-usd" style="display:none;">With Domain &amp; Hosting: $1,677</div>
+                      </div>
+                    </div>
+                  </div>
 
-  <div class="section-header">
-    <div class="section-num">02</div>
-    <div>
-      <div class="section-label">Service Category</div>
-      <div class="section-title">Other Web Packages</div>
-    </div>
-    <div class="section-divider"></div>
-  </div>
+                  <!-- Section 03: App Development -->
+                  <div class="rc-section-header">
+                    <span class="rc-section-num">03</span>
+                    <div>
+                      <div class="rc-section-label">Service Category</div>
+                      <div class="rc-section-title">Mobile App Development</div>
+                    </div>
+                    <div class="rc-section-line"></div>
+                  </div>
 
-  <div class="package-list">
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">Landing Page</div>
-        <div class="pkg-note">High-converting single-page sites</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦250,000</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦350,000</div>
-      </div>
-    </div>
+                  <div class="rc-card-grid">
+                    <div class="rc-card">
+                      <div class="rc-card-tier">Tier 01</div>
+                      <div class="rc-card-name">Basic App</div>
+                      <div class="rc-card-desc">Android or iOS app for startups and small businesses</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;1,000,000</span>
+                          <span class="price-usd" style="display:none;">$645</span>
+                        </div>
+                        <div class="rc-price-hosting">/project</div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>Android or iOS app</li>
+                        <li>Basic UI/UX design</li>
+                        <li>Push notifications</li>
+                        <li>API integration</li>
+                        <li>App store submission</li>
+                        <li>3 months support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
 
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">Portfolio / Personal Website</div>
-        <div class="pkg-note">Showcase your work and identity</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦400,000</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦500,000</div>
-      </div>
-    </div>
+                    <div class="rc-card rc-card-featured">
+                      <div class="rc-card-badge">Most Popular</div>
+                      <div class="rc-card-tier">Tier 02</div>
+                      <div class="rc-card-name">Professional</div>
+                      <div class="rc-card-desc">iOS &amp; Android cross-platform with advanced features</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;2,000,000</span>
+                          <span class="price-usd" style="display:none;">$1,290</span>
+                        </div>
+                        <div class="rc-price-hosting">/project</div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>iOS &amp; Android (hybrid or native)</li>
+                        <li>Advanced UI/UX design</li>
+                        <li>Payment integration</li>
+                        <li>Realtime chat &amp; notifications</li>
+                        <li>Performance analytics</li>
+                        <li>App store optimisation</li>
+                        <li>6 months support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
 
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">Blog / Content Website</div>
-        <div class="pkg-note">Built for creators and publishers</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦400,000</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦500,000</div>
-      </div>
-    </div>
+                    <div class="rc-card">
+                      <div class="rc-card-tier">Tier 03</div>
+                      <div class="rc-card-name">Advanced Enterprise</div>
+                      <div class="rc-card-desc">Multi-platform, custom backend &amp; enterprise-grade</div>
+                      <div class="rc-price-block">
+                        <div class="rc-price-amount">
+                          <span class="price-ngn">&#8358;4,000,000</span>
+                          <span class="price-usd" style="display:none;">$2,581</span>
+                        </div>
+                        <div class="rc-price-hosting">/project</div>
+                      </div>
+                      <ul class="rc-feature-list">
+                        <li>Multi-platform: iOS, Android, Desktop</li>
+                        <li>Custom backend/API development</li>
+                        <li>DevOps &amp; CI/CD setup</li>
+                        <li>Advanced integrations</li>
+                        <li>Security audits</li>
+                        <li>Dedicated project manager</li>
+                        <li>12 months priority support</li>
+                      </ul>
+                      <a href="contact" class="rc-card-btn">Get Started</a>
+                    </div>
+                  </div>
 
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">E-Commerce Website</div>
-        <div class="pkg-note">Full online store with payments & inventory</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦2,000,000</div>
-        <div class="pkg-price-usd">International: $2,500</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦2,100,000</div>
-      </div>
-    </div>
+                  <!-- Domain & Hosting -->
+                  <div class="rc-section-header">
+                    <span class="rc-section-num">04</span>
+                    <div>
+                      <div class="rc-section-label">Add-On</div>
+                      <div class="rc-section-title">Domain &amp; Hosting</div>
+                    </div>
+                    <div class="rc-section-line"></div>
+                  </div>
+                  <div class="rc-hosting-box">
+                    <div class="rc-hosting-info">
+                      <div class="rc-hosting-title">Standard Hosting Package</div>
+                      <div class="rc-hosting-sub">Yearly &middot; Capped Price</div>
+                      <div class="rc-hosting-feats">
+                        <span>Domain Registration</span>
+                        <span>Secure Hosting</span>
+                        <span>Basic Setup</span>
+                      </div>
+                    </div>
+                    <div class="rc-hosting-price-wrap">
+                      <div class="rc-hosting-price price-ngn">&#8358;100,000</div>
+                      <div class="rc-hosting-price price-usd" style="display:none;">$65</div>
+                      <div class="rc-hosting-price-sub">Per year</div>
+                    </div>
+                  </div>
 
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">E-Book E-Commerce Website</div>
-        <div class="pkg-note">Sell digital products seamlessly</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦1,200,000</div>
-        <div class="pkg-price-usd">International: $1,800</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦1,300,000</div>
-      </div>
-    </div>
+                  <!-- Note -->
+                  <div class="rc-note-box">
+                    <p><strong>Prices are starting points.</strong> Final cost depends on features and complexity.</p>
+                    <p><strong>Domain &amp; hosting</strong> are included only where stated.</p>
+                    <p>A <strong>full custom quote</strong> is provided after your free consultation session.</p>
+                  </div>
 
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">LMS — E-Learning Platform</div>
-        <div class="pkg-note">Courses, students, and certifications</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦2,500,000</div>
-        <div class="pkg-price-usd">International: $3,500</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦2,600,000</div>
-      </div>
-    </div>
-
-    <div class="package-row">
-      <div>
-        <div class="pkg-name">Web Applications</div>
-        <div class="pkg-note">Custom platforms, dashboards & portals</div>
-      </div>
-      <div class="pkg-pricing">
-        <div class="pkg-price">₦1,500,000</div>
-        <div class="pkg-price-usd">International: $5,000</div>
-        <div class="pkg-hosting">With Domain & Hosting: ₦1,600,000</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-header">
-    <div class="section-num">03</div>
-    <div>
-      <div class="section-label">Service Category</div>
-      <div class="section-title">Mobile App Development</div>
-    </div>
-    <div class="section-divider"></div>
-  </div>
-
-  <div class="app-grid">
-    <div class="app-card">
-      <div class="app-tier">Tier 01</div>
-      <div class="app-name">Basic App</div>
-      <div class="app-price-naira">₦2,500,000</div>
-      <div class="app-price-usd">$4,000</div>
-    </div>
-    <div class="app-card">
-      <div class="app-tier">Tier 02</div>
-      <div class="app-name">Advanced App</div>
-      <div class="app-price-naira">₦6,000,000</div>
-      <div class="app-price-usd">$10,000</div>
-    </div>
-  </div>
-
-  <div class="section-header">
-    <div class="section-num">04</div>
-    <div>
-      <div class="section-label">Included Add-On</div>
-      <div class="section-title">Domain & Hosting</div>
-    </div>
-    <div class="section-divider"></div>
-  </div>
-
-  <div class="hosting-box">
-    <div>
-      <div class="hosting-title">Standard Hosting Package</div>
-      <div class="hosting-sub">Yearly · Capped Price</div>
-      <div class="hosting-features">
-        <div class="hosting-feat">Domain Registration</div>
-        <div class="hosting-feat">Secure Hosting</div>
-        <div class="hosting-feat">Basic Setup</div>
-      </div>
-    </div>
-    <div class="hosting-price-wrap">
-      <div class="hosting-price">₦100,000</div>
-      <div class="hosting-price-sub">Per year · Capped</div>
-    </div>
-  </div>
-
-  <div class="section-header">
-    <div class="section-num">05</div>
-    <div>
-      <div class="section-label">Ongoing Support</div>
-      <div class="section-title">Additional Services</div>
-    </div>
-    <div class="section-divider"></div>
-  </div>
-
-  <div class="addon-grid">
-    <div class="addon-card">
-      <div class="addon-name">Extra Pages</div>
-      <div class="addon-price">₦30,000 / page</div>
-    </div>
-    <div class="addon-card">
-      <div class="addon-name">Website Maintenance</div>
-      <div class="addon-price">₦40,000 – ₦150,000 / month</div>
-    </div>
-    <div class="addon-card">
-      <div class="addon-name">Content / Product Upload</div>
-      <div class="addon-price">₦3,000 – ₦5,000 / item</div>
-    </div>
-  </div>
-
-  <div class="note-box">
-    <p><strong>Prices are starting points.</strong> Final cost depends on features and complexity.</p>
-    <p><strong>Domain & hosting</strong> are included only where stated.</p>
-    <p>A <strong>full custom quote</strong> is provided after your free consultation session.</p>
-  </div>
-
-</div>
-</div>
+                </div>
+                <!-- End Interactive Pricing Cards -->
 
                 <!-- Get a Quote Form -->
 
@@ -1961,6 +1978,32 @@
 
 
     <script src="/js/global-translate.js" defer></script>
+
+    <script>
+    // Currency Toggle Logic
+    (function() {
+      var toggle = document.getElementById('rc-currency-toggle');
+      var labelNgn = document.getElementById('rc-label-ngn');
+      var labelUsd = document.getElementById('rc-label-usd');
+      if (!toggle) return;
+
+      function updateCurrency() {
+        var isUsd = toggle.checked;
+        document.querySelectorAll('.price-ngn').forEach(function(el) {
+          el.style.display = isUsd ? 'none' : '';
+        });
+        document.querySelectorAll('.price-usd').forEach(function(el) {
+          el.style.display = isUsd ? '' : 'none';
+        });
+        if (labelNgn) labelNgn.style.color = isUsd ? '#9ca3af' : '#0A1E3F';
+        if (labelUsd) labelUsd.style.color = isUsd ? '#0A1E3F' : '#9ca3af';
+      }
+
+      toggle.addEventListener('change', updateCurrency);
+      updateCurrency(); // init
+    })();
+    </script>
+
 </body>
 
 
