@@ -1,4 +1,4 @@
-﻿// Main JavaScript file for Trendtactics Digital
+// Main JavaScript file for Trendtactics Digital
 
 
 
@@ -131,8 +131,12 @@ function initializeNavigation() {
     if (navToggle && navMenu) {
         const navLinks = navMenu.querySelectorAll('.nav-link, .dropdown-menu a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
+                    // Don't close the main menu if clicking a dropdown toggle
+                    if (link.classList.contains('dropdown-toggle')) {
+                        return;
+                    }
                     navToggle.classList.remove('active');
                     navMenu.classList.remove('active');
                     document.body.classList.remove('menu-open');
