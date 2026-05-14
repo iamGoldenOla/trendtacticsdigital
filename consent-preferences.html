@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Preferences - Trendtactics Digital</title>
+    <meta name="description" content="Manage your cookie and privacy consent preferences for Trendtactics Digital.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="/img/Trendtactics_digital_favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/main.css?v=1772546233">
+    <style>
+        .consent-page { max-width: 800px; margin: 0 auto; padding: 80px 5% 60px; }
+        .consent-page h1 { font-size: 2.5rem; font-weight: 800; color: #0A1E3F; margin-bottom: 10px; }
+        .consent-page p { color: #4a5568; line-height: 1.8; margin-bottom: 1rem; }
+        .consent-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .consent-card:hover { border-color: #00FFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .consent-card h3 { font-size: 1.1rem; color: #0A1E3F; font-weight: 700; margin: 0 0 6px; }
+        .consent-card p { font-size: 0.9rem; color: #64748b; margin: 0; }
+        .toggle-switch { position: relative; width: 52px; height: 28px; flex-shrink: 0; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #cbd5e0; border-radius: 28px; transition: 0.3s; }
+        .toggle-slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background: white; border-radius: 50%; transition: 0.3s; }
+        input:checked + .toggle-slider { background: #0A1E3F; }
+        input:checked + .toggle-slider:before { transform: translateX(24px); }
+        input:disabled + .toggle-slider { opacity: 0.6; cursor: not-allowed; }
+        .badge-required { background: #f0fdf4; color: #16a34a; font-size: 0.75rem; padding: 2px 10px; border-radius: 50px; font-weight: 600; margin-left: 8px; }
+        .btn-save { background: #0A1E3F; color: #fadb24; padding: 14px 40px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; transition: all 0.3s; }
+        .btn-save:hover { background: #1a2e4f; transform: translateY(-2px); }
+        .legal-badge { display: inline-block; background: #f1f5f9; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: #64748b; margin-bottom: 30px; }
+    </style>
+</head>
+<body style="background:#f8fafc;">
+    <nav id="navigation" class="navbar">
+        <div class="nav-container container">
+            <div class="nav-logo"><a href="index" style="display:flex;align-items:center;text-decoration:none;padding-left:10px;"><img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" style="height:48px;width:auto;display:block !important;" loading="lazy"></a></div>
+            <div class="nav-actions" style="margin-left:auto;padding-right:15px;">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index" class="nav-link">Home</a>
+                    <a href="about" class="nav-link">About</a>
+                    <a href="services" class="nav-link">Services</a>
+                    <a href="academy" class="nav-link">Academy</a>
+                    <a href="pricing" class="nav-link">Pricing</a>
+                    <a href="contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <main class="consent-page">
+        <span class="legal-badge"><i class="fas fa-sliders-h" style="margin-right:6px;color:#0A1E3F;"></i>Privacy</span>
+        <h1>Consent Preferences</h1>
+        <p>Manage how Trendtactics Digital uses your data. Essential cookies are always active and cannot be disabled. You can toggle optional preferences below.</p>
+        <div class="consent-card">
+            <div>
+                <h3>Essential Cookies <span class="badge-required">Always Active</span></h3>
+                <p>Required for the website to function. Includes session security and basic functionality.</p>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label>
+        </div>
+        <div class="consent-card">
+            <div>
+                <h3>Analytics Cookies</h3>
+                <p>Help us understand how visitors interact with our website so we can improve it.</p>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" id="analytics-consent" checked><span class="toggle-slider"></span></label>
+        </div>
+        <div class="consent-card">
+            <div>
+                <h3>Marketing Cookies</h3>
+                <p>Used to deliver relevant ads and track campaign performance across platforms.</p>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" id="marketing-consent"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="consent-card">
+            <div>
+                <h3>Preference Cookies</h3>
+                <p>Remember your settings and preferences for a personalised experience.</p>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" id="preference-consent" checked><span class="toggle-slider"></span></label>
+        </div>
+        <button class="btn-save" onclick="saveConsent()">Save Preferences</button>
+        <p style="margin-top:20px;font-size:0.85rem;color:#94a3b8;">Read our <a href="cookie-policy" style="color:#0A1E3F;">Cookie Policy</a> and <a href="privacy-policy" style="color:#0A1E3F;">Privacy Policy</a> for more information.</p>
+    </main>
+    <footer style="background:#061226;padding:30px 5%;text-align:center;color:#94a3b8;margin-top:40px;">
+        <p>&copy; 2026 Trendtactics Digital. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;|&nbsp; <a href="cookie-policy" style="color:#94a3b8;">Cookie Policy</a></p>
+    </footer>
+    <script>
+        function saveConsent() {
+            const prefs = {
+                analytics: document.getElementById('analytics-consent').checked,
+                marketing: document.getElementById('marketing-consent').checked,
+                preference: document.getElementById('preference-consent').checked,
+                savedAt: new Date().toISOString()
+            };
+            localStorage.setItem('tt_consent_prefs', JSON.stringify(prefs));
+            const btn = document.querySelector('.btn-save');
+            btn.textContent = 'Preferences Saved!';
+            btn.style.background = '#16a34a';
+            setTimeout(() => { btn.textContent = 'Save Preferences'; btn.style.background = '#0A1E3F'; }, 2500);
+        }
+        // Load saved prefs
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('tt_consent_prefs');
+            if (saved) {
+                const prefs = JSON.parse(saved);
+                if (document.getElementById('analytics-consent')) document.getElementById('analytics-consent').checked = prefs.analytics;
+                if (document.getElementById('marketing-consent')) document.getElementById('marketing-consent').checked = prefs.marketing;
+                if (document.getElementById('preference-consent')) document.getElementById('preference-consent').checked = prefs.preference;
+            }
+        });
+    </script>
+    <script src="/js/main.js" defer></script>
+</body>
+</html>
