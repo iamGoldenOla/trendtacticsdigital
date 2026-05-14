@@ -6073,8 +6073,17 @@ footer.footer>.container {
 }
 
 /* Global Nav & Footer Overrides */
-.navbar {
-    background: transparent !important;
+/* Non-scrolled state: transparent so hero can show through */
+.navbar:not(.scrolled) {
+    background: rgba(10, 30, 63, 0.85) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* Scrolled state: always solid dark navy — must come AFTER the rule above */
+.navbar.scrolled {
+    background: #0A1E3F !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5) !important;
 }
 
 .nav-link {
@@ -6084,7 +6093,7 @@ footer.footer>.container {
 .nav-link:hover,
 .nav-link.active {
     color: #ffffff !important;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: none;
 }
 
 .dropdown-menu {

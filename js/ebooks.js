@@ -191,7 +191,28 @@ function openPdfViewer(id, title, file) {
     
     if (modal && iframe && titleEl) {
         titleEl.textContent = title;
-        iframe.src = `/${file}`;
+
+        // Build the absolute PDF URL
+        const pdfUrl = window.location.origin + '/' + file;
+
+        // Use Google Docs viewer so PDFs render inline on ALL devices (especially mobile)
+        // instead of triggering a download. Falls back to direct URL if user is on desktop Chrome.
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Google Docs viewer renders PDFs inside the iframe on mobile browsers
+            iframe.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl) + '&embedded=true';
+        } else {
+            // Desktop browsers (Chrome, Edge, Firefox) can render PDFs natively
+            iframe.src = pdfUrl;
+        }
+
+        // Update the "Open PDF" download link if it exists in the modal
+        const downloadLink = document.getElementById('pdf-viewer-download');
+        if (downloadLink) {
+            downloadLink.href = pdfUrl;
+        }
+
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
