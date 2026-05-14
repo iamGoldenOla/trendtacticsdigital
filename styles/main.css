@@ -638,15 +638,15 @@ section {
 }
 
 .nav-toggle.active span {
-    background: #0A1E3F;
-    /* Navy blue content when active */
+    background: #FFFFFF;
+    /* White content when active so it is visible against navy */
     opacity: 1 !important;
 }
 
 /* Improved mobile navigation menu */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 var(--spacing-xs);
+        padding: 0 1rem;
         height: 70px;
         /* Force height */
     }
@@ -687,8 +687,8 @@ section {
     }
 
     .nav-menu .nav-link {
-        color: #0066FF !important;
-        /* Changed from cyan to blue for better visibility */
+        color: #FFFFFF !important;
+        /* Changed to white for proper contrast against navy background */
         font-size: 1.1rem;
         font-weight: 600;
         padding: var(--spacing-md) var(--spacing-lg);

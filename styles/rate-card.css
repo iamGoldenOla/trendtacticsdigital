@@ -1,0 +1,346 @@
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #080F1E;
+    --navy-mid:   #0D1830;
+    --navy-card:  #0F1F3D;
+    --navy-light: #162444;
+    --blue:       #1A5CCC;
+    --blue-bright:#2470FF;
+    --cyan:       #00C4F0;
+    --gold:       #D4A017;
+    --white:      #F0F4FF;
+    --muted:      #6B82A8;
+    --border:     rgba(0,196,240,0.15);
+    --border-soft:rgba(255,255,255,0.06);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  .rate-card-wrapper {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .rate-card-wrapper::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(0,196,240,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .rate-card-wrapper::after {
+    content: '';
+    position: fixed;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(36,112,255,0.11) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .rate-card-header, .intro-strip, .rate-card-main { position: relative; z-index: 1; }
+
+  /* HEADER */
+  .rate-card-header {
+    padding: 52px 52px 44px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(26,92,204,0.07) 0%, transparent 60%);
+  }
+  .brand-line {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 5.5vw, 72px);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    color: var(--white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand-line .accent { color: var(--cyan); }
+  .slogan {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(11px, 1.3vw, 14px);
+    color: rgba(240,244,255,0.45);
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    white-space: nowrap;
+  }
+  .rate-card-line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 16px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .rc-.rate-card-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 2.2vw, 28px);
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    white-space: nowrap;
+  }
+  .rc-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 2.2vw, 28px);
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .rc-divider {
+    color: rgba(0,196,240,0.35);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .rc-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(9px, 1vw, 12px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: linear-gradient(90deg, #1A5CCC 0%, #1247A0 100%);
+    padding: 16px 52px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--cyan);
+  }
+  .intro-strip span {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+  .intro-strip span::before { content: '▸ '; color: var(--cyan); }
+
+  /* MAIN */
+  .rate-card-main { padding: 0 52px 80px; }
+
+  /* SECTION HEADER */
+  .section-.rate-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 52px 0 26px;
+  }
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    color: rgba(0,196,240,0.1);
+    line-height: 1;
+    min-width: 52px;
+  }
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    letter-spacing: 0.06em;
+    color: var(--white);
+  }
+  .section-divider {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+    margin-left: 8px;
+  }
+
+  /* TIER CARDS */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2px;
+  }
+  .tier-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border-soft);
+    padding: 36px 30px;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .tier-card:hover { border-color: rgba(0,196,240,0.3); transform: translateY(-2px); }
+  .tier-card.featured {
+    background: var(--navy-light);
+    border-color: var(--cyan);
+    border-top: 3px solid var(--cyan);
+  }
+  .tier-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -1px; right: 20px;
+    background: var(--cyan);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    padding: 4px 10px;
+  }
+  .tier-level {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 8px;
+  }
+  .tier-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 5px;
+  }
+  .tier-best-for { font-size: 12px; color: var(--muted); margin-bottom: 22px; font-style: italic; line-height: 1.4; }
+  .price-block {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    margin-bottom: 22px;
+  }
+  .price-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .price-.rate-card-main { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--gold); letter-spacing: 0.03em; line-height: 1; }
+  .price-hosting { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .price-hosting strong { color: rgba(240,244,255,0.8); font-weight: 500; }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .feature-list li { font-size: 13px; color: rgba(240,244,255,0.75); display: flex; align-items: flex-start; gap: 10px; line-height: 1.4; }
+  .feature-list li::before { content: '✦'; color: var(--cyan); font-size: 8px; margin-top: 5px; flex-shrink: 0; }
+  .feature-list li.inherited { color: rgba(240,244,255,0.35); }
+  .feature-list li.inherited::before { color: var(--blue-bright); }
+
+  /* PACKAGE ROWS */
+  .package-list { display: flex; flex-direction: column; gap: 2px; }
+  .package-row {
+    background: var(--navy-card);
+    border: 1px solid var(--border-soft);
+    padding: 26px 34px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .package-row:hover { border-color: rgba(0,196,240,0.25); background: var(--navy-light); }
+  .pkg-name { font-family: 'Bebas Neue', sans-serif; font-size: 21px; letter-spacing: 0.05em; color: var(--white); margin-bottom: 3px; }
+  .pkg-note { font-size: 12px; color: var(--muted); font-style: italic; }
+  .pkg-pricing { text-align: right; }
+  .pkg-price { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--gold); white-space: nowrap; }
+  .pkg-price-usd { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--cyan); margin-top: 2px; }
+  .pkg-hosting { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  /* APP CARDS */
+  .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; }
+  .app-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border-soft);
+    padding: 36px 30px;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .app-card:hover { border-color: rgba(0,196,240,0.3); transform: translateY(-2px); }
+  .app-tier { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+  .app-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); margin-bottom: 20px; }
+  .app-price-naira { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--gold); line-height: 1; }
+  .app-price-usd { font-size: 12px; color: var(--cyan); font-family: 'Space Mono', monospace; margin-top: 5px; }
+
+  /* HOSTING */
+  .hosting-box {
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-card) 100%);
+    border: 1px solid var(--cyan);
+    padding: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .hosting-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.06em; color: var(--white); margin-bottom: 3px; }
+  .hosting-sub { font-size: 10px; color: var(--cyan); font-family: 'Space Mono', monospace; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 18px; }
+  .hosting-features { display: flex; gap: 20px; flex-wrap: wrap; }
+  .hosting-feat { font-size: 12px; color: rgba(240,244,255,0.65); display: flex; align-items: center; gap: 7px; }
+  .hosting-feat::before { content: ''; width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; display: inline-block; }
+  .hosting-price-wrap { text-align: right; }
+  .hosting-price { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--gold); white-space: nowrap; line-height: 1; }
+  .hosting-price-sub { font-size: 10px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 4px; }
+
+  /* ADD-ONS */
+  .addon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 2px; }
+  .addon-card { background: var(--navy-card); border: 1px solid var(--border-soft); padding: 26px 28px; transition: border-color 0.25s; }
+  .addon-card:hover { border-color: rgba(0,196,240,0.3); }
+  .addon-name { font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.06em; color: var(--white); margin-bottom: 6px; }
+  .addon-price { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--gold); }
+
+  /* NOTE */
+  .note-box {
+    background: rgba(26,92,204,0.1);
+    border-left: 3px solid var(--blue-bright);
+    padding: 24px 32px;
+    margin-top: 52px;
+  }
+  .note-box p { font-size: 13px; color: rgba(240,244,255,0.65); margin-bottom: 7px; padding-left: 16px; position: relative; }
+  .note-box p:last-child { margin-bottom: 0; }
+  .note-box p::before { content: '▸'; color: var(--cyan); position: absolute; left: 0; font-size: 11px; top: 3px; }
+  .note-box p strong { color: var(--white); font-weight: 500; }
+
+  /* FOOTER */
+  .rate-card-footer {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    padding: 40px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.08em; color: var(--white); }
+  .footer-brand .accent { color: var(--cyan); }
+  .footer-tagline { font-size: 11px; color: var(--muted); margin-top: 5px; font-family: 'Space Mono', monospace; letter-spacing: 0.06em; }
+  .footer-contacts { display: flex; flex-direction: column; gap: 8px; text-align: right; }
+  .footer-contacts a { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+  .footer-contacts a:hover { color: var(--cyan); }
+  .footer-bottom { width: 100%; text-align: center; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.24em; color: rgba(0,196,240,0.2); text-transform: uppercase; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.04); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .rate-card-header { animation: fadeUp 0.55s ease both; }
+  .intro-strip { animation: fadeUp 0.55s 0.08s ease both; }
+
+  @media (max-width: 640px) {
+    .rate-card-header, .rate-card-main, .rate-card-footer { padding-left: 20px; padding-right: 20px; }
+    .intro-strip { padding: 16px 20px; gap: 12px; flex-direction: column; }
+    .package-row { grid-template-columns: 1fr; }
+    .pkg-pricing { text-align: left; }
+    .hosting-box { flex-direction: column; }
+    .hosting-price-wrap { text-align: left; }
+    .footer-contacts { text-align: left; }
+  }
