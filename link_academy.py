@@ -7,7 +7,7 @@ import glob
 # Change this one variable when the subdomain is ready:
 #   ACADEMY_URL = "https://academy.trendtacticsdigital.com"
 # ─────────────────────────────────────────────────────────────────────────────
-ACADEMY_URL = "https://trendtactics-academy-1.vercel.app"
+ACADEMY_URL = "https://academy.trendtacticsdigital.com"
 
 # Get all HTML files in the root (not subdirectories like admin pages)
 pages = glob.glob("*.html")
@@ -35,12 +35,9 @@ for page in pages:
         'target="_blank" rel="noopener"',
         content
     )
-    # Also fix if it has rel="noopener" already
-    content = re.sub(
-        r'href="https://trendtactics-academy-1\.vercel\.app" target="_blank" rel="noopener" target="_blank" rel="noopener"',
-        f'href="{ACADEMY_URL}" target="_blank" rel="noopener"',
-        content
-    )
+    
+    # Replace the old vercel URL with the new subdomain
+    content = content.replace("https://trendtactics-academy-1.vercel.app", ACADEMY_URL)
 
     if content != original:
         with open(page, "w", encoding="utf-8") as f:
