@@ -2300,13 +2300,13 @@
 
         .service-page-hero-clean .service-hero-subtitle,
         .ebooks-hero .hero-subtitle,
-        .tools-hero .hero-subtitle,
+        .tools-hero .hero-subtitle {
+            color: #ffffff !important;
+        }
 
         .ebooks-intro p,
         .tools-intro p {
-
-            color: #4a5568 !important;
-
+            color: #e2e8f0 !important;
         }
 
 
@@ -2376,17 +2376,20 @@
 
 
         .tools-intro h2,
-        .ebooks-intro h2,
-        h1.text-center {
-
-            background: none !important;
-
-            -webkit-text-fill-color: #0A1E3F !important;
-
-            color: #0A1E3F !important;
-
+        .ebooks-intro h2 {
+            background: linear-gradient(135deg, #00FFFF 0%, #40E0D0 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            color: #00FFFF !important;
             text-shadow: none !important;
+        }
 
+        h1.text-center {
+            background: none !important;
+            -webkit-text-fill-color: #0A1E3F !important;
+            color: #0A1E3F !important;
+            text-shadow: none !important;
         }
 
 
@@ -3812,8 +3815,8 @@
                     <li><a href="careers" class="nav-link">Careers</a></li>
 
                     <li><a href="contact">Contact</a></li>
-                    <li style="margin-top: 15px;"><a href="https://akinolaolujobi.com" target="_blank" style="color: #00FFFF;"><i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 5px;"></i>Akinola Olujobi</a></li>
-                    <li><a href="https://edvouralearninghub.com" target="_blank" style="color: #00FFFF;"><i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 5px;"></i>Edvoura Learning Hub</a></li>
+                    <li><a href="academy">Academy</a></li>
+                    <li><a href="pricing">Pricing</a></li>
                 </ul>
             </div>
 
@@ -3868,9 +3871,10 @@
             <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
 
                 <p>Copyright &copy; 2026 Trendtactics Digital. All rights reserved.</p>
-
-
-
+                <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:4px;">
+                    <a href="https://akinolaolujobi.com" target="_blank" style="color:#64748b;font-size:0.82rem;text-decoration:none;" onmouseover="this.style.color='#00FFFF'" onmouseout="this.style.color='#64748b'"><i class="fas fa-external-link-alt" style="font-size:0.72em;margin-right:4px;"></i>Akinola Olujobi</a>
+                    <a href="https://edvouralearninghub.com" target="_blank" style="color:#64748b;font-size:0.82rem;text-decoration:none;" onmouseover="this.style.color='#00FFFF'" onmouseout="this.style.color='#64748b'"><i class="fas fa-external-link-alt" style="font-size:0.72em;margin-right:4px;"></i>Edvoura Learning Hub</a>
+                </div>
             </div>
 
         </div>

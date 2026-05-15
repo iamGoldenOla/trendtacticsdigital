@@ -6271,6 +6271,44 @@ footer.footer>.container {
     margin: 0;
 }
 
+/* Footer copyright bar: stack on mobile */
+.site-footer .footer-bottom .container {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .site-footer .footer-bottom .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .site-footer .footer-bottom .container > div {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+/* Pricing cards: ensure they don't overflow on small screens */
+@media (max-width: 600px) {
+    .rc-cards-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .rc-currency-toggle-wrap {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .rc-card {
+        padding: 20px 16px;
+    }
+    .rc-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+
 
 /* Force Logo Legibility on Dark Backgrounds */
 .navbar .nav-logo img,
