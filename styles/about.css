@@ -1448,7 +1448,7 @@
     font-size: 1.8rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
     background-clip: text;
     letter-spacing: 0.5px;
 }
