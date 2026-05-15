@@ -17,15 +17,27 @@
 }
 
 .solutions-page {
-  background-color: var(--sw-bg-base) !important;
-  color: var(--sw-text-primary) !important;
+  background-color: var(--sw-bg-base);
+  color: var(--sw-text-primary);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
 #solutions-main {
   padding-top: 100px;
+  background-color: var(--sw-bg-base);
+  color: var(--sw-text-primary);
 }
+
+#solutions-main h1,
+#solutions-main h2,
+#solutions-main h3,
+#solutions-main h4,
+#solutions-main h5,
+#solutions-main h6 {
+  color: var(--sw-text-primary);
+}
+
 
 .solutions-container {
   max-width: 1200px;
@@ -404,7 +416,7 @@
 
 /* TIMELINE */
 .solutions-timeline {
-  padding: 120px 0;
+  padding: 120px 0 40px;
   background: var(--sw-bg-base);
 }
 
@@ -451,6 +463,12 @@
 .timeline-step h4 {
   font-size: 1.5rem;
   padding-top: 10px;
+}
+
+/* DOWNLOAD SECTION */
+.solutions-download {
+  padding: 40px 0 80px;
+  background: var(--sw-bg-base);
 }
 
 /* FORM SECTION */
