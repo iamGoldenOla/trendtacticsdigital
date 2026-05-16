@@ -1,950 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to TrendTactics Hub</title>
-    <meta name="description" content="Access your TrendTactics Digital client dashboard or Academy learning platform.">
-    <meta name="keywords" content="client dashboard, academy, digital marketing, trendtactics">
-    <meta name="author" content="Akinola Olujobi">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/img/Trendtactics_digital_favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Supabase CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="/js/supabase-utils.js"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css?v=1772546233">
-    <link rel="stylesheet" href="/styles/shared-effects.css?v=1772546233">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0ea5e9;
-            --accent: #8b5cf6;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --card-bg: #ffffff;
-            --sidebar-bg: #0f172a;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            min-height: 100vh;
-            color: var(--light);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo-icon {
-            display: flex;
-            gap: 2px;
-        }
-
-        .logo-bar {
-            width: 4px;
-            border-radius: 1px;
-        }
-
-        .bar-1 {
-            height: 16px;
-            background: #00FFFF;
-        }
-
-        .bar-2 {
-            height: 20px;
-            background: #00FFFF;
-        }
-
-        .bar-3 {
-            height: 24px;
-            background: #00FFFF;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-link {
-            color: var(--gray);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #00FFFF;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .welcome-section {
-            max-width: 800px;
-            margin-bottom: 3rem;
-        }
-
-        .welcome-section h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #00FFFF, #0ea5e9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .welcome-section p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 255, 255, 0.2);
-            border-color: rgba(0, 255, 255, 0.3);
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .client-dashboard-icon {
-            color: #00FFFF;
-        }
-
-        .academy-icon {
-            color: #8b5cf6;
-        }
-
-        .card h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: #0A1E3F;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(139, 92, 246, 0.2);
-            color: #c4b5fd;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(139, 92, 246, 0.3);
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
-        }
-
-        .back-btn {
-            margin-top: 2rem;
-            background: rgba(100, 245, 211, 0.1);
-            color: #64F5D3;
-            border: 1px solid rgba(100, 245, 211, 0.2);
-        }
-
-        .back-btn:hover {
-            background: rgba(100, 245, 211, 0.2);
-            box-shadow: 0 5px 15px rgba(100, 245, 211, 0.1);
-        }
-
-        .footer {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .welcome-section h1 {
-                font-size: 2rem;
-            }
-
-            .welcome-section p {
-                font-size: 1rem;
-            }
-        }
-    
-        </style>
-
-    <style>
-        /* --- LOVABLE REVAMPED FOOTER --- */
-        .site-footer {
-            background-color: #061226 !important;
-            color: #cbd5e1 !important;
-            padding: 70px 0 0 0 !important;
-            font-family: 'Inter', sans-serif !important;
-            border-top: none !important;
-        }
-
-        .site-footer .footer-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 992px) {
-            .site-footer .footer-container {
-                grid-template-columns: 1fr 1fr !important;
-            }
-        }
-        @media (max-width: 576px) {
-            .site-footer .footer-container {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        .site-footer .footer-logo-img {
-            height: 40px;
-            width: auto;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .site-footer .brand-desc {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #94a3b8;
-            margin-bottom: 30px;
-            max-width: 85%;
-        }
-
-        .site-footer .social-icons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .site-footer .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 1.1rem;
-        }
-
-        .site-footer .social-icons a:hover {
-            background-color: #1e293b;
-            border-color: #334155;
-            color: #00FFFF;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .site-footer h4 {
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            margin-top: 0;
-            letter-spacing: 0.3px;
-        }
-
-        .site-footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .site-footer ul li {
-            margin-bottom: 14px;
-        }
-
-        .site-footer ul a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .site-footer ul a:hover {
-            color: #fff;
-        }
-
-        .site-footer .newsletter-col p {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .newsletter-form-lovable {
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter-form-lovable input {
-            flex: 1;
-            padding: 12px 16px;
-            background-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 6px;
-            color: #fff;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.3s;
-        }
-
-        .newsletter-form-lovable input::placeholder {
-            color: #64748b;
-        }
-
-        .newsletter-form-lovable input:focus {
-            outline: none;
-            border-color: #00FFFF;
-            background-color: rgba(255,255,255,0.02);
-        }
-
-        .newsletter-form-lovable button {
-            padding: 12px 20px;
-            background-color: #1e293b; 
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form-lovable button:hover {
-            background-color: #334155;
-            border-color: #475569;
-        }
-
-        .site-footer .footer-bottom {
-            padding: 25px 0;
-            background-color: #040d1f;
-        }
-
-        .site-footer .footer-bottom p {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-    </style>
-
-    <style>
-        /* --- WHITE BACKGROUND UI REFINEMENTS --- */
-        .pricing-hero, .portfolio-hero, .contact-hero, .resource-hero, .auth-hero, .about-hero {
-            background: #ffffff !important;
-            color: #0A1E3F !important;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .pricing-hero-title, .portfolio-hero-title, .contact-hero-title, .resource-hero-title, .auth-hero-title, .about-title {
-            color: #0A1E3F !important;
-        }
-        .pricing-hero-subtitle, .portfolio-hero-subtitle, .contact-hero-subtitle, .resource-hero-subtitle, .auth-hero-subtitle, .about-subtitle {
-            color: #4a5568 !important;
-        }
-        .pricing-hero-badge, .portfolio-hero-badge, .contact-hero-badge, .resource-hero-badge, .auth-hero-badge, .about-badge {
-            background: rgba(10, 30, 63, 0.05) !important;
-            border-color: rgba(10, 30, 63, 0.1) !important;
-            color: #0088cc !important;
-        }
-        .pricing-stat-item .stat-label {
-            color: #4a5568 !important;
-        }
-        .pricing-stat-item .stat-number {
-            color: #0A1E3F !important;
-            text-shadow: none !important;
-        }
-        /* Hide dark mode decorative background patterns */
-        .pricing-hero-background, .pricing-hero-pattern, .portfolio-hero-pattern, .floating-icon {
-            display: none !important;
-        }
-    </style>
-
-    <style>
-        
-        /* Hide Google Translate Logo */
-        .goog-te-gadget {
-            color: transparent !important;
-            font-size: 0px !important;
-        }
-        .goog-te-gadget img {
-            display: none !important;
-        }
-        .goog-te-gadget .goog-te-combo {
-            color: #cbd5e1 !important;
-            background-color: #1e293b !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            border-radius: 4px;
-            padding: 3px 6px;
-            font-size: 0.8rem;
-            outline: none;
-            cursor: pointer;
-        }
-        .goog-te-gadget .goog-te-combo:focus {
-            border-color: #00FFFF !important;
-        }
-        
-        .top-bar-redesigned {
-            background-color: #061226;
-            color: #cbd5e1;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            overflow: hidden;
-            z-index: 1001;
-        }
-        .navbar {
-            top: 40px !important;
-            transition: top 0.3s ease, background 0.3s ease !important;
-        }
-        .navbar.scrolled {
-            top: 0 !important;
-        }
-        .top-bar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-        .top-bar-left .social-icons-top a {
-            color: #cbd5e1;
-            margin-right: 12px;
-            transition: color 0.3s ease;
-        }
-        .top-bar-left .social-icons-top a:hover {
-            color: #00FFFF;
-        }
-        .top-bar-center {
-            display: flex;
-            align-items: center;
-            font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1;
-            justify-content: center;
-            padding: 0 20px;
-        }
-        .typewriter-text {
-            border-right: 2px solid #00FFFF;
-            padding-right: 4px;
-            animation: blinkCursor 0.75s step-end infinite;
-        }
-        @keyframes blinkCursor {
-            from, to { border-color: transparent }
-            50% { border-color: #00FFFF; }
-        }
-        .top-bar-right {
-            display: flex;
-            align-items: center;
-        }
-        /* Make translate widget small */
-        #google_translate_element_top .goog-te-gadget {
-            font-size: 0px !important;
-            color: transparent;
-        }
-        #google_translate_element_top .goog-te-gadget .goog-te-combo {
-            background-color: transparent;
-            color: #cbd5e1;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 4px;
-            padding: 2px 5px;
-            font-size: 0.8rem;
-            outline: none;
-        }
-        
-        @media (max-width: 768px) {
-            .top-bar-container {
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 5px;
-            }
-            .top-bar-center {
-                max-width: 50%;
-                font-size: 0.70rem;
-            }
-            .typewriter-text {
-                max-width: 100%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            #google_translate_element_top .goog-te-combo {
-                width: 60px;
-                padding: 1px;
-            }
-            
-        /* Hide Google Translate Logo */
-        .goog-te-gadget {
-            color: transparent !important;
-            font-size: 0px !important;
-        }
-        .goog-te-gadget img {
-            display: none !important;
-        }
-        .goog-te-gadget .goog-te-combo {
-            color: #cbd5e1 !important;
-            background-color: #1e293b !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            border-radius: 4px;
-            padding: 3px 6px;
-            font-size: 0.8rem;
-            outline: none;
-            cursor: pointer;
-        }
-        .goog-te-gadget .goog-te-combo:focus {
-            border-color: #00FFFF !important;
-        }
-        
-        .top-bar-redesigned {
-                height: 40px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to TrendTactics Hub | Choose Your Path</title>
+  <meta name="description" content="Access your Trendtactics Digital client dashboard or Academy learning platform.">
+  <link rel="icon" type="image/png" href="/img/Trendtactics_digital_favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-utils.js"></script>
+  <link rel="stylesheet" href="/styles/main.css?v=1772546233">
+  <style>
+    :root {
+      --navy: #040d1f;
+      --navy-mid: #0a1e3f;
+      --navy-light: #0f2a55;
+      --cyan: #00FFFF;
+      --cyan-dim: rgba(0,255,255,0.15);
+      --cyan-glow: rgba(0,255,255,0.4);
+    }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMATED BACKGROUND ── */
+    .hub-bg {
+      position: fixed; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse at 20% 20%, rgba(0,255,255,0.06) 0%, transparent 55%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,100,255,0.07) 0%, transparent 55%),
+                  linear-gradient(135deg, #040d1f 0%, #071428 50%, #040d1f 100%);
+    }
+    .hub-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300FFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Floating orbs */
+    .orb { position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; }
+    .orb-1 { width: 500px; height: 500px; top: -150px; left: -150px; background: rgba(0,255,255,0.05); animation: floatOrb 8s ease-in-out infinite; }
+    .orb-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; background: rgba(0,80,255,0.06); animation: floatOrb 10s ease-in-out infinite reverse; }
+    .orb-3 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(0,255,255,0.03); animation: floatOrb 12s ease-in-out infinite; }
+    @keyframes floatOrb { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px, 20px); } }
+
+    /* ── MAIN WRAPPER ── */
+    .hub-page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ── HERO ── */
+    .hub-hero {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+
+    .hub-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,255,255,0.08);
+      border: 1px solid rgba(0,255,255,0.25);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--cyan); letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .hub-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    .hub-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hub-title span {
+      background: linear-gradient(135deg, #00FFFF 0%, #0088cc 50%, #00FFFF 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    .hub-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #94a3b8; max-width: 560px; line-height: 1.7;
+      margin-bottom: 4rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    /* ── PORTAL CARDS ── */
+    .hub-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem; width: 100%; max-width: 900px;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hub-card {
+      position: relative;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .hub-card::before {
+      content: '';
+      position: absolute; inset: 0; border-radius: 24px;
+      background: linear-gradient(135deg, rgba(0,255,255,0.06) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .hub-card:hover { transform: translateY(-8px); border-color: rgba(0,255,255,0.35); box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,255,255,0.15), 0 0 60px rgba(0,255,255,0.08); }
+    .hub-card:hover::before { opacity: 1; }
+
+    /* Accent line at top */
+    .hub-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 24px 24px 0 0; }
+    .card-client .hub-card-accent { background: linear-gradient(90deg, #00FFFF, #0088cc); }
+    .card-academy .hub-card-accent { background: linear-gradient(90deg, #8b5cf6, #06b6d4); }
+
+    .hub-card-icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .card-client .hub-card-icon { background: rgba(0,255,255,0.1); color: var(--cyan); border: 1px solid rgba(0,255,255,0.2); }
+    .card-academy .hub-card-icon { background: rgba(139,92,246,0.1); color: #a78bfa; border: 1px solid rgba(139,92,246,0.2); }
+
+    .hub-card h2 {
+      font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;
+      position: relative; z-index: 1; color: #fff;
+    }
+    .hub-card p {
+      color: #64748b; font-size: 0.95rem; line-height: 1.7;
+      flex: 1; margin-bottom: 2rem; position: relative; z-index: 1;
+    }
+
+    .hub-card-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 2rem; position: relative; z-index: 1;
+    }
+    .hub-tag {
+      font-size: 0.72rem; font-weight: 600; padding: 4px 10px;
+      border-radius: 100px; letter-spacing: 0.5px;
+    }
+    .card-client .hub-tag { background: rgba(0,255,255,0.08); color: var(--cyan); border: 1px solid rgba(0,255,255,0.15); }
+    .card-academy .hub-tag { background: rgba(139,92,246,0.08); color: #a78bfa; border: 1px solid rgba(139,92,246,0.15); }
+
+    .hub-card-btn {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: all 0.3s; position: relative; z-index: 1;
+    }
+    .card-client .hub-card-btn { background: var(--cyan); color: #040d1f; }
+    .card-client .hub-card-btn:hover { background: #fff; box-shadow: 0 8px 25px rgba(0,255,255,0.4); }
+    .card-academy .hub-card-btn { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
+    .card-academy .hub-card-btn:hover { background: #8b5cf6; color: #fff; box-shadow: 0 8px 25px rgba(139,92,246,0.4); }
+
+    .hub-card-btn i { transition: transform 0.3s; }
+    .hub-card:hover .hub-card-btn i { transform: translateX(4px); }
+
+    /* ── BOTTOM LINKS ── */
+    .hub-links {
+      display: flex; align-items: center; gap: 2rem;
+      margin-top: 3rem; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .hub-link {
+      color: #475569; font-size: 0.9rem; text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.3s;
+    }
+    .hub-link:hover { color: var(--cyan); }
+    .hub-divider { width: 4px; height: 4px; border-radius: 50%; background: #334155; }
+
+    /* ── STATS STRIP ── */
+    .hub-stats {
+      display: flex; justify-content: center; gap: 3rem;
+      padding: 2rem; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+    .hub-stat { text-align: center; }
+    .hub-stat-num { font-size: 1.6rem; font-weight: 800; color: var(--cyan); }
+    .hub-stat-label { font-size: 0.75rem; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+    @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+
+    /* ── FOOTER ── */
+    .hub-footer {
+      background: #020810; border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 1.5rem 2rem; text-align: center;
+      color: #334155; font-size: 0.85rem; position: relative; z-index: 1;
+    }
+    .hub-footer a { color: #475569; text-decoration: none; transition: color 0.3s; }
+    .hub-footer a:hover { color: var(--cyan); }
+
+    @media (max-width: 640px) {
+      .hub-cards { grid-template-columns: 1fr; }
+      .hub-stats { gap: 2rem; }
+      .hub-title { font-size: 2.5rem; }
+    }
+  </style>
 </head>
-
 <body>
-            <nav id="navigation" class="navbar">
-        <div class="nav-container container">
-            <div class="nav-logo">
-                <a href="index" style="display: flex; align-items: center; text-decoration: none; padding-left: 10px;">
-                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
-                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
-                        loading="lazy">
-                </a>
-            </div>
-            <div class="nav-actions" style="margin-left: auto; padding-right: 15px;">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="index" class="nav-link">Home</a>
-                    <a href="about" class="nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="services">Service Overview</a></li>
-                            <li class="dropdown-header">Tech &amp; Development</li>
-                            <li><a href="website-solutions">Website Solutions Guide</a></li>
-                            <li><a href="service-web-development">Web Development</a></li>
-                            <li><a href="service-app-development">App Development</a></li>
-                            <li class="dropdown-header">Digital Growth Lab</li>
-                            <li><a href="service-digital-marketing">Digital Marketing Overview</a></li>
-                            <li><a href="service-social-media-marketing">Social Media Marketing</a></li>
-                            <li><a href="service-facebook-ads">Facebook Ads</a></li>
-                            <li><a href="service-content-creation">Content Creation</a></li>
-                            <li><a href="service-email-marketing">Email Marketing</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
-                            <li><a href="blog">Blog</a></li>
-                            <li class="dropdown-header" style="padding: 8px 20px 4px; font-weight: 700; color: #00FFFF; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Resources</li>
-                            <li><a href="resources">Resource Overview</a></li>
-                            <li><a href="ebooks">Free Books</a></li>
-                            <li><a href="tools">Marketing Tools</a></li>
-                            <li><a href="quiz">Growth Quiz</a></li>
-                            <li><a href="contact">Free Consultation</a></li>
-                        </ul>
-                    </div>
-                    <a href="pricing" class="nav-link">Pricing</a>
-                    <a href="careers" class="nav-link">Careers</a>
-                    <a href="portfolio" class="nav-link">Portfolio</a>
-                    <a href="contact" class="nav-link">Contact</a>
-                    <div class="nav-item dropdown" style="margin-left: 10px;">
-                        <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Get Started
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0"
-                            style="background-color: #0A1E3F; border: 1px solid #00FFFF !important; border-radius: 8px;">
-                            <li><a class="dropdown-item" href="website-solutions#project-form" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
-                            <li><a class="dropdown-item" href="quiz" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu Toggle -->
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <main class="main-content">
-        <section class="welcome-section">
-            <h1>Welcome to TrendTactics</h1>
-            <p>Choose your path to digital success. Access your client dashboard to manage campaigns or join our Academy
-                to enhance your digital marketing skills.</p>
-        </section>
+  <!-- Animated BG -->
+  <div class="hub-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-icon client-dashboard-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h2>Client Dashboard</h2>
-                <p>Manage your campaigns, view analytics, and track performance metrics. Access all your digital
-                    marketing services in one centralized location.</p>
-                <a href="client-dashboard" class="btn btn-primary" id="client-dashboard-link">
-                    Access Dashboard
-                </a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon academy-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h2>Academy</h2>
-                <p>Learn digital marketing strategies, access exclusive courses, and grow your skills with our
-                    comprehensive learning platform.</p>
-                <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="btn btn-secondary" id="academy-link">
-                    Access Academy
-                </a>
-            </div>
-        </div>
-
-        <a href="index" class="btn back-btn">
-            <i class="fas fa-arrow-left"></i> Back to Homepage
+  <!-- Navbar -->
+  <nav id="navigation" class="navbar">
+    <div class="nav-container container">
+      <div class="nav-logo">
+        <a href="index" style="display:flex;align-items:center;text-decoration:none;padding-left:10px;">
+          <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital"
+            style="height:48px;width:auto;opacity:1!important;visibility:visible!important;display:block!important;" loading="lazy">
         </a>
-    </main>
-
-    <!-- Master Premium Footer -->
-    <!-- Master Premium Footer -->
-        <footer class="footer site-footer">
-        <div class="container footer-container">
-            <div class="footer-col brand-col">
-                <a href="index" class="footer-logo-link">
-                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="footer-logo-img" loading="lazy">
-                </a>
-                <p class="brand-desc">A premium multi-service brand delivering excellence with professionalism, prestige, and modern clarity across every touchpoint.</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com/trendtactics" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/trendtactics" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/trendtactics" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/trendtactics-digital" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://youtube.com/trendtactics" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-col links-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index">Home</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="services">Services</a></li>
-                    <li><a href="portfolio">Portfolio</a></li>
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="careers">Careers</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li style="margin-top: 15px;"><a href="https://akinolaolujobi.com" target="_blank" style="color: #00FFFF;"><i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 5px;"></i>Akinola Olujobi</a></li>
-                    <li><a href="https://edvouralearninghub.com" target="_blank" style="color: #00FFFF;"><i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 5px;"></i>Edvoura Learning Hub</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col help-col">
-                <h4>Help Center</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                    <li><a href="#">Disclaimer</a></li>
-                    <li><a href="#">Consent Preferences</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col newsletter-col">
-                <h4>Subscribe to Newsletter</h4>
-                <p>Get the latest updates, insights, and exclusive content delivered to your inbox.</p>
-                <form class="newsletter-form-lovable" action="#">
-                    <input type="email" placeholder="Enter email" required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
-                </form>
-            </div>
+      </div>
+      <div class="nav-actions" style="margin-left:auto;padding-right:15px;">
+        <div class="nav-menu" id="nav-menu">
+          <a href="index" class="nav-link">Home</a>
+          <a href="about" class="nav-link">About</a>
+          <div class="nav-item dropdown">
+            <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:.8em;margin-left:6px;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="services">Service Overview</a></li>
+              <li class="dropdown-header">Tech &amp; Development</li>
+              <li><a href="website-solutions">Website Solutions Guide</a></li>
+              <li><a href="service-web-development">Web Development</a></li>
+              <li><a href="service-app-development">App Development</a></li>
+              <li class="dropdown-header">Digital Growth Lab</li>
+              <li><a href="service-digital-marketing">Digital Marketing Overview</a></li>
+              <li><a href="service-social-media-marketing">Social Media Marketing</a></li>
+              <li><a href="service-facebook-ads">Facebook Ads</a></li>
+              <li><a href="service-content-creation">Content Creation</a></li>
+              <li><a href="service-email-marketing">Email Marketing</a></li>
+            </ul>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:.8em;margin-left:6px;"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li class="dropdown-header" style="padding:8px 20px 4px;font-weight:700;color:#00FFFF;font-size:.75em;text-transform:uppercase;letter-spacing:1px;opacity:.9;">Resources</li>
+              <li><a href="resources">Resource Overview</a></li>
+              <li><a href="ebooks">Free Books</a></li>
+              <li><a href="tools">Marketing Tools</a></li>
+              <li><a href="quiz">Growth Quiz</a></li>
+              <li><a href="contact">Free Consultation</a></li>
+            </ul>
+          </div>
+          <a href="pricing" class="nav-link">Pricing</a>
+          <a href="careers" class="nav-link">Careers</a>
+          <a href="portfolio" class="nav-link">Portfolio</a>
+          <a href="contact" class="nav-link">Contact</a>
+          <div class="nav-item dropdown" style="margin-left:10px;">
+            <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Get Started</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color:#0A1E3F;border:1px solid #00FFFF!important;border-radius:8px;">
+              <li><a class="dropdown-item" href="website-solutions#project-form" style="color:#fff;padding:10px 20px;">Start a project</a></li>
+              <li><a class="dropdown-item" href="quiz" style="color:#fff;padding:10px 20px;">Take Free Quiz</a></li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-                <p>Copyright &copy; 2026 Trendtactics Digital. All rights reserved.</p>
-                
-            </div>
-        </div>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hub Page -->
+  <div class="hub-page">
+    <section class="hub-hero">
+
+      <div class="hub-badge">
+        <span></span> Your Digital Command Centre
+      </div>
+
+      <h1 class="hub-title">
+        Where Do You<br><span>Want to Go?</span>
+      </h1>
+      <p class="hub-subtitle">
+        Choose your path. Whether you're tracking campaign results or levelling up your skills, your gateway is right here.
+      </p>
+
+      <!-- Cards -->
+      <div class="hub-cards">
+
+        <!-- Client Dashboard -->
+        <a href="client-dashboard" class="hub-card card-client" id="client-dashboard-link">
+          <div class="hub-card-accent"></div>
+          <div class="hub-card-icon"><i class="fas fa-chart-line"></i></div>
+          <h2>Client Dashboard</h2>
+          <p>Track campaigns, view real-time analytics, manage deliverables, and collaborate directly with your growth team — all from one place.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">Analytics</span>
+            <span class="hub-tag">Campaigns</span>
+            <span class="hub-tag">Reports</span>
+          </div>
+          <div class="hub-card-btn">
+            <span>Access Dashboard</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <!-- Academy -->
+        <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="hub-card card-academy" id="academy-link">
+          <div class="hub-card-accent"></div>
+          <div class="hub-card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h2>Trendtactics Academy</h2>
+          <p>Master digital marketing, growth hacking, SEO, social media, and AI tools through expert-led courses built for modern professionals.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">Courses</span>
+            <span class="hub-tag">Certificates</span>
+            <span class="hub-tag">Community</span>
+          </div>
+          <div class="hub-card-btn">
+            <span>Launch Academy</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Bottom links -->
+      <div class="hub-links">
+        <a href="index" class="hub-link"><i class="fas fa-home"></i> Back to Homepage</a>
+        <div class="hub-divider"></div>
+        <a href="website-solutions#project-form" class="hub-link"><i class="fas fa-rocket"></i> Start a New Project</a>
+        <div class="hub-divider"></div>
+        <a href="contact" class="hub-link"><i class="fas fa-envelope"></i> Contact Us</a>
+      </div>
+
+    </section>
+
+    <!-- Stats strip -->
+    <div class="hub-stats">
+      <div class="hub-stat"><div class="hub-stat-num">500+</div><div class="hub-stat-label">Projects Delivered</div></div>
+      <div class="hub-stat"><div class="hub-stat-num">99%</div><div class="hub-stat-label">Client Satisfaction</div></div>
+      <div class="hub-stat"><div class="hub-stat-num">24+</div><div class="hub-stat-label">Industries Served</div></div>
+      <div class="hub-stat"><div class="hub-stat-num">3+</div><div class="hub-stat-label">Years Experience</div></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+      <p>Copyright &copy; 2026 Trendtactics Digital. All rights reserved. &nbsp;|&nbsp;
+        <a href="privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="https://akinolaolujobi.com" target="_blank">Akinola Olujobi</a>
+      </p>
     </footer>
+  </div>
 
-    <script>
-        // Use the shared Supabase client
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      try {
         const supabase = window.supabaseUtils.supabase;
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          localStorage.setItem('userId', session.user.id);
+          localStorage.setItem('userEmail', session.user.email);
+        }
 
-        // Check authentication on page load
-        document.addEventListener('DOMContentLoaded', async function () {
-            try {
-                // Check if user is logged in
-                const { data: { session } } = await supabase.auth.getSession();
-
-                // Store session info for demo mode fallback
-                if (session) {
-                    localStorage.setItem('userId', session.user.id);
-                    localStorage.setItem('userEmail', session.user.email);
-                }
-
-                // Add click event listeners to the links
-                document.getElementById('client-dashboard-link').addEventListener('click', handleClientDashboardClick);
-                document.getElementById('academy-link').addEventListener('click', handleAcademyClick);
-
-            } catch (error) {
-                console.error('Error initializing authentication:', error);
-            }
+        document.getElementById('client-dashboard-link').addEventListener('click', async function(e) {
+          e.preventDefault();
+          const { data: { session } } = await supabase.auth.getSession();
+          window.location.href = (session || localStorage.getItem('userId')) ? 'client-dashboard' : 'login';
         });
-
-        // Handle client dashboard access
-        async function handleClientDashboardClick(e) {
-            e.preventDefault();
-
-            try {
-                // Check if user is authenticated
-                const { data: { session } } = await supabase.auth.getSession();
-                const localStorageLoggedIn = localStorage.getItem('userId');
-
-                if (session || localStorageLoggedIn) {
-                    // User is authenticated, go to dashboard
-                    window.location.href = '/client-dashboard.html';
-                } else {
-                    // User not authenticated, go to login
-                    window.location.href = '/login.html';
-                }
-            } catch (error) {
-                console.error('Error checking authentication:', error);
-                // Fallback to login page
-                window.location.href = '/login.html';
-            }
-        }
-
-        // Handle academy access
-        async function handleAcademyClick(e) {
-            e.preventDefault();
-
-            try {
-                // Check if user is authenticated
-                const { data: { session } } = await supabase.auth.getSession();
-                const localStorageLoggedIn = localStorage.getItem('userId');
-
-                if (session || localStorageLoggedIn) {
-                    // User is authenticated, go to academy
-                    window.location.href = '/academy.html';
-                } else {
-                    // User not authenticated, go to login
-                    window.location.href = '/login.html';
-                }
-            } catch (error) {
-                console.error('Error checking authentication:', error);
-                // Fallback to login page
-                window.location.href = '/login.html';
-            }
-        }
-    </script>
-
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const phrases = [
-            "Welcome to Trendtactics Digital",
-            "Read our latest blog: The Future of AI",
-            "Next Event: Digital Growth Webinar - Oct 25",
-            "Scale your revenue with our experts",
-            "" 
-        ];
-        let i = 0;
-        let j = 0;
-        let currentPhrase = [];
-        let isDeleting = false;
-        let isEnd = false;
-        
-        const typeWriterElement = document.getElementById('typewriter-text');
-        
-        function loop() {
-            if (!typeWriterElement) return;
-            
-            // Add live time to the last phrase dynamically
-            phrases[4] = "Current Local Time: " + new Date().toLocaleTimeString();
-            
-            isEnd = false;
-            typeWriterElement.innerHTML = currentPhrase.join('');
-            
-            if (i < phrases.length) {
-                if (!isDeleting && j <= phrases[i].length) {
-                    currentPhrase.push(phrases[i][j]);
-                    j++;
-                    typeWriterElement.innerHTML = currentPhrase.join('');
-                }
-                
-                if (isDeleting && j <= phrases[i].length) {
-                    currentPhrase.pop();
-                    j--;
-                    typeWriterElement.innerHTML = currentPhrase.join('');
-                }
-                
-                if (j == phrases[i].length) {
-                    isEnd = true;
-                    isDeleting = true;
-                }
-                
-                if (isDeleting && j === 0) {
-                    currentPhrase = [];
-                    isDeleting = false;
-                    i++;
-                    if (i === phrases.length) {
-                        i = 0;
-                    }
-                }
-            }
-            
-            const speeding = Math.random() * (50 - 30) + 30;
-            const normal = Math.random() * (100 - 50) + 50;
-            const time = isEnd ? 2000 : isDeleting ? speeding : normal;
-            
-            setTimeout(loop, time);
-        }
-        
-        if (typeWriterElement) {
-            loop();
-        }
+      } catch(err) { console.warn('Auth init error:', err); }
     });
-</script>
-<script src="/js/newsletter.js" defer></script>
-<script src="/js/livechat.js" defer></script>
-<script src="/js/consent.js" defer></script>
-
-    <script src="/js/global-translate.js" defer></script>
+  </script>
+  <script src="/js/newsletter.js" defer></script>
+  <script src="/js/livechat.js" defer></script>
+  <script src="/js/consent.js" defer></script>
+  <script src="/js/global-translate.js" defer></script>
 </body>
-
 </html>
-
