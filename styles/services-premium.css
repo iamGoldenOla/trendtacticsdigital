@@ -1030,18 +1030,31 @@
 
 .portfolio-grid-premium {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
     margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .portfolio-grid-premium {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .portfolio-item-premium {
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid #e8eef4;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1054,19 +1067,46 @@
 
 .portfolio-img-wrapper {
     position: relative;
-    height: 250px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+    background: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .portfolio-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    object-position: top center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
 }
 
 .portfolio-item-premium:hover .portfolio-img-wrapper img {
-    transform: scale(1.1);
+    transform: scale(1.05) translateY(-2%);
+}
+
+/* Browser-chrome mockup frame on website cards */
+.portfolio-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 28px;
+    background: linear-gradient(180deg, rgba(10,30,63,0.08) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .portfolio-img-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-img-wrapper {
+        aspect-ratio: 4 / 3;
+    }
 }
 
 .portfolio-category-badge {
