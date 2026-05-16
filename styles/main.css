@@ -314,18 +314,19 @@ section {
     box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3) !important;
 }
 
-/* Sleek Get Started Button */
+/* Start a Project Button (formerly Get Started) */
 .btn-get-started {
     background: linear-gradient(135deg, #00FFFF 0%, #0088cc 100%) !important;
     color: #0A1E3F !important;
     border: none !important;
     font-weight: 800 !important;
-    padding: 10px 24px !important;
+    padding: 10px 22px !important;
     border-radius: 50px !important;
     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2) !important;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
 }
 
@@ -333,7 +334,10 @@ section {
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4) !important;
     background: #FFFFFF !important;
+    color: #0A1E3F !important;
+    text-decoration: none;
 }
+
 
 .btn-outline {
     background: transparent;
@@ -811,7 +815,49 @@ section {
     body.menu-open {
         overflow: hidden;
     }
+
+    /* ── Mobile: Start a Project CTA inside menu ── */
+    .nav-menu .nav-item.dropdown:last-child {
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-left: 0 !important;
+    }
+
+    /* Override pill button inside mobile menu — make it full-width block CTA */
+    .nav-menu .btn-get-started {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-radius: 12px !important;
+        padding: 16px 24px !important;
+        font-size: 1rem !important;
+        letter-spacing: 1.5px !important;
+        box-shadow: 0 6px 20px rgba(0,255,255,0.3) !important;
+        margin-top: 0.5rem;
+    }
+
+    /* Mobile dropdown items for Start a Project submenu */
+    .nav-menu .nav-item.dropdown:last-child .dropdown-menu {
+        background: rgba(0,255,255,0.06) !important;
+        border: 1px solid rgba(0,255,255,0.15) !important;
+        border-radius: 10px !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .nav-menu .nav-item.dropdown:last-child .dropdown-menu a {
+        color: #fff !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        padding: 14px 20px !important;
+    }
+
+    .nav-menu .nav-item.dropdown:last-child .dropdown-menu a:hover {
+        background: rgba(0,255,255,0.15) !important;
+        color: #00FFFF !important;
+        padding-left: 28px !important;
+    }
 }
+
 
 /* ===== HERO SECTION ===== */
 .hero {
