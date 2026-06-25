@@ -11,6 +11,7 @@ app.use(express.json());
 // Register API Routes
 app.use('/api/ai', require('./routes/ai'));
 app.use('/api/v1/analysis', require('./routes/competitor'));
+app.use('/api/v1/analysis', require('./routes/seo'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
