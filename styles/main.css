@@ -7214,28 +7214,44 @@ footer.footer>.container {
         display: none !important; /* Hide call block on mobile menu bar */
     }
     
+    .navbar,
     .navbar.premium-navbar {
+        top: 0 !important;
         background: #000000 !important;
-        padding: 5px 0 !important;
+        padding: 10px 0 !important;
     }
     
     .nav-toggle {
         display: flex !important;
         flex-direction: column;
         justify-content: space-between;
-        width: 25px;
-        height: 18px;
+        width: 28px;
+        height: 20px;
         cursor: pointer;
         z-index: 1002;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
     }
     
     .nav-toggle span {
         display: block;
         height: 3px;
         width: 100%;
-        background: #ffffff;
-        border-radius: 2px;
+        background: #ffffff !important;
+        border-radius: 3px;
         transition: all 0.3s ease;
+    }
+    
+    .nav-toggle:hover {
+        background: transparent !important;
+        border: none !important;
+    }
+    
+    .nav-toggle:hover span {
+        background: #fadb24 !important; /* Yellow hover effect for hamburger lines */
     }
     
     .nav-menu {
