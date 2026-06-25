@@ -347,8 +347,35 @@
         padding: 25px;
     }
 
+    /* Horizontal scrolling for brands static grid on mobile */
     .brands-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+        padding: var(--spacing-sm) 0 !important;
+        border: none !important;
+    }
+
+    .brands-grid::-webkit-scrollbar {
+        height: 4px !important;
+    }
+    
+    .brands-grid::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .brands-grid::-webkit-scrollbar-thumb {
+        background: rgba(0, 71, 255, 0.3) !important;
+        border-radius: 2px !important;
+    }
+
+    .brand-card-custom {
+        flex: 0 0 160px !important;
+        height: 140px !important;
+        scroll-snap-align: start !important;
+        border: 1px solid rgba(162, 174, 191, 0.15) !important;
     }
 
     .hero-video-background video {
@@ -383,9 +410,7 @@
         padding: 20px;
     }
 
-    .brands-grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .testimonial-quote-modern {
         font-size: 14px;
