@@ -7189,20 +7189,12 @@ footer.footer>.container {
 /* Mobile responsive styles */
 @media (max-width: 1024px) {
     .header-top-bar,
-    .header-middle-row .info-block {
-        display: none !important; /* Hide details on mobile to keep it light */
-    }
-    
     .header-middle-row {
-        padding: 10px 0 !important;
+        display: none !important; /* Hide top & middle rows completely on mobile */
     }
     
-    .header-logo-img {
-        height: 48px !important;
-    }
-    
-    .middle-right {
-        display: none !important;
+    .nav-logo-mobile {
+        display: block !important;
     }
     
     .nav-menu-wrapper {
