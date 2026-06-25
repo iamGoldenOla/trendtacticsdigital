@@ -6966,23 +6966,23 @@ footer.footer>.container {
 
 /* Row 1: Top Bar */
 .header-top-bar {
-    background: #0047FF !important; /* Solid Royal Blue */
-    color: #ffffff !important;
+    background: #111111 !important; /* Solid Dark Grey/Black background */
+    color: #94a3b8 !important; /* Grey text */
     padding: 8px 0;
     font-size: 0.8rem;
     font-weight: 600;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #222222;
 }
 
 .header-top-bar a {
-    color: #ffffff !important;
+    color: #94a3b8 !important;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .header-top-bar a:hover {
-    color: #fadb24 !important; /* Accent Yellow on hover */
+    color: #ffffff !important; /* White on hover */
 }
 
 .header-top-bar .divider {
@@ -7218,7 +7218,18 @@ footer.footer>.container {
     }
     
     .nav-call-block {
-        display: none !important; /* Hide call block on mobile menu bar */
+        display: flex !important; /* Keep visible on mobile menu bar */
+        align-items: center !important;
+        background: #0047FF !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        padding: 6px 12px !important;
+        border-radius: 4px !important;
+        margin-left: auto !important;
+        margin-right: 15px !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
     }
     
     .navbar,
@@ -7419,55 +7430,6 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
     background-color: #ffffff !important;
     color: #000000 !important;
     border-color: #ffffff !important;
-}
-
-/* Mobile header actions styling */
-@media (max-width: 1024px) {
-    .mobile-header-actions {
-        display: flex !important;
-        align-items: center !important;
-        gap: 12px !important;
-        margin-left: auto !important;
-        margin-right: 15px !important;
-    }
-    
-    .mobile-home-btn {
-        color: #ffffff !important;
-        font-size: 1.1rem !important;
-        text-decoration: none !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 34px !important;
-        height: 34px !important;
-        border-radius: 4px !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        transition: all 0.2s ease !important;
-    }
-    
-    .mobile-home-btn:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
-    }
-    
-    .mobile-call-btn {
-        background: #0047FF !important;
-        color: #ffffff !important;
-        text-decoration: none !important;
-        font-weight: 700 !important;
-        font-size: 0.8rem !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 6px !important;
-        padding: 8px 12px !important;
-        border-radius: 4px !important;
-        transition: all 0.2s ease !important;
-        line-height: 1 !important;
-    }
-    
-    .mobile-call-btn:hover {
-        background: #0036c7 !important;
-    }
 }
 
 /* Centered navigation menu layout for desktop */

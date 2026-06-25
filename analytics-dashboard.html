@@ -1425,59 +1425,47 @@
             
 
         <div class="header-wrapper">
-    <!-- Row 1: Top Bar (Royal Blue background, white text) -->
+    <!-- Row 1: Top Bar (Solid Black background, grey text) -->
     <div class="header-top-bar">
-        <div class="header-container">
-            <div class="top-bar-left">
-                <a href="about">Why Us</a>
-                <span class="divider">|</span>
-                <a href="pricing">Pricing</a>
-                <span class="divider">|</span>
-                <a href="quiz">Take Quiz</a>
+        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div class="top-bar-left" style="display: flex; align-items: center; gap: 20px;">
+                <div class="info-item" style="display: flex; align-items: center; gap: 8px; color: #94a3b8;">
+                    <span style="color: #fadb24;"><i class="fas fa-map-marker-alt"></i></span>
+                    <span>Lagos & Ogun, Nigeria (Remote/Global)</span>
+                </div>
+                <span style="color: #334155;">|</span>
+                <div class="info-item" style="display: flex; align-items: center; gap: 8px; color: #94a3b8;">
+                    <span style="color: #fadb24;"><i class="fas fa-envelope"></i></span>
+                    <a href="mailto:info@trendtacticsdigital.com" style="color: #94a3b8; text-decoration: none;">info@trendtacticsdigital.com</a>
+                </div>
             </div>
             <div class="top-bar-right">
-                <div class="header-search">
-                    <form action="search" method="GET" style="display: flex; align-items: center; margin: 0;">
-                        <input type="text" placeholder="Search..." aria-label="Search" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 4px 10px; color: #ffffff; font-size: 0.75rem; outline: none;">
-                        <button type="submit" aria-label="Search" style="background: transparent; border: none; color: #ffffff; cursor: pointer; margin-left: 5px; font-size: 0.8rem;"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
+                <!-- Spacing element -->
             </div>
         </div>
     </div>
 
-    <!-- Row 2: Middle Row (Solid Black background) -->
+    <!-- Row 2: Middle Row (Centered Logo & Socials on Right) -->
     <div class="header-middle-row">
-        <div class="header-container">
-            <div class="middle-left">
+        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <!-- Left spacer to center logo -->
+            <div class="middle-spacer" style="flex: 1; display: flex; justify-content: flex-start;"></div>
+            
+            <!-- Logo Centered -->
+            <div class="middle-logo-container" style="flex: 1; display: flex; justify-content: center;">
                 <a href="index" class="header-logo-link">
-                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="header-logo-img" data-optimized="true" style="height: 60px; width: auto; display: block;">
+                    <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="header-logo-img" data-optimized="true" style="height: 120px; width: auto; display: block; margin: 0 auto;">
                 </a>
             </div>
-            <div class="middle-right" style="display: flex; gap: 30px; align-items: center;">
-                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
-                    <div class="info-icon" style="font-size: 1.2rem; color: #fadb24;"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
-                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Visit Our Office</span>
-                        <span class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff;">Lagos & Ogun, Nigeria (Remote/Global)</span>
-                    </div>
-                </div>
-                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
-                    <div class="info-icon" style="font-size: 1.2rem; color: #fadb24;"><i class="fas fa-envelope"></i></div>
-                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
-                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Mail Us</span>
-                        <a href="mailto:info@trendtacticsdigital.com" class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff; text-decoration: none;">info@trendtacticsdigital.com</a>
-                    </div>
-                </div>
-                <div class="info-block socials-block" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
-                    <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">FOLLOW US</span>
-                    <div class="social-links-grid" style="display: flex; gap: 8px;">
-                        <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-youtube"></i></a>
-                    </div>
+            
+            <!-- Socials aligned to right -->
+            <div class="middle-right" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
+                <div class="social-links-grid" style="display: flex; gap: 8px;">
+                    <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -1491,11 +1479,7 @@
                     <img src="img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true" style="height: 60px; width: auto; display: block;">
                 </a>
                 
-                <!-- Mobile Actions (Home and Book a Call visible without taps) -->
-                <div class="mobile-header-actions" style="display: none;">
-                    <a href="index" class="mobile-home-btn" aria-label="Home"><i class="fas fa-home"></i></a>
-                    <a href="contact" class="mobile-call-btn"><i class="fas fa-phone-alt"></i> Book Call</a>
-                </div>
+
 
                 <div class="nav-menu" id="nav-menu" style="display: flex; align-items: center; gap: 20px;">
                     <a href="index" class="nav-link">Home</a>
