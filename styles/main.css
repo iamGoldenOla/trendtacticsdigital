@@ -61,10 +61,12 @@
     /* 128px */
 
     /* Section Spacing - Consistent Global Padding */
-    --section-padding-vertical: var(--spacing-4xl);
-    --section-padding-horizontal: var(--spacing-lg);
-    --section-padding-mobile-vertical: var(--spacing-3xl);
-    --section-padding-mobile-horizontal: var(--spacing-md);
+    --section-padding-vertical: var(--spacing-2xl); /* 48px */
+    --section-padding-horizontal: var(--spacing-xl); /* 32px */
+    --section-padding-mobile-vertical: var(--spacing-lg); /* 24px */
+    --section-padding-mobile-horizontal: var(--spacing-md); /* 16px */
+    --paragraph-margin-bottom: 1.25rem; /* 20px */
+    --heading-margin-bottom: var(--spacing-lg); /* 24px */
 
     /* Component Spacing */
     --component-gap-sm: var(--spacing-sm);
@@ -122,7 +124,7 @@ h6 {
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0 0 var(--heading-margin-bottom) 0;
     color: var(--base-dark);
     text-rendering: optimizeLegibility;
 }
@@ -158,7 +160,7 @@ h6 {
 }
 
 p {
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0 0 var(--paragraph-margin-bottom) 0;
     line-height: 1.6;
     color: inherit;
     font-family: var(--font-body);
@@ -222,6 +224,11 @@ section {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --paragraph-margin-bottom: 1rem; /* 16px */
+        --heading-margin-bottom: var(--spacing-md); /* 16px */
+    }
+
     section {
         padding: var(--section-padding-mobile-vertical) var(--section-padding-mobile-horizontal);
     }
@@ -1417,7 +1424,7 @@ section {
 @media (max-width: 1024px) {
     .about-content-wrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 1.5rem;
     }
 
     .about-visual-content {
@@ -1439,7 +1446,7 @@ section {
 
 @media (max-width: 768px) {
     .about-trendtactics {
-        padding: var(--spacing-4xl) 0;
+        padding: var(--section-padding-mobile-vertical) 0;
     }
 
     .about-stats {
@@ -3535,7 +3542,7 @@ section {
     }
 
     .about-trendtactics {
-        padding: var(--spacing-3xl) 0;
+        padding: var(--section-padding-mobile-vertical) 0;
     }
 
     .about-content-wrapper {
@@ -5806,7 +5813,7 @@ footer.footer>.container {
 .premium-footer {
     background: linear-gradient(180deg, #051024 0%, #000000 100%);
     color: #ffffff;
-    padding: 80px 0 0;
+    padding: 48px 0 0;
     position: relative;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
@@ -6075,18 +6082,18 @@ footer.footer>.container {
 @media (max-width: 1024px) {
     .footer-content-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
 }
 
 @media (max-width: 768px) {
     .premium-footer {
-        padding: 60px 0 0;
+        padding: 32px 0 0;
     }
 
     .footer-content-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .footer-brand-col {

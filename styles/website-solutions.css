@@ -113,7 +113,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: var(--section-padding-vertical) 0 48px;
 }
 
 .hero-content {
@@ -180,7 +180,7 @@
 
 /* INTRO SECTION */
 .solutions-intro {
-  padding: 120px 0;
+  padding: var(--section-padding-vertical) 0;
   background: var(--sw-bg-base);
 }
 
@@ -240,7 +240,7 @@
 
 /* GRID SECTION */
 .solutions-grid-section {
-  padding: 120px 0;
+  padding: var(--section-padding-vertical) 0;
   background: var(--sw-bg-surface);
   border-top: 1px solid var(--sw-border);
   border-bottom: 1px solid var(--sw-border);
@@ -337,7 +337,7 @@
 
 /* COMPARISON INTERACTIVE WIDGET */
 .solutions-comparison {
-  padding: 120px 0;
+  padding: var(--section-padding-vertical) 0;
   background: var(--sw-bg-base);
 }
 
@@ -514,7 +514,7 @@
 
 /* CHECKLIST */
 .solutions-checklist {
-  padding: 120px 0;
+  padding: var(--section-padding-vertical) 0;
   background: var(--sw-bg-surface);
   border-top: 1px solid var(--sw-border);
   border-bottom: 1px solid var(--sw-border);
@@ -552,7 +552,7 @@
 
 /* TIMELINE (HORIZONTAL PROCESS FLOW WITH ARROWS) */
 .solutions-timeline {
-  padding: 120px 0 60px;
+  padding: var(--section-padding-vertical) 0 40px;
   background: var(--sw-bg-base);
 }
 
@@ -674,7 +674,7 @@
 
 /* FORM SECTION */
 .solutions-form-section {
-  padding: 120px 0;
+  padding: var(--section-padding-vertical) 0;
   background: var(--sw-bg-surface);
 }
 

@@ -1,6 +1,6 @@
 /* ===== REDESIGNED ABOUT HERO STYLES (BRAND STYLE) ===== */
 .about-hero-redesigned {
-    padding: 90px 0 80px;
+    padding: 80px 0 60px;
     background: #FFFFFF;
     position: relative;
     overflow: hidden;
@@ -271,7 +271,7 @@
 
 @media (max-width: 768px) {
     .about-hero-redesigned {
-        padding: 100px 0 60px;
+        padding: 48px 0 32px;
     }
 
     .hero-metrics-main {
@@ -2739,8 +2739,8 @@
 /* ===== MODERN HORIZON STORY REDESIGN (V3) ===== */
 .story-horizon {
     position: relative;
-    padding: var(--spacing-4xl) 0;
-    margin-top: 100px;
+    padding: var(--section-padding-vertical) 0;
+    margin-top: 48px;
 }
 
 .horizon-wrapper {
@@ -2886,7 +2886,7 @@
 
 /* ===== BRAND PHILOSOPHY CONSOLIDATED SECTION (PHASE 2) ===== */
 .about-philosophy-redesigned {
-    padding: 100px 0;
+    padding: var(--section-padding-vertical) 0;
     position: relative;
     background: transparent;
 }
@@ -3094,7 +3094,7 @@
     }
 
     .ceo-feature {
-        margin-bottom: 50px;
+        margin-bottom: 24px;
     }
 
     .ceo-image-container {
@@ -3131,7 +3131,7 @@
 
 /* ===== PHASE 3: HORIZONTAL USP SECTION ===== */
 .about-usp-horizontal {
-    padding: 100px 0;
+    padding: var(--section-padding-vertical) 0;
     background: var(--white);
     overflow: hidden;
 }
@@ -3251,7 +3251,7 @@
 
 /* ===== PHASE 3: VERTICAL HERITAGE TIMELINE ===== */
 .about-heritage-vertical {
-    padding: 100px 0;
+    padding: var(--section-padding-vertical) 0;
     background: var(--base-dark);
     color: var(--white);
     position: relative;
@@ -3263,7 +3263,7 @@
 
 .section-header-centered {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .heritage-title {
@@ -3425,7 +3425,7 @@
 
 /* Brands Static Redesign */
 .about-brands-static {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: #fdfdfd;
     text-align: center;
     border-top: 1px solid rgba(0, 0, 0, 0.03);
@@ -3435,7 +3435,7 @@
 .brands-static-label {
     font-size: 0.9rem;
     color: #888;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -3445,7 +3445,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 32px;
     flex-wrap: wrap;
 }
 

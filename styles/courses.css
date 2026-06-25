@@ -4,7 +4,7 @@
 .courses-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 120px 0 80px;
+    padding: 80px 0 60px;
     text-align: center;
 }
 
@@ -53,7 +53,7 @@
 
 /* Course Categories */
 .course-categories {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: #f8f9fa;
 }
 
@@ -376,7 +376,7 @@
 
 /* Featured Courses */
 .featured-courses {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: #f8f9fa;
 }
 
@@ -595,7 +595,7 @@
 
 /* All Courses */
 .all-courses {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: white;
 }
 
@@ -606,7 +606,7 @@
 
 /* Course Benefits */
 .course-benefits {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: #f8f9fa;
 }
 
@@ -703,7 +703,7 @@
 
 @media (max-width: 480px) {
     .courses-hero {
-        padding: 80px 0 60px;
+        padding: 48px 0 32px;
     }
     
     .courses-hero .hero-title {
@@ -749,7 +749,7 @@
 /* Empty State */
 .courses-empty {
     text-align: center;
-    padding: 80px 20px;
+    padding: var(--section-padding-vertical) 20px;
     color: #666;
 }
 
@@ -831,7 +831,7 @@
 
 /* Course Library */
 .course-library {
-    padding: 80px 0;
+    padding: var(--section-padding-vertical) 0;
     background: #fff;
 }
 
