@@ -281,27 +281,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.createElement('div');
     container.id = 'global-translate-container';
     container.innerHTML = widgetHTML;
-
-    // Inject directly into header nav-container if it exists
-    const headerContainer = document.querySelector('.nav-container');
-    if (headerContainer) {
-        headerContainer.appendChild(container);
-        
-        // Also inject Social Media Handles on the left
-        if (!document.querySelector('.nav-socials')) {
-            const socialsDiv = document.createElement('div');
-            socialsDiv.className = 'nav-socials';
-            socialsDiv.innerHTML = `
-                <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            `;
-            headerContainer.insertBefore(socialsDiv, headerContainer.firstChild);
-        }
+    const menuWrapper = document.querySelector('.nav-menu-wrapper');
+    const callBlock = document.querySelector('.nav-call-block');
+    if (menuWrapper && callBlock) {
+        menuWrapper.insertBefore(container, callBlock);
     } else {
-        document.body.appendChild(container);
+        const headerContainer = document.querySelector('.nav-container');
+        if (headerContainer) {
+            headerContainer.appendChild(container);
+        } else {
+            document.body.appendChild(container);
+        }
     }
 
     // Toggle logic for translation dropdown

@@ -3,9 +3,15 @@
 .portfolio-hero {
   background: var(--base-dark);
   color: var(--white);
-  padding-top: 70px;
+  padding-top: 190px !important; /* Push down to avoid header overlap */
   padding-bottom: 2.5rem;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-hero {
+    padding-top: 130px !important;
+  }
 }
 
 .portfolio-hero .hero-title {

@@ -6626,19 +6626,23 @@ footer.footer>.container {
         transform: translateY(-2px) !important;
     }
 
-    /* Position Translate Widget on the left of the Logo Row, next to socials */
+    /* Position Translate Widget inline in bottom navbar between contact and book-a-call */
     #global-translate-container {
-        position: absolute !important;
-        left: 185px !important;
-        top: 50px !important; /* Centered relative to logo */
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
         bottom: auto !important;
+        margin-right: 15px !important; /* Spacing between widget and Book a Call */
         z-index: 1001 !important;
         display: flex !important;
+        align-items: center !important;
     }
     
     #global-translate-dropdown {
         bottom: auto !important;
         top: 55px !important; /* Opens downwards instead of upwards */
+        right: 0 !important;
+        left: auto !important;
     }
     
     #global-translate-btn {
@@ -7007,7 +7011,7 @@ footer.footer>.container {
 }
 
 .header-logo-img {
-    height: 60px !important; /* Unified logo height */
+    height: 90px !important; /* Enlarged unified logo height */
     width: auto !important;
     display: block;
 }
@@ -7120,9 +7124,13 @@ footer.footer>.container {
     text-decoration: none;
     font-weight: 800;
     font-size: 0.95rem;
-    display: flex;
+    display: inline-flex !important;
     align-items: center;
-    padding: 0 30px;
+    justify-content: center;
+    padding: 12px 30px !important; /* Proper rectangle padding */
+    border-radius: 4px !important;
+    white-space: nowrap !important; /* Ensure it stays on one line */
+    align-self: center !important; /* Center vertically inside Row 3 navbar */
     transition: all 0.2s ease;
 }
 

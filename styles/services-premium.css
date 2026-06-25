@@ -651,13 +651,7 @@
 }
 
 .wwo-cta-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 50%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 71, 255, 0.1) 0%, transparent 70%);
+    display: none !important;
 }
 
 .wwo-cta-content h3 {
@@ -674,7 +668,7 @@
 }
 
 .wwo-btn {
-    background: #0047FF !important;
+    background: #fadb24 !important;
     color: #000000 !important;
     font-weight: 700 !important;
     border: none !important;
@@ -876,13 +870,7 @@
 }
 
 .wwo-cta-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 50%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 71, 255, 0.1) 0%, transparent 70%);
+    display: none !important;
 }
 
 .wwo-cta-content h3 {
@@ -899,7 +887,7 @@
 }
 
 .wwo-btn {
-    background: #0047FF !important;
+    background: #fadb24 !important;
     color: #000000 !important;
     font-weight: 700 !important;
     border: none !important;
