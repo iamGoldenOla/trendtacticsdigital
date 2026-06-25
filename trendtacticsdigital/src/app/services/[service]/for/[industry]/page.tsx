@@ -1,16 +1,16 @@
-import { supabase } from "../../../../lib/supabaseClient";
+import { supabase } from "../../../../../lib/supabaseClient";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { Metadata } from "next";
 
 interface PageProps {
-  params: Promise<{ service: string; location: string }>;
+  params: Promise<{ service: string; industry: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { service, location } = await params;
-  const slug = `services/${service}/${location}`;
+  const { service, industry } = await params;
+  const slug = `services/${service}/for/${industry}`;
 
   const { data: page } = await supabase
     .from("seo_pages")
@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function ServiceLocationPage({ params }: PageProps) {
-  const { service: serviceSlug, location: locationSlug } = await params;
-  const slug = `services/${serviceSlug}/${locationSlug}`;
+export default async function ServiceIndustryPage({ params }: PageProps) {
+  const { service: serviceSlug, industry: industrySlug } = await params;
+  const slug = `services/${serviceSlug}/for/${industrySlug}`;
 
   // Fetch page details
   const { data: page } = await supabase
@@ -70,7 +70,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     "@type": "ProfessionalService",
     "name": "Trendtactics Digital",
     "url": "https://trendtacticsdigital.com",
-    "areaServed": page.location || locationSlug,
     "serviceType": service?.name || serviceSlug,
     "priceRange": "$$"
   };
@@ -89,7 +88,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-6 uppercase tracking-wider">
-            Premium AI Growth Agent
+            Industry Specialized AI Agent
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-400 bg-clip-text text-transparent">
             {page.h1}
@@ -108,7 +107,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
               href="/portfolio"
               className="px-8 py-4 rounded-xl font-bold bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-850 hover:text-white transition-all hover:scale-105"
             >
-              View Our Work
+              View Case Studies
             </Link>
           </div>
           {service && (
@@ -142,24 +141,24 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         <div className="space-y-8">
           <div className="p-8 rounded-2xl bg-slate-900/50 border border-slate-850 backdrop-blur-xl">
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Local Service Location
+              Industry Vertical Focus
             </h3>
             <p className="text-slate-400 mb-4 leading-relaxed">
-              We provide premium, results-oriented {service?.name || serviceSlug} services in {page.location || locationSlug} and surrounding areas.
+              We specialize in custom {service?.name || serviceSlug} designed for the unique challenges of the {page.industry || industrySlug} sector.
             </p>
             <div className="h-px bg-slate-800 my-6" />
             <ul className="space-y-3 text-slate-300 font-medium">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Lagos HQ, Nigeria
+                Tailored Workflows
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Abuja Office
+                Industry Standards Compliant
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Global Delivery
+                High-Conversion UX
               </li>
             </ul>
           </div>
@@ -243,11 +242,11 @@ export async function generateStaticParams() {
   const { data: pages } = await supabase
     .from("seo_pages")
     .select("slug")
-    .eq("page_type", "service-location")
+    .eq("page_type", "service-industry")
     .eq("published", true);
 
   return pages?.map((page) => {
     const parts = page.slug.split("/");
-    return { service: parts[1], location: parts[2] };
+    return { service: parts[1], industry: parts[3] };
   }) || [];
 }

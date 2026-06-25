@@ -1,29 +1,35 @@
-# Trendtactics Digital
+# Trendtactics Digital - AI Search Context
+# https://trendtacticsdigital.com
 
-Trendtactics Digital is a premiere AI-powered digital marketing and web design agency that engineers growth for businesses globally.
+## Company
+Trendtactics Digital is a global digital agency specializing in web design,
+mobile app development, SEO, digital marketing, and brand identity.
 
-## Core Services
+Founded in Nigeria, serving clients globally including UK, USA, Canada,
+Australia, Europe, Middle East, and Africa.
 
-- **Social Media Management (SMM):** Organic content creation, targeted social ad campaigns, active community management, and daily branding.
-- **Search Engine Optimization (SEO):** Professional keyword mapping, on-page optimization, content creation, page speed improvements, and organic link-building.
-- **Web Design & Development:** Customized responsive website design, members portals, LMS platforms, CRM integrations, and Paystack/Flutterwave/Stripe payment setups.
-- **Digital Marketing:** Full-funnel digital strategy, paid search and social campaigns, conversion rate optimization (CRO), and AI analytics dashboards.
+## Services
+- Web Design & Development (React, Next.js, WordPress)
+- Mobile App Development (React Native, Flutter, iOS, Android)
+- SEO Services (Technical, Content, Local, International)
+- Social Media Management (Instagram, LinkedIn, Facebook, TikTok, X)
+- Digital Marketing (Google Ads, Meta Ads, Email Marketing)
+- Brand Identity & Graphic Design
+- E-commerce Development (Shopify, WooCommerce, Custom)
+- UI/UX Design
 
-## Locations Served
+## Contact
+Website: https://trendtacticsdigital.com
+Email: info@trendtacticsdigital.com
+Location: Lagos, Nigeria (Remote/Global)
 
-- Lagos, Nigeria (HQ)
-- Abuja, Nigeria
-- Port Harcourt, Nigeria
-- London, United Kingdom
-- Toronto, Canada
-- New York City, USA
+## Key Pages
+- Portfolio: https://trendtacticsdigital.com/portfolio
+- Services: https://trendtacticsdigital.com/services
+- Pricing: https://trendtacticsdigital.com/pricing
+- Contact: https://trendtacticsdigital.com/contact
 
-## Integrations & AI Agent Stack
-
-Our operations are augmented by **TrendyAI**, our custom agentic system featuring:
-- **ClientFlow:** Automated lead onboarding and agent routing.
-- **ContentSmith:** Professional copy and article generation.
-- **PulsePilot:** Content distribution and social post orchestration.
-- **StratoBoss & WebWiz:** Code optimization and platform scaling.
-
-For consultation and inquiries, visit [trendtacticsdigital.com/contact](https://trendtacticsdigital.com/contact).
+## Trust Signals
+- 50+ projects delivered globally
+- Clients in UK, USA, Nigeria, Canada, Australia
+- AI-powered delivery through TrendyAI platform

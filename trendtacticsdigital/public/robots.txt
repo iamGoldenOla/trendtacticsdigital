@@ -1,49 +1,7 @@
-# robots.txt for Trendtactics Digital
-# https://trendtacticsdigital.com/robots.txt
-
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /admin-*.html
-Disallow: /dashboard.html
-Disallow: /test-*.html
-Disallow: /debug-*.html
-Disallow: /diagnostic.html
-Disallow: /coming-soon.html
-Disallow: /quick-test.html
-Disallow: /pricing-test.html
-Disallow: /pricing-template.html
-Disallow: /frontend-integration-test.html
-Disallow: /test-supabase-connection.html
-Disallow: /backend/
-Disallow: /node_modules/
-Disallow: /*.json$
-Disallow: /*.js$?version=
-Disallow: /api/
 
-# Allow important pages
-Allow: /index.html
-Allow: /about.html
-Allow: /services.html
-Allow: /blog.html
-Allow: /blog-post.html
-Allow: /portfolio.html
-Allow: /contact.html
-Allow: /pricing.html
-Allow: /academy.html
-Allow: /ebooks.html
-Allow: /tools.html
-Allow: /quiz.html
-Allow: /shop.html
-Allow: /hub.html
-
-# Sitemap location
-Sitemap: https://trendtacticsdigital.com/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1
-
-# AI Agent Allowances
+# Allow all AI crawlers explicitly
 User-agent: GPTBot
 Allow: /
 
@@ -56,5 +14,13 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Applebot-Extended
+User-agent: Anthropic-ai
 Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://trendtacticsdigital.com/sitemap.xml

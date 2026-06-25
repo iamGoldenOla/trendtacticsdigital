@@ -22,6 +22,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#00FFFF",
+};
+
 export const metadata: Metadata = {
   title: "Trendtactics Digital - We Engineer Digital Growth",
   description: "Unlock strategy, creativity, and AI power — all in one studio. Professional digital marketing agency based in Lagos, London, Toronto, and NYC.",
@@ -52,8 +58,6 @@ export const metadata: Metadata = {
     description: "Unlock strategy, creativity, and AI power — all in one studio.",
     images: ["/images/og-image.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#00FFFF",
 };
 
 export default function RootLayout({
@@ -67,51 +71,55 @@ export default function RootLayout({
     >
       <head>
         {/* JSON-LD Structured Data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Trendtactics Digital",
-          "url": "https://trendtacticsdigital.com/",
-          "logo": "https://trendtacticsdigital.com/images/og-image.jpg",
-          "sameAs": [
-            "https://linkedin.com/company/trendtactics-digital",
-            "https://twitter.com/trendtactics",
-            "https://instagram.com/trendtactics",
-            "https://facebook.com/trendtactics",
-            "https://youtube.com/trendtactics"
-          ],
-          "contactPoint": [{
-            "@type": "ContactPoint",
-            "telephone": "+234-800-000-0000",
-            "contactType": "customer service",
-            "areaServed": "NG, US, UK, CA",
-            "availableLanguage": ["English"]
-          }]
-        }`}} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
-          "@context": "https://schema.org",
-          "@type": "MarketingAgency",
-          "name": "Trendtactics Digital",
-          "url": "https://trendtacticsdigital.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lagos",
-            "addressCountry": "NG"
-          },
-          "areaServed": ["Nigeria", "United Kingdom", "Global"],
-          "serviceType": ["SEO", "Social Media Management", "Web Design", "Digital Marketing"]
-        }`}} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "url": "https://trendtacticsdigital.com/",
-          "name": "Trendtactics Digital - We Engineer Digital Growth",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://trendtacticsdigital.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }`}} />
+          "@graph": [
+            {
+              "@type": "MarketingAgency",
+              "@id": "https://trendtacticsdigital.com/#organization",
+              "name": "Trendtactics Digital",
+              "alternateName": "Trendtactics",
+              "url": "https://trendtacticsdigital.com",
+              "logo": "https://trendtacticsdigital.com/logo.png",
+              "image": "https://trendtacticsdigital.com/og-image.jpg",
+              "description": "Global digital agency specializing in web design, app development, SEO, and digital marketing. Serving clients in UK, USA, Canada, Australia, Europe, Middle East, and Africa.",
+              "foundingLocation": "Lagos, Nigeria",
+              "areaServed": [
+                "United Kingdom", "United States", "Canada", "Australia",
+                "Nigeria", "Ghana", "Kenya", "South Africa",
+                "Germany", "Netherlands", "France", "UAE", "Singapore"
+              ],
+              "knowsLanguage": ["English", "Yoruba"],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Digital Services",
+                "itemListElement": [
+                  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Design & Development"}},
+                  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile App Development"}},
+                  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO Services"}},
+                  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital Marketing"}},
+                  {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand Identity Design"}}
+                ]
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "47"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://trendtacticsdigital.com/#website",
+              "url": "https://trendtacticsdigital.com",
+              "name": "Trendtactics Digital",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://trendtacticsdigital.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          ]
+        }) }} />
       </head>
       <body className="font-sans antialiased">
         <Navigation />

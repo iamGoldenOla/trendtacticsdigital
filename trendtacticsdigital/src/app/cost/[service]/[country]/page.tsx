@@ -5,12 +5,12 @@ import React from "react";
 import { Metadata } from "next";
 
 interface PageProps {
-  params: Promise<{ service: string; location: string }>;
+  params: Promise<{ service: string; country: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { service, location } = await params;
-  const slug = `services/${service}/${location}`;
+  const { service, country } = await params;
+  const slug = `cost/${service}/${country}`;
 
   const { data: page } = await supabase
     .from("seo_pages")
@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function ServiceLocationPage({ params }: PageProps) {
-  const { service: serviceSlug, location: locationSlug } = await params;
-  const slug = `services/${serviceSlug}/${locationSlug}`;
+export default async function CostGuidePage({ params }: PageProps) {
+  const { service: serviceSlug, country } = await params;
+  const slug = `cost/${serviceSlug}/${country}`;
 
   // Fetch page details
   const { data: page } = await supabase
@@ -70,7 +70,6 @@ export default async function ServiceLocationPage({ params }: PageProps) {
     "@type": "ProfessionalService",
     "name": "Trendtactics Digital",
     "url": "https://trendtacticsdigital.com",
-    "areaServed": page.location || locationSlug,
     "serviceType": service?.name || serviceSlug,
     "priceRange": "$$"
   };
@@ -89,7 +88,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         
         <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-6 uppercase tracking-wider">
-            Premium AI Growth Agent
+            Pricing & Cost Guides
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-400 bg-clip-text text-transparent">
             {page.h1}
@@ -102,13 +101,13 @@ export default async function ServiceLocationPage({ params }: PageProps) {
               href="/contact"
               className="px-8 py-4 rounded-xl font-bold bg-cyan-400 text-slate-950 hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:scale-105"
             >
-              {page.cta_button || "Get My Free Quote"}
+              {page.cta_button || "Get Pricing Quote"}
             </Link>
             <Link
-              href="/portfolio"
+              href="/pricing"
               className="px-8 py-4 rounded-xl font-bold bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-850 hover:text-white transition-all hover:scale-105"
             >
-              View Our Work
+              Standard Pricing Plans
             </Link>
           </div>
           {service && (
@@ -142,46 +141,29 @@ export default async function ServiceLocationPage({ params }: PageProps) {
         <div className="space-y-8">
           <div className="p-8 rounded-2xl bg-slate-900/50 border border-slate-850 backdrop-blur-xl">
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Local Service Location
+              Budget Analysis
             </h3>
             <p className="text-slate-400 mb-4 leading-relaxed">
-              We provide premium, results-oriented {service?.name || serviceSlug} services in {page.location || locationSlug} and surrounding areas.
+              We offer flexible, cost-effective {service?.name || serviceSlug} solutions designed to maximize your ROI in {page.country || country}.
             </p>
             <div className="h-px bg-slate-800 my-6" />
             <ul className="space-y-3 text-slate-300 font-medium">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Lagos HQ, Nigeria
+                Transparent Pricing
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Abuja Office
+                Custom Scope Options
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Global Delivery
+                High Return on Investment
               </li>
             </ul>
           </div>
         </div>
       </section>
-
-      {/* Deliverables Section */}
-      {service && service.deliverables && (
-        <section className="bg-slate-900/40 border-y border-slate-900 py-20 px-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-10 tracking-tight text-center">{"What's Included in Our Deliverables"}</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {service.deliverables.map((item: string, i: number) => (
-                <div key={i} className="flex items-start gap-3 bg-slate-950/50 p-5 rounded-xl border border-slate-850">
-                  <span className="text-cyan-400 text-xl font-bold mt-0.5">✓</span>
-                  <span className="text-slate-300 text-lg leading-relaxed">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* FAQ Section */}
       {page.faq && (page.faq as unknown as { question: string; answer: string }[]).length > 0 && (
@@ -202,23 +184,23 @@ export default async function ServiceLocationPage({ params }: PageProps) {
       <section className="bg-gradient-to-t from-blue-950/20 to-slate-950 border-t border-slate-900 text-white py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            {page.cta_headline || `Ready to Start Your ${service?.name || serviceSlug} Project?`}
+            {page.cta_headline || `Ready to Get a Custom Quote for ${service?.name || serviceSlug}?`}
           </h2>
           <p className="text-lg text-slate-400">
-            {page.cta_subtext || "Get a free consultation and custom quote within 24 hours. No commitment required."}
+            {page.cta_subtext || "Contact us for a detailed breakdown of costs and a custom scope proposal within 24 hours."}
           </p>
           <div className="pt-4">
             <Link
               href="/contact"
               className="bg-cyan-400 text-slate-950 font-bold px-10 py-4 rounded-xl text-lg hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:scale-105 inline-block"
             >
-              {page.cta_button || "Get My Free Quote"}
+              {page.cta_button || "Get Custom Quote"}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Internal Links */}
+      {/* Related Links */}
       {relatedLinks.length > 0 && (
         <section className="py-12 border-t border-slate-900 px-6 max-w-5xl mx-auto">
           <h3 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-bold">Related Services</h3>
@@ -243,11 +225,11 @@ export async function generateStaticParams() {
   const { data: pages } = await supabase
     .from("seo_pages")
     .select("slug")
-    .eq("page_type", "service-location")
+    .eq("page_type", "cost-guide")
     .eq("published", true);
 
   return pages?.map((page) => {
     const parts = page.slug.split("/");
-    return { service: parts[1], location: parts[2] };
+    return { service: parts[1], country: parts[2] };
   }) || [];
 }
