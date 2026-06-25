@@ -7159,7 +7159,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 190px !important; /* Header is about 150px tall now */
+        padding-top: 220px !important; /* Header is about 210px tall now */
     }
 }
 
@@ -7182,7 +7182,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 130px !important; /* Header is about 100px tall on mobile now */
+        padding-top: 160px !important; /* Header is about 150px tall on mobile now */
     }
 }
 

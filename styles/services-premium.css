@@ -1040,7 +1040,7 @@
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: none !important; /* Stripped shadows */
     transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid #e8eef4;
     display: flex;
@@ -1050,28 +1050,30 @@
 
 .portfolio-item-premium:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 31, 63, 0.1);
+    box-shadow: none !important; /* Stripped hover shadows */
 }
 
 .portfolio-img-wrapper {
     position: relative;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: #f1f5f9;
-    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff !important; /* White background to blend contained images */
+    border: 3px solid #0047FF !important; /* Royal Blue border */
+    border-radius: 12px;
+    margin: 10px; /* Slight inset for a clean card design */
 }
 
 .portfolio-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain !important; /* Fit properly without cropping */
+    background: #ffffff !important;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: block;
 }
 
 .portfolio-item-premium:hover .portfolio-img-wrapper img {
-    transform: scale(1.05) translateY(-2%);
+    transform: scale(1.05);
 }
 
 /* Browser-chrome mockup frame on website cards */
