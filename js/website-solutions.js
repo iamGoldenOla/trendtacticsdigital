@@ -175,54 +175,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 3. Call TrendyAI backend API to register the client and start agent routing
-      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const backendURL = isLocalhost ? 'http://localhost:3000' : 'https://api.trendtacticsdigital.com';
+      try {
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const backendURL = isLocalhost ? 'http://localhost:3000' : 'https://api.trendtacticsdigital.com';
 
-      const clientPayload = {
-          name: data.fullName,
-          email: data.email,
-          company: data.businessName || 'N/A',
-          phone: data.phone,
-          status: 'active',
-          metadata: {
-              whatsapp: data.whatsapp,
-              selected_types: data.selectedTypes,
-              features: data.features,
-              goals: data.projectGoals,
-              budget: data.budget,
-              timeline: data.timeline,
-              inspiration: data.inspirationLinks
-          }
-      };
+        const clientPayload = {
+            name: data.fullName,
+            email: data.email,
+            company: data.businessName || 'N/A',
+            phone: data.phone,
+            status: 'active',
+            metadata: {
+                whatsapp: data.whatsapp,
+                selected_types: data.selectedTypes,
+                features: data.features,
+                goals: data.projectGoals,
+                budget: data.budget,
+                timeline: data.timeline,
+                inspiration: data.inspirationLinks
+            }
+        };
 
-      // Create client in backend Supabase
-      const clientResponse = await fetch(`${backendURL}/api/v1/clients`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(clientPayload)
-      });
+        // Create client in backend Supabase
+        const clientResponse = await fetch(`${backendURL}/api/v1/clients`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(clientPayload)
+        });
 
-      if (clientResponse.ok) {
-          const clientResult = await clientResponse.json();
-          const clientId = clientResult.data && clientResult.data.id;
+        if (clientResponse.ok) {
+            const clientResult = await clientResponse.json();
+            const clientId = clientResult.data && clientResult.data.id;
 
-          if (clientId) {
-              // Trigger smart agent routing
-              const routePayload = {
-                  message: `New Project Inquiry:\nClient: ${clientPayload.name}\nBusiness: ${clientPayload.company}\nTypes: ${data.selectedTypes}\nFeatures: ${data.features}\nGoals: ${data.projectGoals}\nBudget: ${data.budget}\nTimeline: ${data.timeline}`,
-                  client_id: clientId
-              };
+            if (clientId) {
+                // Trigger smart agent routing
+                const routePayload = {
+                    message: `New Project Inquiry:\nClient: ${clientPayload.name}\nBusiness: ${clientPayload.company}\nTypes: ${data.selectedTypes}\nFeatures: ${data.features}\nGoals: ${data.projectGoals}\nBudget: ${data.budget}\nTimeline: ${data.timeline}`,
+                    client_id: clientId
+                };
 
-              fetch(`${backendURL}/api/agent/route`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(routePayload)
-              }).then(res => res.json())
-                .then(resData => console.log('Smart routing triggered successfully:', resData))
-                .catch(err => console.error('Failed to trigger smart routing:', err));
-          }
-      } else {
-          console.warn('Failed to register client on TrendyAI backend:', clientResponse.statusText);
+                fetch(`${backendURL}/api/agent/route`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(routePayload)
+                }).then(res => res.json())
+                  .then(resData => console.log('Smart routing triggered successfully:', resData))
+                  .catch(err => console.error('Failed to trigger smart routing:', err));
+            }
+        } else {
+            console.warn('Failed to register client on TrendyAI backend:', clientResponse.statusText);
+        }
+      } catch (backendError) {
+        console.warn('Failed to communicate with TrendyAI backend (API down or CORS issue):', backendError);
       }
 
       // Success
