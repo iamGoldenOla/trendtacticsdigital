@@ -1,65 +1,25 @@
-/* ===== SHARED EFFECTS - Apply to all pages for consistency ===== */
+/* ===== SHARED EFFECTS - Sharp & Solid Theme (No Shadows or Blurs) ===== */
 
-/* 3D Gradient Section Dividers */
+/* Solid Section Dividers */
 .section-divider {
     height: 4px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--primary) 20%, 
-        var(--white) 50%, 
-        var(--primary) 80%, 
-        transparent 100%);
+    background: var(--primary-light, #0047FF);
     margin: 0 auto var(--spacing-2xl) auto;
     border-radius: 2px;
-    box-shadow: 
-        0 0 20px rgba(0, 255, 255, 0.5),
-        0 0 40px rgba(0, 255, 255, 0.3),
-        0 0 60px rgba(0, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: none !important;
     position: relative;
     z-index: 10;
 }
 
-.section-divider::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(0, 255, 255, 0.3) 20%, 
-        rgba(255, 255, 255, 0.8) 50%, 
-        rgba(0, 255, 255, 0.3) 80%, 
-        transparent 100%);
-    border-radius: 4px;
-    filter: blur(1px);
-}
-
+.section-divider::before,
 .section-divider::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(0, 0, 0, 0.1) 20%, 
-        rgba(0, 0, 0, 0.3) 50%, 
-        rgba(0, 0, 0, 0.1) 80%, 
-        transparent 100%);
-    border-radius: 4px;
-    filter: blur(1px);
+    display: none !important; /* Remove fuzzy overlay blurs */
 }
 
-/* Enhanced Section Titles with Cyan Glow */
+/* Sharp Section Titles with Solid Indicator */
 .section-title {
     position: relative;
-    text-shadow: none;
+    text-shadow: none !important;
 }
 
 .section-title::after {
@@ -69,13 +29,13 @@
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
-    height: 3px;
-    background: #0A1E3F;
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(10, 30, 63, 0.15);
+    height: 4px;
+    background: #fadb24 !important; /* Solid Accent Yellow line */
+    border-radius: 0; /* Sharp look */
+    box-shadow: none !important;
 }
 
-/* Enhanced Cards with Permanent Glow */
+/* Sharp Cards with Solid Borders (No fuzzy box-shadow) */
 .reason-card,
 .service-card,
 .testimonial-card,
@@ -84,12 +44,11 @@
 .timeline-content,
 .mv-card,
 .story-content {
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 4px 16px rgba(0, 255, 255, 0.1),
-        0 0 0 1px rgba(0, 255, 255, 0.2),
-        0 0 20px rgba(0, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #000000 !important;
+    border: 2px solid #222222 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    transition: all 0.3s ease;
 }
 
 .reason-card:hover,
@@ -100,148 +59,143 @@
 .timeline-content:hover,
 .mv-card:hover,
 .story-content:hover {
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.4),
-        0 15px 30px rgba(0, 255, 255, 0.2),
-        0 0 0 1px rgba(0, 255, 255, 0.3),
-        0 0 30px rgba(0, 255, 255, 0.2);
-    transform: translateY(-10px);
+    border-color: #0047FF !important; /* Crisp Royal Blue on hover */
+    transform: translateY(-5px);
+    box-shadow: none !important;
 }
 
-/* Enhanced Icons with Glow */
+/* Sharp Icons (No shadows) */
 .reason-icon,
 .service-icon,
 .value-icon,
 .mv-icon {
-    box-shadow: 
-        0 8px 25px rgba(0, 255, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 0 20px rgba(0, 255, 255, 0.2);
+    border: 2px solid #0047FF !important;
+    background: #000000 !important;
+    color: #fadb24 !important;
+    box-shadow: none !important;
 }
 
 .reason-card:hover .reason-icon,
 .service-card:hover .service-icon,
 .value-card:hover .value-icon,
 .mv-card:hover .mv-icon {
-    box-shadow: 
-        0 12px 35px rgba(0, 255, 255, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        0 0 30px rgba(0, 255, 255, 0.3);
+    border-color: #fadb24 !important;
+    background: #0047FF !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
 }
 
-/* Enhanced Buttons with Navy Blue Theme */
+/* Solid Buttons (No shadows) */
 .btn-primary {
-    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
-    transition: all var(--transition-normal);
+    background: #0047FF !important;
+    border: 2px solid #0047FF !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+    background: #fadb24 !important;
+    border-color: #fadb24 !important;
+    color: #000000 !important;
+    box-shadow: none !important;
     transform: translateY(-2px);
 }
 
 .btn-outline {
-    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
-    transition: all var(--transition-normal);
+    background: transparent !important;
+    border: 2px solid #0047FF !important;
+    color: #0047FF !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: all 0.2s ease;
 }
 
 .btn-outline:hover {
-    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+    background: #0047FF !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
     transform: translateY(-2px);
 }
 
-/* Enhanced Navigation with Glow */
+/* Enhanced Navigation - Solid underline, no shadow */
 .nav-link.active {
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    text-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #0047FF !important;
 }
 
-/* Enhanced Footer with Glow */
+/* Solid Footer (No shadows) */
 .footer {
-    box-shadow: 
-        0 -4px 20px rgba(0, 255, 255, 0.1),
-        inset 0 1px 0 rgba(0, 255, 255, 0.1);
+    border-top: 2px solid #222222 !important;
+    box-shadow: none !important;
 }
 
-/* Enhanced Social Links with Glow */
+/* Solid Social Links */
 .social-links a {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-    transition: all var(--transition-normal);
+    border: 2px solid #222222 !important;
+    box-shadow: none !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    border-color: #0047FF !important;
+    color: #fadb24 !important;
+    box-shadow: none !important;
     transform: scale(1.1);
 }
 
-/* Enhanced Form Elements with Glow */
+/* Sharp Form Focus */
 input:focus,
 textarea:focus,
 select:focus {
-    box-shadow: 
-        0 0 0 2px rgba(0, 255, 255, 0.3),
-        0 0 15px rgba(0, 255, 255, 0.2);
-    border-color: var(--primary);
+    box-shadow: none !important;
+    border: 2px solid #0047FF !important;
 }
 
-/* Enhanced Links with Glow */
+/* Remove hover link glow */
 a:hover {
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    text-shadow: none !important;
 }
 
-/* Enhanced Images with Glow */
-img {
-    transition: all var(--transition-normal);
-}
-
+/* Remove image hover shadows */
 img:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: none !important;
 }
 
-/* Responsive Design - Enable 3D animations on mobile with optimizations */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .section-divider {
         height: 3px;
         margin: 0 auto var(--spacing-xl) auto;
-        transform: perspective(800px) rotateX(3deg); /* Reduced perspective for mobile */
     }
-    
-    .section-title::after {
-        width: 40px;
-        height: 2px;
-    }
-    
-    /* Enable 3D hover effects on mobile with reduced intensity */
-    .reason-card:hover,
-    .service-card:hover,
-    .testimonial-card:hover,
-    .value-card:hover,
-    .team-member:hover,
-    .timeline-content:hover,
-    .mv-card:hover,
-    .story-content:hover {
-        transform: translateY(-5px) scale(1.01); /* Reduced transform for mobile */
-    }
-    
-    /* Optimize 3D transforms for mobile performance */
-    .reason-card,
-    .service-card,
-    .testimonial-card,
-    .value-card,
-    .team-member {
-        will-change: transform;
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-    }
-    
-    /* Respect reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-        .reason-card:hover,
-        .service-card:hover,
-        .testimonial-card:hover,
-        .value-card:hover,
-        .team-member:hover {
-            transform: none;
-        }
-    }
-} 
+}
+
+/* AGGRESSIVE SOLID OVERRIDES - Strip all soft shadows and blurs globally */
+*, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Ensure text elements have sharp rendering and solid color visibility */
+body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent washed-out opacity on links, menus and key content text */
+.nav-link, 
+.dropdown-header, 
+.dropdown-link-title,
+.dropdown-link-desc,
+.footer-links a,
+.footer-description,
+.brand-desc,
+.section-title {
+    opacity: 1 !important;
+}

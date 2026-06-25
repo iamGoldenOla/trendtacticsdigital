@@ -150,7 +150,7 @@ class SecureAIClient {
         if (element) {
             element.innerHTML = `
                 <div style="text-align:center;padding:2rem;">
-                    <div style="display:inline-block;width:40px;height:40px;border:4px solid #f3f3f3;border-top:4px solid #00FFFF;border-radius:50%;animation:spin 1s linear infinite;"></div>
+                    <div style="display:inline-block;width:40px;height:40px;border:4px solid #f3f3f3;border-top:4px solid #0047FF;border-radius:50%;animation:spin 1s linear infinite;"></div>
                     <p style="margin-top:1rem;color:#666;">AI is thinking...</p>
                 </div>
                 <style>

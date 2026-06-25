@@ -82,7 +82,7 @@
                 }
                 .exit-popup-body h3 {
                     margin-top: 0;
-                    color: #0A1E3F;
+                    color: #000000;
                     font-size: 1.5rem;
                 }
                 .exit-popup-body p {
@@ -103,8 +103,8 @@
                 }
                 .exit-popup-form button {
                     padding: 12px 24px;
-                    background: #00FFFF;
-                    color: #0A1E3F;
+                    background: #0047FF;
+                    color: #000000;
                     border: none;
                     border-radius: 8px;
                     font-weight: 600;

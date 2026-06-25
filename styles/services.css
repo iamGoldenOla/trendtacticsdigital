@@ -1848,7 +1848,7 @@ html {
 /* Simplified CTA Section */
 .cta-clean {
     padding: var(--spacing-4xl) 0;
-    background: #0A1E3F;
+    background: #000000;
     color: var(--white);
     text-align: center;
     position: relative;

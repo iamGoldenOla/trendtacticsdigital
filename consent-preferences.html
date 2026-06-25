@@ -12,21 +12,21 @@
     <link rel="stylesheet" href="/styles/main.css?v=1772546233">
     <style>
         .consent-page { max-width: 800px; margin: 0 auto; padding: 80px 5% 60px; }
-        .consent-page h1 { font-size: 2.5rem; font-weight: 800; color: #0A1E3F; margin-bottom: 10px; }
+        .consent-page h1 { font-size: 2.5rem; font-weight: 800; color: #000000; margin-bottom: 10px; }
         .consent-page p { color: #4a5568; line-height: 1.8; margin-bottom: 1rem; }
         .consent-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-        .consent-card:hover { border-color: #00FFFF; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        .consent-card h3 { font-size: 1.1rem; color: #0A1E3F; font-weight: 700; margin: 0 0 6px; }
+        .consent-card:hover { border-color: #0047FF; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .consent-card h3 { font-size: 1.1rem; color: #000000; font-weight: 700; margin: 0 0 6px; }
         .consent-card p { font-size: 0.9rem; color: #64748b; margin: 0; }
         .toggle-switch { position: relative; width: 52px; height: 28px; flex-shrink: 0; }
         .toggle-switch input { opacity: 0; width: 0; height: 0; }
         .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #cbd5e0; border-radius: 28px; transition: 0.3s; }
         .toggle-slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background: white; border-radius: 50%; transition: 0.3s; }
-        input:checked + .toggle-slider { background: #0A1E3F; }
+        input:checked + .toggle-slider { background: #000000; }
         input:checked + .toggle-slider:before { transform: translateX(24px); }
         input:disabled + .toggle-slider { opacity: 0.6; cursor: not-allowed; }
         .badge-required { background: #f0fdf4; color: #16a34a; font-size: 0.75rem; padding: 2px 10px; border-radius: 50px; font-weight: 600; margin-left: 8px; }
-        .btn-save { background: #0A1E3F; color: #fadb24; padding: 14px 40px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; transition: all 0.3s; }
+        .btn-save { background: #000000; color: #fadb24; padding: 14px 40px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; transition: all 0.3s; }
         .btn-save:hover { background: #1a2e4f; transform: translateY(-2px); }
         .legal-badge { display: inline-block; background: #f1f5f9; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: #64748b; margin-bottom: 30px; }
     </style>
@@ -49,7 +49,7 @@
         </div>
     </nav>
     <main class="consent-page">
-        <span class="legal-badge"><i class="fas fa-sliders-h" style="margin-right:6px;color:#0A1E3F;"></i>Privacy</span>
+        <span class="legal-badge"><i class="fas fa-sliders-h" style="margin-right:6px;color:#000000;"></i>Privacy</span>
         <h1>Consent Preferences</h1>
         <p>Manage how Trendtactics Digital uses your data. Essential cookies are always active and cannot be disabled. You can toggle optional preferences below.</p>
         <div class="consent-card">
@@ -81,7 +81,7 @@
             <label class="toggle-switch"><input type="checkbox" id="preference-consent" checked><span class="toggle-slider"></span></label>
         </div>
         <button class="btn-save" onclick="saveConsent()">Save Preferences</button>
-        <p style="margin-top:20px;font-size:0.85rem;color:#94a3b8;">Read our <a href="cookie-policy" style="color:#0A1E3F;">Cookie Policy</a> and <a href="privacy-policy" style="color:#0A1E3F;">Privacy Policy</a> for more information.</p>
+        <p style="margin-top:20px;font-size:0.85rem;color:#94a3b8;">Read our <a href="cookie-policy" style="color:#000000;">Cookie Policy</a> and <a href="privacy-policy" style="color:#000000;">Privacy Policy</a> for more information.</p>
     </main>
     <footer style="background:#061226;padding:30px 5%;text-align:center;color:#94a3b8;margin-top:40px;">
         <p>&copy; 2026 Trendtactics Digital. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy" style="color:#94a3b8;">Privacy Policy</a> &nbsp;|&nbsp; <a href="cookie-policy" style="color:#94a3b8;">Cookie Policy</a></p>
@@ -98,7 +98,7 @@
             const btn = document.querySelector('.btn-save');
             btn.textContent = 'Preferences Saved!';
             btn.style.background = '#16a34a';
-            setTimeout(() => { btn.textContent = 'Save Preferences'; btn.style.background = '#0A1E3F'; }, 2500);
+            setTimeout(() => { btn.textContent = 'Save Preferences'; btn.style.background = '#000000'; }, 2500);
         }
         // Load saved prefs
         window.addEventListener('DOMContentLoaded', () => {

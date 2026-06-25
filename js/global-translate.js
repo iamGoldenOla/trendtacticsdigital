@@ -1,17 +1,130 @@
-// Global Responsive Google Translate Widget
+// Global Responsive Google Translate Widget & Dynamic Grid Dropdowns
 // Injected across all pages via global-translate.js
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Inject the necessary CSS for the sleek floating widget
+    // 1. DYNAMIC DROPDOWN RESTRUCTURING FOR SERVICES & ACADEMY/RESOURCES
+    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggleLink = dropdown.querySelector('.dropdown-toggle');
+        if (!toggleLink) return;
+        
+        const text = toggleLink.textContent.trim().toLowerCase();
+        
+        if (text.includes('services')) {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu && !menu.classList.contains('dropdown-grid-menu')) {
+                menu.className = 'dropdown-menu dropdown-grid-menu services-grid';
+                menu.innerHTML = `
+                <div class="dropdown-grid-container">
+                    <div class="dropdown-featured-side">
+                        <div>
+                            <h4>Why Trendtactics?</h4>
+                            <p>We blend cutting-edge development with data-driven marketing to scale your business exponentially.</p>
+                        </div>
+                        <a href="contact.html" class="dropdown-featured-cta">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="dropdown-links-side">
+                        <div class="dropdown-links-column">
+                            <span class="dropdown-column-title">Tech & Development</span>
+                            <a href="service-web-development.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Web Development</span>
+                                <span class="dropdown-link-desc">High-performance custom & E-commerce sites.</span>
+                            </a>
+                            <a href="service-app-development.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">App Development</span>
+                                <span class="dropdown-link-desc">Native & hybrid mobile applications.</span>
+                            </a>
+                            <a href="website-solutions.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Website Solutions</span>
+                                <span class="dropdown-link-desc">Find the perfect digital footprint.</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-links-column">
+                            <span class="dropdown-column-title">Digital Growth Lab</span>
+                            <a href="service-digital-marketing.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Digital Marketing</span>
+                                <span class="dropdown-link-desc">SEO, search ads, and lead generation.</span>
+                            </a>
+                            <a href="service-social-media-marketing.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Social Media</span>
+                                <span class="dropdown-link-desc">Grow, engage and monetize audiences.</span>
+                            </a>
+                            <a href="service-facebook-ads.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Facebook & IG Ads</span>
+                                <span class="dropdown-link-desc">ROI-focused social acquisition.</span>
+                            </a>
+                            <a href="service-content-creation.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Content Creation</span>
+                                <span class="dropdown-link-desc">Stunning copywriting, photos, & videos.</span>
+                            </a>
+                            <a href="service-email-marketing.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Email Marketing</span>
+                                <span class="dropdown-link-desc">Automated flows to boost customer lifetime value.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+            }
+        } else if (text.includes('resources') || text.includes('academy')) {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu && !menu.classList.contains('dropdown-grid-menu')) {
+                menu.className = 'dropdown-menu dropdown-grid-menu academy-grid';
+                menu.innerHTML = `
+                <div class="dropdown-grid-container">
+                    <div class="dropdown-featured-side yellow-theme">
+                        <div>
+                            <h4>Academy & Insights</h4>
+                            <p>Master the digital landscape with our high-impact training programs and resources.</p>
+                        </div>
+                        <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="dropdown-featured-cta">Visit Academy <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="dropdown-links-side">
+                        <div class="dropdown-links-column">
+                            <span class="dropdown-column-title">Resources Hub</span>
+                            <a href="resources.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Resource Overview</span>
+                                <span class="dropdown-link-desc">Browse templates, guides & audits.</span>
+                            </a>
+                            <a href="tools.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Marketing Tools</span>
+                                <span class="dropdown-link-desc">Software & utilities we use to grow.</span>
+                            </a>
+                            <a href="quiz.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Growth Quiz</span>
+                                <span class="dropdown-link-desc">Check your brand's digital health score.</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-links-column">
+                            <span class="dropdown-column-title">Insights</span>
+                            <a href="blog.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Insights Blog</span>
+                                <span class="dropdown-link-desc">Articles on design, dev & marketing.</span>
+                            </a>
+                            <a href="ebooks.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Free Books</span>
+                                <span class="dropdown-link-desc">Premium marketing & SEO downloads.</span>
+                            </a>
+                            <a href="contact.html" class="dropdown-grid-link">
+                                <span class="dropdown-link-title">Free Consultation</span>
+                                <span class="dropdown-link-desc">1-on-1 strategy call with our team.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+            }
+        }
+    });
+
+    // 2. STYLING & INJECTION FOR LANGUAGE TRANSLATOR GRID
     const translateCSS = `
-        /* Google Translate overriding styles */
-        body { top: 0 !important; } /* Prevents Google from pushing the body down */
+        /* Google Translate overrides */
+        body { top: 0 !important; } 
         .goog-te-banner-frame.skiptranslate,
         .goog-te-banner-frame {
             display: none !important;
         }
         
-        /* Floating Widget Styles */
+        /* Translator Floating Container */
         #global-translate-container {
             position: fixed;
             bottom: 30px;
@@ -24,42 +137,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         #global-translate-btn {
-            background: #fadb24;
-            color: #0A1E3F;
-            border: 2px solid rgba(10,30,63,0.3);
-            border-radius: 50%;
+            background: #0047FF !important; /* Solid Royal Blue */
+            color: #ffffff !important;
+            border: 2px solid #ffffff !important;
+            border-radius: 50% !important;
             width: 55px;
             height: 55px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(10,30,63,0.35);
+            box-shadow: none !important;
             cursor: pointer;
             font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease;
             outline: none;
             padding: 0;
         }
 
         #global-translate-btn:hover {
             transform: scale(1.08) translateY(-2px);
-            box-shadow: 0 8px 30px rgba(10,30,63,0.45);
+            border-color: #fadb24 !important; /* Yellow border highlight */
         }
 
-        /* The hidden dropdown container */
+        /* The solid grid dropdown container */
         #global-translate-dropdown {
-            background: #ffffff;
+            background: #000000 !important;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 10px 15px;
-            border: 1px solid #e2e8f0;
+            padding: 15px !important;
+            border: 2px solid #0047FF !important;
             opacity: 0;
             transform: translateY(10px) scale(0.95);
             pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.2s ease;
             position: absolute;
             bottom: 70px;
             left: 0;
+            width: 320px;
+            box-shadow: none !important;
         }
 
         #global-translate-container.open #global-translate-dropdown {
@@ -68,48 +182,59 @@ document.addEventListener('DOMContentLoaded', function () {
             pointer-events: auto;
         }
 
-        /* Add some spacing inside the container so Google's widget renders properly */
-        #google_translate_element {
-            margin-top: 5px;
-            min-height: 40px;
+        .lang-grid-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #fadb24 !important; /* Accent Yellow title */
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 6px;
         }
 
-        /* Prevent Google Translate iframe from messing up layout */
-        iframe.goog-te-menu-frame {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-            border-radius: 8px !important;
-            border: 1px solid #e2e8f0 !important;
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
         }
-        
-        /* Style the native select box injected by Google */
-        .goog-te-combo {
-            width: 100%;
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #111111 !important;
+            border: 1px solid #222222 !important;
+            color: #ffffff !important;
             padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            background: #f8f9fa;
-            color: #0A1E3F;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            border-radius: 6px;
             cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-align: left;
         }
-        .goog-te-combo:focus {
-            border-color: #00FFFF;
-            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2);
+
+        .lang-btn:hover {
+            border-color: #0047FF !important;
+            background: #0047FF !important;
+            color: #ffffff !important;
         }
-        
-        /* Hide the Google Translate branding completely */
-        .goog-logo-link {
-            display:none !important;
-        } 
+
+        .lang-btn.active {
+            border-color: #fadb24 !important;
+            background: #111111 !important;
+            color: #fadb24 !important;
+        }
+
+        /* Hide Google combo select and branding */
+        #google_translate_element,
+        .goog-logo-link,
         .goog-te-gadget {
-            color: transparent !important;
-            font-size: 0px !important;
+            display: none !important;
         }
-        
-        /* Mobile fixes */
+
+        /* Mobile overrides */
         @media (max-width: 480px) {
             #global-translate-container {
                 bottom: 20px;
@@ -120,6 +245,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 height: 50px;
                 font-size: 1.3rem;
             }
+            #global-translate-dropdown {
+                bottom: 60px;
+                width: 280px;
+            }
         }
     `;
 
@@ -128,13 +257,23 @@ document.addEventListener('DOMContentLoaded', function () {
     styleBlock.innerHTML = translateCSS;
     document.head.appendChild(styleBlock);
 
-    // Build the DOM structure for the widget
+    // Build the DOM structure for the translator widget
     const widgetHTML = `
         <button id="global-translate-btn" title="Translate Website">
             <i class="fas fa-globe"></i>
         </button>
         <div id="global-translate-dropdown">
-            <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 5px; font-weight: 600;">Select Language:</div>
+            <div class="lang-grid-title">Select Language</div>
+            <div class="lang-grid">
+                <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                <button class="lang-btn" data-lang="es">🇪🇸 Spanish</button>
+                <button class="lang-btn" data-lang="fr">🇫🇷 French</button>
+                <button class="lang-btn" data-lang="de">🇩🇪 German</button>
+                <button class="lang-btn" data-lang="pt">🇵🇹 Portuguese</button>
+                <button class="lang-btn" data-lang="it">🇮🇹 Italian</button>
+                <button class="lang-btn" data-lang="zh-CN">🇨🇳 Chinese</button>
+                <button class="lang-btn" data-lang="ar">🇸🇦 Arabic</button>
+            </div>
             <div id="google_translate_element"></div>
         </div>
     `;
@@ -153,11 +292,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const socialsDiv = document.createElement('div');
             socialsDiv.className = 'nav-socials';
             socialsDiv.innerHTML = `
-                <a href=\"https://facebook.com/trendtacticsdigital\" target=\"_blank\" rel=\"noopener\" aria-label=\"Facebook\"><i class=\"fab fa-facebook-f\"></i></a>
-                <a href=\"https://instagram.com/trendtacticsdigital\" target=\"_blank\" rel=\"noopener\" aria-label=\"Instagram\"><i class=\"fab fa-instagram\"></i></a>
-                <a href=\"https://linkedin.com/company/trendtacticsdigital\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\"><i class=\"fab fa-linkedin-in\"></i></a>
-                <a href=\"https://twitter.com/trendtacticsdig\" target=\"_blank\" rel=\"noopener\" aria-label=\"Twitter\"><i class=\"fab fa-twitter\"></i></a>
-                <a href=\"https://youtube.com/@trendtacticsdigital\" target=\"_blank\" rel=\"noopener\" aria-label=\"YouTube\"><i class=\"fab fa-youtube\"></i></a>
+                <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             `;
             headerContainer.insertBefore(socialsDiv, headerContainer.firstChild);
         }
@@ -165,10 +304,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(container);
     }
 
-    // Add toggle logic
+    // Toggle logic for translation dropdown
     const toggleBtn = document.getElementById('global-translate-btn');
     toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent document click from firing immediately
+        e.stopPropagation();
         container.classList.toggle('open');
     });
 
@@ -179,7 +318,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Load the official Google Translate Script
+    // Custom language buttons event listener
+    const langButtons = container.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const langCode = this.getAttribute('data-lang');
+            
+            const googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect) {
+                googleSelect.value = langCode;
+                googleSelect.dispatchEvent(new Event('change'));
+                
+                langButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                container.classList.remove('open');
+            } else {
+                console.warn("Google Translate widget is still loading.");
+            }
+        });
+    });
+
+    // Loop to auto-highlight selected language
+    const checkGoogleSelect = setInterval(() => {
+        const googleSelect = document.querySelector('.goog-te-combo');
+        if (googleSelect) {
+            clearInterval(checkGoogleSelect);
+            const currentLang = googleSelect.value || 'en';
+            langButtons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === currentLang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    }, 500);
+
+    // Load official Google Translate script
     window.googleTranslateElementInit = function () {
         new google.translate.TranslateElement({
             pageLanguage: 'en',

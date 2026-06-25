@@ -29,7 +29,7 @@ const emailTemplates = {
                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
                     .header { background: linear-gradient(135deg, #1a2a4a 0%, #0f172a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
                     .content { background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }
-                    .btn { display: inline-block; background: #00ffff; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
+                    .btn { display: inline-block; background: #0047FF; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
                     .footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -73,7 +73,7 @@ const emailTemplates = {
                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
                     .header { background: linear-gradient(135deg, #1a2a4a 0%, #0f172a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
                     .content { background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }
-                    .btn { display: inline-block; background: #00ffff; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
+                    .btn { display: inline-block; background: #0047FF; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
                     .footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -117,7 +117,7 @@ const emailTemplates = {
                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
                     .header { background: linear-gradient(135deg, #1a2a4a 0%, #0f172a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
                     .content { background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }
-                    .btn { display: inline-block; background: #00ffff; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
+                    .btn { display: inline-block; background: #0047FF; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
                     .footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -163,7 +163,7 @@ const emailTemplates = {
                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
                     .header { background: linear-gradient(135deg, #1a2a4a 0%, #0f172a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
                     .content { background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }
-                    .btn { display: inline-block; background: #00ffff; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
+                    .btn { display: inline-block; background: #0047FF; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
                     .footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
                 </style>
             </head>
@@ -208,7 +208,7 @@ const emailTemplates = {
                     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
                     .header { background: linear-gradient(135deg, #1a2a4a 0%, #0f172a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
                     .content { background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }
-                    .btn { display: inline-block; background: #00ffff; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
+                    .btn { display: inline-block; background: #0047FF; color: #1a2a4a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
                     .footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
                 </style>
             </head>

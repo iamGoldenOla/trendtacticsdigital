@@ -2,13 +2,13 @@
 
 :root {
   --sw-bg-base: #040d1f;
-  --sw-bg-surface: #0a1e3f;
+  --sw-bg-surface: #000000;
   --sw-bg-surface-elevated: #0f2a55;
   --sw-border: rgba(255, 255, 255, 0.1);
   --sw-border-hover: rgba(0, 255, 255, 0.3);
   --sw-text-primary: #ffffff;
   --sw-text-secondary: #94a3b8;
-  --sw-accent: #00FFFF;
+  --sw-accent: #0047FF;
   --sw-accent-glow: rgba(0, 255, 255, 0.15);
   --sw-radius-sm: 8px;
   --sw-radius-md: 12px;
@@ -671,7 +671,7 @@
 .success-message {
   background: rgba(0, 255, 255, 0.1);
   border: 1px solid rgba(0, 255, 255, 0.3);
-  color: #00FFFF;
+  color: #0047FF;
   padding: 1.5rem;
   border-radius: var(--sw-radius-md);
   margin-top: 2rem;

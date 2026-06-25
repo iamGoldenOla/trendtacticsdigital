@@ -53,7 +53,7 @@ backendApp.get('/', (req, res) => {
                 <p>The backend API is running correctly on port 5000.</p>
                 <div style="background: #f4f4f4; padding: 1rem; border-radius: 8px;">
                     <p><strong>To view the main website/academy, please visit:</strong></p>
-                    <a href="http://localhost:8000" style="font-size: 1.2rem; color: #00FFFF; text-decoration: none; font-weight: bold;">http://localhost:8000</a>
+                    <a href="http://localhost:8000" style="font-size: 1.2rem; color: #0047FF; text-decoration: none; font-weight: bold;">http://localhost:8000</a>
                 </div>
             </body>
         </html>

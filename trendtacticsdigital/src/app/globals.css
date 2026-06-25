@@ -4,9 +4,9 @@
 
 :root {
   /* Brand Colors */
-  --primary-cyan: #00FFFF;
+  --primary-cyan: #0047FF;
   --accent-turquoise: #40E0D0;
-  --base-dark: #0A1E3F;
+  --base-dark: #000000;
   --soft-black: #0D0D0D;
   --light-bg: #FFFFFF;
   --soft-gray: #F5F5F5;
@@ -89,7 +89,7 @@
   }
   
   .nav-logo {
-    @apply text-2xl font-bold text-[#0A1E3F];
+    @apply text-2xl font-bold text-[#000000];
   }
   
   .nav-menu {
@@ -97,11 +97,11 @@
   }
   
   .nav-link {
-    @apply text-[#0A1E3F] hover:text-[#00FFFF] transition-colors duration-200 font-medium;
+    @apply text-[#000000] hover:text-[#0047FF] transition-colors duration-200 font-medium;
   }
   
   .nav-link.active {
-    @apply text-[#00FFFF] font-semibold;
+    @apply text-[#0047FF] font-semibold;
   }
   
   .nav-toggle {
@@ -109,7 +109,7 @@
   }
   
   .nav-toggle span {
-    @apply w-6 h-0.5 bg-[#0A1E3F] transition-all duration-200;
+    @apply w-6 h-0.5 bg-[#000000] transition-all duration-200;
   }
   
   .nav-cta {
@@ -122,11 +122,11 @@
   }
   
   .btn-primary {
-    @apply bg-[#00FFFF] text-[#0A1E3F] hover:bg-[#40E0D0] shadow-lg hover:shadow-cyan-400/40;
+    @apply bg-[#0047FF] text-[#000000] hover:bg-[#40E0D0] shadow-lg hover:shadow-cyan-400/40;
   }
   
   .btn-outline {
-    @apply border border-[#00FFFF] text-[#00FFFF] hover:bg-[#00FFFF] hover:text-[#0A1E3F];
+    @apply border border-[#0047FF] text-[#0047FF] hover:bg-[#0047FF] hover:text-[#000000];
   }
   
   .btn-large {
@@ -160,7 +160,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-2 text-[#0A1E3F];
+    @apply text-3xl md:text-4xl font-bold mb-2 text-[#000000];
   }
   
   .section-subtitle {
@@ -239,7 +239,7 @@
 
   /* Footer */
   .footer {
-    @apply bg-[#0A1E3F] text-white py-12 mt-12;
+    @apply bg-[#000000] text-white py-12 mt-12;
   }
   
   .footer-content {
@@ -291,7 +291,7 @@
   }
   
   .newsletter-form input {
-    @apply px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none text-[#0A1E3F];
+    @apply px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none text-[#000000];
   }
   
   .newsletter-form button {
@@ -341,11 +341,11 @@
   }
   
   .button-primary {
-    @apply px-6 py-3 bg-[#00FFFF] text-[#0A1E3F] font-semibold rounded-full hover:bg-[#40E0D0] transition-all duration-200 shadow-lg hover:shadow-cyan-400/40;
+    @apply px-6 py-3 bg-[#0047FF] text-[#000000] font-semibold rounded-full hover:bg-[#40E0D0] transition-all duration-200 shadow-lg hover:shadow-cyan-400/40;
   }
   
   .button-secondary {
-    @apply px-6 py-3 border border-[#00FFFF] text-[#00FFFF] font-semibold rounded-full hover:bg-[#00FFFF] hover:text-[#0A1E3F] transition-all duration-200;
+    @apply px-6 py-3 border border-[#0047FF] text-[#0047FF] font-semibold rounded-full hover:bg-[#0047FF] hover:text-[#000000] transition-all duration-200;
   }
 
   /* Container */

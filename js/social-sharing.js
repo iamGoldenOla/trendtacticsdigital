@@ -74,8 +74,8 @@
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
-                background: #00FFFF;
-                color: #0A1E3F;
+                background: #0047FF;
+                color: #000000;
                 padding: 12px 24px;
                 border-radius: 8px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.2);

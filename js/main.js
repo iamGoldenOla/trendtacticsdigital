@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             adminLink.href = '/admin-dashboard.html';
             adminLink.className = 'nav-link';
             adminLink.textContent = 'Admin';
-            adminLink.style.color = '#00FFFF';
+            adminLink.style.color = '#0047FF';
             adminLink.style.fontWeight = 'bold';
 
             // Insert before the last few items

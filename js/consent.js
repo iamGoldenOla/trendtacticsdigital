@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 right: 20px;
                 max-width: 1160px;
                 margin: 0 auto;
-                background-color: #0A1E3F;
+                background-color: #000000;
                 color: #fff;
                 padding: 24px;
                 border-radius: 12px;
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 font-family: 'Inter', sans-serif;
             }
             .cc-content { flex: 1; }
-            .cc-content h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: #00FFFF; }
+            .cc-content h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: #0047FF; }
             .cc-content p { margin: 0; font-size: 0.9rem; color: #cbd5e1; line-height: 1.5; }
-            .cc-content a { color: #00FFFF; text-decoration: underline; }
+            .cc-content a { color: #0047FF; text-decoration: underline; }
             .cc-actions { display: flex; gap: 10px; flex-shrink: 0; }
             .cc-btn { padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; }
-            .cc-accept { background: #00FFFF; color: #0A1E3F; }
-            .cc-accept:hover { background: #fff; color: #0A1E3F; }
+            .cc-accept { background: #0047FF; color: #000000; }
+            .cc-accept:hover { background: #fff; color: #000000; }
             .cc-reject { background: transparent; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.2); }
             .cc-reject:hover { background: rgba(255,255,255,0.1); }
             

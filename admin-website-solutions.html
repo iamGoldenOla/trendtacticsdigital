@@ -13,14 +13,14 @@
     body { background: #061226; color: #fff; font-family: 'Inter', sans-serif; }
     .admin-container { max-width: 1200px; margin: 40px auto; padding: 20px; }
     .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
-    .btn-export { background: #00FFFF; color: #061226; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
-    table { width: 100%; border-collapse: collapse; background: #0a1e3f; border-radius: 8px; overflow: hidden; }
+    .btn-export { background: #0047FF; color: #061226; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; background: #000000; border-radius: 8px; overflow: hidden; }
     th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    th { background: #0f2a55; color: #00FFFF; font-size: 0.85rem; text-transform: uppercase; }
+    th { background: #0f2a55; color: #0047FF; font-size: 0.85rem; text-transform: uppercase; }
     td { font-size: 0.9rem; color: #cbd5e1; }
-    .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; background: rgba(0,255,255,0.1); color: #00FFFF; }
+    .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; background: rgba(0,255,255,0.1); color: #0047FF; }
     .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index: 1000; justify-content:center; align-items:center; }
-    .modal-content { background:#0a1e3f; padding:30px; border-radius:12px; max-width:600px; width:90%; max-height:80vh; overflow-y:auto; }
+    .modal-content { background:#000000; padding:30px; border-radius:12px; max-width:600px; width:90%; max-height:80vh; overflow-y:auto; }
     .modal-close { float:right; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer; }
   </style>
 </head>
@@ -114,11 +114,11 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${new Date(lead.created_at).toLocaleDateString()}</td>
-          <td>${lead.full_name}<br><small><a href="mailto:${lead.email}" style="color:#00FFFF;">${lead.email}</a></small></td>
+          <td>${lead.full_name}<br><small><a href="mailto:${lead.email}" style="color:#0047FF;">${lead.email}</a></small></td>
           <td>${lead.business_name}</td>
           <td>${lead.selected_types || '-'}</td>
           <td><span class="status-badge">${lead.budget || '-'}</span></td>
-          <td><button onclick="viewLead('${lead.id}')" style="background:#0f2a55; border:1px solid #00FFFF; color:#00FFFF; padding:5px 10px; border-radius:4px; cursor:pointer;">View Details</button></td>
+          <td><button onclick="viewLead('${lead.id}')" style="background:#0f2a55; border:1px solid #0047FF; color:#0047FF; padding:5px 10px; border-radius:4px; cursor:pointer;">View Details</button></td>
         `;
         tbody.appendChild(tr);
       });

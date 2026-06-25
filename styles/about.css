@@ -994,12 +994,12 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
-    color: #0A1E3F !important;
+    color: #000000 !important;
 }
 
 .member-position {
     font-size: 1rem;
-    color: #0A1E3F !important;
+    color: #000000 !important;
     opacity: 0.8 !important;
     font-weight: 500;
     margin-bottom: var(--spacing-md);
@@ -1966,7 +1966,7 @@
 /* Ebook Promo Section */
 .ebook-promo-section {
     padding: var(--spacing-4xl) 0;
-    background: linear-gradient(90deg, var(--primary) 0%, #0A1E3F 100%);
+    background: linear-gradient(90deg, var(--primary) 0%, #000000 100%);
     text-align: center;
     color: var(--white);
     margin-bottom: var(--spacing-2xl);
@@ -3167,7 +3167,7 @@
 .usp-card-sleek {
     flex: 0 0 350px;
     scroll-snap-align: center;
-    background: #0A1E3F !important;
+    background: #000000 !important;
     padding: 40px;
     border-radius: var(--radius-2xl);
     position: relative;

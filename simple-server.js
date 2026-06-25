@@ -43,7 +43,7 @@ app.get('/tools', (req, res) => {
 });
 
 // Catch all other routes and serve the index.html
-app.get('*', (req, res) => {
+app.get('*all', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 

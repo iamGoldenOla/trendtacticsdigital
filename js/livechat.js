@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     style.textContent = `
         /* Live Chat Widget Global Styles */
         :root {
-            --chat-primary: #0A1E3F; /* Dark Navy brand color */
+            --chat-primary: #000000; /* Dark Navy brand color */
             --chat-secondary: rgba(255, 255, 255, 0.85); /* Glassmorphism background */
-            --chat-accent: #00FFFF; /* Cyan accent color */
+            --chat-accent: #0047FF; /* Cyan accent color */
             --chat-text: #1f2937;
             --chat-user-msg: rgba(10, 30, 63, 0.1); /* Light navy for user message bubble */
         }
@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Book / Consultation
         {
             keywords: ["book", "schedule", "consult", "free call", "meeting", "appointment", "talk to someone"],
-            response: "📅 Let's make it happen!<br><br><strong>Book your FREE 30-minute strategy consultation</strong> — we'll review your digital presence, identify growth opportunities, and recommend the right services for your goals.<br><br>Zero commitment. 100% value.<br><br><a href='' style='display:inline-block;margin-top:8px;padding:8px 16px;background:#0A1E3F;color:#fadb24;border-radius:8px;font-weight:700;text-decoration:none;'>Book Free Consultation →</a>"
+            response: "📅 Let's make it happen!<br><br><strong>Book your FREE 30-minute strategy consultation</strong> — we'll review your digital presence, identify growth opportunities, and recommend the right services for your goals.<br><br>Zero commitment. 100% value.<br><br><a href='' style='display:inline-block;margin-top:8px;padding:8px 16px;background:#000000;color:#fadb24;border-radius:8px;font-weight:700;text-decoration:none;'>Book Free Consultation →</a>"
         },
         // Thanks
         {
@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Default fallback
         if (!foundMatch) {
-            baseResponse = "That's a great question! While I might not have a specific answer for that, our expert team will. 🙌<br><br>👉 <a href='' style='color:#00FFFF;font-weight:bold;'>Contact our team directly</a> for a personalized answer, or ask me about our <strong>services, pricing, or process</strong>!";
+            baseResponse = "That's a great question! While I might not have a specific answer for that, our expert team will. 🙌<br><br>👉 <a href='' style='color:#0047FF;font-weight:bold;'>Contact our team directly</a> for a personalized answer, or ask me about our <strong>services, pricing, or process</strong>!";
         }
 
         // --- Proactive Intelligence Follow-up ---

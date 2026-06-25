@@ -109,8 +109,8 @@
         successMsg.className = 'newsletter-success';
         successMsg.textContent = 'Thank you for subscribing! Check your email for confirmation.';
         successMsg.style.cssText = `
-            background: #00FFFF;
-            color: #0A1E3F;
+            background: #0047FF;
+            color: #000000;
             padding: 12px 20px;
             border-radius: 8px;
             margin-top: 10px;

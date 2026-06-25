@@ -360,7 +360,7 @@
             width: 62px;
             height: 62px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #0A1E3F, #1a3a6e);
+            background: linear-gradient(135deg, #000000, #1a3a6e);
             color: #fadb24;
             border: 2px solid rgba(250,219,36,0.3);
             font-size: 1.5rem;
@@ -427,7 +427,7 @@
 
         chatbotWindow.innerHTML = `
             <!-- Header -->
-            <div style="background: linear-gradient(135deg, #0A1E3F, #1a3a6e); color: white; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="background: linear-gradient(135deg, #000000, #1a3a6e); color: white; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(250,219,36,0.2); display: flex; align-items: center; justify-content: center; border: 2px solid rgba(250,219,36,0.4);">
                         <i class="fas fa-robot" style="color: #fadb24; font-size: 1.1rem;"></i>
@@ -462,7 +462,7 @@
             <div style="padding: 12px 14px; background: white; border-top: 1px solid #e2e8f0;">
                 <form id="chatbot-form" style="display: flex; gap: 8px; align-items: center;">
                     <input id="chatbot-input" type="text" placeholder="Type your question..." style="flex: 1; padding: 10px 14px; border: 1.5px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 0.88rem; font-family: inherit; color: #1e293b; transition: border 0.2s;" />
-                    <button type="submit" style="width: 38px; height: 38px; background: #0A1E3F; color: #fadb24; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s;">
+                    <button type="submit" style="width: 38px; height: 38px; background: #000000; color: #fadb24; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s;">
                         <i class="fas fa-paper-plane" style="font-size: 0.85rem;"></i>
                     </button>
                 </form>
@@ -480,16 +480,16 @@
                 padding: 5px 12px;
                 font-size: 0.78rem;
                 cursor: pointer;
-                color: #0A1E3F;
+                color: #000000;
                 font-weight: 600;
                 font-family: 'Inter', sans-serif;
                 transition: all 0.2s;
                 white-space: nowrap;
             }
             .quick-reply-chip:hover {
-                background: #0A1E3F;
+                background: #000000;
                 color: #fadb24;
-                border-color: #0A1E3F;
+                border-color: #000000;
             }
             .chat-msg {
                 animation: chatSlide 0.25s ease;
@@ -499,7 +499,7 @@
                 to { opacity: 1; transform: translateY(0); }
             }
             #chatbot-input:focus {
-                border-color: #0A1E3F !important;
+                border-color: #000000 !important;
             }
             #chatbot-close:hover {
                 background: rgba(255,255,255,0.2) !important;
@@ -568,7 +568,7 @@
         const userMsg = document.createElement('div');
         userMsg.className = 'chat-msg';
         userMsg.style.cssText = 'display: flex; justify-content: flex-end;';
-        userMsg.innerHTML = `<div style="background: #0A1E3F; color: white; border-radius: 16px 16px 4px 16px; padding: 10px 14px; max-width: 80%; font-size: 0.88rem; line-height: 1.5;">${escapeHTML(userText)}</div>`;
+        userMsg.innerHTML = `<div style="background: #000000; color: white; border-radius: 16px 16px 4px 16px; padding: 10px 14px; max-width: 80%; font-size: 0.88rem; line-height: 1.5;">${escapeHTML(userText)}</div>`;
         messagesDiv.appendChild(userMsg);
 
         // Track history
@@ -617,7 +617,7 @@
 
             // Add CTA button if present
             if (response.cta) {
-                msgContent += `<a href="${response.cta.link}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #0A1E3F; color: #fadb24; border-radius: 8px; font-size: 0.82rem; font-weight: 700; text-decoration: none;">${response.cta.text} →</a>`;
+                msgContent += `<a href="${response.cta.link}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #000000; color: #fadb24; border-radius: 8px; font-size: 0.82rem; font-weight: 700; text-decoration: none;">${response.cta.text} →</a>`;
             }
 
             botMsg.innerHTML = msgContent;

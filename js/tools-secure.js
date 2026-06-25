@@ -23,8 +23,8 @@ function showEnhancedLoading(button, resultDiv) {
     
     resultDiv.innerHTML = `
         <div style="text-align:center;padding:1rem;">
-            <div style="display:inline-block;width:40px;height:40px;border:4px solid #f3f3f3;border-top:4px solid #00FFFF;border-radius:50%;animation:spin 1s linear infinite;"></div>
-            <div style="color:#00FFFF;font-weight:600;margin-top:0.5rem;">AI is analyzing your data...</div>
+            <div style="display:inline-block;width:40px;height:40px;border:4px solid #f3f3f3;border-top:4px solid #0047FF;border-radius:50%;animation:spin 1s linear infinite;"></div>
+            <div style="color:#0047FF;font-weight:600;margin-top:0.5rem;">AI is analyzing your data...</div>
             <div style="margin-top:0.5rem;font-size:0.9rem;color:#666;">This may take a few seconds</div>
         </div>
         <style>
@@ -665,14 +665,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const popularSection = document.createElement('div');
             popularSection.className = 'popular-tools';
             popularSection.innerHTML = `
-                <h3 style="text-align:center;margin:2rem 0;color:#0A1E3F;">Most Popular Tools</h3>
+                <h3 style="text-align:center;margin:2rem 0;color:#000000;">Most Popular Tools</h3>
                 <div class="tools-grid">
                     ${sortedTools.map(([tool, count]) => `
                         <div class="tool-card" style="border-color:#00bcd4;">
                             <div class="tool-icon"><i class="fas fa-star"></i></div>
                             <h3>${tool}</h3>
-                            <p style="color:#0A1E3F !important;">Used ${count} time${count > 1 ? 's' : ''}</p>
-                            <div style="border: 2px solid #00FFFF; color: #fff; background: #0A1E3F; border-radius: 50px; padding: 0.7em 1.5em; font-size: 1rem; font-weight: 600; margin: 0.5rem 0; display: inline-block;">
+                            <p style="color:#000000 !important;">Used ${count} time${count > 1 ? 's' : ''}</p>
+                            <div style="border: 2px solid #0047FF; color: #fff; background: #000000; border-radius: 50px; padding: 0.7em 1.5em; font-size: 1rem; font-weight: 600; margin: 0.5rem 0; display: inline-block;">
                                 Popular Choice
                             </div>
                         </div>
@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div style="background:#f5f7fa;border:1px solid #e1e5e9;border-radius:8px;padding:1em 0.7em;max-width:320px;margin:0 auto;">
                     <strong>Example Social Media Calendar:</strong><br><br>
                     <table style="width:100%;font-size:0.97em;text-align:left;border-collapse:collapse;">
-                        <tr><th style='color:#0A1E3F;'>Date</th><th style='color:#0A1E3F;'>Platform</th><th style='color:#0A1E3F;'>Content</th></tr>
+                        <tr><th style='color:#000000;'>Date</th><th style='color:#000000;'>Platform</th><th style='color:#000000;'>Content</th></tr>
                         <tr><td>Mon</td><td>Instagram</td><td>Motivational Quote</td></tr>
                         <tr><td>Wed</td><td>Facebook</td><td>Blog Post Link</td></tr>
                         <tr><td>Fri</td><td>LinkedIn</td><td>Case Study</td></tr>
@@ -722,7 +722,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultDiv.innerHTML = `
                 <div style="background:#f5f7fa;border:1px solid #e1e5e9;border-radius:8px;padding:1em 0.7em;max-width:320px;margin:0 auto;">
                     <strong>Example Marketing Checklist:</strong><br><br>
-                    <ul style='padding-left:1.1em;font-size:0.97em;color:#0A1E3F;'>
+                    <ul style='padding-left:1.1em;font-size:0.97em;color:#000000;'>
                         <li>Define campaign goal</li>
                         <li>Identify target audience</li>
                         <li>Create content assets</li>
@@ -745,7 +745,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultDiv.innerHTML = `
                 <div style="background:#f5f7fa;border:1px solid #e1e5e9;border-radius:8px;padding:1em 0.7em;max-width:320px;margin:0 auto;">
                     <strong>Business Plan Outline:</strong><br><br>
-                    <ol style='padding-left:1.1em;font-size:0.97em;color:#0A1E3F;'>
+                    <ol style='padding-left:1.1em;font-size:0.97em;color:#000000;'>
                         <li>Executive Summary</li>
                         <li>Company Description</li>
                         <li>Market Analysis</li>
@@ -780,10 +780,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const profit = (revenue - cost).toFixed(2);
             
             resultDiv.innerHTML = `
-                <div style="background:#f0f9ff;border:1px solid #00FFFF;border-radius:8px;padding:1em;text-align:center;">
-                    <h4 style="color:#0A1E3F;margin-bottom:1rem;">ROI Calculation Results</h4>
-                    <div style="font-size:1.2em;font-weight:600;color:#00FFFF;">ROI: ${roi}%</div>
-                    <div style="margin-top:0.5em;color:#0A1E3F;">Profit: $${profit}</div>
+                <div style="background:#f0f9ff;border:1px solid #0047FF;border-radius:8px;padding:1em;text-align:center;">
+                    <h4 style="color:#000000;margin-bottom:1rem;">ROI Calculation Results</h4>
+                    <div style="font-size:1.2em;font-weight:600;color:#0047FF;">ROI: ${roi}%</div>
+                    <div style="margin-top:0.5em;color:#000000;">Profit: $${profit}</div>
                     <div style="margin-top:0.5em;font-size:0.9em;color:#666;">
                         Revenue: $${revenue} | Cost: $${cost}
                     </div>
@@ -814,11 +814,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await window.secureAIClient.getAIResponse(prompt, { maxTokens: 400, temperature: 0.7 });
                 
                 resultDiv.innerHTML = `
-                    <div style="background:#f0f9ff;border:1px solid #00FFFF;border-radius:8px;padding:1em;">
-                        <h4 style="color:#0A1E3F;margin-bottom:1rem;">Hashtags for "${topic}"</h4>
+                    <div style="background:#f0f9ff;border:1px solid #0047FF;border-radius:8px;padding:1em;">
+                        <h4 style="color:#000000;margin-bottom:1rem;">Hashtags for "${topic}"</h4>
                         <div style="display:flex;flex-wrap:wrap;gap:0.5em;">
                             ${response.content.split('\n').filter(line => line.trim().startsWith('#')).map(hashtag => 
-                                `<span style="background:#00FFFF;color:#0A1E3F;padding:0.3em 0.7em;border-radius:20px;font-size:0.9em;font-weight:600;">${hashtag.trim()}</span>`
+                                `<span style="background:#0047FF;color:#000000;padding:0.3em 0.7em;border-radius:20px;font-size:0.9em;font-weight:600;">${hashtag.trim()}</span>`
                             ).join('')}
                         </div>
                     </div>
@@ -853,9 +853,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await window.secureAIClient.getAIResponse(prompt, { maxTokens: 600, temperature: 0.7 });
                 
                 resultDiv.innerHTML = `
-                    <div style="background:#f0f9ff;border:1px solid #00FFFF;border-radius:8px;padding:1em;">
-                        <h4 style="color:#0A1E3F;margin-bottom:1rem;">Headlines for "${topic}"</h4>
-                        <div style="color:#0A1E3F;">
+                    <div style="background:#f0f9ff;border:1px solid #0047FF;border-radius:8px;padding:1em;">
+                        <h4 style="color:#000000;margin-bottom:1rem;">Headlines for "${topic}"</h4>
+                        <div style="color:#000000;">
                             ${formatResponse(response.content)}
                         </div>
                     </div>
@@ -891,9 +891,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const response = await window.secureAIClient.getAIResponse(prompt, { maxTokens: 800, temperature: 0.7 });
                 
                 resultDiv.innerHTML = `
-                    <div style="background:#f0f9ff;border:1px solid #00FFFF;border-radius:8px;padding:1em;">
-                        <h4 style="color:#0A1E3F;margin-bottom:1rem;">SEO Audit for ${url}</h4>
-                        <div style="color:#0A1E3F;">
+                    <div style="background:#f0f9ff;border:1px solid #0047FF;border-radius:8px;padding:1em;">
+                        <h4 style="color:#000000;margin-bottom:1rem;">SEO Audit for ${url}</h4>
+                        <div style="color:#000000;">
                             ${formatResponse(response.content)}
                         </div>
                     </div>
@@ -938,9 +938,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             resultDiv.innerHTML = `
-                <div style="background:#f0f9ff;border:1px solid #00FFFF;border-radius:8px;padding:1em;">
-                    <h4 style="color:#0A1E3F;margin-bottom:1rem;">Your Marketing Maturity Level</h4>
-                    <div style="color:#0A1E3F;">
+                <div style="background:#f0f9ff;border:1px solid #0047FF;border-radius:8px;padding:1em;">
+                    <h4 style="color:#000000;margin-bottom:1rem;">Your Marketing Maturity Level</h4>
+                    <div style="color:#000000;">
                         <p><strong>Your Level:</strong> ${result}</p>
                         <p><strong>Score:</strong> ${score}/9</p>
                         <p><strong>Recommendation:</strong> ${tips}</p>

@@ -169,7 +169,7 @@
                 font-size: 1.5rem;
                 font-weight: 700;
                 margin-bottom: 1.5rem;
-                color: var(--base-dark, #0A1E3F);
+                color: var(--base-dark, #000000);
             }
             
             .recommendations-grid {
@@ -216,7 +216,7 @@
             .post-category {
                 display: inline-block;
                 background: rgba(0, 255, 255, 0.1);
-                color: #00FFFF;
+                color: #0047FF;
                 padding: 0.25rem 0.75rem;
                 border-radius: 4px;
                 font-size: 0.75rem;
@@ -232,13 +232,13 @@
             }
             
             .post-title a {
-                color: var(--base-dark, #0A1E3F);
+                color: var(--base-dark, #000000);
                 text-decoration: none;
                 transition: color 0.3s ease;
             }
             
             .post-title a:hover {
-                color: #00FFFF;
+                color: #0047FF;
             }
             
             .post-excerpt {
