@@ -13,6 +13,7 @@ app.use('/api/ai', require('./routes/ai'));
 app.use('/api/v1/analysis', require('./routes/competitor'));
 app.use('/api/v1/analysis', require('./routes/seo'));
 app.use('/api/v1/analysis', require('./routes/proposal'));
+app.use('/api/v1/analysis', require('./routes/leadScore'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
