@@ -7362,7 +7362,7 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
     opacity: 1 !important;
 }
 
-/* ===== LOGO HOVER YELLOW GLOW EFFECT ===== */
+/* ===== LOGO YELLOW GLOW EFFECT (Always On) ===== */
 .header-logo-link,
 .header-logo-img,
 .nav-logo,
@@ -7372,13 +7372,19 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease !important;
 }
 
+/* Default glow on header logo — always visible */
+.header-logo-img {
+    filter: drop-shadow(0 0 12px #fadb24) drop-shadow(0 0 4px rgba(250, 219, 36, 0.5)) !important;
+}
+
+/* Intensified glow on hover for all logos */
 .header-logo-link:hover,
 .header-logo-img:hover,
 .nav-logo:hover,
 .footer-logo:hover,
 .footer-logo-link:hover,
 .footer-logo-img:hover {
-    filter: drop-shadow(0 0 12px #fadb24) !important;
+    filter: drop-shadow(0 0 18px #fadb24) drop-shadow(0 0 6px rgba(250, 219, 36, 0.7)) !important;
     transform: scale(1.04) !important;
 }
 
