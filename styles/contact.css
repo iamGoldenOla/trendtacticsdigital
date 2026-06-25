@@ -5,12 +5,12 @@
     background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
     color: var(--white);
     border-radius: var(--radius-2xl);
-    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.08), 0 2px 8px rgba(10, 30, 63, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 71, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.3);
     padding: var(--spacing-3xl);
     text-align: center;
     position: relative;
     z-index: 2;
-    border: 1.5px solid rgba(0, 255, 255, 0.1);
+    border: 1.5px solid rgba(0, 71, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
@@ -29,7 +29,7 @@
 
 .contact-card:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(0, 255, 255, 0.2), 0 4px 16px rgba(10, 30, 63, 0.4);
+    box-shadow: 0 16px 48px rgba(0, 71, 255, 0.2), 0 4px 16px rgba(0, 0, 0, 0.4);
     border-color: var(--primary);
     background: linear-gradient(145deg, var(--base-dark-light) 0%, var(--base-dark) 100%);
 }
@@ -49,14 +49,14 @@
     margin: 0 auto var(--spacing-xl);
     font-size: 2rem;
     color: var(--base-dark);
-    box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 71, 255, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
 .contact-card:hover .contact-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 32px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 12px 32px rgba(0, 71, 255, 0.4);
 }
 
 .contact-card h3 {
@@ -89,8 +89,8 @@
     background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
     border-radius: var(--radius-2xl);
     padding: var(--spacing-4xl);
-    border: 1.5px solid rgba(0, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.08);
+    border: 1.5px solid rgba(0, 71, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 71, 255, 0.08);
 }
 
 .contact-form-section h2 {
@@ -144,7 +144,7 @@
     width: 100%;
     padding: 1rem 1.25rem;
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(0, 255, 255, 0.2);
+    border: 2px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-lg);
     color: var(--white);
     font-size: 1rem;
@@ -165,7 +165,7 @@
 #contactForm textarea:focus {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1), 0 4px 16px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(0, 71, 255, 0.1), 0 4px 16px rgba(0, 71, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -188,7 +188,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 4px 16px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 71, 255, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -213,7 +213,7 @@
 
 #contactForm button[type="submit"]:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 71, 255, 0.4);
 }
 
 #contactForm button[type="submit"]:active {
@@ -222,7 +222,7 @@
 
 #aiSentiment {
     padding: var(--spacing-md);
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border-left: 4px solid var(--primary);
     border-radius: var(--radius-md);
     font-size: 0.95rem;
@@ -232,7 +232,7 @@
 
 #aiThankYou {
     padding: var(--spacing-lg);
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(64, 224, 208, 0.2));
+    background: linear-gradient(135deg, rgba(0, 71, 255, 0.2), rgba(64, 224, 208, 0.2));
     border: 2px solid var(--primary);
     border-radius: var(--radius-lg);
     text-align: center;
@@ -246,8 +246,8 @@
     background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
     border-radius: var(--radius-2xl);
     padding: var(--spacing-4xl);
-    border: 1.5px solid rgba(0, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.08);
+    border: 1.5px solid rgba(0, 71, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 71, 255, 0.08);
 }
 
 .contact-map-section h2 {
@@ -274,14 +274,14 @@
     position: relative;
     border-radius: var(--radius-2xl);
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.15), 0 4px 16px rgba(10, 30, 63, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 71, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.3);
     border: 2px solid var(--primary);
     margin-top: var(--spacing-2xl);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .map-container:hover {
-    box-shadow: 0 16px 48px rgba(0, 255, 255, 0.25), 0 6px 20px rgba(10, 30, 63, 0.4);
+    box-shadow: 0 16px 48px rgba(0, 71, 255, 0.25), 0 6px 20px rgba(0, 0, 0, 0.4);
     transform: translateY(-4px);
 }
 
@@ -297,19 +297,19 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    background: linear-gradient(135deg, rgba(10, 30, 63, 0.95), rgba(22, 36, 71, 0.95));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95));
     backdrop-filter: blur(15px);
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
     border: 2px solid var(--primary);
     max-width: 320px;
-    box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 71, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .map-overlay:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 71, 255, 0.3);
 }
 
 .map-info h3 {
@@ -429,14 +429,14 @@
 .faq-item {
     background: linear-gradient(145deg, var(--base-dark) 0%, var(--base-dark-light) 100%);
     border-radius: var(--radius-xl);
-    border: 1.5px solid rgba(0, 255, 255, 0.1);
+    border: 1.5px solid rgba(0, 71, 255, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .faq-item:hover {
     border-color: var(--primary);
-    box-shadow: 0 8px 24px rgba(0, 255, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 71, 255, 0.15);
 }
 
 .faq-question {
@@ -449,7 +449,7 @@
 }
 
 .faq-question:hover {
-    background: rgba(0, 255, 255, 0.05);
+    background: rgba(0, 71, 255, 0.05);
 }
 
 .faq-question h3 {

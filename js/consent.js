@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 justify-content: space-between;
                 align-items: center;
                 gap: 20px;
-                border: 1px solid rgba(0,255,255,0.2);
+                border: 1px solid rgba(0, 71, 255,0.2);
                 font-family: 'Inter', sans-serif;
             }
             .cc-content { flex: 1; }

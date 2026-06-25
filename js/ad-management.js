@@ -251,14 +251,14 @@ const adStyles = `
     .custom-ad {
         padding: 20px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
+        background: linear-gradient(135deg, rgba(0, 71, 255, 0.1) 0%, rgba(0, 71, 255, 0.05) 100%);
         border-radius: var(--radius-lg);
         transition: all var(--transition-normal);
     }
 
     .custom-ad:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+        box-shadow: 0 5px 15px rgba(0, 71, 255, 0.2);
     }
 
     .custom-ad h4 {

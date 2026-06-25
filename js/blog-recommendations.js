@@ -215,7 +215,7 @@
             
             .post-category {
                 display: inline-block;
-                background: rgba(0, 255, 255, 0.1);
+                background: rgba(0, 71, 255, 0.1);
                 color: #0047FF;
                 padding: 0.25rem 0.75rem;
                 border-radius: 4px;

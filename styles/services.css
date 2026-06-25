@@ -237,7 +237,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(0, 71, 255, 0.05) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -257,17 +257,17 @@
 .stat-item {
     text-align: center;
     padding: var(--spacing-lg);
-    background: rgba(0, 255, 255, 0.05);
+    background: rgba(0, 71, 255, 0.05);
     border-radius: var(--radius-xl);
-    border: 1px solid rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 71, 255, 0.1);
     transition: all var(--transition-normal);
 }
 
 .stat-item:hover {
-    background: rgba(0, 255, 255, 0.1);
-    border-color: rgba(0, 255, 255, 0.3);
+    background: rgba(0, 71, 255, 0.1);
+    border-color: rgba(0, 71, 255, 0.3);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 71, 255, 0.2);
 }
 
 .stat-number {
@@ -304,7 +304,7 @@
     letter-spacing: 2px;
     text-align: center;
     position: relative;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 20px rgba(0, 71, 255, 0.3);
 }
 
 .showcase-title::after {
@@ -317,7 +317,7 @@
     height: 3px;
     background: var(--gradient-primary);
     border-radius: 2px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 71, 255, 0.5);
 }
 
 .service-icons-wrapper {
@@ -362,22 +362,22 @@
     gap: var(--spacing-md);
     padding: var(--spacing-xl);
     border-radius: var(--radius-2xl);
-    background: rgba(0, 255, 255, 0.08);
-    border: 2px solid rgba(0, 255, 255, 0.2);
+    background: rgba(0, 71, 255, 0.08);
+    border: 2px solid rgba(0, 71, 255, 0.2);
     transition: all var(--transition-normal);
     cursor: pointer;
     min-width: 160px;
     flex-shrink: 0;
     scroll-snap-align: start;
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 71, 255, 0.1);
 }
 
 .service-icon-item:hover,
 .service-icon-item.active {
-    background: rgba(0, 255, 255, 0.15);
+    background: rgba(0, 71, 255, 0.15);
     border-color: var(--primary);
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 71, 255, 0.3);
 }
 
 .service-icon-item i {
@@ -438,7 +438,7 @@
 .connector-arrow {
     width: 40px;
     height: 40px;
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border: 2px solid var(--primary);
     border-radius: 50%;
     display: flex;
@@ -474,8 +474,8 @@
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-lg);
-    background: linear-gradient(145deg, rgba(10, 30, 63, 0.9) 0%, rgba(22, 36, 71, 0.9) 100%);
-    border: 2px solid rgba(0, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid rgba(0, 71, 255, 0.3);
     border-radius: var(--radius-xl);
     transition: all var(--transition-normal);
     cursor: pointer;
@@ -490,7 +490,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 71, 255, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -501,8 +501,8 @@
 .sub-service-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
-    background: linear-gradient(145deg, rgba(0, 255, 255, 0.1) 0%, rgba(22, 36, 71, 0.9) 100%);
+    box-shadow: 0 10px 30px rgba(0, 71, 255, 0.3);
+    background: linear-gradient(145deg, rgba(0, 71, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
 }
 
 .sub-service-card i {
@@ -550,12 +550,12 @@
 }
 
 .service-description {
-    background: rgba(0, 255, 255, 0.08);
-    border: 2px solid rgba(0, 255, 255, 0.2);
+    background: rgba(0, 71, 255, 0.08);
+    border: 2px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-2xl);
     padding: var(--spacing-2xl);
     margin-top: var(--spacing-lg);
-    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 71, 255, 0.15);
 }
 
 .service-description p {
@@ -598,7 +598,7 @@
     background: var(--primary);
     color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 71, 255, 0.3);
 }
 
 .hero-cta .btn-outline {
@@ -611,7 +611,7 @@
     background: var(--primary);
     color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 71, 255, 0.3);
 }
 
 .hero-cta .btn::before {
@@ -621,7 +621,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 71, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -686,7 +686,7 @@
 }
 
 .category-card {
-    background: rgba(10, 30, 63, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: var(--white);
@@ -696,7 +696,7 @@
     flex-shrink: 0;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(0, 255, 255, 0.15);
+    border: 1px solid rgba(0, 71, 255, 0.15);
     transition: all 0.4s ease;
     overflow: hidden;
 }
@@ -708,7 +708,7 @@
     left: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(0, 71, 255, 0.1) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
@@ -716,9 +716,9 @@
 
 .category-card:hover {
     transform: translateY(-15px);
-    border-color: rgba(0, 255, 255, 0.4);
+    border-color: rgba(0, 71, 255, 0.4);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(0, 255, 255, 0.1);
+        0 0 20px rgba(0, 71, 255, 0.1);
 }
 
 .category-card:hover::before {
@@ -736,7 +736,7 @@
     margin: 0 auto var(--spacing-lg);
     font-size: 1.75rem;
     color: var(--base-dark);
-    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 71, 255, 0.15);
     transition: all 0.4s ease;
     position: relative;
 }
@@ -756,7 +756,7 @@
 
 .category-card:hover .category-icon {
     transform: scale(1.1) rotate(3deg);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 71, 255, 0.3);
 }
 
 .category-card:hover .category-icon::after {
@@ -817,13 +817,13 @@
 }
 
 .category-features span {
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: var(--radius-lg);
     font-size: 0.875rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 71, 255, 0.2);
     white-space: nowrap;
     text-align: center;
     line-height: 1;
@@ -862,15 +862,15 @@
     width: 100%;
     padding: var(--spacing-sm);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 71, 255, 0.2);
+    background: rgba(0, 71, 255, 0.05);
 }
 
 .category-link:hover {
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 71, 255, 0.2);
 }
 
 /* Process Section */
@@ -916,7 +916,7 @@
     transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 71, 255, 0.2);
 }
 
 .process-step:hover::before {
@@ -941,7 +941,7 @@
 
 .process-step:hover .step-number {
     transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 71, 255, 0.4);
 }
 
 .step-content h3 {
@@ -1149,7 +1149,7 @@ html {
 /* Why Choose Us Section */
 .why-choose-us {
     padding: var(--spacing-2xl) 0;
-    background: linear-gradient(180deg, var(--base-dark) 0%, rgba(10, 30, 63, 0.95) 100%);
+    background: linear-gradient(180deg, var(--base-dark) 0%, rgba(0, 0, 0, 0.95) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -1162,7 +1162,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(0, 71, 255, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -1176,8 +1176,8 @@ html {
 }
 
 .differentiator-card {
-    background: linear-gradient(145deg, rgba(10, 30, 63, 0.8) 0%, rgba(22, 36, 71, 0.8) 100%);
-    border: 1.5px solid rgba(0, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border: 1.5px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-2xl);
     padding: var(--spacing-2xl);
     text-align: center;
@@ -1193,7 +1193,7 @@ html {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 71, 255, 0.1) 0%, transparent 70%);
     opacity: 0;
     transition: opacity var(--transition-normal);
 }
@@ -1205,13 +1205,13 @@ html {
 .differentiator-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary);
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 71, 255, 0.3);
 }
 
 .differentiator-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary) 0%, rgba(0, 255, 255, 0.5) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, rgba(0, 71, 255, 0.5) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1226,7 +1226,7 @@ html {
 
 .differentiator-card:hover .differentiator-icon {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 71, 255, 0.5);
 }
 
 .differentiator-card h3 {
@@ -1262,8 +1262,8 @@ html {
 }
 
 .case-study-card {
-    background: linear-gradient(145deg, rgba(10, 30, 63, 0.9) 0%, rgba(22, 36, 71, 0.9) 100%);
-    border: 1.5px solid rgba(0, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border: 1.5px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-2xl);
     padding: var(--spacing-2xl);
     transition: all var(--transition-normal);
@@ -1290,7 +1290,7 @@ html {
 .case-study-card:hover {
     transform: translateY(-8px);
     border-color: var(--primary);
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 71, 255, 0.3);
 }
 
 .case-study-header {
@@ -1308,7 +1308,7 @@ html {
 }
 
 .case-study-tag {
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border: 1px solid var(--primary);
     color: var(--primary);
     padding: 0.5rem 1rem;
@@ -1380,8 +1380,8 @@ html {
 .result-item {
     text-align: center;
     padding: var(--spacing-md);
-    background: rgba(0, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    background: rgba(0, 71, 255, 0.05);
+    border: 1px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-lg);
     min-width: 150px;
     flex-shrink: 0;
@@ -1405,7 +1405,7 @@ html {
 /* Services Testimonials Section */
 .services-testimonials {
     padding: var(--spacing-4xl) 0;
-    background: linear-gradient(180deg, rgba(10, 30, 63, 0.95) 0%, var(--base-dark) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, var(--base-dark) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -1430,19 +1430,19 @@ html {
     width: 100%;
     flex-shrink: 0;
     padding: var(--spacing-2xl);
-    background: linear-gradient(145deg, rgba(10, 30, 63, 0.9) 0%, rgba(22, 36, 71, 0.9) 100%);
-    border: 1.5px solid rgba(0, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border: 1.5px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-2xl);
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 71, 255, 0.1);
     box-sizing: border-box;
 }
 
 .testimonial-quote-icon {
     width: 60px;
     height: 60px;
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border: 2px solid var(--primary);
     border-radius: 50%;
     display: flex;
@@ -1499,7 +1499,7 @@ html {
 .testimonial-btn {
     width: 50px;
     height: 50px;
-    background: rgba(0, 255, 255, 0.1);
+    background: rgba(0, 71, 255, 0.1);
     border: 2px solid var(--primary);
     border-radius: 50%;
     color: var(--primary);
@@ -1515,7 +1515,7 @@ html {
     background: var(--primary);
     color: var(--base-dark);
     transform: scale(1.1);
-    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 71, 255, 0.4);
 }
 
 .testimonial-dots {
@@ -1527,7 +1527,7 @@ html {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(0, 255, 255, 0.3);
+    background: rgba(0, 71, 255, 0.3);
     border: 2px solid var(--primary);
     cursor: pointer;
     transition: all var(--transition-normal);
@@ -1554,8 +1554,8 @@ html {
 }
 
 .faq-item {
-    background: linear-gradient(145deg, rgba(10, 30, 63, 0.8) 0%, rgba(22, 36, 71, 0.8) 100%);
-    border: 1.5px solid rgba(0, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border: 1.5px solid rgba(0, 71, 255, 0.2);
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: all var(--transition-normal);
@@ -1563,7 +1563,7 @@ html {
 
 .faq-item:hover {
     border-color: var(--primary);
-    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 71, 255, 0.2);
 }
 
 .faq-question {
@@ -1576,7 +1576,7 @@ html {
 }
 
 .faq-question:hover {
-    background: rgba(0, 255, 255, 0.05);
+    background: rgba(0, 71, 255, 0.05);
 }
 
 .faq-question h3 {
@@ -1638,7 +1638,7 @@ html {
     border-radius: var(--radius-2xl);
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 71, 255, 0.1);
     position: relative;
     aspect-ratio: 16 / 9;
 }
@@ -1717,7 +1717,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(10, 30, 63, 0.95) 0%, rgba(10, 30, 63, 0.7) 50%, transparent 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
     z-index: 2;
 }
 
@@ -1727,10 +1727,10 @@ html {
     max-width: 500px;
     padding: var(--spacing-3xl);
     margin-left: 10%;
-    background: rgba(10, 30, 63, 0.85);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(15px);
     border-radius: var(--radius-2xl);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 71, 255, 0.2);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -1775,14 +1775,14 @@ html {
 
 .faq-item-slim {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 71, 255, 0.1);
     border-radius: var(--radius-lg);
     transition: all 0.3s ease;
     height: fit-content;
 }
 
 .faq-item-slim:hover {
-    border-color: rgba(0, 255, 255, 0.3);
+    border-color: rgba(0, 71, 255, 0.3);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1862,7 +1862,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(0, 71, 255, 0.08) 0%, transparent 70%);
     pointer-events: none;
 }
 

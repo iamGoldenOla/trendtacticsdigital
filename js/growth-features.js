@@ -56,7 +56,7 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: rgba(10, 30, 63, 0.9);
+                    background: rgba(0, 0, 0, 0.9);
                     backdrop-filter: blur(5px);
                 }
                 .exit-popup-content {

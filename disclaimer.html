@@ -19,22 +19,118 @@
     </style>
 </head>
 <body style="background:#ffffff;">
-    <nav id="navigation" class="navbar">
-        <div class="nav-container container">
-            <div class="nav-logo"><a href="index" style="display:flex;align-items:center;text-decoration:none;padding-left:10px;"><img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" style="height:48px;width:auto;display:block !important;" loading="lazy"></a></div>
-            <div class="nav-actions" style="margin-left:auto;padding-right:15px;">
-                <div class="nav-menu" id="nav-menu">
-                    <a href="index" class="nav-link">Home</a>
-                    <a href="about" class="nav-link">About</a>
-                    <a href="services" class="nav-link">Services</a>
-                    <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link">Academy</a>
-                    <a href="pricing" class="nav-link">Pricing</a>
-                    <a href="contact" class="nav-link">Contact</a>
+    <div class="header-wrapper">
+    <!-- Row 1: Top Bar (Royal Blue background, white text) -->
+    <div class="header-top-bar">
+        <div class="header-container">
+            <div class="top-bar-left">
+                <a href="about">Why Us</a>
+                <span class="divider">|</span>
+                <a href="pricing">Pricing</a>
+                <span class="divider">|</span>
+                <a href="quiz">Take Quiz</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="header-search">
+                    <form action="search" method="GET" style="display: flex; align-items: center; margin: 0;">
+                        <input type="text" placeholder="Search..." aria-label="Search" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 4px 10px; color: #ffffff; font-size: 0.75rem; outline: none;">
+                        <button type="submit" aria-label="Search" style="background: transparent; border: none; color: #ffffff; cursor: pointer; margin-left: 5px; font-size: 0.8rem;"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
             </div>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+
+    <!-- Row 2: Middle Row (Solid Black background) -->
+    <div class="header-middle-row">
+        <div class="header-container">
+            <div class="middle-left">
+                <a href="index" class="header-logo-link">
+                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="header-logo-img" style="height: 60px; width: auto; display: block;">
+                </a>
+            </div>
+            <div class="middle-right" style="display: flex; gap: 30px; align-items: center;">
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Visit Our Office</span>
+                        <span class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff;">Lagos, Nigeria (Remote/Global)</span>
+                    </div>
+                </div>
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Mail Us</span>
+                        <a href="mailto:info@trendtacticsdigital.com" class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff; text-decoration: none;">info@trendtacticsdigital.com</a>
+                    </div>
+                </div>
+                <div class="info-block socials-block" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                    <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">FOLLOW US</span>
+                    <div class="social-links-grid" style="display: flex; gap: 8px;">
+                        <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Bottom Navigation Bar (Solid dark grey/black background) -->
+    <nav id="navigation" class="navbar premium-navbar">
+        <div class="header-container">
+            <div class="nav-menu-wrapper" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                <div class="nav-menu" id="nav-menu" style="display: flex; align-items: center; gap: 20px;">
+                    <a href="index" class="nav-link">Home</a>
+                    <a href="about" class="nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services">Service Overview</a></li>
+                            <li class="dropdown-header">Tech &amp; Development</li>
+                            <li><a href="website-solutions">Website Solutions Guide</a></li>
+                            <li><a href="service-web-development">Web Development</a></li>
+                            <li><a href="service-app-development">App Development</a></li>
+                            <li class="dropdown-header">Digital Growth Lab</li>
+                            <li><a href="service-digital-marketing">Digital Marketing Overview</a></li>
+                            <li><a href="service-social-media-marketing">Social Media Marketing</a></li>
+                            <li><a href="service-facebook-ads">Facebook Ads</a></li>
+                            <li><a href="service-content-creation">Content Creation</a></li>
+                            <li><a href="service-email-marketing">Email Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
+                            <li><a href="blog">Blog</a></li>
+                            <li class="dropdown-header">Resources</li>
+                            <li><a href="resources">Resource Overview</a></li>
+                            <li><a href="ebooks">Free Books</a></li>
+                            <li><a href="tools">Marketing Tools</a></li>
+                            <li><a href="quiz">Growth Quiz</a></li>
+                            <li><a href="contact">Free Consultation</a></li>
+                        </ul>
+                    </div>
+                    <a href="pricing" class="nav-link">Pricing</a>
+                    <a href="careers" class="nav-link">Careers</a>
+                    <a href="portfolio" class="nav-link">Portfolio</a>
+                    <a href="contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="contact" class="nav-call-block" style="background: #0047FF; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; padding: 12px 25px; border-radius: 4px; transition: all 0.2s ease;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Book a Call
+                </a>
+            </div>
         </div>
     </nav>
+</div>
     <main class="legal-content">
         <span class="legal-badge"><i class="fas fa-exclamation-circle" style="margin-right:6px;color:#000000;"></i>Legal</span>
         <h1>Disclaimer</h1>
@@ -54,7 +150,7 @@
         <h2>7. Contact</h2>
         <p>Questions? Email us at <a href="mailto:info@trendtacticsdigital.com" style="color:#000000;font-weight:600;">info@trendtacticsdigital.com</a>.</p>
     </main>
-    <footer style="background:#061226;padding:30px 5%;text-align:center;color:#94a3b8;margin-top:40px;">
+    <footer style="background:#000000;padding:30px 5%;text-align:center;color:#94a3b8;margin-top:40px;">
         <p>&copy; 2026 Trendtactics Digital. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy" style="color:#94a3b8;">Privacy Policy</a></p>
     </footer>
     <script src="/js/main.js" defer></script>

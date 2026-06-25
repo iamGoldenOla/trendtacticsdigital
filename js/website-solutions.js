@@ -1,24 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- 1. Populate Website Types Grid & Comparison ---
   const websiteTypes = [
-    { id: 'personal', title: 'Personal Brand Website', icon: 'user', bestFor: 'Coaches, MCs, Influencers, Speakers, Creators', complexity: 'Low', features: ['Booking System', 'Blog', 'Mobile Optimization'] },
-    { id: 'portfolio', title: 'Portfolio Website', icon: 'camera', bestFor: 'Designers, Developers, Photographers, Creatives', complexity: 'Low', features: ['Dashboard', 'Mobile Optimization', 'SEO Optimization'] },
-    { id: 'business', title: 'Business Website', icon: 'briefcase', bestFor: 'SMEs, Startups, Local businesses', complexity: 'Medium', features: ['Booking System', 'Blog', 'Mobile Optimization', 'SEO Optimization'] },
-    { id: 'corporate', title: 'Corporate Website', icon: 'building', bestFor: 'Companies, Agencies, Organizations', complexity: 'High', features: ['Dashboard', 'Blog', 'Mobile Optimization', 'SEO Optimization'] },
-    { id: 'ecommerce', title: 'E-Commerce Website', icon: 'shopping-cart', bestFor: 'Online stores, Fashion brands, Retail', complexity: 'High', features: ['Payments', 'Dashboard', 'E-Commerce', 'Mobile Optimization', 'SEO Optimization'] },
-    { id: 'lms', title: 'Educational / LMS', icon: 'graduation-cap', bestFor: 'Schools, Tutors, Academies, Learning platforms', complexity: 'Enterprise', features: ['Payments', 'Dashboard', 'Membership', 'Mobile Optimization'] },
-    { id: 'membership', title: 'Membership Website', icon: 'users', bestFor: 'Private communities, Subscription platforms', complexity: 'High', features: ['Payments', 'Dashboard', 'Membership', 'Mobile Optimization'] },
-    { id: 'event', title: 'Event Website', icon: 'calendar', bestFor: 'Conferences, Concerts, Weddings, Summits', complexity: 'Medium', features: ['Booking System', 'Payments', 'Mobile Optimization'] },
-    { id: 'realestate', title: 'Real Estate Website', icon: 'home', bestFor: 'Realtors, Property agencies', complexity: 'High', features: ['Dashboard', 'Mobile Optimization', 'SEO Optimization'] },
-    { id: 'saas', title: 'SaaS / AI Platform', icon: 'cpu', bestFor: 'Startups, AI products, Web apps', complexity: 'Enterprise', features: ['Payments', 'Dashboard', 'AI Features', 'Mobile Optimization'] },
-    { id: 'hybrid', title: 'Hybrid Website', icon: 'layers', bestFor: 'Personal brands with professional structure', complexity: 'Medium-High', features: ['Booking System', 'Payments', 'Blog', 'Mobile Optimization'] }
+    { id: 'personal', title: 'Personal Brand Website', icon: 'user', bestFor: 'Coaches, MCs, Influencers, Speakers, Creators', complexity: 'Low', features: ['Booking System', 'Blog / CMS', 'CRM & Email Automation'] },
+    { id: 'portfolio', title: 'Portfolio Website', icon: 'camera', bestFor: 'Designers, Developers, Photographers, Creatives', complexity: 'Low', features: ['Blog / CMS'] },
+    { id: 'business', title: 'Business Website', icon: 'briefcase', bestFor: 'SMEs, Startups, Local businesses', complexity: 'Medium', features: ['Booking System', 'Blog / CMS', 'CRM & Email Automation'] },
+    { id: 'corporate', title: 'Corporate Website', icon: 'building', bestFor: 'Companies, Agencies, Organizations', complexity: 'High', features: ['Blog / CMS', 'Client/Student Portal', 'CRM & Email Automation'] },
+    { id: 'ecommerce', title: 'E-Commerce Website', icon: 'shopping-cart', bestFor: 'Online stores, Fashion brands, Retail', complexity: 'High', features: ['Payment Integration', 'Client/Student Portal', 'E-Commerce Shop', 'CRM & Email Automation'] },
+    { id: 'lms', title: 'Educational / LMS', icon: 'graduation-cap', bestFor: 'Schools, Tutors, Academies, Learning platforms', complexity: 'Enterprise', features: ['Payment Integration', 'Client/Student Portal', 'Membership System', 'CRM & Email Automation'] },
+    { id: 'membership', title: 'Membership Website', icon: 'users', bestFor: 'Private communities, Subscription platforms', complexity: 'High', features: ['Payment Integration', 'Client/Student Portal', 'Membership System', 'CRM & Email Automation'] },
+    { id: 'event', title: 'Event Website', icon: 'calendar', bestFor: 'Conferences, Concerts, Weddings, Summits', complexity: 'Medium', features: ['Booking System', 'Payment Integration', 'CRM & Email Automation'] },
+    { id: 'realestate', title: 'Real Estate Website', icon: 'home', bestFor: 'Realtors, Property agencies', complexity: 'High', features: ['Client/Student Portal', 'CRM & Email Automation'] },
+    { id: 'saas', title: 'SaaS / AI Platform', icon: 'cpu', bestFor: 'Startups, AI products, Web apps', complexity: 'Enterprise', features: ['Payment Integration', 'Client/Student Portal', 'AI Chatbots', 'Membership System', 'CRM & Email Automation'] },
+    { id: 'hybrid', title: 'Hybrid Website', icon: 'layers', bestFor: 'Personal brands with professional structure', complexity: 'Medium-High', features: ['Booking System', 'Payment Integration', 'Client/Student Portal', 'Blog / CMS', 'E-Commerce Shop', 'CRM & Email Automation'] }
+  ];
+
+  const functionalFeatures = [
+    { name: 'Booking System', desc: 'Appointment scheduling, calendar sync, and automatic email/SMS reminders.' },
+    { name: 'Payment Integration', desc: 'Accept online payments, set up checkout forms, and support multiple currencies.' },
+    { name: 'Client/Student Portal', desc: 'Secure client dashboards, member login/register, and user profile management.' },
+    { name: 'Blog / CMS', desc: 'Publish articles, company news, case studies, and manage content with a clean editor.' },
+    { name: 'AI Chatbots', desc: 'Automate support conversations, qualify leads, and route inquiries to team members.' },
+    { name: 'Membership System', desc: 'Gated content, subscription-based billing, and private member-only directories.' },
+    { name: 'E-Commerce Shop', desc: 'Product listings, shopping cart, checkouts, coupon codes, and inventory management.' },
+    { name: 'CRM & Email Automation', desc: 'Auto-responders, lead tracking, workflow automations, and newsletter campaigns.' },
+    { name: 'Multi-language Support', desc: 'Offer your website in multiple languages with quick translations for global audiences.' }
   ];
 
   const gridContainer = document.querySelector('.solutions-grid');
   const checkboxContainer = document.getElementById('websiteTypeCheckboxes');
-  const comparisonBody = document.getElementById('comparison-body');
-
-  const allFeatures = ['Booking System', 'Payments', 'Dashboard', 'Blog', 'AI Features', 'Membership', 'E-Commerce', 'SEO Optimization', 'Mobile Optimization'];
+  const select1 = document.getElementById('compare-select-1');
+  const select2 = document.getElementById('compare-select-2');
+  const resultsContainer = document.getElementById('comparison-results-rows');
+  const name1 = document.getElementById('compare-name-1');
+  const name2 = document.getElementById('compare-name-2');
 
   websiteTypes.forEach(type => {
     // Populate Grid
@@ -42,21 +56,64 @@ document.addEventListener('DOMContentLoaded', () => {
     checkboxLabel.innerHTML = `<input type="checkbox" name="selectedTypes" value="${type.title}"> ${type.title}`;
     checkboxContainer.appendChild(checkboxLabel);
 
-    // Populate Comparison Table
-    const tr = document.createElement('tr');
-    let tdHTML = `<td><strong>${type.title}</strong></td>`;
-    allFeatures.forEach(feature => {
-      const hasFeature = type.features.includes(feature);
-      tdHTML += `<td class="${hasFeature ? 'has-feature' : ''}">${hasFeature ? '<i data-lucide="check"></i>' : '-'}</td>`;
-    });
-    tr.innerHTML = tdHTML;
-    comparisonBody.appendChild(tr);
+    // Populate Comparison Selects
+    const opt1 = document.createElement('option');
+    opt1.value = type.id;
+    opt1.textContent = type.title;
+    select1.appendChild(opt1);
+
+    const opt2 = document.createElement('option');
+    opt2.value = type.id;
+    opt2.textContent = type.title;
+    select2.appendChild(opt2);
   });
 
-  // Re-init lucide icons for newly added elements
-  if (window.lucide) {
-    lucide.createIcons();
+  // Set default selections
+  select1.value = 'personal';
+  select2.value = 'ecommerce';
+
+  function updateComparison() {
+    const typeA = websiteTypes.find(t => t.id === select1.value);
+    const typeB = websiteTypes.find(t => t.id === select2.value);
+    
+    if (!typeA || !typeB) return;
+
+    name1.textContent = typeA.title;
+    name2.textContent = typeB.title;
+
+    resultsContainer.innerHTML = '';
+
+    functionalFeatures.forEach(feature => {
+      const hasA = typeA.features.includes(feature.name);
+      const hasB = typeB.features.includes(feature.name);
+
+      const row = document.createElement('div');
+      row.className = 'comparison-results-row';
+      row.innerHTML = `
+        <div class="status-icon ${hasA ? 'has' : 'has-not'}">
+          ${hasA ? '<i data-lucide="check-circle-2"></i>' : '<i data-lucide="minus"></i>'}
+        </div>
+        <div class="col-feature">
+          ${feature.name}
+          <p>${feature.desc}</p>
+        </div>
+        <div class="status-icon ${hasB ? 'has' : 'has-not'}">
+          ${hasB ? '<i data-lucide="check-circle-2"></i>' : '<i data-lucide="minus"></i>'}
+        </div>
+      `;
+      resultsContainer.appendChild(row);
+    });
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   }
+
+  select1.addEventListener('change', updateComparison);
+  select2.addEventListener('change', updateComparison);
+
+  // Initial trigger
+  updateComparison();
 
   // Handle "Select Solution" button click
   document.querySelectorAll('.btn-select').forEach(btn => {

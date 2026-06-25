@@ -19,8 +19,8 @@
       --navy-mid: #000000;
       --navy-light: #0f2a55;
       --cyan: #0047FF;
-      --cyan-dim: rgba(0,255,255,0.15);
-      --cyan-glow: rgba(0,255,255,0.4);
+      --cyan-dim: rgba(0, 71, 255,0.15);
+      --cyan-glow: rgba(0, 71, 255,0.4);
     }
 
     html, body {
@@ -35,7 +35,7 @@
     /* ── ANIMATED BACKGROUND ── */
     .hub-bg {
       position: fixed; inset: 0; z-index: 0;
-      background: radial-gradient(ellipse at 20% 20%, rgba(0,255,255,0.06) 0%, transparent 55%),
+      background: radial-gradient(ellipse at 20% 20%, rgba(0, 71, 255,0.06) 0%, transparent 55%),
                   radial-gradient(ellipse at 80% 80%, rgba(0,100,255,0.07) 0%, transparent 55%),
                   linear-gradient(135deg, #040d1f 0%, #071428 50%, #040d1f 100%);
     }
@@ -47,9 +47,9 @@
 
     /* Floating orbs */
     .orb { position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; }
-    .orb-1 { width: 500px; height: 500px; top: -150px; left: -150px; background: rgba(0,255,255,0.05); animation: floatOrb 8s ease-in-out infinite; }
+    .orb-1 { width: 500px; height: 500px; top: -150px; left: -150px; background: rgba(0, 71, 255,0.05); animation: floatOrb 8s ease-in-out infinite; }
     .orb-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; background: rgba(0,80,255,0.06); animation: floatOrb 10s ease-in-out infinite reverse; }
-    .orb-3 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(0,255,255,0.03); animation: floatOrb 12s ease-in-out infinite; }
+    .orb-3 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: rgba(0, 71, 255,0.03); animation: floatOrb 12s ease-in-out infinite; }
     @keyframes floatOrb { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px, 20px); } }
 
     /* ── MAIN WRAPPER ── */
@@ -65,8 +65,8 @@
 
     .hub-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(0,255,255,0.08);
-      border: 1px solid rgba(0,255,255,0.25);
+      background: rgba(0, 71, 255,0.08);
+      border: 1px solid rgba(0, 71, 255,0.25);
       border-radius: 100px;
       padding: 8px 20px;
       font-size: 0.8rem; font-weight: 600;
@@ -124,10 +124,10 @@
     .hub-card::before {
       content: '';
       position: absolute; inset: 0; border-radius: 24px;
-      background: linear-gradient(135deg, rgba(0,255,255,0.06) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(0, 71, 255,0.06) 0%, transparent 60%);
       opacity: 0; transition: opacity 0.4s;
     }
-    .hub-card:hover { transform: translateY(-8px); border-color: rgba(0,255,255,0.35); box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,255,255,0.15), 0 0 60px rgba(0,255,255,0.08); }
+    .hub-card:hover { transform: translateY(-8px); border-color: rgba(0, 71, 255,0.35); box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 71, 255,0.15), 0 0 60px rgba(0, 71, 255,0.08); }
     .hub-card:hover::before { opacity: 1; }
 
     /* Accent line at top */
@@ -141,7 +141,7 @@
       font-size: 1.6rem; margin-bottom: 1.5rem;
       position: relative; z-index: 1;
     }
-    .card-client .hub-card-icon { background: rgba(0,255,255,0.1); color: var(--cyan); border: 1px solid rgba(0,255,255,0.2); }
+    .card-client .hub-card-icon { background: rgba(0, 71, 255,0.1); color: var(--cyan); border: 1px solid rgba(0, 71, 255,0.2); }
     .card-academy .hub-card-icon { background: rgba(139,92,246,0.1); color: #a78bfa; border: 1px solid rgba(139,92,246,0.2); }
 
     .hub-card h2 {
@@ -161,7 +161,7 @@
       font-size: 0.72rem; font-weight: 600; padding: 4px 10px;
       border-radius: 100px; letter-spacing: 0.5px;
     }
-    .card-client .hub-tag { background: rgba(0,255,255,0.08); color: var(--cyan); border: 1px solid rgba(0,255,255,0.15); }
+    .card-client .hub-tag { background: rgba(0, 71, 255,0.08); color: var(--cyan); border: 1px solid rgba(0, 71, 255,0.15); }
     .card-academy .hub-tag { background: rgba(139,92,246,0.08); color: #a78bfa; border: 1px solid rgba(139,92,246,0.15); }
 
     .hub-card-btn {
@@ -171,7 +171,7 @@
       transition: all 0.3s; position: relative; z-index: 1;
     }
     .card-client .hub-card-btn { background: var(--cyan); color: #040d1f; }
-    .card-client .hub-card-btn:hover { background: #fff; box-shadow: 0 8px 25px rgba(0,255,255,0.4); }
+    .card-client .hub-card-btn:hover { background: #fff; box-shadow: 0 8px 25px rgba(0, 71, 255,0.4); }
     .card-academy .hub-card-btn { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.25); }
     .card-academy .hub-card-btn:hover { background: #8b5cf6; color: #fff; box-shadow: 0 8px 25px rgba(139,92,246,0.4); }
 
@@ -230,65 +230,118 @@
   <div class="orb orb-3"></div>
 
   <!-- Navbar -->
-  <nav id="navigation" class="navbar">
-    <div class="nav-container container">
-      <div class="nav-logo">
-        <a href="index" style="display:flex;align-items:center;text-decoration:none;padding-left:10px;">
-          <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital"
-            style="height:48px;width:auto;opacity:1!important;visibility:visible!important;display:block!important;" loading="lazy">
-        </a>
-      </div>
-      <div class="nav-actions" style="margin-left:auto;padding-right:15px;">
-        <div class="nav-menu" id="nav-menu">
-          <a href="index" class="nav-link">Home</a>
-          <a href="about" class="nav-link">About</a>
-          <div class="nav-item dropdown">
-            <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:.8em;margin-left:6px;"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="services">Service Overview</a></li>
-              <li class="dropdown-header">Tech &amp; Development</li>
-              <li><a href="website-solutions">Website Solutions Guide</a></li>
-              <li><a href="service-web-development">Web Development</a></li>
-              <li><a href="service-app-development">App Development</a></li>
-              <li class="dropdown-header">Digital Growth Lab</li>
-              <li><a href="service-digital-marketing">Digital Marketing Overview</a></li>
-              <li><a href="service-social-media-marketing">Social Media Marketing</a></li>
-              <li><a href="service-facebook-ads">Facebook Ads</a></li>
-              <li><a href="service-content-creation">Content Creation</a></li>
-              <li><a href="service-email-marketing">Email Marketing</a></li>
-            </ul>
-          </div>
-          <div class="nav-item dropdown">
-            <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:.8em;margin-left:6px;"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
-              <li><a href="blog">Blog</a></li>
-              <li class="dropdown-header" style="padding:8px 20px 4px;font-weight:700;color:#0047FF;font-size:.75em;text-transform:uppercase;letter-spacing:1px;opacity:.9;">Resources</li>
-              <li><a href="resources">Resource Overview</a></li>
-              <li><a href="ebooks">Free Books</a></li>
-              <li><a href="tools">Marketing Tools</a></li>
-              <li><a href="quiz">Growth Quiz</a></li>
-              <li><a href="contact">Free Consultation</a></li>
-            </ul>
-          </div>
-          <a href="pricing" class="nav-link">Pricing</a>
-          <a href="careers" class="nav-link">Careers</a>
-          <a href="portfolio" class="nav-link">Portfolio</a>
-          <a href="contact" class="nav-link">Contact</a>
-          <div class="nav-item dropdown" style="margin-left:10px;">
-            <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Start a Project</a>
-            <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background-color:#000000;border:1px solid #0047FF!important;border-radius:8px;">
-              <li><a class="dropdown-item" href="website-solutions#project-form" style="color:#fff;padding:10px 20px;">Start a project</a></li>
-              <li><a class="dropdown-item" href="quiz" style="color:#fff;padding:10px 20px;">Take Free Quiz</a></li>
-            </ul>
-          </div>
+  <div class="header-wrapper">
+    <!-- Row 1: Top Bar (Royal Blue background, white text) -->
+    <div class="header-top-bar">
+        <div class="header-container">
+            <div class="top-bar-left">
+                <a href="about">Why Us</a>
+                <span class="divider">|</span>
+                <a href="pricing">Pricing</a>
+                <span class="divider">|</span>
+                <a href="quiz">Take Quiz</a>
+            </div>
+            <div class="top-bar-right">
+                <div class="header-search">
+                    <form action="search" method="GET" style="display: flex; align-items: center; margin: 0;">
+                        <input type="text" placeholder="Search..." aria-label="Search" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 4px 10px; color: #ffffff; font-size: 0.75rem; outline: none;">
+                        <button type="submit" aria-label="Search" style="background: transparent; border: none; color: #ffffff; cursor: pointer; margin-left: 5px; font-size: 0.8rem;"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
+
+    <!-- Row 2: Middle Row (Solid Black background) -->
+    <div class="header-middle-row">
+        <div class="header-container">
+            <div class="middle-left">
+                <a href="index" class="header-logo-link">
+                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="header-logo-img" style="height: 60px; width: auto; display: block;">
+                </a>
+            </div>
+            <div class="middle-right" style="display: flex; gap: 30px; align-items: center;">
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Visit Our Office</span>
+                        <span class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff;">Lagos, Nigeria (Remote/Global)</span>
+                    </div>
+                </div>
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Mail Us</span>
+                        <a href="mailto:info@trendtacticsdigital.com" class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff; text-decoration: none;">info@trendtacticsdigital.com</a>
+                    </div>
+                </div>
+                <div class="info-block socials-block" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                    <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">FOLLOW US</span>
+                    <div class="social-links-grid" style="display: flex; gap: 8px;">
+                        <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Bottom Navigation Bar (Solid dark grey/black background) -->
+    <nav id="navigation" class="navbar premium-navbar">
+        <div class="header-container">
+            <div class="nav-menu-wrapper" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                <div class="nav-menu" id="nav-menu" style="display: flex; align-items: center; gap: 20px;">
+                    <a href="index" class="nav-link">Home</a>
+                    <a href="about" class="nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services">Service Overview</a></li>
+                            <li class="dropdown-header">Tech &amp; Development</li>
+                            <li><a href="website-solutions">Website Solutions Guide</a></li>
+                            <li><a href="service-web-development">Web Development</a></li>
+                            <li><a href="service-app-development">App Development</a></li>
+                            <li class="dropdown-header">Digital Growth Lab</li>
+                            <li><a href="service-digital-marketing">Digital Marketing Overview</a></li>
+                            <li><a href="service-social-media-marketing">Social Media Marketing</a></li>
+                            <li><a href="service-facebook-ads">Facebook Ads</a></li>
+                            <li><a href="service-content-creation">Content Creation</a></li>
+                            <li><a href="service-email-marketing">Email Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener" class="nav-link dropdown-toggle">Academy <i class="fas fa-chevron-down" style="font-size:0.8em;margin-left:6px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
+                            <li><a href="blog">Blog</a></li>
+                            <li class="dropdown-header">Resources</li>
+                            <li><a href="resources">Resource Overview</a></li>
+                            <li><a href="ebooks">Free Books</a></li>
+                            <li><a href="tools">Marketing Tools</a></li>
+                            <li><a href="quiz">Growth Quiz</a></li>
+                            <li><a href="contact">Free Consultation</a></li>
+                        </ul>
+                    </div>
+                    <a href="pricing" class="nav-link">Pricing</a>
+                    <a href="careers" class="nav-link">Careers</a>
+                    <a href="portfolio" class="nav-link">Portfolio</a>
+                    <a href="contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="contact" class="nav-call-block" style="background: #0047FF; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; padding: 12px 25px; border-radius: 4px; transition: all 0.2s ease;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
 
   <!-- Hub Page -->
   <div class="hub-page">

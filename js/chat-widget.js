@@ -365,7 +365,7 @@
             border: 2px solid rgba(250,219,36,0.3);
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(10,30,63,0.35);
+            box-shadow: 0 4px 20px rgba(0, 0, 0,0.35);
             z-index: 99999;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
@@ -398,11 +398,11 @@
 
         chatbotBtn.addEventListener('mouseenter', () => {
             chatbotBtn.style.transform = 'scale(1.08) translateY(-2px)';
-            chatbotBtn.style.boxShadow = '0 8px 30px rgba(10,30,63,0.45)';
+            chatbotBtn.style.boxShadow = '0 8px 30px rgba(0, 0, 0,0.45)';
         });
         chatbotBtn.addEventListener('mouseleave', () => {
             chatbotBtn.style.transform = 'scale(1)';
-            chatbotBtn.style.boxShadow = '0 4px 20px rgba(10,30,63,0.35)';
+            chatbotBtn.style.boxShadow = '0 4px 20px rgba(0, 0, 0,0.35)';
         });
 
         // --- Chat Window ---
@@ -550,8 +550,8 @@
                 const pulseStyle = document.createElement('style');
                 pulseStyle.textContent = `
                     @keyframes pulse {
-                        0%, 100% { box-shadow: 0 4px 20px rgba(10,30,63,0.35); }
-                        50% { box-shadow: 0 4px 30px rgba(10,30,63,0.6), 0 0 0 8px rgba(10,30,63,0.1); }
+                        0%, 100% { box-shadow: 0 4px 20px rgba(0, 0, 0,0.35); }
+                        50% { box-shadow: 0 4px 30px rgba(0, 0, 0,0.6), 0 0 0 8px rgba(0, 0, 0,0.1); }
                     }
                 `;
                 document.head.appendChild(pulseStyle);

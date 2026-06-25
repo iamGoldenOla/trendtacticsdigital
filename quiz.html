@@ -51,7 +51,7 @@
 
     .site-footer {
 
-      background-color: #061226 !important;
+      background-color: #000000 !important;
 
       color: #cbd5e1 !important;
 
@@ -595,9 +595,9 @@
 
     .about-badge {
 
-      background: rgba(10, 30, 63, 0.05) !important;
+      background: rgba(0, 0, 0, 0.05) !important;
 
-      border-color: rgba(10, 30, 63, 0.1) !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
 
       color: #0088cc !important;
 
@@ -798,11 +798,11 @@
     }
 
     .quiz-card {
-      background: rgba(10, 30, 63, 0.95) !important;
+      background: rgba(0, 0, 0, 0.95) !important;
       backdrop-filter: blur(10px);
       position: relative;
       z-index: 1;
-      border: 1px solid rgba(0, 255, 255, 0.2) !important;
+      border: 1px solid rgba(0, 71, 255, 0.2) !important;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
     }
 
@@ -837,9 +837,9 @@
 
     .service-page-hero-clean .service-hero-badge {
 
-      background: rgba(10, 30, 63, 0.05) !important;
+      background: rgba(0, 0, 0, 0.05) !important;
 
-      border-color: rgba(10, 30, 63, 0.1) !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
 
       color: #0088cc !important;
 
@@ -855,7 +855,7 @@
 
       background: #000000 !important;
 
-      border: 1px solid rgba(0, 255, 255, 0.2) !important;
+      border: 1px solid rgba(0, 71, 255, 0.2) !important;
 
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 
@@ -965,7 +965,7 @@
 
     .tool-result {
 
-      background: rgba(0, 255, 255, 0.1) !important;
+      background: rgba(0, 71, 255, 0.1) !important;
 
       color: #ffffff !important;
 
@@ -1404,46 +1404,77 @@
     }
   </style>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 
 
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar" id="top-bar">
-        <div class="top-bar-container">
+        <div class="header-wrapper">
+    <!-- Row 1: Top Bar (Royal Blue background, white text) -->
+    <div class="header-top-bar">
+        <div class="header-container">
             <div class="top-bar-left">
-                <div id="google_translate_element_top"></div>
-            </div>
-            <div class="top-bar-center">
-                <span id="typewriter-text" class="typewriter-text"></span>
+                <a href="about">Why Us</a>
+                <span class="divider">|</span>
+                <a href="pricing">Pricing</a>
+                <span class="divider">|</span>
+                <a href="quiz">Take Quiz</a>
             </div>
             <div class="top-bar-right">
-                <div class="social-icons-top">
-                    <a href="https://facebook.com/trendtactics" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/trendtactics" target="_blank"><i class="fab fa-instagram"></i></a>
+                <div class="header-search">
+                    <form action="search" method="GET" style="display: flex; align-items: center; margin: 0;">
+                        <input type="text" placeholder="Search..." aria-label="Search" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 4px 10px; color: #ffffff; font-size: 0.75rem; outline: none;">
+                        <button type="submit" aria-label="Search" style="background: transparent; border: none; color: #ffffff; cursor: pointer; margin-left: 5px; font-size: 0.8rem;"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
-                <a href="contact" class="top-book-call">
-                    <i class="fas fa-phone-alt"></i> Book a Call
-                </a>
-                <a href="website-solutions#project-form" class="top-get-started">Start a Project</a>
             </div>
         </div>
     </div>
 
-    <!-- Navigation Header -->
-            <nav id="navigation" class="navbar">
-        <div class="nav-container container">
-            <div class="nav-logo">
-                <a href="index" style="display: flex; align-items: center; text-decoration: none; padding-left: 10px;">
-                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" data-optimized="true"
-                        style="height: 48px; width: auto; opacity: 1 !important; visibility: visible !important; display: block !important;"
-                        loading="lazy">
+    <!-- Row 2: Middle Row (Solid Black background) -->
+    <div class="header-middle-row">
+        <div class="header-container">
+            <div class="middle-left">
+                <a href="index" class="header-logo-link">
+                    <img src="/img/Trendtactics_digital_logo.png" alt="Trendtactics Digital" class="header-logo-img" style="height: 60px; width: auto; display: block;">
                 </a>
             </div>
-            <div class="nav-actions" style="margin-left: auto; padding-right: 15px;">
-                <div class="nav-menu" id="nav-menu">
+            <div class="middle-right" style="display: flex; gap: 30px; align-items: center;">
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Visit Our Office</span>
+                        <span class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff;">Lagos, Nigeria (Remote/Global)</span>
+                    </div>
+                </div>
+                <div class="info-block" style="display: flex; align-items: center; gap: 10px;">
+                    <div class="info-icon" style="font-size: 1.2rem; color: #0047FF;"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text" style="display: flex; flex-direction: column; text-align: left;">
+                        <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">Mail Us</span>
+                        <a href="mailto:info@trendtacticsdigital.com" class="info-val" style="font-size: 0.85rem; font-weight: 600; color: #ffffff; text-decoration: none;">info@trendtacticsdigital.com</a>
+                    </div>
+                </div>
+                <div class="info-block socials-block" style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                    <span class="info-label" style="font-size: 0.7rem; font-weight: 700; color: #888888; text-transform: uppercase;">FOLLOW US</span>
+                    <div class="social-links-grid" style="display: flex; gap: 8px;">
+                        <a href="https://facebook.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Facebook" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/trendtacticsdigital" target="_blank" rel="noopener" aria-label="Instagram" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/trendtacticsdigital" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/trendtacticsdig" target="_blank" rel="noopener" aria-label="Twitter" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@trendtacticsdigital" target="_blank" rel="noopener" aria-label="YouTube" style="color: #ffffff; font-size: 0.85rem; width: 24px; height: 24px; border: 1px solid #222222; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Bottom Navigation Bar (Solid dark grey/black background) -->
+    <nav id="navigation" class="navbar premium-navbar">
+        <div class="header-container">
+            <div class="nav-menu-wrapper" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                <div class="nav-menu" id="nav-menu" style="display: flex; align-items: center; gap: 20px;">
                     <a href="index" class="nav-link">Home</a>
                     <a href="about" class="nav-link">About</a>
                     <div class="nav-item dropdown">
@@ -1467,7 +1498,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="https://academy.trendtacticsdigital.com" target="_blank" rel="noopener">Academy Hub</a></li>
                             <li><a href="blog">Blog</a></li>
-                            <li class="dropdown-header" style="padding: 8px 20px 4px; font-weight: 700; color: #0047FF; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Resources</li>
+                            <li class="dropdown-header">Resources</li>
                             <li><a href="resources">Resource Overview</a></li>
                             <li><a href="ebooks">Free Books</a></li>
                             <li><a href="tools">Marketing Tools</a></li>
@@ -1479,26 +1510,19 @@
                     <a href="careers" class="nav-link">Careers</a>
                     <a href="portfolio" class="nav-link">Portfolio</a>
                     <a href="contact" class="nav-link">Contact</a>
-                    <div class="nav-item dropdown" style="margin-left: 10px;">
-                        <a href="#" class="btn-get-started dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Start a Project
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0"
-                            style="background-color: #000000; border: 1px solid #0047FF !important; border-radius: 8px;">
-                            <li><a class="dropdown-item" href="website-solutions#project-form" style="color: #fff; padding: 10px 20px;">Start a project</a></li>
-                            <li><a class="dropdown-item" href="quiz" style="color: #fff; padding: 10px 20px;">Take Free Quiz</a></li>
-                        </ul>
-                    </div>
                 </div>
+                <div class="nav-toggle" id="nav-toggle" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="contact" class="nav-call-block" style="background: #0047FF; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; padding: 12px 25px; border-radius: 4px; transition: all 0.2s ease;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Book a Call
+                </a>
             </div>
-            <!-- Mobile Menu Toggle -->
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
+</div>
 
 
 
@@ -1625,7 +1649,7 @@
           <div class="visual-wrapper" style="max-height: 400px; max-width: 450px;">
 
             <div class="main-image-frame"
-              style="border: 2px solid rgba(0,255,255,0.3); box-shadow: 0 20px 50px rgba(0,255,255,0.15);">
+              style="border: 2px solid rgba(0, 71, 255,0.3); box-shadow: 0 20px 50px rgba(0, 71, 255,0.15);">
 
               <img src="/img/quiz-parallelx.jpg" alt="Hero Image" class="hero-main-img"
                 style="object-fit:cover; height:400px; width:100%;" loading="lazy">

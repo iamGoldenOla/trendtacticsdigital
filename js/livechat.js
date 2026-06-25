@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             --chat-secondary: rgba(255, 255, 255, 0.85); /* Glassmorphism background */
             --chat-accent: #0047FF; /* Cyan accent color */
             --chat-text: #1f2937;
-            --chat-user-msg: rgba(10, 30, 63, 0.1); /* Light navy for user message bubble */
+            --chat-user-msg: rgba(0, 0, 0, 0.1); /* Light navy for user message bubble */
         }
 
         /* The FAB (Floating Action Button) */
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: 65px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--chat-primary), #1a3a6e);
-            box-shadow: 0 8px 25px rgba(10,30,63,0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0,0.3);
             cursor: pointer;
             z-index: 9999;
             display: flex;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         .chat-fab:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 255, 255, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 71, 255, 0.4);
         }
 
         .chat-fab img {
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: #ffffff;
             align-self: flex-end;
             border-top-right-radius: 4px;
-            box-shadow: 0 4px 10px rgba(10,30,63,0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0,0.15);
         }
 
         .chat-disclaimer {
@@ -309,12 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
             justify-content: center;
             font-size: 1rem;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(10,30,63,0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0,0.15);
         }
         
         .chat-send-btn:hover {
             transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 6px 15px rgba(10,30,63,0.25);
+            box-shadow: 0 6px 15px rgba(0, 0, 0,0.25);
         }
 
         .chat-send-btn:active {

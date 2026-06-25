@@ -141,7 +141,7 @@
 .rc-card:hover {
   border-color: #000000;
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(10, 30, 63, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 .rc-card-featured {
