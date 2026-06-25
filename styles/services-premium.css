@@ -643,7 +643,7 @@
 }
 
 .wwo-cta-banner {
-    background: linear-gradient(135deg, #000000 0%, #051024 100%);
+    background: #000000 !important;
     border-radius: 20px;
     padding: 3rem;
     position: relative;
@@ -867,7 +867,7 @@
 }
 
 .wwo-cta-banner {
-    background: linear-gradient(135deg, #000000 0%, #051024 100%);
+    background: #000000 !important;
     border-radius: 20px;
     padding: 3rem;
     margin-top: 4rem;

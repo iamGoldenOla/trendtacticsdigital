@@ -6301,7 +6301,7 @@ footer.footer>.container {
 
 .site-footer .footer-bottom {
     padding: 25px 0;
-    background-color: #040d1f;
+    background-color: #000000;
 }
 
 .site-footer .footer-bottom p {
@@ -7026,7 +7026,7 @@ footer.footer>.container {
 
 .info-icon {
     font-size: 1.3rem;
-    color: #0047FF !important; /* Royal Blue icons */
+    color: #fadb24 !important; /* Yellow icons */
 }
 
 .info-text {
@@ -7277,7 +7277,6 @@ footer.footer>.container {
 .service-card,
 .testimonial-card,
 .value-card,
-.team-member,
 .timeline-content,
 .mv-card,
 .story-content,
@@ -7292,7 +7291,6 @@ footer.footer>.container {
 .service-card p,
 .testimonial-card p,
 .value-card p,
-.team-member p,
 .timeline-content p,
 .mv-card p,
 .story-content p,
@@ -7305,7 +7303,6 @@ footer.footer>.container {
 .service-card h3,
 .testimonial-card h3,
 .value-card h3,
-.team-member h3,
 .timeline-content h3,
 .mv-card h3,
 .story-content h3,
@@ -7359,4 +7356,30 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
 .footer-logo-img:hover {
     filter: drop-shadow(0 0 12px #fadb24) !important;
     transform: scale(1.04) !important;
+}
+
+/* ===== FOOTER SUBSCRIBE BUTTON YELLOW REBRAND ===== */
+.footer-newsletter-inline .newsletter-form button,
+.premium-newsletter-form button,
+.newsletter-form-lovable button {
+    background: #fadb24 !important;
+    background-color: #fadb24 !important;
+    color: #000000 !important;
+    border-color: #fadb24 !important;
+    font-weight: 700 !important;
+}
+
+.footer-newsletter-inline .newsletter-form button i,
+.premium-newsletter-form button i,
+.newsletter-form-lovable button i {
+    color: #000000 !important;
+}
+
+.footer-newsletter-inline .newsletter-form button:hover,
+.premium-newsletter-form button:hover,
+.newsletter-form-lovable button:hover {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
 }

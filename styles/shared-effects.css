@@ -40,7 +40,6 @@
 .service-card,
 .testimonial-card,
 .value-card,
-.team-member,
 .timeline-content,
 .mv-card,
 .story-content {
@@ -55,7 +54,6 @@
 .service-card:hover,
 .testimonial-card:hover,
 .value-card:hover,
-.team-member:hover,
 .timeline-content:hover,
 .mv-card:hover,
 .story-content:hover {
