@@ -6549,52 +6549,70 @@ footer.footer>.container {
         height: auto !important;
         gap: 15px !important;
         padding: 15px 0 !important;
+        align-items: stretch !important;
     }
     
     .nav-logo {
-        margin: 0 auto !important;
-        float: none !important;
+        margin-right: auto !important;
+        margin-left: 10px !important;
         display: flex !important;
-        justify-content: center !important;
+        align-items: center !important;
     }
     
     .nav-actions {
         width: 100% !important;
-        justify-content: center !important;
         margin-left: 0 !important;
         padding-right: 0 !important;
+        display: block !important;
     }
     
     .nav-menu {
+        display: flex !important;
         justify-content: center !important;
-        width: auto !important;
-        margin: 0 auto !important;
+        width: 100% !important;
+        background: #051329 !important; /* Sleek darker blue bar */
+        border-radius: 8px !important;
+        padding: 10px 20px !important;
+        border: 1px solid rgba(0, 255, 255, 0.1) !important;
+        position: relative !important;
         gap: 0.5rem !important;
     }
     
+    /* Position the "Start a Project" button on the right of the Logo Row */
+    .nav-menu > .nav-item:last-child {
+        position: absolute !important;
+        right: 10px !important;
+        top: -62px !important; /* Align with the logo row */
+        z-index: 1001 !important;
+    }
+    
+    /* Adjust button style in the top row so it doesn't inherit background bar styles */
+    .nav-menu > .nav-item:last-child .btn-get-started {
+        margin: 0 !important;
+    }
+
     /* Make sure dropdown menus align nicely */
     .nav-menu .dropdown-menu {
         left: 50% !important;
         transform: translateX(-50%) !important;
-        text-align: center !important;
     }
     
     /* Push content down to avoid overlapping the new taller header */
     .hero,
     .hero-content-centered,
     .page-hero {
-        padding-top: 190px !important;
+        padding-top: 200px !important;
     }
     
     .about-hero-redesigned {
-        padding-top: 150px !important;
+        padding-top: 165px !important;
     }
     
     .service-page-hero-clean {
-        padding-top: 175px !important;
+        padding-top: 185px !important;
     }
     
     .careers-hero {
-        padding-top: 175px !important;
+        padding-top: 185px !important;
     }
 }
