@@ -7197,9 +7197,17 @@ footer.footer>.container {
         display: block !important;
     }
     
+    .nav-logo-mobile img {
+        height: 60px !important;
+        width: auto !important;
+        display: block !important;
+    }
+    
     .nav-menu-wrapper {
-        justify-content: flex-end;
-        padding: 10px 0;
+        justify-content: space-between !important;
+        padding: 5px 0;
+        align-items: center;
+        width: 100%;
     }
     
     .nav-call-block {
