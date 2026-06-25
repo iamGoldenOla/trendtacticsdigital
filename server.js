@@ -18,6 +18,7 @@ const enrollmentRoutes = require('./backend/routes/enrollments');
 const paymentRoutes = require('./backend/routes/payments');
 const analyticsRoutes = require('./backend/routes/analytics');
 const adminRoutes = require('./backend/routes/admin');
+const leadRoutes = require('./backend/routes/leads');
 
 // Import middleware
 const { authenticateToken } = require('./backend/middleware/auth');
@@ -83,6 +84,7 @@ app.use('/api/enrollments', authenticateToken, enrollmentRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/analytics', authenticateToken, analyticsRoutes);
 app.use('/api/admin', authenticateToken, adminRoutes);
+app.use('/api/leads', leadRoutes);
 
 // Serve React app for all other routes
 app.get('*', (req, res) => {

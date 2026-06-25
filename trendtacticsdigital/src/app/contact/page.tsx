@@ -59,6 +59,8 @@ const ContactPage = () => {
   // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [aiSubjectLoading, setAiSubjectLoading] = useState(false);
@@ -119,7 +121,7 @@ const ContactPage = () => {
   };
 
   // AI-powered thank you message (mocked)
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'form_submit', {
@@ -129,12 +131,98 @@ const ContactPage = () => {
       });
     }
     setAiThankYou("Generating personalized thank you...");
+
+    const payload = {
+      name,
+      email,
+      phone,
+      company,
+      service: subject,
+      message,
+      page_source: typeof window !== 'undefined' ? window.location.href : '/contact'
+    };
+
+    // 1. Send Activepieces Webhook POST
+    try {
+      await fetch('https://activepieces.trendtacticsdigital.com/api/v1/webhooks/FLOW_4_WEBHOOK_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (apErr) {
+      const err = apErr as Error;
+      console.warn('Activepieces webhook failed:', err.message);
+    }
+
+    // 2. Send LMS Backend POST (for email notification)
+    try {
+      await fetch('/api/leads/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          service: subject,
+          message
+        })
+      });
+    } catch (lmsErr) {
+      const err = lmsErr as Error;
+      console.warn('LMS Backend lead post failed:', err.message);
+    }
+
+    // 3. Register client on TrendyAI backend & trigger agent routing
+    try {
+      const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+      const backendURL = isLocalhost ? 'http://localhost:3000' : 'https://api.trendtacticsdigital.com';
+
+      const clientPayload = {
+        name,
+        email,
+        company: company || subject,
+        phone,
+        status: 'active',
+        metadata: {
+          subject,
+          message
+        }
+      };
+
+      const clientResponse = await fetch(`${backendURL}/api/v1/clients`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(clientPayload)
+      });
+
+      if (clientResponse.ok) {
+        const clientResult = await clientResponse.json();
+        const clientId = clientResult.data && clientResult.data.id;
+
+        if (clientId) {
+          await fetch(`${backendURL}/api/agent/route`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: `Client: ${name}\nSubject: ${subject}\nMessage: ${message}`,
+              client_id: clientId
+            })
+          });
+        }
+      }
+    } catch (backendErr) {
+      const err = backendErr as Error;
+      console.warn('TrendyAI backend registration failed:', err.message);
+    }
+
     setTimeout(() => {
       setAiThankYou(
         `Thank you, ${name || "friend"}, for reaching out! We appreciate your message and will get back to you soon. <div class='text-xs text-gray-400 mt-2'>Powered by GPT-4.1 nano (mocked)</div>`
       );
       setName("");
       setEmail("");
+      setPhone("");
+      setCompany("");
       setSubject("");
       setMessage("");
     }, 1200);
@@ -202,6 +290,28 @@ const ContactPage = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-medium">Company Name</label>
+                    <input
+                      type="text"
+                      className="w-full border rounded px-3 py-2 mt-1"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-medium">Phone Number</label>
+                    <input
+                      type="tel"
+                      className="w-full border rounded px-3 py-2 mt-1"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
                 <div className="flex gap-2 items-end">
                   <div className="flex-1">

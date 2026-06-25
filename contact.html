@@ -821,6 +821,28 @@
 
                         </div>
 
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+                            <div class="form-group-premium">
+
+                                <label for="company">Company Name</label>
+
+                                <input type="text" id="company" class="form-control-premium" placeholder="Your Company"
+                                    required>
+
+                            </div>
+
+                            <div class="form-group-premium">
+
+                                <label for="phone">Phone Number</label>
+
+                                <input type="tel" id="phone" class="form-control-premium" placeholder="+234 800 000 0000"
+                                    required>
+
+                            </div>
+
+                        </div>
+
                         <div class="form-group-premium">
 
                             <label for="subject">Subject</label>
@@ -1246,53 +1268,101 @@
 
 
 
+                    const firstName = document.getElementById("firstName").value;
+                    const lastName = document.getElementById("lastName").value;
+                    const email = document.getElementById("email").value;
+                    const company = document.getElementById("company").value;
+                    const phone = document.getElementById("phone").value;
+                    const subject = document.getElementById("subject").value;
+                    const message = document.getElementById("message").value;
+                    const pageSource = window.location.href;
+
                     const payload = {
-
-                        first_name: document.getElementById("firstName").value,
-
-                        last_name: document.getElementById("lastName").value,
-
-                        email: document.getElementById("email").value,
-
-                        subject: document.getElementById("subject").value,
-
-                        message: document.getElementById("message").value,
-
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        company: company,
+                        phone: phone,
+                        subject: subject,
+                        message: message,
                         created_at: new Date().toISOString(),
-
                         status: 'new'
-
                     };
 
-
-
                     try {
-                        // 1. Save to local Supabase contacts table (for backward compatibility / website database)
+                        // 1. POST to Activepieces Flow 4 webhook
+                        try {
+                            const activepiecesWebhookUrl = 'https://activepieces.trendtacticsdigital.com/api/v1/webhooks/FLOW_4_WEBHOOK_ID'; // Replace with actual Flow 4 ID
+                            await fetch(activepiecesWebhookUrl, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    name: firstName + ' ' + lastName,
+                                    email: email,
+                                    phone: phone,
+                                    company: company,
+                                    service: subject,
+                                    message: message,
+                                    page_source: pageSource
+                                })
+                            });
+                            console.log('✅ Sent submission to Activepieces webhook');
+                        } catch (apErr) {
+                            console.warn('Failed to send to Activepieces:', apErr.message);
+                        }
+
+                        // 2. POST to LMS Backend for email notifications & database storage
+                        try {
+                            const lmsBackendURL = window.location.origin;
+                            await fetch(`${lmsBackendURL}/api/leads/contact`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    name: firstName + ' ' + lastName,
+                                    email: email,
+                                    company: company,
+                                    service: subject,
+                                    message: message
+                                })
+                            });
+                            console.log('✅ Sent submission to LMS backend for email notification');
+                        } catch (lmsErr) {
+                            console.warn('Failed to send to LMS backend:', lmsErr.message);
+                        }
+
+                        // 3. Save to local Supabase contacts table
                         if (window.supabaseUtils && window.supabaseUtils.supabase) {
                             const { error } = await window.supabaseUtils.supabase
                                 .from('contacts')
-                                .insert([payload]);
+                                .insert([{
+                                    first_name: firstName,
+                                    last_name: lastName,
+                                    email: email,
+                                    subject: subject,
+                                    message: message,
+                                    created_at: payload.created_at,
+                                    status: payload.status
+                                }]);
 
                             if (error) {
                                 console.warn("Contact table might not exist in Supabase:", error);
                             }
-                        } else {
-                            console.warn("Supabase not fully initialized. Skipping local DB insert.");
                         }
 
-                        // 2. Call TrendyAI backend API to register the client and start agent routing
+                        // 4. Call TrendyAI backend API to register the client and start agent routing
                         try {
                             const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
                             const backendURL = isLocalhost ? 'http://localhost:3000' : 'https://api.trendtacticsdigital.com';
 
                             const clientPayload = {
-                                name: payload.first_name + ' ' + payload.last_name,
-                                email: payload.email,
-                                company: payload.subject,
+                                name: firstName + ' ' + lastName,
+                                email: email,
+                                company: company || subject,
+                                phone: phone,
                                 status: 'active',
                                 metadata: {
-                                    subject: payload.subject,
-                                    message: payload.message
+                                    subject: subject,
+                                    message: message
                                 }
                             };
 
@@ -1310,7 +1380,7 @@
                                 if (clientId) {
                                     // Trigger smart agent routing
                                     const routePayload = {
-                                        message: `Client: ${clientPayload.name}\nSubject: ${payload.subject}\nMessage: ${payload.message}`,
+                                        message: `Client: ${clientPayload.name}\nSubject: ${subject}\nMessage: ${message}`,
                                         client_id: clientId
                                     };
 
@@ -1331,7 +1401,7 @@
 
 
 
-                        // Simulated or Real Success
+                        // Success view
 
                         form.innerHTML = `
 

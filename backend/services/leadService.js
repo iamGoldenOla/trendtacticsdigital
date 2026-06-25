@@ -31,10 +31,15 @@ class LeadService {
 
         try {
             // Try to notify admin via email (non-blocking)
-            if (process.env.EMAIL_USER) {
+            try {
                 const { sendEmailWithTemplate } = require('../utils/sendEmail');
-                sendEmailWithTemplate(process.env.EMAIL_USER, 'adminNewLead', lead)
-                    .catch(err => console.error('Email notification failed:', err.message));
+                const adminEmails = ['info@trendtacticsdigital.com', 'trendtacticsdigital@gmail.com'];
+                adminEmails.forEach(email => {
+                    sendEmailWithTemplate(email, 'adminNewLead', lead)
+                        .catch(err => console.error(`Email notification to ${email} failed:`, err.message));
+                });
+            } catch (emailErr) {
+                console.error('Email notification setup failed:', emailErr.message);
             }
 
             // 1. Try Supabase first (if configured)

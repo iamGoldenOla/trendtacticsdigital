@@ -58,4 +58,3 @@ Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
-

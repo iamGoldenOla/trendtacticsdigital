@@ -90,6 +90,19 @@ export default function RootLayout({
         }`}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
           "@context": "https://schema.org",
+          "@type": "MarketingAgency",
+          "name": "Trendtactics Digital",
+          "url": "https://trendtacticsdigital.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lagos",
+            "addressCountry": "NG"
+          },
+          "areaServed": ["Nigeria", "United Kingdom", "Global"],
+          "serviceType": ["SEO", "Social Media Management", "Web Design", "Digital Marketing"]
+        }`}} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+          "@context": "https://schema.org",
           "@type": "WebSite",
           "url": "https://trendtacticsdigital.com/",
           "name": "Trendtactics Digital - We Engineer Digital Growth",
