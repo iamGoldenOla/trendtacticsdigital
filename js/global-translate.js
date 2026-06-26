@@ -473,4 +473,30 @@ document.addEventListener('DOMContentLoaded', function () {
     script.type = 'text/javascript';
     script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     document.body.appendChild(script);
+
+    // 3. AUTOMATIC HORIZONTAL SCROLL FOR BRAND LOGOS (MARQUEE)
+    const brandsGrid = document.getElementById('brands-grid');
+    if (brandsGrid) {
+        // Wrap the brands-grid in a container with overflow hidden if it's not already wrapped
+        const parent = brandsGrid.parentElement;
+        if (parent && !parent.classList.contains('brands-container-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'brands-container-wrapper';
+            wrapper.style.overflow = 'hidden';
+            wrapper.style.width = '100%';
+            wrapper.style.position = 'relative';
+            wrapper.style.padding = '10px 0';
+            
+            // Move brandsGrid into wrapper
+            parent.insertBefore(wrapper, brandsGrid);
+            wrapper.appendChild(brandsGrid);
+        }
+
+        // Duplicate the children for seamless marquee scroll
+        const originalChildren = Array.from(brandsGrid.children);
+        originalChildren.forEach(child => {
+            const clone = child.cloneNode(true);
+            brandsGrid.appendChild(clone);
+        });
+    }
 });

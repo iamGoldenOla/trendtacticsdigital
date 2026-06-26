@@ -7193,7 +7193,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 160px !important; /* Header is about 150px tall on mobile now */
+        padding-top: 100px !important; /* Header is about 76px tall on mobile now with compact logo */
     }
 }
 
@@ -7209,7 +7209,7 @@ footer.footer>.container {
     }
     
     .nav-logo-mobile img {
-        height: 110px !important;
+        height: 60px !important; /* Reduced to keep mobile logo compact and fit navbar height */
         width: auto !important;
         display: block !important;
     }
@@ -7240,7 +7240,7 @@ footer.footer>.container {
     .navbar.premium-navbar {
         top: 0 !important;
         background: #000000 !important;
-        padding: 10px 0 !important;
+        padding: 8px 0 !important; /* Reduced padding to make mobile header more compact */
     }
     
     .nav-toggle {
@@ -7465,6 +7465,27 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
 
 /* Desktop view: Top bar alignment and CTA button */
 @media (min-width: 1025px) {
+    .header-wrapper {
+        max-width: 1200px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 40px) !important;
+        top: 15px !important;
+        overflow: visible !important;
+        border-radius: 12px !important;
+        background: transparent !important;
+    }
+    
+    .header-top-bar {
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+    }
+    
+    .navbar.premium-navbar {
+        border-bottom-left-radius: 12px !important;
+        border-bottom-right-radius: 12px !important;
+    }
+
     .header-top-bar .top-bar-right {
         display: flex !important;
         align-items: center !important;
