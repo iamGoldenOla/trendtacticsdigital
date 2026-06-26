@@ -7018,7 +7018,7 @@ footer.footer>.container {
 }
 
 .header-logo-img {
-    height: 120px !important; /* Enlarged unified logo height to 120px */
+    height: 180px !important; /* Enlarged unified logo height to 180px */
     width: auto !important;
     display: block;
 }
@@ -7205,7 +7205,7 @@ footer.footer>.container {
     }
     
     .nav-logo-mobile img {
-        height: 60px !important;
+        height: 90px !important;
         width: auto !important;
         display: block !important;
     }
@@ -7392,7 +7392,7 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
 
 /* Default glow on header logo — always visible */
 .header-logo-img {
-    filter: drop-shadow(0 0 12px #fadb24) drop-shadow(0 0 4px rgba(250, 219, 36, 0.5)) !important;
+    filter: none !important;
 }
 
 /* Intensified glow on hover for all logos */
@@ -7402,7 +7402,7 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
 .footer-logo:hover,
 .footer-logo-link:hover,
 .footer-logo-img:hover {
-    filter: drop-shadow(0 0 18px #fadb24) drop-shadow(0 0 6px rgba(250, 219, 36, 0.7)) !important;
+    filter: none !important;
     transform: scale(1.04) !important;
 }
 
