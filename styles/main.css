@@ -6946,7 +6946,7 @@ footer.footer>.container {
 /* ===== ECOPLANT-STYLE HEADER REVAMP ===== */
 .header-wrapper {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -7019,10 +7019,10 @@ footer.footer>.container {
 }
 
 .header-logo-img {
-    height: 350px !important; /* Prominently enlarged logo */
+    height: 280px !important; /* Prominently enlarged logo with breathing space */
     width: auto !important;
     display: block;
-    margin: -100px auto !important; /* Negative margin to overlap rows and stay compact */
+    margin: -65px auto !important; /* Negative margin to overlap rows and stay compact with breathing room */
     position: relative;
     z-index: 1010;
 }
@@ -7170,7 +7170,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 250px !important; /* Header is about 245px tall now with enlarged logo */
+        padding-top: 220px !important; /* Header is about 210px tall now with breathing room */
     }
 }
 

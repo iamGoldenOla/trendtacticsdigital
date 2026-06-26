@@ -363,15 +363,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const topBarContainer = document.querySelector('.header-top-bar .header-container');
             const topBarLeft = document.querySelector('.header-top-bar .top-bar-left');
             if (topBarContainer) {
-                // Ensure left and right flex properties are applied for perfect 3-column centering
+                // Ensure left side does not wrap and takes only needed space to keep it on a single line
                 if (topBarLeft) {
-                    topBarLeft.style.flex = '1';
+                    topBarLeft.style.flex = '0 0 auto';
+                    topBarLeft.style.whiteSpace = 'nowrap';
                     topBarLeft.style.display = 'flex';
-                    topBarLeft.style.justifyContent = 'flex-start';
                     topBarLeft.style.alignItems = 'center';
                 }
+                // Ensure right side takes only needed space
                 if (topBarRight) {
-                    topBarRight.style.flex = '1';
+                    topBarRight.style.flex = '0 0 auto';
                     topBarRight.style.display = 'flex';
                     topBarRight.style.justifyContent = 'flex-end';
                     topBarRight.style.alignItems = 'center';
@@ -382,9 +383,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     topBarCenter = document.createElement('div');
                     topBarCenter.className = 'top-bar-center';
                     topBarCenter.style.display = 'flex';
-                    topBarCenter.style.justifyContent = 'center';
+                    topBarCenter.style.justifyContent = 'flex-end'; // Align social links to the right of the center area
+                    topBarCenter.style.paddingRight = '60px'; // Give breathing room and push away from translator widget
                     topBarCenter.style.alignItems = 'center';
-                    topBarCenter.style.flex = '1';
+                    topBarCenter.style.flex = '1'; // Occupy remaining space to push social links rightwards
                     
                     if (topBarLeft && topBarLeft.nextSibling) {
                         topBarContainer.insertBefore(topBarCenter, topBarLeft.nextSibling);
