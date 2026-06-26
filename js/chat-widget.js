@@ -352,7 +352,7 @@
         const chatbotBtn = document.createElement('button');
         chatbotBtn.id = 'chatbot-toggle';
         chatbotBtn.setAttribute('aria-label', 'Open chat with Allen');
-        chatbotBtn.innerHTML = '<img src="img/professional-ceo.png" alt="Allen" style="width: 100%; height: 100%; object-fit: cover; display: block;">';
+        chatbotBtn.innerHTML = '<img src="img/trendy_chatlive_image.jpg" alt="Allen" style="width: 100%; height: 100%; object-fit: cover; display: block;">';
         chatbotBtn.style.cssText = `
             position: fixed;
             bottom: 24px;
@@ -430,7 +430,7 @@
             <div style="background: linear-gradient(135deg, #000000, #1a3a6e); color: white; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(250,219,36,0.4); display: flex; align-items: center; justify-content: center;">
-                        <img src="img/professional-ceo.png" alt="Allen" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="img/trendy_chatlive_image.jpg" alt="Allen" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div>
                         <div style="font-weight: 700; font-size: 0.95rem;">Allen</div>
