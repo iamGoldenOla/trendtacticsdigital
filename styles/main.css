@@ -7456,3 +7456,87 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
         justify-self: end !important;
     }
 }
+
+/* ===== CUSTOM REORGANIZED HEADER & CTA STYLING ===== */
+
+/* Desktop view: Top bar alignment and CTA button */
+@media (min-width: 1025px) {
+    .header-top-bar .top-bar-right {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px !important;
+    }
+    
+    .header-top-bar .nav-call-block {
+        background: #0047FF !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        padding: 8px 18px !important;
+        border-radius: 4px !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        transition: all 0.2s ease !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+    
+    .header-top-bar .nav-call-block:hover {
+        background: #fadb24 !important;
+        color: #000000 !important;
+    }
+}
+
+/* Mobile view styling for Book a Call CTA inside the hamburger dropdown */
+@media (max-width: 1024px) {
+    /* Hide CTA from the main mobile bar to avoid logo/hamburger overlap */
+    .nav-menu-wrapper > .nav-call-block {
+        display: none !important;
+    }
+    
+    /* Premium style for CTA inside the mobile menu list */
+    .nav-menu .nav-call-block {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #0047FF !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+        padding: 14px 28px !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        width: calc(100% - 20px) !important;
+        margin: 25px 10px 10px 10px !important;
+        text-align: center !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 4px 15px rgba(0, 71, 255, 0.3) !important;
+    }
+    
+    .nav-menu .nav-call-block:hover {
+        background: #fadb24 !important;
+        color: #000000 !important;
+        box-shadow: 0 4px 15px rgba(250, 219, 36, 0.4) !important;
+    }
+    
+    /* Ensure the hamburger toggles and logo are aligned vertically */
+    .nav-menu-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 8px 0 !important;
+    }
+    
+    /* Adjust logo and hamburger icon spacing in mobile header */
+    .nav-logo-mobile {
+        margin-right: auto !important;
+    }
+    
+    .nav-toggle {
+        margin-left: auto !important;
+    }
+}

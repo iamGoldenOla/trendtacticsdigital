@@ -124,56 +124,55 @@ document.addEventListener('DOMContentLoaded', function () {
             display: none !important;
         }
         
-        /* Translator Floating Container */
+        /* Translator Container default (Desktop top-bar placement) */
         #global-translate-container {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 99999;
-            display: flex;
+            position: relative;
+            z-index: 9999;
+            display: inline-flex;
             align-items: center;
             gap: 12px;
             font-family: 'Inter', sans-serif;
         }
 
         #global-translate-btn {
-            background: #0047FF !important; /* Solid Royal Blue */
-            color: #ffffff !important;
-            border: 2px solid #ffffff !important;
-            border-radius: 50% !important;
-            width: 55px;
-            height: 55px;
+            background: transparent !important;
+            color: #94a3b8 !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 4px !important;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: none !important;
             cursor: pointer;
-            font-size: 1.5rem;
-            transition: transform 0.2s ease;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
             outline: none;
             padding: 0;
         }
 
         #global-translate-btn:hover {
-            transform: scale(1.08) translateY(-2px);
-            border-color: #fadb24 !important; /* Yellow border highlight */
+            border-color: #fadb24 !important;
+            color: #fadb24 !important;
+            background: rgba(255, 255, 255, 0.05) !important;
         }
 
-        /* The solid grid dropdown container */
+        /* The solid grid dropdown container opening downwards */
         #global-translate-dropdown {
             background: #000000 !important;
-            border-radius: 12px;
-            padding: 15px !important;
-            border: 2px solid #0047FF !important;
+            border-radius: 8px;
+            padding: 12px !important;
+            border: 1px solid #222222 !important;
             opacity: 0;
-            transform: translateY(10px) scale(0.95);
+            transform: translateY(-10px) scale(0.95);
             pointer-events: none;
             transition: all 0.2s ease;
             position: absolute;
-            bottom: 70px;
-            left: 0;
-            width: 320px;
-            box-shadow: none !important;
+            top: 40px;
+            right: 0;
+            width: 280px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
         }
 
         #global-translate-container.open #global-translate-dropdown {
@@ -234,20 +233,39 @@ document.addEventListener('DOMContentLoaded', function () {
             display: none !important;
         }
 
-        /* Mobile overrides */
-        @media (max-width: 480px) {
+        /* Mobile overrides: Float translation widget at bottom-left on mobile */
+        @media (max-width: 1024px) {
             #global-translate-container {
-                bottom: 20px;
-                left: 20px;
+                position: fixed !important;
+                bottom: 20px !important;
+                left: 20px !important;
+                z-index: 99999 !important;
             }
             #global-translate-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
+                background: #0047FF !important;
+                color: #ffffff !important;
+                border: 2px solid #ffffff !important;
+                border-radius: 50% !important;
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.3rem !important;
+            }
+            #global-translate-btn:hover {
+                border-color: #fadb24 !important;
+                color: #ffffff !important;
+                background: #0047FF !important;
             }
             #global-translate-dropdown {
-                bottom: 60px;
-                width: 280px;
+                position: absolute !important;
+                bottom: 60px !important;
+                top: auto !important;
+                left: 0 !important;
+                right: auto !important;
+                width: 260px !important;
+                transform: translateY(10px) scale(0.95) !important;
+            }
+            #global-translate-container.open #global-translate-dropdown {
+                transform: translateY(0) scale(1) !important;
             }
         }
     `;
@@ -278,21 +296,74 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     `;
 
+    // Create translation container
     const container = document.createElement('div');
     container.id = 'global-translate-container';
     container.innerHTML = widgetHTML;
-    const menuWrapper = document.querySelector('.nav-menu-wrapper');
-    const callBlock = document.querySelector('.nav-call-block');
-    if (menuWrapper && callBlock) {
-        menuWrapper.insertBefore(container, callBlock);
-    } else {
-        const headerContainer = document.querySelector('.nav-container');
-        if (headerContainer) {
-            headerContainer.appendChild(container);
-        } else {
+
+    // Inject container and CTA button depending on viewport layout
+    function positionHeaderElements() {
+        const isMobile = window.innerWidth <= 1024;
+        const callBlock = document.querySelector('.nav-call-block');
+        const topBarRight = document.querySelector('.header-top-bar .top-bar-right');
+        const navMenu = document.querySelector('#nav-menu');
+        const menuWrapper = document.querySelector('.nav-menu-wrapper');
+
+        // Always make sure translate element is in DOM
+        if (!document.getElementById('global-translate-container')) {
             document.body.appendChild(container);
         }
+
+        if (isMobile) {
+            // Mobile adjustments:
+            // 1. Move CTA to hamburger menu (#nav-menu) at the bottom
+            if (callBlock && navMenu && callBlock.parentElement !== navMenu) {
+                navMenu.appendChild(callBlock);
+            }
+            // 2. Move Translate widget to body so it floats at bottom-left
+            if (container.parentElement !== document.body) {
+                document.body.appendChild(container);
+            }
+        } else {
+            // Desktop adjustments:
+            // 1. Move CTA into top bar right (.header-top-bar .top-bar-right)
+            if (topBarRight) {
+                if (callBlock && callBlock.parentElement !== topBarRight) {
+                    topBarRight.appendChild(callBlock);
+                }
+                // 2. Move Translate container into top bar right before Book a Call
+                if (container.parentElement !== topBarRight) {
+                    if (callBlock && callBlock.parentElement === topBarRight) {
+                        topBarRight.insertBefore(container, callBlock);
+                    } else {
+                        topBarRight.appendChild(container);
+                    }
+                }
+            } else {
+                // Fallback for pages that might not have the new redesign top bar
+                if (callBlock && menuWrapper && callBlock.parentElement !== menuWrapper) {
+                    menuWrapper.appendChild(callBlock);
+                }
+                if (menuWrapper && container.parentElement !== menuWrapper) {
+                    if (callBlock && callBlock.parentElement === menuWrapper) {
+                        menuWrapper.insertBefore(container, callBlock);
+                    } else {
+                        menuWrapper.appendChild(container);
+                    }
+                }
+            }
+        }
     }
+
+    // Initialize layout positions
+    positionHeaderElements();
+
+    // Listen to resize to shift layout responsively
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionHeaderElements, 100);
+    });
 
     // Toggle logic for translation dropdown
     const toggleBtn = document.getElementById('global-translate-btn');
