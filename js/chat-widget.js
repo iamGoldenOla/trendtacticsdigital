@@ -352,7 +352,7 @@
         const chatbotBtn = document.createElement('button');
         chatbotBtn.id = 'chatbot-toggle';
         chatbotBtn.setAttribute('aria-label', 'Open chat with Allen');
-        chatbotBtn.innerHTML = '<i class="fas fa-comments"></i>';
+        chatbotBtn.innerHTML = '<img src="img/professional-ceo.png" alt="Allen" style="width: 100%; height: 100%; object-fit: cover; display: block;">';
         chatbotBtn.style.cssText = `
             position: fixed;
             bottom: 24px;
@@ -360,10 +360,8 @@
             width: 62px;
             height: 62px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #000000, #1a3a6e);
-            color: #fadb24;
-            border: 2px solid rgba(250,219,36,0.3);
-            font-size: 1.5rem;
+            background: #ffffff;
+            border: 2px solid #0047FF;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(0, 0, 0,0.35);
             z-index: 99999;
@@ -371,6 +369,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0;
+            overflow: hidden;
         `;
 
         // Notification badge
@@ -429,8 +429,8 @@
             <!-- Header -->
             <div style="background: linear-gradient(135deg, #000000, #1a3a6e); color: white; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(250,219,36,0.2); display: flex; align-items: center; justify-content: center; border: 2px solid rgba(250,219,36,0.4);">
-                        <i class="fas fa-robot" style="color: #fadb24; font-size: 1.1rem;"></i>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(250,219,36,0.4); display: flex; align-items: center; justify-content: center;">
+                        <img src="img/professional-ceo.png" alt="Allen" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div>
                         <div style="font-weight: 700; font-size: 0.95rem;">Allen</div>

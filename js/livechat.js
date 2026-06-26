@@ -13,11 +13,12 @@
           backgroundColor: "#00E5FF",
           iconColor: "#0A1E3F",
           bottom: 20,
-          right: 20
+          right: 20,
+          customIconSrc: "https://trendtacticsdigital.com/img/professional-ceo.png"
         },
         chatWindow: {
           title: "Trendy AI",
-          titleAvatarSrc: "https://trendtacticsdigital.com/logo.png",
+          titleAvatarSrc: "https://trendtacticsdigital.com/img/professional-ceo.png",
           welcomeMessage: "Hi! I am Trendy, your AI Growth Agent. How can I assist you with your digital marketing today?",
           backgroundColor: "#0A1E3F",
           textColor: "#ffffff",
@@ -27,7 +28,9 @@
           },
           botMessage: {
             backgroundColor: "#0D2347",
-            textColor: "#ffffff"
+            textColor: "#ffffff",
+            showAvatar: true,
+            avatarSrc: "https://trendtacticsdigital.com/img/professional-ceo.png"
           },
           fontSize: 14
         }
