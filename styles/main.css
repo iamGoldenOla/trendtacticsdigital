@@ -5282,12 +5282,12 @@ blockquote.service-quote {
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 100px;
+    right: 20px;
     width: 50px;
     height: 50px;
     background: var(--primary);
-    color: var(--base-dark);
+    color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5321,7 +5321,7 @@ blockquote.service-quote {
 /* Scroll to Top Responsive */
 @media (max-width: 768px) {
     .scroll-to-top {
-        bottom: 20px;
+        bottom: 95px;
         right: 20px;
         width: 45px;
         height: 45px;
@@ -7108,7 +7108,13 @@ footer.footer>.container {
 .nav-menu-wrapper .nav-menu {
     display: flex;
     align-items: center;
-    gap: 38px; /* Increased from 24px for wider spacing */
+    gap: 42px; /* Increased from 38px for wider spacing */
+}
+
+@media (min-width: 1400px) {
+    .nav-menu-wrapper .nav-menu {
+        gap: 55px; /* Wider spacing on larger desktop monitors */
+    }
 }
 
 .nav-menu-wrapper .nav-link {

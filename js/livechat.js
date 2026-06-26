@@ -10,8 +10,8 @@
       apiHost: "https://flowise.trendtacticsdigital.com",
       theme: {
         button: {
-          backgroundColor: "#00E5FF",
-          iconColor: "#0A1E3F",
+          backgroundColor: "#0047FF",
+          iconColor: "#ffffff",
           bottom: 20,
           right: 20,
           customIconSrc: "https://trendtacticsdigital.com/img/trendy_chatlive_image.jpg"
@@ -23,8 +23,8 @@
           backgroundColor: "#0A1E3F",
           textColor: "#ffffff",
           userMessage: {
-            backgroundColor: "#00E5FF",
-            textColor: "#0A1E3F"
+            backgroundColor: "#0047FF",
+            textColor: "#ffffff"
           },
           botMessage: {
             backgroundColor: "#0D2347",

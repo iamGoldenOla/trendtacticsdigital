@@ -116,7 +116,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 xl:space-x-10">
+          <div className="hidden lg:flex items-center space-x-11 xl:space-x-16">
             {navItems.map((item) => (
               <Link
                 key={item.name}
