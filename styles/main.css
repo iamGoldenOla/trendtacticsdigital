@@ -7167,7 +7167,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 270px !important; /* Move hero content down to clear the header */
+        padding-top: 310px !important; /* Move hero content down to clear the header */
     }
 }
 
@@ -7189,7 +7189,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 140px !important; /* Move hero content down on mobile */
+        padding-top: 160px !important; /* Move hero content down on mobile */
     }
 }
 

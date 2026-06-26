@@ -34,15 +34,22 @@
 .hero {
     min-height: 80vh !important;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
 .hero-content-centered {
     position: relative;
     z-index: 3;
-    margin-top: -5vh;
-    /* Pull content up slightly */
+    margin-top: 40px !important; /* Comfortable breathing space below the header */
+}
+
+@media (max-width: 768px) {
+    .hero-content-centered {
+        margin-top: 20px !important;
+    }
 }
 
 .video-overlay {
