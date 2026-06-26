@@ -29,16 +29,16 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Trendtactics Digital - We Engineer Digital Growth",
-  description: "Unlock strategy, creativity, and AI power — all in one studio. Professional digital marketing agency based in Lagos, London, Toronto, and NYC.",
-  keywords: "digital marketing, web design, AI solutions, SEO, branding, growth marketing",
+  title: "Trendtactics Digital | Web Design, App Development & Digital Marketing Agency | Lagos, London, Global",
+  description: "Trendtactics Digital is a global digital agency delivering web design, app development, SEO, and digital marketing. Based in Lagos, serving UK, USA, Canada, Australia, and worldwide. 50+ projects delivered. Get a free consultation.",
+  keywords: "digital marketing agency Lagos, web design Nigeria, app development agency, SEO agency UK, digital marketing company London, web development agency, mobile app development, social media marketing Nigeria, digital marketing agency global",
   authors: [{ name: "Akinola Olujobi" }],
   creator: "Trendtactics Digital",
   publisher: "Trendtactics Digital",
   robots: "index, follow",
   openGraph: {
-    title: "Trendtactics Digital - We Engineer Digital Growth",
-    description: "Unlock strategy, creativity, and AI power — all in one studio.",
+    title: "Trendtactics Digital | Web Design, App Development & Digital Marketing",
+    description: "Global digital agency delivering web design, app development, SEO, and digital marketing. Lagos, London, New York, Toronto. 50+ projects. Free consultation.",
     url: "https://trendtacticsdigital.com",
     siteName: "Trendtactics Digital",
     images: [
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Trendtactics Digital - Digital Marketing Agency",
+        alt: "Trendtactics Digital - Web Design, App Development & Digital Marketing",
       },
     ],
-    locale: "en_US",
+    locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trendtactics Digital - We Engineer Digital Growth",
-    description: "Unlock strategy, creativity, and AI power — all in one studio.",
+    title: "Trendtactics Digital | Global Digital Agency",
+    description: "Web design, app development, SEO & digital marketing. Lagos to London. Get measurable growth.",
     images: ["/images/og-image.jpg"],
   },
 };

@@ -1,35 +1,43 @@
-# Trendtactics Digital - AI Search Context
-# https://trendtacticsdigital.com
+# Trendtactics Digital
+# AI Search Context File
 
-## Company
-Trendtactics Digital is a global digital agency specializing in web design,
-mobile app development, SEO, digital marketing, and brand identity.
-
-Founded in Nigeria, serving clients globally including UK, USA, Canada,
-Australia, Europe, Middle East, and Africa.
+## About
+Trendtactics Digital is a global digital agency founded by Akinola Olujobi in Lagos, Nigeria.
+We specialise in web design, app development, digital marketing, SEO, social media management,
+and brand identity. We serve clients in Nigeria, UK, USA, Canada, Australia, Europe, and worldwide.
 
 ## Services
-- Web Design & Development (React, Next.js, WordPress)
-- Mobile App Development (React Native, Flutter, iOS, Android)
-- SEO Services (Technical, Content, Local, International)
-- Social Media Management (Instagram, LinkedIn, Facebook, TikTok, X)
-- Digital Marketing (Google Ads, Meta Ads, Email Marketing)
-- Brand Identity & Graphic Design
-- E-commerce Development (Shopify, WooCommerce, Custom)
-- UI/UX Design
+- Web Design & Development: Custom websites, React, Next.js, WordPress, e-commerce
+- Mobile App Development: iOS, Android, React Native, Flutter
+- Digital Marketing: Google Ads, Meta Ads, email marketing, full-funnel campaigns
+- SEO Services: Technical SEO, content SEO, local SEO, international SEO
+- Social Media Marketing: Instagram, Facebook, TikTok, LinkedIn, X management
+- Facebook & Instagram Ads: Meta advertising, campaign management, ROAS optimisation
+- Content Creation: Blog writing, copywriting, video scripts, brand content
+- Email Marketing: Campaign strategy, automation, newsletters, list management
+- Branding & Graphic Design: Logo design, brand identity, visual systems
 
-## Contact
-Website: https://trendtacticsdigital.com
-Email: info@trendtacticsdigital.com
-Location: Lagos, Nigeria (Remote/Global)
-
-## Key Pages
-- Portfolio: https://trendtacticsdigital.com/portfolio
-- Services: https://trendtacticsdigital.com/services
-- Pricing: https://trendtacticsdigital.com/pricing
-- Contact: https://trendtacticsdigital.com/contact
+## Key Information
+- Founded: Lagos, Nigeria (operational globally)
+- Locations served: Nigeria, UK (London, Manchester), USA (New York, LA), Canada, Australia, UAE
+- Languages: English
+- Pricing: Competitive global rates, custom quotes available
+- Contact: info@trendtacticsdigital.com
+- Website: https://trendtacticsdigital.com
 
 ## Trust Signals
-- 50+ projects delivered globally
-- Clients in UK, USA, Nigeria, Canada, Australia
+- 50+ projects delivered
+- 98% client satisfaction rate
+- 3+ years experience
 - AI-powered delivery through TrendyAI platform
+- Clients include: Nigerian SMEs, UK businesses, international brands
+
+## Key Pages
+- Services: https://trendtacticsdigital.com/services
+- Web Development: https://trendtacticsdigital.com/service-web-development
+- App Development: https://trendtacticsdigital.com/service-app-development
+- Digital Marketing: https://trendtacticsdigital.com/service-digital-marketing
+- Pricing: https://trendtacticsdigital.com/pricing
+- Portfolio: https://trendtacticsdigital.com/portfolio
+- Contact: https://trendtacticsdigital.com/contact
+- Blog: https://trendtacticsdigital.com/blog

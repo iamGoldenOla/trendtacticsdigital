@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-# Allow all AI crawlers explicitly
+# Explicitly allow all AI crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -14,13 +16,16 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Anthropic-ai
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://trendtacticsdigital.com/sitemap.xml
