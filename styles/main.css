@@ -6424,7 +6424,7 @@ footer.footer>.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 5px 20px;
     width: 100%;
@@ -6435,7 +6435,6 @@ footer.footer>.container {
 
 /* Push down content exactly by the height of BOTH bars (40px + 70px = 110px) */
 .hero,
-.hero-content-centered,
 .page-hero {
     padding-top: 130px !important;
 }
@@ -6678,7 +6677,6 @@ footer.footer>.container {
     
     /* Push content down to avoid overlapping the new taller header (+30px adjustment) */
     .hero,
-    .hero-content-centered,
     .page-hero {
         padding-top: 295px !important;
     }
@@ -6956,7 +6954,7 @@ footer.footer>.container {
 
 .header-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 15px;
     display: flex;
@@ -7153,7 +7151,6 @@ footer.footer>.container {
 /* Adjust margins on hero content to push down because header is taller now */
 @media (min-width: 1025px) {
     .hero,
-    .hero-content-centered,
     .page-hero,
     .about-hero-redesigned,
     .service-page-hero-clean,
@@ -7176,7 +7173,6 @@ footer.footer>.container {
 
 @media (max-width: 1024px) {
     .hero,
-    .hero-content-centered,
     .page-hero,
     .about-hero-redesigned,
     .service-page-hero-clean,
@@ -7466,24 +7462,24 @@ body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
 /* Desktop view: Top bar alignment and CTA button */
 @media (min-width: 1025px) {
     .header-wrapper {
-        max-width: 1200px !important;
+        max-width: 1600px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: calc(100% - 40px) !important;
-        top: 15px !important;
+        width: 100% !important;
+        top: 0 !important;
         overflow: visible !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
         background: transparent !important;
     }
     
     .header-top-bar {
-        border-top-left-radius: 12px !important;
-        border-top-right-radius: 12px !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
     }
     
     .navbar.premium-navbar {
-        border-bottom-left-radius: 12px !important;
-        border-bottom-right-radius: 12px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
     }
 
     .header-top-bar .top-bar-right {

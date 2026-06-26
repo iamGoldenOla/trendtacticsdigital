@@ -63,15 +63,41 @@
 }
 
 /* ===== HORIZONTAL SCROLL CAROUSEL FOR BRANDS ===== */
+@keyframes scroll-brands {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.brands-container-wrapper {
+    overflow: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+    scrollbar-width: none !important;
+}
+
+.brands-container-wrapper::-webkit-scrollbar {
+    display: none !important;
+}
+
 .brands-grid {
     display: flex !important;
+    flex-wrap: nowrap !important;
     width: max-content !important;
     gap: 30px !important;
     animation: scroll-brands 30s linear infinite !important;
-    transform: none !important;
     border: none !important;
     background: transparent !important;
     padding: 10px 0 !important;
+    will-change: transform;
+    scrollbar-width: none !important;
+}
+
+.brands-grid::-webkit-scrollbar {
+    display: none !important;
 }
 
 .brand-card-custom {
@@ -328,10 +354,14 @@
         display: flex !important;
         flex-wrap: nowrap !important;
         gap: 15px !important;
-        animation: scroll-brands 25s linear infinite !important;
+        animation: scroll-brands 20s linear infinite !important;
         border: none !important;
         padding: 5px 0 !important;
         overflow: visible !important;
+        scrollbar-width: none !important;
+    }
+    .brands-grid::-webkit-scrollbar {
+        display: none !important;
     }
 
     .brand-card-custom {
