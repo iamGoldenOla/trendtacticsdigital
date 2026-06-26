@@ -6946,7 +6946,7 @@ footer.footer>.container {
 /* ===== ECOPLANT-STYLE HEADER REVAMP ===== */
 .header-wrapper {
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -6968,7 +6968,7 @@ footer.footer>.container {
 .header-top-bar {
     background: #111111 !important; /* Solid Dark Grey/Black background */
     color: #94a3b8 !important; /* Grey text */
-    padding: 8px 0;
+    padding: 4px 0; /* Extra compact padding */
     font-size: 0.8rem;
     font-weight: 600;
     width: 100%;
@@ -7012,15 +7012,19 @@ footer.footer>.container {
 /* Row 2: Middle Row */
 .header-middle-row {
     background: #000000 !important; /* Solid Black background */
-    padding: 15px 0;
+    padding: 0;
     border-bottom: 1px solid #111111;
     width: 100%;
+    overflow: visible !important;
 }
 
 .header-logo-img {
-    height: 180px !important; /* Enlarged unified logo height to 180px */
+    height: 350px !important; /* Prominently enlarged logo */
     width: auto !important;
     display: block;
+    margin: -100px auto !important; /* Negative margin to overlap rows and stay compact */
+    position: relative;
+    z-index: 1010;
 }
 
 .middle-right {
@@ -7166,7 +7170,7 @@ footer.footer>.container {
     .academy-hero,
     .shop-hero,
     .ai-hero {
-        padding-top: 220px !important; /* Header is about 210px tall now */
+        padding-top: 250px !important; /* Header is about 245px tall now with enlarged logo */
     }
 }
 
@@ -7205,7 +7209,7 @@ footer.footer>.container {
     }
     
     .nav-logo-mobile img {
-        height: 90px !important;
+        height: 110px !important;
         width: auto !important;
         display: block !important;
     }

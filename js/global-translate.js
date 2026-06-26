@@ -308,6 +308,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const topBarRight = document.querySelector('.header-top-bar .top-bar-right');
         const navMenu = document.querySelector('#nav-menu');
         const menuWrapper = document.querySelector('.nav-menu-wrapper');
+        const socialLinks = document.querySelector('.social-links-grid');
+        const middleRight = document.querySelector('.header-middle-row .middle-right');
 
         // Always make sure translate element is in DOM
         if (!document.getElementById('global-translate-container')) {
@@ -323,6 +325,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // 2. Move Translate widget to body so it floats at bottom-left
             if (container.parentElement !== document.body) {
                 document.body.appendChild(container);
+            }
+            // 3. Move social links back to middle row on mobile if they were moved
+            if (socialLinks && middleRight && socialLinks.parentElement !== middleRight) {
+                middleRight.appendChild(socialLinks);
             }
         } else {
             // Desktop adjustments:
@@ -350,6 +356,44 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else {
                         menuWrapper.appendChild(container);
                     }
+                }
+            }
+
+            // 3. Move social links to the center of the top bar
+            const topBarContainer = document.querySelector('.header-top-bar .header-container');
+            const topBarLeft = document.querySelector('.header-top-bar .top-bar-left');
+            if (topBarContainer) {
+                // Ensure left and right flex properties are applied for perfect 3-column centering
+                if (topBarLeft) {
+                    topBarLeft.style.flex = '1';
+                    topBarLeft.style.display = 'flex';
+                    topBarLeft.style.justifyContent = 'flex-start';
+                    topBarLeft.style.alignItems = 'center';
+                }
+                if (topBarRight) {
+                    topBarRight.style.flex = '1';
+                    topBarRight.style.display = 'flex';
+                    topBarRight.style.justifyContent = 'flex-end';
+                    topBarRight.style.alignItems = 'center';
+                }
+
+                let topBarCenter = topBarContainer.querySelector('.top-bar-center');
+                if (!topBarCenter) {
+                    topBarCenter = document.createElement('div');
+                    topBarCenter.className = 'top-bar-center';
+                    topBarCenter.style.display = 'flex';
+                    topBarCenter.style.justifyContent = 'center';
+                    topBarCenter.style.alignItems = 'center';
+                    topBarCenter.style.flex = '1';
+                    
+                    if (topBarLeft && topBarLeft.nextSibling) {
+                        topBarContainer.insertBefore(topBarCenter, topBarLeft.nextSibling);
+                    } else {
+                        topBarContainer.appendChild(topBarCenter);
+                    }
+                }
+                if (socialLinks && socialLinks.parentElement !== topBarCenter) {
+                    topBarCenter.appendChild(socialLinks);
                 }
             }
         }
