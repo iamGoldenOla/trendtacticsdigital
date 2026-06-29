@@ -10,6 +10,7 @@ app.use(express.json());
 
 // Register API Routes
 app.use('/api/ai', require('./routes/ai'));
+app.use('/api/v1/prediction', require('./routes/prediction'));
 app.use('/api/v1/analysis', require('./routes/competitor'));
 app.use('/api/v1/analysis', require('./routes/seo'));
 app.use('/api/v1/analysis', require('./routes/proposal'));

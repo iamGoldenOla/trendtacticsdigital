@@ -7,7 +7,7 @@
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
       chatflowid: "05be139b-4222-4177-8091-703298521b7a",
-      apiHost: "https://flowise.trendtacticsdigital.com",
+      apiHost: "https://trendtacticsdigital.com",
       theme: {
         button: {
           backgroundColor: "#0047FF",
